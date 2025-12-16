@@ -28,7 +28,7 @@ function inicializarBuscador() {
     async function cargarCatalogo() {
         try {
             console.log('📦 Cargando catálogo...');
-            const response = await fetch('https://raw.githubusercontent.com/anmagoS/ANMAGOPWA/main/catalogo.json?v=' + Date.now());
+            const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?v=' + Date.now());
             catalogo = await response.json();
             console.log('✅ Catálogo cargado:', catalogo.length, 'productos');
         } catch (error) {
