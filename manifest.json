@@ -1,6 +1,6 @@
 {  "name": "Anmago Store",
   "short_name": "Anmago",
-  "start_url": "/ANMAGOPWA/INICIO.HTML",
+  "start_url": "/ANMAGOPWA/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
