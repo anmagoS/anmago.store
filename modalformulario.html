@@ -119,7 +119,7 @@
 <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
   <div class="logo">
-    <a href="INICIO.HTML" id="logo-inicio" onclick="volverAInicio()">
+    <a href="index.html" id="logo-inicio" onclick="volverAInicio()">
       <img
         src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
         alt="ANMAGO STORE"
@@ -586,7 +586,7 @@ function finalizarRegistro(success = true, mensaje = '') {
     // Redirigir después de 3 segundos
     setTimeout(() => {
       // Opción 1: Volver al inicio
-      window.location.href = 'INICIO.HTML';
+      window.location.href = 'index.html';
       
       // Opción 2: Cerrar pestaña si se abrió desde otra
       // window.close();
@@ -604,7 +604,7 @@ function finalizarRegistro(success = true, mensaje = '') {
 // Función para volver al inicio
 function volverAInicio() {
   if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
-    window.location.href = 'INICIO.HTML';
+    window.location.href = 'index.html';
   }
 }
 
@@ -633,7 +633,7 @@ window.volverAInicio = volverAInicio;
       <div class="footer-section">
         <h4>Anmago Store</h4>
         <div class="footer-links">
-          <a href="INICIO.HTML">Inicio</a>
+          <a href="index.html">Inicio</a>
           <a href="https://sites.google.com/view/anmagostore/quienes-somos">Nosotros</a>
           <a href="https://sites.google.com/view/anmagostore/politica-de-tratamiento-de-datos">Tratamiento de datos</a>
           <a href="https://sites.google.com/view/anmagostore/politicas-de-envios">Envíos</a>
