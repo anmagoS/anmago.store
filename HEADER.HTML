@@ -1,7 +1,7 @@
 <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
  <div class="logo">
-  <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
+  <a href="index.html" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
     <img
       src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
       alt="ANMAGO STORE"
@@ -24,7 +24,7 @@
   <!-- BOTÓN HAMBURGUESA -->
   <button class="navbar-toggler border-0 bg-transparent" type="button"
           data-bs-toggle="offcanvas"
-          data-bs-target="#menuLateral"
+          data-bs-target="index.htmlmenuLateral"
           aria-controls="menuLateral"
           aria-label="Abrir menú">
     <i class="bi bi-list fs-1 text-white"></i>
@@ -45,7 +45,7 @@
 
   <div class="offcanvas-body d-flex flex-column gap-3">
     <!-- Inicio -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
+    <a href="index.html" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
       <i class="bi bi-house me-2"></i> Inicio
     </a>
 
@@ -55,7 +55,7 @@
     </a>
 
     <!-- Todos los productos -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
+    <a href="index.html" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
       <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
     </a>
 
@@ -146,7 +146,7 @@ function cargarMenuDesdeTuCatalogo() {
       : catalogo.filter(p => p.tipo === tipo).length;
     
     html += `
-      <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+      <a href="index.html" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
          onclick="${tipo === 'TODOS' ? 'mostrarTodosLosProductosCompleto' : `cargarPorTipo('${tipo}')`}; cerrarMenu(); return false;">
         <div class="d-flex align-items-center">
           <i class="bi ${tipo === 'TODOS' ? 'bi-grid-fill' : 'bi-folder'} me-2"></i>
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ===== ESTILOS BÁSICOS PARA EL HEADER ===== */
 
 .header-sticky {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
+  background: linear-gradient(135deg, index.html1B4557, index.html2A6A8F);
   color: white;
   position: fixed;
   top: 0;
@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* Offcanvas */
-#menuLateral .offcanvas-header {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
+index.htmlmenuLateral .offcanvas-header {
+  background: linear-gradient(135deg, index.html1B4557, index.html2A6A8F);
   color: white;
 }
 
-#menuLateral .nav-link {
-  color: #333;
+index.htmlmenuLateral .nav-link {
+  color: index.html333;
   padding: 0.75rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -248,21 +248,21 @@ document.addEventListener('DOMContentLoaded', function() {
   align-items: center;
 }
 
-#menuLateral .nav-link:hover {
-  background-color: #e9ecef;
-  color: #1B4557;
+index.htmlmenuLateral .nav-link:hover {
+  background-color: index.htmle9ecef;
+  color: index.html1B4557;
   transform: translateX(5px);
 }
 
 .categoria-menu-item {
-  border: 1px solid #dee2e6;
+  border: 1px solid index.htmldee2e6;
   transition: all 0.2s ease;
 }
 
 .categoria-menu-item:hover {
-  background-color: #1B4557 !important;
+  background-color: index.html1B4557 !important;
   color: white !important;
-  border-color: #1B4557;
+  border-color: index.html1B4557;
   transform: translateX(5px);
 }
 
@@ -278,7 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
     padding: 0.4rem 0.8rem;
   }
   
-  #menuLateral .nav-link {
+  index.htmlmenuLateral .nav-link {
     padding: 0.6rem 0.75rem;
     font-size: 0.9rem;
   }
