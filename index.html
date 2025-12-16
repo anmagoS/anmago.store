@@ -861,7 +861,7 @@
 
   // 🎯 FUNCIÓN PARA OBTENER CATÁLOGO
   async function obtenerCatalogo() {
-      const url = "https://raw.githubusercontent.com/anmagoS/ANMAGOPWA/main/catalogo.json?v=" + Date.now();
+      const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?v=" + Date.now();
       const respuesta = await fetch(url);
       return await respuesta.json();
   }
