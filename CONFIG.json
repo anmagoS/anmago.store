@@ -11,7 +11,7 @@
     "Funcionamiento offline"
   ],
   "urls": {
-    "catalogo": "https://raw.githubusercontent.com/anmagoS/ANMAGOPWA/main/catalogo.json",
+    "catalogo": "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json",
     "logo": "https://ik.imagekit.io/mbsk9dati/logo.jpg"
   }
 }
