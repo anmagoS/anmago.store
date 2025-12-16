@@ -76,7 +76,7 @@
     <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
   <div class="logo">
-    <a href="INICIO.HTML" id="logo-inicio" onclick="volverAInicio()">
+    <a href="index.html" id="logo-inicio" onclick="volverAInicio()">
       <img
         src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
         alt="ANMAGO STORE"
@@ -103,7 +103,7 @@
     <main class="container mt-4 pt-3">
         <!-- BOTÓN VOLVER AL INICIO (ARRIBA) -->
         <div class="mb-4">
-            <a href="INICIO.HTML" class="btn btn-volver-inicio btn-sm px-3 py-2 rounded-pill">
+            <a href="index.html" class="btn btn-volver-inicio btn-sm px-3 py-2 rounded-pill">
                 <i class="bi bi-arrow-left me-2"></i> Volver al Inicio
             </a>
             
@@ -155,7 +155,7 @@
                     <small class="d-block text-muted mt-1">Las ofertas cambian automáticamente cada 6 horas</small>
                 </div>
             </div>
-            <a href="INICIO.HTML" class="btn btn-outline-primary btn-sm">
+            <a href="index.html" class="btn btn-outline-primary btn-sm">
                 <i class="bi bi-house-door me-1"></i> Inicio
             </a>
         </div>
@@ -194,7 +194,7 @@
                 <h4 class="text-muted mb-2">No hay ofertas disponibles</h4>
                 <p class="text-muted mb-4">Regresa más tarde para ver nuevas promociones</p>
                 <div class="d-flex justify-content-center gap-3">
-                    <a href="INICIO.HTML" class="btn btn-primary">
+                    <a href="index.html" class="btn btn-primary">
                         <i class="bi bi-arrow-left me-2"></i>Volver al inicio
                     </a>
                     <button onclick="recargarOfertas()" class="btn btn-outline-primary">
@@ -231,7 +231,7 @@
         
         <!-- BOTÓN AL FINAL PARA REGRESAR -->
         <div class="text-center mt-5 pt-4">
-            <a href="INICIO.HTML" class="btn btn-lg btn-primary px-5 rounded-pill">
+            <a href="index.html" class="btn btn-lg btn-primary px-5 rounded-pill">
                 <i class="bi bi-arrow-left-circle me-2"></i>Regresar a la Tienda Principal
             </a>
         </div>
@@ -272,7 +272,7 @@
     <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2 shadow-lg">
         <div class="container-fluid px-0">
             <div class="d-flex justify-content-around w-100">
-                <a href="INICIO.HTML" class="text-center text-decoration-none text-primary">
+                <a href="index.html" class="text-center text-decoration-none text-primary">
                     <i class="bi bi-house-fill fs-5"></i>
                     <div class="small mt-1">Inicio</div>
                 </a>
@@ -362,7 +362,7 @@
                 if (logoHeader) {
                     logoHeader.addEventListener('click', function(e) {
                         e.preventDefault();
-                        window.location.href = 'INICIO.HTML';
+                        window.location.href = 'index.html';
                     });
                 }
             })
@@ -372,11 +372,11 @@
                 document.getElementById("header-container").innerHTML = `
                     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-2">
                         <div class="container">
-                            <a href="INICIO.HTML" class="navbar-brand fw-bold text-primary">
+                            <a href="index.html" class="navbar-brand fw-bold text-primary">
                                 <i class="bi bi-shop me-2"></i>Anmago Store
                             </a>
                             <div class="d-flex align-items-center">
-                                <a href="INICIO.HTML" class="btn btn-outline-primary btn-sm me-2">
+                                <a href="index.html" class="btn btn-outline-primary btn-sm me-2">
                                     <i class="bi bi-house"></i>
                                 </a>
                             </div>
@@ -686,7 +686,7 @@
                         <button onclick="recargarOfertas()" class="btn btn-warning">
                             <i class="bi bi-arrow-clockwise me-1"></i> Reintentar
                         </button>
-                        <a href="INICIO.HTML" class="btn btn-outline-primary">
+                        <a href="index.html" class="btn btn-outline-primary">
                             <i class="bi bi-house me-1"></i> Ir al inicio
                         </a>
                     </div>
