@@ -8,7 +8,7 @@ const APP_VERSION = 'v5.5';
 // Archivos ESENCIALES para cachear (offline)
 const ARCHIVOS_ESENCIALES = [
   './',
-  './INICIO.HTML',
+  './index.html',
   './PROMOS.HTML', 
   './PRODUCTO.HTML',
   './ESTILO.CSS',
