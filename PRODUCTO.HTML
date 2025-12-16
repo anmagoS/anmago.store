@@ -29,7 +29,7 @@
  <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
   <div class="logo">
-    <a href="INICIO.HTML" id="logo-inicio" onclick="volverAInicio()">
+    <a href="index.html" id="logo-inicio" onclick="volverAInicio()">
       <img
         src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
         alt="ANMAGO STORE"
@@ -83,7 +83,7 @@
       <!-- Categorías -->
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="breadcrumb-producto-mobile">
-          <li class="breadcrumb-item"><a href="INICIO.HTML">ATRÁS</a></li>
+          <li class="breadcrumb-item"><a href="index.html">ATRÁS</a></li>
           <!-- Categorías se cargan dinámicamente -->
         </ol>
       </nav>
@@ -150,7 +150,7 @@
             <!-- Categorías -->
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb" id="breadcrumb-producto-desktop">
-                <li class="breadcrumb-item"><a href="INICIO.HTML">ATRÁS</a></li>
+                <li class="breadcrumb-item"><a href="index.html">ATRÁS</a></li>
                 <!-- Categorías se cargan dinámicamente -->
               </ol>
             </nav>
@@ -327,7 +327,7 @@
   <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2">
     <div class="container-fluid">
       <div class="d-flex justify-content-around w-100">
-        <a href="INICIO.HTML" class="text-center text-decoration-none text-primary">
+        <a href="index.html" class="text-center text-decoration-none text-primary">
           <i class="bi bi-house-fill fs-5"></i>
           <div class="small">Inicio</div>
         </a>
@@ -430,22 +430,22 @@
                 const tiempoTranscurrido = ahora - estado.timestamp;
                 
                 if (tiempoTranscurrido < 30 * 60 * 1000) {
-                    let urlRetorno = 'INICIO.HTML';
+                    let urlRetorno = 'index.html';
                     
                     switch (estado.vistaAnterior) {
                         case 'productos':
                             if (estado.tipo && estado.subtipo && estado.categoria) {
-                                urlRetorno = `INICIO.HTML?vista=productos&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}&categoria=${encodeURIComponent(estado.categoria)}`;
+                                urlRetorno = `index.html?vista=productos&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}&categoria=${encodeURIComponent(estado.categoria)}`;
                             }
                             break;
                         case 'categorias':
                             if (estado.tipo && estado.subtipo) {
-                                urlRetorno = `INICIO.HTML?vista=categorias&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}`;
+                                urlRetorno = `index.html?vista=categorias&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}`;
                             }
                             break;
                         case 'subtipos':
                             if (estado.tipo) {
-                                urlRetorno = `INICIO.HTML?vista=subtipos&tipo=${encodeURIComponent(estado.tipo)}`;
+                                urlRetorno = `index.html?vista=subtipos&tipo=${encodeURIComponent(estado.tipo)}`;
                             }
                             break;
                     }
@@ -460,7 +460,7 @@
             }
         }
         
-        window.location.href = 'INICIO.HTML';
+        window.location.href = 'index.html';
     }
 
     function guardarEstadoNavegacion() {
@@ -905,7 +905,7 @@
         if (producto.subcategoria) categorias.push(producto.subcategoria);
         
         const breadcrumbItems = categorias.map(cat => 
-            `<li class="breadcrumb-item"><a href="INICIO.HTML?categoria=${cat}">${cat}</a></li>`
+            `<li class="breadcrumb-item"><a href="index.html?categoria=${cat}">${cat}</a></li>`
         ).join('');
         
         const breadcrumbFinal = breadcrumbItems + 
@@ -1318,7 +1318,7 @@
                             <button class="btn btn-primary" onclick="location.reload()">
                                 <i class="bi bi-arrow-clockwise"></i> Reintentar
                             </button>
-                            <a href="INICIO.HTML" class="btn btn-outline-primary">
+                            <a href="index.html" class="btn btn-outline-primary">
                                 <i class="bi bi-house"></i> Volver al inicio
                             </a>
                         </div>
