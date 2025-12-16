@@ -484,7 +484,7 @@
         try {
             console.log('🔄 Cargando productos en promoción...');
             
-            const url = "https://raw.githubusercontent.com/anmagoS/ANMAGOPWA/main/catalogo.json?t=" + ahora;
+            const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + ahora;
             const respuesta = await fetch(url);
             
             if (!respuesta.ok) throw new Error(`HTTP ${respuesta.status}`);
