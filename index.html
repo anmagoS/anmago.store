@@ -960,7 +960,33 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
  <!-- 🔥 BUSCADOR SE CARGA DESPUÉS DEL HEADER -->
   <script src="buscador.js?v=20251115"></script>
-  
+  <!-- ====== CARGAR FOOTER DESDE ARCHIVO ====== -->
+<script>
+async function cargarFooter() {
+    try {
+        const respuesta = await fetch('footer.html?v=' + Date.now());
+        const htmlFooter = await respuesta.text();
+        const contenedor = document.getElementById('footer-container');
+        if (contenedor) {
+            contenedor.innerHTML = htmlFooter;
+            console.log('✅ Footer cargado correctamente');
+        }
+    } catch (error) {
+        console.error('❌ Error cargando footer:', error);
+        const contenedor = document.getElementById('footer-container');
+        if (contenedor) {
+            contenedor.innerHTML = `
+                <div class="container text-center py-3">
+                    <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
+                    <p class="small text-muted">anmagostore@gmail.com</p>
+                </div>
+            `;
+        }
+    }
+}
+// Cargar el footer cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', cargarFooter);
+</script>
 
 </body>
 </html>
