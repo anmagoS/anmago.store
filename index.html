@@ -29,12 +29,13 @@
  <div class="logo">
   <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
     <img
-      src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-      alt="ANMAGO STORE"
-      width="48"
-      height="48"
-      loading="lazy"
-      style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
+  src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto"
+  alt="ANMAGO STORE"
+  width="48"
+  height="48"
+  loading="eager" <!-- CAMBIADO: lazy → eager -->
+  fetchpriority="high" <!-- NUEVO: Prioridad alta -->
+  style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
     />
   </a>
 </div>
@@ -815,10 +816,13 @@ function INDEX_crearCardCarrusel(producto) {
                  style="cursor: pointer;">
                 <div class="position-relative">
                     <img src="${imagen}" 
-                         alt="${producto.producto}"
-                         class="card-img-top"
-                         style="height: 120px; object-fit: cover;"
-                         loading="lazy">
+     alt="${producto.producto}"
+     class="card-img-top"
+     width="300" <!-- NUEVO: Ancho fijo -->
+     height="120" <!-- NUEVO: Alto fijo -->
+     loading="eager" <!-- NUEVO: Carga inmediata -->
+     fetchpriority="high"
+     style="height: 120px; object-fit: cover;">
                     
                     <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 small">
                         -${descuento}%
