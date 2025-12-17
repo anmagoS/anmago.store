@@ -811,10 +811,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 3. Configurar PWA
     configurarInstalacionPWA();
     
-    // 4. Cargar carrusel de promociones (SINCRONIZADO)
-    setTimeout(() => {
-        cargarCarruselPromos();
-    }, 1000);
+    
     
     // 5. Cargar header dinámicamente
     const headerContainer = document.getElementById("header-container");
@@ -837,10 +834,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         cargarUltimosProductos();
     }, 1500);
     
-    // 8. Mostrar temporizador de promociones (SINCRONIZADO)
-    setTimeout(() => {
-        mostrarTemporizadorPromos();
-    }, 2000);
     
     // 9. Manejar navegación desde URL
     setTimeout(() => {
@@ -864,11 +857,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }, 2500);
     }
     
-    // 11. Verificar sincronización de promociones
-    setTimeout(() => {
-        const estado = verificarSincronizacionPromos();
-        console.log('✅ Sistema de promociones sincronizado:', estado.sincronizado);
-    }, 3000);
+    
     
     console.log('✅ Anmago Store inicializada correctamente');
 });
@@ -919,4 +908,3 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
-
