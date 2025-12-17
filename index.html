@@ -991,7 +991,7 @@ document.addEventListener('DOMContentLoaded', cargarFooter);
 <script>
 async function cargarHeader() {
     try {
-        const respuesta = await fetch('header.html?v=' + Date.now());
+        const respuesta = await fetch('HEADER.HTML?v=' + Date.now());
         const htmlHeader = await respuesta.text();
         const contenedor = document.getElementById('header-container');
         if (contenedor) {
