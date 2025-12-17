@@ -22,6 +22,7 @@
   <!-- Scripts optimizados -->
   <script src="carrito.js?v=20251116"></script>
   <script src="app.js?v=20251116"></script>
+
   <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
  <div class="logo">
@@ -36,6 +37,7 @@
     />
   </a>
 </div>
+
   <!-- BUSCADOR EN HEADER -->
   <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
     <input id="buscador" class="form-control buscador-header" 
@@ -604,5 +606,341 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cargar footer cuando el DOM esté listo
     document.addEventListener('DOMContentLoaded', cargarFooter);
   </script>
+<script>
+// ==============================================
+// CARRUSEL SINCRONIZADO CON PROMOS.HTML
+// ==============================================
+
+// CONFIGURACIÓN IDÉNTICA A PROMOS.HTML
+const INDEX_PROMOS_CONFIG = {
+    productosPorBloque: 8,
+    horasPorBloque: 6,
+    indiceBloqueActual: 0
+};
+
+let INDEX_productosEnPromocion = [];
+
+// Cargar catálogo y sincronizar
+async function cargarCarruselSincronizado() {
+    try {
+        console.log('🔄 Cargando carrusel sincronizado con PROMOS.HTML...');
+        
+        // 1. Cargar catálogo (igual que promos.html)
+        await INDEX_cargarCatalogo();
+        
+        if (INDEX_productosEnPromocion.length === 0) {
+            console.warn('⚠️ No hay productos en promoción');
+            mostrarRespaldoCarrusel();
+            return;
+        }
+        
+        // 2. Calcular bloque actual (igual que promos.html)
+        INDEX_calcularBloqueActual();
+        
+        // 3. Obtener productos del bloque (los mismos que promos.html)
+        const productosBloque = INDEX_obtenerProductosDelBloqueActual();
+        
+        // 4. Mostrar SOLO 6 en el carrusel
+        const productosParaCarrusel = productosBloque.slice(0, 8);
+        INDEX_mostrarCarrusel(productosParaCarrusel);
+        
+        // 5. Iniciar temporizador
+        INDEX_iniciarTemporizador();
+        
+        console.log(`✅ Carrusel sincronizado: ${productosParaCarrusel.length} productos`);
+        
+    } catch (error) {
+        console.error('❌ Error cargando carrusel sincronizado:', error);
+        mostrarRespaldoCarrusel();
+    }
+}
+
+// 1. CARGAR CATÁLOGO (igual que promos.html)
+async function INDEX_cargarCatalogo() {
+    try {
+        const fuentes = [
+            "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json",
+            "catalogo.json"
+        ];
+        
+        let productos = [];
+        
+        for (const fuente of fuentes) {
+            try {
+                const res = await fetch(fuente);
+                if (!res.ok) continue;
+                productos = await res.json();
+                console.log(`✅ Catálogo cargado desde: ${fuente}`);
+                break;
+            } catch (error) {
+                continue;
+            }
+        }
+        
+        if (productos.length === 0) {
+            throw new Error('No se pudo cargar el catálogo');
+        }
+        
+        // FILTRAR igual que promos.html
+        INDEX_productosEnPromocion = productos.filter(producto => {
+            if (!producto) return false;
+            
+            const promo = producto.promo;
+            const tienePromo = promo === "sí" || promo === true || promo === "true";
+            
+            const tieneImagen = producto.imagen || (producto.imagenes && producto.imagenes.length > 0);
+            const tieneNombre = producto.producto && producto.producto.trim().length > 0;
+            
+            return tienePromo && tieneImagen && tieneNombre;
+        });
+        
+        console.log(`📊 Productos en promoción: ${INDEX_productosEnPromocion.length}`);
+        
+    } catch (error) {
+        console.error('❌ Error cargando catálogo:', error);
+        throw error;
+    }
+}
+
+// 2. CALCULAR BLOQUE ACTUAL (igual que promos.html)
+function INDEX_calcularBloqueActual() {
+    if (INDEX_productosEnPromocion.length === 0) {
+        INDEX_PROMOS_CONFIG.indiceBloqueActual = 0;
+        return 0;
+    }
+    
+    const ahora = new Date();
+    const horasDesdeMedianoche = ahora.getHours() + (ahora.getMinutes() / 60);
+    const bloquePorHora = Math.floor(horasDesdeMedianoche / INDEX_PROMOS_CONFIG.horasPorBloque);
+    
+    const fechaBase = new Date(2024, 0, 1);
+    const diasDesdeBase = Math.floor((ahora - fechaBase) / (1000 * 60 * 60 * 24));
+    
+    const bloquesPorDia = 24 / INDEX_PROMOS_CONFIG.horasPorBloque;
+    const totalBloquesHastaAhora = (diasDesdeBase * bloquesPorDia) + bloquePorHora;
+    
+    const gruposCompletos = Math.ceil(INDEX_productosEnPromocion.length / INDEX_PROMOS_CONFIG.productosPorBloque);
+    
+    if (gruposCompletos === 0) {
+        INDEX_PROMOS_CONFIG.indiceBloqueActual = 0;
+    } else {
+        INDEX_PROMOS_CONFIG.indiceBloqueActual = totalBloquesHastaAhora % gruposCompletos;
+    }
+    
+    console.log(`📅 Bloque calculado: ${INDEX_PROMOS_CONFIG.indiceBloqueActual + 1}/${gruposCompletos}`);
+    return INDEX_PROMOS_CONFIG.indiceBloqueActual;
+}
+
+// 3. OBTENER PRODUCTOS DEL BLOQUE (igual que promos.html)
+function INDEX_obtenerProductosDelBloqueActual() {
+    if (!INDEX_productosEnPromocion || INDEX_productosEnPromocion.length === 0) {
+        return [];
+    }
+    
+    const inicio = INDEX_PROMOS_CONFIG.indiceBloqueActual * INDEX_PROMOS_CONFIG.productosPorBloque;
+    const fin = Math.min(inicio + INDEX_PROMOS_CONFIG.productosPorBloque, INDEX_productosEnPromocion.length);
+    
+    let productosBloque = INDEX_productosEnPromocion.slice(inicio, fin);
+    
+    if (productosBloque.length < INDEX_PROMOS_CONFIG.productosPorBloque) {
+        const necesarios = INDEX_PROMOS_CONFIG.productosPorBloque - productosBloque.length;
+        const adicionales = INDEX_productosEnPromocion.slice(0, necesarios);
+        productosBloque = productosBloque.concat(adicionales);
+    }
+    
+    console.log(`📦 Bloque ${INDEX_PROMOS_CONFIG.indiceBloqueActual + 1}: Productos ${inicio + 1}-${fin}`);
+    return productosBloque;
+}
+
+// 4. MOSTRAR CARRUSEL
+function INDEX_mostrarCarrusel(productos) {
+    const contenedor = document.getElementById('carousel-promos-home-contenido');
+    if (!contenedor) return;
+    
+    if (!productos || productos.length === 0) {
+        contenedor.innerHTML = `
+            <div class="carousel-item active">
+                <div class="text-center py-4">
+                    <i class="bi bi-percent text-muted"></i>
+                    <p class="mt-2 text-muted">No hay promociones</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
+    
+    // Dividir en slides de 4 productos
+    let html = '';
+    const productosPorSlide = 4;
+    
+    for (let i = 0; i < productos.length; i += productosPorSlide) {
+        const slideProductos = productos.slice(i, i + productosPorSlide);
+        const esPrimerSlide = i === 0;
+        
+        html += `
+            <div class="carousel-item ${esPrimerSlide ? 'active' : ''}">
+                <div class="row g-3 justify-content-center">
+                    ${slideProductos.map(producto => INDEX_crearCardCarrusel(producto)).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    contenedor.innerHTML = html;
+    
+    // Iniciar rotación automática
+    INDEX_iniciarRotacionCarrusel();
+}
+
+// Crear card para carrusel
+function INDEX_crearCardCarrusel(producto) {
+    const precioOriginal = Number(producto.precio) || 0;
+    const precioOferta = producto.precioOferta || Math.round(precioOriginal * 0.9);
+    const descuento = Math.round((1 - precioOferta / precioOriginal) * 100);
+    
+    // Obtener imagen
+    let imagen = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+    if (producto.imagenes && producto.imagenes.length > 0) {
+        const imgPrincipal = producto.imagenes.find(img => img.tipo === "PRINCIPAL");
+        imagen = (imgPrincipal && imgPrincipal.url) || producto.imagenes[0].url;
+    } else if (producto.imagen) {
+        imagen = producto.imagen;
+    }
+    
+    return `
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm" 
+                 onclick="window.location.href='PRODUCTO.HTML?id=${producto.id}'"
+                 style="cursor: pointer;">
+                <div class="position-relative">
+                    <img src="${imagen}" 
+                         alt="${producto.producto}"
+                         class="card-img-top"
+                         style="height: 120px; object-fit: cover;"
+                         loading="lazy">
+                    
+                    <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 small">
+                        -${descuento}%
+                    </div>
+                </div>
+                
+                <div class="card-body p-2">
+                    <h6 class="card-title small mb-1 text-truncate">
+                        ${producto.producto}
+                    </h6>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="fw-bold text-primary">
+                                $${precioOferta.toLocaleString('es-CO')}
+                            </span>
+                            <br>
+                            <small class="text-muted text-decoration-line-through">
+                                $${precioOriginal.toLocaleString('es-CO')}
+                            </small>
+                        </div>
+                        
+                        <button class="btn btn-sm btn-outline-primary"
+                                onclick="event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// 5. INICIAR TEMPORIZADOR
+function INDEX_iniciarTemporizador() {
+    const elemento = document.getElementById("temporizador-home");
+    if (!elemento) return;
+    
+    function actualizarTiempo() {
+        const ahora = new Date();
+        const hora = ahora.getHours();
+        const minutos = ahora.getMinutes();
+        const segundos = ahora.getSeconds();
+        
+        // Calcular tiempo hasta próximo bloque (6 horas)
+        const horasHastaProximo = 5 - (hora % 6);
+        const minutosHasta = 59 - minutos;
+        const segundosHasta = 59 - segundos;
+        
+        elemento.textContent = `⏰ Cambia en ${horasHastaProximo}h ${minutosHasta}m ${segundosHasta}s`;
+        
+        // Si es hora de cambiar, recargar
+        if (horasHastaProximo === 0 && minutosHasta === 0 && segundosHasta <= 5) {
+            setTimeout(() => cargarCarruselSincronizado(), 1000);
+        }
+    }
+    
+    actualizarTiempo();
+    setInterval(actualizarTiempo, 1000);
+}
+
+// Iniciar rotación automática del carrusel
+function INDEX_iniciarRotacionCarrusel() {
+    const carousel = document.getElementById('carousel-promos-home');
+    if (!carousel) return;
+    
+    // Usar Bootstrap si está disponible
+    if (typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
+        new bootstrap.Carousel(carousel, {
+            interval: 5000,
+            wrap: true
+        });
+    } else {
+        // Rotación simple
+        let currentIndex = 0;
+        const items = carousel.querySelectorAll('.carousel-item');
+        
+        if (items.length <= 1) return;
+        
+        setInterval(() => {
+            items[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % items.length;
+            items[currentIndex].classList.add('active');
+        }, 5000);
+    }
+}
+
+// Mostrar respaldo si falla
+function mostrarRespaldoCarrusel() {
+    const contenedor = document.getElementById('carousel-promos-home-contenido');
+    if (contenedor) {
+        contenedor.innerHTML = `
+            <div class="carousel-item active">
+                <div class="text-center py-4">
+                    <i class="bi bi-tag text-primary"></i>
+                    <p class="mt-2">Promociones especiales</p>
+                    <a href="PROMOS.HTML" class="btn btn-sm btn-primary mt-2">
+                        Ver todas las ofertas
+                    </a>
+                </div>
+            </div>
+        `;
+    }
+}
+
+// Función para forzar recarga
+function recargarCarruselSincronizado() {
+    console.log('🔄 Forzando recarga del carrusel...');
+    cargarCarruselSincronizado();
+}
+
+// INICIAR CUANDO EL DOM ESTÉ LISTO
+document.addEventListener('DOMContentLoaded', function() {
+    // Esperar un momento para que todo cargue
+    setTimeout(() => {
+        cargarCarruselSincronizado();
+    }, 1500);
+});
+
+// Hacer funciones disponibles para depuración
+window.recargarCarruselSincronizado = recargarCarruselSincronizado;
+</script>
+
+
 </body>
 </html>
