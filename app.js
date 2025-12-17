@@ -310,7 +310,7 @@ function mostrarCategoriasNivel1(tipo) {
         if (subtipo !== 'TODOS') {
             const count = productosGlobal.filter(p => p.tipo === tipo && p.subtipo === subtipo).length;
             if (count > 0) {
-                contador = `<span class="badge-categoria-count">${count}</span>`;
+                contador = `<span class="badge-categoria-count"></span>`;
             }
         }
 
@@ -347,7 +347,7 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
                 p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
             ).length;
             if (count > 0) {
-                contador = `<span class="badge-categoria-count">${count}</span>`;
+                contador = `<span class="badge-categoria-count"></span>`;
             }
         }
 
