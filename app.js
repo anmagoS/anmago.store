@@ -1,7 +1,6 @@
 // ==============================================
 // ANMAGO STORE - APP.JS COMPLETO Y FUNCIONAL
 // ==============================================
-
 // Variables globales
 let productosGlobal = [];
 let vistaActual = 'inicio';
