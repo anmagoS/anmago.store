@@ -118,19 +118,285 @@
 <body>
 <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
-  <div class="logo">
-    <a href="index.html" id="logo-inicio" onclick="volverAInicio()">
-      <img
-        src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-        alt="ANMAGO STORE"
-        width="48"
-        height="48"
-        loading="lazy"
-        style="display: block; object-fit: contain; border-radius: 6px;"
-      />
+ <div class="logo">
+  <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
+    <img
+      src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
+      alt="ANMAGO STORE"
+      width="48"
+      height="48"
+      loading="lazy"
+      style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
+    />
+  </a>
+</div>
+<div class="container py-4">
+    <h1 class="mb-4 text-center">Registro Cliente</h1></a></div>
+  
+
+  <!-- BOTÓN HAMBURGUESA -->
+  <button class="navbar-toggler border-0 bg-transparent" type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menuLateral"
+          aria-controls="menuLateral"
+          aria-label="Abrir menú">
+    <i class="bi bi-list fs-1 text-white"></i>
+  </button>
+</header>
+
+<!-- MENÚ LATERAL -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="menuLateralLabel">
+      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
+           alt="Anmago Store" width="30" height="30" 
+           style="border-radius: 4px; margin-right: 10px;">
+      Anmago Store
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+
+  <div class="offcanvas-body d-flex flex-column gap-3">
+    <!-- Inicio -->
+    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
+      <i class="bi bi-house me-2"></i> Inicio
+    </a>
+
+    <!-- Promociones -->
+    <a href="PROMOS.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+      <i class="bi bi-percent me-2"></i> Promociones
+    </a>
+
+    <!-- Todos los productos -->
+    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
+      <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
+    </a>
+
+    <!-- CATEGORÍAS DINÁMICAS - SIMPLIFICADO -->
+    <div id="menu-categorias-dinamico" class="mt-2">
+      <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+      
+      <!-- Se cargarán dinámicamente usando TUS funciones -->
+      <div class="text-center py-3">
+        <div class="spinner-border spinner-border-sm text-primary"></div>
+        <p class="mt-2 small text-muted">Cargando categorías...</p>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <a href="modalformulario.html" 
+       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+      <i class="bi bi-person me-2"></i> Mi cuenta
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
+       target="_blank"
+       class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
+      <i class="bi bi-whatsapp me-2"></i> WhatsApp
+    </a>
+
+    <!-- Contacto formulario -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
+       target="_blank"
+       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+      <i class="bi bi-envelope me-2"></i> Contacto
     </a>
   </div>
- </header>
+
+  <div class="offcanvas-footer border-top p-3">
+    <div class="text-center small text-muted">
+      <p class="mb-1">anmagostore@gmail.com</p>
+      <p class="mb-0">3006498710 - 3115046741</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==============================================
+// HEADER SIMPLIFICADO - USA TUS FUNCIONES EXISTENTES
+// ==============================================
+
+// Función para cerrar el menú
+function cerrarMenu() {
+  const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral'));
+  if (offcanvas) {
+    offcanvas.hide();
+  }
+}
+
+// Función que se ejecuta cuando tu app.js carga el catálogo
+function cargarMenuDesdeTuCatalogo() {
+  console.log('🔄 Cargando menú desde tu catálogo...');
+  
+  const contenedor = document.getElementById('menu-categorias-dinamico');
+  if (!contenedor) return;
+  
+  // Verificar si tu catálogo está listo
+  if (!window.catalogoGlobal || !Array.isArray(window.catalogoGlobal) || window.catalogoGlobal.length === 0) {
+    console.log('⏳ Esperando catálogo de tu app.js...');
+    return;
+  }
+  
+  const catalogo = window.catalogoGlobal;
+  
+  // Obtener tipos únicos de TU catálogo
+  const tiposUnicos = ['TODOS', ...new Set(catalogo.map(p => p.tipo).filter(Boolean))];
+  
+  if (tiposUnicos.length === 0) {
+    contenedor.innerHTML = '<p class="small text-muted">No hay categorías disponibles</p>';
+    return;
+  }
+  
+  // Crear HTML simple usando TUS funciones
+  let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
+  
+  html += '<div class="d-flex flex-column gap-2">';
+  
+  tiposUnicos.forEach(tipo => {
+    const count = tipo === 'TODOS' 
+      ? catalogo.length 
+      : catalogo.filter(p => p.tipo === tipo).length;
+    
+    html += `
+      <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+         onclick="${tipo === 'TODOS' ? 'mostrarTodosLosProductosCompleto' : `cargarPorTipo('${tipo}')`}; cerrarMenu(); return false;">
+        <div class="d-flex align-items-center">
+          <i class="bi ${tipo === 'TODOS' ? 'bi-grid-fill' : 'bi-folder'} me-2"></i>
+          <span>${tipo}</span>
+        </div>
+        <span class="badge bg-primary rounded-pill">${count}</span>
+      </a>
+    `;
+  });
+  
+  html += '</div>';
+  
+  contenedor.innerHTML = html;
+  console.log('✅ Menú cargado con', tiposUnicos.length, 'categorías');
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('🚀 Header simplificado cargado');
+  
+  // Intentar cargar inmediatamente si el catálogo ya está disponible
+  if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
+    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
+  }
+  
+  // Escuchar cuando tu app.js cargue el catálogo
+  window.addEventListener('catalogoCargado', function() {
+    console.log('🎯 Evento catalogoCargado recibido, cargando menú...');
+    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
+  });
+  
+  // También verificar periódicamente (fallback)
+  const intervalo = setInterval(() => {
+    if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
+      cargarMenuDesdeTuCatalogo();
+      clearInterval(intervalo);
+    }
+  }, 1000);
+  
+  // Timeout
+  setTimeout(() => clearInterval(intervalo), 10000);
+});
+</script>
+
+<style>
+/* ===== ESTILOS BÁSICOS PARA EL HEADER ===== */
+
+.header-sticky {
+  background: linear-gradient(135deg, #1B4557, #2A6A8F);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  height: 70px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.buscador-header {
+  border-radius: 20px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.buscador-header:focus {
+  background: white;
+  box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.5);
+  outline: none;
+}
+
+.navbar-toggler {
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.1);
+}
+
+/* Offcanvas */
+#menuLateral .offcanvas-header {
+  background: linear-gradient(135deg, #1B4557, #2A6A8F);
+  color: white;
+}
+
+#menuLateral .nav-link {
+  color: #333;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+#menuLateral .nav-link:hover {
+  background-color: #e9ecef;
+  color: #1B4557;
+  transform: translateX(5px);
+}
+
+.categoria-menu-item {
+  border: 1px solid #dee2e6;
+  transition: all 0.2s ease;
+}
+
+.categoria-menu-item:hover {
+  background-color: #1B4557 !important;
+  color: white !important;
+  border-color: #1B4557;
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-sticky {
+    height: 60px;
+    padding: 0.5rem;
+  }
+  
+  .buscador-header {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  #menuLateral .nav-link {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+</style>
  
  <!-- BOTÓN VOLVER AL INICIO (ARRIBA) -->
 <div class="container mt-3">
@@ -140,7 +406,7 @@
 </div>
   <!-- CONTENIDO PRINCIPAL -->
   <main class="container py-4">
-    <h2 class="mb-4 text-center">Registro Cliente</h2>
+    <h2 class="mb-4 text-center"></h2>
     
     <!-- ESTADO DE VALIDACIÓN VISIBLE -->
     <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
