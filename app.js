@@ -275,7 +275,7 @@ function mostrarCategoriasNivel0() {
         if (tipo !== 'TODOS') {
             const count = productosGlobal.filter(p => p.tipo === tipo).length;
             if (count > 0) {
-                contador = `<span class="badge-categoria-count">${count}</span>`;
+                contador = `<span class="badge-categoria-count"></span>`;
             }
         }
 
