@@ -987,7 +987,24 @@ async function cargarFooter() {
 // Cargar el footer cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', cargarFooter);
 </script>
+<!-- Después del cargado del footer, añade: -->
+<script>
+async function cargarHeader() {
+    try {
+        const respuesta = await fetch('header.html?v=' + Date.now());
+        const htmlHeader = await respuesta.text();
+        const contenedor = document.getElementById('header-container');
+        if (contenedor) {
+            contenedor.innerHTML = htmlHeader;
+            console.log('✅ Header cargado correctamente');
+        }
+    } catch (error) {
+        console.error('❌ Error cargando header:', error);
+    }
+}
 
+document.addEventListener('DOMContentLoaded', cargarHeader);
+</script>
 </body>
 </html>
 
