@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  
+  <!-- Meta esenciales primero -->
   <title>Anmago Store - Ropa, Hogar, Belleza y más</title>
   <meta name="description" content="Encuentra ropa, relojería, hogar, belleza y más en Anmago Store. Los mejores precios y calidad garantizada.">
-    <!-- ⚡ OPTIMIZACIONES PARA LCP -->
-  <link rel="preload" href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto" as="image" fetchpriority="high">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel="preconnect" href="https://ik.imagekit.io">
+  <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
+  
+  <!-- ⚡ OPTIMIZACIONES CRÍTICAS PARA LCP -->
+  
+  <!-- 1. Precarga del LOGO (elemento LCP más probable) -->
+  <link rel="preload" 
+        href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-120,h-120,f-auto,q-75" 
+        as="image" 
+        fetchpriority="high"
+        crossorigin="anonymous">
+  
+  <!-- 2. Conexiones tempranas para CDNs críticas -->
+  <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
+  <link rel="dns-prefetch" href="https://ik.imagekit.io">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- 3. Precargar fuentes críticas (bootstrap icons) -->
+  <link rel="preload" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" 
+        as="style"
+        crossorigin="anonymous">
   
   <!-- CSS CRÍTICO INLINE (SOLO LO NECESARIO) -->
   <style>
@@ -622,7 +640,6 @@
 
   <!-- SCRIPTS EXTERNOS CON DEFER -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="buscador.js?v=20251115" defer></script>
   
   <!-- ====== CARGAR FOOTER DINÁMICAMENTE ====== -->
   <script>
@@ -996,6 +1013,35 @@
       }
     });
   </script>
-
+// Añadir al final del body, antes del cierre </body>
+<script>
+  // Lazy loading mejorado
+  document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img.lazy-load');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          const src = img.getAttribute('data-src');
+          if (src) {
+            img.src = src;
+            img.classList.remove('lazy-load');
+          }
+          imageObserver.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '100px 0px', // Carga 100px antes de entrar en viewport
+      threshold: 0.1
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+  });
+</script>
+  <!-- Mantengo los scripts al principio pero con defer -->
+  <script src="buscador.js?v=20251115" defer></script>
+     <script src="carrito.js?v=20251116" defer></script>
+  <script src="app.js?v=20251116" defer></script>
 </body>
 </html>
