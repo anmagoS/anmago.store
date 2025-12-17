@@ -298,28 +298,31 @@ function mostrarCategoriasNivel1(tipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
 
-    const subtiposUnicos = ['TODOS', ...new Set(
+    // SOLO subtipos que existen (sin 'TODOS')
+    const subtiposUnicos = [...new Set(
         productosGlobal
-            .filter(p => p.tipo === tipo)
+            .filter(p => p.tipo === tipo && p.subtipo)
             .map(p => p.subtipo)
             .filter(Boolean)
     )];
 
-    const html = subtiposUnicos.map(subtipo => {
-        let contador = '';
-        if (subtipo !== 'TODOS') {
-            const count = productosGlobal.filter(p => p.tipo === tipo && p.subtipo === subtipo).length;
-            if (count > 0) {
-                contador = `<span class="badge-categoria-count"></span>`;
-            }
-        }
+    // Si no hay subtipos, mostrar mensaje
+    if (subtiposUnicos.length === 0) {
+        contenedor.innerHTML = `
+            <div class="text-center text-muted py-2">
+                No hay subtipos disponibles
+            </div>
+        `;
+        contextoNavegacion = { nivel: 1, tipo: tipo, subtipo: null, categoria: null };
+        return;
+    }
 
+    const html = subtiposUnicos.map(subtipo => {
         return `
             <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
                onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
                 <div>${obtenerIcono(subtipo, 1)}</div>
                 <div>${subtipo}</div>
-                ${contador}
             </a>
         `;
     }).join('');
@@ -333,23 +336,33 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
 
-    const categoriasUnicas = ['TODAS', ...new Set(
+    // SOLO categorías que existen (sin 'TODAS')
+    const categoriasUnicas = [...new Set(
         productosGlobal
-            .filter(p => p.tipo === tipo && p.subtipo === subtipo)
+            .filter(p => p.tipo === tipo && p.subtipo === subtipo && p.categoria)
             .map(p => p.categoria)
             .filter(Boolean)
     )];
 
+    // Si no hay categorías, mostrar mensaje
+    if (categoriasUnicas.length === 0) {
+        contenedor.innerHTML = `
+            <div class="text-center text-muted py-2">
+                No hay categorías disponibles
+            </div>
+        `;
+        contextoNavegacion = { nivel: 2, tipo: tipo, subtipo: subtipo, categoria: null };
+        return;
+    }
+
     const html = categoriasUnicas.map(categoria => {
-        let contador = '';
-        if (categoria !== 'TODAS') {
-            const count = productosGlobal.filter(p => 
-                p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
-            ).length;
-            if (count > 0) {
-                contador = `<span class="badge-categoria-count"></span>`;
-            }
-        }
+        // Contar productos por categoría
+        const count = productosGlobal.filter(p => 
+            p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
+        ).length;
+        
+        // Solo mostrar contador si hay productos
+        const contador = count > 0 ? `<span class="badge-categoria-count"></span>` : '';
 
         return `
             <a href="#" class="categoria-rapida sin-icono" data-categoria="${categoria}" 
@@ -363,7 +376,6 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
     contenedor.innerHTML = html;
     contextoNavegacion = { nivel: 2, tipo: tipo, subtipo: subtipo, categoria: null };
 }
-
 // ==============================================
 // FUNCIONES DE NAVEGACIÓN
 // ==============================================
@@ -908,3 +920,4 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
+
