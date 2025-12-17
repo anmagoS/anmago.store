@@ -144,7 +144,7 @@ body { padding-top: 70px; }
 /* === COMPONENTES PRINCIPALES === */
 .btn-carrito-flotante {
   background: linear-gradient(135deg, #07750c, #8edd9f);
-  position: fixed; top: 10%; right: 0.5rem; z-index: 1010;
+  position: fixed; top: 20%; right: 0.5rem; z-index: 1010;
   width: 46px; height: 46px; border-radius: 50%; background: var(--secondary-color);
   color: var(--white); display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 16px rgba(110, 161, 140, 0.3); transition: var(--transition);
