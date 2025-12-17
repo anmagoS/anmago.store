@@ -1595,25 +1595,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function renderizarBreadcrumb(producto) {
-        const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
-        const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
-        
-        let categorias = [];
-        if (producto.tipo) categorias.push(producto.tipo);
-        if (producto.categoria) categorias.push(producto.categoria);
-        if (producto.subcategoria) categorias.push(producto.subcategoria);
-        
-        const breadcrumbItems = categorias.map(cat => 
-            `<li class="breadcrumb-item"><a href="index.html?categoria=${cat}">${cat}</a></li>`
-        ).join('');
-        
-        const breadcrumbFinal = breadcrumbItems + 
-            `<li class="breadcrumb-item active" aria-current="page">${producto.producto}</li>`;
-        
-        if (breadcrumbMobile) breadcrumbMobile.innerHTML = breadcrumbMobile.firstElementChild.outerHTML + breadcrumbFinal;
-        if (breadcrumbDesktop) breadcrumbDesktop.innerHTML = breadcrumbDesktop.firstElementChild.outerHTML + breadcrumbFinal;
+    const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
+    const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
+    
+    // Remover todos los elementos excepto el primero (ATRÁS)
+    if (breadcrumbMobile) {
+        breadcrumbMobile.innerHTML = `
+            <li class="breadcrumb-item"><a href="#" onclick="volverAtras(); return false;">ATRÁS</a></li>
+        `;
     }
-
+    
+    if (breadcrumbDesktop) {
+        breadcrumbDesktop.innerHTML = `
+            <li class="breadcrumb-item"><a href="#" onclick="volverAtras(); return false;"></a></li>
+        `;
+    }
+    
+    // Opción 1: Si no quieres los enlaces intermedias, deja solo "ATRÁS" y el producto
+    if (breadcrumbMobile) {
+        breadcrumbMobile.innerHTML += `<li class="breadcrumb-item active" aria-current="page">${producto.producto}</li>`;
+    }
+    }
     function renderizarVariables(producto) {
         const contenedor = document.getElementById('seccion-variables');
         
