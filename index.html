@@ -309,16 +309,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 </style>
-    
-
-  <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
+ <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
   
-<a href="#" class="btn btn-outline-primary d-none d-md-block position-fixed rounded-circle p-0"
-   style="top: 100px; left: 20px; z-index: 1000; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;"
-   onclick="volverAInicio(); return false;">
-    <div style="font-size: 1.5rem;">
-        <i class="bi bi-arrow-left me-1"></i>
-    </div>
+ 
+  <a href="index.html" class="btn-volver-inicio d-none d-md-flex position-fixed align-items-center justify-content-center text-decoration-none"
+   style="top: 120px; left: 20px; z-index: 1000; width: 40px; height: 40px; background: white; border: 1px solid #d1d9e6; border-radius: 50%; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); color: #0d6efd; transition: all 0.3s ease;"
+   data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
+    <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
 </a>
   <!-- CATEGORÍAS RÁPIDAS DINÁMICAS -->
   <div class="container-fluid mt-3">
