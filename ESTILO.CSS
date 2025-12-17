@@ -143,17 +143,18 @@ body { padding-top: 70px; }
 
 /* === COMPONENTES PRINCIPALES === */
 .btn-carrito-flotante {
-  position: fixed; top: 70%; right: 1rem; z-index: 1010;
-  width: 56px; height: 56px; border-radius: 50%; background: var(--secondary-color);
+  background: linear-gradient(135deg, #07750c, #8edd9f);
+  position: fixed; top: 10%; right: 0.5rem; z-index: 1010;
+  width: 46px; height: 46px; border-radius: 50%; background: var(--secondary-color);
   color: var(--white); display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 16px rgba(25, 148, 97, 0.3); transition: var(--transition);
+  box-shadow: 0 4px 16px rgba(110, 161, 140, 0.3); transition: var(--transition);
   text-decoration: none;
 }
 
 .btn-carrito-flotante:hover { transform: scale(1.1); background: #157a4f; }
 
 .contador-carrito {
-  position: absolute; top: -6px; right: -6px; background: #dc3545;
+  position: absolute; top: -6px; right: -6px; background: #272355;
   color: var(--white); font-size: 0.7rem; padding: 2px 6px; border-radius: 50%;
   font-weight: bold; line-height: 1; min-width: 18px; text-align: center;
 }
@@ -302,17 +303,40 @@ body { padding-top: 70px; }
 /* === CATEGORÍAS Y BOTONES === */
 /* REDUCIDO: Espacio inferior reducido a 0.25rem */
 .categorias-rapidas {
-  display: flex; 
-  gap: 0.5rem; 
-  overflow-x: auto; 
-  padding: 0.75rem 0.5rem 0.25rem 0.5rem; /* Top: 0.75rem, Bottom: 0.25rem */
-  scrollbar-width: none; 
-  -ms-overflow-style: none;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.75rem 0.5rem 0.25rem 0.5rem;
   margin-bottom: 0 !important;
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+  
+  /* FORZAR ALINEACIÓN Y SCROLL */
+  justify-content: flex-start !important;
+  flex-direction: row !important;
+  direction: ltr !important;
+  
+  /* Asegurar que el scroll funcione */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+/* Para Chrome, Edge, Safari */
+.categorias-rapidas::-webkit-scrollbar {
+  height: 6px;
 }
 
-.categorias-rapidas::-webkit-scrollbar { 
-  display: none; 
+.categorias-rapidas::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.categorias-rapidas::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.categorias-rapidas::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
 }
 
 .categoria-rapida {
@@ -512,13 +536,13 @@ body { padding-top: 70px; }
 
 /* === BOTÓN INSTALAR APP === */
 .btn-instalar-app {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #07750c, #8edd9f);
   border: none;
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(6, 37, 10, 0.4);
   transition: all 0.3s ease;
   font-size: 0.9rem;
   display: flex;
@@ -536,7 +560,7 @@ body { padding-top: 70px; }
 .instalar-container {
   position: fixed;
   bottom: 100px;
-  right: 20px;
+  right: 0px;
   z-index: 1050;
   animation: slideInUp 0.5s ease;
 }
