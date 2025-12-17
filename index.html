@@ -78,15 +78,22 @@
     <!-- LOGO CON PRIORIDAD ALTA -->
     <div class="logo">
       <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
-        <img
-          src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto"
-          alt="ANMAGO STORE"
-          width="48"
-          height="48"
-          loading="eager"
-          fetchpriority="high"
-          style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
-        />
+       <img
+  src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-120,h-120,f-auto,q-75"
+  srcset="
+    https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto,q-80 48w,
+    https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-72,h-72,f-auto,q-80 72w,
+    https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-120,h-120,f-auto,q-75 120w
+  "
+  sizes="(max-width: 768px) 48px, 72px"
+  alt="ANMAGO STORE"
+  width="72"
+  height="72"
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+  style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer; min-width: 48px;"
+/>
       </a>
     </div>
 
@@ -846,14 +853,18 @@
                      onclick="window.location.href='PRODUCTO.HTML?id=${producto.id}'"
                      style="cursor: pointer;">
                     <div class="position-relative">
-                        <img src="${imagen}" 
-                             alt="${producto.producto}"
-                             class="card-img-top"
-                             width="300"
-                             height="150"
-                             loading="${loadingAttr}"
-                             style="height: 150px; object-fit: cover;"
-                             onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
+                       <img 
+  src="${imagen}?tr=w-300,h-150,q-70,bl-5" 
+  data-src="${imagen}?tr=w-600,h-300,q-80"
+  alt="${producto.producto}"
+  class="card-img-top lazy-load"
+  width="300"
+  height="150"
+  loading="lazy"
+  decoding="async"
+  style="height: 150px; object-fit: cover; background-color: #f0f0f0;"
+  onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-150,q-60'"
+/>
                         
                         <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 small">
                             -${descuento}%
