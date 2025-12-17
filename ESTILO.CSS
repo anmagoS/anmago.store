@@ -156,7 +156,7 @@ main {
 .btn-carrito-flotante {
   background: linear-gradient(135deg, #07750c, #8edd9f);
   position: fixed; 
-  top: 10%; 
+  top: 15%; 
   right: 0.5rem; 
   z-index: 1010;
   width: 46px; 
