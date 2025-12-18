@@ -8,7 +8,7 @@
     "producto": "CHAQUETA TORERA",
     "material": "CUEROTEX",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80",
@@ -119,7 +119,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_6A779E79.IMAGEN_1.101048.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 13
       },
       {
@@ -147,7 +147,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_5CD57D5F.IMAGEN_1.102718.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 15
       },
       {
@@ -205,7 +205,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_IMAGES_C9E8EEF3.IMAGEN_1.050437.JPG",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 23
       },
       {
@@ -259,7 +259,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_03b56fa8.IMAGEN_1.100917.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 30
       },
       {
@@ -302,7 +302,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_2c26e2e2.IMAGEN_1.103035.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 35
       },
       {
@@ -360,7 +360,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_2656291b.IMAGEN_1.103520.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 43
       },
       {
@@ -423,7 +423,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_b914451e.IMAGEN_1.220719.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 52
       },
       {
@@ -461,7 +461,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_1.030504.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 56
       },
       {
@@ -514,22 +514,25 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_1.164042.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 63
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_2.164042.jpg",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 64
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_3.164042.jpg",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 65
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_4.164045.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 66
       }
     ],
@@ -552,7 +555,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_1.164324.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 67
       },
       {
@@ -600,7 +603,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 73
       },
       {
@@ -643,7 +646,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 78
       },
       {
@@ -681,7 +684,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_1.230725.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 82
       },
       {
@@ -724,7 +727,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_1.231401.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 87
       },
       {
@@ -762,7 +765,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_daca5cb6.IMAGEN_1.231635.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 91
       },
       {
@@ -820,7 +823,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_1.232001.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 99
       },
       {
@@ -874,7 +877,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_1.232235.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 106
       },
       {
@@ -942,7 +945,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_d821a3f1.IMAGEN_1.232829.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 116
       },
       {
@@ -985,22 +988,24 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_1.232954.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 121
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_2.232954.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 122
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_3.232954.jpg",
         "tipo": "VARIANTE",
+        "variacion": "GRIS",
         "orden": 123
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_93e5344b.IMAGEN_4.232956.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 124
       }
     ],
@@ -1023,7 +1028,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_1.233357.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 125
       },
       {
@@ -1091,7 +1096,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_db723212.IMAGEN_1.233718.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 135
       },
       {
@@ -1124,7 +1129,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_9eb99baf.IMAGEN_1.233903.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 138
       },
       {
@@ -1162,7 +1167,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_c48df983.IMAGEN_1.234040.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 142
       },
       {
@@ -1200,32 +1205,35 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_1.234209.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "BEIGE",
         "orden": 146
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_2.234209.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 147
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_3.234209.jpg",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 148
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_4.234211.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 149
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_5.234212.jpg",
         "tipo": "VARIANTE",
+        "variacion": "CAFE",
         "orden": 150
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_6.234212.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 151
       }
     ],
@@ -1248,22 +1256,25 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_1.234314.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "LILA",
         "orden": 152
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_2.234314.jpg",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 153
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_3.234314.jpg",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 154
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_4.234316.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 155
       }
     ],
@@ -1286,7 +1297,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 156
       },
       {
@@ -1335,7 +1346,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_1.193309.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 162
       },
       {
@@ -1428,7 +1439,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_1.194805.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 177
       },
       {
@@ -1506,7 +1517,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_1.195056.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 189
       },
       {
@@ -1609,7 +1620,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 206
       },
       {
@@ -1652,7 +1663,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 211
       },
       {
@@ -1690,27 +1701,32 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "PALO DE ROSA",
         "orden": 215
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_2.215820.jpg",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 216
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_3.215820.jpg",
         "tipo": "VARIANTE",
+        "variacion": "VERDE OSCURO",
         "orden": 217
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_4.215822.jpg",
         "tipo": "VARIANTE",
+        "variacion": "AZUL REY",
         "orden": 218
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_5.215823.jpg",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 219
       },
       {
@@ -1803,7 +1819,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 234
       },
       {
@@ -1921,7 +1937,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 254
       },
       {
@@ -2019,7 +2035,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 270
       },
       {
@@ -2067,7 +2083,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 276
       },
       {
@@ -2100,7 +2116,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 279
       },
       {
@@ -2198,7 +2214,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_1.014743.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 295
       },
       {
@@ -2261,7 +2277,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 304
       },
       {
@@ -2299,7 +2315,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 308
       },
       {
@@ -2413,7 +2429,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_1.215515.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 327
       },
       {
@@ -2491,7 +2507,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_1.163805.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 339
       },
       {
@@ -2524,22 +2540,24 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 342
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_2.164010.jpg",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 343
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_3.164010.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 344
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_4.164013.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 345
       }
     ],
@@ -2562,7 +2580,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 346
       },
       {
@@ -2600,7 +2618,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 350
       },
       {
@@ -2659,7 +2677,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 358
       },
       {
@@ -2727,7 +2745,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 368
       },
       {
@@ -2785,7 +2803,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 376
       },
       {
@@ -2843,7 +2861,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_1.214917.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 384
       },
       {
@@ -2961,7 +2979,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 404
       },
       {
@@ -3040,7 +3058,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_1.013707.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 416
       },
       {
@@ -3093,7 +3111,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_1.014014.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 423
       },
       {
@@ -3142,7 +3160,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 429
       },
       {
@@ -3200,7 +3218,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_1.171618.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 437
       },
       {
@@ -3263,7 +3281,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 446
       },
       {
@@ -3316,7 +3334,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_77/PRODUCTOS_Images_058384B0.IMAGEN_1.175005.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 453
       },
       {
@@ -3359,7 +3377,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_78/PRODUCTOS_Images_261377f5.IMAGEN_1.175549.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 458
       },
       {
@@ -3437,7 +3455,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 470
       },
       {
@@ -3515,7 +3533,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_80/PRODUCTOS_Images_041f88d2.IMAGEN_1.002203.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 482
       },
       {
@@ -3544,7 +3562,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "variacion": "VERDE",
         "orden": 484
       },
@@ -3574,7 +3592,8 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_82/PRODUCTOS_Images_cc2efab1.IMAGEN_1.004740.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 485
       }
     ],
@@ -3597,7 +3616,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_83/PRODUCTOS_Images_0c55c555.IMAGEN_1.011032.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 486
       }
     ],
@@ -3621,7 +3640,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_84/PRODUCTOS_Images_629fa20d.IMAGEN_1.011303.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 487
       }
     ],
@@ -3645,12 +3664,12 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_85/PRODUCTOS_Images_216a9768.IMAGEN_1.013241.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 488
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_85/PRODUCTOS_Images_216a9768.IMAGEN_2.013241.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 489
       }
     ],
@@ -3673,12 +3692,12 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_86/PRODUCTOS_Images_e8c85fb5.IMAGEN_1.013546.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 490
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_86/PRODUCTOS_Images_e8c85fb5.IMAGEN_2.013546.jpg",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 491
       }
     ],
@@ -3701,7 +3720,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_88/PRODUCTOS_Images_a3039f08.IMAGEN_1.170819.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 492
       }
     ],
@@ -3723,7 +3742,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_89/PRODUCTOS_Images_04647dfc.IMAGEN_1.172352.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 493
       },
       {
@@ -3751,7 +3770,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_718daee8.IMAGEN_1.172447.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 495
       },
       {
@@ -3779,7 +3798,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_91/PRODUCTOS_Images_5146c5fd.IMAGEN_1.174316.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 497
       },
       {
@@ -3807,7 +3826,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_1.193444.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 499
       },
       {
@@ -3845,7 +3864,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_1.210707.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 503
       },
       {
@@ -3878,7 +3897,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_1.211801.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 506
       },
       {
@@ -3926,7 +3945,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_1.212129.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 512
       },
       {
@@ -3959,7 +3978,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_96/PRODUCTOS_Images_26b05170.IMAGEN_1.213046.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 515
       },
       {
@@ -3987,7 +4006,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_97/PRODUCTOS_Images_42c1a7be.IMAGEN_1.220338.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 517
       },
       {
@@ -4015,7 +4034,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_1.000417.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 519
       },
       {
@@ -4108,7 +4127,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_99/PRODUCTOS_Images_67ae6db4.IMAGEN_1.235635.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 534
       },
       {
@@ -4156,7 +4175,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 540
       },
       {
@@ -4204,7 +4223,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 546
       },
       {
@@ -4272,7 +4291,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_102/PRODUCTOS_Images_5f28828e.IMAGEN_1.153831.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 556
       },
       {
@@ -4325,7 +4344,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_103/PRODUCTOS_Images_c1fbb280.IMAGEN_1.173915.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 563
       },
       {
@@ -4403,7 +4422,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_fbc9f8e3.IMAGEN_1.174324.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 575
       },
       {
@@ -4466,7 +4485,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_105/PRODUCTOS_Images_94696f77.IMAGEN_1.203906.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 584
       },
       {
@@ -4584,7 +4603,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_1.181723.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 604
       },
       {
@@ -4657,7 +4676,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_9918e93a.IMAGEN_1.012346.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 615
       },
       {
@@ -4710,7 +4729,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_85ffeafe.IMAGEN_1.012606.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 622
       },
       {
@@ -4768,7 +4787,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_dccbe45a.IMAGEN_1.013314.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 630
       },
       {
@@ -4836,7 +4855,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_d683ec9b.IMAGEN_1.161316.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 640
       },
       {
@@ -4884,7 +4903,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_d0dd9d98.IMAGEN_1.162632.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 646
       },
       {
@@ -4932,7 +4951,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_1.163513.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 652
       },
       {
@@ -4975,7 +4994,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_1.164225.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 657
       },
       {
@@ -5023,7 +5042,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_fa575975.IMAGEN_1.165251.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 663
       },
       {
@@ -5071,7 +5090,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_8b45c615.IMAGEN_1.165823.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 669
       },
       {
@@ -5124,7 +5143,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_a228f8ee.IMAGEN_1.185522.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 676
       }
     ],
@@ -5147,7 +5166,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_b222b716.IMAGEN_1.194319.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 677
       }
     ],
@@ -5170,7 +5189,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_8338ccc8.IMAGEN_1.194627.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 678
       }
     ],
@@ -5193,7 +5212,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_e769d779.IMAGEN_1.194907.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 679
       }
     ],
@@ -5216,7 +5235,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_f52092b6.IMAGEN_1.195029.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 680
       }
     ],
@@ -5239,7 +5258,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 681
       }
     ],
@@ -5262,7 +5281,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 682
       }
     ],
@@ -5285,7 +5304,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 683
       }
     ],
@@ -5308,7 +5327,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_124/PRODUCTOS_Images_7fa6ddaf.IMAGEN_1.200101.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 684
       }
     ],
@@ -5331,7 +5350,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_2af2a1c6.IMAGEN_1.200200.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 685
       }
     ],
@@ -5354,7 +5373,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_9850ae8d.IMAGEN_1.200342.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 686
       }
     ],
@@ -5377,7 +5396,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 687
       }
     ],
@@ -5400,7 +5419,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_4d0cf37c.IMAGEN_1.200728.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 688
       }
     ],
@@ -5423,7 +5442,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_49dd8a15.IMAGEN_1.201358.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 689
       }
     ],
@@ -5446,7 +5465,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_a5271a75.IMAGEN_1.201635.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 690
       }
     ],
@@ -5469,7 +5488,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_41ea5be5.IMAGEN_1.203556.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 691
       }
     ],
@@ -5492,7 +5511,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_DF4EC51F.IMAGEN_1.142447.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 692
       },
       {
@@ -5580,7 +5599,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 706
       },
       {
@@ -5618,7 +5637,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_1.161818.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 710
       },
       {
@@ -5651,7 +5670,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 713
       },
       {
@@ -5679,7 +5698,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_1.235423.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 715
       },
       {
@@ -5717,7 +5736,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_1.165716.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 719
       },
       {
@@ -5760,7 +5779,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_1.180259.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 724
       },
       {
@@ -5814,7 +5833,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_2755f4ff.IMAGEN_1.181408.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 731
       },
       {
@@ -5852,7 +5871,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 735
       }
     ],
@@ -5875,7 +5894,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 736
       }
     ],
@@ -5898,7 +5917,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 737
       }
     ],
@@ -5921,7 +5940,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 738
       }
     ],
@@ -5944,7 +5963,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 739
       }
     ],
@@ -5967,7 +5986,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 740
       }
     ],
@@ -5990,7 +6009,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 741
       }
     ],
@@ -6013,7 +6032,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 742
       }
     ],
@@ -6036,7 +6055,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 743
       }
     ],
@@ -6059,7 +6078,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 744
       }
     ],
@@ -6082,7 +6101,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_149/PRODUCTOS_Images_9d514fa2.IMAGEN_1.180312.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 745
       },
       {
@@ -6110,7 +6129,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_150/PRODUCTOS_Images_290f65ac.IMAGEN_1.182613.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 747
       },
       {
@@ -6173,7 +6192,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_e982df66.IMAGEN_1.232608.jpg",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 756
       }
     ],
@@ -6196,7 +6215,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_1.221522.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 757
       },
       {
@@ -6304,7 +6323,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 775
       },
       {
@@ -6347,7 +6366,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_1.222704.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 780
       },
       {
@@ -6395,7 +6414,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_1.175055.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 786
       },
       {
@@ -6432,7 +6451,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_157/PRODUCTOS_Images_c9362a0f.IMAGEN_1.190610.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 790
       },
       {
@@ -6474,7 +6493,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_8b6ed28d.IMAGEN_1.191144.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 795
       },
       {
@@ -6506,7 +6525,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_95bf5e7b.IMAGEN_1.000602.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 798
       },
       {
@@ -6618,7 +6637,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_1.144645.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 817
       },
       {
@@ -6651,7 +6670,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_159/PRODUCTOS_Images_8bf9d236.IMAGEN_1.202403.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 820
       },
       {
@@ -6688,7 +6707,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_160/PRODUCTOS_Images_c3eeb2e6.IMAGEN_1.202945.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 824
       },
       {
@@ -6725,7 +6744,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_161/PRODUCTOS_Images_bc3fde01.IMAGEN_1.203403.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 828
       },
       {
@@ -6758,7 +6777,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_162/PRODUCTOS_Images_cd0e7c68.IMAGEN_1.203648.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 831
       },
       {
@@ -6815,7 +6834,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_163/PRODUCTOS_Images_1335a8df.IMAGEN_1.204557.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 839
       },
       {
@@ -6882,7 +6901,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_164/PRODUCTOS_Images_d4d44a7a.IMAGEN_1.204906.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 849
       },
       {
@@ -6929,7 +6948,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_165/PRODUCTOS_Images_d260fd52.IMAGEN_1.224353.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 855
       },
       {
@@ -7027,7 +7046,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_166/PRODUCTOS_Images_fec8cb6f.IMAGEN_1.001520.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 871
       },
       {
@@ -7090,7 +7109,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_167/PRODUCTOS_Images_e8873bee.IMAGEN_1.233229.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 880
       }
     ],
@@ -7114,7 +7133,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_168/PRODUCTOS_Images_e2dff363.IMAGEN_1.000224.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 881
       }
     ],
@@ -7138,7 +7157,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_169/PRODUCTOS_Images_0940d1f9.IMAGEN_1.161052.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 882
       }
     ],
@@ -7148,30 +7167,6 @@
     "proveedor": "XORA",
     "descripcion": "🧠🎉 ¡DIVERSIÓN GARANTIZADA CON EL CLÁSICO QUE NUNCA PASA DE MODA!\n🔥 ¡BASTA! – EL JUEGO ORIGINAL PARA RETAR TU MENTE Y PASAR MOMENTOS INOLVIDABLES CON FAMILIA Y AMIGOS.\n\n✅ RÁPIDO, ENTRETENIDO Y EDUCATIVO\n✅ PERFECTO PARA JUGAR EN REUNIONES, TARDES DE JUEGOS O EN VACACIONES\n✅ ¡INCLUYE RULETA, CARTAS Y LETRAS PARA PONER A PRUEBA TU AGILIDAD MENTAL!",
     "video_url": "https://youtube.com/shorts/rfxiYkCyes4?feature=share"
-  },
-  {
-    "id": "B95A3BB7",
-    "tipo": "NAVIDAD",
-    "subtipo": "NIÑOS",
-    "categoria": "JUGUETES",
-    "subcategoria": "TREN",
-    "producto": "TREN NAVIDEÑO",
-    "material": "CARACTERÍSTICAS:",
-    "tallas": "N/A",
-    "precio": 39900,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_170/PRODUCTOS_Images_b95a3bb7.IMAGEN_1.161451.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
-        "orden": 883
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_170/PRODUCTOS_Images_b95a3bb7.IMAGEN_1.161451.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_170/PRODUCTOS_Images_b95a3bb7.IMAGEN_1.161451.jpg?tr=w-600,q-80",
-    "promo": true,
-    "proveedor": "XORA",
-    "descripcion": "¡LA MAGIA DE LA NAVIDAD LLEGÓ \n\n🚂✨ ESTE TREN NAVIDEÑO ES PERFECTO PARA DECORAR, JUGAR Y SORPRENDER.\nINCLUYE 52 PIEZAS, VÍAS FLEXIBLES Y UN PAPÁ NOEL ADORABLE QUE ACOMPAÑA EL RECORRIDO.\nIDEAL PARA NIÑAS, NIÑOS Y PARA DARLE VIDA A TU ARBOLITO 🎄💖\n\n🌟 CARACTERÍSTICAS:\n\t•\t52 PIEZAS ARMABLES\n\t•\tVÍAS FLEXIBLES QUE CREAN DIFERENTES FORMAS\n\t•\tTREN NAVIDEÑO A BATERÍA\n\t•\tINCLUYE FIGURA DE SANTA\n\t•\tPERFECTO PARA REGALO O DECORACIÓN",
-    "video_url": "https://youtu.be/lxoL2j2_axM"
   },
   {
     "id": "EFC1A9C2",
@@ -7186,7 +7181,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_171/PRODUCTOS_Images_efc1a9c2.IMAGEN_1.164557.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 884
       }
     ],
@@ -7210,7 +7205,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_172/PRODUCTOS_Images_975043b4.IMAGEN_1.170525.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 885
       }
     ],
@@ -7235,7 +7230,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_1.170005.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 886
       },
       {
@@ -7283,7 +7278,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_1.174035.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 892
       },
       {
@@ -7346,7 +7341,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_1.185451.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 901
       },
       {
@@ -7399,7 +7394,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_1.190922.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 908
       },
       {
@@ -7447,7 +7442,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_1.191911.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 914
       },
       {
@@ -7500,7 +7495,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_1.192552.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 921
       },
       {
@@ -7548,7 +7543,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_1.193524.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 927
       },
       {
@@ -7586,7 +7581,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_1.194247.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 931
       },
       {
@@ -7624,7 +7619,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_1.194755.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 935
       },
       {
@@ -7667,7 +7662,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_5.195104.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 940
       },
       {
@@ -7710,7 +7705,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_183/PRODUCTOS_Images_663d2264.IMAGEN_1.175422.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 945
       },
       {
@@ -7818,7 +7813,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 963
       },
       {
@@ -7847,7 +7842,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_1.213402.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 965
       },
       {
@@ -7885,7 +7880,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_186/PRODUCTOS_Images_390C49F7.IMAGEN_1.172000.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 969
       }
     ],
@@ -7907,7 +7902,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_1.215336.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 970
       },
       {
@@ -7945,7 +7940,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_188/PRODUCTOS_Images_eebf9e4f.IMAGEN_1.231118.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 974
       }
     ],
@@ -7967,7 +7962,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_1.191600.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 975
       },
       {
@@ -8004,7 +7999,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_1.155848.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 979
       },
       {
@@ -8036,7 +8031,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_1.162543.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 982
       },
       {
@@ -8068,7 +8063,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_192/PRODUCTOS_Images_203b9170.IMAGEN_1.163121.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 985
       },
       {
@@ -8095,7 +8090,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_1.163737.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 987
       },
       {
@@ -8132,7 +8127,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_1.164309.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 991
       },
       {
@@ -8169,7 +8164,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_1.164718.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 995
       },
       {
@@ -8216,7 +8211,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_196/PRODUCTOS_Images_54ef50a8.IMAGEN_1.165155.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1001
       }
     ],
@@ -8238,7 +8233,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_1.165937.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1002
       },
       {
@@ -8270,7 +8265,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_1.170358.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1005
       },
       {
@@ -8302,7 +8297,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_199/PRODUCTOS_Images_0f404108.IMAGEN_1.211655.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1008
       },
       {
@@ -8330,7 +8325,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_200/PRODUCTOS_Images_2d32ba04.IMAGEN_1.213159.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1010
       },
       {
@@ -8358,7 +8353,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1012
       },
       {
@@ -8392,7 +8387,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1015
       },
       {
@@ -8430,7 +8425,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_1.174305.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1019
       },
       {
@@ -8547,7 +8542,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_204/PRODUCTOS_Images_b364a1cd.IMAGEN_1.174600.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1039
       },
       {
@@ -8605,7 +8600,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_1.184700.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1047
       },
       {
@@ -8647,7 +8642,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_1.190649.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1052
       },
       {
@@ -8689,7 +8684,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_1.191730.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1057
       },
       {
@@ -8737,7 +8732,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_1.192413.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1063
       },
       {
@@ -8770,7 +8765,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_1.192925.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1066
       },
       {
@@ -8807,7 +8802,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1074
       },
       {
@@ -8840,7 +8835,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1077
       },
       {
@@ -8873,7 +8868,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1080
       }
     ],
@@ -8896,7 +8891,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_2.220956.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1081
       },
       {
@@ -9004,7 +8999,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_3.220956.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1099
       },
       {
@@ -9112,7 +9107,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_1.223712.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1117
       },
       {
@@ -9144,7 +9139,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1120
       },
       {
@@ -9181,7 +9176,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1124
       },
       {
@@ -9218,7 +9213,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1128
       },
       {
@@ -9255,7 +9250,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_d3a5ee71.IMAGEN_1.170129.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1132
       }
     ],
@@ -9278,7 +9273,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_875f9476.IMAGEN_1.175405.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1133
       }
     ],
@@ -9301,7 +9296,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_222/PRODUCTOS_Images_eb4531dc.IMAGEN_1.180129.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1134
       }
     ],
@@ -9324,7 +9319,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_223/PRODUCTOS_Images_5c7682a7.IMAGEN_1.184426.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1135
       }
     ],
@@ -9333,50 +9328,6 @@
     "promo": true,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "MASCARILLA NIÑOS, ADULTOS Y ONHALADORA"
-  },
-  {
-    "id": "1CB826AF",
-    "tipo": "BELLEZA",
-    "subtipo": "DAMA",
-    "categoria": "GENERICO",
-    "subcategoria": ".",
-    "producto": "FAJA MODELADORA TIPO BODY",
-    "material": "LATEX",
-    "tallas": "N/A",
-    "precio": 24560,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_224/PRODUCTOS_Images_1cb826af.IMAGEN_1.185343.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
-        "orden": 1136
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_224/PRODUCTOS_Images_1cb826af.IMAGEN_1.185343.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_224/PRODUCTOS_Images_1cb826af.IMAGEN_1.185343.jpg?tr=w-600,q-80",
-    "promo": true,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA"
-  },
-  {
-    "id": "CCDB515F",
-    "tipo": "BELLEZA",
-    "subtipo": "DAMA",
-    "categoria": "GENERICO",
-    "subcategoria": ".",
-    "producto": "FAJA MODELADORA CON BROCHES",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 25560,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_225/PRODUCTOS_Images_ccdb515f.IMAGEN_1.190117.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
-        "orden": 1137
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_225/PRODUCTOS_Images_ccdb515f.IMAGEN_1.190117.png?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_225/PRODUCTOS_Images_ccdb515f.IMAGEN_1.190117.png?tr=w-600,q-80",
-    "promo": true,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA"
   },
   {
     "id": "E804444B",
@@ -9391,7 +9342,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e804444b.IMAGEN_1.201004.png?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1138
       }
     ],
@@ -9413,7 +9364,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_085cd662.IMAGEN_1.220329.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1139
       }
     ],
@@ -9435,7 +9386,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_214/PRODUCTOS_Images_7be38fb8.IMAGEN_1.220434.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1140
       }
     ],
@@ -9454,11 +9405,11 @@
     "producto": "CARRO A CONTROL",
     "material": ".",
     "tallas": "N/A",
-    "precio": 126900,
+    "precio": 150000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_215/PRODUCTOS_Images_48b80974.IMAGEN_1.221305.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1141
       }
     ],
@@ -9480,7 +9431,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_15703bc5.IMAGEN_1.221420.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1142
       }
     ],
@@ -9502,7 +9453,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_932bf834.IMAGEN_1.221524.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1143
       }
     ],
@@ -9524,7 +9475,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_85d7f10b.IMAGEN_1.222607.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1144
       }
     ],
@@ -9546,7 +9497,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113c3.IMAGEN_1.222750.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1145
       },
       {
@@ -9578,7 +9529,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_0828daa1.IMAGEN_1.224144.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1148
       }
     ],
@@ -9601,7 +9552,7 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_5bd22550.IMAGEN_1.230348.jpg?tr=w-600,q-80",
-        "tipo": "PRINCIPAL",
+        "tipo": "VARIANTE",
         "orden": 1149
       }
     ],
