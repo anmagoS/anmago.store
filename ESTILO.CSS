@@ -25,14 +25,18 @@
 html, body {
   overflow-x: hidden;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
   scroll-behavior: smooth;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /* === LAYOUT PRINCIPAL CON ALTURAS FIJAS (EVITA CLS) === */
-body { 
-  padding-top: 70px; 
-  margin: 0;
+body {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
