@@ -902,7 +902,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // 3. Configurar PWA
     configurarInstalacionPWA();
-    
+    inicializarCategoriasMenuLateral();
     
     
     // 5. Cargar header dinámicamente
