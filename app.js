@@ -816,7 +816,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 1. Cargar catálogo global
     await cargarCatalogoGlobal();
-    console.log('✅ Catálogo cargado. Productos:', productosGlobal.length); // ← Agrega esto
     
     // 2. Inicializar categorías rápidas
     inicializarCategoriasRapidas();
@@ -921,89 +920,3 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
-<!-- Botón para ver más -->
-<div id="btn-ver-mas-container" class="text-center mt-3 d-none">
-  <button id="btn-ver-mas" class="btn btn-outline-primary">
-    <i class="bi bi-arrow-down"></i> Ver más productos
-  </button>
-</div>
-// ==============================================
-// SOLUCIÓN DEFINITIVA PARA CATEGORÍAS RÁPIDAS
-// ==============================================
-
-// 1. Primero, reemplaza tu función de inicialización con esta versión mejorada
-async function inicializarCategoriasRapidasMejorada() {
-    console.log('🔄 Inicializando categorías rápidas mejorada...');
-    
-    const contenedor = document.getElementById('categorias-rapidas');
-    if (!contenedor) {
-        console.error('❌ No se encontró #categorias-rapidas en el DOM');
-        return;
-    }
-    
-    // Verificar si el catálogo está cargado
-    if (!productosGlobal || productosGlobal.length === 0) {
-        console.log('⚠️ Esperando productosGlobal...');
-        
-        // Mostrar spinner mientras carga
-        contenedor.innerHTML = `
-            <div class="text-center py-2">
-                <div class="spinner-border spinner-border-sm text-primary"></div>
-                <small class="text-muted ms-2">Cargando categorías...</small>
-            </div>
-        `;
-        
-        // Intentar cargar el catálogo si no está cargado
-        if (typeof cargarCatalogoGlobal === 'function') {
-            try {
-                await cargarCatalogoGlobal();
-                console.log('✅ Catálogo recargado para categorías');
-            } catch (error) {
-                console.error('❌ Error recargando catálogo:', error);
-            }
-        }
-    }
-    
-    // Ahora mostrar las categorías
-    mostrarCategoriasNivel0();
-}
-
-// 2. Reemplazar la función original con la mejorada
-window.inicializarCategoriasRapidas = inicializarCategoriasRapidasMejorada;
-
-// 3. Asegurar que se llame después de la carga completa
-document.addEventListener('DOMContentLoaded', function() {
-    // Agregar un pequeño retraso para asegurar que todo esté listo
-    setTimeout(() => {
-        console.log('⏱️ Ejecutando inicialización diferida de categorías...');
-        inicializarCategoriasRapidasMejorada();
-    }, 500);
-    
-    // También inicializar cuando se vuelva al inicio
-    if (typeof volverAInicio === 'function') {
-        const volverAInicioOriginal = volverAInicio;
-        window.volverAInicio = function() {
-            volverAInicioOriginal();
-            setTimeout(() => {
-                inicializarCategoriasRapidasMejorada();
-            }, 300);
-        };
-    }
-});
-
-// 4. Función de depuración para verificar el estado
-function verificarEstadoCategorias() {
-    console.group('🔍 Estado de categorías rápidas');
-    console.log('productosGlobal:', productosGlobal ? `${productosGlobal.length} productos` : 'No definido');
-    console.log('Contenedor existe:', !!document.getElementById('categorias-rapidas'));
-    
-    const tiposUnicos = productosGlobal && productosGlobal.length > 0 
-        ? [...new Set(productosGlobal.map(p => p.tipo).filter(Boolean))]
-        : [];
-    console.log('Tipos encontrados:', tiposUnicos);
-    
-    console.groupEnd();
-}
-
-// 5. Llamar a la verificación después de la carga
-setTimeout(verificarEstadoCategorias, 1000);
