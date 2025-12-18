@@ -926,3 +926,97 @@ function mostrarTodosLosProductosCompleto() {
     <i class="bi bi-arrow-down"></i> Ver más productos
   </button>
 </div>
+// ==============================================
+// ARREGLO DE EMERGENCIA PARA CATEGORÍAS
+// ==============================================
+
+// Función para forzar la carga de categorías
+function forzarCargaCategorias() {
+    console.log('🔄 Forzando carga de categorías...');
+    
+    const contenedor = document.getElementById('categorias-rapidas');
+    if (!contenedor) {
+        console.error('❌ No se encontró el contenedor de categorías');
+        return;
+    }
+    
+    // Verificar si productosGlobal está cargado
+    if (!productosGlobal || productosGlobal.length === 0) {
+        console.warn('⚠️ productosGlobal está vacío, intentando recargar...');
+        
+        // Mostrar mensaje temporal
+        contenedor.innerHTML = `
+            <div class="text-center py-2">
+                <div class="spinner-border spinner-border-sm text-primary"></div>
+                <small class="text-muted ms-2">Cargando catálogo...</small>
+            </div>
+        `;
+        
+        // Intentar recargar el catálogo
+        setTimeout(async () => {
+            await cargarCatalogoGlobal();
+            inicializarCategoriasRapidas();
+        }, 1000);
+        
+        return;
+    }
+    
+    // Si ya hay productos, inicializar categorías
+    inicializarCategoriasRapidas();
+}
+
+// Sobrescribir la función original para asegurar que funcione
+window.inicializarCategoriasRapidas = function() {
+    if (!productosGlobal || productosGlobal.length === 0) {
+        console.warn('⚠️ productosGlobal vacío en inicializarCategoriasRapidas');
+        
+        // Crear categorías de emergencia
+        const contenedor = document.getElementById('categorias-rapidas');
+        if (contenedor) {
+            contenedor.innerHTML = `
+                <a href="#" class="categoria-rapida" onclick="cargarPorTipo('TODOS'); return false;">
+                    <div>🛍️</div>
+                    <div>TODOS</div>
+                </a>
+                <a href="#" class="categoria-rapida" onclick="cargarPorTipo('ROPA'); return false;">
+                    <div>👗</div>
+                    <div>ROPA</div>
+                </a>
+                <a href="#" class="categoria-rapida" onclick="cargarPorTipo('RELOJERIA'); return false;">
+                    <div>⌚</div>
+                    <div>RELOJERIA</div>
+                </a>
+                <a href="#" class="categoria-rapida" onclick="cargarPorTipo('HOGAR'); return false;">
+                    <div>🏠</div>
+                    <div>HOGAR</div>
+                </a>
+                <a href="#" class="categoria-rapida" onclick="cargarPorTipo('BELLEZA'); return false;">
+                    <div>💄</div>
+                    <div>BELLEZA</div>
+                </a>
+            `;
+        }
+        return;
+    }
+    
+    // Llamar a la función original (mostrarCategoriasNivel0)
+    mostrarCategoriasNivel0();
+};
+
+// Ejecutar después de que todo cargue
+document.addEventListener('DOMContentLoaded', function() {
+    // Esperar un poco más para asegurar que todo esté listo
+    setTimeout(() => {
+        forzarCargaCategorias();
+    }, 2000);
+    
+    // También ejecutar cuando se haga clic en el logo
+    document.querySelector('.logo a')?.addEventListener('click', function() {
+        setTimeout(() => {
+            forzarCargaCategorias();
+        }, 500);
+    });
+});
+
+// Depuración: verificar el estado
+console.log('🔄 Script de emergencia cargado');
