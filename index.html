@@ -661,52 +661,52 @@
             imagen = producto.imagen;
         }
         
-        return `
-            <div class="col-6 col-md-3">
-                <div class="card h-100 border-0 shadow-sm" 
-                     onclick="window.location.href='PRODUCTO.HTML?id=${producto.id}'"
-                     style="cursor: pointer;">
-                    <div class="position-relative">
-                        <img src="${imagen}?tr=w-300,h-150,q-70" 
-                             alt="${producto.producto}"
-                             class="card-img-top"
-                             width="300"
-                             height="150"
-                             loading="lazy"
-                             style="height: 150px; object-fit: cover;"
-                             onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-150,q-70'">
-                        
-                        <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 small">
-                            -${descuento}%
-                        </div>
-                    </div>
+          return `
+        <div class="col-6 col-md-3">
+            <div class="card h-100 border-0 shadow-sm" 
+                 onclick="window.location.href='PRODUCTO.HTML?id=${producto.id}'"
+                 style="cursor: pointer;">
+                <div class="position-relative" style="height: 180px; overflow: hidden;">
+                    <img src="${imagen}" 
+                         alt="${producto.producto}"
+                         class="card-img-top"
+                         width="300"
+                         height="180"
+                         loading="lazy"
+                         style="height: 150px; object-fit: contain; width: 100%; background: #f8f9fa; padding: 10px;"
+                         onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-180,fo-auto,q-80'">
                     
-                    <div class="card-body p-2">
-                        <h6 class="card-title small mb-1 text-truncate">
-                            ${producto.producto}
-                        </h6>
-                        
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <span class="fw-bold text-primary">
-                                    $${precioOferta.toLocaleString('es-CO')}
-                                </span>
-                                <br>
-                                <small class="text-muted text-decoration-line-through">
-                                    $${precioOriginal.toLocaleString('es-CO')}
-                                </small>
-                            </div>
-                            
-                            <button class="btn btn-sm btn-outline-primary"
-                                    onclick="event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
+                    <div class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 small">
+                        -${descuento}%
+                    </div>
+                </div>
+                
+                <div class="card-body p-2 d-flex flex-column justify-content-between" style="height: 120px;">
+                    <h6 class="card-title small mb-1 text-truncate">
+                        ${producto.producto}
+                    </h6>
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <span class="fw-bold text-primary">
+                                $${precioOferta.toLocaleString('es-CO')}
+                            </span>
+                            <br>
+                            <small class="text-muted text-decoration-line-through">
+                                $${precioOriginal.toLocaleString('es-CO')}
+                            </small>
                         </div>
+                        
+                        <button class="btn btn-sm btn-outline-primary"
+                                onclick="event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-        `;
-    }
+        </div>
+    `;
+}
 
     function INDEX_iniciarTemporizador() {
         const elemento = document.getElementById("temporizador-home");
