@@ -816,6 +816,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 1. Cargar catálogo global
     await cargarCatalogoGlobal();
+    console.log('✅ Catálogo cargado. Productos:', productosGlobal.length); // ← Agrega esto
     
     // 2. Inicializar categorías rápidas
     inicializarCategoriasRapidas();
