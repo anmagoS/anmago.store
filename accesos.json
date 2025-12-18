@@ -136,6 +136,10 @@
     "ruta": "/ROPA/DAMA/CAMISAS/MANGA LARGA"
   },
   {
+    "id_producto": "91E832A3",
+    "ruta": "/ROPA/DAMA/CAMISAS/OVERSIZE"
+  },
+  {
     "id_producto": "0386ADB6",
     "ruta": "/ROPA/DAMA/ROPA DEPORTIVA/DAMAS"
   },
@@ -248,43 +252,11 @@
     "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
   },
   {
-    "id_producto": "24DBE567",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
-    "id_producto": "24DBE567",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
-    "id_producto": "CC2EFAB1",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
-    "id_producto": "CC2EFAB1",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
     "id_producto": "CC2EFAB1",
     "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
   },
   {
     "id_producto": "0C55C555",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
-    "id_producto": "0C55C555",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
-    "id_producto": "629FA20D",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
-    "id_producto": "629FA20D",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
-    "id_producto": "629FA20D",
     "ruta": "/HOGAR/COCINA/COCINA/,"
   },
   {
@@ -640,16 +612,8 @@
     "ruta": "/NAVIDAD/UNISEX/JUGUETES/BASTA"
   },
   {
-    "id_producto": "B95A3BB7",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/TREN"
-  },
-  {
     "id_producto": "EFC1A9C2",
     "ruta": "/ESCOLAR/NIÑOS/ESCOLAR/ESTUCHE"
-  },
-  {
-    "id_producto": "975043B4",
-    "ruta": "/NAVIDAD/NIÑAS/JUGUETES/."
   },
   {
     "id_producto": "975043B4",
@@ -858,14 +822,6 @@
   {
     "id_producto": "5C7682A7",
     "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "1CB826AF",
-    "ruta": "/BELLEZA/DAMA/GENERICO/."
-  },
-  {
-    "id_producto": "CCDB515F",
-    "ruta": "/BELLEZA/DAMA/GENERICO/."
   },
   {
     "id_producto": "E804444B",
