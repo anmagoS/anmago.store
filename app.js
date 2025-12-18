@@ -920,3 +920,357 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
+// ==============================================
+// SCROLL INFINITO PARA TODOS LOS PRODUCTOS
+// ==============================================
+
+// Configuración del scroll infinito
+const SCROLL_CONFIG = {
+    productosPorPagina: 20,
+    paginaActual: 0,
+    cargando: false,
+    finDeProductos: false,
+    totalProductos: 0,
+    observador: null
+};
+
+// Modificar la función cargarVistaTodos para usar scroll infinito
+async function cargarVistaTodosConScroll() {
+    try {
+        console.log('🔄 Cargando TODOS los productos con scroll infinito...');
+        
+        const contador = document.getElementById('contador-todos');
+        const grid = document.getElementById('grid-todos');
+        
+        if (!grid || !contador) return;
+        
+        // Reiniciar configuración
+        SCROLL_CONFIG.paginaActual = 0;
+        SCROLL_CONFIG.cargando = false;
+        SCROLL_CONFIG.finDeProductos = false;
+        SCROLL_CONFIG.totalProductos = productosGlobal.length;
+        
+        // Mostrar skeleton inicial
+        grid.innerHTML = `
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-producto-ml skeleton" style="height: 320px;"></div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-producto-ml skeleton" style="height: 320px;"></div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-producto-ml skeleton" style="height: 320px;"></div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                <div class="card-producto-ml skeleton" style="height: 320px;"></div>
+            </div>
+        `;
+        
+        // Ocultar elementos de estado
+        document.getElementById('sin-resultados-todos').classList.add('d-none');
+        document.getElementById('cargando-todos').classList.add('d-none');
+        document.getElementById('btn-ver-mas-container').classList.add('d-none');
+        
+        // Cargar primera página
+        await cargarPaginaProductos(0);
+        
+        // Configurar observador de scroll
+        configurarObservadorScroll();
+        
+    } catch (error) {
+        console.error('❌ Error en scroll infinito:', error);
+    }
+}
+
+// Cargar una página de productos
+async function cargarPaginaProductos(pagina) {
+    if (SCROLL_CONFIG.cargando || SCROLL_CONFIG.finDeProductos) return;
+    
+    SCROLL_CONFIG.cargando = true;
+    
+    // Mostrar spinner si no es la primera página
+    if (pagina > 0) {
+        document.getElementById('cargando-todos').classList.remove('d-none');
+    }
+    
+    try {
+        // Simular retardo para mejor UX (solo en desarrollo)
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        const inicio = pagina * SCROLL_CONFIG.productosPorPagina;
+        const fin = inicio + SCROLL_CONFIG.productosPorPagina;
+        const productosPagina = productosGlobal.slice(inicio, fin);
+        
+        const grid = document.getElementById('grid-todos');
+        const contador = document.getElementById('contador-todos');
+        
+        if (!grid || !contador) return;
+        
+        // Si no hay productos
+        if (pagina === 0 && productosPagina.length === 0) {
+            document.getElementById('sin-resultados-todos').classList.remove('d-none');
+            grid.innerHTML = '';
+            SCROLL_CONFIG.finDeProductos = true;
+            return;
+        }
+        
+        // Crear HTML de productos
+        const htmlProductos = productosPagina.map(producto => crearCardProductoHTML(producto)).join('');
+        
+        // Agregar al grid
+        if (pagina === 0) {
+            grid.innerHTML = htmlProductos;
+        } else {
+            grid.innerHTML += htmlProductos;
+        }
+        
+        // Actualizar contador
+        const productosMostrados = Math.min((pagina + 1) * SCROLL_CONFIG.productosPorPagina, productosGlobal.length);
+        contador.textContent = `${productosMostrados} de ${productosGlobal.length} productos`;
+        
+        // Verificar si llegamos al final
+        if (productosPagina.length < SCROLL_CONFIG.productosPorPagina || fin >= productosGlobal.length) {
+            SCROLL_CONFIG.finDeProductos = true;
+            document.getElementById('btn-ver-mas-container').classList.add('d-none');
+        } else {
+            document.getElementById('btn-ver-mas-container').classList.remove('d-none');
+            document.getElementById('btn-ver-mas').textContent = 
+                `Ver más productos (${productosGlobal.length - fin} restantes)`;
+        }
+        
+        // Incrementar página
+        SCROLL_CONFIG.paginaActual = pagina + 1;
+        
+    } catch (error) {
+        console.error('❌ Error cargando página:', error);
+    } finally {
+        SCROLL_CONFIG.cargando = false;
+        document.getElementById('cargando-todos').classList.add('d-none');
+    }
+}
+
+// Configurar observador de scroll
+function configurarObservadorScroll() {
+    // Eliminar observador anterior si existe
+    if (SCROLL_CONFIG.observador) {
+        SCROLL_CONFIG.observador.disconnect();
+    }
+    
+    // Crear nuevo observador
+    SCROLL_CONFIG.observador = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && 
+                !SCROLL_CONFIG.cargando && 
+                !SCROLL_CONFIG.finDeProductos) {
+                
+                // Cargar siguiente página automáticamente
+                cargarPaginaProductos(SCROLL_CONFIG.paginaActual);
+            }
+        });
+    }, {
+        rootMargin: '200px', // Cargar 200px antes de llegar al final
+        threshold: 0.1
+    });
+    
+    // Observar el elemento de "cargando"
+    const elementoCargando = document.getElementById('cargando-todos');
+    if (elementoCargando) {
+        SCROLL_CONFIG.observador.observe(elementoCargando);
+    }
+}
+
+// Función para botón "Ver más" manual
+function cargarMasProductosScroll() {
+    if (!SCROLL_CONFIG.cargando && !SCROLL_CONFIG.finDeProductos) {
+        cargarPaginaProductos(SCROLL_CONFIG.paginaActual);
+    }
+}
+
+// ==============================================
+// SCROLL INFINITO PARA CATEGORÍAS (TIPO, SUBTIPO, CATEGORÍA)
+// ==============================================
+
+// Configuración para scroll infinito en categorías
+const SCROLL_CATEGORIAS_CONFIG = {
+    productosPorPagina: 20,
+    paginaActual: 0,
+    cargando: false,
+    finDeProductos: false,
+    tipoActual: null,
+    subtipoActual: null,
+    categoriaActual: null
+};
+
+// Función para cargar productos de categoría con scroll infinito
+async function cargarProductosCategoriaConScroll(tipo, subtipo = null, categoria = null) {
+    console.log(`📁 Cargando ${tipo}${subtipo ? '/' + subtipo : ''}${categoria ? '/' + categoria : ''} con scroll...`);
+    
+    // Guardar contexto actual
+    SCROLL_CATEGORIAS_CONFIG.tipoActual = tipo;
+    SCROLL_CATEGORIAS_CONFIG.subtipoActual = subtipo;
+    SCROLL_CATEGORIAS_CONFIG.categoriaActual = categoria;
+    SCROLL_CATEGORIAS_CONFIG.paginaActual = 0;
+    SCROLL_CATEGORIAS_CONFIG.cargando = false;
+    SCROLL_CATEGORIAS_CONFIG.finDeProductos = false;
+    
+    // Filtrar productos según el contexto
+    let productosFiltrados = [];
+    
+    if (categoria) {
+        productosFiltrados = productosGlobal.filter(p => 
+            p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
+        );
+    } else if (subtipo) {
+        productosFiltrados = productosGlobal.filter(p => 
+            p.tipo === tipo && p.subtipo === subtipo
+        );
+    } else {
+        productosFiltrados = productosGlobal.filter(p => p.tipo === tipo);
+    }
+    
+    SCROLL_CATEGORIAS_CONFIG.totalProductos = productosFiltrados.length;
+    
+    // Mostrar primera página
+    await cargarPaginaCategoria(0, productosFiltrados);
+    
+    // Configurar observador para esta categoría
+    configurarObservadorCategoria(productosFiltrados);
+}
+
+// Cargar página de categoría
+async function cargarPaginaCategoria(pagina, productosFiltrados) {
+    if (SCROLL_CATEGORIAS_CONFIG.cargando || SCROLL_CATEGORIAS_CONFIG.finDeProductos) return;
+    
+    SCROLL_CATEGORIAS_CONFIG.cargando = true;
+    
+    const inicio = pagina * SCROLL_CATEGORIAS_CONFIG.productosPorPagina;
+    const fin = inicio + SCROLL_CATEGORIAS_CONFIG.productosPorPagina;
+    const productosPagina = productosFiltrados.slice(inicio, fin);
+    
+    const grid = document.getElementById('grid-productos');
+    const contador = document.getElementById('contador-productos');
+    
+    if (!grid || !contador) return;
+    
+    // Si es la primera página y no hay productos
+    if (pagina === 0 && productosPagina.length === 0) {
+        grid.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-search fs-1 text-muted"></i>
+                <h5 class="mt-3">No se encontraron productos</h5>
+            </div>
+        `;
+        contador.textContent = "0 productos";
+        SCROLL_CATEGORIAS_CONFIG.finDeProductos = true;
+        SCROLL_CATEGORIAS_CONFIG.cargando = false;
+        return;
+    }
+    
+    // Crear HTML de productos
+    const htmlProductos = productosPagina.map(producto => crearCardProductoHTML(producto)).join('');
+    
+    // Agregar al grid
+    if (pagina === 0) {
+        grid.innerHTML = htmlProductos;
+    } else {
+        grid.innerHTML += htmlProductos;
+    }
+    
+    // Actualizar contador
+    const productosMostrados = Math.min(fin, productosFiltrados.length);
+    contador.textContent = `${productosMostrados} de ${productosFiltrados.length} productos`;
+    
+    // Verificar si llegamos al final
+    if (productosPagina.length < SCROLL_CATEGORIAS_CONFIG.productosPorPagina || fin >= productosFiltrados.length) {
+        SCROLL_CATEGORIAS_CONFIG.finDeProductos = true;
+    }
+    
+    // Incrementar página
+    SCROLL_CATEGORIAS_CONFIG.paginaActual = pagina + 1;
+    SCROLL_CATEGORIAS_CONFIG.cargando = false;
+}
+
+// Configurar observador para categorías
+function configurarObservadorCategoria(productosFiltrados) {
+    // Crear un elemento observador al final del grid
+    const grid = document.getElementById('grid-productos');
+    if (!grid) return;
+    
+    // Eliminar observador anterior si existe
+    if (SCROLL_CATEGORIAS_CONFIG.observador) {
+        SCROLL_CATEGORIAS_CONFIG.observador.disconnect();
+    }
+    
+    // Crear elemento observador
+    let observadorElemento = document.getElementById('observador-categoria');
+    if (!observadorElemento) {
+        observadorElemento = document.createElement('div');
+        observadorElemento.id = 'observador-categoria';
+        observadorElemento.style.height = '1px';
+        grid.appendChild(observadorElemento);
+    }
+    
+    // Crear nuevo observador
+    SCROLL_CATEGORIAS_CONFIG.observador = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && 
+                !SCROLL_CATEGORIAS_CONFIG.cargando && 
+                !SCROLL_CATEGORIAS_CONFIG.finDeProductos) {
+                
+                // Cargar siguiente página
+                cargarPaginaCategoria(SCROLL_CATEGORIAS_CONFIG.paginaActual, productosFiltrados);
+            }
+        });
+    }, {
+        rootMargin: '100px',
+        threshold: 0.1
+    });
+    
+    SCROLL_CATEGORIAS_CONFIG.observador.observe(observadorElemento);
+}
+
+// ==============================================
+// MODIFICAR FUNCIONES EXISTENTES PARA USAR SCROLL
+// ==============================================
+
+// Reemplazar las funciones originales para usar scroll infinito
+
+// 1. Para "Todos los productos"
+window.cargarVistaTodos = cargarVistaTodosConScroll;
+window.cargarMasProductos = cargarMasProductosScroll;
+
+// 2. Para categorías (tipo)
+window.cargarProductosPorTipo = async function(tipo) {
+    console.log('📁 Cargando tipo con scroll:', tipo);
+    await cargarProductosCategoriaConScroll(tipo);
+};
+
+// 3. Para subtipos
+window.cargarProductosPorSubtipo = async function(tipo, subtipo) {
+    console.log('📁 Cargando subtipo con scroll:', subtipo);
+    await cargarProductosCategoriaConScroll(tipo, subtipo);
+};
+
+// 4. Para categorías específicas
+window.cargarProductosDesdeCatalogo = async function(tipo, subtipo, categoria) {
+    console.log('📁 Cargando categoría con scroll:', categoria);
+    await cargarProductosCategoriaConScroll(tipo, subtipo, categoria);
+};
+
+// ==============================================
+// ACTUALIZAR EL BOTÓN "VER MÁS" EN EL HTML
+// ==============================================
+
+// Esta función se ejecuta cuando se carga la página
+document.addEventListener('DOMContentLoaded', function() {
+    // Actualizar el botón "Ver más" para usar la nueva función
+    const btnVerMas = document.getElementById('btn-ver-mas');
+    if (btnVerMas) {
+        btnVerMas.onclick = function(e) {
+            e.preventDefault();
+            cargarMasProductosScroll();
+        };
+    }
+    
+    console.log('✅ Scroll infinito configurado correctamente');
+});
