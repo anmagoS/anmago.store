@@ -1175,6 +1175,71 @@ img[width][height] {
     gap: 20px;
     padding: 10px 0;
 }
+/* ==============================================
+   CORRECCIÓN BOTÓN CARRITO FLOTANTE
+   ============================================== */
+
+.btn-carrito-flotante {
+    position: fixed;
+    top: 90px; /* Ajusta según la altura de tu header */
+    right: 20px;
+    z-index: 1020; /* Asegúrate que esté sobre otros elementos */
+    background: linear-gradient(135deg, #1B4557, #2A6A8F);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    overflow: visible; /* Importante para que el contador se vea */
+}
+
+.btn-carrito-flotante:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
+/* Contador del carrito flotante */
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #dc3545;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border: 2px solid white;
+    z-index: 1030; /* Más alto que el botón */
+}
+
+/* Ajuste para móviles (la barra inferior ya lo maneja) */
+@media (max-width: 768px) {
+    .btn-carrito-flotante {
+        display: none !important;
+    }
+}
+
+/* Si tu header tiene altura diferente, ajusta esto */
+.header-sticky {
+    height: 70px; /* Asegúrate que coincida con tu header */
+    z-index: 1030; /* Header sobre todo */
+}
+
+/* Asegurar que el body tenga padding-top para el header fijo */
+body {
+    padding-top: 70px !important;
+}
 /* === LIMPIAR DUPLICADOS Y CONFLICTOS === */
 /* ELIMINAR TODAS LAS CLASES DUPLICADAS */
 /* Los estilos específicos para TEMU, modal zoom, etc. deben integrarse arriba */
