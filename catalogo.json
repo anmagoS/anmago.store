@@ -1732,6 +1732,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_6.215824.jpg",
         "tipo": "VARIANTE",
+        "variacion": "AGUA MARINA",
         "orden": 220
       },
       {
@@ -1950,7 +1951,7 @@
     "producto": "DOS PIEZAS",
     "material": "PANTALON BURDA BLUSA ALGODON",
     "tallas": "SM,LXL",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg",
@@ -2048,7 +2049,7 @@
     "producto": "CHAQUETA ROMA",
     "material": "CUERTOTEX",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg",
@@ -2096,7 +2097,7 @@
     "producto": "CHAMARRA",
     "material": "CUEROTEX",
     "tallas": "S,M,L,XL",
-    "precio": 59000,
+    "precio": 107000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_48/PRODUCTOS_Images_769d97c7.IMAGEN_1.234831.jpg",
@@ -2129,7 +2130,7 @@
     "producto": "JEAN BOTA CAMPANA",
     "material": "LICRADO",
     "tallas": "6,8,10,12,14",
-    "precio": 78000,
+    "precio": 111600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_1.153635.jpg",
@@ -2227,7 +2228,7 @@
     "producto": "RIB COOL",
     "material": "RIB",
     "tallas": "UNICA",
-    "precio": 83000,
+    "precio": 141500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_50/PRODUCTOS_Images_dcecab13.IMAGEN_1.014743.jpg",
@@ -2290,7 +2291,7 @@
     "producto": "DULCE CON COPA",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 58000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg",
@@ -2328,7 +2329,7 @@
     "producto": "CAMISA SATIN LICRADO",
     "material": "SATIN LICRADO",
     "tallas": "S,M,L,XL",
-    "precio": 70000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_52/PRODUCTOS_Images_9405735f.IMAGEN_1.144758.jpg",
@@ -2442,7 +2443,7 @@
     "producto": "RELOJ CURREN RESISTENTE AL AGUA",
     "material": "PULSO ACERO",
     "tallas": "N/A",
-    "precio": 160000,
+    "precio": 159000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_53/PRODUCTOS_Images_d9594fb8.IMAGEN_1.215515.jpg",
@@ -2520,7 +2521,7 @@
     "producto": "FUSION",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_54/PRODUCTOS_Images_b395153e.IMAGEN_1.163805.jpg",
@@ -2553,7 +2554,7 @@
     "producto": "ARRUNCHADA",
     "material": "MALLA TEX",
     "tallas": "UNICA",
-    "precio": 38000,
+    "precio": 61000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_55/PRODUCTOS_Images_93593686.IMAGEN_1.164010.jpg",
@@ -2593,7 +2594,7 @@
     "producto": "CHALECO CUERINA",
     "material": "CUERINA",
     "tallas": "UNICA",
-    "precio": 68000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_56/PRODUCTOS_Images_cd8e11a2.IMAGEN_1.164141.jpg",
@@ -2631,7 +2632,7 @@
     "producto": "RAYADA MANGA LARGA",
     "material": "POPELINA",
     "tallas": "S,M,L,XL",
-    "precio": 58000,
+    "precio": 102400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_57/PRODUCTOS_Images_9ba4568f.IMAGEN_1.212907.jpg",
@@ -2690,7 +2691,7 @@
     "producto": "BLUSON MANGA CORTA",
     "material": "POPELINA",
     "tallas": "S,M,L,XL",
-    "precio": 58000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_58/PRODUCTOS_Images_084bc5b4.IMAGEN_1.213220.jpg",
@@ -2758,7 +2759,7 @@
     "producto": "CAMISA RAYADA MANGA CORTA",
     "material": "POPELINA",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_59/PRODUCTOS_Images_9b1d26eb.IMAGEN_1.213515.jpg",
@@ -2816,7 +2817,7 @@
     "producto": "OVERSIZE RAYADA MANGA CORTA",
     "material": "POPELINA",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_60/PRODUCTOS_Images_93b59852.IMAGEN_1.214406.jpg",
@@ -2874,7 +2875,7 @@
     "producto": "OVERSIZE MANGA LARGA",
     "material": "POPELINA",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 93200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_61/PRODUCTOS_Images_c0b75b22.IMAGEN_1.214917.jpg",
@@ -2992,7 +2993,7 @@
     "producto": "CAMISETA POLO CUELLO PULO",
     "material": "ALGONDON LICRADO",
     "tallas": "M,L,XL",
-    "precio": 52000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_71/PRODUCTOS_Images_0149aaae.IMAGEN_1.013056.jpg",
@@ -3071,7 +3072,7 @@
     "producto": "CUELLO HENLEY",
     "material": "ALGODON LICRADO",
     "tallas": "M,L,XL",
-    "precio": 52000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_72/PRODUCTOS_Images_13125ec2.IMAGEN_1.013707.jpg",
@@ -3124,7 +3125,7 @@
     "producto": "BUSO MANGA LARGA CUELLO HENLEY",
     "material": "ALGONDON LICRADO",
     "tallas": "M,L,XL",
-    "precio": 55000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_73/PRODUCTOS_Images_797b12af.IMAGEN_1.014014.jpg",
@@ -3173,7 +3174,7 @@
     "producto": "PANTALON DRIL LICRADO",
     "material": "DRIL LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg",
@@ -3231,7 +3232,7 @@
     "producto": "CAMISETA POLO",
     "material": "SEDA FRIA",
     "tallas": "6,8,10,12,14,16",
-    "precio": 39000,
+    "precio": 70200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_75/PRODUCTOS_Images_5773c142.IMAGEN_1.171618.jpg",
@@ -3294,7 +3295,7 @@
     "producto": "CAMISA MANGA CORTA",
     "material": "POPELINA LICRADA",
     "tallas": "M,L,XL",
-    "precio": 57000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg",
@@ -3390,7 +3391,7 @@
     "producto": "RELOJ METRO XMETRO",
     "material": "PUNTEROS METALICOS Y CAJA METALICA",
     "tallas": "N/A",
-    "precio": 55000,
+    "precio": 71000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_78/PRODUCTOS_Images_261377f5.IMAGEN_1.175549.jpg",
@@ -3468,7 +3469,7 @@
     "producto": "PANTALONETA MALIBU",
     "material": "ALGODUN BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 41900,
+    "precio": 79400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg",
@@ -3546,7 +3547,7 @@
     "producto": "ASTRONAUTA PROYECTOR",
     "material": "PLASTICO",
     "tallas": "N/A",
-    "precio": 67500,
+    "precio": 105000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_80/PRODUCTOS_Images_041f88d2.IMAGEN_1.002203.jpg",
@@ -3575,7 +3576,7 @@
     "producto": "JARRA HERVIDORA ELECTRICA",
     "material": "ACERO INOXIDABLE Y PLÁSTICO DE GRADO ALIMENTICIO",
     "tallas": "N/A",
-    "precio": 50000,
+    "precio": 71000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_81/PRODUCTOS_Images_24dbe567.IMAGEN_1.002619.jpg",
@@ -3605,7 +3606,7 @@
     "producto": "TETERA ELECTRICA SOKANY 2.5 LT",
     "material": "ACERO INOXIDABLE",
     "tallas": "N/A",
-    "precio": 78900,
+    "precio": 125000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_82/PRODUCTOS_Images_cc2efab1.IMAGEN_1.004740.jpg",
@@ -3629,7 +3630,7 @@
     "producto": "VASO METALICO MEZCLADOR",
     "material": "ACERO INOXIDABLE",
     "tallas": "N/A",
-    "precio": 39900,
+    "precio": 59000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_83/PRODUCTOS_Images_0c55c555.IMAGEN_1.011032.jpg",
@@ -3653,7 +3654,7 @@
     "producto": "VASO TERMO VIAJERO",
     "material": "ACERO INOXIDABLE",
     "tallas": "N/A",
-    "precio": 39900,
+    "precio": 61000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_84/PRODUCTOS_Images_629fa20d.IMAGEN_1.011303.jpg",
@@ -3677,7 +3678,7 @@
     "producto": "GEL CALMANTE DE ALOE VERA 99%",
     "material": "GEL",
     "tallas": "N/A",
-    "precio": 16000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_85/PRODUCTOS_Images_216a9768.IMAGEN_1.013241.jpg",
@@ -3705,7 +3706,7 @@
     "producto": "SPRAY REPARADOR CON PROTECTOR SOLAR ALOE VERA SPF 60+ PA+++",
     "material": "SPRAY",
     "tallas": "N/A",
-    "precio": 18000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_86/PRODUCTOS_Images_e8c85fb5.IMAGEN_1.013546.jpg",
@@ -3733,7 +3734,7 @@
     "producto": "SOMBRA DODO GIRL X6 REF: 3250",
     "material": ".",
     "tallas": "N/A",
-    "precio": 26000,
+    "precio": 51400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_88/PRODUCTOS_Images_a3039f08.IMAGEN_1.170819.jpg",
@@ -3755,7 +3756,7 @@
     "producto": "CENTELLA ASIÁTICA",
     "material": "CREMA",
     "tallas": "N/A",
-    "precio": 11000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_89/PRODUCTOS_Images_04647dfc.IMAGEN_1.172352.jpg",
@@ -3783,7 +3784,7 @@
     "producto": "CREMA CON RETINOL",
     "material": "CREMA",
     "tallas": "N/A",
-    "precio": 11000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_90/PRODUCTOS_Images_718daee8.IMAGEN_1.172447.jpg",
@@ -3811,7 +3812,7 @@
     "producto": "CREMA HIDRATANTE DIA",
     "material": "CREMA",
     "tallas": "N/A",
-    "precio": 11000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_91/PRODUCTOS_Images_5146c5fd.IMAGEN_1.174316.jpg",
@@ -3839,7 +3840,7 @@
     "producto": "BÁSICA EN TIRAS",
     "material": ".",
     "tallas": "UNICA",
-    "precio": 32000,
+    "precio": 49500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_92/PRODUCTOS_Images_18f86512.IMAGEN_1.193444.jpg",
@@ -3877,7 +3878,7 @@
     "producto": "CROP MARIPOSA VARILLA EN ENCAJE",
     "material": ".",
     "tallas": "UNICA",
-    "precio": 38000,
+    "precio": 65600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_93/PRODUCTOS_Images_1993ed67.IMAGEN_1.210707.jpg",
@@ -3910,7 +3911,7 @@
     "producto": "BODY FANTASÍA",
     "material": "ENERGICA Y MALLA TEX",
     "tallas": "UNICA",
-    "precio": 38000,
+    "precio": 61000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_94/PRODUCTOS_Images_aac9b7df.IMAGEN_1.211801.jpg",
@@ -3958,7 +3959,7 @@
     "producto": "BODY CLÁSICO CON TOP",
     "material": "MALLA TEX",
     "tallas": "UNICA",
-    "precio": 38000,
+    "precio": 56400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_95/PRODUCTOS_Images_ed5f855b.IMAGEN_1.212129.jpg",
@@ -3991,7 +3992,7 @@
     "producto": "CREMA NUTRITIVA ANTIARRUGA",
     "material": "CREMA",
     "tallas": "N/A",
-    "precio": 9000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_96/PRODUCTOS_Images_26b05170.IMAGEN_1.213046.jpg",
@@ -4019,7 +4020,7 @@
     "producto": "CREMA FACIAL BEAUTY",
     "material": "CREMA",
     "tallas": "N/A",
-    "precio": 11000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_97/PRODUCTOS_Images_42c1a7be.IMAGEN_1.220338.jpg",
@@ -4047,7 +4048,7 @@
     "producto": "CONJUNTO NIÑA CON BIKER",
     "material": "BIKER SUPLEX CAMISATEA ALGODON",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 45000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_1.000417.jpg",
@@ -4188,7 +4189,7 @@
     "producto": "CONJUNTO JOGGER CAMISETA",
     "material": "JOGGER BURDA CAMISETA ALGODON",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 58000,
+    "precio": 113900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_100/PRODUCTOS_Images_8f5c6822.IMAGEN_1.000857.jpg",
@@ -4236,7 +4237,7 @@
     "producto": "BUSOS PAREJAS",
     "material": "BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 89900,
+    "precio": 194400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg",
@@ -4304,7 +4305,7 @@
     "producto": "CONJUNTO PANTALONETA",
     "material": "CAMISA ALGODON PANTALONETA BURDA",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 54000,
+    "precio": 104700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_102/PRODUCTOS_Images_5f28828e.IMAGEN_1.153831.jpg",
@@ -4357,7 +4358,7 @@
     "producto": "CABALLERO QYQ",
     "material": "PULSO CUERO",
     "tallas": "N/A",
-    "precio": 70000,
+    "precio": 87000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_103/PRODUCTOS_Images_c1fbb280.IMAGEN_1.173915.jpg",
@@ -4435,7 +4436,7 @@
     "producto": "RELOJ QYQ CABALLERO",
     "material": "PULSO EN CUERO",
     "tallas": "N/A",
-    "precio": 75000,
+    "precio": 91800,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_104/PRODUCTOS_Images_fbc9f8e3.IMAGEN_1.174324.jpg",
@@ -4498,7 +4499,7 @@
     "producto": "DAMA QYQ",
     "material": "PULSO EN ACERO",
     "tallas": "N/A",
-    "precio": 80000,
+    "precio": 95000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_105/PRODUCTOS_Images_94696f77.IMAGEN_1.203906.jpg",
@@ -4616,7 +4617,7 @@
     "producto": "COMBO BIOAQUA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 55500,
+    "precio": 85000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_1.181723.jpg",
@@ -4689,7 +4690,7 @@
     "producto": "CONJUNTO AMIRI",
     "material": "CAMISETA ALGODON Y PANTALONETA BURDA",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 55000,
+    "precio": 104700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_107/PRODUCTOS_Images_9918e93a.IMAGEN_1.012346.jpg",
@@ -4742,7 +4743,7 @@
     "producto": "CONJUNTO LOUIS VUITTON",
     "material": "CAMISETA ALGODÓN Y PANTALONETA BURDA",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 55000,
+    "precio": 104700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_108/PRODUCTOS_Images_85ffeafe.IMAGEN_1.012606.jpg",
@@ -4800,7 +4801,7 @@
     "producto": "CONJUNTO DISNEY",
     "material": "CAMISETA ALGODÓN  Y BIKER SUPLEX",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 48000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_109/PRODUCTOS_Images_dccbe45a.IMAGEN_1.013314.jpg",
@@ -4868,7 +4869,7 @@
     "producto": "VESTIDO GOTA",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 48900,
+    "precio": 79400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_110/PRODUCTOS_Images_d683ec9b.IMAGEN_1.161316.jpg",
@@ -4916,7 +4917,7 @@
     "producto": "VESTIDO ADA",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 45900,
+    "precio": 72500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_d0dd9d98.IMAGEN_1.162632.jpg",
@@ -4964,7 +4965,7 @@
     "producto": "ENTERIZO TENTACION",
     "material": "DESTELLANTE Y MALLATEX",
     "tallas": "UNICA",
-    "precio": 63000,
+    "precio": 111600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e2a3d8f0.IMAGEN_1.163513.jpg",
@@ -5007,7 +5008,7 @@
     "producto": "VESTIDO GOTA LARGO",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 51900,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_b1de86d8.IMAGEN_1.164225.jpg",
@@ -5055,7 +5056,7 @@
     "producto": "VESTIDO BANDEJA LARGO",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 54900,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_fa575975.IMAGEN_1.165251.jpg",
@@ -5103,7 +5104,7 @@
     "producto": "VESTIDO BANDEJA CORTO",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 44900,
+    "precio": 79400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_8b45c615.IMAGEN_1.165823.jpg",
@@ -5156,7 +5157,7 @@
     "producto": "SOMBRA DODO GIRL X12 REF: D3154",
     "material": "SOMBRAS",
     "tallas": "N/A",
-    "precio": 14000,
+    "precio": 34600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_a228f8ee.IMAGEN_1.185522.jpg",
@@ -5179,7 +5180,7 @@
     "producto": "CONTORNO EN POLVO DODO GIRL X12            REF: D4005-1",
     "material": "SOMBRAS",
     "tallas": "N/A",
-    "precio": 14000,
+    "precio": 34600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_b222b716.IMAGEN_1.194319.jpg",
@@ -5202,7 +5203,7 @@
     "producto": "SOMBRA DODO GIRL X12  REF: 3169",
     "material": "SOMBRAS",
     "tallas": "N/A",
-    "precio": 16000,
+    "precio": 35160,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_118/PRODUCTOS_Images_8338ccc8.IMAGEN_1.194627.jpg",
@@ -5225,7 +5226,7 @@
     "producto": "SOMBRA TOPCOLOR X12 REF: TC3022",
     "material": "SOMBRAS",
     "tallas": "N/A",
-    "precio": 19000,
+    "precio": 40200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_e769d779.IMAGEN_1.194907.jpg",
@@ -5248,7 +5249,7 @@
     "producto": "SOMBRA TOPCOLOR X12 REF: 3269",
     "material": "SOMBRAS",
     "tallas": "N/A",
-    "precio": 19000,
+    "precio": 40200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_f52092b6.IMAGEN_1.195029.jpg",
@@ -5271,7 +5272,7 @@
     "producto": "POLVO DE HADA X12 REF: 995",
     "material": "POLVO DE HADA",
     "tallas": "N/A",
-    "precio": 6000,
+    "precio": 22000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_121/PRODUCTOS_Images_5310849b.IMAGEN_1.195230.jpg",
@@ -5294,7 +5295,7 @@
     "producto": "POLVO DE HADA X12  REF: S311",
     "material": "POLVO DE HADA",
     "tallas": "N/A",
-    "precio": 19000,
+    "precio": 37400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_122/PRODUCTOS_Images_799906b7.IMAGEN_1.195557.jpg",
@@ -5317,7 +5318,7 @@
     "producto": "PINK X25 REF: PINK003",
     "material": "POLVO DE HADA",
     "tallas": "N/A",
-    "precio": 12000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg",
@@ -5363,7 +5364,7 @@
     "producto": "BASE BABE SKIN  REF: GZ8060137",
     "material": "BASE",
     "tallas": "N/A",
-    "precio": 8000,
+    "precio": 22000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_125/PRODUCTOS_Images_2af2a1c6.IMAGEN_1.200200.jpg",
@@ -5386,7 +5387,7 @@
     "producto": "BASE COREANA  X12  REF: FC623",
     "material": "BASES",
     "tallas": "N/A",
-    "precio": 23000,
+    "precio": 44400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_126/PRODUCTOS_Images_9850ae8d.IMAGEN_1.200342.jpg",
@@ -5409,7 +5410,7 @@
     "producto": "ILUMINADOR PINK  X24  REF: PINK020",
     "material": "ILUMNADOR",
     "tallas": "N/A",
-    "precio": 15000,
+    "precio": 33200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_4f8e3bdd.IMAGEN_1.200610.jpg",
@@ -5432,7 +5433,7 @@
     "producto": "ILUMINADOR  ROMANTIC QUEEN X24 REF: B758",
     "material": "ILUMINADOR",
     "tallas": "N/A",
-    "precio": 14500,
+    "precio": 31800,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_4d0cf37c.IMAGEN_1.200728.jpg",
@@ -5455,7 +5456,7 @@
     "producto": "RUBOR ROMANTIC  RAIN   REF: R1029",
     "material": "RUBOR",
     "tallas": "N/A",
-    "precio": 12000,
+    "precio": 29000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_49dd8a15.IMAGEN_1.201358.jpg",
@@ -5478,7 +5479,7 @@
     "producto": "RUBOR DAISY ROSE  REF: DS-239155",
     "material": "RUBOR",
     "tallas": "N/A",
-    "precio": 4500,
+    "precio": 20040,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_a5271a75.IMAGEN_1.201635.jpg",
@@ -5501,7 +5502,7 @@
     "producto": "RUBOR MISS BETTY  REF: L1136",
     "material": "RUBOR",
     "tallas": "N/A",
-    "precio": 9500,
+    "precio": 26760,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_41ea5be5.IMAGEN_1.203556.jpg",
@@ -5524,7 +5525,7 @@
     "producto": "COBIJA 73 X 130 CM",
     "material": "SUAVE PIEL DE DURAZNO POR FUERA Y CÁLIDO OVEJERO POR DENTRO.",
     "tallas": "N/A",
-    "precio": 60000,
+    "precio": 95000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_DF4EC51F.IMAGEN_1.142447.jpg?tr=w-600,q-80",
@@ -5612,7 +5613,7 @@
     "producto": "CHAQUETA PIXEL RAYO CUEROTEX  PELUCHE",
     "material": "CUEROTEX",
     "tallas": "S,M,L,XL",
-    "precio": 64000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg",
@@ -5650,7 +5651,7 @@
     "producto": "GABARDINA LARGA",
     "material": "CUERTOTEX",
     "tallas": "S,M,L,XL",
-    "precio": 122000,
+    "precio": 222000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_1.161818.jpg?tr=w-600,q-80",
@@ -5683,7 +5684,7 @@
     "producto": "LEGGINS CUEROTEX  STRECH",
     "material": "CUEROTEX STRECH",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_136/PRODUCTOS_Images_9686e2cb.IMAGEN_1.224634.jpg",
@@ -5711,7 +5712,7 @@
     "producto": "CARGO CUEROTEX",
     "material": "CURTOTEX",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_ba5579d2.IMAGEN_1.235423.jpg",
@@ -5749,7 +5750,7 @@
     "producto": "BUSO OMBLIGUERO",
     "material": "LYCRA NYLONS",
     "tallas": "UNICA",
-    "precio": 51000,
+    "precio": 74800,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_1.165716.jpg",
@@ -5792,7 +5793,7 @@
     "producto": "ESQUELETO CAPRITI",
     "material": "TELA CAPRITI",
     "tallas": "SM,LXL",
-    "precio": 45000,
+    "precio": 67900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_1.180259.jpg",
@@ -5846,7 +5847,7 @@
     "producto": "CAMISETA TEXTURIZADA",
     "material": "TELA CAPRITI",
     "tallas": "SM,LXL",
-    "precio": 45000,
+    "precio": 67900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_2755f4ff.IMAGEN_1.181408.jpg",
@@ -5884,7 +5885,7 @@
     "producto": "LEVIS HOMBRE REF MEDIO",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -5907,7 +5908,7 @@
     "producto": "LEVIS HOMBRE REF AZUL OSCURO",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -5930,7 +5931,7 @@
     "producto": "LEVIS HOMBRE REF VERDE",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -5953,7 +5954,7 @@
     "producto": "LEVIS HOMBRE REF NEGRO MATE",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -5976,7 +5977,7 @@
     "producto": "LEVIS HOMBRE REF ARENA",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
