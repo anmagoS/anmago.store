@@ -10,7 +10,7 @@
   <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
   
   <!-- ⚡ OPTIMIZACIONES CRÍTICAS PARA LCP -->
-  
+   <link rel="icon" href="tina-192.png" type="image/x-icon" />
   <!-- 1. Precarga del LOGO (elemento LCP más probable) -->
   <link rel="preload" 
         href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto" 
@@ -246,14 +246,16 @@
     </div>
   </div>
 
-<!-- BANNER PROMOCIONAL -->
-<div class="container-fluid banner-promocional py-2">
-  <div class="container text-center">
-    <small class="fw-bold">
-      ⭐ <span class="text-primary">Nuestros precios incluyen envío estándar en la mayoría de ciudades. 
-      Si tu zona tiene tarifa especial, te lo informamos antes de pagar.</span> ⭐<br>
-      ⭐ Los mejores precios ⭐ Calidad garantizada ⭐ Envíos Nacionales Contraentrega
-    </small>
+<!-- BANNER INSTITUCIONAL -->
+<div class="container-fluid banner-promocional py-2" style="background-color:#f5f5f5;">
+  <div class="container text-center" style="font-family:'Segoe UI', sans-serif; font-weight:500; font-size:14px; color:#333;">
+    <div>
+      <span style="color:#c49b0b;">Nuestros precios incluyen envío estándar en la mayoría de ciudades.</span><br>
+      <span style="color:#c49b0b;">Si tu zona tiene tarifa especial, te lo informamos antes de pagar.</span>
+    </div>
+    <div style="color:#c49b0b;">
+      Los mejores precios · Calidad garantizada · Envíos Nacionales Contraentrega
+    </div>
   </div>
 </div>
 
@@ -496,26 +498,241 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   
   <!-- Scripts con orden optimizado -->
-  <script>
-    // Función para cerrar el menú (necesaria temprano)
-    function cerrarMenu() {
-      const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
-      if (offcanvas) {
+<script>
+// ==============================================
+// MENÚ HAMBURGUESA AUTÓNOMO - NO DEPENDE DE APP.JS
+// ==============================================
+
+// Variable para el catálogo del menú
+let catalogoMenuHamburguesa = [];
+
+// Función para cerrar el menú
+function cerrarMenu() {
+    const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
+    if (offcanvas) {
         offcanvas.hide();
-      }
+    }
+}
+
+// 🎯 FUNCIÓN PRINCIPAL: Cargar categorías en el menú hamburguesa
+async function cargarCategoriasMenuHamburguesa() {
+    console.log('🍔 Cargando categorías para menú hamburguesa...');
+    
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (!contenedor) {
+        console.error('❌ No se encontró #menu-categorias-dinamico');
+        return;
     }
     
-    // Función placeholder para volver a inicio
-    function volverAInicio() {
-      const vistaInicio = document.getElementById('vista-inicio');
-      const otrasVistas = document.querySelectorAll('.vista:not(#vista-inicio)');
-      
-      vistaInicio.classList.add('vista-activa');
-      otrasVistas.forEach(vista => vista.classList.remove('vista-activa'));
-      
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Mostrar loading
+    contenedor.innerHTML = `
+        <div class="text-center py-3">
+            <div class="spinner-border spinner-border-sm text-primary"></div>
+            <p class="mt-2 small text-muted">Cargando categorías...</p>
+        </div>
+    `;
+    
+    try {
+        // 1. INTENTAR USAR productosGlobal de app.js si ya está cargado
+        if (window.productosGlobal && Array.isArray(window.productosGlobal) && window.productosGlobal.length > 0) {
+            console.log('✅ Usando productosGlobal de app.js');
+            catalogoMenuHamburguesa = window.productosGlobal;
+            mostrarCategoriasEnMenu();
+            return;
+        }
+        
+        // 2. SI NO, CARGAR EL CATÁLOGO DIRECTAMENTE
+        console.log('📦 Cargando catálogo directamente para menú...');
+        const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
+        const respuesta = await fetch(url);
+        const catalogo = await respuesta.json();
+        
+        if (!Array.isArray(catalogo) || catalogo.length === 0) {
+            throw new Error('Catálogo vacío o inválido');
+        }
+        
+        catalogoMenuHamburguesa = catalogo;
+        console.log(`✅ Catálogo cargado: ${catalogo.length} productos`);
+        
+        // Mostrar las categorías
+        mostrarCategoriasEnMenu();
+        
+    } catch (error) {
+        console.error('❌ Error cargando categorías:', error);
+        
+        const contenedor = document.getElementById('menu-categorias-dinamico');
+        if (contenedor) {
+            contenedor.innerHTML = `
+                <div class="alert alert-warning small py-2">
+                    <i class="bi bi-exclamation-triangle me-1"></i>
+                    No se pudieron cargar las categorías
+                    <button class="btn btn-sm btn-outline-primary mt-1 d-block w-100" 
+                            onclick="cargarCategoriasMenuHamburguesa()">
+                        <i class="bi bi-arrow-clockwise"></i> Reintentar
+                    </button>
+                </div>
+            `;
+        }
     }
-  </script>
+}
+
+// 🎯 FUNCIÓN que muestra las categorías en el menú
+function mostrarCategoriasEnMenu() {
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (!contenedor) return;
+    
+    if (!catalogoMenuHamburguesa || catalogoMenuHamburguesa.length === 0) {
+        contenedor.innerHTML = '<p class="small text-muted">No hay productos disponibles</p>';
+        return;
+    }
+    
+    // Extraer tipos únicos del catálogo
+    const tiposUnicos = ['TODOS', ...new Set(catalogoMenuHamburguesa.map(p => p.tipo).filter(Boolean))];
+    
+    console.log(`📂 Tipos únicos encontrados: ${tiposUnicos.length - 1}`, tiposUnicos);
+    
+    if (tiposUnicos.length === 1) { // Solo "TODOS"
+        contenedor.innerHTML = '<p class="small text-muted">No se encontraron categorías</p>';
+        return;
+    }
+    
+    // Crear HTML del menú
+    let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
+    html += '<div class="d-flex flex-column gap-2">';
+    
+    // Opción "TODOS LOS PRODUCTOS"
+    const todosCount = catalogoMenuHamburguesa.length;
+    html += `
+        <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+           onclick="irATodosLosProductos(); cerrarMenu(); return false;">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-grid-fill me-2"></i>
+                <span>TODOS LOS PRODUCTOS</span>
+            </div>
+            <span class="badge bg-primary rounded-pill">${todosCount}</span>
+        </a>
+    `;
+    
+    // Cada categoría/tipo
+    tiposUnicos.slice(1).forEach(tipo => {
+        const count = catalogoMenuHamburguesa.filter(p => p.tipo === tipo).length;
+        
+        html += `
+            <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+               onclick="irACategoria('${tipo}'); cerrarMenu(); return false;">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-folder me-2"></i>
+                    <span>${tipo}</span>
+                </div>
+                <span class="badge bg-primary rounded-pill">${count}</span>
+            </a>
+        `;
+    });
+    
+    html += '</div>';
+    contenedor.innerHTML = html;
+    
+    console.log(`✅ Menú hamburguesa cargado: ${tiposUnicos.length - 1} categorías`);
+}
+
+// 🎯 FUNCIONES DE NAVEGACIÓN (compatibles con app.js)
+function irATodosLosProductos() {
+    console.log('📦 Navegando a: TODOS LOS PRODUCTOS');
+    
+    // Si app.js está disponible, usar su función
+    if (typeof window.mostrarTodosLosProductosCompleto === 'function') {
+        window.mostrarTodosLosProductosCompleto();
+    } else {
+        // Fallback: redirigir a index con parámetro
+        window.location.href = 'index.html?tipo=TODOS';
+    }
+}
+
+function irACategoria(tipo) {
+    console.log('📁 Navegando a categoría:', tipo);
+    
+    // Si app.js está disponible, usar su función
+    if (typeof window.cargarPorTipo === 'function') {
+        window.cargarPorTipo(tipo);
+    } else {
+        // Fallback: redirigir a index con parámetro
+        window.location.href = `index.html?tipo=${encodeURIComponent(tipo)}`;
+    }
+}
+
+// 🎯 Función placeholder para volver a inicio
+function volverAInicio() {
+    console.log('🏠 Volviendo al inicio desde menú');
+    
+    // Si app.js está disponible, usar su función
+    if (typeof window.volverAInicio === 'function') {
+        window.volverAInicio();
+    } else {
+        // Fallback simple
+        const vistaInicio = document.getElementById('vista-inicio');
+        const otrasVistas = document.querySelectorAll('.vista:not(#vista-inicio)');
+        
+        if (vistaInicio) {
+            vistaInicio.classList.add('vista-activa');
+            otrasVistas.forEach(vista => vista.classList.remove('vista-activa'));
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// 🎯 INICIALIZACIÓN CUANDO EL DOM ESTÁ LISTO
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 DOM cargado, configurando menú hamburguesa...');
+    
+    // Cargar categorías después de un breve delay
+    setTimeout(() => {
+        cargarCategoriasMenuHamburguesa();
+    }, 800);
+    
+    // También cargar cuando se abra el menú (por si acaso)
+    const menuLateral = document.getElementById('menuLateral');
+    if (menuLateral) {
+        menuLateral.addEventListener('show.bs.offcanvas', function() {
+            console.log('🎯 Menú hamburguesa abierto, verificando categorías...');
+            
+            // Verificar si ya hay categorías cargadas
+            const contenedor = document.getElementById('menu-categorias-dinamico');
+            if (contenedor && !contenedor.querySelector('.categoria-menu-item')) {
+                console.log('🔄 No hay categorías, recargando...');
+                cargarCategoriasMenuHamburguesa();
+            }
+        });
+    }
+});
+
+// 🎯 ESCUCHAR CUANDO APP.JS TERMINE DE CARGAR
+window.addEventListener('appJSListo', function() {
+    console.log('🎯 Evento appJSListo recibido');
+    
+    // Actualizar el catálogo con los datos de app.js
+    if (window.productosGlobal && Array.isArray(window.productosGlobal)) {
+        catalogoMenuHamburguesa = window.productosGlobal;
+        
+        // Actualizar el menú si ya está cargado
+        const contenedor = document.getElementById('menu-categorias-dinamico');
+        if (contenedor && contenedor.querySelector('.categoria-menu-item')) {
+            console.log('🔄 Actualizando menú con datos de app.js');
+            mostrarCategoriasEnMenu();
+        }
+    }
+});
+
+// 🎯 FORZAR CARGA DESPUÉS DE 3 SEGUNDOS (fallback)
+setTimeout(() => {
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (contenedor && (contenedor.innerHTML.includes('Cargando') || 
+                      contenedor.innerHTML.includes('No se pudieron'))) {
+        console.log('⚠️ Fallback después de 3s, recargando menú...');
+        cargarCategoriasMenuHamburguesa();
+    }
+}, 3000);
+</script>
   
   <!-- Tus scripts principales -->
   <script src="app.js?v=20251116" defer></script>
@@ -817,6 +1034,30 @@
 
     window.recargarCarruselSincronizado = cargarCarruselSincronizado;
   </script>
-
+<script>
+// Fallback si después de 3 segundos no se cargaron las categorías
+setTimeout(() => {
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (contenedor && contenedor.innerHTML.includes('Cargando')) {
+        console.log('⚠️ Fallback: cargando categorías directamente...');
+        
+        // Carga directa como último recurso
+        fetch("https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json")
+            .then(res => res.json())
+            .then(productos => {
+                window.productosGlobal = productos;
+                cargarCategoriasEnMenuDesdeAppJS();
+            })
+            .catch(error => {
+                contenedor.innerHTML = `
+                    <div class="alert alert-danger small py-2">
+                        <i class="bi bi-exclamation-triangle"></i>
+                        Error cargando categorías
+                    </div>
+                `;
+            });
+    }
+}, 3000);
+</script>
 </body>
 </html>
