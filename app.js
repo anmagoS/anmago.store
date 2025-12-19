@@ -23,7 +23,6 @@ const ICONOS_CATEGORIAS = {
     'DAMA': '👩', 'CABALLERO': '👨',
     'UNISEX': '👥', 'NIÑOS': '👦', 'NIÑAS': '👧',
 };
-
 // ==============================================
 // FUNCIONES PARA ENLACES COMPARTIBLES
 // ==============================================
