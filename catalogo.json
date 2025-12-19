@@ -1201,7 +1201,7 @@
     "producto": "STRAPLE CUERINA",
     "material": "CUERTOTEX",
     "tallas": "UNICA",
-    "precio": 45000,
+    "precio": 65600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_127/PRODUCTOS_Images_0eb21e71.IMAGEN_1.234209.jpg",
@@ -1252,7 +1252,7 @@
     "producto": "HEBILLA",
     "material": "ENERGICA",
     "tallas": "UNICA",
-    "precio": 42000,
+    "precio": 61000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_128/PRODUCTOS_Images_2b2b4bd1.IMAGEN_1.234314.jpg",
@@ -1293,7 +1293,7 @@
     "producto": "JEAN BOTA RECTA",
     "material": "LICRADO",
     "tallas": "6,8,10,12,14",
-    "precio": 75000,
+    "precio": 111600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg",
@@ -1342,7 +1342,7 @@
     "producto": "JEAN CROCS",
     "material": "CROCS",
     "tallas": "6,8,10,12,14",
-    "precio": 75000,
+    "precio": 102400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_130/PRODUCTOS_Images_8c73e98e.IMAGEN_1.193309.jpg",
@@ -1435,7 +1435,7 @@
     "producto": "JEAN PALAZZO",
     "material": "RIGIDO",
     "tallas": "6,8,10,12,14",
-    "precio": 78500,
+    "precio": 107000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_131/PRODUCTOS_Images_93246aa1.IMAGEN_1.194805.jpg",
@@ -1513,7 +1513,7 @@
     "producto": "JEAN CLASICO",
     "material": "LICRADO",
     "tallas": "6,8,10,12,14",
-    "precio": 75000,
+    "precio": 95500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_8fd69eef.IMAGEN_1.195056.jpg",
@@ -1616,7 +1616,7 @@
     "producto": "CHAQUETA LONDON",
     "material": "CUERTOTEX",
     "tallas": "S,M,L,XL",
-    "precio": 55000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg",
@@ -1659,7 +1659,7 @@
     "producto": "CHAQUETA SENCILLA LARGA",
     "material": "CUEROTEX",
     "tallas": "S,M,L,XL",
-    "precio": 57000,
+    "precio": 88600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg",
@@ -1697,7 +1697,7 @@
     "producto": "CAMISA MANGA LARGA",
     "material": "POPELINA",
     "tallas": "S,M,L,XL",
-    "precio": 54000,
+    "precio": 93200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_135/PRODUCTOS_Images_4077a93e.IMAGEN_1.215820.jpg",
@@ -1807,6 +1807,23 @@
     "descripcion": "La camisa manga larga está confeccionada en popelina y presenta mangas largas. Disponible en tallas S, M, L y XL."
   },
   {
+    "id": "5BE97B82",
+    "tipo": "GENERICO",
+    "subtipo": "DAMA",
+    "categoria": "GENERICO",
+    "subcategoria": "GENERICO",
+    "producto": "OTROS",
+    "material": "VARIOS",
+    "tallas": "N/A",
+    "precio": 15000,
+    "imagenes": [],
+    "imagen": "Sin imágenes",
+    "url": "Sin imágenes",
+    "promo": false,
+    "proveedor": "GENERICO",
+    "descripcion": "Este producto pertenece a la categoría genérica y su subcategoría también es genérica. Se presenta como un elemento de uso múltiple dentro de la categoría \"Otros\", confeccionado a partir de una variedad de materiales."
+  },
+  {
     "id": "91E832A3",
     "tipo": "ROPA",
     "subtipo": "DAMA",
@@ -1815,7 +1832,7 @@
     "producto": "OVERSIZE MANGA CORTA",
     "material": "POPELINA",
     "tallas": "UNICA",
-    "precio": 49000,
+    "precio": 81700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg",
