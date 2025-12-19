@@ -178,75 +178,74 @@ function crearCardProductoHTML(producto) {
     if (estaEnPromo) {
         const descuento = producto.precioOferta ? Math.round((1 - producto.precioOferta / precioOriginal) * 100) : 10;
         precioFinal = producto.precioOferta || Math.round(precioOriginal * 0.9);
-        badgePromo = `<span class="badge bg-danger position-absolute" style="top: 10px; left: 10px;">-${descuento}%</span>`;
+        badgePromo = `<div class="badge-promo">-${descuento}%</div>`;
     }
     
     // Verificar stock
     const badgeStock = producto.stock <= 5 ? 
-        `<span class="badge bg-warning text-dark position-absolute" style="top: 10px; right: 10px;">Últimas</span>` : '';
+        `<div class="badge-stock">Últimas ${producto.stock}</div>` : '';
     
     // Obtener imagen correcta
-    let imagenMostrar = '';
+    let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+    
     if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
+        // Buscar imagen principal
         const imagenPrincipal = producto.imagenes.find(img => 
             img.tipo && img.tipo.toUpperCase() === "PRINCIPAL"
         );
         
-        if (imagenPrincipal) {
+        if (imagenPrincipal && imagenPrincipal.url) {
             imagenMostrar = imagenPrincipal.url;
-        } else {
-            const imagenVariante = producto.imagenes.find(img => 
-                img.tipo && img.tipo.toUpperCase() === "VARIANTE"
-            );
-            imagenMostrar = imagenVariante ? imagenVariante.url : producto.imagenes[0].url;
+        } else if (producto.imagenes[0] && producto.imagenes[0].url) {
+            imagenMostrar = producto.imagenes[0].url;
         }
-    } else {
-        imagenMostrar = producto.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+    } else if (producto.imagen) {
+        imagenMostrar = producto.imagen;
     }
     
-    // 🎯 RETORNAR STRING HTML, NO ELEMENTO DOM
+    // 🎯 HTML CORREGIDO - El <a> tag envuelve TODO
     return `
-        <div class="card-producto-ml">
-            <a href="PRODUCTO.HTML?id=${producto.id}">
-                <div class="position-relative">
-                    <img src="${imagenMostrar}" 
-                         alt="${producto.producto}" 
-                         class="card-img-ml"
-                         loading="lazy"
-                         onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
-                    ${badgePromo}
-                    ${badgeStock}
+    <div class="card-producto-ml" data-id="${producto.id}">
+        <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
+            <div class="card-image-container">
+                <img src="${imagenMostrar}" 
+                     alt="${producto.producto || 'Producto'}" 
+                     class="card-img-ml"
+                     width="300"
+                     height="200"
+                     loading="lazy"
+                     onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-200'">
+                ${badgePromo}
+                ${badgeStock}
+            </div>
+            
+            <div class="card-content">
+                <!-- Tipo y subtipo -->
+                <div class="categorias">
+                    ${producto.tipo ? `<span class="categoria-tipo">${producto.tipo}</span>` : ''}
+                    ${producto.subtipo ? `<span class="categoria-subtipo">${producto.subtipo}</span>` : ''}
                 </div>
                 
-                <div class="card-body-ml">
-                    <div class="d-flex flex-wrap gap-1 mb-1">
-                        <span class="badge bg-info text-dark small">${producto.tipo || ''}</span>
-                        <span class="badge bg-secondary small">${producto.subtipo || ''}</span>
+                <!-- Nombre del producto -->
+                <h3 class="producto-nombre">${producto.producto || 'Producto sin nombre'}</h3>
+                
+                <!-- Precio y botón -->
+                <div class="card-footer">
+                    <div class="precios">
+                        <div class="precio-actual">$${precioFinal.toLocaleString('es-CO')}</div>
+                        ${estaEnPromo && precioOriginal !== precioFinal ? `
+                            <div class="precio-anterior">$${precioOriginal.toLocaleString('es-CO')}</div>
+                        ` : ''}
                     </div>
                     
-                    <h3 class="nombre-producto-ml small line-clamp-2">${producto.producto}</h3>
-                    
-                    <div class="d-flex justify-content-between align-items-center mt-2">
-                        <div>
-                            <div class="precio-ml fw-bold text-primary">
-                                $${precioFinal.toLocaleString('es-CO')}
-                            </div>
-                            ${estaEnPromo && precioOriginal !== precioFinal ? `
-                                <div class="text-muted text-decoration-line-through small">
-                                    $${precioOriginal.toLocaleString('es-CO')}
-                                </div>
-                            ` : ''}
-                        </div>
-                        
-                        <button class="btn btn-outline-primary btn-sm" 
-                                onclick="event.preventDefault(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                    </div>
+                    <button class="btn-ver-producto" 
+                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                        <i class="bi bi-eye"></i>
+                    </button>
                 </div>
-            </a>
-        </div>
-    `;
+            </div>
+        </a>
+    </div>`;
 }
 
 // ==============================================
@@ -789,51 +788,141 @@ async function cargarVistaTodos() {
 }
 
 // Cargar más productos
-function cargarMasProductos() {
+// ==============================================
+// SCROLL INFINITO MEJORADO
+// ==============================================
+
+let cargandoScroll = false;
+const LIMITE_PRODUCTOS = 12;
+
+// Función principal para cargar más productos
+async function cargarMasProductosScroll() {
+    if (cargandoScroll || productosCargados >= productosGlobal.length) return;
+    
     const grid = document.getElementById('grid-todos');
+    const loader = document.getElementById('cargando-todos');
     const btnContainer = document.getElementById('btn-ver-mas-container');
     
     if (!grid) return;
     
+    cargandoScroll = true;
+    if (loader) loader.classList.remove('d-none');
+    if (btnContainer) btnContainer.classList.add('d-none');
+    
+    // Pequeña pausa para mejor UX
+    await new Promise(resolve => setTimeout(resolve, 300));
+    
     const inicio = productosCargados;
-    const fin = inicio + 20;
+    const fin = Math.min(inicio + LIMITE_PRODUCTOS, productosGlobal.length);
     const productosParaMostrar = productosGlobal.slice(inicio, fin);
     
-    if (productosParaMostrar.length === 0) {
-        if (btnContainer) {
-            btnContainer.innerHTML = `
-                <div class="alert alert-info py-2">
-                    <i class="bi bi-check-circle"></i> Todos los productos cargados
-                </div>
-            `;
+    if (productosParaMostrar.length > 0) {
+        // Crear HTML de todos los productos de una vez (más eficiente)
+        const cardsHTML = productosParaMostrar.map(producto => crearCardProductoHTML(producto)).join('');
+        grid.insertAdjacentHTML('beforeend', cardsHTML);
+        
+        productosCargados += productosParaMostrar.length;
+        
+        // Actualizar contador
+        const contador = document.getElementById('contador-todos');
+        if (contador) {
+            contador.textContent = `${productosCargados} de ${productosGlobal.length} productos`;
         }
-        return;
+        
+        console.log(`📦 Cargados: ${productosCargados}/${productosGlobal.length} productos`);
     }
     
-    // Agregar nuevos productos
-    productosParaMostrar.forEach(producto => {
-        const cardHTML = crearCardProductoHTML(producto);
-        grid.innerHTML += cardHTML;
-    });
-    
-    productosCargados += productosParaMostrar.length;
+    cargandoScroll = false;
+    if (loader) loader.classList.add('d-none');
     
     // Actualizar botón
     if (btnContainer) {
         if (productosCargados < productosGlobal.length) {
             btnContainer.innerHTML = `
-                <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductos()">
+                <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
                     <i class="bi bi-arrow-down"></i> Ver más productos (${productosGlobal.length - productosCargados} restantes)
                 </button>
             `;
+            btnContainer.classList.remove('d-none');
         } else {
             btnContainer.innerHTML = `
-                <div class="alert alert-info py-2">
-                    <i class="bi bi-check-circle"></i> Todos los productos cargados
+                <div class="alert alert-success alert-sm py-2 mb-0">
+                    <i class="bi bi-check-circle me-1"></i> ¡Todos los productos cargados! (${productosGlobal.length})
                 </div>
             `;
+            btnContainer.classList.remove('d-none');
         }
     }
+}
+
+// Configurar detección de scroll automático
+function configurarScrollInfinito() {
+    let timeoutId;
+    
+    function manejarScroll() {
+        if (cargandoScroll || vistaActual !== 'todos') return;
+        
+        const gridTodos = document.getElementById('grid-todos');
+        if (!gridTodos) return;
+        
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        
+        // Si estamos cerca del final (300px antes)
+        if (scrollTop + clientHeight >= scrollHeight - 300) {
+            cargarMasProductosScroll();
+        }
+    }
+    
+    // Usar debounce para mejor rendimiento
+    window.addEventListener('scroll', () => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(manejarScroll, 100);
+    });
+}
+
+// Modificar cargarVistaTodos para iniciar correctamente
+async function cargarVistaTodos() {
+    try {
+        const contador = document.getElementById('contador-todos');
+        const grid = document.getElementById('grid-todos');
+        const btnContainer = document.getElementById('btn-ver-mas-container');
+        const loader = document.getElementById('cargando-todos');
+        
+        if (!grid || !contador) return;
+        
+        // Limpiar y resetear
+        productosCargados = 0;
+        grid.innerHTML = '';
+        
+        if (productosGlobal.length === 0) {
+            contador.textContent = '0 productos';
+            grid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-search fs-1 text-muted"></i>
+                    <h5 class="mt-3">No hay productos disponibles</h5>
+                </div>
+            `;
+            if (btnContainer) btnContainer.classList.add('d-none');
+            if (loader) loader.classList.add('d-none');
+            return;
+        }
+        
+        // Mostrar cargando
+        if (loader) loader.classList.remove('d-none');
+        contador.textContent = `0 de ${productosGlobal.length} productos`;
+        
+        // Cargar primer lote
+        await cargarMasProductosScroll();
+        
+    } catch (error) {
+        console.error('❌ Error cargando vista todos:', error);
+    }
+}
+
+// Mantener función original para compatibilidad
+function cargarMasProductos() {
+    console.warn('⚠️ cargarMasProductos() está obsoleta. Usando cargarMasProductosScroll()');
+    cargarMasProductosScroll();
 }
 
 // ==============================================
@@ -904,6 +993,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     configurarInstalacionPWA();
     inicializarCategoriasMenuLateral();
     
+    // 4. Configurar scroll infinito (¡NUEVA LÍNEA!)
+    configurarScrollInfinito();
     
     // 5. Cargar header dinámicamente
     const headerContainer = document.getElementById("header-container");
@@ -949,6 +1040,146 @@ document.addEventListener("DOMContentLoaded", async () => {
         }, 2500);
     }
     
+
+    // ==============================================
+// SCROLL INFINITO AUTOMÁTICO
+// ==============================================
+
+let cargandoScroll = false;
+const LIMITE_PRODUCTOS = 12; // Cuántos cargar cada vez
+
+function configurarScrollInfinito() {
+    // Detectar scroll para carga automática
+    window.addEventListener('scroll', () => {
+        if (cargandoScroll || vistaActual !== 'todos') return;
+        
+        const gridTodos = document.getElementById('grid-todos');
+        if (!gridTodos) return;
+        
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        
+        // Si estamos a 200px del final, cargar más
+        if (scrollTop + clientHeight >= scrollHeight - 200) {
+            cargarMasProductosScroll();
+        }
+    });
+}
+
+async function cargarMasProductosScroll() {
+    if (cargandoScroll) return;
+    
+    const grid = document.getElementById('grid-todos');
+    const loader = document.getElementById('cargando-todos');
+    
+    if (!grid) return;
+    
+    // Si ya cargamos todos los productos, no hacer nada
+    if (productosCargados >= productosGlobal.length) {
+        if (loader) loader.classList.add('d-none');
+        return;
+    }
+    
+    cargandoScroll = true;
+    if (loader) loader.classList.remove('d-none');
+    
+    // Simular un pequeño retraso para mejor UX
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    const inicio = productosCargados;
+    const fin = Math.min(inicio + LIMITE_PRODUCTOS, productosGlobal.length);
+    const productosParaMostrar = productosGlobal.slice(inicio, fin);
+    
+    if (productosParaMostrar.length > 0) {
+        // Agregar nuevos productos al grid
+        productosParaMostrar.forEach(producto => {
+            const cardHTML = crearCardProductoHTML(producto);
+            grid.insertAdjacentHTML('beforeend', cardHTML);
+        });
+        
+        productosCargados += productosParaMostrar.length;
+        
+        // Actualizar contador
+        const contador = document.getElementById('contador-todos');
+        if (contador) {
+            contador.textContent = `${productosCargados} de ${productosGlobal.length} productos`;
+        }
+        
+        // Mostrar/Ocultar mensaje de "cargando"
+        if (productosCargados >= productosGlobal.length) {
+            const btnContainer = document.getElementById('btn-ver-mas-container');
+            if (btnContainer) {
+                btnContainer.innerHTML = `
+                    <div class="alert alert-success py-2">
+                        <i class="bi bi-check-circle me-2"></i> Todos los productos cargados (${productosGlobal.length})
+                    </div>
+                `;
+            }
+        }
+    }
+    
+    cargandoScroll = false;
+    if (loader) loader.classList.add('d-none');
+}
+
+// Modificar la función cargarVistaTodos para usar scroll infinito
+async function cargarVistaTodos() {
+    try {
+        const contador = document.getElementById('contador-todos');
+        const grid = document.getElementById('grid-todos');
+        const btnContainer = document.getElementById('btn-ver-mas-container');
+        
+        if (!grid || !contador) return;
+        
+        // Resetear contadores
+        productosCargados = 0;
+        grid.innerHTML = '';
+        
+        // Actualizar contador inicial
+        contador.textContent = `0 de ${productosGlobal.length} productos`;
+        
+        // Configurar mensaje de cargando
+        const loader = document.getElementById('cargando-todos');
+        if (loader) loader.classList.remove('d-none');
+        
+        if (productosGlobal.length === 0) {
+            grid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-search fs-1 text-muted"></i>
+                    <h5 class="mt-3">No hay productos disponibles</h5>
+                </div>
+            `;
+            if (loader) loader.classList.add('d-none');
+            return;
+        }
+        
+        // Cargar primer lote inmediatamente
+        await cargarMasProductosScroll();
+        
+        // Configurar botón manual (por si acaso)
+        if (btnContainer && productosCargados < productosGlobal.length) {
+            btnContainer.innerHTML = `
+                <button id="btn-ver-mas" class="btn btn-outline-primary" 
+                        onclick="cargarMasProductosScroll()">
+                    <i class="bi bi-arrow-down me-1"></i> Ver más productos
+                </button>
+            `;
+            btnContainer.classList.remove('d-none');
+        }
+        
+    } catch (error) {
+        console.error('Error cargando vista todos:', error);
+    }
+}
+
+// Llamar a configurarScrollInfinito en la inicialización
+document.addEventListener("DOMContentLoaded", async () => {
+    // ... tu código existente ...
+    
+    // 11. Configurar scroll infinito
+    configurarScrollInfinito();
+    
+    console.log('✅ Anmago Store inicializada correctamente');
+});
     
     
     console.log('✅ Anmago Store inicializada correctamente');
@@ -1000,4 +1231,3 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
-
