@@ -55,7 +55,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_4.160634.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_5.160634.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_7.160636.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "LEVEL STORE",
     "descripcion": "La chaqueta torera está confeccionada en Cuerotex y se ofrece en tallas S, M, L y XL. Su estructura se ajusta a la silueta del usuario, proporcionando un ajuste cómodo y seguro.",
     "video_url": "https://ik.imagekit.io/mbsk9dati/WhatsApp%20Video%202025-10-27%20at%209.19.59%20AM.mp4?updatedAt=1761574985463"
@@ -1328,7 +1328,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_1.022057.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_2.022057.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_3.022057.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_4.022100.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_5.022100.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_129/PRODUCTOS_Images_c3b8e4bc.IMAGEN_6.022101.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ALDAMI",
     "descripcion": "Este JEAN BOTA RECTA presenta una estructura de licrado. Está disponible en las tallas 6, 8, 10, 12 y 14.",
     "video_url": "https://youtube.com/shorts/9N67ioHB71M?si=QS7HmZ8kz-CzrW-C"
@@ -1646,7 +1646,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_1.010353.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_2.010353.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_3.010353.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_4.010357.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_133/PRODUCTOS_Images_a057743f.IMAGEN_5.010357.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "LEVEL STORE",
     "descripcion": "La chaqueta London está confeccionada con cuertotex y cuenta con una estructura diseñada para mujeres. Se ofrece en una variedad de tallas que incluyen S, M, L y XL."
   },
@@ -1684,7 +1684,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_1.010620.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_2.010620.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_3.010620.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_f5e6b846.IMAGEN_4.010622.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "LEVEL STORE",
     "descripcion": "La chaqueta simple larga está confeccionada en cuerotex y se ofrece en variedad de tallas que incluyen S, M, L y XL. Presenta un diseño sencillo y elegante, adecuado para mujeres. Su estructura larga proporciona cobertura y comodidad para el usuario."
   },
@@ -2299,7 +2299,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_1.021651.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_2.021651.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_3.021651.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_51/PRODUCTOS_Images_67278aa1.IMAGEN_4.021654.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "LA PINTACO",
     "descripcion": "El enterizo DULCE CON COPA está confeccionado en material energético y se ofrece en una única talla, UNICA. Cuenta con una estructura que incluye una parte superior y una copa. Su diseño se centra en una pieza única que proporciona una sensación de cobertura completa."
   },
@@ -3202,7 +3202,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_1.164315.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_2.164315.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_3.164315.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_4.164318.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_5.164318.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_6.164318.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_7.164320.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_74/PRODUCTOS_Images_f838cf66.IMAGEN_8.164320.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "HOPEC",
     "descripcion": "El Pantalón Dril Licrado se caracteriza por su confección en dril licrado, disponible en tallas 28, 30, 32, 34 y 36, ofrece una estructura cómoda y funcional para diferentes ocasiones."
   },
@@ -4660,7 +4660,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_1.181723.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_1.181723.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_2.181723.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_3.181723.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_4.181725.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_5.181726.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_6.181726.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_7.181728.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_8.181729.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_9.181729.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_10.181730.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_106/PRODUCTOS_Images_86fe1ff4.IMAGEN_11.181731.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "El Combo Bioaqua es un conjunto que incluye todos los componentes necesarios para crear un ecosistema acuático completo. Su estructura permite el montaje de un hábitat acuático integrado."
   },
@@ -5621,7 +5621,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_2.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_3.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "DIAGLER DIANA GONZALEZ",
     "descripcion": "Chaqueta con estructura de peluche confeccionada en Cuerotex. Disponible en tallas S, M, L y XL."
   },
@@ -5654,7 +5654,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_1.161818.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_1.161818.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_2.161818.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_132/PRODUCTOS_Images_660854B9.IMAGEN_3.161818.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "DIAGLER DIANA GONZALEZ",
     "descripcion": "La gabardina larga está confeccionada en Cuertotex, una opción resistente y duradera. Esta prenda cuenta con un diseño de botonadura clásico y unaperPage estructura que proporciona una cobertura adecuada para el torso y brazos. Disponible en tallas S, M, L y XL, ofrece una buena opción para aquellos que buscan una chaqueta versátil y funcional."
   },
@@ -5763,7 +5763,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_1.165716.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_1.165716.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_2.165716.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_3.165716.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_4.165719.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_137/PRODUCTOS_Images_80783575.IMAGEN_5.165719.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "WOMANS FITNESS",
     "descripcion": "Este buso ombliguero está confeccionado en Lycra Nylons, ofrece una talla única que se ajusta a diferentes cuerpos. Su diseño permite un ajuste cómodo y flexible, ideal para practicar actividades deportivas que requieren libertad de movimiento."
   },
@@ -5816,7 +5816,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_1.180259.jpg",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_1.180259.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_2.180259.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_3.180259.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_4.180302.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_5.180302.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_6.180303.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_138/PRODUCTOS_Images_5828b632.IMAGEN_7.180304.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "WOMANS FITNESS",
     "descripcion": "El esqueleto Capriti es un elemento de vestuario deportivo fabricado en tela Capriti, disponible en tallas SM, L y XL.",
     "video_url": "https://youtube.com/shorts/YeJlGpk_Wlo?si=DKpmrTAfbJqOS1er"
@@ -6350,7 +6350,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_2.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_3.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_4.215800.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_5.215800.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "AZALEA BODEGA MAYORISTA",
     "descripcion": "Confeccionado en hilo licrado, el Conjunto Brooklyn se caracteriza por su estructura única, presentada en una sola talla."
   },
@@ -6388,7 +6388,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_1.175055.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_1.175055.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_2.175055.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_3.175055.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_4.175058.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Conjunto compuesto por camiseta de algodón y pantalón corto tipo shorts de burda. Se ofrece en una variedad de tallas, incluyendo S, M, L y XL, para adaptarse a diferentes necesidades. Este conjunto está diseñado con una temática inspirada en Dragon Ball."
   },
@@ -7077,7 +7077,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_167/PRODUCTOS_Images_e8873bee.IMAGEN_1.233229.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_167/PRODUCTOS_Images_e8873bee.IMAGEN_1.233229.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "La Consola Retro Game Stick 4G es un dispositivo de juego que presenta una configuración portátil y compacta, diseñada para la reproducción de contenidos de entretenimiento. Su estructura permite una manipulación cómoda y accesible, permitiendo a los usuarios disfrutar de experiencias de juego en various entornos.",
     "video_url": "https://youtube.com/shorts/kjDLh3mf-To?feature=share"
@@ -7101,7 +7101,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_168/PRODUCTOS_Images_e2dff363.IMAGEN_1.000224.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_168/PRODUCTOS_Images_e2dff363.IMAGEN_1.000224.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro jugador reproduce la imagen de los personajes Avengers, presentando una estructura que permite su desplazamiento con ruedas. Su diseño recrea la apariencia de un vehículo dinámico y aventurero, ideal para kids que buscan incorporar acción y emoción a sus historias de juego.",
     "video_url": "https://youtu.be/tSv0PjuPR8c"
@@ -7173,7 +7173,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_172/PRODUCTOS_Images_975043b4.IMAGEN_1.170525.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_172/PRODUCTOS_Images_975043b4.IMAGEN_1.170525.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "CARRO LOCO KUROMI. Confeccionado según estándares de calidad, consta de una estructura compacta y ligera que facilita su manejo.",
     "variables": "ROSADO , AZUL",
@@ -7223,7 +7223,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_1.170005.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_1.170005.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_2.170005.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_3.170005.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_4.170008.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_5.170009.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_6.170009.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Este conjunto deportivo consta de una camiseta de algodón amplia y un pantalón Suplex, diseñados para uso atlético. Se ofrece en dos tallas: Única y XL. La confección de ambas piezas destaca por su comodidad y libertad de movimiento."
   },
@@ -7286,7 +7286,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_1.174035.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_1.174035.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_2.174035.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_3.174035.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_4.174038.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_5.174038.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_6.174039.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_7.174041.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_8.174042.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_9.174044.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Este buso burda cuenta con una estructura confeccionada en burda y está disponible en cuatro tallas: S, M, L y XL, permitiendo una adecuada ajustabilidad para diversos usuarios."
   },
@@ -7339,7 +7339,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_1.185451.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_1.185451.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_2.185451.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_3.185451.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_4.185453.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_5.185454.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_6.185454.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_7.185456.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Conjunto Love consta de algodón y burda. Disponible en tallas S, M, L y XL."
   },
@@ -7387,7 +7387,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_1.190922.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_1.190922.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_2.190922.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_3.190922.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_4.190926.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_5.190926.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_6.190926.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El Conjunto New York se compone de prendas confeccionadas en algodón y burda, disponibles en tallas S, M, L y XL."
   },
@@ -7440,7 +7440,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_1.191911.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_1.191911.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_2.191911.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_3.191911.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_4.191914.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_5.191914.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_6.191915.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_7.191916.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El conjunto pantaloneta Tommy está confeccionado en algodón y burda, ofreciendo una estructura cómoda y resistente. Disponible en cuatro tallas: S, M, L y XL, este producto se adapta a diferentes medidas corporales. La combinación de materiales asegura una buena ventilación y movilidad durante la práctica de actividades deportivas."
   },
@@ -7488,7 +7488,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_1.192552.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_1.192552.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_2.192552.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_3.192552.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_4.192555.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_5.192555.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_6.192555.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El Conjunto Pantalón Suplex Ice está confeccionado con una combinación de Suplex y algodón, proporcionando una estructura liviana y versátil. Diseñado para uso deportivo, este conjunto ofrece una talla única y una opción adicional en talla XL."
   },
@@ -7526,7 +7526,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_1.193524.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_1.193524.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_2.193524.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_3.193524.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_4.193528.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Este conjunto biker se compone de una chaqueta en Suplex y una camiseta en algodón, diseñado para el ciclismo. La estructura de la chaqueta ofrece una confección resistente y duradera, mientras que la camiseta está confeccionada en algodón suave y cómodo. Está disponible en tallas única y XL."
   },
@@ -7564,7 +7564,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_1.194247.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_1.194247.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_2.194247.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_3.194247.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_4.194251.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El conjunto biker Suplex Puma se caracteriza por estar confeccionado en algodón y Suplex, y se ofrece en una talla única y una talla XL. Esta configuración combina durabilidad y comodidad, diseñada para usuarios que buscan un equipo versátil para actividades físicas."
   },
@@ -7607,7 +7607,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_1.194755.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_1.194755.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_2.194755.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_3.194755.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_4.194758.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_5.194758.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El Conjunto Adulto Pantaloneta Polo Ralph Lauren se confecciona con algodón y burda, y se ofrece en tallas S, M, L y XL."
   },
@@ -7650,7 +7650,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_5.195104.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_5.195104.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_1.195101.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_2.195101.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_3.195101.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_4.195103.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "Este conjunto para niños está diseñado con una estructura confeccionada en burda y algodón, ofreciendo comodidad y durabilidad. Está disponible en varias tallas, que van desde 2-4 hasta 14-16, para adaptarse a diferentes edades y estaturas."
   },
@@ -7786,7 +7786,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_2.205605.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El PROYECTOR HY300 PRO es un equipo de proyección de alta calidad, diseñado para ofrecer una experiencia de visualización óptima. Cuenta con una estructura resistente y compacta, lo que permite una fácil instalación y movilidad.",
     "video_url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gv9a-4ddc296c-a1c180dc-99e6e1fa-2641/trans/aidc/hwxhky-h265-hd.mp4?auth_key=1763845073-0-0-b68427b618c364624710f32ac153ce20"
@@ -7825,7 +7825,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_1.213402.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_1.213402.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_2.213402.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_3.213402.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_4.213405.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Esta máquina permite crear donas en diversas formas, gracias a sus moldes intercambiables en forma de figuras. La estructura de la máquina está diseñada para facilitar el proceso de elaboración de donas, permitiendo al usuario obtener resultados uniformes."
   },
@@ -7848,7 +7848,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_186/PRODUCTOS_Images_390C49F7.IMAGEN_1.172000.png?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_186/PRODUCTOS_Images_390C49F7.IMAGEN_1.172000.png?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La máquina para derretir chocolate y otros con moldes es un dispositivo destinado a derretir materiales como chocolate y otros similares mediante un proceso de calentamiento controlado. Cuenta con moldes que permiten dar forma específica a los materiales derretidos. Se trata de un aparato diseñado para aplicaciones específicas en la cocina."
   },
@@ -7886,7 +7886,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_1.215336.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_1.215336.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_2.215336.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_3.215336.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_4.215339.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El escurreplatos de gabinete doble se estructura en dos niveles, con un diseño compacto para optimizar el espacio en la cocina. Permite el secado de platos y utensilios en dos niveles independientes, facilitando la organización y el ahorro de espacio."
   },
@@ -7909,7 +7909,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_188/PRODUCTOS_Images_eebf9e4f.IMAGEN_1.231118.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_188/PRODUCTOS_Images_eebf9e4f.IMAGEN_1.231118.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Estructura de almacenamiento para calzado con capacidad para cinco pares, diseñada con dos filas de compartimentos individuales que permiten una organización eficiente y accesible."
   },
@@ -7947,7 +7947,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_1.191600.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_1.191600.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_2.191600.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_3.191600.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_4.191604.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este perchero con gabinete posee una estructura que combina una columna vertical para colgar calzado y un espacio de almacenamiento adicional en la parte superior, permitiendo una organización eficiente de articulos personales."
   },
@@ -7980,7 +7980,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_1.155848.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_1.155848.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_2.155848.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_3.155848.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este cepillo secador está equipado con una plancha secaadora que cuenta con plaquetas cerámicas, lo que facilita el cuidado del cabello. La tecnología de iones integrada contribuye a reducir el daño y el encrespamiento, mientras que su diseño permite una mayor eficiencia en el proceso de secado."
   },
@@ -8013,7 +8013,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_1.162543.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_1.162543.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_2.162543.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_3.162543.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El ESPRIMIDOR DE NARANJA AUTOMÁTICO cuenta con una estructura diseñada para facilitar la extracción de jugo de naranja de manera eficiente y sencilla. Su funcionamiento automático permite obtener el jugo sin necesidad de esfuerzo manual, resultando en un proceso rápido y conveniente."
   },
@@ -8041,7 +8041,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_192/PRODUCTOS_Images_203b9170.IMAGEN_1.163121.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_192/PRODUCTOS_Images_203b9170.IMAGEN_1.163121.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_192/PRODUCTOS_Images_203b9170.IMAGEN_2.163121.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El Zapatero 6 Niveles es una estructura compuesta por 6 niveles para organizar calzado. Cuenta con espacios independientes para almacenar diferentes pares de zapatos de manera ordenada. La estructura permite maximizar el espacio disponible y mantener el área circundante despejada."
   },
@@ -8079,7 +8079,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_1.163737.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_1.163737.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_2.163737.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_3.163737.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_4.163740.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La plancha de argan es un dispositivo destinado al cuidado y estilismo del cabello, diseñado para ofrecer una experiencia de planchado efectiva."
   },
@@ -8117,7 +8117,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_1.164309.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_1.164309.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_2.164309.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_3.164309.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_4.164312.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Estructura compuesta por 5 niveles con tapa. Cada nivel proporciona espacio para organizar y almacenar calzado. Diseño compacto para optimizar el espacio."
   },
@@ -8165,7 +8165,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_1.164718.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_1.164718.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_2.164718.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_3.164718.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_4.164721.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_5.164721.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_6.164721.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este set de cuchillos está compuesto por seis unidades fabricadas en acero inoxidable, diseñadas para ofrecer una excelente durabilidad y resistencia en el uso diario en la cocina."
   },
@@ -8188,7 +8188,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_196/PRODUCTOS_Images_54ef50a8.IMAGEN_1.165155.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_196/PRODUCTOS_Images_54ef50a8.IMAGEN_1.165155.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este tensiómetro digital es un dispositivo diseñado para medir la presión arterial de forma precisa y rápida. Dispone de una pantalla digital que muestra los resultados en units de mmHg. Su diseño compacto y portátil lo hace fácil de transportar y utilizar en diferentes entornos."
   },
@@ -8221,7 +8221,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_1.165937.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_1.165937.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_2.165937.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_3.165937.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La repisa para sanitario es una estructura diseñada para proporcionar espacio de almacenamiento adicional en el baño. Se caracteriza por su confección, que permite colocar objetos personales y artículos de aseo en una superficie plana. Esta estructura ofrece una forma práctica de mantener organizado el espacio sanitario."
   },
@@ -8254,7 +8254,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_1.170358.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_1.170358.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_2.170358.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_3.170358.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El secador Kemey 35OO watts es un accesorio de cuidado capilar que cuenta con una potencia de 35OO watts, diseñado para el secado eficiente y rápido del cabello."
   },
@@ -8282,7 +8282,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_199/PRODUCTOS_Images_0f404108.IMAGEN_1.211655.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_199/PRODUCTOS_Images_0f404108.IMAGEN_1.211655.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_199/PRODUCTOS_Images_0f404108.IMAGEN_2.211655.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La hidrolavadora doble batería de 48 watts cuenta con una batería de 48 watts que permite su funcionamiento. Esta hidrolavadoravertedora se caracteriza por su sistema de doble batería, lo que la hace apta para diferentes aplicaciones.",
     "video_url": "https://youtube.com/shorts/udibsBHb0Jk?feature=share"
@@ -8311,7 +8311,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_200/PRODUCTOS_Images_2d32ba04.IMAGEN_1.213159.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_200/PRODUCTOS_Images_2d32ba04.IMAGEN_1.213159.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_200/PRODUCTOS_Images_2d32ba04.IMAGEN_2.213159.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El combo Titanium X3 está compuesto por una plancha, un rizador y un peine, confeccionados en aluminio. La plancha y el rizador están diseñados para estilizar y ajustar el cabello, mientras que el peine se utiliza para peinar y ordenar mechones. El conjunto ofrece una variedad de opciones para el cuidado y estilo del cabello."
   },
@@ -8344,7 +8344,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_2.173307.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_3.173307.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Esta pistola de hidrogel cuenta con luces y humo, y está diseñada para disparar hidrogel en forma de proyectil. La estructura de la pistola está confeccionada para proporcionar una experiencia de disparo realista y entretenida.",
     "video_url": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000000579075/p/1/e/6/t/10301/1100215047602.mp4?from=edge&definition=h265"
@@ -8383,7 +8383,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_2.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_3.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_4.174210.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La pistola de hidrogel K47 recargable es un dispositivo de lanzamiento de hidrogel que utiliza un sistema de recarga para ser reutilizado. Está diseñado para lanzar pelotas de hidrogel desde su cañón. La pistola viene equipada con un depósito para recargar el hidrogel, permitiendo un uso continuo.",
     "video_url": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000002688176/p/1/e/6/t/10301/5000225340173.mp4?from=edge&definition=h265"
@@ -8603,7 +8603,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_1.184700.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_1.184700.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_2.184700.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_3.184700.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_4.184703.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_5.184704.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La MALETA PARA MASCOTAS CON ACRÍLICO FRONTAL está confeccionada con acrílico frontal y presenta una estructura que alberga elementos para mascotas."
   },
@@ -8646,7 +8646,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_1.190649.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_1.190649.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_2.190649.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_3.190649.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_4.190653.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_5.190653.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La Maleta para Mascotas Desarmable se encuentra diseñada para acomodar a pequeñas mascotas, caracterizándose por su estructura desarmable que permite un fácil montaje y desmontaje. Confeccionada en licrado, esta maleta cuenta con una construcción sólida y duradera."
   },
@@ -8694,7 +8694,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_1.191730.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_1.191730.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_2.191730.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_3.191730.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_4.191733.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_5.191734.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_6.191735.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este cepillo dos en uno se utiliza para limpiar y recoger motas, y cuenta con dos funciones integradas en una sola herramienta, permitiendo una mayor eficiencia en el proceso de limpieza. Su diseño permite acceder a diferentes áreas y superficies, facilitando la recolección de motas y otros materiales sueltos."
   },
@@ -8727,7 +8727,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_1.192413.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_1.192413.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_2.192413.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_3.192413.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Se trata de una correa diseñada para perros y gatos, acompañada de un bolso."
   },
@@ -8765,7 +8765,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_1.192925.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_1.192925.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_2.192925.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_3.192925.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_4.192927.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Corral para mascotas de razas pequeñas, estructura diseñada para proporcionar un espacio seguro y adecuado para el cuidado de mascotas de tamaño reducido."
   },
@@ -8798,7 +8798,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_2.171815.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_3.171815.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El reloj combo MK 9.99 4 en 1 es un modelo que integra cuatro funciones en una sola unidad, incluyendo cronógrafo, calendario, termómetro y luz.رانهge cuenta con una estructura compacta y fácil de manejar."
   },
@@ -8831,7 +8831,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_2.190226.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_3.190226.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El Megadrone con doble batería es un dron diseñado para ofrecer una mayor autonomía de vuelo gracias a su sistema de doble batería. Esta característica permite prolongar el tiempo de vuelo, aumentando la capacidad de captura de imágenes o la experiencia de vuelo."
   },
@@ -8854,7 +8854,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este balón de fútbol cuenta con la marca Atlético Nacional y cumple con las dimensiones estándar de un balón #5, apto para uso en partidos y entrenamientos."
   },
@@ -9103,7 +9103,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_1.223712.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_1.223712.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_2.223712.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_3.223712.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "FAMS",
     "descripcion": "Este pijama enterizo para dama está confeccionado en piel de durazno y presenta una estructura única de una sola pieza. La talla única proporciona un ajuste estándar."
   },
@@ -9141,7 +9141,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_4.230356.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "FAMS",
     "descripcion": "El pijama navideña caballero está confeccionado en piel de durazno y se ofrece en las tallas S, M, L y XL."
   },
@@ -9179,7 +9179,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_4.230356.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "FAMS",
     "descripcion": "Pijama navideña para dama, confeccionado en piel de durazno. Disponible en una variedad de tallas: S, M, L y XL."
   },
@@ -9217,7 +9217,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_4.230356.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "FAMS",
     "descripcion": "Pijama navideña para niños confeccionado en piel de durazno, disponible en una variedad de tallas que incluyen 2-4, 6-8, 10-12 y 14-16."
   },
@@ -9240,7 +9240,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_d3a5ee71.IMAGEN_1.170129.png?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_d3a5ee71.IMAGEN_1.170129.png?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Esta cámara de vigilancia inteligente cuenta con doble lente, lo que permite capturar imágenes con mayor claridad y precisión. Su diseño permite una mayor cobertura y visibilidad extrema. La cámara es capaz de proporcionar una visión clara y detallada de cualquier área bajo vigilancia."
   },
@@ -9263,7 +9263,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_875f9476.IMAGEN_1.175405.png?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_875f9476.IMAGEN_1.175405.png?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este glucómetro digital viene con un kit que incluye 50 lancetas y 50 tirillas, permitiendo la medición exacta de la glucosa en sangre. El dispositivo es diseñado para proporcionar resultados precisos y fiables, y su fácil manejo y utilización facilitan el monitoreo de la glucemia."
   },
@@ -9286,7 +9286,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_222/PRODUCTOS_Images_eb4531dc.IMAGEN_1.180129.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_222/PRODUCTOS_Images_eb4531dc.IMAGEN_1.180129.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este paquete de repuestos para glucómetro contiene 50 tirillas y 50 lancetas, diseñados para su uso con glucómetros para mediciones precisas de niveles de glucosa en sangre. Los repuestos son compatibles con los estándares de medición establecidos y garantizan resultados confiables."
   },
@@ -9309,7 +9309,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_223/PRODUCTOS_Images_5c7682a7.IMAGEN_1.184426.png?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_223/PRODUCTOS_Images_5c7682a7.IMAGEN_1.184426.png?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Este nebulizador recargable cuenta con una doble máscara y presenta una estructura de confección compacta."
   },
@@ -9332,7 +9332,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e804444b.IMAGEN_1.201004.png?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e804444b.IMAGEN_1.201004.png?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El extractor nasal es un dispositivo diseñado para extraer secreciones y objetos extraños de la nariz, con una estructura que facilita su manipulación y limpieza. Cuenta con una configuración ergonómica que permite una mayor comodidad y eficacia durante su uso."
   },
@@ -9355,7 +9355,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_085cd662.IMAGEN_1.220329.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_085cd662.IMAGEN_1.220329.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este modelo de ambulancia está diseñado para recrear la experiencia de un vehículo de emergencia, equipado con luces que ofrecen una característica visual adicional. La estructura se presenta como una réplica detallada de un vehículo de rescate, capaz de evocar la imaginación y la creatividad de los usuarios."
   },
@@ -9378,7 +9378,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_214/PRODUCTOS_Images_7be38fb8.IMAGEN_1.220434.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_214/PRODUCTOS_Images_7be38fb8.IMAGEN_1.220434.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro transformer cuenta con un sensor integrado y una estructura que permite su transformación en diferentes configuraciones, permitiendo al usuario explorar y descubrir nuevas formas de juego.",
     "video_url": "https://youtu.be/p50paHJDs2A"
@@ -9402,7 +9402,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_215/PRODUCTOS_Images_48b80974.IMAGEN_1.221305.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_215/PRODUCTOS_Images_48b80974.IMAGEN_1.221305.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro se controla de manera remota, permitiendo al usuario dirigirlo según su preferencia. Su estructura ha sido confeccionada con precisión para ofrecer una experiencia de manejo controlado. Se trata de un carro diseñado para ser operado de forma controlada."
   },
@@ -9425,7 +9425,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_15703bc5.IMAGEN_1.221420.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_15703bc5.IMAGEN_1.221420.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro oruga cuenta con control y manilla, permitiendo su manejo y control preciso. Está diseñado para ser utilizado de manera manual."
   },
@@ -9448,7 +9448,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_932bf834.IMAGEN_1.221524.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_932bf834.IMAGEN_1.221524.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "La Moto a Control es un juguete de estructura compacta diseñada para ser maniobrada de forma remota. No se proporcionan tallas específicas para este modelo."
   },
@@ -9471,7 +9471,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_85d7f10b.IMAGEN_1.222607.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_85d7f10b.IMAGEN_1.222607.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro acuático está equipado con un sistema de control y una manilla, permitiendo una navegación precisa en superficies líquidas. La estructura del vehículo está diseñada para deslizarse por el agua con estabilidad y velocidad controlada."
   },
@@ -9504,7 +9504,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113c3.IMAGEN_1.222750.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113c3.IMAGEN_1.222750.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113C3.IMAGEN_2.223023.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113C3.IMAGEN_3.223023.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este contenedor de pista para bomberos se compone de 40 piezas que permiten la construcción de una variedad de configuraciones. La estructura modular del juego permite la creatividad y la imaginación en su diseño y montaje."
   },
@@ -9527,7 +9527,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_0828daa1.IMAGEN_1.224144.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_0828daa1.IMAGEN_1.224144.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Este carro eléctrico está diseñado para ser controlado remotamente, permitiendo al usuario manejarlo de manera precisa y segura. Cuenta con una estructura robusta que proporciona estabilidad y durabilidad.",
     "video_url": "https://youtu.be/19J1UW2PpUs"
@@ -9551,7 +9551,7 @@
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_5bd22550.IMAGEN_1.230348.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_5bd22550.IMAGEN_1.230348.jpg?tr=w-600,q-80",
-    "promo": true,
+    "promo": false,
     "proveedor": "XORA",
     "descripcion": "Se trata de una cocina de juguete compuesta por estructuras que representan diferentes elementos de una cocina.",
     "video_url": "https://youtube.com/shorts/0D0OoMEIxqc?feature=share"
