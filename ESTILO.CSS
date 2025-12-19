@@ -852,7 +852,93 @@ img[width][height] {
 .card-img-ml:first-child {
   will-change: transform;
 }
+.hero-slider {
+    height: 400px; /* Ajusta esta altura a la real de tus imágenes */
+    overflow: hidden;
+    position: relative;
+}
+/* ESTILOS PARA TARJETAS DE PRODUCTOS (Agrega esto si no existe) */
+.card-producto-ml {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.card-producto-ml:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card-producto-ml .card-img-top {
+    height: 200px;
+    object-fit: contain;
+    background: #f8f9fa;
+    padding: 15px;
+}
+
+.card-producto-ml .card-body {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-producto-ml .card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    min-height: 40px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-producto-ml .card-precio {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2A6A8F;
+    margin-top: auto;
+}
+
+.card-producto-ml .card-precio-anterior {
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: line-through;
+}
+
+.card-producto-ml .btn-ver {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.card-producto-ml .btn-ver:hover {
+    background: linear-gradient(135deg, #2A6A8F, #1B4557);
+    transform: translateY(-2px);
+}
+
+/* Grid contenedor */
+.grid-productos-ml {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px 0;
+}
 /* === LIMPIAR DUPLICADOS Y CONFLICTOS === */
 /* ELIMINAR TODAS LAS CLASES DUPLICADAS */
 /* Los estilos específicos para TEMU, modal zoom, etc. deben integrarse arriba */
