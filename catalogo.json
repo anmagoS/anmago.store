@@ -1808,23 +1808,6 @@
     "descripcion": "La camisa manga larga está confeccionada en popelina y presenta mangas largas. Disponible en tallas S, M, L y XL."
   },
   {
-    "id": "5BE97B82",
-    "tipo": "GENERICO",
-    "subtipo": "DAMA",
-    "categoria": "GENERICO",
-    "subcategoria": "GENERICO",
-    "producto": "OTROS",
-    "material": "VARIOS",
-    "tallas": "N/A",
-    "precio": 15000,
-    "imagenes": [],
-    "imagen": "Sin imágenes",
-    "url": "Sin imágenes",
-    "promo": false,
-    "proveedor": "GENERICO",
-    "descripcion": "Este producto pertenece a la categoría genérica y su subcategoría también es genérica. Se presenta como un elemento de uso múltiple dentro de la categoría \"Otros\", confeccionado a partir de una variedad de materiales."
-  },
-  {
     "id": "91E832A3",
     "tipo": "ROPA",
     "subtipo": "DAMA",
