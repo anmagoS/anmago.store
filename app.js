@@ -76,20 +76,237 @@ function actualizarURLNavegacion(tipo = null, subtipo = null, categoria = null) 
     return nuevaURL.toString();
 }
 
-// Función para copiar enlace al portapapeles
+// Función universal para copiar enlaces (funciona en todos los dispositivos)
 function copiarEnlaceCompartir(tipo = null, subtipo = null, categoria = null) {
     const enlace = crearEnlaceFiltro(tipo, subtipo, categoria);
     
-    navigator.clipboard.writeText(enlace).then(() => {
-        // Mostrar notificación
-        mostrarNotificacion('✅ Enlace copiado al portapapeles');
+    // Método moderno con Clipboard API (funciona en navegadores modernos)
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(enlace).then(() => {
+            mostrarNotificacion('✅ Enlace copiado al portapapeles');
+            mostrarBotonCompartir(enlace);
+        }).catch(err => {
+            // Si falla, usar método alternativo
+            console.log('Clipboard API falló, usando método alternativo:', err);
+            copiarConMetodoAlternativo(enlace);
+        });
+    } else {
+        // Método alternativo para navegadores antiguos y iOS
+        copiarConMetodoAlternativo(enlace);
+    }
+}
+
+// Método alternativo que funciona en iOS y Android antiguo
+function copiarConMetodoAlternativo(texto) {
+    // Método 1: Usar textarea temporal
+    const textarea = document.createElement('textarea');
+    textarea.value = texto;
+    
+    // Hacerlo invisible pero no display:none (iOS necesita ser visible)
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    textarea.style.left = '0';
+    textarea.style.top = '0';
+    
+    document.body.appendChild(textarea);
+    
+    // Seleccionar el texto
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // Para móviles
+    
+    try {
+        // Intentar copiar
+        const exitoso = document.execCommand('copy');
+        if (exitoso) {
+            mostrarNotificacion('✅ Enlace copiado al portapapeles');
+            mostrarBotonCompartir(texto);
+            
+            // También mostrar opción de compartir directamente en móviles
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                mostrarOpcionesCompartirMovil(texto);
+            }
+        } else {
+            mostrarInputParaCopiar(texto);
+        }
+    } catch (err) {
+        console.error('Error copiando con execCommand:', err);
+        mostrarInputParaCopiar(texto);
+    } finally {
+        // Limpiar
+        document.body.removeChild(textarea);
+    }
+}
+
+// Mostrar input para que el usuario copie manualmente (último recurso)
+function mostrarInputParaCopiar(texto) {
+    const modalHTML = `
+    <div class="modal fade" id="modalCopiarEnlace" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📋 Copiar enlace</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="small text-muted mb-2">
+                        <i class="bi bi-info-circle"></i> Selecciona y copia el enlace manualmente:
+                    </p>
+                    <div class="input-group">
+                        <input type="text" 
+                               class="form-control" 
+                               id="inputEnlaceCopiar" 
+                               value="${texto}" 
+                               readonly>
+                        <button class="btn btn-primary" onclick="seleccionarYcopiarInput()">
+                            <i class="bi bi-copy"></i>
+                        </button>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-outline-primary w-100" 
+                                onclick="compartirViaAppMovil('${texto}')">
+                            <i class="bi bi-share"></i> Compartir directamente
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    
+    // Agregar modal al DOM
+    const modalContainer = document.getElementById('modal-container') || 
+                          (() => {
+                              const div = document.createElement('div');
+                              div.id = 'modal-container';
+                              document.body.appendChild(div);
+                              return div;
+                          })();
+    
+    modalContainer.innerHTML = modalHTML;
+    
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById('modalCopiarEnlace'));
+    modal.show();
+    
+    // Auto-seleccionar el texto
+    setTimeout(() => {
+        const input = document.getElementById('inputEnlaceCopiar');
+        if (input) {
+            input.select();
+            input.setSelectionRange(0, texto.length);
+        }
+    }, 300);
+}
+
+// Función para seleccionar y copiar desde el input
+function seleccionarYcopiarInput() {
+    const input = document.getElementById('inputEnlaceCopiar');
+    if (!input) return;
+    
+    input.select();
+    input.setSelectionRange(0, input.value.length);
+    
+    try {
+        document.execCommand('copy');
+        mostrarNotificacion('✅ Enlace copiado manualmente');
         
-        // Mostrar botón flotante para compartir
-        mostrarBotonCompartir(enlace);
-    }).catch(err => {
-        console.error('Error al copiar:', err);
-        mostrarNotificacion('❌ Error al copiar enlace', 'error');
-    });
+        // Cerrar modal después de copiar
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalCopiarEnlace'));
+        if (modal) modal.hide();
+    } catch (err) {
+        mostrarNotificacion('❌ No se pudo copiar. Intenta manualmente.', 'error');
+    }
+}
+
+// Mostrar opciones de compartir específicas para móviles
+function mostrarOpcionesCompartirMovil(enlace) {
+    // Solo mostrar si es dispositivo móvil
+    if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
+    
+    const opcionesHTML = `
+    <div class="modal fade" id="modalCompartirMovil" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">📤 Compartir enlace</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p class="mb-3">¿Cómo quieres compartir este enlace?</p>
+                    
+                    <div class="d-flex flex-wrap justify-content-center gap-2">
+                        <!-- WhatsApp -->
+                        <button class="btn btn-success" 
+                                onclick="compartirEnWhatsApp('${enlace}')">
+                            <i class="bi bi-whatsapp"></i> WhatsApp
+                        </button>
+                        
+                        <!-- Correo -->
+                        <button class="btn btn-primary" 
+                                onclick="compartirPorCorreo('${enlace}')">
+                            <i class="bi bi-envelope"></i> Correo
+                        </button>
+                        
+                        <!-- SMS (solo móviles) -->
+                        <button class="btn btn-info" 
+                                onclick="compartirPorSMS('${enlace}')">
+                            <i class="bi bi-chat"></i> SMS
+                        </button>
+                        
+                        <!-- Otras apps -->
+                        <button class="btn btn-secondary" 
+                                onclick="usarShareAPI('${enlace}')">
+                            <i class="bi bi-share"></i> Otras apps
+                        </button>
+                    </div>
+                    
+                    <div class="mt-3">
+                        <small class="text-muted">
+                            El enlace ya está en tu portapapeles
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+    
+    document.getElementById('modal-container').innerHTML += opcionesHTML;
+    
+    // Mostrar modal después de un breve delay
+    setTimeout(() => {
+        const modal = new bootstrap.Modal(document.getElementById('modalCompartirMovil'));
+        modal.show();
+    }, 500);
+}
+
+// Funciones específicas para compartir
+function compartirEnWhatsApp(enlace) {
+    const texto = '¡Mira estos productos en Anmago Store! ' + enlace;
+    window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
+}
+
+function compartirPorCorreo(enlace) {
+    const asunto = 'Productos de Anmago Store';
+    const cuerpo = `¡Hola! Te comparto este enlace de Anmago Store:\n\n${enlace}\n\n¡Échale un vistazo!`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+}
+
+function compartirPorSMS(enlace) {
+    const texto = 'Anmago Store - ' + enlace;
+    window.location.href = `sms:?body=${encodeURIComponent(texto)}`;
+}
+
+function usarShareAPI(enlace) {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Anmago Store',
+            text: '¡Mira estos productos!',
+            url: enlace
+        });
+    } else {
+        mostrarNotificacion('❌ Tu navegador no soporta compartir directo', 'error');
+    }
 }
 
 // Mostrar notificación temporal
