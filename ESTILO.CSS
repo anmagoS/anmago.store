@@ -178,7 +178,6 @@
 /* Grid contenedor */
 .grid-productos-ml {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 10px 0;
 }
@@ -1239,6 +1238,30 @@ img[width][height] {
 /* Asegurar que el body tenga padding-top para el header fijo */
 body {
     padding-top: 70px !important;
+}
+/* ==============================================
+   CORRECCIÓN URGENTE: 2 COLUMNAS EN MÓVILES
+   ============================================== */
+
+/* Sobreescribir el grid problemático */
+.grid-productos-ml {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+}
+
+/* Asegurar 2 columnas en móviles */
+@media (max-width: 768px) {
+    .grid-productos-ml {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .grid-productos-ml {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+    }
 }
 /* === LIMPIAR DUPLICADOS Y CONFLICTOS === */
 /* ELIMINAR TODAS LAS CLASES DUPLICADAS */
