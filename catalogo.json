@@ -6000,7 +6000,7 @@
     "producto": "LEVIS HOMBRE REF AZUL EFECTO LAGUNA",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -6023,7 +6023,7 @@
     "producto": "LEVIS HOMBRE REF  AZUL CLARO",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -6046,7 +6046,7 @@
     "producto": "LEVIS HOMBRE REF NEGRO PIMIENTA",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -6069,7 +6069,7 @@
     "producto": "LEVIS HOMBRE REF TURQUESA",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -6092,7 +6092,7 @@
     "producto": "LEVIS HOMBRE REF AZUL",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_139/PRODUCTOS_Images_ba344895.IMAGEN_1.174153.jpg",
@@ -6115,7 +6115,7 @@
     "producto": "JEAN DIESEL",
     "material": "JEAN LICRADO",
     "tallas": "28,30,32,34,36",
-    "precio": 75000,
+    "precio": 130000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_149/PRODUCTOS_Images_9d514fa2.IMAGEN_1.180312.jpg",
@@ -6143,7 +6143,7 @@
     "producto": "JEAN DAMA LEVIS",
     "material": "JEAN LICRADO",
     "tallas": "6,8,10,12,14,16",
-    "precio": 80000,
+    "precio": 127700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_150/PRODUCTOS_Images_290f65ac.IMAGEN_1.182613.jpg",
@@ -6206,7 +6206,7 @@
     "producto": "PIJAMA GRINCH",
     "material": "PIEL DE DURAZNO",
     "tallas": "S,M,L,XL",
-    "precio": 47000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_e982df66.IMAGEN_1.232608.jpg",
@@ -6229,7 +6229,7 @@
     "producto": "PIJAMA CABALLERO",
     "material": "PIEL DE DURAZNO",
     "tallas": "S,M,L,XL",
-    "precio": 52000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_1.221522.jpg?tr=w-600,q-80",
@@ -6337,7 +6337,7 @@
     "producto": "CONJUNTO BROOKLYN",
     "material": "HILO LICRADO",
     "tallas": "UNICA",
-    "precio": 105000,
+    "precio": 173700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80",
@@ -6372,54 +6372,6 @@
     "descripcion": "Confeccionado en hilo licrado, el Conjunto Brooklyn se caracteriza por su estructura única, presentada en una sola talla."
   },
   {
-    "id": "7AD35EE2",
-    "tipo": "NAVIDAD",
-    "subtipo": "DAMA",
-    "categoria": "BUSOS",
-    "subcategoria": "SACO NAVIDEÑO",
-    "producto": "SACO NAVIDEÑO DAMA",
-    "material": "HILO PREMIUM",
-    "tallas": "UNICA",
-    "precio": 62000,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_1.222704.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 780
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_2.222704.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 781
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_3.222704.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 782
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_4.222707.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 783
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_5.222707.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 784
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_6.222708.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 785
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_1.222704.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_1.222704.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_2.222704.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_3.222704.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_4.222707.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_5.222707.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_155/PRODUCTOS_Images_7ad35ee2.IMAGEN_6.222708.jpg?tr=w-600,q-80",
-    "promo": true,
-    "proveedor": "AZALEA BODEGA MAYORISTA",
-    "descripcion": "Este saco navideño para dama está confeccionado en hilo premium y presenta una talla única."
-  },
-  {
     "id": "1B761E02",
     "tipo": "ROPA",
     "subtipo": "NIÑOS",
@@ -6428,7 +6380,7 @@
     "producto": "CONJUNTO DRAGON BALL",
     "material": "CAMISETA ALGODÓN  SHORTS BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 62000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_156/PRODUCTOS_Images_1b761e02.IMAGEN_1.175055.jpg?tr=w-600,q-80",
@@ -6466,7 +6418,7 @@
     "producto": "VESTIDO RIB 01",
     "material": "RIB LICRADO",
     "tallas": "UNICA",
-    "precio": 58000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_157/PRODUCTOS_Images_c9362a0f.IMAGEN_1.190610.jpg?tr=w-600,q-80",
@@ -6509,7 +6461,7 @@
     "producto": "VESTIDO RIB TIRA FALDA LARGA",
     "material": "RIB",
     "tallas": "UNICA",
-    "precio": 58000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_8b6ed28d.IMAGEN_1.191144.jpg?tr=w-600,q-80",
@@ -6542,7 +6494,7 @@
     "producto": "CROP TOP",
     "material": "ALGODON LICRADO",
     "tallas": "UNICA",
-    "precio": 28000,
+    "precio": 44900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_95bf5e7b.IMAGEN_1.000602.jpg?tr=w-600,q-80",
@@ -6655,7 +6607,7 @@
     "producto": "ESFERO GRAVITACIONAL",
     "material": "BASE MAGNÉTICA",
     "tallas": "N/A",
-    "precio": 5000,
+    "precio": 19900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_1.144645.jpg?tr=w-600,q-80",
@@ -6688,7 +6640,7 @@
     "producto": "PANTALON MEDELLIN",
     "material": "DRIL ESTAMPADO",
     "tallas": "UNICA",
-    "precio": 80000,
+    "precio": 107000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_159/PRODUCTOS_Images_8bf9d236.IMAGEN_1.202403.jpg?tr=w-600,q-80",
@@ -6726,7 +6678,7 @@
     "producto": "FALDA SHORT LOLA",
     "material": "NOCHES DE VIENA",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_160/PRODUCTOS_Images_c3eeb2e6.IMAGEN_1.202945.jpg?tr=w-600,q-80",
@@ -6764,7 +6716,7 @@
     "producto": "FALDA SHORT ELSA",
     "material": "NOCHES DE VIENA",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_161/PRODUCTOS_Images_bc3fde01.IMAGEN_1.203403.jpg?tr=w-600,q-80",
@@ -6797,7 +6749,7 @@
     "producto": "VESTIDO LOVE",
     "material": "LICRA SATINADA",
     "tallas": "UNICA",
-    "precio": 55000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_162/PRODUCTOS_Images_cd0e7c68.IMAGEN_1.203648.jpg?tr=w-600,q-80",
@@ -6855,7 +6807,7 @@
     "producto": "VESTIDO DALIA",
     "material": "MAYA TEX Y POLILICRA",
     "tallas": "UNICA",
-    "precio": 75000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_163/PRODUCTOS_Images_1335a8df.IMAGEN_1.204557.jpg?tr=w-600,q-80",
@@ -6923,7 +6875,7 @@
     "producto": "VESTIDO VELVET",
     "material": "VELO CREPE",
     "tallas": "UNICA",
-    "precio": 70000,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_164/PRODUCTOS_Images_d4d44a7a.IMAGEN_1.204906.jpg?tr=w-600,q-80",
@@ -6971,7 +6923,7 @@
     "producto": "CONJUNTO PRIMAVERA EN SARA TIPO PALAZO",
     "material": "CREPE PLIZADO",
     "tallas": "UNICA",
-    "precio": 78000,
+    "precio": 141500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_165/PRODUCTOS_Images_d260fd52.IMAGEN_1.224353.jpg?tr=w-600,q-80",
@@ -7069,7 +7021,7 @@
     "producto": "CONJUNTO OTOÑO EN SARA GOZA",
     "material": "CREPE PLIZADO",
     "tallas": "UNICA",
-    "precio": 78000,
+    "precio": 141500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_166/PRODUCTOS_Images_fec8cb6f.IMAGEN_1.001520.jpg?tr=w-600,q-80",
@@ -7132,7 +7084,7 @@
     "producto": "CONSOLA RETRO GAME STICK 4G",
     "material": "12",
     "tallas": "N/A",
-    "precio": 85000,
+    "precio": 97500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_167/PRODUCTOS_Images_e8873bee.IMAGEN_1.233229.jpg?tr=w-600,q-80",
@@ -7156,7 +7108,7 @@
     "producto": "CARRO LOCO AVENGERS!",
     "material": "NA",
     "tallas": "N/A",
-    "precio": 79900,
+    "precio": 97500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_168/PRODUCTOS_Images_e2dff363.IMAGEN_1.000224.jpg?tr=w-600,q-80",
@@ -7180,7 +7132,7 @@
     "producto": "JUEGO DE MESA BASTA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 48000,
+    "precio": 52500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_169/PRODUCTOS_Images_0940d1f9.IMAGEN_1.161052.jpg?tr=w-600,q-80",
@@ -7204,7 +7156,7 @@
     "producto": "SET DE ARTE METÁLICO – EDICIÓN PREMIUM",
     "material": ".",
     "tallas": "N/A",
-    "precio": 65000,
+    "precio": 78000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_171/PRODUCTOS_Images_efc1a9c2.IMAGEN_1.164557.jpg?tr=w-600,q-80",
@@ -7228,7 +7180,7 @@
     "producto": "CARRO LOCO KUROMI",
     "material": ".",
     "tallas": "N/A",
-    "precio": 79900,
+    "precio": 97500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_172/PRODUCTOS_Images_975043b4.IMAGEN_1.170525.jpg?tr=w-600,q-80",
@@ -7253,7 +7205,7 @@
     "producto": "CONJUNTO DEPORTIVO ALO",
     "material": "CAMISETA ALGODÓN (AMPLIA) PANTALÓN SUPLEX",
     "tallas": "UNICA,XL",
-    "precio": 62040,
+    "precio": 116200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_173/PRODUCTOS_Images_60ecddc8.IMAGEN_1.170005.jpg?tr=w-600,q-80",
@@ -7301,7 +7253,7 @@
     "producto": "BUSO BURDA BROOKLYN Y LOS ANGELES",
     "material": "BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 57810,
+    "precio": 109300,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_174/PRODUCTOS_Images_c4f63474.IMAGEN_1.174035.jpg?tr=w-600,q-80",
@@ -7364,7 +7316,7 @@
     "producto": "CONJUNTO LOVE",
     "material": "ALGODON Y BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 63450,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_175/PRODUCTOS_Images_54a5abb2.IMAGEN_1.185451.jpg?tr=w-600,q-80",
@@ -7417,7 +7369,7 @@
     "producto": "CONJUNTO NEW YORK",
     "material": "ALGODON Y BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 63450,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_176/PRODUCTOS_Images_abc07a0d.IMAGEN_1.190922.jpg?tr=w-600,q-80",
@@ -7465,7 +7417,7 @@
     "producto": "CONJUNTO PANTALONETA TOMMY",
     "material": "ALGODON Y BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 63450,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_177/PRODUCTOS_Images_2ff9929e.IMAGEN_1.191911.jpg?tr=w-600,q-80",
@@ -7518,7 +7470,7 @@
     "producto": "CONJUNTO PANTALON SUPLEX ICE",
     "material": "SUPLEX Y ALGODON",
     "tallas": "UNICA,XL",
-    "precio": 64860,
+    "precio": 120800,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_178/PRODUCTOS_Images_8609bc6b.IMAGEN_1.192552.jpg?tr=w-600,q-80",
@@ -7566,7 +7518,7 @@
     "producto": "CONJUNTO BIKER SUPLEX MICKEY MOUSE",
     "material": "BIKER EN SUPLEX Y CAMISETA EN ALGODON",
     "tallas": "UNICA,XL",
-    "precio": 62040,
+    "precio": 116200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_179/PRODUCTOS_Images_62428bd7.IMAGEN_1.193524.jpg?tr=w-600,q-80",
@@ -7604,7 +7556,7 @@
     "producto": "CONJUNTO BIKER SUPLEX PUMA",
     "material": "ALGONDON Y SUPLEX",
     "tallas": "UNICA,XL",
-    "precio": 62040,
+    "precio": 116200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_180/PRODUCTOS_Images_5c1bdc01.IMAGEN_1.194247.jpg?tr=w-600,q-80",
@@ -7642,7 +7594,7 @@
     "producto": "CONJUNTO ADULTO PANTALONETA POLO RALPH LAUREN",
     "material": "ALGODON Y BURDA",
     "tallas": "S,M,L,XL",
-    "precio": 63450,
+    "precio": 118500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_181/PRODUCTOS_Images_19ba48cd.IMAGEN_1.194755.jpg?tr=w-600,q-80",
@@ -7685,7 +7637,7 @@
     "producto": "CONJUNTO NIÑOS RALPH LAUREN",
     "material": "BURDA Y ALGODON",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 54990,
+    "precio": 104700,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_182/PRODUCTOS_Images_eaf57483.IMAGEN_5.195104.jpg?tr=w-600,q-80",
@@ -7728,7 +7680,7 @@
     "producto": "CAMISA CABALLERO",
     "material": "POPELINA SPANDEX",
     "tallas": "S,M,L,XL",
-    "precio": 63000,
+    "precio": 113900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_183/PRODUCTOS_Images_663d2264.IMAGEN_1.175422.jpg?tr=w-600,q-80",
@@ -7836,7 +7788,7 @@
     "producto": "PROYECTOR HY300 PRO",
     "material": ".",
     "tallas": "N/A",
-    "precio": 197400,
+    "precio": 295000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80",
@@ -7865,7 +7817,7 @@
     "producto": "MAQUINA PARA DONAS EN FIGURAS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 69900,
+    "precio": 113000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_185/PRODUCTOS_Images_80202ff4.IMAGEN_1.213402.jpg?tr=w-600,q-80",
@@ -7903,7 +7855,7 @@
     "producto": "MAQUINA PARA DERRITIR CHOCOLATE Y OTROS CON MOLDES",
     "material": ".",
     "tallas": "N/A",
-    "precio": 49900,
+    "precio": 83000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_186/PRODUCTOS_Images_390C49F7.IMAGEN_1.172000.png?tr=w-600,q-80",
@@ -7926,7 +7878,7 @@
     "producto": "ESCURRIDOR DE GABINETE DOBLE",
     "material": ".",
     "tallas": "N/A",
-    "precio": 169900,
+    "precio": 255000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_187/PRODUCTOS_Images_ec381fd3.IMAGEN_1.215336.jpg?tr=w-600,q-80",
@@ -7964,7 +7916,7 @@
     "producto": "ZAPATERO DOBLE DE CINCO ESPACIOS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 63450,
+    "precio": 105000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_188/PRODUCTOS_Images_eebf9e4f.IMAGEN_1.231118.jpg?tr=w-600,q-80",
@@ -7987,7 +7939,7 @@
     "producto": "PERCHERO CON GABINETE",
     "material": ".",
     "tallas": "N/A",
-    "precio": 52300,
+    "precio": 75000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_189/PRODUCTOS_Images_1643f081.IMAGEN_1.191600.jpg?tr=w-600,q-80",
@@ -8025,7 +7977,7 @@
     "producto": "CEPILLO SECADOR MÁS PLANCHA SECADORA CON PLAQUETAS CERÁMICAS",
     "material": "IONS",
     "tallas": "N/A",
-    "precio": 89900,
+    "precio": 188600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_190/PRODUCTOS_Images_fb9792ef.IMAGEN_1.155848.jpg?tr=w-600,q-80",
@@ -8058,7 +8010,7 @@
     "producto": "ESPRIMIDOR DE NARANJA AUTOMÁTICO",
     "material": ".",
     "tallas": "N/A",
-    "precio": 59900,
+    "precio": 87000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_191/PRODUCTOS_Images_ca98671b.IMAGEN_1.162543.jpg?tr=w-600,q-80",
@@ -8091,7 +8043,7 @@
     "producto": "ZAPATERO 6 NIVELES",
     "material": ".",
     "tallas": "N/A",
-    "precio": 42500,
+    "precio": 61000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_192/PRODUCTOS_Images_203b9170.IMAGEN_1.163121.jpg?tr=w-600,q-80",
@@ -8119,7 +8071,7 @@
     "producto": "PLANCHA DE ARGAN",
     "material": ".",
     "tallas": "N/A",
-    "precio": 78900,
+    "precio": 160600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_193/PRODUCTOS_Images_97ecdc4f.IMAGEN_1.163737.jpg?tr=w-600,q-80",
@@ -8157,7 +8109,7 @@
     "producto": "ARMARIO CON TAPA 5 NIVELES",
     "material": ".",
     "tallas": "N/A",
-    "precio": 58900,
+    "precio": 91000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_194/PRODUCTOS_Images_bb921c4b.IMAGEN_1.164309.jpg?tr=w-600,q-80",
@@ -8195,7 +8147,7 @@
     "producto": "SET DE CUCHILLOS X6 UNIDADES EN ACERO INOXIDABLE",
     "material": "ACERO INOXIDABLE",
     "tallas": "N/A",
-    "precio": 35400,
+    "precio": 51000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_195/PRODUCTOS_Images_b0175d01.IMAGEN_1.164718.jpg?tr=w-600,q-80",
@@ -8243,7 +8195,7 @@
     "producto": "TENSIOMETRO DIGITAL",
     "material": ".",
     "tallas": "N/A",
-    "precio": 45900,
+    "precio": 65000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_196/PRODUCTOS_Images_54ef50a8.IMAGEN_1.165155.jpg?tr=w-600,q-80",
@@ -8266,7 +8218,7 @@
     "producto": "REPISA PARA SANITARIO",
     "material": ".",
     "tallas": "N/A",
-    "precio": 59900,
+    "precio": 99000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_197/PRODUCTOS_Images_6e7f6bab.IMAGEN_1.165937.jpg?tr=w-600,q-80",
@@ -8299,7 +8251,7 @@
     "producto": "SECADOR KEMEY 35OO WATTS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 39900,
+    "precio": 82200,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_198/PRODUCTOS_Images_8f1fe173.IMAGEN_1.170358.jpg?tr=w-600,q-80",
@@ -8332,7 +8284,7 @@
     "producto": "HIDROLAVADORA DOBLE BATERÍA DE 48 WATTS",
     "material": "BATERIA DE 48 WATTS",
     "tallas": "N/A",
-    "precio": 75500,
+    "precio": 115000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_199/PRODUCTOS_Images_0f404108.IMAGEN_1.211655.jpg?tr=w-600,q-80",
@@ -8361,7 +8313,7 @@
     "producto": "COMBO TITANIUM X3 PLANCHA, RIZADOR Y PEINE",
     "material": "ALUMINIO",
     "tallas": "N/A",
-    "precio": 53500,
+    "precio": 113000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_200/PRODUCTOS_Images_2d32ba04.IMAGEN_1.213159.jpg?tr=w-600,q-80",
@@ -8389,7 +8341,7 @@
     "producto": "PISTOLA DE HIDROGEL CON LUCES Y HUMO",
     "material": ".",
     "tallas": "N/A",
-    "precio": 67680,
+    "precio": 87000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80",
@@ -8423,7 +8375,7 @@
     "producto": "PISTOLA DE HIDROGEL K47 RECARGABLE",
     "material": ".",
     "tallas": "N/A",
-    "precio": 65350,
+    "precio": 67500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80",
@@ -8462,7 +8414,7 @@
     "producto": "CAMISAS CABALLERO",
     "material": "POPELINA SPANDEX",
     "tallas": "S,M,L,XL",
-    "precio": 63000,
+    "precio": 113900,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_1.174305.jpg?tr=w-600,q-80",
@@ -8638,7 +8590,7 @@
     "producto": "MALETA PARA MASCOTAS CON ACRÍLICO FRONTAL",
     "material": "ACRILICO",
     "tallas": "N/A",
-    "precio": 65000,
+    "precio": 99000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_205/PRODUCTOS_Images_63e984d3.IMAGEN_1.184700.jpg?tr=w-600,q-80",
@@ -8681,7 +8633,7 @@
     "producto": "MALETA PARA MASCOTAS DESARMABLE",
     "material": "LICRADO",
     "tallas": "N/A",
-    "precio": 75900,
+    "precio": 115000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_206/PRODUCTOS_Images_9a512f91.IMAGEN_1.190649.jpg?tr=w-600,q-80",
@@ -8724,7 +8676,7 @@
     "producto": "CEPILLO DOS EN UNO PARA LIMPIAR Y RECOGER MOTAS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 11280,
+    "precio": 31000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_207/PRODUCTOS_Images_8b80535d.IMAGEN_1.191730.jpg?tr=w-600,q-80",
@@ -8772,7 +8724,7 @@
     "producto": "CORREA CON BOLSO PARA PERROS Y GATOS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 39900,
+    "precio": 55000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_208/PRODUCTOS_Images_21fe4d56.IMAGEN_1.192413.jpg?tr=w-600,q-80",
@@ -8805,7 +8757,7 @@
     "producto": "CORRAL PARA MASCOTAS DE RAZAS PEQUEÑAS",
     "material": ".",
     "tallas": "N/A",
-    "precio": 64900,
+    "precio": 94000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_209/PRODUCTOS_Images_cbd23e93.IMAGEN_1.192925.jpg?tr=w-600,q-80",
@@ -8843,7 +8795,7 @@
     "producto": "COMBO MK 9.99 4 EN 1",
     "material": ".",
     "tallas": "N/A",
-    "precio": 97400,
+    "precio": 108000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80",
@@ -8876,7 +8828,7 @@
     "producto": "MEGADRONE CON DOBLE BATERÍA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 110000,
+    "precio": 112500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80",
@@ -8909,7 +8861,7 @@
     "producto": "BALON DE FÚTBOL #5 ATLÉTICO NACIONAL",
     "material": ".",
     "tallas": "N/A",
-    "precio": 19300,
+    "precio": 34500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
@@ -8932,7 +8884,7 @@
     "producto": "PIJAMA DAMA",
     "material": "PIEL DE DURAZNO",
     "tallas": "S,M,L,XL",
-    "precio": 48000,
+    "precio": 79400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_2.220956.jpg?tr=w-600,q-80",
@@ -9040,7 +8992,7 @@
     "producto": "PIJAMA NIÑOS Y NIÑAS",
     "material": "PIEL DE DURAZNO",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 45000,
+    "precio": 72500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_151/PRODUCTOS_Images_53DF353F.IMAGEN_3.220956.jpg?tr=w-600,q-80",
@@ -9148,7 +9100,7 @@
     "producto": "PIJAMA ENTERIZO DAMA",
     "material": "PIEL DE DURAZNO",
     "tallas": "UNICA",
-    "precio": 50000,
+    "precio": 65600,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_216/PRODUCTOS_Images_259d941b.IMAGEN_1.223712.jpg?tr=w-600,q-80",
@@ -9181,7 +9133,7 @@
     "producto": "PIJAMA NAVIDEÑA CABALLERO",
     "material": "PIEL DE DURAZNO",
     "tallas": "S,M,L,XL",
-    "precio": 52000,
+    "precio": 84000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_c351e230.IMAGEN_1.230354.jpg?tr=w-600,q-80",
@@ -9219,7 +9171,7 @@
     "producto": "PIJAMA NAVIDEÑA DAMA",
     "material": "PIEL DE DURAZNO",
     "tallas": "S,M,L,XL",
-    "precio": 48000,
+    "precio": 79400,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_c351e230.IMAGEN_2.230354.jpg?tr=w-600,q-80",
@@ -9257,7 +9209,7 @@
     "producto": "PIJAMA NAVIDEÑA NIÑOS",
     "material": "PIEL DE DURAZNO",
     "tallas": "2-4,6-8,10-12,14-16",
-    "precio": 45000,
+    "precio": 72500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_c351e230.IMAGEN_3.230354.jpg?tr=w-600,q-80",
@@ -9295,7 +9247,7 @@
     "producto": "VIGILANCIA DOBLE LENTE INTELIGENTE",
     "material": ".",
     "tallas": "N/A",
-    "precio": 125000,
+    "precio": 185000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_d3a5ee71.IMAGEN_1.170129.png?tr=w-600,q-80",
@@ -9318,7 +9270,7 @@
     "producto": "GLUCOMETRO DIGITAL",
     "material": "50 LANCETAS Y 50 TIRILLAS",
     "tallas": "N/A",
-    "precio": 54990,
+    "precio": 93000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_875f9476.IMAGEN_1.175405.png?tr=w-600,q-80",
@@ -9341,7 +9293,7 @@
     "producto": "REPUESTOS PARA GLUCÓMETRO 50 TIRILLAS 50 LANCETAS",
     "material": "REPUESTOS PARA GLUCÓMETRO 50 TIRILLAS 50 LANCETAS",
     "tallas": "N/A",
-    "precio": 44710,
+    "precio": 77000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_222/PRODUCTOS_Images_eb4531dc.IMAGEN_1.180129.jpg?tr=w-600,q-80",
@@ -9364,7 +9316,7 @@
     "producto": "NEBULIZADOR RECARGABLE DOBLE MÁSCARA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 55000,
+    "precio": 75000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_223/PRODUCTOS_Images_5c7682a7.IMAGEN_1.184426.png?tr=w-600,q-80",
@@ -9387,7 +9339,7 @@
     "producto": "EXTRACTOR NASAL",
     "material": ".",
     "tallas": "N/A",
-    "precio": 26970,
+    "precio": 49000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e804444b.IMAGEN_1.201004.png?tr=w-600,q-80",
@@ -9410,7 +9362,7 @@
     "producto": "AMBULANCIA LUCES",
     "material": ".",
     "tallas": "N/A",
-    "precio": 42300,
+    "precio": 60000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_085cd662.IMAGEN_1.220329.jpg?tr=w-600,q-80",
@@ -9433,7 +9385,7 @@
     "producto": "CARRO TRANSFORMER CON SENSOR",
     "material": ".",
     "tallas": "N/A",
-    "precio": 105750,
+    "precio": 127500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_214/PRODUCTOS_Images_7be38fb8.IMAGEN_1.220434.jpg?tr=w-600,q-80",
@@ -9503,7 +9455,7 @@
     "producto": "MOTO A CONTROL",
     "material": ".",
     "tallas": "N/A",
-    "precio": 126900,
+    "precio": 150000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_217/PRODUCTOS_Images_932bf834.IMAGEN_1.221524.jpg?tr=w-600,q-80",
@@ -9526,7 +9478,7 @@
     "producto": "CARRO LOCO ACUATICO CON CONTROL Y MANILLA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 105750,
+    "precio": 127500,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_218/PRODUCTOS_Images_85d7f10b.IMAGEN_1.222607.jpg?tr=w-600,q-80",
@@ -9549,7 +9501,7 @@
     "producto": "CONTENEDOR PISTA BOMBEROS",
     "material": "40 PCS",
     "tallas": "N/A",
-    "precio": 39480,
+    "precio": 57000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_219/PRODUCTOS_Images_625113c3.IMAGEN_1.222750.jpg?tr=w-600,q-80",
@@ -9582,7 +9534,7 @@
     "producto": "CARRO ELECTRICO CONTROL REMOTO",
     "material": ".",
     "tallas": "N/A",
-    "precio": 141000,
+    "precio": 165000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_220/PRODUCTOS_Images_0828daa1.IMAGEN_1.224144.jpg?tr=w-600,q-80",
@@ -9606,7 +9558,7 @@
     "producto": "COCINA",
     "material": ".",
     "tallas": "N/A",
-    "precio": 169200,
+    "precio": 195000,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_221/PRODUCTOS_Images_5bd22550.IMAGEN_1.230348.jpg?tr=w-600,q-80",
