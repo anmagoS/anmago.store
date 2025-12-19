@@ -133,14 +133,16 @@
   <!-- HEADER COMPLETO (IGUAL) -->
   <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
     <!-- LOGO CON PRIORIDAD ALTA -->
-    <div class="logo">
-      <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
-       <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto"
-     alt="Logo ANMAGO"
-     width="48"
-     height="48">
-      </a>
-    </div>
+   <div class="logo">
+    <a href="#" onclick="volverAInicio(); return false;">
+        <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-96,h-96,f-auto"
+             alt="Logo ANMAGO"
+             width="96"
+             height="96"
+             fetchpriority="high"
+             decoding="async">
+    </a>
+</div>
 
     <!-- BUSCADOR EN HEADER -->
     <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
@@ -278,37 +280,7 @@
         </a>
       </div>
 
-      <!-- CARRUSEL DE PROMOCIONES CON ALTURA FIJA -->
-      <div class="container mt-3">
-        <div class="carrusel-temporizador mb-2">
-          <i class="bi bi-clock"></i>
-          <span id="temporizador-home" class="fw-bold ms-1">Cargando promociones...</span>
-        </div>
-        
-        <div id="carouselPromosHome" class="carousel slide carousel-promos-home" data-bs-ride="carousel">
-          <div class="carousel-inner" id="carousel-promos-home-contenido">
-            <div class="carousel-item active">
-              <div class="text-center py-4">
-                <div class="spinner-border text-primary"></div>
-                <p class="mt-2 text-muted">Cargando ofertas...</p>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselPromosHome" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselPromosHome" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
-        
-        <div class="text-center mt-2">
-          <small class="text-muted">Desliza para ver más ofertas</small>
-        </div>
-      </div>
-
+     
       <!-- ÚLTIMOS PRODUCTOS -->
       <div class="container mt-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
