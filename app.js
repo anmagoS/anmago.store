@@ -13,7 +13,6 @@ let contextoNavegacion = {
 let productosCargados = 0;
 let cargandoScroll = false;
 const LIMITE_PRODUCTOS = 12;
-
 // Iconos para categorías
 const ICONOS_CATEGORIAS = {
     'TODOS': '🛍️',
