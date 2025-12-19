@@ -1,5 +1,5 @@
 // ==============================================
-// ANMAGO STORE - APP.JS COMPLETO Y FUNCIONAL
+// ANMAGO STORE - APP.JS SIMPLIFICADO CON ENLACES COMPARTIBLES
 // ==============================================
 // Variables globales
 let productosGlobal = [];
@@ -11,50 +11,191 @@ let contextoNavegacion = {
     categoria: null
 };
 let productosCargados = 0;
+let cargandoScroll = false;
+const LIMITE_PRODUCTOS = 12;
 
 // Iconos para categorías
 const ICONOS_CATEGORIAS = {
     'TODOS': '🛍️',
-    'ROPA': '👗',
-    'RELOJERIA': '⌚',
-    'HOGAR': '🏠',
-    'BELLEZA': '💄',
-    'NAVIDAD': '🎄',
-    'ESCOLAR': '🎒',
-    'DAMA': '👩',
-    'CABALLERO': '👨',
-    'UNISEX': '👥',
-    'NIÑOS': '👦',
-    'NIÑAS': '👧',
+    'ROPA': '👗', 'RELOJERIA': '⌚',
+    'HOGAR': '🏠', 'BELLEZA': '💄',
+    'NAVIDAD': '🎄', 'ESCOLAR': '🎒',
+    'DAMA': '👩', 'CABALLERO': '👨',
+    'UNISEX': '👥', 'NIÑOS': '👦', 'NIÑAS': '👧',
 };
 
-// Imágenes por subtipo
-const IMAGENES_POR_SUBTIPO = {
-    "dama": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20realista%20para%20.png?tr=w-300,q-80",
-    "caballero": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20realista%20para%20h.png?tr=w-300,q-80",
-    "unisex": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20estilizado%20parej.png?tr=w-300,q-80",
-    "niños": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20realista%20para%20nño.png?tr=w-300,q-80",
-    "niñas": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20realista%20para%20niña.png?tr=w-300,q-80",
-    "hogar": "https://ik.imagekit.io/mbsk9dati/subtipos/ícono%20realista%20para%20hogar.png?tr=w-300,q-80",
-    "iluminacion": "https://ik.imagekit.io/mbsk9dati/subtipos/%C3%ADcono%20realista%20de%20bo.png?tr=w-300,q-80",
-    "analógico": "https://ik.imagekit.io/mbsk9dati/SUBTIPOS/reloj_analogico.jpg?tr=w-300,q-80",
-    "smartwatch": "https://ik.imagekit.io/mbsk9dati/SUBTIPOS/smartwatch.jpg?tr=w-300,q-80",
-    "cocina": "https://ik.imagekit.io/mbsk9dati/subtipos/%C3%ADcono%20realista%20de%20co.png?tr=w-300,q-80",
-    "decoración": "https://ik.imagekit.io/mbsk9dati/SUBTIPOS/decoracion.jpg?tr=w-300,q-80",
-    "maquillaje": "https://ik.imagekit.io/mbsk9dati/SUBTIPOS/maquillaje.jpg?tr=w-300,q-80",
-    "cuidado facial": "https://ik.imagekit.io/mbsk9dati/SUBTIPOS/facial.jpg?tr=w-300,q-80",
-    "baño": "https://ik.imagekit.io/mbsk9dati/subtipos/ba%C3%B1o.png?tr=w-300,q-80",
-    "vehiculos": "https://ik.imagekit.io/mbsk9dati/subtipos/VEHICULO.png?tr=w-300,q-80",
-    "habitacion": "https://ik.imagekit.io/mbsk9dati/subtipos/%C3%ADcono%20realista%20de%20ca.png?tr=w-300,q-80",
-    "salud": "https://ik.imagekit.io/mbsk9dati/subtipos/SALUD.png?tr=w-300,q-80",
-    "mascotas": "https://ik.imagekit.io/mbsk9dati/subtipos/mascotas.png"
-};
+// ==============================================
+// FUNCIONES PARA ENLACES COMPARTIBLES
+// ==============================================
+
+// Función para crear enlace con parámetros
+function crearEnlaceFiltro(tipo = null, subtipo = null, categoria = null) {
+    const url = new URL(window.location.origin + window.location.pathname);
+    
+    if (tipo) {
+        url.searchParams.set('tipo', tipo);
+    }
+    
+    if (subtipo) {
+        url.searchParams.set('subtipo', subtipo);
+    }
+    
+    if (categoria) {
+        url.searchParams.set('categoria', categoria);
+    }
+    
+    return url.toString();
+}
+
+// Función para actualizar URL del navegador
+function actualizarURLNavegacion(tipo = null, subtipo = null, categoria = null) {
+    const nuevaURL = new URL(window.location);
+    
+    // Limpiar parámetros anteriores
+    nuevaURL.searchParams.delete('tipo');
+    nuevaURL.searchParams.delete('subtipo');
+    nuevaURL.searchParams.delete('categoria');
+    nuevaURL.searchParams.delete('vista');
+    
+    // Agregar nuevos parámetros
+    if (tipo) {
+        nuevaURL.searchParams.set('tipo', tipo);
+    }
+    
+    if (subtipo) {
+        nuevaURL.searchParams.set('subtipo', subtipo);
+    }
+    
+    if (categoria) {
+        nuevaURL.searchParams.set('categoria', categoria);
+    }
+    
+    // Actualizar URL sin recargar la página
+    window.history.pushState({}, '', nuevaURL);
+    
+    // Retornar también el enlace para compartir
+    return nuevaURL.toString();
+}
+
+// Función para copiar enlace al portapapeles
+function copiarEnlaceCompartir(tipo = null, subtipo = null, categoria = null) {
+    const enlace = crearEnlaceFiltro(tipo, subtipo, categoria);
+    
+    navigator.clipboard.writeText(enlace).then(() => {
+        // Mostrar notificación
+        mostrarNotificacion('✅ Enlace copiado al portapapeles');
+        
+        // Mostrar botón flotante para compartir
+        mostrarBotonCompartir(enlace);
+    }).catch(err => {
+        console.error('Error al copiar:', err);
+        mostrarNotificacion('❌ Error al copiar enlace', 'error');
+    });
+}
+
+// Mostrar notificación temporal
+function mostrarNotificacion(mensaje, tipo = 'success') {
+    // Crear o reutilizar contenedor de notificaciones
+    let notificacionContainer = document.getElementById('notificacion-container');
+    if (!notificacionContainer) {
+        notificacionContainer = document.createElement('div');
+        notificacionContainer.id = 'notificacion-container';
+        notificacionContainer.style.cssText = `
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        `;
+        document.body.appendChild(notificacionContainer);
+    }
+    
+    const notificacion = document.createElement('div');
+    notificacion.className = `alert alert-${tipo} alert-dismissible fade show`;
+    notificacion.style.cssText = `
+        min-width: 250px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        animation: slideIn 0.3s ease;
+    `;
+    
+    notificacion.innerHTML = `
+        <span>${mensaje}</span>
+        <button type="button" class="btn-close" onclick="this.parentElement.remove()"></button>
+    `;
+    
+    notificacionContainer.appendChild(notificacion);
+    
+    // Auto-eliminar después de 3 segundos
+    setTimeout(() => {
+        if (notificacion.parentElement) {
+            notificacion.remove();
+        }
+    }, 3000);
+}
+
+// Mostrar botón flotante para compartir
+function mostrarBotonCompartir(enlace) {
+    // Eliminar botón anterior si existe
+    const botonAnterior = document.getElementById('boton-compartir-flotante');
+    if (botonAnterior) botonAnterior.remove();
+    
+    // Crear botón flotante
+    const botonCompartir = document.createElement('div');
+    botonCompartir.id = 'boton-compartir-flotante';
+    botonCompartir.style.cssText = `
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        z-index: 1000;
+        background: #007bff;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        animation: bounceIn 0.5s ease;
+    `;
+    
+    botonCompartir.innerHTML = `
+        <i class="bi bi-share" style="font-size: 1.2rem;"></i>
+        <span>Compartir enlace</span>
+    `;
+    
+    botonCompartir.onclick = () => {
+        // Opciones de compartir
+        if (navigator.share) {
+            navigator.share({
+                title: 'Anmago Store',
+                text: '¡Mira estos productos!',
+                url: enlace
+            });
+        } else {
+            // Si no soporta Web Share API, copiar al portapapeles
+            navigator.clipboard.writeText(enlace);
+            mostrarNotificacion('✅ Enlace listo para pegar');
+        }
+        botonCompartir.remove();
+    };
+    
+    document.body.appendChild(botonCompartir);
+    
+    // Auto-eliminar después de 10 segundos
+    setTimeout(() => {
+        if (botonCompartir.parentElement) {
+            botonCompartir.remove();
+        }
+    }, 10000);
+}
 
 // ==============================================
 // FUNCIONES BÁSICAS
 // ==============================================
 
-// Obtener parámetros desde URL
 function getParametrosDesdeURL() {
     const params = new URLSearchParams(window.location.search);
     return {
@@ -65,22 +206,18 @@ function getParametrosDesdeURL() {
     };
 }
 
-// Función para obtener icono
 function obtenerIcono(categoria, nivel = 0) {
     if (nivel === 2) return ''; // Sin icono para categorías
     return ICONOS_CATEGORIAS[categoria] || '📦';
 }
 
-// Cambiar vista
 function cambiarAVista(vistaNombre) {
     console.log('📱 Cambiando a vista:', vistaNombre);
     
-    // Ocultar todas las vistas
     document.querySelectorAll('.vista').forEach(vista => {
         vista.classList.remove('vista-activa');
     });
     
-    // Mostrar la vista solicitada
     const vistaElement = document.getElementById(`vista-${vistaNombre}`);
     if (vistaElement) {
         vistaElement.classList.add('vista-activa');
@@ -90,7 +227,6 @@ function cambiarAVista(vistaNombre) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Cargar catálogo global
 async function cargarCatalogoGlobal() {
     try {
         console.log('📦 Cargando catálogo...');
@@ -98,9 +234,7 @@ async function cargarCatalogoGlobal() {
         const res = await fetch(url);
         const productos = await res.json();
         
-        window.catalogoGlobal = productos;
         productosGlobal = productos;
-        
         console.log(`✅ ${productos.length} productos cargados`);
         return productos;
     } catch (err) {
@@ -109,76 +243,26 @@ async function cargarCatalogoGlobal() {
     }
 }
 
-
 // ==============================================
-// FUNCIÓN PARA CARGAR ÚLTIMOS PRODUCTOS (CORREGIDA)
-// ==============================================
-
-async function cargarUltimosProductos() {
-    try {
-        if (productosGlobal.length === 0) {
-            console.log('⚠️ No hay productos globales cargados');
-            return;
-        }
-        
-        // Obtener los últimos 30 productos del catálogo
-        const ultimosProductos = productosGlobal
-            .filter(p => p.imagen && p.producto)
-            .slice(-30)
-            .reverse();
-        
-        console.log(`📦 Últimos productos: ${ultimosProductos.length} de ${productosGlobal.length} totales`);
-        
-        const grid = document.getElementById('grid-ultimos');
-        if (!grid) return;
-        
-        if (ultimosProductos.length === 0) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-3">
-                    <i class="bi bi-emoji-frown text-muted fs-1"></i>
-                    <p class="mt-2 text-muted">No hay productos recientes</p>
-                </div>
-            `;
-            return;
-        }
-        
-        // 🎯 CORRECCIÓN: Usar join('') con strings HTML
-        grid.innerHTML = ultimosProductos.map(producto => crearCardProductoHTML(producto)).join('');
-        
-        console.log(`✅ ${ultimosProductos.length} últimos productos cargados`);
-        
-    } catch (error) {
-        console.error('❌ Error cargando últimos productos:', error);
-        const grid = document.getElementById('grid-ultimos');
-        if (grid) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-3">
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        <p>Error al cargar productos recientes</p>
-                    </div>
-                </div>
-            `;
-        }
-    }
-}
-
-// ==============================================
-// FUNCIÓN PARA CREAR CARD DE PRODUCTO (STRING HTML)
+// FUNCIÓN PARA CREAR CARD DE PRODUCTO CON DESCUENTOS
 // ==============================================
 
 function crearCardProductoHTML(producto) {
     const precioOriginal = Number(producto.precio) || 0;
     let precioFinal = precioOriginal;
     let badgePromo = '';
+    let mostrarPrecioAnterior = false;
     
-    // Verificar promoción
-    const estaEnPromo = producto.promo === "sí" || producto.promo === true || producto.promo === "true";
+    // Verificar si el producto está en promoción
+    const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
     
     if (estaEnPromo) {
-        const descuento = producto.precioOferta ? Math.round((1 - producto.precioOferta / precioOriginal) * 100) : 10;
-        precioFinal = producto.precioOferta || Math.round(precioOriginal * 0.9);
-        badgePromo = `<div class="badge-promo">-${descuento}%</div>`;
+        // Calcular descuento del 10%
+        const descuentoPorcentaje = 10;
+        precioFinal = Math.round(precioOriginal * 0.9);
+        
+        badgePromo = `<div class="badge-promo">-${descuentoPorcentaje}%</div>`;
+        mostrarPrecioAnterior = true;
     }
     
     // Verificar stock
@@ -189,7 +273,6 @@ function crearCardProductoHTML(producto) {
     let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
     
     if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
-        // Buscar imagen principal
         const imagenPrincipal = producto.imagenes.find(img => 
             img.tipo && img.tipo.toUpperCase() === "PRINCIPAL"
         );
@@ -203,7 +286,6 @@ function crearCardProductoHTML(producto) {
         imagenMostrar = producto.imagen;
     }
     
-    // 🎯 HTML CORREGIDO - El <a> tag envuelve TODO
     return `
     <div class="card-producto-ml" data-id="${producto.id}">
         <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
@@ -220,21 +302,18 @@ function crearCardProductoHTML(producto) {
             </div>
             
             <div class="card-content">
-                <!-- Tipo y subtipo -->
                 <div class="categorias">
                     ${producto.tipo ? `<span class="categoria-tipo">${producto.tipo}</span>` : ''}
                     ${producto.subtipo ? `<span class="categoria-subtipo">${producto.subtipo}</span>` : ''}
                 </div>
                 
-                <!-- Nombre del producto -->
                 <h3 class="producto-nombre">${producto.producto || 'Producto sin nombre'}</h3>
                 
-                <!-- Precio y botón -->
                 <div class="card-footer">
                     <div class="precios">
-                        <div class="precio-actual">$${precioFinal.toLocaleString('es-CO')}</div>
-                        ${estaEnPromo && precioOriginal !== precioFinal ? `
-                            <div class="precio-anterior">$${precioOriginal.toLocaleString('es-CO')}</div>
+                        <div class="precio-actual">${precioFinal.toLocaleString('es-CO')}</div>
+                        ${mostrarPrecioAnterior ? `
+                            <div class="precio-anterior">${precioOriginal.toLocaleString('es-CO')}</div>
                         ` : ''}
                     </div>
                     
@@ -249,99 +328,17 @@ function crearCardProductoHTML(producto) {
 }
 
 // ==============================================
-// CATEGORÍAS RÁPIDAS DINÁMICAS
+// CATEGORÍAS RÁPIDAS CON ENLACES COMPARTIBLES
 // ==============================================
 
-// Inicializar categorías rápidas
 function inicializarCategoriasRapidas() {
     if (!productosGlobal || productosGlobal.length === 0) {
         console.warn('⚠️ No hay productos para inicializar categorías');
         return;
     }
-
     mostrarCategoriasNivel0();
 }
-// ==============================================
-// CARGAR CATEGORÍAS EN EL MENÚ LATERAL
-// ==============================================
 
-// Inicializar categorías del menú lateral
-function inicializarCategoriasMenuLateral() {
-    if (!productosGlobal || productosGlobal.length === 0) {
-        console.warn('⚠️ No hay productos para inicializar menú lateral');
-        return;
-    }
-
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (!contenedor) return;
-
-    // Obtener los tipos principales
-    const tiposUnicos = [...new Set(productosGlobal.map(p => p.tipo).filter(Boolean))];
-    
-    // Limitar a 10 categorías principales para el menú
-    const categoriasPrincipales = tiposUnicos.slice(0, 10);
-    
-    const html = `
-        <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-        <div class="d-flex flex-column gap-2">
-            ${categoriasPrincipales.map(tipo => {
-                const count = productosGlobal.filter(p => p.tipo === tipo).length;
-                const icono = obtenerIcono(tipo, 0);
-                
-                return `
-                    <a href="#" class="nav-link d-flex align-items-center justify-content-between" 
-                       onclick="filtrarMenuCategoria('${tipo}'); cerrarMenu(); return false;">
-                        <span>
-                            ${icono} ${tipo}
-                        </span>
-                        <span class="badge bg-secondary rounded-pill small">${count}</span>
-                    </a>
-                `;
-            }).join('')}
-            
-            <!-- Enlace para ver todas las categorías -->
-            <div class="border-top pt-2 mt-1">
-                <a href="#" class="nav-link d-flex align-items-center text-primary" 
-                   onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
-                    <i class="bi bi-grid-3x3 me-2"></i> Ver todos los productos
-                </a>
-            </div>
-        </div>
-    `;
-    
-    contenedor.innerHTML = html;
-}
-
-// Función para filtrar desde el menú lateral
-function filtrarMenuCategoria(categoria) {
-    console.log('📋 Filtrando desde menú:', categoria);
-    
-    if (categoria === 'TODOS' || categoria === 'todos') {
-        mostrarTodosLosProductosCompleto();
-        return;
-    }
-    
-    // Buscar si la categoría es un tipo, subtipo o categoría
-    const esTipo = productosGlobal.some(p => p.tipo === categoria);
-    const esSubtipo = productosGlobal.some(p => p.subtipo === categoria);
-    const esCategoria = productosGlobal.some(p => p.categoria === categoria);
-    
-    if (esTipo) {
-        cargarPorTipo(categoria);
-    } else if (esSubtipo) {
-        // Encontrar el tipo correspondiente para este subtipo
-        const productoEjemplo = productosGlobal.find(p => p.subtipo === categoria);
-        if (productoEjemplo && productoEjemplo.tipo) {
-            cargarPorSubtipo(productoEjemplo.tipo, categoria);
-        }
-    } else if (esCategoria) {
-        // Encontrar el tipo y subtipo para esta categoría
-        const productoEjemplo = productosGlobal.find(p => p.categoria === categoria);
-        if (productoEjemplo && productoEjemplo.tipo && productoEjemplo.subtipo) {
-            cargarPorCategoria(productoEjemplo.tipo, productoEjemplo.subtipo, categoria);
-        }
-    }
-}
 // Mostrar nivel 0: Tipos principales
 function mostrarCategoriasNivel0() {
     const contenedor = document.getElementById('categorias-rapidas');
@@ -351,20 +348,32 @@ function mostrarCategoriasNivel0() {
     
     const html = tiposUnicos.map(tipo => {
         let contador = '';
+        let icono = '🛍️';
+        
         if (tipo !== 'TODOS') {
             const count = productosGlobal.filter(p => p.tipo === tipo).length;
             if (count > 0) {
                 contador = `<span class="badge-categoria-count"></span>`;
             }
+            icono = obtenerIcono(tipo, 0);
         }
 
         return `
-            <a href="#" class="categoria-rapida" data-tipo="${tipo}" 
-               onclick="cargarPorTipo('${tipo}'); return false;">
-                <div>${obtenerIcono(tipo, 0)}</div>
-                <div>${tipo}</div>
-                ${contador}
-            </a>
+            <div class="categoria-rapida-contenedor">
+                <a href="#" class="categoria-rapida" data-tipo="${tipo}" 
+                   onclick="cargarPorTipo('${tipo}'); return false;">
+                    <div>${icono}</div>
+                    <div>${tipo}</div>
+                    ${contador}
+                </a>
+                ${tipo !== 'TODOS' ? `
+                <button class="btn-compartir-categoria" 
+                        onclick="copiarEnlaceCompartir('${tipo}', null, null)"
+                        title="Copiar enlace de ${tipo}">
+                    <i class="bi bi-link-45deg"></i>
+                </button>
+                ` : ''}
+            </div>
         `;
     }).join('');
 
@@ -372,12 +381,11 @@ function mostrarCategoriasNivel0() {
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
 }
 
-// Mostrar nivel 1: Subtipos
+// Mostrar nivel 1: Subtipos (con el nombre del tipo como primer elemento)
 function mostrarCategoriasNivel1(tipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
 
-    // SOLO subtipos que existen (sin 'TODOS')
     const subtiposUnicos = [...new Set(
         productosGlobal
             .filter(p => p.tipo === tipo && p.subtipo)
@@ -385,7 +393,6 @@ function mostrarCategoriasNivel1(tipo) {
             .filter(Boolean)
     )];
 
-    // Si no hay subtipos, mostrar mensaje
     if (subtiposUnicos.length === 0) {
         contenedor.innerHTML = `
             <div class="text-center text-muted py-2">
@@ -396,26 +403,49 @@ function mostrarCategoriasNivel1(tipo) {
         return;
     }
 
-    const html = subtiposUnicos.map(subtipo => {
-        return `
-            <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
-               onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
-                <div>${obtenerIcono(subtipo, 1)}</div>
-                <div>${subtipo}</div>
+    // Primero el botón que muestra el tipo actual (en lugar de "TODOS")
+    const htmlPrincipal = `
+        <div class="categoria-rapida-contenedor">
+            <a href="#" class="categoria-rapida" data-tipo="${tipo}" 
+               onclick="cargarPorTipo('${tipo}'); return false;">
+                <div>${obtenerIcono(tipo, 0)}</div>
+                <div>${tipo}</div>
             </a>
+            <button class="btn-compartir-categoria" 
+                    onclick="copiarEnlaceCompartir('${tipo}', null, null)"
+                    title="Copiar enlace de ${tipo}">
+                <i class="bi bi-link-45deg"></i>
+            </button>
+        </div>
+    `;
+    
+    // Luego los subtipos
+    const htmlSubtipos = subtiposUnicos.map(subtipo => {
+        return `
+            <div class="categoria-rapida-contenedor">
+                <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
+                   onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
+                    <div>${obtenerIcono(subtipo, 1)}</div>
+                    <div>${subtipo}</div>
+                </a>
+                <button class="btn-compartir-categoria" 
+                        onclick="copiarEnlaceCompartir('${tipo}', '${subtipo}', null)"
+                        title="Copiar enlace de ${subtipo}">
+                    <i class="bi bi-link-45deg"></i>
+                </button>
+            </div>
         `;
     }).join('');
 
-    contenedor.innerHTML = html;
+    contenedor.innerHTML = htmlPrincipal + htmlSubtipos;
     contextoNavegacion = { nivel: 1, tipo: tipo, subtipo: null, categoria: null };
 }
 
-// Mostrar nivel 2: Categorías
+// Mostrar nivel 2: Categorías (con el nombre del subtipo como primer elemento)
 function mostrarCategoriasNivel2(tipo, subtipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
 
-    // SOLO categorías que existen (sin 'TODAS')
     const categoriasUnicas = [...new Set(
         productosGlobal
             .filter(p => p.tipo === tipo && p.subtipo === subtipo && p.categoria)
@@ -423,7 +453,6 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
             .filter(Boolean)
     )];
 
-    // Si no hay categorías, mostrar mensaje
     if (categoriasUnicas.length === 0) {
         contenedor.innerHTML = `
             <div class="text-center text-muted py-2">
@@ -434,33 +463,54 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
         return;
     }
 
-    const html = categoriasUnicas.map(categoria => {
-        // Contar productos por categoría
+    // Primero el botón que muestra el subtipo actual (en lugar de "TODAS")
+    const htmlPrincipal = `
+        <div class="categoria-rapida-contenedor">
+            <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
+               onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
+                <div>${obtenerIcono(subtipo, 1)}</div>
+                <div>${subtipo}</div>
+            </a>
+            <button class="btn-compartir-categoria" 
+                    onclick="copiarEnlaceCompartir('${tipo}', '${subtipo}', null)"
+                    title="Copiar enlace de ${subtipo}">
+                <i class="bi bi-link-45deg"></i>
+            </button>
+        </div>
+    `;
+    
+    // Luego las categorías
+    const htmlCategorias = categoriasUnicas.map(categoria => {
         const count = productosGlobal.filter(p => 
             p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
         ).length;
         
-        // Solo mostrar contador si hay productos
         const contador = count > 0 ? `<span class="badge-categoria-count"></span>` : '';
 
         return `
-            <a href="#" class="categoria-rapida sin-icono" data-categoria="${categoria}" 
-               onclick="cargarPorCategoria('${tipo}', '${subtipo}', '${categoria}'); return false;">
-                <div>${categoria}</div>
-                ${contador}
-            </a>
+            <div class="categoria-rapida-contenedor">
+                <a href="#" class="categoria-rapida sin-icono" data-categoria="${categoria}" 
+                   onclick="cargarPorCategoria('${tipo}', '${subtipo}', '${categoria}'); return false;">
+                    <div>${categoria}</div>
+                    ${contador}
+                </a>
+                <button class="btn-compartir-categoria" 
+                        onclick="copiarEnlaceCompartir('${tipo}', '${subtipo}', '${categoria}')"
+                        title="Copiar enlace de ${categoria}">
+                    <i class="bi bi-link-45deg"></i>
+                </button>
+            </div>
         `;
     }).join('');
 
-    contenedor.innerHTML = html;
+    contenedor.innerHTML = htmlPrincipal + htmlCategorias;
     contextoNavegacion = { nivel: 2, tipo: tipo, subtipo: subtipo, categoria: null };
 }
+
 // ==============================================
-// FUNCIONES DE NAVEGACIÓN
+// FUNCIONES DE NAVEGACIÓN (ACTUALIZADAS)
 // ==============================================
 
-// Cargar por tipo
-// Cargar por tipo - MODIFICADA para mostrar productos directamente
 async function cargarPorTipo(tipo) {
     console.log('📁 Cargando tipo:', tipo);
     
@@ -468,10 +518,11 @@ async function cargarPorTipo(tipo) {
         cambiarAVista('todos');
         await cargarVistaTodos();
         mostrarCategoriasNivel0();
+        // Actualizar URL para "todos"
+        actualizarURLNavegacion();
         return;
     }
 
-    // CAMBIAR de 'subtipos' a 'productos'
     cambiarAVista('productos');
     
     // Actualizar breadcrumbs y título
@@ -482,24 +533,19 @@ async function cargarPorTipo(tipo) {
     document.getElementById('breadcrumb-categoria').textContent = '';
     document.getElementById('titulo-productos').textContent = `Productos de ${tipo}`;
     
-    // Cargar TODOS los productos de este tipo (sin filtrar subtipo ni categoría)
+    // Actualizar URL
+    actualizarURLNavegacion(tipo, null, null);
+    
+    // Cargar productos
     await cargarProductosPorTipo(tipo);
     mostrarCategoriasNivel1(tipo);
 }
 
-// Cargar por subtipo - MODIFICADA para mostrar productos directamente
 async function cargarPorSubtipo(tipo, subtipo) {
     console.log('📁 Cargando subtipo:', subtipo);
     
-    if (subtipo === 'TODOS') {
-        await cargarPorTipo(tipo);
-        return;
-    }
-
-    // CAMBIAR de 'categorias' a 'productos'
     cambiarAVista('productos');
     
-    // Actualizar breadcrumbs y título
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
     document.getElementById('breadcrumb-subtipo-link').textContent = subtipo;
@@ -507,20 +553,16 @@ async function cargarPorSubtipo(tipo, subtipo) {
     document.getElementById('breadcrumb-categoria').textContent = '';
     document.getElementById('titulo-productos').textContent = `Productos de ${subtipo}`;
     
-    // Cargar TODOS los productos de este subtipo (sin filtrar categoría)
+    // Actualizar URL
+    actualizarURLNavegacion(tipo, subtipo, null);
+    
     await cargarProductosPorSubtipo(tipo, subtipo);
     mostrarCategoriasNivel2(tipo, subtipo);
 }
 
-// Cargar por categoría
 async function cargarPorCategoria(tipo, subtipo, categoria) {
     console.log('📁 Cargando categoría:', categoria);
     
-    if (categoria === 'TODAS') {
-        await cargarPorSubtipo(tipo, subtipo);
-        return;
-    }
-
     cambiarAVista('productos');
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
@@ -530,155 +572,20 @@ async function cargarPorCategoria(tipo, subtipo, categoria) {
     document.getElementById('breadcrumb-categoria').textContent = categoria;
     document.getElementById('titulo-productos').textContent = categoria;
     
-    await cargarProductosDesdeCatalogo(tipo, subtipo, categoria);
+    // Actualizar URL
+    actualizarURLNavegacion(tipo, subtipo, categoria);
+    
+    await cargarProductosPorCategoria(tipo, subtipo, categoria);
     mostrarCategoriasNivel2(tipo, subtipo);
 }
 
 // ==============================================
-// FUNCIONES DE CARGA DE CONTENIDO
+// FUNCIONES DE CARGA DE PRODUCTOS
 // ==============================================
 
-// Cargar subtipos desde catálogo
-async function cargarSubtiposDesdeCatalogo(tipo) {
-    try {
-        const subtipos = [...new Set(
-            productosGlobal
-                .filter(p => p.tipo === tipo)
-                .map(p => p.subtipo)
-                .filter(Boolean)
-        )];
-        
-        const grid = document.getElementById('grid-subtipos');
-        if (!grid) return;
-        
-        grid.innerHTML = subtipos.map(subtipo => {
-            const count = productosGlobal.filter(p => p.tipo === tipo && p.subtipo === subtipo).length;
-            const imagen = IMAGENES_POR_SUBTIPO[subtipo.toLowerCase()] || 
-                          "https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg";
-            
-            return `
-                <div class="card-producto-ml">
-                    <a href="#" onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
-                        <img src="${imagen}" 
-                             alt="${subtipo}" 
-                             class="card-img-ml"
-                             loading="lazy"
-                             onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
-                        <div class="card-body-ml">
-                            <h3 class="nombre-producto-ml small">${subtipo}</h3>
-                            <div class="d-flex justify-content-between align-items-center mt-2">
-                                <span class="badge bg-secondary small">${count} productos</span>
-                                <button class="btn btn-sm btn-outline-primary">
-                                    Ver <i class="bi bi-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            `;
-        }).join('');
-        
-    } catch (error) {
-        console.error('Error cargando subtipos:', error);
-    }
-}
-
-// Cargar categorías desde catálogo
-async function cargarCategoriasDesdeCatalogo(tipo, subtipo) {
-    try {
-        const categorias = [...new Set(
-            productosGlobal
-                .filter(p => p.tipo === tipo && p.subtipo === subtipo)
-                .map(p => p.categoria)
-                .filter(Boolean)
-        )];
-        
-        const grid = document.getElementById('grid-categorias');
-        if (!grid) return;
-        
-        grid.innerHTML = categorias.map(categoria => {
-            const productosCategoria = productosGlobal.filter(p => 
-                p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
-            );
-            
-            const imagen = productosCategoria[0]?.imagen || 
-                          "https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg";
-            
-            return `
-                <div class="card-producto-ml">
-                    <a href="#" onclick="cargarPorCategoria('${tipo}', '${subtipo}', '${categoria}'); return false;">
-                        <img src="${imagen}" 
-                             alt="${categoria}" 
-                             class="card-img-ml"
-                             loading="lazy"
-                             onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
-                        <div class="card-body-ml">
-                            <h3 class="nombre-producto-ml small">${categoria}</h3>
-                            <div class="d-flex justify-content-between align-items-center mt-2">
-                                <span class="badge bg-secondary small">${productosCategoria.length} productos</span>
-                                <button class="btn btn-sm btn-outline-primary">
-                                    Ver <i class="bi bi-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            `;
-        }).join('');
-        
-    } catch (error) {
-        console.error('Error cargando categorías:', error);
-    }
-}
-
-// Cargar productos desde catálogo
-async function cargarProductosDesdeCatalogo(tipo, subtipo, categoria) {
-    try {
-        const productosFiltrados = productosGlobal.filter(p => 
-            p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
-        );
-
-        const contador = document.getElementById('contador-productos');
-        const grid = document.getElementById('grid-productos');
-        
-        if (!grid || !contador) return;
-        
-        contador.textContent = `${productosFiltrados.length} productos`;
-        
-        if (productosFiltrados.length === 0) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <i class="bi bi-search fs-1 text-muted"></i>
-                    <h5 class="mt-3">No se encontraron productos</h5>
-                </div>
-            `;
-            return;
-        }
-        
-        grid.innerHTML = productosFiltrados.map(producto => crearCardProductoHTML(producto)).join('');
-        
-    } catch (error) {
-        console.error('Error cargando productos:', error);
-        const grid = document.getElementById('grid-productos');
-        if (grid) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        <p>Error al cargar productos</p>
-                    </div>
-                </div>
-            `;
-        }
-    }
-}
-// NUEVA: Cargar productos por tipo (sin subtipo ni categoría)
 async function cargarProductosPorTipo(tipo) {
     try {
-        const productosFiltrados = productosGlobal.filter(p => 
-            p.tipo === tipo
-        );
-
+        const productosFiltrados = productosGlobal.filter(p => p.tipo === tipo);
         const contador = document.getElementById('contador-productos');
         const grid = document.getElementById('grid-productos');
         
@@ -700,21 +607,9 @@ async function cargarProductosPorTipo(tipo) {
         
     } catch (error) {
         console.error('Error cargando productos por tipo:', error);
-        const grid = document.getElementById('grid-productos');
-        if (grid) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        <p>Error al cargar productos</p>
-                    </div>
-                </div>
-            `;
-        }
     }
 }
 
-// NUEVA: Cargar productos por subtipo (sin categoría)
 async function cargarProductosPorSubtipo(tipo, subtipo) {
     try {
         const productosFiltrados = productosGlobal.filter(p => 
@@ -742,33 +637,58 @@ async function cargarProductosPorSubtipo(tipo, subtipo) {
         
     } catch (error) {
         console.error('Error cargando productos por subtipo:', error);
-        const grid = document.getElementById('grid-productos');
-        if (grid) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        <p>Error al cargar productos</p>
-                    </div>
-                </div>
-            `;
-        }
     }
 }
+
+async function cargarProductosPorCategoria(tipo, subtipo, categoria) {
+    try {
+        const productosFiltrados = productosGlobal.filter(p => 
+            p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
+        );
+
+        const contador = document.getElementById('contador-productos');
+        const grid = document.getElementById('grid-productos');
+        
+        if (!grid || !contador) return;
+        
+        contador.textContent = `${productosFiltrados.length} productos`;
+        
+        if (productosFiltrados.length === 0) {
+            grid.innerHTML = `
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-search fs-1 text-muted"></i>
+                    <h5 class="mt-3">No se encontraron productos</h5>
+                </div>
+            `;
+            return;
+        }
+        
+        grid.innerHTML = productosFiltrados.map(producto => crearCardProductoHTML(producto)).join('');
+        
+    } catch (error) {
+        console.error('Error cargando productos:', error);
+    }
+}
+
 // ==============================================
-// VISTA "TODOS LOS PRODUCTOS"
+// VISTA "TODOS LOS PRODUCTOS" CON SCROLL INFINITO
 // ==============================================
 
-// Cargar vista de todos los productos
 async function cargarVistaTodos() {
     try {
         const contador = document.getElementById('contador-todos');
         const grid = document.getElementById('grid-todos');
+        const btnContainer = document.getElementById('btn-ver-mas-container');
+        const loader = document.getElementById('cargando-todos');
         
         if (!grid || !contador) return;
         
-        contador.textContent = `${productosGlobal.length} productos`;
         productosCargados = 0;
+        grid.innerHTML = '';
+        
+        contador.textContent = `0 de ${productosGlobal.length} productos`;
+        
+        if (loader) loader.classList.remove('d-none');
         
         if (productosGlobal.length === 0) {
             grid.innerHTML = `
@@ -777,39 +697,41 @@ async function cargarVistaTodos() {
                     <h5 class="mt-3">No hay productos disponibles</h5>
                 </div>
             `;
+            if (loader) loader.classList.add('d-none');
             return;
         }
         
-        cargarMasProductos();
+        await cargarMasProductosScroll();
         
     } catch (error) {
         console.error('Error cargando vista todos:', error);
     }
 }
 
-// Cargar más productos
-// ==============================================
-// SCROLL INFINITO MEJORADO
-// ==============================================
-
-let cargandoScroll = false;
-const LIMITE_PRODUCTOS = 12;
-
-// Función principal para cargar más productos
 async function cargarMasProductosScroll() {
-    if (cargandoScroll || productosCargados >= productosGlobal.length) return;
+    if (cargandoScroll) return;
     
     const grid = document.getElementById('grid-todos');
     const loader = document.getElementById('cargando-todos');
-    const btnContainer = document.getElementById('btn-ver-mas-container');
     
     if (!grid) return;
     
+    if (productosCargados >= productosGlobal.length) {
+        if (loader) loader.classList.add('d-none');
+        const btnContainer = document.getElementById('btn-ver-mas-container');
+        if (btnContainer) {
+            btnContainer.innerHTML = `
+                <div class="alert alert-success py-2">
+                    <i class="bi bi-check-circle me-2"></i> Todos los productos cargados (${productosGlobal.length})
+                </div>
+            `;
+        }
+        return;
+    }
+    
     cargandoScroll = true;
     if (loader) loader.classList.remove('d-none');
-    if (btnContainer) btnContainer.classList.add('d-none');
     
-    // Pequeña pausa para mejor UX
     await new Promise(resolve => setTimeout(resolve, 300));
     
     const inicio = productosCargados;
@@ -817,45 +739,34 @@ async function cargarMasProductosScroll() {
     const productosParaMostrar = productosGlobal.slice(inicio, fin);
     
     if (productosParaMostrar.length > 0) {
-        // Crear HTML de todos los productos de una vez (más eficiente)
-        const cardsHTML = productosParaMostrar.map(producto => crearCardProductoHTML(producto)).join('');
-        grid.insertAdjacentHTML('beforeend', cardsHTML);
+        productosParaMostrar.forEach(producto => {
+            const cardHTML = crearCardProductoHTML(producto);
+            grid.insertAdjacentHTML('beforeend', cardHTML);
+        });
         
         productosCargados += productosParaMostrar.length;
         
-        // Actualizar contador
         const contador = document.getElementById('contador-todos');
         if (contador) {
             contador.textContent = `${productosCargados} de ${productosGlobal.length} productos`;
         }
         
-        console.log(`📦 Cargados: ${productosCargados}/${productosGlobal.length} productos`);
-    }
-    
-    cargandoScroll = false;
-    if (loader) loader.classList.add('d-none');
-    
-    // Actualizar botón
-    if (btnContainer) {
-        if (productosCargados < productosGlobal.length) {
+        const btnContainer = document.getElementById('btn-ver-mas-container');
+        if (btnContainer && productosCargados < productosGlobal.length) {
             btnContainer.innerHTML = `
-                <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
-                    <i class="bi bi-arrow-down"></i> Ver más productos (${productosGlobal.length - productosCargados} restantes)
+                <button id="btn-ver-mas" class="btn btn-outline-primary" 
+                        onclick="cargarMasProductosScroll()">
+                    <i class="bi bi-arrow-down me-1"></i> Ver más productos
                 </button>
-            `;
-            btnContainer.classList.remove('d-none');
-        } else {
-            btnContainer.innerHTML = `
-                <div class="alert alert-success alert-sm py-2 mb-0">
-                    <i class="bi bi-check-circle me-1"></i> ¡Todos los productos cargados! (${productosGlobal.length})
-                </div>
             `;
             btnContainer.classList.remove('d-none');
         }
     }
+    
+    cargandoScroll = false;
+    if (loader) loader.classList.add('d-none');
 }
 
-// Configurar detección de scroll automático
 function configurarScrollInfinito() {
     let timeoutId;
     
@@ -867,86 +778,33 @@ function configurarScrollInfinito() {
         
         const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
         
-        // Si estamos cerca del final (300px antes)
         if (scrollTop + clientHeight >= scrollHeight - 300) {
             cargarMasProductosScroll();
         }
     }
     
-    // Usar debounce para mejor rendimiento
     window.addEventListener('scroll', () => {
         clearTimeout(timeoutId);
         timeoutId = setTimeout(manejarScroll, 100);
     });
 }
 
-// Modificar cargarVistaTodos para iniciar correctamente
-async function cargarVistaTodos() {
-    try {
-        const contador = document.getElementById('contador-todos');
-        const grid = document.getElementById('grid-todos');
-        const btnContainer = document.getElementById('btn-ver-mas-container');
-        const loader = document.getElementById('cargando-todos');
-        
-        if (!grid || !contador) return;
-        
-        // Limpiar y resetear
-        productosCargados = 0;
-        grid.innerHTML = '';
-        
-        if (productosGlobal.length === 0) {
-            contador.textContent = '0 productos';
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <i class="bi bi-search fs-1 text-muted"></i>
-                    <h5 class="mt-3">No hay productos disponibles</h5>
-                </div>
-            `;
-            if (btnContainer) btnContainer.classList.add('d-none');
-            if (loader) loader.classList.add('d-none');
-            return;
-        }
-        
-        // Mostrar cargando
-        if (loader) loader.classList.remove('d-none');
-        contador.textContent = `0 de ${productosGlobal.length} productos`;
-        
-        // Cargar primer lote
-        await cargarMasProductosScroll();
-        
-    } catch (error) {
-        console.error('❌ Error cargando vista todos:', error);
-    }
-}
-
-// Mantener función original para compatibilidad
-function cargarMasProductos() {
-    console.warn('⚠️ cargarMasProductos() está obsoleta. Usando cargarMasProductosScroll()');
-    cargarMasProductosScroll();
-}
-
 // ==============================================
 // FUNCIONES AUXILIARES
 // ==============================================
 
-// Volver al inicio
 function volverAInicio() {
     console.log('🏠 Volviendo al inicio...');
     cambiarAVista('inicio');
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
     mostrarCategoriasNivel0();
     
-    const nuevaURL = new URL(window.location);
-    nuevaURL.searchParams.delete('vista');
-    nuevaURL.searchParams.delete('tipo');
-    nuevaURL.searchParams.delete('subtipo');
-    nuevaURL.searchParams.delete('categoria');
-    window.history.replaceState({}, '', nuevaURL);
+    // Limpiar URL
+    actualizarURLNavegacion();
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Configurar instalación PWA
 function configurarInstalacionPWA() {
     const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches || 
                           window.navigator.standalone === true;
@@ -975,6 +833,333 @@ function configurarInstalacionPWA() {
 }
 
 // ==============================================
+// SISTEMA DE CARRITO COMPLETO CON CAMBIO DE CANTIDADES
+// ==============================================
+
+// Variable global para el intervalo del carrito
+let intervaloCarrito = null;
+
+// Función para inicializar el sistema de carrito de forma ULTRA RÁPIDA
+function inicializarCarritoUltraRapido() {
+    console.log('🚀 Inicializando carrito ULTRA RÁPIDO...');
+    
+    // 1. Inicializar carritoManager si está disponible (de carrito.js)
+    if (typeof inicializarCarrito === 'function') {
+        try {
+            inicializarCarrito();
+            console.log('✅ carrito.js inicializado');
+        } catch (e) {
+            console.error('❌ Error inicializando carrito.js:', e);
+        }
+    }
+    
+    // 2. Configurar inmediatamente los eventos del offcanvas
+    configurarEventosOffcanvasInmediato();
+    
+    // 3. Actualizar contadores cada segundo
+    setInterval(actualizarContadoresCarrito, 1000);
+    
+    // 4. Configurar listener para cambios en localStorage
+    window.addEventListener('storage', manejarCambioStorage);
+    
+    // 5. Configurar evento para cuando se agregan productos
+    if (typeof window.agregarAlCarrito === 'function') {
+        const originalAgregarAlCarrito = window.agregarAlCarrito;
+        window.agregarAlCarrito = function(producto) {
+            const resultado = originalAgregarAlCarrito.call(this, producto);
+            // Forzar actualización inmediata después de agregar
+            setTimeout(actualizarCarritoVisible, 100);
+            return resultado;
+        };
+    }
+    
+    console.log('✅ Carrito configurado para actualización ultra rápida');
+}
+
+// Configurar eventos del offcanvas INMEDIATAMENTE
+function configurarEventosOffcanvasInmediato() {
+    // Buscar el offcanvas cada 100ms hasta encontrarlo
+    const buscarOffcanvas = setInterval(() => {
+        const offcanvasElement = document.getElementById('offcanvasCarrito');
+        if (offcanvasElement) {
+            clearInterval(buscarOffcanvas);
+            
+            // Configurar evento cuando se abre el offcanvas
+            offcanvasElement.addEventListener('show.bs.offcanvas', function() {
+                console.log('🎯 Offcanvas abierto, actualizando INMEDIATAMENTE...');
+                // Actualizar 3 veces con delays pequeños para asegurar
+                setTimeout(actualizarCarritoVisible, 10);
+                setTimeout(actualizarCarritoVisible, 100);
+                setTimeout(actualizarCarritoVisible, 500);
+                
+                // Configurar actualización cada 500ms mientras esté abierto
+                if (intervaloCarrito) {
+                    clearInterval(intervaloCarrito);
+                }
+                intervaloCarrito = setInterval(actualizarCarritoVisible, 500);
+            });
+            
+            // Limpiar intervalo cuando se cierra
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
+                console.log('📦 Offcanvas cerrado');
+                if (intervaloCarrito) {
+                    clearInterval(intervaloCarrito);
+                    intervaloCarrito = null;
+                }
+            });
+            
+            console.log('✅ Offcanvas configurado para actualización instantánea');
+        }
+    }, 100);
+}
+
+// Actualizar contadores del carrito
+function actualizarContadoresCarrito() {
+    try {
+        const carritoGuardado = localStorage.getItem('carritoAnmago');
+        let totalItems = 0;
+        
+        if (carritoGuardado) {
+            try {
+                const carrito = JSON.parse(carritoGuardado);
+                totalItems = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
+            } catch (e) {
+                console.error('Error parseando carrito:', e);
+            }
+        }
+        
+        // Actualizar TODOS los contadores encontrados
+        const contadores = document.querySelectorAll('[id*="contador-carrito"]');
+        contadores.forEach(elemento => {
+            elemento.textContent = totalItems;
+            elemento.style.display = totalItems > 0 ? 'flex' : 'none';
+        });
+        
+    } catch (error) {
+        console.error('Error actualizando contadores:', error);
+    }
+}
+
+// Actualizar el carrito visible (contenido del offcanvas) CON CAMBIO DE CANTIDADES
+function actualizarCarritoVisible() {
+    const contenedor = document.getElementById('carrito-contenido');
+    const subtotalElement = document.getElementById('subtotal');
+    
+    if (!contenedor) {
+        console.log('⚠️ Contenedor del carrito no encontrado');
+        return;
+    }
+    
+    try {
+        const carritoGuardado = localStorage.getItem('carritoAnmago');
+        
+        if (!carritoGuardado || carritoGuardado === '[]') {
+            contenedor.innerHTML = `
+                <div class="text-center text-muted py-4">
+                    <i class="bi bi-bag-x fs-1"></i>
+                    <p class="mt-2">Tu carrito está vacío</p>
+                </div>
+            `;
+            if (subtotalElement) {
+                subtotalElement.textContent = '0';
+            }
+            return;
+        }
+        
+        const carrito = JSON.parse(carritoGuardado);
+        
+        if (!carrito || carrito.length === 0) {
+            contenedor.innerHTML = `
+                <div class="text-center text-muted py-4">
+                    <i class="bi bi-bag-x fs-1"></i>
+                    <p class="mt-2">Tu carrito está vacío</p>
+                </div>
+            `;
+            if (subtotalElement) {
+                subtotalElement.textContent = '0';
+            }
+            return;
+        }
+        
+        // Generar HTML de los productos CON CONTROLES DE CANTIDAD
+        const htmlCarrito = carrito.map(item => {
+            const precio = item.precio || 0;
+            const cantidad = item.cantidad || 1;
+            const nombre = item.nombre || 'Producto sin nombre';
+            const imagen = item.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+            const talla = item.talla || 'Única';
+            const variante = item.variante || '';
+            const id = item.id || '';
+            
+            return `
+            <div class="card mb-2 border-0 shadow-sm carrito-item" data-id="${id}" data-talla="${talla}">
+                <div class="card-body py-2">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <img src="${imagen}" 
+                                 alt="${nombre}" 
+                                 class="img-fluid rounded" 
+                                 style="height: 60px; object-fit: cover; width: 100%;"
+                                 onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
+                        </div>
+                        <div class="col-6">
+                            <h6 class="card-title mb-1 small fw-bold">${nombre}</h6>
+                            <p class="card-text mb-1 small text-muted">
+                                ${variante ? variante + ' • ' : ''}Talla: ${talla}
+                            </p>
+                            <p class="card-text mb-0 fw-bold text-primary">${precio.toLocaleString('es-CO')}</p>
+                        </div>
+                        <div class="col-3">
+                            <div class="d-flex align-items-center justify-content-center mb-1">
+                                <!-- Botón para disminuir cantidad -->
+                                <button class="btn btn-sm btn-outline-secondary px-2" 
+                                        onclick="cambiarCantidadCarrito('${id}', '${talla}', ${cantidad - 1})"
+                                        ${cantidad <= 1 ? 'disabled' : ''}>
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                                
+                                <!-- Cantidad actual -->
+                                <span class="mx-2 fw-bold">${cantidad}</span>
+                                
+                                <!-- Botón para aumentar cantidad -->
+                                <button class="btn btn-sm btn-outline-secondary px-2"
+                                        onclick="cambiarCantidadCarrito('${id}', '${talla}', ${cantidad + 1})">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+                            <button class="btn btn-sm btn-danger mt-1 w-100" 
+                                    onclick="eliminarDelCarritoLocal('${id}', '${talla}')">
+                                <i class="bi bi-trash"></i> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        }).join('');
+        
+        contenedor.innerHTML = htmlCarrito;
+        
+        // Actualizar subtotal
+        if (subtotalElement) {
+            const subtotal = carrito.reduce((total, item) => {
+                return total + ((item.precio || 0) * (item.cantidad || 1));
+            }, 0);
+            subtotalElement.textContent = `${subtotal.toLocaleString('es-CO')}`;
+            subtotalElement.classList.add('text-success');
+        }
+        
+        console.log(`✅ Carrito actualizado: ${carrito.length} productos`);
+        
+    } catch (error) {
+        console.error('❌ Error actualizando carrito visible:', error);
+        contenedor.innerHTML = `
+            <div class="alert alert-danger">
+                <i class="bi bi-exclamation-triangle"></i>
+                <p>Error al cargar el carrito</p>
+            </div>
+        `;
+    }
+}
+
+// Función para cambiar la cantidad de un producto en el carrito
+function cambiarCantidadCarrito(id, talla, nuevaCantidad) {
+    try {
+        const carritoGuardado = localStorage.getItem('carritoAnmago');
+        if (!carritoGuardado) return;
+        
+        const carrito = JSON.parse(carritoGuardado);
+        
+        // Buscar el producto
+        const productoIndex = carrito.findIndex(item => 
+            item.id === id && item.talla === talla
+        );
+        
+        if (productoIndex === -1) {
+            console.log('⚠️ Producto no encontrado en el carrito');
+            return;
+        }
+        
+        if (nuevaCantidad <= 0) {
+            // Si la cantidad es 0 o negativa, eliminar el producto
+            carrito.splice(productoIndex, 1);
+        } else {
+            // Actualizar la cantidad
+            carrito[productoIndex].cantidad = nuevaCantidad;
+        }
+        
+        // Guardar en localStorage
+        localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
+        
+        // Disparar evento storage manualmente para sincronizar otras pestañas
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: 'carritoAnmago',
+            newValue: JSON.stringify(carrito)
+        }));
+        
+        // Actualizar inmediatamente
+        actualizarCarritoVisible();
+        actualizarContadoresCarrito();
+        
+        // Notificación si se elimina
+        if (nuevaCantidad <= 0) {
+            mostrarNotificacion('🗑️ Producto eliminado del carrito');
+        } else {
+            console.log(`✅ Cantidad actualizada a: ${nuevaCantidad}`);
+        }
+        
+    } catch (error) {
+        console.error('Error cambiando cantidad del carrito:', error);
+        mostrarNotificacion('❌ Error al cambiar cantidad', 'error');
+    }
+}
+
+// Función para eliminar producto del carrito (local)
+function eliminarDelCarritoLocal(id, talla) {
+    try {
+        const carritoGuardado = localStorage.getItem('carritoAnmago');
+        if (!carritoGuardado) return;
+        
+        const carrito = JSON.parse(carritoGuardado);
+        const nuevoCarrito = carrito.filter(item => !(item.id === id && item.talla === talla));
+        
+        localStorage.setItem('carritoAnmago', JSON.stringify(nuevoCarrito));
+        
+        // Disparar evento storage manualmente para sincronizar otras pestañas
+        window.dispatchEvent(new StorageEvent('storage', {
+            key: 'carritoAnmago',
+            newValue: JSON.stringify(nuevoCarrito)
+        }));
+        
+        // Actualizar inmediatamente
+        actualizarCarritoVisible();
+        actualizarContadoresCarrito();
+        
+        // Notificación
+        mostrarNotificacion('🗑️ Producto eliminado del carrito');
+        
+    } catch (error) {
+        console.error('Error eliminando del carrito:', error);
+        mostrarNotificacion('❌ Error al eliminar producto', 'error');
+    }
+}
+
+// Manejar cambios en localStorage (para sincronización entre pestañas)
+function manejarCambioStorage(event) {
+    if (event.key === 'carritoAnmago') {
+        console.log('📡 Cambio detectado en localStorage');
+        // Actualizar contadores
+        actualizarContadoresCarrito();
+        
+        // Si el carrito está visible, actualizarlo también
+        const offcanvasAbierto = document.getElementById('offcanvasCarrito')?.classList.contains('show');
+        if (offcanvasAbierto) {
+            actualizarCarritoVisible();
+        }
+    }
+}
+
+// ==============================================
 // INICIALIZACIÓN PRINCIPAL
 // ==============================================
 
@@ -983,6 +1168,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     const { tipo, subtipo, categoria, vista } = getParametrosDesdeURL();
 
+    // 🔥 INICIALIZAR CARRITO INMEDIATAMENTE (LO PRIMERO)
+    inicializarCarritoUltraRapido();
+    
     // 1. Cargar catálogo global
     await cargarCatalogoGlobal();
     
@@ -991,9 +1179,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     // 3. Configurar PWA
     configurarInstalacionPWA();
-    inicializarCategoriasMenuLateral();
     
-    // 4. Configurar scroll infinito (¡NUEVA LÍNEA!)
+    // 4. Configurar scroll infinito
     configurarScrollInfinito();
     
     // 5. Cargar header dinámicamente
@@ -1002,23 +1189,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             const header = await fetch("HEADER.HTML").then(res => res.text());
             headerContainer.insertAdjacentHTML("afterbegin", header);
+            
+            // Forzar actualización del carrito después de cargar header
+            setTimeout(() => {
+                actualizarContadoresCarrito();
+            }, 300);
+            
         } catch (error) {
             console.error("❌ Error cargando header:", error);
         }
     }
     
-    // 6. Activar buscador si existe
-    if (typeof activarBuscadorGlobal === "function") {
-        activarBuscadorGlobal();
-    }
-    
-    // 7. Cargar últimos productos
-    setTimeout(() => {
-        cargarUltimosProductos();
-    }, 1500);
-    
-    
-    // 9. Manejar navegación desde URL
+    // 6. Manejar navegación desde URL
     setTimeout(() => {
         if (tipo && subtipo && categoria) {
             cargarPorCategoria(tipo, subtipo, categoria);
@@ -1026,161 +1208,79 @@ document.addEventListener("DOMContentLoaded", async () => {
             cargarPorSubtipo(tipo, subtipo);
         } else if (tipo) {
             cargarPorTipo(tipo);
-        } else if (vista === 'todos') {
+        } else {
             cargarPorTipo('TODOS');
-        } else if (vista === 'productos' || vista === 'categorias' || vista === 'subtipos') {
-            cambiarAVista(vista);
         }
-    }, 2000);
+    }, 1000);
     
-    // 10. Actualizar carrito
-    if (typeof window.actualizarContadorCarrito === "function") {
-        setTimeout(() => {
-            window.actualizarContadorCarrito();
-        }, 2500);
-    }
-    
-
-    // ==============================================
-// SCROLL INFINITO AUTOMÁTICO
-// ==============================================
-
-let cargandoScroll = false;
-const LIMITE_PRODUCTOS = 12; // Cuántos cargar cada vez
-
-function configurarScrollInfinito() {
-    // Detectar scroll para carga automática
-    window.addEventListener('scroll', () => {
-        if (cargandoScroll || vistaActual !== 'todos') return;
-        
-        const gridTodos = document.getElementById('grid-todos');
-        if (!gridTodos) return;
-        
-        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-        
-        // Si estamos a 200px del final, cargar más
-        if (scrollTop + clientHeight >= scrollHeight - 200) {
-            cargarMasProductosScroll();
-        }
-    });
-}
-
-async function cargarMasProductosScroll() {
-    if (cargandoScroll) return;
-    
-    const grid = document.getElementById('grid-todos');
-    const loader = document.getElementById('cargando-todos');
-    
-    if (!grid) return;
-    
-    // Si ya cargamos todos los productos, no hacer nada
-    if (productosCargados >= productosGlobal.length) {
-        if (loader) loader.classList.add('d-none');
-        return;
-    }
-    
-    cargandoScroll = true;
-    if (loader) loader.classList.remove('d-none');
-    
-    // Simular un pequeño retraso para mejor UX
-    await new Promise(resolve => setTimeout(resolve, 500));
-    
-    const inicio = productosCargados;
-    const fin = Math.min(inicio + LIMITE_PRODUCTOS, productosGlobal.length);
-    const productosParaMostrar = productosGlobal.slice(inicio, fin);
-    
-    if (productosParaMostrar.length > 0) {
-        // Agregar nuevos productos al grid
-        productosParaMostrar.forEach(producto => {
-            const cardHTML = crearCardProductoHTML(producto);
-            grid.insertAdjacentHTML('beforeend', cardHTML);
-        });
-        
-        productosCargados += productosParaMostrar.length;
-        
-        // Actualizar contador
-        const contador = document.getElementById('contador-todos');
-        if (contador) {
-            contador.textContent = `${productosCargados} de ${productosGlobal.length} productos`;
+    // Agregar CSS solo para botones de compartir (mínimo necesario)
+    const style = document.createElement('style');
+    style.textContent = `
+        .categoria-rapida-contenedor {
+            position: relative;
+            display: inline-block;
         }
         
-        // Mostrar/Ocultar mensaje de "cargando"
-        if (productosCargados >= productosGlobal.length) {
-            const btnContainer = document.getElementById('btn-ver-mas-container');
-            if (btnContainer) {
-                btnContainer.innerHTML = `
-                    <div class="alert alert-success py-2">
-                        <i class="bi bi-check-circle me-2"></i> Todos los productos cargados (${productosGlobal.length})
-                    </div>
-                `;
+        .btn-compartir-categoria {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0, 123, 255, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 10;
+        }
+        
+        .categoria-rapida-contenedor:hover .btn-compartir-categoria {
+            opacity: 1;
+        }
+        
+        .btn-compartir-categoria:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
-    }
-    
-    cargandoScroll = false;
-    if (loader) loader.classList.add('d-none');
-}
-
-// Modificar la función cargarVistaTodos para usar scroll infinito
-async function cargarVistaTodos() {
-    try {
-        const contador = document.getElementById('contador-todos');
-        const grid = document.getElementById('grid-todos');
-        const btnContainer = document.getElementById('btn-ver-mas-container');
         
-        if (!grid || !contador) return;
-        
-        // Resetear contadores
-        productosCargados = 0;
-        grid.innerHTML = '';
-        
-        // Actualizar contador inicial
-        contador.textContent = `0 de ${productosGlobal.length} productos`;
-        
-        // Configurar mensaje de cargando
-        const loader = document.getElementById('cargando-todos');
-        if (loader) loader.classList.remove('d-none');
-        
-        if (productosGlobal.length === 0) {
-            grid.innerHTML = `
-                <div class="col-12 text-center py-5">
-                    <i class="bi bi-search fs-1 text-muted"></i>
-                    <h5 class="mt-3">No hay productos disponibles</h5>
-                </div>
-            `;
-            if (loader) loader.classList.add('d-none');
-            return;
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        
-        // Cargar primer lote inmediatamente
-        await cargarMasProductosScroll();
-        
-        // Configurar botón manual (por si acaso)
-        if (btnContainer && productosCargados < productosGlobal.length) {
-            btnContainer.innerHTML = `
-                <button id="btn-ver-mas" class="btn btn-outline-primary" 
-                        onclick="cargarMasProductosScroll()">
-                    <i class="bi bi-arrow-down me-1"></i> Ver más productos
-                </button>
-            `;
-            btnContainer.classList.remove('d-none');
-        }
-        
-    } catch (error) {
-        console.error('Error cargando vista todos:', error);
-    }
-}
-
-// Llamar a configurarScrollInfinito en la inicialización
-document.addEventListener("DOMContentLoaded", async () => {
-    // ... tu código existente ...
+    `;
+    document.head.appendChild(style);
     
-    // 11. Configurar scroll infinito
-    configurarScrollInfinito();
-    
-    console.log('✅ Anmago Store inicializada correctamente');
-});
-    
+    // Configurar funciones globales
+    window.actualizarCarritoVisible = actualizarCarritoVisible;
+    window.eliminarDelCarritoLocal = eliminarDelCarritoLocal;
+    window.cambiarCantidadCarrito = cambiarCantidadCarrito;
     
     console.log('✅ Anmago Store inicializada correctamente');
 });
@@ -1189,17 +1289,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 // FUNCIONES DE COMPATIBILIDAD
 // ==============================================
 
-// Mantener función para compatibilidad
 function mostrarTodosLosProductos() {
     cargarPorTipo('TODOS');
 }
 
-// Función de compatibilidad
-function cargarSubtipos(tipo) {
-    cargarPorTipo(tipo);
-}
-
-// Función de compatibilidad
 function filtrarPorCategoria(categoria) {
     if (categoria === 'TODOS') {
         volverAInicio();
@@ -1227,7 +1320,6 @@ function filtrarPorCategoria(categoria) {
     }
 }
 
-// Función de compatibilidad para tu header
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
