@@ -9,310 +9,319 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://ik.imagekit.io">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <!-- PWA y favicon -->
+  <!-- PWA y favicon -->
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="tina-192.png" type="image/x-icon" />
   <!-- Bootstrap e iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-
   <!-- CSS optimizado -->
   <link rel="stylesheet" href="ESTILO.CSS?v=20251207" />
-  
-  </head>
+</head>
 <body class="bg-light">
   <!-- Scripts optimizados -->
   <script src="carrito.js?v=20251207"></script>
   <script src="app.js?v=20251207"></script>
 
- <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
-  <!-- LOGO -->
- <div class="logo">
-  <a href="index.html" 
-  >
-    <img
-      src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-      alt="ANMAGO STORE"
-      width="48"
-      height="48"
-      loading="lazy"
-      style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
-    />
-  </a>
-</div>
+  <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img
+          src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
+          alt="ANMAGO STORE"
+          width="48"
+          height="48"
+          loading="lazy"
+          style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
+        />
+      </a>
+    </div>
 
-  <!-- BUSCADOR EN HEADER -->
-  <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
-    <input id="buscador" class="form-control buscador-header" 
-           placeholder="Buscar productos..." 
-           autocomplete="off">
-    <div id="sugerencias" class="sugerencias-container"></div>
-  </div>
+    <!-- BUSCADOR EN HEADER -->
+    <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
+      <input id="buscador" class="form-control buscador-header" 
+             placeholder="Buscar productos..." 
+             autocomplete="off">
+      <div id="sugerencias" class="sugerencias-container"></div>
+    </div>
 
-  <!-- BOTÓN HAMBURGUESA -->
-  <button class="navbar-toggler border-0 bg-transparent" type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#menuLateral"
-          aria-controls="menuLateral"
-          aria-label="Abrir menú">
-    <i class="bi bi-list fs-1 text-white"></i>
-  </button>
-</header>
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="navbar-toggler border-0 bg-transparent" type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menuLateral"
+            aria-controls="menuLateral"
+            aria-label="Abrir menú">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+  </header>
 
-<!-- MENÚ LATERAL -->
-<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="menuLateralLabel">
-      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
-           alt="Anmago Store" width="30" height="30" 
-           style="border-radius: 4px; margin-right: 10px;">
-      Anmago Store
-    </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-  </div>
+  <!-- MENÚ LATERAL -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="menuLateralLabel">
+        <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
+             alt="Anmago Store" width="30" height="30" 
+             style="border-radius: 4px; margin-right: 10px;">
+        Anmago Store
+      </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+    </div>
 
-  <div class="offcanvas-body d-flex flex-column gap-3">
-    <!-- Inicio -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
-      <i class="bi bi-house me-2"></i> Inicio
-    </a>
+    <div class="offcanvas-body d-flex flex-column gap-3">
+      <!-- Inicio -->
+      <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
+        <i class="bi bi-house me-2"></i> Inicio
+      </a>
 
-    <!-- Promociones -->
-    <a href="PROMOS.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-percent me-2"></i> Promociones
-    </a>
+      <!-- Todos los productos -->
+      <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
+        <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
+      </a>
 
-    <!-- Todos los productos -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
-      <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
-    </a>
+      <!-- CATEGORÍAS DINÁMICAS -->
+      <div id="menu-categorias-dinamico" class="mt-2">
+        <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+        <div class="text-center py-3">
+          <div class="spinner-border spinner-border-sm text-primary"></div>
+          <p class="mt-2 small text-muted">Cargando categorías...</p>
+        </div>
+      </div>
 
-    <!-- CATEGORÍAS DINÁMICAS - SIMPLIFICADO -->
-    <div id="menu-categorias-dinamico" class="mt-2">
-      <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-      
-      <!-- Se cargarán dinámicamente usando TUS funciones -->
-      <div class="text-center py-3">
-        <div class="spinner-border spinner-border-sm text-primary"></div>
-        <p class="mt-2 small text-muted">Cargando categorías...</p>
+      <!-- Contacto -->
+      <a href="modalformulario.html" 
+         class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+        <i class="bi bi-person me-2"></i> Mi cuenta
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
+         target="_blank"
+         class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
+        <i class="bi bi-whatsapp me-2"></i> WhatsApp
+      </a>
+
+      <!-- Contacto formulario -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
+         target="_blank"
+         class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+        <i class="bi bi-envelope me-2"></i> Contacto
+      </a>
+    </div>
+
+    <div class="offcanvas-footer border-top p-3">
+      <div class="text-center small text-muted">
+        <p class="mb-1">anmagostore@gmail.com</p>
+        <p class="mb-0">3006498710 - 3115046741</p>
       </div>
     </div>
-
-    <!-- Contacto -->
-    <a href="modalformulario.html" 
-       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-person me-2"></i> Mi cuenta
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
-       target="_blank"
-       class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
-      <i class="bi bi-whatsapp me-2"></i> WhatsApp
-    </a>
-
-    <!-- Contacto formulario -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
-       target="_blank"
-       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-envelope me-2"></i> Contacto
-    </a>
   </div>
-
-  <div class="offcanvas-footer border-top p-3">
-    <div class="text-center small text-muted">
-      <p class="mb-1">anmagostore@gmail.com</p>
-      <p class="mb-0">3006498710 - 3115046741</p>
-    </div>
-  </div>
-</div>
-
 <script>
 // ==============================================
-// HEADER SIMPLIFICADO - USA TUS FUNCIONES EXISTENTES
+// MENÚ HAMBURGUESA AUTÓNOMO - PARA PRODUCTO.HTML
 // ==============================================
+
+// Variable para el catálogo del menú
+let catalogoMenuHamburguesa = [];
 
 // Función para cerrar el menú
 function cerrarMenu() {
-  const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral'));
-  if (offcanvas) {
-    offcanvas.hide();
-  }
-}
-
-// Función que se ejecuta cuando tu app.js carga el catálogo
-function cargarMenuDesdeTuCatalogo() {
-  console.log('🔄 Cargando menú desde tu catálogo...');
-  
-  const contenedor = document.getElementById('menu-categorias-dinamico');
-  if (!contenedor) return;
-  
-  // Verificar si tu catálogo está listo
-  if (!window.catalogoGlobal || !Array.isArray(window.catalogoGlobal) || window.catalogoGlobal.length === 0) {
-    console.log('⏳ Esperando catálogo de tu app.js...');
-    return;
-  }
-  
-  const catalogo = window.catalogoGlobal;
-  
-  // Obtener tipos únicos de TU catálogo
-  const tiposUnicos = ['TODOS', ...new Set(catalogo.map(p => p.tipo).filter(Boolean))];
-  
-  if (tiposUnicos.length === 0) {
-    contenedor.innerHTML = '<p class="small text-muted">No hay categorías disponibles</p>';
-    return;
-  }
-  
-  // Crear HTML simple usando TUS funciones
-  let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
-  
-  html += '<div class="d-flex flex-column gap-2">';
-  
-  tiposUnicos.forEach(tipo => {
-    const count = tipo === 'TODOS' 
-      ? catalogo.length 
-      : catalogo.filter(p => p.tipo === tipo).length;
-    
-    html += `
-      <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-         onclick="${tipo === 'TODOS' ? 'mostrarTodosLosProductosCompleto' : `cargarPorTipo('${tipo}')`}; cerrarMenu(); return false;">
-        <div class="d-flex align-items-center">
-          <i class="bi ${tipo === 'TODOS' ? 'bi-grid-fill' : 'bi-folder'} me-2"></i>
-          <span>${tipo}</span>
-        </div>
-        <span class="badge bg-primary rounded-pill">${count}</span>
-      </a>
-    `;
-  });
-  
-  html += '</div>';
-  
-  contenedor.innerHTML = html;
-  console.log('✅ Menú cargado con', tiposUnicos.length, 'categorías');
-}
-
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('🚀 Header simplificado cargado');
-  
-  // Intentar cargar inmediatamente si el catálogo ya está disponible
-  if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
-    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
-  }
-  
-  // Escuchar cuando tu app.js cargue el catálogo
-  window.addEventListener('catalogoCargado', function() {
-    console.log('🎯 Evento catalogoCargado recibido, cargando menú...');
-    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
-  });
-  
-  // También verificar periódicamente (fallback)
-  const intervalo = setInterval(() => {
-    if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
-      cargarMenuDesdeTuCatalogo();
-      clearInterval(intervalo);
+    const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
+    if (offcanvas) {
+        offcanvas.hide();
     }
-  }, 1000);
-  
-  // Timeout
-  setTimeout(() => clearInterval(intervalo), 10000);
+}
+
+// 🎯 FUNCIÓN PRINCIPAL: Cargar categorías en el menú hamburguesa
+async function cargarCategoriasMenuHamburguesa() {
+    console.log('🍔 [PRODUCTO] Cargando categorías para menú hamburguesa...');
+    
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (!contenedor) {
+        console.error('❌ [PRODUCTO] No se encontró #menu-categorias-dinamico');
+        return;
+    }
+    
+    try {
+        // 1. INTENTAR USAR productosGlobal si ya está cargado
+        if (window.productosGlobal && Array.isArray(window.productosGlobal) && window.productosGlobal.length > 0) {
+            console.log('✅ [PRODUCTO] Usando productosGlobal existente');
+            catalogoMenuHamburguesa = window.productosGlobal;
+            mostrarCategoriasEnMenu();
+            return;
+        }
+        
+        // 2. SI NO, CARGAR EL CATÁLOGO DIRECTAMENTE
+        console.log('📦 [PRODUCTO] Cargando catálogo directamente para menú...');
+        const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
+        const respuesta = await fetch(url);
+        const catalogo = await respuesta.json();
+        
+        if (!Array.isArray(catalogo) || catalogo.length === 0) {
+            throw new Error('Catálogo vacío o inválido');
+        }
+        
+        catalogoMenuHamburguesa = catalogo;
+        window.productosGlobal = catalogo; // Hacerlo disponible globalmente
+        console.log(`✅ [PRODUCTO] Catálogo cargado: ${catalogo.length} productos`);
+        
+        // Mostrar las categorías
+        mostrarCategoriasEnMenu();
+        
+    } catch (error) {
+        console.error('❌ [PRODUCTO] Error cargando categorías:', error);
+        
+        const contenedor = document.getElementById('menu-categorias-dinamico');
+        if (contenedor) {
+            contenedor.innerHTML = `
+                <div class="alert alert-warning small py-2">
+                    <i class="bi bi-exclamation-triangle me-1"></i>
+                    No se pudieron cargar las categorías
+                    <button class="btn btn-sm btn-outline-primary mt-1 d-block w-100" 
+                            onclick="cargarCategoriasMenuHamburguesa()">
+                        <i class="bi bi-arrow-clockwise"></i> Reintentar
+                    </button>
+                </div>
+            `;
+        }
+    }
+}
+
+// 🎯 FUNCIÓN que muestra las categorías en el menú
+function mostrarCategoriasEnMenu() {
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (!contenedor) return;
+    
+    if (!catalogoMenuHamburguesa || catalogoMenuHamburguesa.length === 0) {
+        contenedor.innerHTML = '<p class="small text-muted">No hay productos disponibles</p>';
+        return;
+    }
+    
+    // Extraer tipos únicos del catálogo
+    const tiposUnicos = ['TODOS', ...new Set(catalogoMenuHamburguesa.map(p => p.tipo).filter(Boolean))];
+    
+    console.log(`📂 [PRODUCTO] Tipos únicos encontrados: ${tiposUnicos.length - 1}`);
+    
+    if (tiposUnicos.length === 1) { // Solo "TODOS"
+        contenedor.innerHTML = '<p class="small text-muted">No se encontraron categorías</p>';
+        return;
+    }
+    
+    // Crear HTML del menú
+    let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
+    html += '<div class="d-flex flex-column gap-2">';
+    
+    // Opción "TODOS LOS PRODUCTOS"
+    const todosCount = catalogoMenuHamburguesa.length;
+    html += `
+        <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+           onclick="irATodosLosProductos(); cerrarMenu(); return false;">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-grid-fill me-2"></i>
+                <span>TODOS LOS PRODUCTOS</span>
+            </div>
+            <span class="badge bg-primary rounded-pill">${todosCount}</span>
+        </a>
+    `;
+    
+    // Cada categoría/tipo
+    tiposUnicos.slice(1).forEach(tipo => {
+        const count = catalogoMenuHamburguesa.filter(p => p.tipo === tipo).length;
+        
+        html += `
+            <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
+               onclick="irACategoria('${tipo}'); cerrarMenu(); return false;">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-folder me-2"></i>
+                    <span>${tipo}</span>
+                </div>
+                <span class="badge bg-primary rounded-pill">${count}</span>
+            </a>
+        `;
+    });
+    
+    html += '</div>';
+    contenedor.innerHTML = html;
+    
+    console.log(`✅ [PRODUCTO] Menú hamburguesa cargado: ${tiposUnicos.length - 1} categorías`);
+}
+
+// 🎯 FUNCIONES DE NAVEGACIÓN
+function irATodosLosProductos() {
+    console.log('📦 [PRODUCTO] Navegando a: TODOS LOS PRODUCTOS');
+    window.location.href = 'index.html';
+}
+
+function irACategoria(tipo) {
+    console.log('📁 [PRODUCTO] Navegando a categoría:', tipo);
+    window.location.href = `index.html?tipo=${encodeURIComponent(tipo)}`;
+}
+
+function volverAInicio() {
+    console.log('🏠 [PRODUCTO] Volviendo al inicio');
+    window.location.href = 'index.html';
+}
+
+function mostrarTodosLosProductosCompleto() {
+    console.log('📦 [PRODUCTO] Mostrando todos los productos');
+    window.location.href = 'index.html';
+}
+
+// 🎯 INICIALIZACIÓN CUANDO EL DOM ESTÁ LISTO
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 [PRODUCTO] DOM cargado, configurando menú hamburguesa...');
+    
+    // Cargar categorías después de un breve delay
+    setTimeout(() => {
+        cargarCategoriasMenuHamburguesa();
+    }, 800);
+    
+    // También cargar cuando se abra el menú (por si acaso)
+    const menuLateral = document.getElementById('menuLateral');
+    if (menuLateral) {
+        menuLateral.addEventListener('show.bs.offcanvas', function() {
+            console.log('🎯 [PRODUCTO] Menú hamburguesa abierto, verificando categorías...');
+            
+            // Verificar si ya hay categorías cargadas
+            const contenedor = document.getElementById('menu-categorias-dinamico');
+            if (contenedor && !contenedor.querySelector('.categoria-menu-item')) {
+                console.log('🔄 [PRODUCTO] No hay categorías, recargando...');
+                cargarCategoriasMenuHamburguesa();
+            }
+        });
+    }
 });
+
+// 🎯 FUNCIONES QUE DEBEN ESTAR DISPONIBLES GLOBALMENTE
+window.cerrarMenu = cerrarMenu;
+window.volverAInicio = volverAInicio;
+window.mostrarTodosLosProductosCompleto = mostrarTodosLosProductosCompleto;
+
+// 🎯 CSS para el menú (se puede agregar a tu ESTILO.CSS también)
+const menuStyles = document.createElement('style');
+menuStyles.textContent = `
+    .categoria-menu-item {
+        border: 1px solid #dee2e6;
+        background: white;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .categoria-menu-item:hover {
+        background: #1B4557 !important;
+        color: white !important;
+        border-color: #1B4557;
+        transform: translateX(5px);
+    }
+    
+    .categoria-menu-item .badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+`;
+document.head.appendChild(menuStyles);
 </script>
-
-<style>
-/* ===== ESTILOS BÁSICOS PARA EL HEADER ===== */
-
-.header-sticky {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-  height: 70px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buscador-header {
-  border-radius: 20px;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.buscador-header:focus {
-  background: white;
-  box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.5);
-  outline: none;
-}
-
-.navbar-toggler {
-  padding: 0.25rem;
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.navbar-toggler:hover {
-  transform: scale(1.1);
-}
-
-/* Offcanvas */
-#menuLateral .offcanvas-header {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
-  color: white;
-}
-
-#menuLateral .nav-link {
-  color: #333;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-}
-
-#menuLateral .nav-link:hover {
-  background-color: #e9ecef;
-  color: #1B4557;
-  transform: translateX(5px);
-}
-
-.categoria-menu-item {
-  border: 1px solid #dee2e6;
-  transition: all 0.2s ease;
-}
-
-.categoria-menu-item:hover {
-  background-color: #1B4557 !important;
-  color: white !important;
-  border-color: #1B4557;
-  transform: translateX(5px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .header-sticky {
-    height: 60px;
-    padding: 0.5rem;
-  }
-  
-  .buscador-header {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  #menuLateral .nav-link {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.9rem;
-  }
-}
-</style>
-
   <!-- BANNER PROMOCIONAL -->
   <div class="container-fluid banner-promocional py-2">
     <div class="container text-center">
@@ -330,19 +339,12 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- BOTONES EN LA MISMA LÍNEA - COMPACTO -->
   <div class="container mt-3">
     <div class="row align-items-center">
-     <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
-  <a href="index.html" class="btn-volver-inicio d-none d-md-flex position-fixed align-items-center justify-content-center text-decoration-none"
-   style="top: 150px; left: 8px; z-index: 1000; width: 40px; height: 40px; background: white; border: 1px solid #d1d9e6; border-radius: 50%; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); color: #0b702144; transition: all 0.3s ease;"
-   data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
-    <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
-  </a>
-
-      <!-- Botón Ofertas Especiales (derecha) -->
-      <div class="col text-end">
-        <a href="PROMOS.HTML" class="btn btn-warning fw-bold px-3 py-2 rounded-pill">
-          🎁 Ofertas
-        </a>
-      </div>
+      <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
+      <a href="index.html" class="btn-volver-inicio d-none d-md-flex position-fixed align-items-center justify-content-center text-decoration-none"
+         style="top: 150px; left: 8px; z-index: 1000; width: 40px; height: 40px; background: white; border: 1px solid #d1d9e6; border-radius: 50%; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); color: #0b702144; transition: all 0.3s ease;"
+         data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
+        <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
+      </a>
     </div>
   </div>
 
@@ -407,8 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <!-- Badges se cargan dinámicamente -->
           </div>
 
-          <!-- VIDEO DEL PRODUCTO EN DESKTOP (debajo de las imágenes) -->
-          <!-- SOLO SE MUESTRA EN DESKTOP -->
+          <!-- VIDEO DEL PRODUCTO EN DESKTOP -->
           <div id="video-producto-desktop" class="d-none d-md-block mt-4"></div>
         </div>
       </div>
@@ -416,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- INFORMACIÓN DEL PRODUCTO -->
       <div class="col-md-6">
         <div class="ps-md-4">
-          <!-- TÍTULO Y PRECIO PARA DESKTOP (DENTRO DE LA COLUMNA) -->
+          <!-- TÍTULO Y PRECIO PARA DESKTOP -->
           <div class="d-none d-md-block">
             <!-- Categorías -->
             <nav aria-label="breadcrumb">
@@ -435,11 +436,10 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
 
-          <!-- VIDEO DEL PRODUCTO EN MÓVIL (antes de la descripción) -->
-          <!-- SOLO SE MUESTRA EN MÓVIL -->
+          <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
           <div id="video-producto-mobile" class="d-block d-md-none mb-4"></div>
 
-          <!-- VARIANTE ACTUAL (se muestra cuando se selecciona imagen) -->
+          <!-- VARIANTE ACTUAL -->
           <div class="mb-3" id="variante-actual-container" style="display: none;">
             <h5 class="fw-bold mb-2">🎨 COLOR SELECCIONADO</h5>
             <div class="alert alert-info py-2">
@@ -584,444 +584,118 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   </div>
-<footer class="footer">
-  <div class="footer-container">
-    <!-- Primera fila: enlaces, redes y contacto -->
-    <div class="footer-main">
-      <!-- Enlaces institucionales -->
-      <div class="footer-section">
-        <h6>Anmago Store</h6>
-        <div class="footer-links">
-          <a href="index.html">Inicio</a>
-          <a href="https://sites.google.com/view/anmagostore/quienes-somos">Nosotros</a>
-          <a href="https://sites.google.com/view/anmagostore/politica-de-tratamiento-de-datos">Tratamiento de datos</a>
-          <a href="https://sites.google.com/view/anmagostore/politicas-de-envios">Envíos</a>
-          <a href="modalformulario.html" target="_blank">Contacto</a>
-        </div>
-      </div>
-            <!-- Contacto compacto -->
-      <div class="footer-section">
-        <h5>Contacto</h5>
-        <div class="contacto-compacto">
-          <p><strong>Email:</strong> anmagostore@gmail.com</p>
-          <p><strong>Celulares:</strong> 3006498710 – 3115046741</p>
-        </div>
-      </div>
-      
-      <!-- Redes sociales compactas -->
-      <div class="footer-section">
-        <h4>Síguenos</h4>
-        <div class="redes-sociales-compactas">
-          <a href="https://www.facebook.com/profile.php?id=100092463703154&mibextid=ZbWKwL" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/4896d785.IMAGEN.155541.jpg?updatedAt=1761587966118" alt="Facebook" loading="lazy">
-          </a>
-          <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/2a9cda61.IMAGEN.155515.jpg?updatedAt=1761587966369" alt="YouTube" loading="lazy">
-          </a>
-          <a href="https://www.tiktok.com/@anmagostore?_t=8g37PtO0Los&_r=1" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/1d8aa1ac.IMAGEN.155420.jpg?updatedAt=1761587966443" alt="TikTok" loading="lazy">
-          </a>
-          <a href="https://instagram.com/anmagostore?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/cf840649.IMAGEN.155447.jpg?updatedAt=1761587966410" alt="Instagram" loading="lazy">
-          </a>
-          <a href="https://wa.me/573006498710" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/9018ebd1.IMAGEN.155401.jpg?updatedAt=1761587966435" alt="WhatsApp" loading="lazy">
-          </a>
-          <a href="https://www.google.com/search?q=anmago+store" target="_blank">
-            <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/ea6b8532.IMAGEN.155430.jpg?updatedAt=1761587966451" alt="Google" loading="lazy">
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Segunda fila: medios de pago y copyright -->
-    <div class="footer-secondary">
-      <!-- Medios de pago compactos -->
-      <div class="medios-pago-compactos">
-        <h4>Medios de pago</h4>
-        <div class="logos-pago-compactos">
-          <img src="https://cdn.worldvectorlogo.com/logos/nequi-2.svg" alt="Nequi">
-          <img src="https://cdn.worldvectorlogo.com/logos/daviplata.svg" alt="Daviplata">
-          <img src="https://epayco.com/wp-content/uploads/2023/01/epayco_pago_seguro.jpg" alt="ePayco">
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Primera fila: enlaces, redes y contacto -->
+      <div class="footer-main">
+        <!-- Enlaces institucionales -->
+        <div class="footer-section">
+          <h6>Anmago Store</h6>
+          <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="https://sites.google.com/view/anmagostore/quienes-somos">Nosotros</a>
+            <a href="https://sites.google.com/view/anmagostore/politica-de-tratamiento-de-datos">Tratamiento de datos</a>
+            <a href="https://sites.google.com/view/anmagostore/politicas-de-envios">Envíos</a>
+            <a href="modalformulario.html" target="_blank">Contacto</a>
+          </div>
         </div>
         
-        <!-- SECCIÓN TRANSPORTADORAS OPTIMIZADA -->
-        <div class="transportadoras-convenio">
-          <h5 class="fw-bold mb-2">🚚 Transportadoras convenio</h5>
-          <div class="logos-transportadoras">
-            <a href="https://www.interrapidisimo.com/" target="_blank" class="transportadora-link">
-              <div class="transportadora-item">
-                <img src="https://images.seeklogo.com/logo-png/40/1/inter-rapidisimo-logo-png_seeklogo-400713.png" 
-                     alt="Interrapidísimo">
-              </div>
+        <!-- Contacto compacto -->
+        <div class="footer-section">
+          <h5>Contacto</h5>
+          <div class="contacto-compacto">
+            <p><strong>Email:</strong> anmagostore@gmail.com</p>
+            <p><strong>Celulares:</strong> 3006498710 – 3115046741</p>
+          </div>
+        </div>
+        
+        <!-- Redes sociales compactas -->
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <div class="redes-sociales-compactas">
+            <a href="https://www.facebook.com/profile.php?id=100092463703154&mibextid=ZbWKwL" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/4896d785.IMAGEN.155541.jpg?updatedAt=1761587966118" alt="Facebook" loading="lazy">
             </a>
-            <a href="https://www.coordinadora.com/" target="_blank" class="transportadora-link">
-              <div class="transportadora-item">
-                <img src="https://images.seeklogo.com/logo-png/3/1/coordinadora-logo-png_seeklogo-35207.png" 
-                     alt="Coordinadora">
-              </div>
+            <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/2a9cda61.IMAGEN.155515.jpg?updatedAt=1761587966369" alt="YouTube" loading="lazy">
             </a>
-            <a href="https://www.servientrega.com/" target="_blank" class="transportadora-link">
-              <div class="transportadora-item">
-                <img src="https://images.seeklogo.com/logo-png/17/1/servientrega-logo-png_seeklogo-176994.png" 
-                     alt="Servientrega">
-              </div>
+            <a href="https://www.tiktok.com/@anmagostore?_t=8g37PtO0Los&_r=1" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/1d8aa1ac.IMAGEN.155420.jpg?updatedAt=1761587966443" alt="TikTok" loading="lazy">
             </a>
-            <a href="https://www.envia.co/" target="_blank" class="transportadora-link">
-              <div class="transportadora-item">
-                <img src="https://images.seeklogo.com/logo-png/31/1/envia-mensajeria-logo-png_seeklogo-311137.png" 
-                     alt="Envía">
-              </div>
+            <a href="https://instagram.com/anmagostore?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/cf840649.IMAGEN.155447.jpg?updatedAt=1761587966410" alt="Instagram" loading="lazy">
+            </a>
+            <a href="https://wa.me/573006498710" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/9018ebd1.IMAGEN.155401.jpg?updatedAt=1761587966435" alt="WhatsApp" loading="lazy">
+            </a>
+            <a href="https://www.google.com/search?q=anmago+store" target="_blank">
+              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/ea6b8532.IMAGEN.155430.jpg?updatedAt=1761587966451" alt="Google" loading="lazy">
             </a>
           </div>
-          <p class="text-center mt-2 small">
-            <i class="bi bi-truck"></i> Contrarreembolso disponible
-          </p>
         </div>
       </div>
       
-      <!-- Copyright -->
-      <div class="copyright">
-        &copy; 2025 Anmago Store. Todos los derechos reservados.
+      <!-- Segunda fila: medios de pago y copyright -->
+      <div class="footer-secondary">
+        <!-- Medios de pago compactos -->
+        <div class="medios-pago-compactos">
+          <h4>Medios de pago</h4>
+          <div class="logos-pago-compactos">
+            <img src="https://cdn.worldvectorlogo.com/logos/nequi-2.svg" alt="Nequi">
+            <img src="https://cdn.worldvectorlogo.com/logos/daviplata.svg" alt="Daviplata">
+            <img src="https://epayco.com/wp-content/uploads/2023/01/epayco_pago_seguro.jpg" alt="ePayco">
+          </div>
+          
+          <!-- TRANSPORTADORAS OPTIMIZADA -->
+          <div class="transportadoras-convenio">
+            <h5 class="fw-bold mb-2">🚚 Transportadoras convenio</h5>
+            <div class="logos-transportadoras">
+              <a href="https://www.interrapidisimo.com/" target="_blank" class="transportadora-link">
+                <div class="transportadora-item">
+                  <img src="https://images.seeklogo.com/logo-png/40/1/inter-rapidisimo-logo-png_seeklogo-400713.png" 
+                       alt="Interrapidísimo">
+                </div>
+              </a>
+              <a href="https://www.coordinadora.com/" target="_blank" class="transportadora-link">
+                <div class="transportadora-item">
+                  <img src="https://images.seeklogo.com/logo-png/3/1/coordinadora-logo-png_seeklogo-35207.png" 
+                       alt="Coordinadora">
+                </div>
+              </a>
+              <a href="https://www.servientrega.com/" target="_blank" class="transportadora-link">
+                <div class="transportadora-item">
+                  <img src="https://images.seeklogo.com/logo-png/17/1/servientrega-logo-png_seeklogo-176994.png" 
+                       alt="Servientrega">
+                </div>
+              </a>
+              <a href="https://www.envia.co/" target="_blank" class="transportadora-link">
+                <div class="transportadora-item">
+                  <img src="https://images.seeklogo.com/logo-png/31/1/envia-mensajeria-logo-png_seeklogo-311137.png" 
+                       alt="Envía">
+                </div>
+              </a>
+            </div>
+            <p class="text-center mt-2 small">
+              <i class="bi bi-truck"></i> Contrarreembolso disponible
+            </p>
+          </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="copyright">
+          &copy; 2025 Anmago Store. Todos los derechos reservados.
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-
-<style>
-/* ===== CSS COMPLETO PARA EL FOOTER ===== */
-
-/* FOOTER PRINCIPAL */
-.footer {
-  background: #1B4557;
-  color: white;
-  padding: 0.75rem 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-/* PRIMERA FILA */
-.footer-main {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 768px) {
-  .footer-main {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
-}
-
-/* SECCIONES */
-.footer-section {
-  margin-bottom: 1rem;
-}
-
-.footer-section h4,
-.footer-section h5,
-.footer-section h6 {
-  color: white;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* ENLACES */
-.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-links a {
-  color: #e9ecef;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.85rem;
-}
-
-.footer-links a:hover {
-  color: white;
-  text-decoration: underline;
-  transform: translateX(3px);
-}
-
-/* CONTACTO */
-.contacto-compacto p {
-  margin: 0.25rem 0;
-  font-size: 0.85rem;
-  line-height: 1.3;
-}
-
-.contacto-compacto strong {
-  color: white;
-}
-
-/* REDES SOCIALES */
-.redes-sociales-compactas {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.redes-sociales-compactas a {
-  display: inline-flex;
-  transition: all 0.3s ease;
-}
-
-.redes-sociales-compactas a:hover {
-  transform: translateY(-2px);
-}
-
-.redes-sociales-compactas img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  border-radius: 4px;
-  transition: transform 0.3s ease;
-}
-
-.redes-sociales-compactas a:hover img {
-  transform: scale(1.1);
-}
-
-/* SEGUNDA FILA */
-.footer-secondary {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-/* MEDIOS DE PAGO */
-.medios-pago-compactos {
-  text-align: center;
-  width: 100%;
-}
-
-.medios-pago-compactos h4 {
-  color: white;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-}
-
-.logos-pago-compactos {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 1.5rem;
-}
-
-.logos-pago-compactos img {
-  height: 30px;
-  object-fit: contain;
-  background: white;
-  border-radius: 6px;
-  padding: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.logos-pago-compactos img:hover {
-  transform: translateY(-2px);
-}
-
-/* TRANSPORTADORAS MEJORADAS */
-.transportadoras-convenio {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-.transportadoras-convenio h5 {
-  color: white;
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.logos-transportadoras {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.transportadora-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
-.transportadora-item {
-  width: 120px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: white;
-  border-radius: 8px;
-  padding: 0.75rem;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.transportadora-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  background: #f8f9fa;
-}
-
-.transportadora-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.transportadora-item:hover::before {
-  opacity: 1;
-}
-
-.transportadora-item img {
-  height: 30px;
-  width: auto;
-  max-width: 100px;
-  object-fit: contain;
-  filter: grayscale(30%) contrast(110%);
-  transition: all 0.3s ease;
-}
-
-.transportadora-item:hover img {
-  filter: grayscale(0%) contrast(120%);
-  transform: scale(1.05);
-}
-
-/* EFECTO ESPECIAL PARA CADA TRANSPORTADORA */
-.transportadora-item:nth-child(1):hover {
-  background: #ff6b6b10;
-}
-
-.transportadora-item:nth-child(2):hover {
-  background: #4ecdc410;
-}
-
-.transportadora-item:nth-child(3):hover {
-  background: #45b7d110;
-}
-
-.transportadora-item:nth-child(4):hover {
-  background: #96ceb410;
-}
-
-/* COPYRIGHT */
-.copyright {
-  color: #e9ecef;
-  font-size: 0.8rem;
-  text-align: center;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  width: 100%;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .footer {
-    padding: 0.5rem;
-  }
-  
-  .footer-main {
-    gap: 1rem;
-  }
-  
-  .footer-section h4,
-  .footer-section h5,
-  .footer-section h6 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-links a {
-    font-size: 0.8rem;
-  }
-  
-  .redes-sociales-compactas img {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .logos-pago-compactos img {
-    height: 25px;
-  }
-  
-  .transportadora-item {
-    width: 100px;
-    height: 50px;
-    padding: 0.5rem;
-  }
-  
-  .transportadora-item img {
-    height: 25px;
-  }
-  
-  .logos-transportadoras {
-    gap: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .logos-transportadoras {
-    gap: 0.5rem;
-  }
-  
-  .transportadora-item {
-    width: 85px;
-    height: 45px;
-    padding: 0.4rem;
-  }
-  
-  .transportadora-item img {
-    height: 22px;
-  }
-  
-  .logos-pago-compactos {
-    gap: 0.75rem;
-  }
-  
-  .logos-pago-compactos img {
-    height: 22px;
-  }
-}
-</style>
+  </footer>
 
   <!-- BOTÓN CARRITO FLOTANTE -->
   <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
     <i class="bi bi-bag-heart fs-5"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
-
-  <!-- FOOTER -->
-  <div id="footer-container" class="mt-5"></div>
 
   <!-- BARRA INFERIOR MOBILE -->
   <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2">
@@ -1060,18 +734,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- SISTEMA DE DETALLE PRODUCTO OPTIMIZADO -->
   <script>
-    // ========== VARIABLES GLOBALES OPTIMIZADAS ==========
+    // ========== VARIABLES GLOBALES ==========
     let productoActual = null;
     let varianteSeleccionada = '';
     let variableSeleccionada = '';
     let tallaSeleccionada = '';
     let imagenSeleccionada = '';
     let cantidad = 1;
-    let promocionesGlobal = [];
     let imagenesProducto = [];
     let zoomIndex = 0;
 
-    // ========== FUNCIONES AUXILIARES PARA IMÁGENES ==========
+    // ========== FUNCIONES AUXILIARES ==========
     function obtenerImagenesPorTipo(tipo) {
         if (!imagenesProducto || !Array.isArray(imagenesProducto)) return [];
         return imagenesProducto.filter(img => 
@@ -1079,43 +752,26 @@ document.addEventListener('DOMContentLoaded', function() {
         );
     }
 
-    // ========== SISTEMA DE PROMOCIONES ==========
-    function vieneDePromociones() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const origen = urlParams.get('origen');
-        return origen === 'promos' || origen === 'home' || window.location.pathname.includes('PROMOS');
-    }
-
-    function obtenerIndicePromocional(totalPromos = 0) {
-        const ahora = new Date();
-        const horaActual = ahora.getHours();
-        const bloque = Math.floor(horaActual / 6);
-        const indice = bloque * 8;
-        return totalPromos > 0 ? indice % totalPromos : indice;
-    }
-
-    function estaEnPromocionActual(productoId) {
-        if (!promocionesGlobal || !Array.isArray(promocionesGlobal)) return false;
-        const totalPromos = promocionesGlobal.length;
-        if (totalPromos === 0) return false;
-        
-        const indiceActual = obtenerIndicePromocional(totalPromos);
-        const bloqueActual = promocionesGlobal.slice(indiceActual, indiceActual + 8);
-        
-        return bloqueActual.some(promo => promo.id === productoId);
-    }
-
+    // ========== SISTEMA SIMPLIFICADO PROMO: TRUE/FALSE ==========
     function calcularPrecioConDescuento(producto) {
-        const precioBase = producto.precio || 0;
+        if (!producto || !producto.precio) return 0;
         
-        if (vieneDePromociones()) {
-            return Math.round(precioBase * 0.9);
+        const precioBase = Number(producto.precio);
+        
+        // SOLO VERIFICAR SI EL PRODUCTO TIENE PROMO: TRUE
+        const tienePromo = producto.promo === true || 
+                          producto.promo === "true" || 
+                          producto.promo === "sí" || 
+                          producto.promo === "si" || 
+                          producto.promo === "activo";
+        
+        if (tienePromo) {
+            const precioConDescuento = Math.round(precioBase * 0.9);
+            console.log(`🔥 Aplicando 10% por PROMO:TRUE: $${precioBase} -> $${precioConDescuento}`);
+            return precioConDescuento;
         }
         
-        if (estaEnPromocionActual(producto.id)) {
-            return Math.round(precioBase * 0.9);
-        }
-        
+        console.log(`ℹ️ Precio normal: $${precioBase}`);
         return precioBase;
     }
 
@@ -1183,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // ========== FUNCIONES PARA GALERÍA PRINCIPAL (TODAS LAS IMÁGENES) ==========
+    // ========== FUNCIONES PARA GALERÍA ==========
     function renderizarGaleriaCompleta(producto) {
         const imagenPrincipal = document.getElementById('imagen-principal');
         const galeria = document.getElementById('galeria-miniaturas');
@@ -1194,7 +850,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // 🎯 OBTENER IMAGEN PRINCIPAL (PRINCIPAL o primera VARIANTE)
+        // OBTENER IMAGEN PRINCIPAL
         let imagenPrincipalObj = obtenerImagenesPorTipo('PRINCIPAL')[0];
         if (!imagenPrincipalObj) {
             imagenPrincipalObj = obtenerImagenesPorTipo('VARIANTE')[0] || imagenesProducto[0];
@@ -1288,6 +944,32 @@ document.addEventListener('DOMContentLoaded', function() {
         texto.textContent = nombreVariante;
         container.style.display = 'block';
     }
+
+    // ========== INICIALIZACIÓN ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 PRODUCTO.HTML inicializado');
+        
+        // 1. Guardar estado de navegación
+        guardarEstadoNavegacion();
+        
+        // 2. Cargar el producto
+        setTimeout(() => {
+            cargarProducto();
+        }, 300);
+        
+        // 3. Configurar modal zoom
+        const modalZoom = document.getElementById('modalZoom');
+        if (modalZoom) {
+            modalZoom.addEventListener('show.bs.modal', function() {
+                inicializarModalZoom();
+            });
+        }
+        
+        // 4. Actualizar contadores carrito
+        if (typeof actualizarContadoresCarrito === 'function') {
+            actualizarContadoresCarrito();
+        }
+    });
 
     // ========== FUNCIONES PARA MODAL DE ZOOM ==========
     function inicializarModalZoom() {
@@ -1408,111 +1090,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (btnNext) btnNext.disabled = zoomIndex === imagenesProducto.length - 1;
     }
 
-    // ========== INICIALIZACIÓN CORREGIDA ==========
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 PRODUCTO.HTML inicializado');
-    
-    // 1. PRIMERO cargar header/footer
-    cargarHeaderFooter()
-        .then(() => {
-            console.log('✅ Header/Footer cargados');
-            
-            // 2. LUEGO configurar interacciones
-            configurarInteracciones();
-            
-            // 3. FINALMENTE cargar el producto
-            setTimeout(() => {
-                cargarProducto();
-            }, 300);
-        })
-        .catch(error => {
-            console.error('❌ Error cargando header/footer:', error);
-            // Intentar cargar producto de todos modos
-            setTimeout(() => {
-                cargarProducto();
-            }, 300);
-        });
-    
-    // 4. Configurar modal zoom
-    const modalZoom = document.getElementById('modalZoom');
-    if (modalZoom) {
-        modalZoom.addEventListener('show.bs.modal', inicializarModalZoom);
-    }
-    
-    // 5. Actualizar contadores
-    if (typeof actualizarContadoresCarrito === 'function') {
-        actualizarContadoresCarrito();
-    }
-});
-
-// ========== FUNCIÓN HEADER/FOOTER CORREGIDA ==========
-function cargarHeaderFooter() {
-    return new Promise((resolve, reject) => {
-        // Verificar si ya existen (no recargar innecesariamente)
-        const headerExiste = document.querySelector('header.header-sticky');
-        const footerExiste = document.querySelector('footer.footer');
-        
-        if (headerExiste && footerExiste) {
-            console.log('⚠️ Header/Footer ya existen, saltando carga');
-            resolve();
-            return;
-        }
-        
-        Promise.all([
-            fetch("HEADER.HTML").then(res => res.text()),
-            fetch("footer.html").then(res => res.text())
-        ])
-        .then(([header, footer]) => {
-            // Insertar header si no existe
-            if (!headerExiste) {
-                // Buscar donde insertar el header
-                const primerElemento = document.body.firstChild;
-                const headerElement = document.createElement('div');
-                headerElement.innerHTML = header;
-                document.body.insertBefore(headerElement.firstChild, primerElemento);
-            }
-            
-            // Insertar footer si no existe
-            if (!footerExiste) {
-                const footerContainer = document.getElementById('footer-container');
-                if (footerContainer) {
-                    footerContainer.innerHTML = footer;
-                } else {
-                    // Crear contenedor si no existe
-                    const footerElement = document.createElement('footer');
-                    footerElement.innerHTML = footer;
-                    document.body.appendChild(footerElement);
-                }
-            }
-            
-            resolve();
-        })
-        .catch(error => {
-            console.error('Error cargando header/footer:', error);
-            reject(error);
-        });
-    });
-}
-
-// ========== FUNCIÓN CONFIGURAR INTERACCIONES ==========
-function configurarInteracciones() {
-    const inputCantidad = document.getElementById('input-cantidad');
-    if (inputCantidad) {
-        inputCantidad.addEventListener('change', function() {
-            cantidad = Math.max(1, Math.min(10, parseInt(this.value) || 1));
-            this.value = cantidad;
-        });
-    }
-    
-    // Inicializar tooltips de Bootstrap si existen
-    if (typeof bootstrap !== 'undefined') {
-        const tooltips = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        tooltips.forEach(tooltip => {
-            new bootstrap.Tooltip(tooltip);
-        });
-    }
-}
-
     // ========== FUNCIONES PRINCIPALES ==========
     function obtenerIdProducto() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -1538,12 +1115,6 @@ function configurarInteracciones() {
                 mostrarError('Producto no encontrado en el catálogo');
                 return;
             }
-
-            // CARGAR PROMOCIONES
-            promocionesGlobal = productos.filter(p => {
-                const promo = typeof p.promo === "string" ? p.promo.toLowerCase().trim() : p.promo;
-                return promo === true || promo === "true" || promo === "sí" || promo === "activo" || promo === "si";
-            });
 
             // INICIALIZAR IMÁGENES
             imagenesProducto = [];
@@ -1586,32 +1157,7 @@ function configurarInteracciones() {
         } catch (error) {
             console.error('Error cargando producto:', error);
             mostrarError('Error al cargar el producto');
-            cargarProductoEjemplo(productoId);
         }
-    }
-
-    function cargarProductoEjemplo(productoId) {
-        const productoEjemplo = {
-            id: productoId,
-            producto: "Producto de Ejemplo",
-            descripcion: "Este es un producto de ejemplo",
-            precio: 29900,
-            imagenes: [{
-                url: "https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg",
-                tipo: "VARIANTE",
-                variacion: "Ejemplo",
-                orden: 1
-            }]
-        };
-        
-        productoActual = productoEjemplo;
-        imagenesProducto = productoEjemplo.imagenes;
-        varianteSeleccionada = 'Ejemplo';
-        imagenSeleccionada = productoEjemplo.imagenes[0].url;
-        cantidad = 1;
-        zoomIndex = 0;
-        
-        renderizarProducto(productoEjemplo);
     }
 
     function renderizarProducto(producto) {
@@ -1620,22 +1166,26 @@ function configurarInteracciones() {
         document.getElementById('nombre-producto-desktop').textContent = producto.producto;
         document.getElementById('descripcion-producto').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
         
-        // PRECIOS
-        const precioBase = producto.precio || 0;
-        const estaEnPromo = vieneDePromociones() || estaEnPromocionActual(producto.id);
+        // PRECIOS CON DESCUENTO SI TIENE PROMO: TRUE
+        const precioBase = Number(producto.precio) || 0;
         const precioActual = calcularPrecioConDescuento(producto);
+        const tienePromo = precioActual < precioBase;
         
+        // PRECIO ACTUAL (con o sin descuento)
         document.getElementById('precio-actual-mobile').textContent = `$${precioActual.toLocaleString('es-CO')}`;
         document.getElementById('precio-actual-desktop').textContent = `$${precioActual.toLocaleString('es-CO')}`;
         
-        if (estaEnPromo && precioBase > precioActual) {
+        // SI TIENE PROMO, MOSTRAR PRECIO ORIGINAL TACHADO Y % DESCUENTO
+        if (tienePromo && precioBase > 0) {
+            const descuentoPorcentaje = Math.round((1 - precioActual / precioBase) * 100);
+            
             document.getElementById('precio-original-mobile').textContent = `$${precioBase.toLocaleString('es-CO')}`;
-            document.getElementById('descuento-mobile').textContent = `-${Math.round((1 - precioActual / precioBase) * 100)}%`;
+            document.getElementById('descuento-mobile').textContent = `-${descuentoPorcentaje}%`;
             document.getElementById('precio-original-mobile').style.display = 'inline';
             document.getElementById('descuento-mobile').style.display = 'inline';
             
             document.getElementById('precio-original-desktop').textContent = `$${precioBase.toLocaleString('es-CO')}`;
-            document.getElementById('descuento-desktop').textContent = `-${Math.round((1 - precioActual / precioBase) * 100)}%`;
+            document.getElementById('descuento-desktop').textContent = `-${descuentoPorcentaje}%`;
             document.getElementById('precio-original-desktop').style.display = 'inline';
             document.getElementById('descuento-desktop').style.display = 'inline';
         } else {
@@ -1656,28 +1206,31 @@ function configurarInteracciones() {
         renderizarTallas(producto);
 
         // BADGES
-        renderizarBadges(producto, estaEnPromo);
+        renderizarBadges(producto);
 
         // VIDEO
         renderizarVideo(producto);
-    }
-function renderizarBreadcrumb(producto) {
-    const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
-    const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
-    
-    // HTML SIMPLIFICADO - SOLO ATRÁS + PRODUCTO
-    const html = `
-        <li class="breadcrumb-item">
-            <a href="#" onclick="volverAtras(); return false;" class="text-primary">
-                <i class="bi bi me-1"></i>
-            </a>
-        </li>
         
-    `;
-    
-    if (breadcrumbMobile) breadcrumbMobile.innerHTML = html;
-    if (breadcrumbDesktop) breadcrumbDesktop.innerHTML = html;
-}
+        // VERIFICAR BOTÓN
+        verificarEstadoBotonAgregar();
+    }
+
+    function renderizarBreadcrumb(producto) {
+        const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
+        const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
+        
+        const html = `
+            <li class="breadcrumb-item">
+                <a href="#" onclick="volverAtras(); return false;" class="text-primary">
+                    <i class="bi bi-arrow-left me-1"></i> Volver
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">${producto.producto}</li>
+        `;
+        
+        if (breadcrumbMobile) breadcrumbMobile.innerHTML = html;
+        if (breadcrumbDesktop) breadcrumbDesktop.innerHTML = html;
+    }
     
     function renderizarVariables(producto) {
         const contenedor = document.getElementById('seccion-variables');
@@ -1819,8 +1372,9 @@ function renderizarBreadcrumb(producto) {
             return false;
         }
 
+        const precioBase = Number(productoActual.precio) || 0;
         const precioFinal = calcularPrecioConDescuento(productoActual);
-        const estaEnPromo = vieneDePromociones() || estaEnPromocionActual(productoActual.id);
+        const tienePromo = precioFinal < precioBase;
         
         const productoCarrito = {
             id: productoActual.id + 
@@ -1836,40 +1390,30 @@ function renderizarBreadcrumb(producto) {
             variable: variableSeleccionada || 'Única',
             talla: tallaSeleccionada || 'Única',
             cantidad: cantidad,
-            enPromocion: estaEnPromo,
-            precioOriginal: productoActual.precio || 0,
-            vieneDePromociones: vieneDePromociones()
+            enPromocion: tienePromo,
+            precioOriginal: precioBase,
+            tieneDescuento: tienePromo,
+            descuentoPorcentaje: tienePromo ? Math.round((1 - precioFinal / precioBase) * 100) : 0
         };
 
-        if (window.carritoManager && typeof window.carritoManager.agregarProducto === 'function') {
-            const resultado = window.carritoManager.agregarProducto(productoCarrito);
-            if (resultado) {
-                mostrarConfirmacionAgregado();
-                return true;
+        try {
+            const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
+            const existeIndex = carrito.findIndex(item => item.id === productoCarrito.id);
+            
+            if (existeIndex > -1) {
+                carrito[existeIndex].cantidad += productoCarrito.cantidad;
             } else {
-                mostrarAlertaTemporal('❌ Error al agregar al carrito', 'danger');
-                return false;
+                carrito.push(productoCarrito);
             }
-        } else {
-            try {
-                const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
-                const existeIndex = carrito.findIndex(item => item.id === productoCarrito.id);
-                
-                if (existeIndex > -1) {
-                    carrito[existeIndex].cantidad += productoCarrito.cantidad;
-                } else {
-                    carrito.push(productoCarrito);
-                }
-                
-                localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
-                actualizarContadoresCarrito();
-                mostrarConfirmacionAgregado();
-                return true;
-                
-            } catch (error) {
-                mostrarAlertaTemporal('❌ Error crítico al agregar al carrito', 'danger');
-                return false;
-            }
+            
+            localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
+            actualizarContadoresCarrito();
+            mostrarConfirmacionAgregado();
+            return true;
+            
+        } catch (error) {
+            mostrarAlertaTemporal('❌ Error al agregar al carrito', 'danger');
+            return false;
         }
     }
 
@@ -1952,12 +1496,25 @@ function renderizarBreadcrumb(producto) {
         }, 4000);
     }
 
-    function renderizarBadges(producto, estaEnPromo) {
+    function renderizarBadges(producto) {
         const contenedor = document.getElementById('badges-producto');
         const badges = [];
 
-        if (estaEnPromo) {
-            badges.push('<span class="badge bg-danger me-2">🔥 Oferta Activa</span>');
+        // VERIFICAR SI TIENE PROMO: TRUE
+        const tienePromo = producto.promo === true || 
+                          producto.promo === "true" || 
+                          producto.promo === "sí" || 
+                          producto.promo === "si" || 
+                          producto.promo === "activo";
+        
+        // VERIFICAR SI TIENE DESCUENTO REAL
+        const precioBase = Number(producto.precio) || 0;
+        const precioConDescuento = calcularPrecioConDescuento(producto);
+        const tieneDescuentoReal = precioConDescuento < precioBase;
+
+        if (tienePromo && tieneDescuentoReal) {
+            const descuentoPorcentaje = Math.round((1 - precioConDescuento / precioBase) * 100);
+            badges.push(`<span class="badge bg-danger me-2">🔥 OFERTA -${descuentoPorcentaje}%</span>`);
         }
         
         if (producto.nuevo) {
@@ -2126,5 +1683,29 @@ function renderizarBreadcrumb(producto) {
   <!-- SCRIPTS EXTERNOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="buscador.js?v=20251115"></script>
+  <style>
+/* Estilos para el menú hamburguesa en producto.html */
+.categoria-menu-item {
+    border: 1px solid #dee2e6;
+    background: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.categoria-menu-item:hover {
+    background: #1B4557 !important;
+    color: white !important;
+    border-color: #1B4557;
+    transform: translateX(5px);
+}
+
+.categoria-menu-item .badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    background: #0d6efd !important;
+}
+</style>
 </body>
 </html>
