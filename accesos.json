@@ -596,24 +596,12 @@
     "ruta": "/ROPA/DAMA/VESTIDOS/PANTALÓN"
   },
   {
-    "id_producto": "E8873BEE",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CONSOLAS"
-  },
-  {
-    "id_producto": "E2DFF363",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
     "id_producto": "0940D1F9",
     "ruta": "/NAVIDAD/UNISEX/JUGUETES/BASTA"
   },
   {
     "id_producto": "EFC1A9C2",
     "ruta": "/ESCOLAR/NIÑOS/ESCOLAR/ESTUCHE"
-  },
-  {
-    "id_producto": "975043B4",
-    "ruta": "/NAVIDAD/NIÑAS/JUGUETES/."
   },
   {
     "id_producto": "60ECDDC8",
@@ -822,41 +810,5 @@
   {
     "id_producto": "E804444B",
     "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "085CD662",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "7BE38FB8",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "48B80974",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "15703BC5",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "932BF834",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/MOTOS"
-  },
-  {
-    "id_producto": "85D7F10B",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "625113C3",
-    "ruta": "/NAVIDAD/NIÑOS/JUGUETES/PISTAS"
-  },
-  {
-    "id_producto": "0828DAA1",
-    "ruta": "/NAVIDAD/UNISEX/JUGUETES/CARROS"
-  },
-  {
-    "id_producto": "5BD22550",
-    "ruta": "/NAVIDAD/NIÑAS/JUGUETES/COCINA"
   }
 ]
