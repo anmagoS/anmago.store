@@ -511,6 +511,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_111/PRODUCTOS_Images_174600cb.IMAGEN_3.030505.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 58
       },
       {
@@ -572,6 +573,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_112/PRODUCTOS_Images_e8949bf3.IMAGEN_4.164045.jpg?tr=w-600,q-80",
         "tipo": "ADICIONAL",
+        "variacion": "ROJO",
         "orden": 66
       }
     ],
@@ -595,31 +597,33 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_1.164324.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 67
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_2.164324.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 68
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_3.164324.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 69
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_4.164326.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 70
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_5.164327.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 71
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_113/PRODUCTOS_Images_5e67f25c.IMAGEN_6.164327.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 72
       }
     ],
@@ -643,26 +647,28 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "RASGADO",
         "orden": 73
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_2.164610.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO Y NEGRO",
         "orden": 74
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_3.164610.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 75
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_4.164612.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 76
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_5.164613.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 77
       }
     ],
@@ -685,26 +691,29 @@
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 78
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_2.164825.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 79
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_3.164825.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 80
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_4.164827.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 81
       }
     ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg?tr=w-600,q-80",
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_2.164825.jpg?tr=w-600,q-80",
     "url": "https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_1.164825.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_2.164825.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_3.164825.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_115/PRODUCTOS_Images_5d75c4e6.IMAGEN_4.164827.jpg?tr=w-600,q-80",
     "promo": false,
     "proveedor": "LA PINTACO",
@@ -724,26 +733,28 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_1.230725.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 82
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_2.230725.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 83
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_3.230725.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 84
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_4.230728.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 85
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_116/PRODUCTOS_Images_24e3b3a5.IMAGEN_5.230728.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 86
       }
     ],
@@ -767,21 +778,23 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_1.231401.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 87
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_2.231401.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 88
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_3.231401.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 89
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_117/PRODUCTOS_Images_ed44af83.IMAGEN_4.231404.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 90
       }
     ],
@@ -870,36 +883,42 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_1.232001.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 99
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_2.232001.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 100
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_3.232001.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "AZUL",
         "orden": 101
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_4.232004.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "LILA",
         "orden": 102
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_5.232004.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 103
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_6.232004.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "MORADO",
         "orden": 104
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_119/PRODUCTOS_Images_342568eb.IMAGEN_7.232006.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 105
       }
     ],
@@ -924,6 +943,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_120/PRODUCTOS_Images_5cbaf940.IMAGEN_1.232235.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "MORADO",
         "orden": 106
       },
       {
