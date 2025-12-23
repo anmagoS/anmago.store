@@ -530,6 +530,7 @@ function crearCardProductoHTML(producto) {
                         ${mostrarPrecioAnterior ? `
                             <div class="precio-anterior">${precioOriginal.toLocaleString('es-CO')}</div>
                         ` : ''}
+                        <div class="envio-gratis">Envío gratis</div>
                     </div>
                     
                     <button class="btn-ver-producto" 
