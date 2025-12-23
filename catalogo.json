@@ -1036,51 +1036,59 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_1.233357.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 125
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_2.233357.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 126
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_3.233357.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROSADO",
         "orden": 127
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_4.233359.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
+        "tipo": "ADICIONAL",
         "orden": 128
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_5.233359.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "VERDE",
         "orden": 129
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_6.233359.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "PLATEADO",
         "orden": 130
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_7.233401.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "LILA",
         "orden": 131
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_8.233401.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "AZUL",
         "orden": 132
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_9.233401.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 133
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_85b16a0b.IMAGEN_10.233403.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "DORADO",
         "orden": 134
       }
     ],
