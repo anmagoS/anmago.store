@@ -1,6 +1,5 @@
 // buscador.js - Versión optimizada para header
 console.log('🔍 Iniciando buscador...');
-
 function inicializarBuscador() {
     console.log('🔍 Buscando elementos del buscador...');
     
