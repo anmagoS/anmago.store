@@ -1,107 +1,79 @@
-// ==============================================
-// BUSCADOR.JS - SISTEMA OPTIMIZADO
-// ==============================================
+// buscador.js - Versión optimizada para header
+console.log('🔍 Iniciando buscador...');
 
-class BuscadorManager {
-    constructor() {
-        this.catalogo = [];
-        this.timeoutBusqueda = null;
-        this.elementos = {
-            input: null,
-            sugerencias: null
-        };
-        this.init();
+function inicializarBuscador() {
+    console.log('🔍 Buscando elementos del buscador...');
+    
+    const buscador = document.getElementById("buscador");
+    const sugerencias = document.getElementById("sugerencias");
+    
+    console.log('Elementos encontrados:', { 
+        buscador: !!buscador, 
+        sugerencias: !!sugerencias 
+    });
+    
+    if (!buscador || !sugerencias) {
+        console.log('⏳ Elementos no encontrados, reintentando en 500ms...');
+        setTimeout(inicializarBuscador, 500);
+        return;
     }
 
-    async init() {
-        console.log('🔍 Iniciando buscador...');
-        
-        // Esperar a que los elementos estén disponibles
-        await this.esperarElementos();
-        
-        // Cargar catálogo
-        await this.cargarCatalogo();
-        
-        // Configurar eventos
-        this.configurarEventos();
-        
-        console.log('✅ Buscador listo');
-    }
+    console.log('✅ Elementos del buscador encontrados - INICIANDO');
 
-    async esperarElementos() {
-        return new Promise((resolve) => {
-            const buscar = () => {
-                this.elementos.input = document.getElementById('buscador');
-                this.elementos.sugerencias = document.getElementById('sugerencias');
-                
-                if (this.elementos.input && this.elementos.sugerencias) {
-                    console.log('✅ Elementos del buscador encontrados');
-                    resolve();
-                } else {
-                    setTimeout(buscar, 500);
-                }
-            };
-            buscar();
-        });
-    }
+    // Variables
+    let catalogo = [];
+    let timeoutBusqueda = null;
 
-    async cargarCatalogo() {
+    // Cargar catálogo
+    async function cargarCatalogo() {
         try {
-            console.log('📦 Cargando catálogo para búsqueda...');
-            
-            // Intentar usar el catálogo global primero
-            if (window.productosGlobal && window.productosGlobal.length > 0) {
-                this.catalogo = window.productosGlobal;
-                console.log(`✅ Usando catálogo global: ${this.catalogo.length} productos`);
-                return;
-            }
-            
-            // Si no está disponible, cargar desde URL
-            const response = await fetch(
-                'https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?v=' + Date.now()
-            );
-            
-            this.catalogo = await response.json();
-            console.log(`✅ Catálogo cargado: ${this.catalogo.length} productos`);
-            
+            console.log('📦 Cargando catálogo...');
+            const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?v=' + Date.now());
+            catalogo = await response.json();
+            console.log('✅ Catálogo cargado:', catalogo.length, 'productos');
         } catch (error) {
-            console.error('❌ Error cargando catálogo para búsqueda:', error);
-            this.catalogo = [];
+            console.error('❌ Error cargando catálogo:', error);
         }
     }
 
-    buscar(texto) {
+    // Buscar productos
+    function buscarProductos(texto) {
         if (!texto || texto.length < 2) {
             return [];
         }
         
         const textoBusqueda = texto.toLowerCase().trim();
+        console.log('🔍 Buscando:', textoBusqueda);
         
-        return this.catalogo.filter(producto => {
+        const resultados = catalogo.filter(producto => {
             const campos = [
                 producto.producto,
-                producto.tipo,
+                producto.tipo, 
                 producto.subtipo,
                 producto.categoria,
+                producto.material,
                 producto.descripcion
             ];
-            
+
             return campos.some(campo => 
                 campo && campo.toString().toLowerCase().includes(textoBusqueda)
             );
         });
+        
+        console.log('📦 Resultados encontrados:', resultados.length);
+        return resultados;
     }
 
-    mostrarSugerencias(productos, textoBusqueda) {
-        const { sugerencias } = this.elementos;
+    // Mostrar sugerencias
+    function mostrarSugerencias(productos, textoBusqueda) {
         sugerencias.innerHTML = '';
         
         if (productos.length === 0) {
             if (textoBusqueda.length >= 2) {
-                sugerencias.innerHTML = `
-                    <div class="sugerencia-vacia">
-                        No hay resultados para "${textoBusqueda}"
-                    </div>`;
+                const itemVacio = document.createElement('div');
+                itemVacio.className = 'sugerencia-vacia';
+                itemVacio.textContent = `No hay resultados para "${textoBusqueda}"`;
+                sugerencias.appendChild(itemVacio);
             }
             sugerencias.classList.add('mostrar');
             return;
@@ -111,118 +83,112 @@ class BuscadorManager {
         const productosMostrar = productos.slice(0, 8);
         
         productosMostrar.forEach(producto => {
-            const precio = Number(producto.precio) || 0;
-            const imagen = producto.imagen || 
-                          producto.imagenes?.[0]?.url || 
-                          'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
-            
             const item = document.createElement('div');
             item.className = 'sugerencia-item';
             item.innerHTML = `
-                <img src="${imagen}" 
+                <img src="${producto.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'}" 
                      alt="${producto.producto}"
                      onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
                 <div class="sugerencia-info">
                     <div class="sugerencia-nombre">${producto.producto}</div>
-                    <div class="sugerencia-categoria">${producto.tipo} › ${producto.subtipo || ''}</div>
-                    <div class="sugerencia-precio">$${precio.toLocaleString('es-CO')}</div>
-                </div>`;
+                    <div class="sugerencia-categoria">${producto.tipo} › ${producto.subtipo}</div>
+                    <div class="sugerencia-precio">$${Number(producto.precio).toLocaleString('es-CO')}</div>
+                </div>
+            `;
             
-            item.addEventListener('click', () => {
-                console.log('🎯 Navegando a:', producto.producto);
+            item.addEventListener('click', function() {
+                console.log('🎯 Producto seleccionado:', producto.producto);
                 window.location.href = `PRODUCTO.HTML?id=${producto.id}`;
+                ocultarSugerencias();
             });
             
             sugerencias.appendChild(item);
         });
 
         sugerencias.classList.add('mostrar');
-        console.log(`📦 Mostrando ${productosMostrar.length} sugerencias`);
+        console.log('✅ Mostrando', productosMostrar.length, 'sugerencias');
     }
 
-    ocultarSugerencias() {
-        this.elementos.sugerencias.classList.remove('mostrar');
+    // Ocultar sugerencias
+    function ocultarSugerencias() {
+        sugerencias.classList.remove('mostrar');
     }
 
-    ejecutarBusqueda(texto) {
-        clearTimeout(this.timeoutBusqueda);
+    // Búsqueda con debounce
+    function ejecutarBusqueda(texto) {
+        clearTimeout(timeoutBusqueda);
         
-        this.timeoutBusqueda = setTimeout(() => {
-            const resultados = this.buscar(texto);
-            this.mostrarSugerencias(resultados, texto);
+        timeoutBusqueda = setTimeout(() => {
+            const resultados = buscarProductos(texto);
+            mostrarSugerencias(resultados, texto);
         }, 300);
     }
 
-    configurarEventos() {
-        const { input, sugerencias } = this.elementos;
-
-        // Input
-        input.addEventListener('input', (e) => {
-            this.ejecutarBusqueda(e.target.value);
+    // Configurar eventos
+    function configurarEventos() {
+        // Evento de input
+        buscador.addEventListener('input', function() {
+            ejecutarBusqueda(this.value);
         });
 
-        // Focus
-        input.addEventListener('focus', (e) => {
-            if (e.target.value.length >= 2) {
-                const resultados = this.buscar(e.target.value);
-                this.mostrarSugerencias(resultados, e.target.value);
+        // Evento de focus
+        buscador.addEventListener('focus', function() {
+            if (this.value.length >= 2) {
+                const resultados = buscarProductos(this.value);
+                mostrarSugerencias(resultados, this.value);
             }
         });
 
-        // Enter
-        input.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && e.target.value.trim().length >= 2) {
+        // Evento de tecla Enter
+        buscador.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && this.value.trim().length >= 2) {
                 e.preventDefault();
-                const resultados = this.buscar(e.target.value);
+                const resultados = buscarProductos(this.value);
                 if (resultados.length > 0) {
                     window.location.href = `PRODUCTO.HTML?id=${resultados[0].id}`;
                 }
             }
         });
 
-        // Click fuera
-        document.addEventListener('click', (e) => {
-            if (!input.contains(e.target) && !sugerencias.contains(e.target)) {
-                this.ocultarSugerencias();
+        // Ocultar sugerencias al hacer clic fuera
+        document.addEventListener('click', function(e) {
+            if (!buscador.contains(e.target) && !sugerencias.contains(e.target)) {
+                ocultarSugerencias();
             }
         });
 
-        // Escape
-        document.addEventListener('keydown', (e) => {
+        // Ocultar con tecla Escape
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
-                this.ocultarSugerencias();
-                input.blur();
+                ocultarSugerencias();
+                buscador.blur();
             }
         });
 
         console.log('✅ Eventos del buscador configurados');
     }
-}
 
-// ========== INICIALIZACIÓN ==========
-
-let buscadorManager;
-
-function inicializarBuscador() {
-    if (window.buscadorManager) {
-        console.log('✅ Buscador ya inicializado');
-        return;
+    // Inicializar
+    async function iniciar() {
+        await cargarCatalogo();
+        configurarEventos();
+        console.log('✅ Buscador completamente inicializado');
     }
-    
-    buscadorManager = new BuscadorManager();
-    window.buscadorManager = buscadorManager;
+
+    // Iniciar todo
+    iniciar();
 }
 
-// Auto-inicializar
+// Esperar a que el DOM esté listo y el header se cargue
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('📄 DOM cargado, esperando header...');
         setTimeout(inicializarBuscador, 1000);
     });
 } else {
+    console.log('📄 DOM ya listo, esperando header...');
     setTimeout(inicializarBuscador, 1000);
 }
 
-// Reintentar por si acaso
+// Reintentar si falla la primera vez
 setTimeout(inicializarBuscador, 3000);
-
-console.log('🔍 buscador.js cargado');
