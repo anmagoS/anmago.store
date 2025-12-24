@@ -133,7 +133,7 @@ function cambiarAVista(nombreVista) {
     }
 }
 
-// ========== CATEGORÍAS RÁPIDAS ==========
+// ========== CATEGORÍAS RÁPIDAS CON NAVEGACIÓN DINÁMICA ==========
 
 function inicializarCategoriasRapidas() {
     const contenedor = document.getElementById('categorias-rapidas');
@@ -147,7 +147,7 @@ function inicializarCategoriasRapidas() {
         return `
         <div class="categoria-rapida-contenedor">
             <a href="#" class="categoria-rapida" 
-               onclick="event.preventDefault(); cargarPorTipo('${tipo}')">
+               onclick="event.preventDefault(); mostrarProductosCategoriaRapida('${tipo}')">
                 <div>${icono}</div>
                 <div>${tipo}</div>
             </a>
@@ -155,6 +155,69 @@ function inicializarCategoriasRapidas() {
     }).join('');
     
     contenedor.innerHTML = html;
+}
+
+// ========== MOSTRAR PRODUCTOS DINÁMICAMENTE EN INICIO ==========
+
+function mostrarProductosCategoriaRapida(tipo) {
+    console.log(`🎯 Mostrando productos de: ${tipo}`);
+    
+    const vistaInicio = document.getElementById('vista-inicio');
+    const gridUltimos = document.getElementById('grid-ultimos');
+    
+    if (!vistaInicio || !gridUltimos) return;
+    
+    // Asegurar que estamos en la vista inicio
+    cambiarAVista('inicio');
+    
+    // Actualizar título de la sección
+    const tituloSeccion = document.getElementById('titulo-productos-inicio');
+    if (tituloSeccion) {
+        tituloSeccion.textContent = tipo === 'TODOS' ? 'Productos destacados' : `Productos de ${tipo}`;
+    }
+    
+    // Filtrar productos
+    const productosFiltrados = tipo === 'TODOS' 
+        ? productosGlobal 
+        : productosGlobal.filter(p => p.tipo === tipo);
+    
+    // Mostrar productos
+    if (productosFiltrados.length === 0) {
+        gridUltimos.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-search fs-1 text-muted"></i>
+                <h5 class="mt-3">No se encontraron productos en esta categoría</h5>
+                <button class="btn btn-outline-primary mt-2" onclick="volverAInicio()">
+                    Volver al inicio
+                </button>
+            </div>`;
+        return;
+    }
+    
+    // Mostrar máximo 8 productos en la vista rápida
+    const productosMostrar = productosFiltrados.slice(0, 8);
+    gridUltimos.innerHTML = productosMostrar.map(p => crearCardProductoHTML(p)).join('');
+    
+    // Agregar botón para ver todos si hay más productos
+    if (productosFiltrados.length > 8) {
+        gridUltimos.insertAdjacentHTML('beforeend', `
+            <div class="col-12 text-center mt-4">
+                <button class="btn btn-primary" onclick="verTodosProductosCategoria('${tipo}')">
+                    <i class="bi bi-arrow-right"></i> Ver todos los productos (${productosFiltrados.length})
+                </button>
+            </div>
+        `);
+    }
+}
+
+function verTodosProductosCategoria(tipo) {
+    console.log(`📦 Ver todos los productos de: ${tipo}`);
+    
+    if (tipo === 'TODOS') {
+        mostrarTodosLosProductosCompleto();
+    } else {
+        cargarPorTipo(tipo);
+    }
 }
 
 // ========== NAVEGACIÓN POR CATEGORÍAS ==========
@@ -200,6 +263,9 @@ function mostrarProductos(productos) {
             <div class="col-12 text-center py-5">
                 <i class="bi bi-search fs-1 text-muted"></i>
                 <h5 class="mt-3">No se encontraron productos</h5>
+                <button class="btn btn-outline-primary mt-2" onclick="volverAInicio()">
+                    Volver al inicio
+                </button>
             </div>`;
         return;
     }
@@ -300,7 +366,22 @@ function getParametrosURL() {
 
 function volverAInicio() {
     console.log('🏠 Volviendo al inicio...');
-    cargarPorTipo('TODOS');
+    
+    // Cambiar a vista inicio
+    cambiarAVista('inicio');
+    
+    // Mostrar productos iniciales (ej: 8 productos aleatorios o destacados)
+    const productosDestacados = productosGlobal.slice(0, 8);
+    const gridUltimos = document.getElementById('grid-ultimos');
+    
+    if (gridUltimos) {
+        gridUltimos.innerHTML = productosDestacados.map(p => crearCardProductoHTML(p)).join('');
+    }
+    
+    // Limpiar URL
+    const url = new URL(window.location);
+    url.searchParams.delete('tipo');
+    window.history.pushState({}, '', url);
 }
 
 function mostrarTodosLosProductosCompleto() {
@@ -374,6 +455,27 @@ function cerrarMenu() {
     }
 }
 
+// ========== INICIALIZAR PRODUCTOS EN INICIO ==========
+
+function inicializarProductosInicio() {
+    const gridUltimos = document.getElementById('grid-ultimos');
+    if (!gridUltimos || productosGlobal.length === 0) return;
+    
+    // Mostrar primeros 8 productos (o productos destacados)
+    const productosDestacados = productosGlobal.slice(0, 8);
+    
+    if (productosDestacados.length === 0) {
+        gridUltimos.innerHTML = `
+            <div class="col-12 text-center py-5">
+                <i class="bi bi-box fs-1 text-muted"></i>
+                <h5 class="mt-3">No hay productos disponibles</h5>
+            </div>`;
+        return;
+    }
+    
+    gridUltimos.innerHTML = productosDestacados.map(p => crearCardProductoHTML(p)).join('');
+}
+
 // ========== INICIALIZACIÓN ==========
 
 async function inicializarApp() {
@@ -383,22 +485,23 @@ async function inicializarApp() {
         // 1. Cargar catálogo
         await cargarCatalogoGlobal();
         
-        // 2. Inicializar categorías
+        // 2. Inicializar productos en vista inicio
+        inicializarProductosInicio();
+        
+        // 3. Inicializar categorías rápidas
         inicializarCategoriasRapidas();
         
-        // 3. Cargar menú hamburguesa
+        // 4. Cargar menú hamburguesa
         setTimeout(cargarCategoriasEnMenuDesdeAppJS, 500);
         
-        // 4. Configurar scroll infinito
+        // 5. Configurar scroll infinito
         configurarScrollInfinito();
         
-        // 5. Manejar URL
+        // 6. Manejar URL
         const { tipo } = getParametrosURL();
         
         if (tipo) {
             setTimeout(() => cargarPorTipo(tipo), 500);
-        } else {
-            setTimeout(() => cargarPorTipo('TODOS'), 500);
         }
         
         console.log('✅ App inicializada correctamente');
@@ -420,6 +523,8 @@ if (document.readyState === 'loading') {
 
 window.volverAInicio = volverAInicio;
 window.cargarPorTipo = cargarPorTipo;
+window.mostrarProductosCategoriaRapida = mostrarProductosCategoriaRapida;
+window.verTodosProductosCategoria = verTodosProductosCategoria;
 window.mostrarTodosLosProductosCompleto = mostrarTodosLosProductosCompleto;
 window.cargarMasProductos = cargarMasProductos;
 window.cerrarMenu = cerrarMenu;
