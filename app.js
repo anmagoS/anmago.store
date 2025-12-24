@@ -142,8 +142,6 @@ function inicializarCategoriasRapidas() {
     const tiposUnicos = ['TODOS', ...new Set(productosGlobal.map(p => p.tipo).filter(Boolean))];
     
     const html = tiposUnicos.map(tipo => {
-        const count = tipo === 'TODOS' ? productosGlobal.length : 
-                     productosGlobal.filter(p => p.tipo === tipo).length;
         const icono = ICONOS[tipo] || '📦';
         
         return `
@@ -152,7 +150,6 @@ function inicializarCategoriasRapidas() {
                onclick="event.preventDefault(); cargarPorTipo('${tipo}')">
                 <div>${icono}</div>
                 <div>${tipo}</div>
-                <span class="badge-categoria-count">${count}</span>
             </a>
         </div>`;
     }).join('');
@@ -349,12 +346,10 @@ function cargarCategoriasEnMenuDesdeAppJS() {
                 <i class="bi bi-grid-fill me-2 text-primary"></i>
                 <span class="fw-bold">TODOS</span>
             </div>
-            <span class="badge bg-primary rounded-pill">${productosGlobal.length}</span>
         </a>`;
     
     // Categorías
     tiposUnicos.forEach(tipo => {
-        const count = productosGlobal.filter(p => p.tipo === tipo).length;
         html += `
             <a href="#" class="nav-link d-flex justify-content-between align-items-center py-2 px-3 rounded"
                onclick="event.preventDefault(); cargarPorTipo('${tipo}'); cerrarMenu();">
@@ -362,7 +357,6 @@ function cargarCategoriasEnMenuDesdeAppJS() {
                     <i class="bi bi-folder me-2"></i>
                     <span>${tipo}</span>
                 </div>
-                <span class="badge bg-primary rounded-pill">${count}</span>
             </a>`;
     });
     
