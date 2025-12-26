@@ -447,10 +447,13 @@ async function cargarCatalogoGlobal() {
         console.log('📦 Cargando catálogo...');
         const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json";
         const res = await fetch(url);
-        const productos = await res.json();
+        let productos = await res.json();
+        
+        // 🔄 INVERTIR EL ORDEN: los últimos productos primero
+        productos = productos.reverse();
         
         productosGlobal = productos;
-        console.log(`✅ ${productos.length} productos cargados`);
+        console.log(`✅ ${productos.length} productos cargados (orden invertido)`);
         return productos;
     } catch (err) {
         console.error("❌ Error al cargar catálogo:", err);
@@ -801,7 +804,11 @@ async function cargarPorCategoria(tipo, subtipo, categoria) {
 
 async function cargarProductosPorTipo(tipo) {
     try {
-        const productosFiltrados = productosGlobal.filter(p => p.tipo === tipo);
+        let productosFiltrados = productosGlobal.filter(p => p.tipo === tipo);
+        
+        // 🔄 Invertir orden en categorías también
+        productosFiltrados = productosFiltrados.reverse();
+        
         const contador = document.getElementById('contador-productos');
         const grid = document.getElementById('grid-productos');
         
@@ -828,10 +835,13 @@ async function cargarProductosPorTipo(tipo) {
 
 async function cargarProductosPorSubtipo(tipo, subtipo) {
     try {
-        const productosFiltrados = productosGlobal.filter(p => 
+        let productosFiltrados = productosGlobal.filter(p => 
             p.tipo === tipo && p.subtipo === subtipo
         );
-
+        
+        // 🔄 Invertir orden en subtipos también
+        productosFiltrados = productosFiltrados.reverse();
+        
         const contador = document.getElementById('contador-productos');
         const grid = document.getElementById('grid-productos');
         
@@ -858,10 +868,13 @@ async function cargarProductosPorSubtipo(tipo, subtipo) {
 
 async function cargarProductosPorCategoria(tipo, subtipo, categoria) {
     try {
-        const productosFiltrados = productosGlobal.filter(p => 
+        let productosFiltrados = productosGlobal.filter(p => 
             p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
         );
-
+        
+        // 🔄 Invertir orden en categorías específicas también
+        productosFiltrados = productosFiltrados.reverse();
+        
         const contador = document.getElementById('contador-productos');
         const grid = document.getElementById('grid-productos');
         
@@ -885,7 +898,6 @@ async function cargarProductosPorCategoria(tipo, subtipo, categoria) {
         console.error('Error cargando productos:', error);
     }
 }
-
 // ==============================================
 // VISTA "TODOS LOS PRODUCTOS" CON SCROLL INFINITO
 // ==============================================
@@ -950,6 +962,8 @@ async function cargarMasProductosScroll() {
     
     await new Promise(resolve => setTimeout(resolve, 300));
     
+    // 🔄 CARGAR DESDE EL PRINCIPIO (ya que el array está invertido)
+    // Los primeros elementos del array invertido son los últimos productos
     const inicio = productosCargados;
     const fin = Math.min(inicio + LIMITE_PRODUCTOS, productosGlobal.length);
     const productosParaMostrar = productosGlobal.slice(inicio, fin);
