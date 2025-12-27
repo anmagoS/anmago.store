@@ -26,6 +26,7 @@
         text-decoration: none;
         color: #333;
     }
+
     .categoria-menu-item:hover {
         background: #1B4557 !important;
         color: white !important;
@@ -252,7 +253,42 @@
               <span id="descuento-desktop" class="badge badge-oferta fs-6"></span>
             </div>
           </div>
+                </div> <!-- Este es el cierre del div de precios desktop -->
 
+      <!-- ENVÍO GRATIS PARA DESKTOP -->
+      <div class="d-none d-md-block mb-4">
+        <div class="alert alert-success border-success border-opacity-25 bg-success bg-opacity-10 mb-0">
+          <div class="d-flex align-items-center gap-3">
+            <div class="bg-success bg-opacity-25 p-2 rounded-circle">
+              <i class="bi bi-truck text-success fs-4"></i>
+            </div>
+            <div class="flex-grow-1">
+              <h6 class="mb-1 fw-bold text-success">🚚 ENVÍO GRATIS INCLUIDO</h6>
+              <p class="mb-0 small">El costo de envío está cubierto en el precio del producto. 
+              Entregamos en toda Colombia con transportadoras de convenio.</p>
+            </div>
+            <span class="badge bg-success px-3 py-2">
+              <i class="bi bi-check-circle me-1"></i> Incluido
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
+      <!-- ENVÍO GRATIS PARA MÓVIL -->
+      <div class="d-block d-md-none mb-4">
+        <div class="card border-success border-opacity-25 bg-success bg-opacity-10 mb-3">
+          <div class="card-body py-2">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-truck text-success fs-4"></i>
+              <div>
+                <h6 class="mb-1 fw-bold text-success">🚚 ENVÍO GRATIS</h6>
+                <p class="mb-0 small text-muted">Incluido en el precio - Entregamos en toda Colombia</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
           <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
           <div id="video-producto-mobile" class="d-block d-md-none mb-4"></div>
 
