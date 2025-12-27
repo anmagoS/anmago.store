@@ -1862,3 +1862,73 @@ img[width][height] {
 .alerta-temporal {
     z-index: 9999;
 }
+/* ============================================= */
+/* ESTILOS ESPECÍFICOS PARA PRODUCTOS RELACIONADOS */
+/* ============================================= */
+
+#productos-relacionados .card-producto-ml {
+    height: 320px; /* Un poco más alto que en index */
+    margin-bottom: 0;
+}
+
+#productos-relacionados .card-image-container {
+    height: 180px; /* Un poco más bajo que en index */
+}
+
+#productos-relacionados .card-content {
+    padding: 15px !important;
+    height: calc(100% - 180px) !important;
+}
+
+#productos-relacionados .producto-nombre {
+    font-size: 0.9rem;
+    min-height: 40px;
+    max-height: 50px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+#productos-relacionados .card-footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef;
+}
+
+#productos-relacionados .precio-actual {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1B4557;
+}
+
+#productos-relacionados .envio-gratis {
+    font-size: 0.75rem;
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Responsive para productos relacionados */
+@media (max-width: 768px) {
+    #productos-relacionados .card-producto-ml {
+        height: 280px;
+    }
+    
+    #productos-relacionados .card-image-container {
+        height: 150px;
+    }
+    
+    #productos-relacionados .card-content {
+        height: calc(100% - 150px) !important;
+        padding: 12px !important;
+    }
+    
+    #productos-relacionados .producto-nombre {
+        font-size: 0.85rem;
+        min-height: 36px;
+    }
+    
+    #productos-relacionados .precio-actual {
+        font-size: 1rem;
+    }
