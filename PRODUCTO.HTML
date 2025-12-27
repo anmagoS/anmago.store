@@ -17,541 +17,32 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <!-- CSS optimizado -->
   <link rel="stylesheet" href="ESTILO.CSS?v=20251207" />
-  <!-- Estilos específicos para producto en móvil - SIN SOBREESCRIBIR LÓGICA -->
   <style>
-    /* === ESTILOS ESPECÍFICOS PARA PRODUCTO EN MÓVIL === */
-    /* Solo mejoras visuales - NO toca funciones JavaScript */
-    
-    @media (max-width: 768px) {
-      /* Header más compacto en móvil */
-      .header-sticky {
-        height: 60px !important;
-        padding: 0.5rem 0.75rem !important;
-      }
-      
-      .logo img {
-        height: 38px !important;
-        width: 38px !important;
-      }
-      
-      .buscador-header {
-        height: 38px !important;
-        padding: 0.5rem 1rem !important;
-        font-size: 0.85rem !important;
-      }
-      
-      /* Banner promocional más compacto */
-      .banner-promocional {
-        padding: 0.5rem 0.75rem !important;
-        font-size: 0.75rem !important;
-        min-height: 36px !important;
-        line-height: 1.2 !important;
-      }
-      
-      /* CONTENEDOR PRINCIPAL DEL PRODUCTO EN MÓVIL */
-      .container.mt-4 {
-        margin-top: 1rem !important;
-        padding-left: 0.75rem !important;
-        padding-right: 0.75rem !important;
-      }
-      
-      /* Título del producto - más grande y legible */
-      #nombre-producto-mobile {
-        font-size: 1.4rem !important;
-        font-weight: 700 !important;
-        line-height: 1.3 !important;
-        margin-bottom: 0.5rem !important;
-        color: #2C3E50 !important;
-      }
-      
-      /* Contenedor de precios optimizado */
-      .precios-mobile-container {
-        display: flex !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 0.5rem !important;
-        margin-bottom: 1rem !important;
-        padding-bottom: 0.75rem !important;
-        border-bottom: 1px solid #e9ecef !important;
-      }
-      
-      /* Precio actual - más prominente */
-      .precio-actual-mobile-display {
-        font-size: 1.6rem !important;
-        font-weight: 800 !important;
-        color: #1B4557 !important;
-        line-height: 1 !important;
-      }
-      
-      /* Precio original - tamaño adecuado */
-      .precio-original-mobile-display {
-        font-size: 1.1rem !important;
-        color: #6c757d !important;
-      }
-      
-      /* Badge de descuento */
-      .descuento-mobile-badge {
-        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
-        color: white !important;
-        padding: 0.25rem 0.5rem !important;
-        border-radius: 20px !important;
-        font-size: 0.85rem !important;
-        font-weight: 700 !important;
-      }
-      
-      /* LEYENDA DE ENVÍO GRATIS - NUEVO ELEMENTO */
-      .envio-gratis-banner {
-        display: inline-flex !important;
-        align-items: center !important;
-        background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
-        color: white !important;
-        padding: 0.4rem 0.8rem !important;
-        border-radius: 20px !important;
-        font-size: 0.85rem !important;
-        font-weight: 600 !important;
-        margin-bottom: 1rem !important;
-        box-shadow: 0 2px 8px rgba(39, 174, 96, 0.2) !important;
-      }
-      
-      .envio-gratis-banner i {
-        margin-right: 0.4rem !important;
-        font-size: 0.9rem !important;
-      }
-      
-      /* Galería de imágenes optimizada para móvil */
-      .galeria-mobile-container {
-        margin-bottom: 1.5rem !important;
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        background: white !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-      }
-      
-      #imagen-principal {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 400px !important;
-        object-fit: contain !important;
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
-        padding: 1.5rem !important;
-        border-radius: 16px 16px 0 0 !important;
-      }
-      
-      /* Miniaturas en móvil */
-      .galeria-miniaturas-mobile {
-        display: flex !important;
-        gap: 0.5rem !important;
-        padding: 0.75rem !important;
-        overflow-x: auto !important;
-        scrollbar-width: none !important;
-        background: white !important;
-      }
-      
-      .galeria-miniaturas-mobile::-webkit-scrollbar {
-        display: none !important;
-      }
-      
-      .galeria-miniaturas-mobile .miniatura {
-        width: 70px !important;
-        height: 70px !important;
-        object-fit: cover !important;
-        border-radius: 8px !important;
-        border: 2px solid #dee2e6 !important;
-        flex-shrink: 0 !important;
-        transition: all 0.3s ease !important;
-        cursor: pointer !important;
-      }
-      
-      .galeria-miniaturas-mobile .miniatura.active {
-        border-color: #1B4557 !important;
-        transform: scale(1.05) !important;
-      }
-      
-      /* Información del producto - diseño de tarjeta */
-      .info-producto-card {
-        background: white !important;
-        border-radius: 16px !important;
-        padding: 1.5rem !important;
-        margin-bottom: 1.5rem !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-      }
-      
-      .seccion-producto {
-        margin-bottom: 1.5rem !important;
-        padding-bottom: 1rem !important;
-        border-bottom: 1px solid #e9ecef !important;
-      }
-      
-      .seccion-producto:last-child {
-        border-bottom: none !important;
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-      }
-      
-      .titulo-seccion-producto {
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        color: #2C3E50 !important;
-        margin-bottom: 0.75rem !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 0.5rem !important;
-      }
-      
-      .titulo-seccion-producto i {
-        color: #1B4557 !important;
-      }
-      
-      /* Selectores optimizados para móvil */
-      .selector-mobile-optimizado {
-        width: 100% !important;
-        padding: 0.85rem 1rem !important;
-        border-radius: 12px !important;
-        border: 1px solid #dee2e6 !important;
-        font-size: 0.95rem !important;
-        background: white !important;
-      }
-      
-      .selector-mobile-optimizado:focus {
-        border-color: #1B4557 !important;
-        box-shadow: 0 0 0 0.2rem rgba(27, 69, 87, 0.25) !important;
-        outline: none !important;
-      }
-      
-      /* Selector de cantidad optimizado */
-      .selector-cantidad-mobile {
-        display: flex !important;
-        align-items: center !important;
-        gap: 0.75rem !important;
-      }
-      
-      .btn-cantidad-mobile {
-        width: 40px !important;
-        height: 40px !important;
-        border-radius: 50% !important;
-        border: 1px solid #dee2e6 !important;
-        background: white !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-size: 1.2rem !important;
-        color: #1B4557 !important;
-        transition: all 0.3s ease !important;
-        cursor: pointer !important;
-      }
-      
-      .btn-cantidad-mobile:active {
-        background: #f8f9fa !important;
-        transform: scale(0.95) !important;
-      }
-      
-      #input-cantidad {
-        width: 70px !important;
-        height: 40px !important;
-        text-align: center !important;
-        border-radius: 8px !important;
-        border: 1px solid #dee2e6 !important;
-        font-size: 1rem !important;
-        font-weight: 600 !important;
-      }
-      
-      /* Botones de acción optimizados para móvil */
-      .botones-accion-mobile-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.75rem !important;
-        margin: 1.5rem 0 !important;
-      }
-      
-      .btn-agregar-carrito-mobile-optimizado {
-        background: linear-gradient(135deg, #1B4557, #2C3E50) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 0.5rem !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 4px 12px rgba(27, 69, 87, 0.2) !important;
-        cursor: pointer !important;
-      }
-      
-      .btn-agregar-carrito-mobile-optimizado:disabled {
-        opacity: 0.6 !important;
-        cursor: not-allowed !important;
-      }
-      
-      .btn-agregar-carrito-mobile-optimizado:active:not(:disabled) {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 16px rgba(27, 69, 87, 0.3) !important;
-      }
-      
-      .btn-comprar-ahora-mobile-optimizado {
-        background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 12px !important;
-        padding: 1rem !important;
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 0.5rem !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2) !important;
-        cursor: pointer !important;
-      }
-      
-      .btn-comprar-ahora-mobile-optimizado:active:not(:disabled) {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 16px rgba(39, 174, 96, 0.3) !important;
-      }
-      
-      /* Descripción del producto */
-      #descripcion-producto {
-        font-size: 0.95rem !important;
-        line-height: 1.5 !important;
-        color: #495057 !important;
-      }
-      
-      /* Servicios en formato de iconos */
-      .servicios-mobile-grid {
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 0.75rem !important;
-        margin: 1.5rem 0 !important;
-        text-align: center !important;
-      }
-      
-      .servicio-item-card {
-        padding: 0.75rem !important;
-        background: white !important;
-        border-radius: 12px !important;
-        border: 1px solid #e9ecef !important;
-        transition: all 0.3s ease !important;
-      }
-      
-      .servicio-item-card:active {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
-      }
-      
-      .servicio-item-card i {
-        font-size: 1.5rem !important;
-        color: #1B4557 !important;
-        margin-bottom: 0.5rem !important;
-      }
-      
-      .servicio-item-card .servicio-texto {
-        font-size: 0.8rem !important;
-        color: #6c757d !important;
-        font-weight: 600 !important;
-      }
-      
-      /* Productos relacionados en móvil - diseño grid */
-      .productos-relacionados-grid-mobile {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 0.75rem !important;
-        margin-top: 1rem !important;
-      }
-      
-      .producto-relacionado-card {
-        background: white !important;
-        border-radius: 12px !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.08) !important;
-        transition: all 0.3s ease !important;
-        text-decoration: none !important;
-        color: inherit !important;
-        display: block !important;
-      }
-      
-      .producto-relacionado-card:active {
-        transform: translateY(-2px) !important;
-        box-shadow: 0 6px 12px rgba(0,0,0,0.12) !important;
-      }
-      
-      .producto-relacionado-card img {
-        width: 100% !important;
-        height: 140px !important;
-        object-fit: contain !important;
-        padding: 0.75rem !important;
-        background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
-      }
-      
-      .producto-relacionado-info {
-        padding: 0.75rem !important;
-      }
-      
-      .producto-relacionado-nombre {
-        font-size: 0.85rem !important;
-        font-weight: 600 !important;
-        color: #2C3E50 !important;
-        margin-bottom: 0.5rem !important;
-        line-height: 1.3 !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
-      }
-      
-      .producto-relacionado-precio {
-        font-size: 1rem !important;
-        font-weight: 700 !important;
-        color: #1B4557 !important;
-      }
-      
-      /* Breadcrumb optimizado */
-      #breadcrumb-producto-mobile .breadcrumb-item a {
-        font-size: 0.85rem !important;
-        color: #1B4557 !important;
-      }
-      
-      #breadcrumb-producto-mobile .breadcrumb-item.active {
-        font-size: 0.85rem !important;
-        color: #6c757d !important;
-      }
-      
-      /* Badges del producto */
-      .badges-producto-container {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        gap: 0.5rem !important;
-        margin-bottom: 1rem !important;
-      }
-      
-      .badge-producto-mobile {
-        padding: 0.4rem 0.75rem !important;
-        border-radius: 20px !important;
-        font-size: 0.75rem !important;
-        font-weight: 700 !important;
-      }
-      
-      .badge-producto-nuevo {
-        background: linear-gradient(135deg, #27ae60, #2ecc71) !important;
-        color: white !important;
-      }
-      
-      .badge-producto-oferta {
-        background: linear-gradient(135deg, #e74c3c, #c0392b) !important;
-        color: white !important;
-      }
-      
-      .badge-producto-stock {
-        background: linear-gradient(135deg, #f39c12, #e67e22) !important;
-        color: white !important;
-      }
-      
-      /* Ocultar elementos de desktop en móvil */
-      .d-none.d-md-block,
-      #video-producto-desktop,
-      #nombre-producto-desktop,
-      #precio-actual-desktop,
-      #precio-original-desktop,
-      #descuento-desktop,
-      #breadcrumb-producto-desktop,
-      .btn-volver-inicio,
-      .btn-carrito-flotante {
-        display: none !important;
-      }
-      
-      /* Botón volver flotante para móvil */
-      .btn-volver-mobile-flotante {
-        position: fixed !important;
-        bottom: 85px !important;
-        right: 20px !important;
-        z-index: 1020 !important;
-        width: 50px !important;
-        height: 50px !important;
-        border-radius: 50% !important;
-        background: white !important;
-        border: 1px solid #dee2e6 !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-decoration: none !important;
-        color: #1B4557 !important;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1) !important;
-        transition: all 0.3s ease !important;
-      }
-      
-      .btn-volver-mobile-flotante:active {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15) !important;
-      }
+    /* Estilos para el menú hamburguesa en producto.html */
+    .categoria-menu-item {
+        border: 1px solid #dee2e6;
+        background: white;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: #333;
     }
-    
-    /* Para pantallas muy pequeñas (< 375px) */
-    @media (max-width: 375px) {
-      #nombre-producto-mobile {
-        font-size: 1.3rem !important;
-      }
-      
-      .precio-actual-mobile-display {
-        font-size: 1.4rem !important;
-      }
-      
-      .precio-original-mobile-display {
-        font-size: 1rem !important;
-      }
-      
-      .botones-accion-mobile-container {
-        gap: 0.5rem !important;
-      }
-      
-      .btn-agregar-carrito-mobile-optimizado,
-      .btn-comprar-ahora-mobile-optimizado {
-        padding: 0.85rem !important;
-        font-size: 0.95rem !important;
-      }
-      
-      .producto-relacionado-card img {
-        height: 120px !important;
-      }
-      
-      .producto-relacionado-nombre {
-        font-size: 0.8rem !important;
-      }
-      
-      .producto-relacionado-precio {
-        font-size: 0.9rem !important;
-      }
+
+    .categoria-menu-item:hover {
+        background: #1B4557 !important;
+        color: white !important;
+        border-color: #1B4557;
+        transform: translateX(5px);
     }
-    
-    /* Para tablets (768px - 1024px) */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      .btn-volver-mobile-flotante {
-        display: none !important;
-      }
-      
-      .envio-gratis-banner {
-        font-size: 0.9rem !important;
-        padding: 0.5rem 1rem !important;
-      }
-      
-      #imagen-principal {
-        max-height: 450px !important;
-      }
-      
-      .galeria-miniaturas-mobile .miniatura {
-        width: 80px !important;
-        height: 80px !important;
-      }
-      
-      .info-producto-card {
-        padding: 2rem !important;
-      }
+
+    .categoria-menu-item .badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: #0d6efd !important;
     }
   </style>
 </head>
 <body class="bg-light">
-  <!-- Scripts originales - NO MODIFICAR -->
+  <!-- Scripts optimizados (cargados al inicio para mejor performance) -->
   <script src="carrito.js?v=20251207"></script>
   <script src="app.js?v=20251207"></script>
 
@@ -588,7 +79,7 @@
     </button>
   </header>
 
-  <!-- MENÚ LATERAL (se mantiene igual) -->
+  <!-- MENÚ LATERAL -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="menuLateralLabel">
@@ -656,80 +147,54 @@
     </div>
   </div>
 
+  <!-- BOTÓN INSTALAR APP -->
+  <div id="instalar-container" class="instalar-container d-none">
+    <button id="boton-instalar" class="btn-instalar-app">
+      <i class="bi bi-download"></i> Instalar App
+    </button>
+  </div>
+
+  <!-- BOTONES EN LA MISMA LÍNEA - COMPACTO -->
+  <div class="container mt-3">
+    <div class="row align-items-center">
+      <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
+      <a href="index.html" class="btn-volver-inicio d-none d-md-flex position-fixed align-items-center justify-content-center text-decoration-none"
+         style="top: 150px; left: 8px; z-index: 1000; width: 40px; height: 40px; background: white; border: 1px solid #d1d9e6; border-radius: 50%; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); color: #0b702144; transition: all 0.3s ease;"
+         data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
+        <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
+      </a>
+    </div>
+  </div>
+
   <!-- CONTENIDO PRINCIPAL - DETALLE PRODUCTO -->
   <main class="container mt-4">
     
-    <!-- BOTÓN VOLVER FLOTANTE PARA MÓVIL -->
-    <a href="index.html" class="btn-volver-mobile-flotante d-md-none" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Volver al inicio">
-      <i class="bi bi-arrow-left" style="font-size: 1.2rem;"></i>
-    </a>
-
-    <!-- TÍTULO Y PRECIO PARA MÓVIL (MEJORADO) -->
+    <!-- TÍTULO Y PRECIO PARA MÓVIL (ARRIBA DE TODO) -->
     <div class="d-block d-md-none mb-4">
-      <!-- Breadcrumb -->
+      <!-- Categorías -->
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb" id="breadcrumb-producto-mobile">
-          <li class="breadcrumb-item"><a href="index.html" onclick="volverAtras(); return false;">Inicio</a></li>
-          <li class="breadcrumb-item active" aria-current="page" id="categoria-producto-mobile"></li>
+          <li class="breadcrumb-item"><a href="index.html"></a></li>
+          <!-- Categorías se cargan dinámicamente -->
         </ol>
       </nav>
 
-      <!-- Nombre del producto -->
-      <h1 id="nombre-producto-mobile" class="h1 fw-bold mb-2"></h1>
-      
-      <!-- Badges del producto -->
-      <div class="badges-producto-container" id="badges-producto-mobile">
-        <!-- Se carga dinámicamente -->
-      </div>
-
-      <!-- Precios - NUEVA ESTRUCTURA -->
-      <div class="precios-mobile-container">
-        <span id="precio-actual-mobile" class="precio-actual-mobile-display"></span>
-        <span id="precio-original-mobile" class="precio-original-mobile-display d-none"></span>
-        <span id="descuento-mobile" class="descuento-mobile-badge d-none"></span>
-      </div>
-      
-      <!-- LEYENDA DE ENVÍO GRATIS - NUEVO -->
-      <div class="envio-gratis-banner">
-        <i class="bi bi-truck"></i> Envío gratis a nivel nacional
+      <!-- Nombre y precio -->
+      <h1 id="nombre-producto-mobile" class="h1 fw-bold mb-1"></h1>
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <span id="precio-actual-mobile" class="h4 fw-bold text-primary mb-0"></span>
+        <span id="precio-original-mobile" class="text-muted h5 mb-0 text-decoration-line-through"></span>
+        <span id="descuento-mobile" class="badge badge-oferta fs-6"></span>
       </div>
     </div>
 
     <div class="row">
-      <!-- GALERÍA DE IMÁGENES PARA MÓVIL (MEJORADA) -->
-      <div class="col-12 mb-4 d-md-none">
-        <div class="galeria-mobile-container">
-          <!-- IMAGEN PRINCIPAL -->
-          <div class="position-relative">
-            <img id="imagen-principal" src="" alt="Producto" 
-                 class="img-fluid"
-                 style="cursor: pointer;"
-                 data-bs-toggle="modal" data-bs-target="#modalZoom">
-            
-            <!-- Indicador de zoom -->
-            <div class="position-absolute top-0 end-0 m-2">
-              <div class="bg-dark bg-opacity-75 rounded-circle p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
-                <i class="bi bi-zoom-in text-white fs-6"></i>
-              </div>
-            </div>
-          </div>
-          
-          <!-- GALERÍA DE MINIATURAS -->
-          <div class="galeria-miniaturas-mobile" id="galeria-miniaturas">
-            <!-- Se carga dinámicamente -->
-          </div>
-        </div>
-        
-        <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
-        <div id="video-producto-mobile" class="mt-4"></div>
-      </div>
-
-      <!-- GALERÍA DE IMÁGENES PARA DESKTOP (ORIGINAL) -->
-      <div class="col-md-6 mb-4 d-none d-md-block">
+      <!-- GALERÍA DE IMÁGENES CON ZOOM -->
+      <div class="col-md-6 mb-4">
         <div class="sticky-top" style="top: 100px;">
-          <!-- IMAGEN PRINCIPAL CON ZOOM -->
+          <!-- IMAGEN PRINCIPAL CON ZOOM MEJORADA -->
           <div class="position-relative mb-3">
-            <img id="imagen-principal-desktop" src="" alt="Producto" 
+            <img id="imagen-principal" src="" alt="Producto" 
                  class="card-img-ml shadow img-fluid"
                  style="cursor: zoom-in; max-height: 500px; width: 100%; object-fit: contain; transition: all 0.3s ease; border-radius: 12px;"
                  onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
@@ -753,8 +218,8 @@
           </div>
           
           <!-- GALERÍA DE TODAS LAS IMÁGENES -->
-          <div class="galeria-miniaturas" id="galeria-miniaturas-desktop">
-            <!-- Todas las imágenes se cargan dinámicamente -->
+          <div class="galeria-miniaturas" id="galeria-miniaturas">
+            <!-- Todas las imágenes se cargan dinámicamente (PRINCIPAL + VARIANTES + REFERENCIAS) -->
           </div>
 
           <!-- Badges de estado -->
@@ -767,95 +232,16 @@
         </div>
       </div>
 
-      <!-- INFORMACIÓN DEL PRODUCTO PARA MÓVIL (MEJORADA) -->
-      <div class="col-12 d-md-none">
-        <div class="info-producto-card">
-          
-          <!-- VARIANTE ACTUAL -->
-          <div class="mb-3" id="variante-actual-container" style="display: none;">
-            <div class="alert alert-info py-2 small">
-              <i class="bi bi-palette me-1"></i> <strong>Color seleccionado:</strong> <span id="variante-actual-texto"></span>
-            </div>
-          </div>
-          
-          <!-- SELECTOR DE VARIABLES (COLORES/MATERIALES) -->
-          <div class="seccion-producto" id="seccion-variables-mobile">
-            <!-- Se carga dinámicamente -->
-          </div>
-          
-          <!-- SELECTOR DE TALLAS -->
-          <div class="seccion-producto" id="seccion-tallas-mobile">
-            <!-- Se carga dinámicamente -->
-          </div>
-          
-          <!-- CANTIDAD -->
-          <div class="seccion-producto">
-            <div class="titulo-seccion-producto">
-              <i class="bi bi-123"></i> Cantidad
-            </div>
-            <div class="selector-cantidad-mobile">
-              <button class="btn-cantidad-mobile" onclick="cambiarCantidad(-1)">-</button>
-              <input type="number" id="input-cantidad" class="form-control" value="1" min="1" max="10">
-              <button class="btn-cantidad-mobile" onclick="cambiarCantidad(1)">+</button>
-            </div>
-          </div>
-          
-          <!-- BOTONES DE ACCIÓN MEJORADOS -->
-          <div class="botones-accion-mobile-container">
-            <button id="btn-agregar-carrito" class="btn-agregar-carrito-mobile-optimizado" onclick="agregarAlCarrito()" disabled>
-              <i class="bi bi-cart-plus"></i> Agregar al carrito
-            </button>
-            <button id="btn-comprar-ahora-mobile" class="btn-comprar-ahora-mobile-optimizado" onclick="comprarAhora()" disabled>
-              <i class="bi bi-lightning"></i> Comprar ahora
-            </button>
-          </div>
-          
-          <!-- DESCRIPCIÓN -->
-          <div class="seccion-producto">
-            <div class="titulo-seccion-producto">
-              <i class="bi bi-card-text"></i> Descripción
-            </div>
-            <p id="descripcion-producto" class="text-muted"></p>
-          </div>
-          
-          <!-- SERVICIOS EN FORMATO DE ICONOS -->
-          <div class="servicios-mobile-grid">
-            <div class="servicio-item-card">
-              <i class="bi bi-shield-check"></i>
-              <div class="servicio-texto">Calidad</div>
-            </div>
-            <div class="servicio-item-card">
-              <i class="bi bi-star"></i>
-              <div class="servicio-texto">Garantía</div>
-            </div>
-            <div class="servicio-item-card">
-              <i class="bi bi-percent"></i>
-              <div class="servicio-texto">Promos</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- PRODUCTOS RELACIONADOS PARA MÓVIL -->
-        <section class="mt-4 pt-3">
-          <h4 class="fw-bold mb-3">🛍️ Productos relacionados</h4>
-          <div id="productos-relacionados" class="productos-relacionados-grid-mobile">
-            <!-- Productos relacionados se cargan dinámicamente -->
-            <div class="producto-relacionado-card skeleton" style="height: 200px;"></div>
-            <div class="producto-relacionado-card skeleton" style="height: 200px;"></div>
-          </div>
-        </section>
-      </div>
-
-      <!-- INFORMACIÓN DEL PRODUCTO PARA DESKTOP (ORIGINAL) -->
-      <div class="col-md-6 d-none d-md-block">
+      <!-- INFORMACIÓN DEL PRODUCTO -->
+      <div class="col-md-6">
         <div class="ps-md-4">
           <!-- TÍTULO Y PRECIO PARA DESKTOP -->
           <div class="d-none d-md-block">
             <!-- Categorías -->
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb" id="breadcrumb-producto-desktop">
-                <li class="breadcrumb-item"><a href="index.html" onclick="volverAtras(); return false;">Inicio</a></li>
-                <li class="breadcrumb-item active" aria-current="page" id="categoria-producto-desktop"></li>
+                <li class="breadcrumb-item"><a href="index.html"></a></li>
+                <!-- Categorías se cargan dinámicamente -->
               </ol>
             </nav>
 
@@ -866,21 +252,16 @@
               <span id="precio-original-desktop" class="text-muted h5 mb-0 text-decoration-line-through"></span>
               <span id="descuento-desktop" class="badge badge-oferta fs-6"></span>
             </div>
-            
-            <!-- ENVÍO GRATIS PARA DESKTOP -->
-            <div class="envio-gratis-banner mb-3">
-              <i class="bi bi-truck"></i> Envío gratis a nivel nacional
-            </div>
           </div>
 
-          <!-- VIDEO DEL PRODUCTO EN DESKTOP -->
-          <div id="video-producto-desktop-mobile" class="d-block d-md-none mb-4"></div>
+          <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
+          <div id="video-producto-mobile" class="d-block d-md-none mb-4"></div>
 
           <!-- VARIANTE ACTUAL -->
-          <div class="mb-3" id="variante-actual-container-desktop" style="display: none;">
+          <div class="mb-3" id="variante-actual-container" style="display: none;">
             <h5 class="fw-bold mb-2">🎨 COLOR SELECCIONADO</h5>
             <div class="alert alert-info py-2">
-              <span id="variante-actual-texto-desktop"></span>
+              <span id="variante-actual-texto"></span>
             </div>
           </div>
                
@@ -899,17 +280,17 @@
             <h5 class="fw-bold mb-3">🔢 Cantidad</h5>
             <div class="d-flex align-items-center gap-3">
               <button class="btn btn-outline-secondary" onclick="cambiarCantidad(-1)">-</button>
-              <input type="number" id="input-cantidad-desktop" class="form-control text-center" value="1" min="1" max="10" style="width: 80px;">
+              <input type="number" id="input-cantidad" class="form-control text-center" value="1" min="1" max="10" style="width: 80px;">
               <button class="btn btn-outline-secondary" onclick="cambiarCantidad(1)">+</button>
             </div>
           </div>
 
           <!-- Botones de acción -->
           <div class="d-grid gap-2 d-md-flex mb-4">
-            <button id="btn-agregar-carrito-desktop" class="btn btn-agregar-carrito btn-lg flex-fw-bold" onclick="agregarAlCarrito()" disabled>
+            <button id="btn-agregar-carrito" class="btn btn-agregar-carrito btn-lg flex-fw-bold" onclick="agregarAlCarrito()" disabled>
               <i class="bi bi-cart-plus"></i> Agregar al carrito
             </button>
-            <button id="btn-comprar-ahora-desktop" class="btn btn-gradient btn-lg" onclick="comprarAhora()" disabled>
+            <button class="btn btn-gradient btn-lg" onclick="comprarAhora()" disabled>
               <i class="bi bi-lightning"></i> Comprar ahora
             </button>
           </div>
@@ -917,7 +298,7 @@
           <!-- Descripción -->
           <div class="mb-4">
             <h5 class="fw-bold mb-2">📋 Descripción</h5>
-            <p id="descripcion-producto-desktop" class="text-muted"></p>
+            <p id="descripcion-producto" class="text-muted"></p>
           </div>
 
           <!-- SERVICIOS -->
@@ -943,10 +324,10 @@
       </div>
     </div>
 
-    <!-- PRODUCTOS RELACIONADOS PARA DESKTOP -->
-    <section class="mt-5 pt-4 border-top d-none d-md-block">
+    <!-- PRODUCTOS RELACIONADOS -->
+    <section class="mt-5 pt-4 border-top">
       <h3 class="h4 fw-bold mb-4">🛍️ Productos relacionados</h3>
-      <div id="productos-relacionados-desktop" class="grid-productos-ml">
+      <div id="productos-relacionados" class="grid-productos-ml">
         <!-- Productos relacionados se cargan dinámicamente -->
         <div class="card-producto-ml skeleton" style="height: 280px;"></div>
         <div class="card-producto-ml skeleton" style="height: 280px;"></div>
@@ -956,7 +337,7 @@
     </section>
   </main>
 
-  <!-- CARRITO OFFCANVAS (ORIGINAL) -->
+  <!-- CARRITO OFFCANVAS -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
     <div class="offcanvas-header border-bottom">
       <h4 class="offcanvas-title fw-bold">🛒 Tu Carrito</h4>
@@ -979,7 +360,7 @@
     </div>
   </div>
 
-  <!-- MODAL DE ZOOM (ORIGINAL) -->
+  <!-- MODAL DE ZOOM MEJORADO -->
   <div class="modal fade" id="modalZoom" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
       <div class="modal-content">
@@ -1022,7 +403,7 @@
     </div>
   </div>
 
-  <!-- FOOTER (ORIGINAL) -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-container">
       <!-- Primera fila: enlaces, redes y contacto -->
@@ -1128,13 +509,13 @@
     </div>
   </footer>
 
-  <!-- BOTÓN CARRITO FLOTANTE (ORIGINAL) -->
+  <!-- BOTÓN CARRITO FLOTANTE -->
   <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
     <i class="bi bi-bag-heart fs-5"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
 
-  <!-- BARRA INFERIOR MOBILE (ORIGINAL) -->
+  <!-- BARRA INFERIOR MOBILE -->
   <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2">
     <div class="container-fluid">
       <div class="d-flex justify-content-around w-100">
@@ -1148,17 +529,20 @@
         </a>
         <a href="#" class="text-center text-decoration-none position-relative d-flex flex-column align-items-center"
            data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
+          <!-- CONTENEDOR DEL ICONO CON BADGE -->
           <div class="position-relative mb-1">
             <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
                  style="width: 35px; height: 35px; margin-top: -8px;">
               <i class="bi bi-cart-check fs-5 text-white"></i>
             </div>
+            <!-- BADGE DEL CONTADOR -->
             <span id="contador-carrito-mobile" 
                   class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill border border-white"
                   style="font-size: 0.6rem; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px;">
               0
             </span>
           </div>
+          <!-- TEXTO "CARRITO" -->
           <div class="small" style="font-size: 0.75rem;">Carrito</div>
         </a>
         <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
@@ -1175,342 +559,7 @@
     </div>
   </nav>
 
-  <!-- SCRIPTS EXTERNOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="buscador.js?v=20251115"></script>
-  
-  <!-- SCRIPT DE PRODUCTO COMPATIBLE CON APP.JS -->
-  <script>
-    // ========== SISTEMA DE DETALLE PRODUCTO COMPATIBLE ==========
-    // Este script es 100% compatible con tu app.js existente
-    // Solo se encarga de mejorar la presentación visual en móvil
-    
-    // Variables globales (se mantienen igual que en tu código original)
-    let productoActual = null;
-    let varianteSeleccionada = '';
-    let variableSeleccionada = '';
-    let tallaSeleccionada = '';
-    let imagenSeleccionada = '';
-    let cantidad = 1;
-    let imagenesProducto = [];
-    let zoomIndex = 0;
-    
-    // Función para inicializar solo mejoras visuales
-    function inicializarMejorasVisualesMovil() {
-      if (window.innerWidth <= 768) {
-        console.log('📱 Aplicando mejoras visuales para móvil');
-        
-        // 1. Mejorar el banner de envío gratis
-        agregarBannerEnvioGratis();
-        
-        // 2. Configurar eventos táctiles mejorados
-        configurarEventosTactilesMejorados();
-        
-        // 3. Optimizar galería para móvil
-        optimizarGaleriaMovil();
-        
-        // 4. Mejorar feedback visual en botones
-        mejorarFeedbackBotones();
-      }
-    }
-    
-    // Agregar banner de envío gratis debajo del precio
-    function agregarBannerEnvioGratis() {
-      // El banner ya está en el HTML, solo asegurarnos de que se vea bien
-      const precioContainer = document.querySelector('.precios-mobile-container');
-      const envioBanner = document.querySelector('.envio-gratis-banner');
-      
-      if (precioContainer && envioBanner) {
-        // Asegurar que el banner esté después del precio
-        precioContainer.parentNode.insertBefore(envioBanner, precioContainer.nextSibling);
-      }
-    }
-    
-    // Configurar eventos táctiles mejorados
-    function configurarEventosTactilesMejorados() {
-      // Mejorar botones de cantidad
-      const btnCantidadMenos = document.querySelector('.btn-cantidad-mobile[onclick*="-1"]');
-      const btnCantidadMas = document.querySelector('.btn-cantidad-mobile[onclick*="1)"]');
-      const inputCantidad = document.getElementById('input-cantidad');
-      
-      if (btnCantidadMenos && btnCantidadMas && inputCantidad) {
-        btnCantidadMenos.addEventListener('touchstart', function(e) {
-          e.preventDefault();
-          this.style.backgroundColor = '#f8f9fa';
-          this.style.transform = 'scale(0.9)';
-        });
-        
-        btnCantidadMenos.addEventListener('touchend', function(e) {
-          e.preventDefault();
-          this.style.backgroundColor = '';
-          this.style.transform = '';
-        });
-        
-        btnCantidadMas.addEventListener('touchstart', function(e) {
-          e.preventDefault();
-          this.style.backgroundColor = '#f8f9fa';
-          this.style.transform = 'scale(0.9)';
-        });
-        
-        btnCantidadMas.addEventListener('touchend', function(e) {
-          e.preventDefault();
-          this.style.backgroundColor = '';
-          this.style.transform = '';
-        });
-        
-        // Actualizar cantidad al cambiar input
-        inputCantidad.addEventListener('change', function() {
-          cantidad = parseInt(this.value) || 1;
-          if (cantidad < 1) cantidad = 1;
-          if (cantidad > 10) cantidad = 10;
-          this.value = cantidad;
-        });
-      }
-      
-      // Mejorar botones de acción
-      const btnAgregar = document.getElementById('btn-agregar-carrito');
-      const btnComprar = document.getElementById('btn-comprar-ahora-mobile');
-      
-      if (btnAgregar) {
-        btnAgregar.addEventListener('touchstart', function(e) {
-          if (!this.disabled) {
-            this.style.transform = 'translateY(-2px)';
-          }
-        });
-        
-        btnAgregar.addEventListener('touchend', function(e) {
-          if (!this.disabled) {
-            this.style.transform = '';
-          }
-        });
-      }
-      
-      if (btnComprar) {
-        btnComprar.addEventListener('touchstart', function(e) {
-          if (!this.disabled) {
-            this.style.transform = 'translateY(-2px)';
-          }
-        });
-        
-        btnComprar.addEventListener('touchend', function(e) {
-          if (!this.disabled) {
-            this.style.transform = '';
-          }
-        });
-      }
-    }
-    
-    // Optimizar galería para móvil
-    function optimizarGaleriaMovil() {
-      const miniaturas = document.querySelectorAll('.galeria-miniaturas-mobile .miniatura');
-      
-      miniaturas.forEach(miniatura => {
-        miniatura.addEventListener('touchstart', function(e) {
-          this.style.opacity = '0.8';
-        });
-        
-        miniatura.addEventListener('touchend', function(e) {
-          this.style.opacity = '';
-        });
-      });
-    }
-    
-    // Mejorar feedback visual en botones
-    function mejorarFeedbackBotones() {
-      const botones = document.querySelectorAll('.btn-agregar-carrito-mobile-optimizado, .btn-comprar-ahora-mobile-optimizado');
-      
-      botones.forEach(boton => {
-        boton.addEventListener('touchstart', function() {
-          if (!this.disabled) {
-            this.style.filter = 'brightness(0.9)';
-          }
-        });
-        
-        boton.addEventListener('touchend', function() {
-          this.style.filter = '';
-        });
-      });
-    }
-    
-    // Función para renderizar badges en móvil
-    function renderizarBadgesMovilCompatible(producto) {
-      const contenedor = document.getElementById('badges-producto-mobile');
-      if (!contenedor) return;
-      
-      const badges = [];
-      
-      // Usar la misma lógica de promociones que en app.js
-      const precioBase = Number(producto.precio) || 0;
-      const precioFinal = calcularPrecioConDescuento(producto);
-      const tieneDescuentoReal = precioFinal < precioBase;
-      
-      if (tieneDescuentoReal) {
-        const descuentoPorcentaje = Math.round((1 - precioFinal / precioBase) * 100);
-        badges.push(`<span class="badge-producto-mobile badge-producto-oferta">🔥 OFERTA -${descuentoPorcentaje}%</span>`);
-      }
-      
-      if (producto.nuevo) {
-        badges.push('<span class="badge-producto-mobile badge-producto-nuevo">🆕 Nuevo</span>');
-      }
-      
-      if (producto.stock <= 5 && producto.stop > 0) {
-        badges.push('<span class="badge-producto-mobile badge-producto-stock">⚠️ Últimas unidades</span>');
-      }
-      
-      contenedor.innerHTML = badges.join('');
-    }
-    
-    // Función para actualizar selectores en móvil
-    function actualizarSelectoresMovil(producto) {
-      // Variables (colores/materiales)
-      const contenedorVariables = document.getElementById('seccion-variables-mobile');
-      if (contenedorVariables && producto.variables) {
-        const tieneVariables = producto.variables && 
-                              producto.variables.trim() !== "" && 
-                              producto.variables !== "N/A" &&
-                              !["única", "unica"].includes(producto.variables.toLowerCase());
-        
-        if (tieneVariables) {
-          const variables = producto.variables.split(",").map(v => v.trim()).filter(v => v);
-          
-          let html = `
-            <div class="titulo-seccion-producto">
-              <i class="bi bi-palette"></i> Selecciona color/material
-            </div>
-            <select class="form-control selector-mobile-optimizado" onchange="seleccionarVariable(this.value)">
-              <option value="">-- Elige una opción --</option>
-          `;
-          
-          variables.forEach(variable => {
-            html += `<option value="${variable}">${variable}</option>`;
-          });
-          
-          html += `
-            </select>
-            <div class="form-text mt-1 small">💡 Selecciona tu color o material preferido</div>
-          `;
-          
-          contenedorVariables.innerHTML = html;
-        }
-      }
-      
-      // Tallas
-      const contenedorTallas = document.getElementById('seccion-tallas-mobile');
-      if (contenedorTallas && producto.tallas) {
-        const necesitaTallas = producto.tallas && 
-                             producto.tallas.trim() !== "" && 
-                             producto.tallas !== "N/A" && 
-                             !["única", "unica"].includes(producto.tallas.toLowerCase());
-
-        if (necesitaTallas) {
-          const tallas = producto.tallas.split(",").map(t => t.trim()).filter(t => t);
-          
-          let html = `
-            <div class="titulo-seccion-producto">
-              <i class="bi bi-rulers"></i> Selecciona tu talla
-            </div>
-            <select class="form-control selector-mobile-optimizado" onchange="seleccionarTalla(this.value)">
-              <option value="">-- Elige una talla --</option>
-          `;
-          
-          tallas.forEach(talla => {
-            html += `<option value="${talla}">${talla}</option>`;
-          });
-          
-          html += `
-            </select>
-            <div class="form-text mt-1 small">💡 Asegúrate de seleccionar tu talla correcta</div>
-          `;
-          
-          contenedorTallas.innerHTML = html;
-        }
-      }
-    }
-    
-    // Sobrescribir funciones de renderizado para usar mejoras visuales
-    const renderizarProductoOriginal = window.renderizarProducto;
-    
-    if (renderizarProductoOriginal) {
-      window.renderizarProducto = function(producto) {
-        // Llamar a la función original
-        renderizarProductoOriginal.call(this, producto);
-        
-        // Agregar mejoras visuales para móvil
-        if (window.innerWidth <= 768) {
-          console.log('🎨 Aplicando mejoras visuales para producto:', producto.producto);
-          
-          // Actualizar badges para móvil
-          renderizarBadgesMovilCompatible(producto);
-          
-          // Actualizar selectores para móvil
-          actualizarSelectoresMovil(producto);
-          
-          // Actualizar categoría en breadcrumb
-          const categoriaElement = document.getElementById('categoria-producto-mobile');
-          if (categoriaElement && producto.categoria) {
-            categoriaElement.textContent = producto.categoria;
-          }
-        }
-      };
-    }
-    
-    // Inicializar cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log('🚀 PRODUCTO.HTML - Mejoras visuales para móvil inicializadas');
-      
-      // Aplicar mejoras visuales después de un breve delay
-      setTimeout(() => {
-        inicializarMejorasVisualesMovil();
-      }, 500);
-      
-      // También aplicar cuando cambie el tamaño de la pantalla
-      window.addEventListener('resize', function() {
-        setTimeout(inicializarMejorasVisualesMovil, 100);
-      });
-    });
-    
-    // Mantener compatibilidad con todas las funciones existentes
-    // Las siguientes funciones se mantienen exactamente igual que en tu código original
-    // Solo se exportan para que estén disponibles globalmente
-    
-    // ========== FUNCIONES AUXILIARES ==========
-    function obtenerImagenesPorTipo(tipo) {
-        if (!imagenesProducto || !Array.isArray(imagenesProducto)) return [];
-        return imagenesProducto.filter(img => 
-            img.tipo && img.tipo.toUpperCase() === tipo.toUpperCase()
-        );
-    }
-    
-    // ========== SISTEMA SIMPLIFICADO PROMO: TRUE/FALSE ==========
-    function calcularPrecioConDescuento(producto) {
-        if (!producto || !producto.precio) return 0;
-        
-        const precioBase = Number(producto.precio);
-        
-        // SOLO VERIFICAR SI EL PRODUCTO TIENE PROMO: TRUE
-        const tienePromo = producto.promo === true || 
-                          producto.promo === "true" || 
-                          producto.promo === "sí" || 
-                          producto.promo === "si" || 
-                          producto.promo === "activo";
-        
-        if (tienePromo) {
-            const precioConDescuento = Math.round(precioBase * 0.9);
-            console.log(`🔥 Aplicando 10% por PROMO:TRUE: $${precioBase} -> $${precioConDescuento}`);
-            return precioConDescuento;
-        }
-        
-        console.log(`ℹ️ Precio normal: $${precioBase}`);
-        return precioBase;
-    }
-    
-    // Exportar funciones para mantener compatibilidad
-    window.obtenerImagenesPorTipo = obtenerImagenesPorTipo;
-    window.calcularPrecioConDescuento = calcularPrecioConDescuento;
-    
-  </script>
-  
-  <!-- Script para menú hamburguesa (se mantiene igual) -->
+  <!-- SCRIPT DEL MENÚ HAMBURGUESA -->
   <script>
     // ==============================================
     // MENÚ HAMBURGUESA AUTÓNOMO - PARA PRODUCTO.HTML
@@ -1691,6 +740,967 @@
     window.cerrarMenu = cerrarMenu;
     window.volverAInicio = volverAInicio;
     window.mostrarTodosLosProductosCompleto = mostrarTodosLosProductosCompleto;
+    window.irATodosLosProductos = irATodosLosProductos;
+    window.irACategoria = irACategoria;
   </script>
+
+  <!-- SISTEMA DE DETALLE PRODUCTO OPTIMIZADO -->
+  <script>
+    // ========== VARIABLES GLOBALES ==========
+    let productoActual = null;
+    let varianteSeleccionada = '';
+    let variableSeleccionada = '';
+    let tallaSeleccionada = '';
+    let imagenSeleccionada = '';
+    let cantidad = 1;
+    let imagenesProducto = [];
+    let zoomIndex = 0;
+
+    // ========== FUNCIONES AUXILIARES ==========
+    function obtenerImagenesPorTipo(tipo) {
+        if (!imagenesProducto || !Array.isArray(imagenesProducto)) return [];
+        return imagenesProducto.filter(img => 
+            img.tipo && img.tipo.toUpperCase() === tipo.toUpperCase()
+        );
+    }
+
+    // ========== SISTEMA SIMPLIFICADO PROMO: TRUE/FALSE ==========
+    function calcularPrecioConDescuento(producto) {
+        if (!producto || !producto.precio) return 0;
+        
+        const precioBase = Number(producto.precio);
+        
+        // SOLO VERIFICAR SI EL PRODUCTO TIENE PROMO: TRUE
+        const tienePromo = producto.promo === true || 
+                          producto.promo === "true" || 
+                          producto.promo === "sí" || 
+                          producto.promo === "si" || 
+                          producto.promo === "activo";
+        
+        if (tienePromo) {
+            const precioConDescuento = Math.round(precioBase * 0.9);
+            console.log(`🔥 Aplicando 10% por PROMO:TRUE: $${precioBase} -> $${precioConDescuento}`);
+            return precioConDescuento;
+        }
+        
+        console.log(`ℹ️ Precio normal: $${precioBase}`);
+        return precioBase;
+    }
+
+    // ========== SISTEMA DE NAVEGACIÓN ==========
+    function volverAtras() {
+        const estadoGuardado = localStorage.getItem('navegacionAnmago');
+        
+        if (estadoGuardado) {
+            try {
+                const estado = JSON.parse(estadoGuardado);
+                const ahora = Date.now();
+                const tiempoTranscurrido = ahora - estado.timestamp;
+                
+                if (tiempoTranscurrido < 30 * 60 * 1000) {
+                    let urlRetorno = 'index.html';
+                    
+                    switch (estado.vistaAnterior) {
+                        case 'productos':
+                            if (estado.tipo && estado.subtipo && estado.categoria) {
+                                urlRetorno = `index.html?vista=productos&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}&categoria=${encodeURIComponent(estado.categoria)}`;
+                            }
+                            break;
+                        case 'categorias':
+                            if (estado.tipo && estado.subtipo) {
+                                urlRetorno = `index.html?vista=categorias&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}`;
+                            }
+                            break;
+                        case 'subtipos':
+                            if (estado.tipo) {
+                                urlRetorno = `index.html?vista=subtipos&tipo=${encodeURIComponent(estado.tipo)}`;
+                            }
+                            break;
+                    }
+                    
+                    window.location.href = urlRetorno;
+                    return;
+                } else {
+                    localStorage.removeItem('navegacionAnmago');
+                }
+            } catch (error) {
+                localStorage.removeItem('navegacionAnmago');
+            }
+        }
+        
+        window.location.href = 'index.html';
+    }
+
+    function guardarEstadoNavegacion() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const origen = urlParams.get('origen');
+        const tipo = urlParams.get('tipo');
+        const subtipo = urlParams.get('subtipo');
+        const categoria = urlParams.get('categoria');
+        
+        if (origen === 'tienda' && tipo && subtipo && categoria) {
+            const estadoNavegacion = {
+                vistaAnterior: 'productos',
+                tipo: tipo,
+                subtipo: subtipo,
+                categoria: categoria,
+                timestamp: Date.now(),
+                url: document.referrer
+            };
+            localStorage.setItem('navegacionAnmago', JSON.stringify(estadoNavegacion));
+        }
+    }
+
+    // ========== FUNCIONES PARA GALERÍA ==========
+    function renderizarGaleriaCompleta(producto) {
+        const imagenPrincipal = document.getElementById('imagen-principal');
+        const galeria = document.getElementById('galeria-miniaturas');
+        
+        if (imagenesProducto.length === 0) {
+            imagenPrincipal.src = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+            imagenPrincipal.alt = producto.producto;
+            return;
+        }
+
+        // OBTENER IMAGEN PRINCIPAL
+        let imagenPrincipalObj = obtenerImagenesPorTipo('PRINCIPAL')[0];
+        if (!imagenPrincipalObj) {
+            imagenPrincipalObj = obtenerImagenesPorTipo('VARIANTE')[0] || imagenesProducto[0];
+        }
+
+        // SETEAR IMAGEN PRINCIPAL
+        imagenPrincipal.src = imagenPrincipalObj.url;
+        imagenPrincipal.alt = `${producto.producto} - ${imagenPrincipalObj.variacion || 'Imagen principal'}`;
+        
+        // ACTUALIZAR VARIABLES GLOBALES
+        varianteSeleccionada = imagenPrincipalObj.variacion || 'Principal';
+        imagenSeleccionada = imagenPrincipalObj.url;
+        zoomIndex = imagenesProducto.findIndex(img => img.url === imagenPrincipalObj.url);
+        
+        // RENDERIZAR GALERÍA CON TODAS LAS IMÁGENES
+        if (imagenesProducto.length > 1) {
+            galeria.innerHTML = imagenesProducto.map((img, index) => {
+                const esSeleccionada = img.url === imagenPrincipalObj.url;
+                const tipoBadge = getTipoBadge(img.tipo);
+                const descripcion = img.variacion || 
+                    (img.tipo === 'PRINCIPAL' ? 'Principal' : 
+                     img.tipo === 'VARIANTE' ? `Variante ${index}` : 
+                     `Referencia ${index}`);
+                
+                return `
+                    <div class="position-relative d-inline-block">
+                        <img src="${img.url}" 
+                             alt="${producto.producto} - ${descripcion}" 
+                             class="miniatura ${esSeleccionada ? 'active' : ''}"
+                             onclick="seleccionarImagenPrincipal('${img.url}', '${img.variacion || descripcion}', this, ${index})"
+                             style="width: 80px; height: 80px; object-fit: cover; border: 2px solid ${esSeleccionada ? '#007bff' : '#ddd'}; border-radius: 8px; cursor: pointer; margin: 5px; transition: all 0.3s ease;"
+                             onmouseover="this.style.borderColor='#007bff'"
+                             onmouseout="if(!this.classList.contains('active')) this.style.borderColor='#ddd'"
+                             title="${descripcion} - ${tipoBadge.texto}">
+                        <span class="position-absolute top-0 start-0 badge ${tipoBadge.clase}" style="font-size: 0.6rem; padding: 2px 4px;">
+                            ${tipoBadge.texto}
+                        </span>
+                    </div>
+                `;
+            }).join('');
+        } else {
+            galeria.innerHTML = '';
+        }
+
+        // MOSTRAR VARIANTE SI ES VARIANTE
+        if (imagenPrincipalObj.tipo === 'VARIANTE') {
+            mostrarVarianteActual(imagenPrincipalObj.variacion);
+        }
+    }
+
+    function getTipoBadge(tipo) {
+        switch(tipo?.toUpperCase()) {
+            case 'PRINCIPAL': return { clase: 'bg-primary', texto: 'PRIN' };
+            case 'VARIANTE': return { clase: 'bg-success', texto: 'COLOR' };
+            case 'ADICIONAL': return { clase: 'bg-secondary', texto: 'REF' };
+            default: return { clase: 'bg-info', texto: 'IMG' };
+        }
+    }
+
+    function seleccionarImagenPrincipal(imagenSrc, descripcion, elemento, index) {
+        const imagenPrincipal = document.getElementById('imagen-principal');
+        imagenPrincipal.src = imagenSrc;
+        imagenPrincipal.alt = `${productoActual.producto} - ${descripcion}`;
+        
+        // ACTUALIZAR VARIABLES GLOBALES
+        imagenSeleccionada = imagenSrc;
+        zoomIndex = index;
+        
+        // SI ES VARIANTE, ACTUALIZAR VARIANTE
+        const imgSeleccionada = imagenesProducto[index];
+        if (imgSeleccionada.tipo === 'VARIANTE') {
+            varianteSeleccionada = imgSeleccionada.variacion || descripcion;
+            mostrarVarianteActual(varianteSeleccionada);
+        }
+        
+        // ACTUALIZAR MINIATURAS ACTIVAS
+        document.querySelectorAll('.miniatura').forEach(img => {
+            img.classList.remove('active');
+            img.style.borderColor = '#ddd';
+        });
+        elemento.classList.add('active');
+        elemento.style.borderColor = '#007bff';
+        
+        // VERIFICAR ESTADO DEL BOTÓN
+        verificarEstadoBotonAgregar();
+    }
+
+    function mostrarVarianteActual(nombreVariante) {
+        const container = document.getElementById('variante-actual-container');
+        const texto = document.getElementById('variante-actual-texto');
+        texto.textContent = nombreVariante;
+        container.style.display = 'block';
+    }
+
+    // ========== INICIALIZACIÓN ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🚀 PRODUCTO.HTML inicializado');
+        
+        // 1. Guardar estado de navegación
+        guardarEstadoNavegacion();
+        
+        // 2. Cargar el producto
+        setTimeout(() => {
+            cargarProducto();
+        }, 300);
+        
+        // 3. Configurar modal zoom
+        const modalZoom = document.getElementById('modalZoom');
+        if (modalZoom) {
+            modalZoom.addEventListener('show.bs.modal', function() {
+                inicializarModalZoom();
+            });
+        }
+        
+        // 4. Actualizar contadores carrito
+        if (typeof actualizarContadoresCarrito === 'function') {
+            actualizarContadoresCarrito();
+        }
+    });
+
+    // ========== FUNCIONES PARA MODAL DE ZOOM ==========
+    function inicializarModalZoom() {
+        const modalImagen = document.getElementById('modal-zoom-imagen');
+        const miniaturasContainer = document.getElementById('modal-miniaturas');
+        
+        if (!modalImagen || !miniaturasContainer) return;
+        
+        modalImagen.src = imagenesProducto[zoomIndex]?.url || '';
+        const imgActual = imagenesProducto[zoomIndex];
+        document.getElementById('modal-variante-info').textContent = 
+            imgActual?.variacion || (imgActual?.tipo === 'VARIANTE' ? 'Variante seleccionada' : 'Imagen del producto');
+        
+        // MINIATURAS EN EL MODAL
+        miniaturasContainer.innerHTML = imagenesProducto.map((img, index) => {
+            const tipoBadge = getTipoBadge(img.tipo);
+            const descripcion = img.variacion || `Imagen ${index + 1}`;
+            
+            return `
+                <div class="position-relative" style="width: 80px;">
+                    <img src="${img.url}" 
+                         alt="${descripcion}"
+                         class="img-thumbnail ${index === zoomIndex ? 'border-primary' : 'border-secondary'}"
+                         style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
+                         onclick="seleccionarImagenModal(${index})"
+                         title="${descripcion} - ${tipoBadge.texto}">
+                    <span class="position-absolute top-0 start-0 badge ${tipoBadge.clase}" style="font-size: 0.6rem; padding: 2px 4px;">
+                        ${tipoBadge.texto}
+                    </span>
+                </div>
+            `;
+        }).join('');
+        
+        actualizarBotonesNavegacionModal();
+    }
+
+    function navegarImagenModal(direccion) {
+        const nuevoIndex = zoomIndex + direccion;
+        if (nuevoIndex >= 0 && nuevoIndex < imagenesProducto.length) {
+            zoomIndex = nuevoIndex;
+            actualizarModalZoom();
+        }
+    }
+
+    function seleccionarImagenModal(index) {
+        zoomIndex = index;
+        actualizarModalZoom();
+    }
+
+    function seleccionarDesdeModal() {
+        const imgSeleccionada = imagenesProducto[zoomIndex];
+        
+        // SOLO PERMITIR VARIANTES PARA SELECCIÓN DE COLOR
+        if (imgSeleccionada.tipo !== "VARIANTE") {
+            mostrarAlertaTemporal('⚠️ Solo puedes seleccionar imágenes de color (variantes)', 'warning');
+            return;
+        }
+        
+        // ACTUALIZAR IMAGEN PRINCIPAL
+        document.getElementById('imagen-principal').src = imgSeleccionada.url;
+        
+        // ACTUALIZAR VARIABLES GLOBALES
+        varianteSeleccionada = imgSeleccionada.variacion;
+        imagenSeleccionada = imgSeleccionada.url;
+        
+        // ACTUALIZAR GALERÍA PRINCIPAL
+        const miniaturas = document.querySelectorAll('.miniatura');
+        miniaturas.forEach((miniatura, index) => {
+            const esSeleccionada = index === zoomIndex;
+            miniatura.classList.toggle('active', esSeleccionada);
+            miniatura.style.borderColor = esSeleccionada ? '#007bff' : '#ddd';
+        });
+        
+        // MOSTRAR VARIANTE
+        mostrarVarianteActual(varianteSeleccionada);
+        verificarEstadoBotonAgregar();
+        
+        // CERRAR MODAL
+        const modal = bootstrap.Modal.getInstance(document.getElementById('modalZoom'));
+        if (modal) modal.hide();
+        
+        mostrarAlertaTemporal(`✅ Color seleccionado: "${varianteSeleccionada}"`, 'success');
+    }
+
+    function actualizarModalZoom() {
+        const modalImagen = document.getElementById('modal-zoom-imagen');
+        const miniaturasContainer = document.getElementById('modal-miniaturas');
+        
+        if (!modalImagen) return;
+        
+        const imgActual = imagenesProducto[zoomIndex];
+        modalImagen.style.opacity = '0.5';
+        
+        setTimeout(() => {
+            modalImagen.src = imgActual.url;
+            modalImagen.alt = `${productoActual.producto} - ${imgActual.variacion || 'Imagen'}`;
+            modalImagen.style.opacity = '1';
+            
+            document.getElementById('modal-variante-info').textContent = 
+                imgActual.variacion || (imgActual.tipo === 'VARIANTE' ? 'Variante seleccionada' : 'Imagen del producto');
+            
+            if (miniaturasContainer) {
+                miniaturasContainer.querySelectorAll('.img-thumbnail').forEach((img, index) => {
+                    img.classList.toggle('border-primary', index === zoomIndex);
+                    img.classList.toggle('border-secondary', index !== zoomIndex);
+                });
+            }
+            
+            actualizarBotonesNavegacionModal();
+        }, 200);
+    }
+
+    function actualizarBotonesNavegacionModal() {
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+        
+        if (btnPrev) btnPrev.disabled = zoomIndex === 0;
+        if (btnNext) btnNext.disabled = zoomIndex === imagenesProducto.length - 1;
+    }
+
+    // ========== FUNCIONES PRINCIPALES ==========
+    function obtenerIdProducto() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id');
+    }
+
+    async function cargarProducto() {
+        const productoId = obtenerIdProducto();
+        
+        if (!productoId) {
+            mostrarError('No se especificó ningún producto');
+            return;
+        }
+
+        try {
+            const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
+            const respuesta = await fetch(url);
+            const productos = await respuesta.json();
+            
+            productoActual = productos.find(p => p.id === productoId);
+            
+            if (!productoActual) {
+                mostrarError('Producto no encontrado en el catálogo');
+                return;
+            }
+
+            // INICIALIZAR IMÁGENES
+            imagenesProducto = [];
+            
+            if (productoActual.imagenes && Array.isArray(productoActual.imagenes)) {
+                imagenesProducto = productoActual.imagenes;
+            } else if (productoActual.url && productoActual.url.includes("[]")) {
+                const urls = productoActual.url.split("[]").map(u => u.trim()).filter(Boolean);
+                imagenesProducto = urls.map((url, index) => ({
+                    url: url,
+                    tipo: "VARIANTE",
+                    variacion: `Variante ${index + 1}`,
+                    orden: index + 1
+                }));
+            } else if (productoActual.imagen) {
+                imagenesProducto = [{
+                    url: productoActual.imagen,
+                    tipo: "VARIANTE",
+                    variacion: "Principal",
+                    orden: 1
+                }];
+            }
+
+            // INICIALIZAR VARIABLES
+            cantidad = 1;
+            zoomIndex = 0;
+            const primeraVariante = obtenerImagenesPorTipo('VARIANTE')[0];
+            if (primeraVariante) {
+                varianteSeleccionada = primeraVariante.variacion || 'Variante 1';
+                imagenSeleccionada = primeraVariante.url;
+            } else if (imagenesProducto.length > 0) {
+                varianteSeleccionada = 'Principal';
+                imagenSeleccionada = imagenesProducto[0].url;
+            }
+
+            // RENDERIZAR PRODUCTO
+            renderizarProducto(productoActual);
+            cargarProductosRelacionados(productos, productoActual);
+
+        } catch (error) {
+            console.error('Error cargando producto:', error);
+            mostrarError('Error al cargar el producto');
+        }
+    }
+
+    function renderizarProducto(producto) {
+        // INFORMACIÓN BÁSICA
+        document.getElementById('nombre-producto-mobile').textContent = producto.producto;
+        document.getElementById('nombre-producto-desktop').textContent = producto.producto;
+        document.getElementById('descripcion-producto').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
+        
+        // PRECIOS CON DESCUENTO SI TIENE PROMO: TRUE
+        const precioBase = Number(producto.precio) || 0;
+        const precioActual = calcularPrecioConDescuento(producto);
+        const tienePromo = precioActual < precioBase;
+        
+        // PRECIO ACTUAL (con o sin descuento)
+        document.getElementById('precio-actual-mobile').textContent = `$${precioActual.toLocaleString('es-CO')}`;
+        document.getElementById('precio-actual-desktop').textContent = `$${precioActual.toLocaleString('es-CO')}`;
+        
+        // SI TIENE PROMO, MOSTRAR PRECIO ORIGINAL TACHADO Y % DESCUENTO
+        if (tienePromo && precioBase > 0) {
+            const descuentoPorcentaje = Math.round((1 - precioActual / precioBase) * 100);
+            
+            document.getElementById('precio-original-mobile').textContent = `$${precioBase.toLocaleString('es-CO')}`;
+            document.getElementById('descuento-mobile').textContent = `-${descuentoPorcentaje}%`;
+            document.getElementById('precio-original-mobile').style.display = 'inline';
+            document.getElementById('descuento-mobile').style.display = 'inline';
+            
+            document.getElementById('precio-original-desktop').textContent = `$${precioBase.toLocaleString('es-CO')}`;
+            document.getElementById('descuento-desktop').textContent = `-${descuentoPorcentaje}%`;
+            document.getElementById('precio-original-desktop').style.display = 'inline';
+            document.getElementById('descuento-desktop').style.display = 'inline';
+        } else {
+            document.getElementById('precio-original-mobile').style.display = 'none';
+            document.getElementById('descuento-mobile').style.display = 'none';
+            document.getElementById('precio-original-desktop').style.display = 'none';
+            document.getElementById('descuento-desktop').style.display = 'none';
+        }
+
+        // GALERÍA COMPLETA
+        renderizarGaleriaCompleta(producto);
+
+        // BREADCRUMB
+        renderizarBreadcrumb(producto);
+
+        // VARIABLES Y TALLAS
+        renderizarVariables(producto);
+        renderizarTallas(producto);
+
+        // BADGES
+        renderizarBadges(producto);
+
+        // VIDEO
+        renderizarVideo(producto);
+        
+        // VERIFICAR BOTÓN
+        verificarEstadoBotonAgregar();
+    }
+
+    function renderizarBreadcrumb(producto) {
+        const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
+        const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
+        
+        const html = `
+            <li class="breadcrumb-item">
+                <a href="#" onclick="volverAtras(); return false;" class="text-primary">
+                    <i class="bi bi-arrow-left me-1"></i> Volver
+                </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">${producto.producto}</li>
+        `;
+        
+        if (breadcrumbMobile) breadcrumbMobile.innerHTML = html;
+        if (breadcrumbDesktop) breadcrumbDesktop.innerHTML = html;
+    }
+    
+    function renderizarVariables(producto) {
+        const contenedor = document.getElementById('seccion-variables');
+        
+        const tieneVariables = producto.variables && 
+                              producto.variables.trim() !== "" && 
+                              producto.variables !== "N/A" &&
+                              !["única", "unica"].includes(producto.variables.toLowerCase());
+        
+        if (tieneVariables) {
+            const variables = producto.variables.split(",").map(v => v.trim()).filter(v => v);
+            
+            contenedor.innerHTML = `
+                <h5 class="fw-bold mb-3">🎨 Selecciona color/material</h5>
+                <select class="form-select selector-variable" onchange="seleccionarVariable(this.value)" style="max-width: 250px; font-size: 1rem; padding: 10px;">
+                    <option value="">-- Elige una opción --</option>
+                    ${variables.map(variable => `<option value="${variable}">${variable}</option>`).join('')}
+                </select>
+                <div class="form-text mt-2">💡 Selecciona tu color o material preferido</div>
+            `;
+        } else {
+            contenedor.innerHTML = '';
+            verificarEstadoBotonAgregar();
+        }
+    }
+
+    function renderizarTallas(producto) {
+        const contenedor = document.getElementById('seccion-tallas');
+        
+        const necesitaTallas = producto.tallas && 
+                             producto.tallas.trim() !== "" && 
+                             producto.tallas !== "N/A" && 
+                             !["única", "unica"].includes(producto.tallas.toLowerCase());
+
+        if (necesitaTallas) {
+            const tallas = producto.tallas.split(",").map(t => t.trim()).filter(t => t);
+            
+            contenedor.innerHTML = `
+                <h5 class="fw-bold mb-3">📏 Selecciona tu talla</h5>
+                <select class="form-select selector-talla" onchange="seleccionarTalla(this.value)" style="max-width: 250px; font-size: 1rem; padding: 10px;">
+                    <option value="">-- Elige una talla --</option>
+                    ${tallas.map(talla => `<option value="${talla}">${talla}</option>`).join('')}
+                </select>
+                <div class="form-text mt-2">💡 Asegúrate de seleccionar tu talla correcta</div>
+            `;
+        } else {
+            contenedor.innerHTML = '';
+            verificarEstadoBotonAgregar();
+        }
+    }
+
+    function seleccionarVariable(variable) {
+        variableSeleccionada = variable;
+        verificarEstadoBotonAgregar();
+    }
+
+    function seleccionarTalla(talla) {
+        tallaSeleccionada = talla;
+        verificarEstadoBotonAgregar();
+    }
+
+    function verificarEstadoBotonAgregar() {
+        const btnAgregar = document.getElementById('btn-agregar-carrito');
+        const btnComprar = document.querySelector('.btn-gradient');
+        
+        const necesitaVariables = productoActual?.variables && 
+                                productoActual.variables.trim() !== "" && 
+                                productoActual.variables !== "N/A" &&
+                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
+        
+        const necesitaTallas = productoActual?.tallas && 
+                             productoActual.tallas.trim() !== "" && 
+                             productoActual.tallas !== "N/A" && 
+                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
+        
+        let puedeAgregar = varianteSeleccionada;
+        
+        if (necesitaVariables) {
+            puedeAgregar = puedeAgregar && variableSeleccionada;
+        }
+        
+        if (necesitaTallas) {
+            puedeAgregar = puedeAgregar && tallaSeleccionada;
+        }
+        
+        if (btnAgregar) {
+            btnAgregar.disabled = !puedeAgregar;
+            if (!varianteSeleccionada) {
+                btnAgregar.innerHTML = '<i class="bi bi-image"></i> Selecciona un color';
+            } else if (necesitaVariables && !variableSeleccionada) {
+                btnAgregar.innerHTML = '<i class="bi bi-palette"></i> Selecciona color/material';
+            } else if (necesitaTallas && !tallaSeleccionada) {
+                btnAgregar.innerHTML = '<i class="bi bi-rulers"></i> Selecciona talla';
+            } else {
+                btnAgregar.innerHTML = '<i class="bi bi-cart-plus"></i> Agregar al carrito';
+            }
+        }
+        
+        if (btnComprar) btnComprar.disabled = !puedeAgregar;
+    }
+
+    function cambiarCantidad(delta) {
+        cantidad = parseInt(document.getElementById('input-cantidad').value) + delta;
+        cantidad = Math.max(1, Math.min(10, cantidad));
+        document.getElementById('input-cantidad').value = cantidad;
+    }
+
+    function agregarAlCarrito() {
+        if (!productoActual) {
+            mostrarAlertaTemporal('❌ Error: El producto no se cargó correctamente', 'danger');
+            return false;
+        }
+        
+        if (!varianteSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona un color', 'warning');
+            document.getElementById('galeria-miniaturas').scrollIntoView({ behavior: 'smooth' });
+            return false;
+        }
+
+        const necesitaVariables = productoActual?.variables && 
+                                productoActual.variables.trim() !== "" && 
+                                productoActual.variables !== "N/A" &&
+                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
+        
+        const necesitaTallas = productoActual?.tallas && 
+                             productoActual.tallas.trim() !== "" && 
+                             productoActual.tallas !== "N/A" && 
+                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
+        
+        if (necesitaVariables && !variableSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona un color/material', 'warning');
+            document.getElementById('seccion-variables').scrollIntoView({ behavior: 'smooth' });
+            return false;
+        }
+
+        if (necesitaTallas && !tallaSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona una talla', 'warning');
+            document.getElementById('seccion-tallas').scrollIntoView({ behavior: 'smooth' });
+            return false;
+        }
+
+        const precioBase = Number(productoActual.precio) || 0;
+        const precioFinal = calcularPrecioConDescuento(productoActual);
+        const tienePromo = precioFinal < precioBase;
+        
+        const productoCarrito = {
+            id: productoActual.id + 
+                '-' + varianteSeleccionada + 
+                (variableSeleccionada ? '-' + variableSeleccionada.replace(/\s+/g, '_') : '') +
+                (tallaSeleccionada ? '-' + tallaSeleccionada : ''),
+            nombre: `${productoActual.producto} - ${varianteSeleccionada}` +
+                    (variableSeleccionada ? ` - ${variableSeleccionada}` : '') +
+                    (tallaSeleccionada ? ` - Talla ${tallaSeleccionada}` : ''),
+            precio: precioFinal,
+            imagen: imagenSeleccionada,
+            variante: varianteSeleccionada,
+            variable: variableSeleccionada || 'Única',
+            talla: tallaSeleccionada || 'Única',
+            cantidad: cantidad,
+            enPromocion: tienePromo,
+            precioOriginal: precioBase,
+            tieneDescuento: tienePromo,
+            descuentoPorcentaje: tienePromo ? Math.round((1 - precioFinal / precioBase) * 100) : 0
+        };
+
+        try {
+            const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
+            const existeIndex = carrito.findIndex(item => item.id === productoCarrito.id);
+            
+            if (existeIndex > -1) {
+                carrito[existeIndex].cantidad += productoCarrito.cantidad;
+            } else {
+                carrito.push(productoCarrito);
+            }
+            
+            localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
+            
+            // Actualizar contadores usando el sistema del carrito si está disponible
+            if (typeof window.carritoManager !== 'undefined' && window.carritoManager.actualizarContadoresCarrito) {
+                window.carritoManager.actualizarContadoresCarrito();
+            } else if (typeof actualizarContadoresCarrito === 'function') {
+                actualizarContadoresCarrito();
+            }
+            
+            mostrarConfirmacionAgregado();
+            return true;
+            
+        } catch (error) {
+            mostrarAlertaTemporal('❌ Error al agregar al carrito', 'danger');
+            return false;
+        }
+    }
+
+    function comprarAhora() {
+        if (!varianteSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona un color', 'warning');
+            return;
+        }
+
+        const necesitaVariables = productoActual?.variables && 
+                                productoActual.variables.trim() !== "" && 
+                                productoActual.variables !== "N/A" &&
+                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
+        
+        const necesitaTallas = productoActual?.tallas && 
+                             productoActual.tallas.trim() !== "" && 
+                             productoActual.tallas !== "N/A" && 
+                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
+        
+        if (necesitaVariables && !variableSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona un color/material', 'warning');
+            return;
+        }
+
+        if (necesitaTallas && !tallaSeleccionada) {
+            mostrarAlertaTemporal('⚠️ Por favor selecciona una talla', 'warning');
+            return;
+        }
+
+        if (agregarAlCarrito()) {
+            setTimeout(() => {
+                abrirFormularioPedido();
+            }, 500);
+        }
+    }
+
+    function mostrarConfirmacionAgregado() {
+        const btn = document.getElementById('btn-agregar-carrito');
+        const originalText = btn.innerHTML;
+        
+        btn.innerHTML = '<i class="bi bi-check2"></i> ¡Agregado!';
+        btn.classList.remove('btn-agregar-carrito');
+        btn.classList.add('btn-success');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-agregar-carrito');
+        }, 2000);
+    }
+
+    function mostrarAlertaTemporal(mensaje, tipo = 'warning') {
+        const alertaExistente = document.querySelector('.alerta-temporal');
+        if (alertaExistente) alertaExistente.remove();
+        
+        const alerta = document.createElement('div');
+        alerta.className = `alert alert-${tipo} alert-dismissible fade show alerta-temporal position-fixed`;
+        alerta.style.cssText = `
+            top: 20px; 
+            right: 20px; 
+            z-index: 9999; 
+            min-width: 300px; 
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: slideIn 0.3s ease;
+        `;
+        
+        alerta.innerHTML = `
+            <div class="d-flex align-items-center">
+                <i class="bi ${tipo === 'success' ? 'bi-check-circle' : tipo === 'danger' ? 'bi-exclamation-triangle' : 'bi-info-circle'} me-2 fs-5"></i>
+                <div class="flex-grow-1">${mensaje}</div>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+            </div>
+        `;
+        
+        document.body.appendChild(alerta);
+        
+        setTimeout(() => {
+            if (alerta.parentNode) alerta.remove();
+        }, 4000);
+    }
+
+    function renderizarBadges(producto) {
+        const contenedor = document.getElementById('badges-producto');
+        const badges = [];
+
+        // VERIFICAR SI TIENE PROMO: TRUE
+        const tienePromo = producto.promo === true || 
+                          producto.promo === "true" || 
+                          producto.promo === "sí" || 
+                          producto.promo === "si" || 
+                          producto.promo === "activo";
+        
+        // VERIFICAR SI TIENE DESCUENTO REAL
+        const precioBase = Number(producto.precio) || 0;
+        const precioConDescuento = calcularPrecioConDescuento(producto);
+        const tieneDescuentoReal = precioConDescuento < precioBase;
+
+        if (tienePromo && tieneDescuentoReal) {
+            const descuentoPorcentaje = Math.round((1 - precioConDescuento / precioBase) * 100);
+            badges.push(`<span class="badge bg-danger me-2">🔥 OFERTA -${descuentoPorcentaje}%</span>`);
+        }
+        
+        if (producto.nuevo) {
+            badges.push('<span class="badge bg-success me-2">🆕 Nuevo</span>');
+        }
+        
+        if (producto.stock <= 5 && producto.stock > 0) {
+            badges.push('<span class="badge bg-warning me-2">⚠️ Últimas unidades</span>');
+        }
+
+        contenedor.innerHTML = badges.join('');
+    }
+
+    function renderizarVideo(producto) {
+        const contenedorDesktop = document.getElementById('video-producto-desktop');
+        const contenedorMobile = document.getElementById('video-producto-mobile');
+        
+        if (!producto.video_url) {
+            contenedorDesktop.style.display = 'none';
+            contenedorMobile.style.display = 'none';
+            return;
+        }
+
+        function convertirUrlYouTube(url) {
+            if (url.includes('youtube.com/embed')) return url;
+            
+            if (url.includes('youtube.com') || url.includes('youtu.be')) {
+                let videoId = '';
+                
+                if (url.includes('youtube.com/watch?v=')) {
+                    videoId = url.split('v=')[1]?.split('&')[0];
+                } else if (url.includes('youtu.be/')) {
+                    videoId = url.split('youtu.be/')[1]?.split('?')[0];
+                } else if (url.includes('youtube.com/shorts/')) {
+                    videoId = url.split('shorts/')[1]?.split('?')[0];
+                }
+                
+                if (videoId) return `https://www.youtube.com/embed/${videoId}`;
+            }
+            
+            return url;
+        }
+
+        const videoUrlEmbed = convertirUrlYouTube(producto.video_url);
+        const videoHTML = `
+            <div class="mb-4">
+                <h5 class="fw-bold mb-3">🎥 Video del producto</h5>
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                        src="${videoUrlEmbed}" 
+                        title="Video del producto: ${producto.producto}"
+                        class="rounded shadow"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="text-center mt-2">
+                    <small class="text-muted">
+                        <i class="bi bi-play-circle"></i> Haz clic para ver el video del producto
+                    </small>
+                </div>
+            </div>
+        `;
+
+        contenedorDesktop.innerHTML = videoHTML;
+        contenedorMobile.innerHTML = videoHTML;
+        contenedorDesktop.style.display = '';
+        contenedorMobile.style.display = '';
+    }
+
+    function cargarProductosRelacionados(productos, productoActual) {
+        const relacionados = productos
+            .filter(p => p.id !== productoActual.id && 
+                (p.tipo === productoActual.tipo || 
+                 p.categoria === productoActual.categoria))
+            .slice(0, 4);
+
+        const contenedor = document.getElementById('productos-relacionados');
+        
+        if (relacionados.length === 0) {
+            contenedor.innerHTML = '<p class="text-muted text-center py-4">No hay productos relacionados</p>';
+            return;
+        }
+
+        contenedor.innerHTML = relacionados.map(producto => {
+            const precioBase = producto.precio || 0;
+            const precioMostrar = calcularPrecioConDescuento(producto);
+            const estaEnPromo = precioMostrar < precioBase;
+            
+            return `
+            <div class="card-producto-ml">
+                <a href="PRODUCTO.HTML?id=${producto.id}">
+                    <img src="${producto.imagen}" alt="${producto.producto}" class="card-img-ml imagen-completa">
+                    <div class="card-body-ml">
+                        <h3 class="nombre-producto-ml small line-clamp-2">${producto.producto}</h3>
+                        <div class="d-flex align-items-center gap-2">
+                            <p class="precio-ml fw-bold text-primary mb-0">$${precioMostrar.toLocaleString('es-CO')}</p>
+                            ${estaEnPromo ? 
+                            `<span class="text-muted small text-decoration-line-through">$${precioBase.toLocaleString('es-CO')}</span>
+                            <span class="badge bg-danger small">-${Math.round((1 - precioMostrar/precioBase) * 100)}%</span>` 
+                            : ''}
+                        </div>
+                        <span class="btn btn-outline-primary btn-sm mt-2">Ver detalle</span>
+                    </div>
+                </a>
+            </div>
+            `;
+        }).join('');
+    }
+
+    function mostrarError(mensaje) {
+        const main = document.querySelector('main');
+        main.innerHTML = `
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <i class="bi bi-emoji-frown fs-1 text-muted mb-4"></i>
+                        <h3 class="h4 text-muted mb-3">${mensaje}</h3>
+                        <p class="text-muted mb-4">Estamos teniendo problemas técnicos. Por favor intenta:</p>
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-center">
+                            <button class="btn btn-primary" onclick="location.reload()">
+                                <i class="bi bi-arrow-clockwise"></i> Reintentar
+                            </button>
+                            <a href="index.html" class="btn btn-outline-primary">
+                                <i class="bi bi-house"></i> Volver al inicio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function actualizarContadoresCarrito() {
+        const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
+        const totalItems = carrito.reduce((total, item) => total + (item.cantidad || 1), 0);
+        
+        ['contador-carrito', 'contador-carrito-mobile'].forEach(id => {
+            const elemento = document.getElementById(id);
+            if (elemento) {
+                elemento.textContent = totalItems;
+                elemento.style.display = totalItems > 0 ? 'block' : 'none';
+            }
+        });
+    }
+
+    function abrirFormularioPedido() {
+        window.location.href = 'modalformulario.html';
+    }
+
+    // ========== FUNCIONES GLOBALES ==========
+    window.volverAtras = volverAtras;
+    window.seleccionarImagenPrincipal = seleccionarImagenPrincipal;
+    window.seleccionarVariable = seleccionarVariable;
+    window.seleccionarTalla = seleccionarTalla;
+    window.cambiarCantidad = cambiarCantidad;
+    window.agregarAlCarrito = agregarAlCarrito;
+    window.comprarAhora = comprarAhora;
+    window.seleccionarImagenModal = seleccionarImagenModal;
+    window.navegarImagenModal = navegarImagenModal;
+    window.seleccionarDesdeModal = seleccionarDesdeModal;
+    window.abrirFormularioPedido = abrirFormularioPedido;
+  </script>
+
+  <!-- SCRIPTS EXTERNOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="buscador.js?v=20251115"></script>
 </body>
 </html>
