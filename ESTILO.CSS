@@ -1642,7 +1642,7 @@ img[width][height] {
   </div>
 </div>
 */
-<style>
+
     /* ... (tus estilos actuales) ... */
 
     /* 3. RESERVAR ESPACIO PARA CONTENIDO DINÁMICO - EVITA CLS */
@@ -1682,11 +1682,183 @@ img[width][height] {
         background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
         background-size: 200% 100%;
         border-radius: 8px;
-        animation: loading 1.5s infinite;
+       animation: loading 1.5s infinite;
     }
     
     @keyframes loading {
         0% { background-position: 200% 0; }
         100% { background-position: -200% 0; }
     }
-</style>
+
+/* ============================================= */
+/* ESTILOS ESPECÍFICOS PARA PRODUCTO.HTML */
+/* ============================================= */
+
+/* Galería de miniaturas */
+.galeria-miniaturas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.miniatura {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.miniatura.active {
+    border-color: #007bff;
+    transform: scale(1.05);
+}
+
+.miniatura:hover {
+    border-color: #007bff;
+}
+
+/* Badges en detalle de producto */
+.badge-oferta {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Selectores de variante y talla */
+.selector-variable, .selector-talla {
+    max-width: 250px;
+    font-size: 1rem;
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.selector-variable:focus, .selector-talla:focus {
+    border-color: #1B4557;
+    box-shadow: 0 0 0 3px rgba(27, 69, 87, 0.1);
+}
+
+/* Botón agregar al carrito */
+.btn-agregar-carrito {
+    background: linear-gradient(135deg, #1B4557, #0A8D8C);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-agregar-carrito:hover:not(:disabled) {
+    background: linear-gradient(135deg, #0A8D8C, #1B4557);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(27, 69, 87, 0.3);
+}
+
+.btn-agregar-carrito:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Breadcrumb personalizado */
+.breadcrumb {
+    background: transparent;
+    padding: 0.5rem 0;
+}
+
+.breadcrumb-item a {
+    color: #1B4557;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+/* Input cantidad */
+#input-cantidad {
+    width: 80px;
+    text-align: center;
+    font-weight: 700;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+}
+
+#input-cantidad:focus {
+    border-color: #1B4557;
+    box-shadow: 0 0 0 3px rgba(27, 69, 87, 0.1);
+}
+
+/* Variante actual seleccionada */
+#variante-actual-container {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Productos relacionados */
+#productos-relacionados .card-producto-ml {
+    height: 280px;
+}
+
+/* Responsive para producto.html */
+@media (max-width: 768px) {
+    .galeria-miniaturas {
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .miniatura {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .btn-agregar-carrito, .btn-gradient {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+    
+    #productos-relacionados .card-producto-ml {
+        height: 250px;
+    }
+}
+
+/* Modal zoom mejorado */
+#modalZoom .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#modal-miniaturas .img-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#modal-miniaturas .img-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+#modal-miniaturas .img-thumbnail.border-primary {
+    border-width: 3px !important;
+}
+
+/* Alerta temporal */
+.alerta-temporal {
+    z-index: 9999;
+}
