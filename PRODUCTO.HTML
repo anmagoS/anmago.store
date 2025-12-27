@@ -1640,45 +1640,99 @@
     }
 
     function cargarProductosRelacionados(productos, productoActual) {
-        const relacionados = productos
-            .filter(p => p.id !== productoActual.id && 
-                (p.tipo === productoActual.tipo || 
-                 p.categoria === productoActual.categoria))
-            .slice(0, 4);
+    const relacionados = productos
+        .filter(p => p.id !== productoActual.id && 
+            (p.tipo === productoActual.tipo || 
+             p.categoria === productoActual.categoria))
+        .slice(0, 4);
 
-        const contenedor = document.getElementById('productos-relacionados');
-        
-        if (relacionados.length === 0) {
-            contenedor.innerHTML = '<p class="text-muted text-center py-4">No hay productos relacionados</p>';
-            return;
-        }
-
-        contenedor.innerHTML = relacionados.map(producto => {
-            const precioBase = producto.precio || 0;
-            const precioMostrar = calcularPrecioConDescuento(producto);
-            const estaEnPromo = precioMostrar < precioBase;
-            
-            return `
-            <div class="card-producto-ml">
-                <a href="PRODUCTO.HTML?id=${producto.id}">
-                    <img src="${producto.imagen}" alt="${producto.producto}" class="card-img-ml imagen-completa">
-                    <div class="card-body-ml">
-                        <h3 class="nombre-producto-ml small line-clamp-2">${producto.producto}</h3>
-                        <div class="d-flex align-items-center gap-2">
-                            <p class="precio-ml fw-bold text-primary mb-0">$${precioMostrar.toLocaleString('es-CO')}</p>
-                            ${estaEnPromo ? 
-                            `<span class="text-muted small text-decoration-line-through">$${precioBase.toLocaleString('es-CO')}</span>
-                            <span class="badge bg-danger small">-${Math.round((1 - precioMostrar/precioBase) * 100)}%</span>` 
-                            : ''}
-                        </div>
-                        <span class="btn btn-outline-primary btn-sm mt-2">Ver detalle</span>
-                    </div>
-                </a>
-            </div>
-            `;
-        }).join('');
+    const contenedor = document.getElementById('productos-relacionados');
+    
+    if (relacionados.length === 0) {
+        contenedor.innerHTML = '<p class="text-muted text-center py-4">No hay productos relacionados</p>';
+        return;
     }
 
+    contenedor.innerHTML = relacionados.map(producto => {
+        const precioOriginal = Number(producto.precio) || 0;
+        let precioFinal = precioOriginal;
+        let badgePromo = '';
+        let mostrarPrecioAnterior = false;
+        
+        // Verificar si el producto está en promoción
+        const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
+        
+        if (estaEnPromo) {
+            const descuentoPorcentaje = 10;
+            precioFinal = Math.round(precioOriginal * 0.9);
+            
+            badgePromo = `<div class="badge-promo">-${descuentoPorcentaje}%</div>`;
+            mostrarPrecioAnterior = true;
+        }
+        
+        // Verificar stock
+        const badgeStock = producto.stock <= 5 ? 
+            `<div class="badge-stock">Últimas ${producto.stock}</div>` : '';
+        
+        // Obtener imagen correcta
+        let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+        
+        if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
+            const imagenPrincipal = producto.imagenes.find(img => 
+                img.tipo && img.tipo.toUpperCase() === "PRINCIPAL"
+            );
+            
+            if (imagenPrincipal && imagenPrincipal.url) {
+                imagenMostrar = imagenPrincipal.url;
+            } else if (producto.imagenes[0] && producto.imagenes[0].url) {
+                imagenMostrar = producto.imagenes[0].url;
+            }
+        } else if (producto.imagen) {
+            imagenMostrar = producto.imagen;
+        }
+        
+        return `
+        <div class="card-producto-ml" data-id="${producto.id}">
+            <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
+                <div class="card-image-container">
+                    <img src="${imagenMostrar}" 
+                         alt="${producto.producto || 'Producto'}" 
+                         class="card-img-ml"
+                         width="300"
+                         height="200"
+                         loading="lazy"
+                         onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-200'">
+                    ${badgePromo}
+                    ${badgeStock}
+                </div>
+                
+                <div class="card-content">
+                    <div class="categorias">
+                        ${producto.tipo ? `<span class="categoria-tipo">${producto.tipo}</span>` : ''}
+                        ${producto.subtipo ? `<span class="categoria-subtipo">${producto.subtipo}</span>` : ''}
+                    </div>
+                    
+                    <h3 class="producto-nombre">${producto.producto || 'Producto sin nombre'}</h3>
+                    
+                    <div class="card-footer">
+                        <div class="precios">
+                            <div class="precio-actual">${precioFinal.toLocaleString('es-CO')}</div>
+                            ${mostrarPrecioAnterior ? `
+                                <div class="precio-anterior">${precioOriginal.toLocaleString('es-CO')}</div>
+                            ` : ''}
+                            <div class="envio-gratis">Envío gratis</div>
+                        </div>
+                        
+                        <button class="btn-ver-producto" 
+                                onclick="event.preventDefault(); event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                            <i class="bi bi-eye"></i>
+                        </button>
+                    </div>
+                </div>
+            </a>
+        </div>`;
+    }).join('');
+}
     function mostrarError(mensaje) {
         const main = document.querySelector('main');
         main.innerHTML = `
