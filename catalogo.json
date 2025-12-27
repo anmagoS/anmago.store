@@ -2039,16 +2039,19 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_18.191257.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "CAFE",
         "orden": 251
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "MOSTAZA",
         "orden": 252
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_1.191244.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "PALO DE ROSA",
         "orden": 253
       }
     ],
@@ -2072,6 +2075,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_1.155314.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "VERDE CLARO",
         "orden": 254
       },
       {
