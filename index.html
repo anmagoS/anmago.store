@@ -22,7 +22,17 @@
   <link rel="dns-prefetch" href="https://ik.imagekit.io">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Page view automático
+  gtag('config', 'G-XXXXXXXXXX', {
+    send_page_view: true
+  });
+</script>
   <!-- CSS CRÍTICO INLINE (SOLO LO NECESARIO) -->
   <style>
     /* SOLO ESTILOS PARA PRIMER RENDER - 2KB máximo */
