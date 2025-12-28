@@ -1,4 +1,37 @@
 // ==============================================
+// PROTECCIÓN CONTRA REBOTES - COLOCAR AL INICIO DEL ARCHIVO
+// ==============================================
+
+// Bloquear cualquier script que interfiera con la navegación
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🛡️ Activando protección contra rebotes...');
+    
+    // Interceptar clicks en enlaces de productos
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        const link = target.closest('a[href*="PRODUCTO.HTML"]');
+        
+        if (link) {
+            console.log('🔗 Click en producto detectado, permitiendo navegación...');
+            // Permitir navegación normal - NO hacer nada especial
+            return true;
+        }
+    }, true);
+    
+    // Prevenir que otros scripts modifiquen el comportamiento
+    const originalAddEventListener = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function(type, listener, options) {
+        // Bloquear eventos que puedan interferir con productos
+        if (type === 'click' && 
+            listener && 
+            listener.toString().includes('PRODUCTO.HTML') &&
+            listener.toString().includes('preventDefault')) {
+            console.warn('⚠️ Bloqueando listener conflictivo para PRODUCTO.HTML');
+            return; // No agregar este listener
+        }
+        return originalAddEventListener.call(this, type, listener, options);
+    };
+});// ==============================================
 // ANMAGO STORE - APP.JS COMPLETO CORREGIDO
 // VERSIÓN: OCULTAR PRESENTACIÓN AL FILTRAR
 // ==============================================
