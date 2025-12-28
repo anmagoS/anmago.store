@@ -1,11 +1,12 @@
 // ==============================================
-// ANMAGO STORE - APP.JS SIMPLIFICADO CON ENLACES COMPARTIBLES
+// ANMAGO STORE - APP.JS COMPLETO CORREGIDO
+// VERSIÓN: CATEGORÍAS COMO FILTROS - SIN SCROLL AUTOMÁTICO
 // ==============================================
 // Variables globales
 let productosGlobal = [];
 let vistaActual = 'inicio';
 let contextoNavegacion = {
-    nivel: 0, // 0: inicio, 1: tipo, 2: subtipo, 3: categoria
+    nivel: 0,
     tipo: null,
     subtipo: null,
     categoria: null
@@ -13,6 +14,7 @@ let contextoNavegacion = {
 let productosCargados = 0;
 let cargandoScroll = false;
 const LIMITE_PRODUCTOS = 12;
+
 // Iconos para categorías
 const ICONOS_CATEGORIAS = {
     'TODOS': '🛍️',
@@ -22,105 +24,71 @@ const ICONOS_CATEGORIAS = {
     'DAMA': '👩', 'CABALLERO': '👨',
     'UNISEX': '👥', 'NIÑOS': '👦', 'NIÑAS': '👧',
 };
+
 // ==============================================
 // FUNCIONES PARA ENLACES COMPARTIBLES
 // ==============================================
 
-// Función para crear enlace con parámetros
 function crearEnlaceFiltro(tipo = null, subtipo = null, categoria = null) {
     const url = new URL(window.location.origin + window.location.pathname);
     
-    if (tipo) {
-        url.searchParams.set('tipo', tipo);
-    }
-    
-    if (subtipo) {
-        url.searchParams.set('subtipo', subtipo);
-    }
-    
-    if (categoria) {
-        url.searchParams.set('categoria', categoria);
-    }
+    if (tipo) url.searchParams.set('tipo', tipo);
+    if (subtipo) url.searchParams.set('subtipo', subtipo);
+    if (categoria) url.searchParams.set('categoria', categoria);
     
     return url.toString();
 }
 
-// Función para actualizar URL del navegador
 function actualizarURLNavegacion(tipo = null, subtipo = null, categoria = null) {
     const nuevaURL = new URL(window.location);
     
-    // Limpiar parámetros anteriores
     nuevaURL.searchParams.delete('tipo');
     nuevaURL.searchParams.delete('subtipo');
     nuevaURL.searchParams.delete('categoria');
     nuevaURL.searchParams.delete('vista');
     
-    // Agregar nuevos parámetros
-    if (tipo) {
-        nuevaURL.searchParams.set('tipo', tipo);
-    }
+    if (tipo) nuevaURL.searchParams.set('tipo', tipo);
+    if (subtipo) nuevaURL.searchParams.set('subtipo', subtipo);
+    if (categoria) nuevaURL.searchParams.set('categoria', categoria);
     
-    if (subtipo) {
-        nuevaURL.searchParams.set('subtipo', subtipo);
-    }
-    
-    if (categoria) {
-        nuevaURL.searchParams.set('categoria', categoria);
-    }
-    
-    // Actualizar URL sin recargar la página
     window.history.pushState({}, '', nuevaURL);
-    
-    // Retornar también el enlace para compartir
     return nuevaURL.toString();
 }
 
-// Función universal para copiar enlaces (funciona en todos los dispositivos)
 function copiarEnlaceCompartir(tipo = null, subtipo = null, categoria = null) {
     const enlace = crearEnlaceFiltro(tipo, subtipo, categoria);
     
-    // Método moderno con Clipboard API (funciona en navegadores modernos)
     if (navigator.clipboard && window.isSecureContext) {
         navigator.clipboard.writeText(enlace).then(() => {
             mostrarNotificacion('✅ Enlace copiado al portapapeles');
             mostrarBotonCompartir(enlace);
         }).catch(err => {
-            // Si falla, usar método alternativo
             console.log('Clipboard API falló, usando método alternativo:', err);
             copiarConMetodoAlternativo(enlace);
         });
     } else {
-        // Método alternativo para navegadores antiguos y iOS
         copiarConMetodoAlternativo(enlace);
     }
 }
 
-// Método alternativo que funciona en iOS y Android antiguo
 function copiarConMetodoAlternativo(texto) {
-    // Método 1: Usar textarea temporal
     const textarea = document.createElement('textarea');
     textarea.value = texto;
-    
-    // Hacerlo invisible pero no display:none (iOS necesita ser visible)
     textarea.style.position = 'fixed';
     textarea.style.opacity = '0';
     textarea.style.left = '0';
     textarea.style.top = '0';
     
     document.body.appendChild(textarea);
-    
-    // Seleccionar el texto
     textarea.select();
-    textarea.setSelectionRange(0, 99999); // Para móviles
+    textarea.setSelectionRange(0, 99999);
     
     try {
-        // Intentar copiar
         const exitoso = document.execCommand('copy');
         if (exitoso) {
             mostrarNotificacion('✅ Enlace copiado al portapapeles');
             mostrarBotonCompartir(texto);
             
-            // También mostrar opción de compartir directamente en móviles
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 mostrarOpcionesCompartirMovil(texto);
             }
@@ -131,12 +99,10 @@ function copiarConMetodoAlternativo(texto) {
         console.error('Error copiando con execCommand:', err);
         mostrarInputParaCopiar(texto);
     } finally {
-        // Limpiar
         document.body.removeChild(textarea);
     }
 }
 
-// Mostrar input para que el usuario copie manualmente (último recurso)
 function mostrarInputParaCopiar(texto) {
     const modalHTML = `
     <div class="modal fade" id="modalCopiarEnlace" tabindex="-1">
@@ -172,22 +138,17 @@ function mostrarInputParaCopiar(texto) {
     </div>
     `;
     
-    // Agregar modal al DOM
-    const modalContainer = document.getElementById('modal-container') || 
-                          (() => {
-                              const div = document.createElement('div');
-                              div.id = 'modal-container';
-                              document.body.appendChild(div);
-                              return div;
-                          })();
+    const modalContainer = document.getElementById('modal-container') || (() => {
+        const div = document.createElement('div');
+        div.id = 'modal-container';
+        document.body.appendChild(div);
+        return div;
+    })();
     
     modalContainer.innerHTML = modalHTML;
-    
-    // Mostrar modal
     const modal = new bootstrap.Modal(document.getElementById('modalCopiarEnlace'));
     modal.show();
     
-    // Auto-seleccionar el texto
     setTimeout(() => {
         const input = document.getElementById('inputEnlaceCopiar');
         if (input) {
@@ -197,7 +158,6 @@ function mostrarInputParaCopiar(texto) {
     }, 300);
 }
 
-// Función para seleccionar y copiar desde el input
 function seleccionarYcopiarInput() {
     const input = document.getElementById('inputEnlaceCopiar');
     if (!input) return;
@@ -209,7 +169,6 @@ function seleccionarYcopiarInput() {
         document.execCommand('copy');
         mostrarNotificacion('✅ Enlace copiado manualmente');
         
-        // Cerrar modal después de copiar
         const modal = bootstrap.Modal.getInstance(document.getElementById('modalCopiarEnlace'));
         if (modal) modal.hide();
     } catch (err) {
@@ -217,9 +176,7 @@ function seleccionarYcopiarInput() {
     }
 }
 
-// Mostrar opciones de compartir específicas para móviles
 function mostrarOpcionesCompartirMovil(enlace) {
-    // Solo mostrar si es dispositivo móvil
     if (!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) return;
     
     const opcionesHTML = `
@@ -234,25 +191,21 @@ function mostrarOpcionesCompartirMovil(enlace) {
                     <p class="mb-3">¿Cómo quieres compartir este enlace?</p>
                     
                     <div class="d-flex flex-wrap justify-content-center gap-2">
-                        <!-- WhatsApp -->
                         <button class="btn btn-success" 
                                 onclick="compartirEnWhatsApp('${enlace}')">
                             <i class="bi bi-whatsapp"></i> WhatsApp
                         </button>
                         
-                        <!-- Correo -->
                         <button class="btn btn-primary" 
                                 onclick="compartirPorCorreo('${enlace}')">
                             <i class="bi bi-envelope"></i> Correo
                         </button>
                         
-                        <!-- SMS (solo móviles) -->
                         <button class="btn btn-info" 
                                 onclick="compartirPorSMS('${enlace}')">
                             <i class="bi bi-chat"></i> SMS
                         </button>
                         
-                        <!-- Otras apps -->
                         <button class="btn btn-secondary" 
                                 onclick="usarShareAPI('${enlace}')">
                             <i class="bi bi-share"></i> Otras apps
@@ -272,14 +225,12 @@ function mostrarOpcionesCompartirMovil(enlace) {
     
     document.getElementById('modal-container').innerHTML += opcionesHTML;
     
-    // Mostrar modal después de un breve delay
     setTimeout(() => {
         const modal = new bootstrap.Modal(document.getElementById('modalCompartirMovil'));
         modal.show();
     }, 500);
 }
 
-// Funciones específicas para compartir
 function compartirEnWhatsApp(enlace) {
     const texto = '¡Mira estos productos en Anmago Store! ' + enlace;
     window.open(`https://wa.me/?text=${encodeURIComponent(texto)}`, '_blank');
@@ -308,9 +259,7 @@ function usarShareAPI(enlace) {
     }
 }
 
-// Mostrar notificación temporal
 function mostrarNotificacion(mensaje, tipo = 'success') {
-    // Crear o reutilizar contenedor de notificaciones
     let notificacionContainer = document.getElementById('notificacion-container');
     if (!notificacionContainer) {
         notificacionContainer = document.createElement('div');
@@ -342,7 +291,6 @@ function mostrarNotificacion(mensaje, tipo = 'success') {
     
     notificacionContainer.appendChild(notificacion);
     
-    // Auto-eliminar después de 3 segundos
     setTimeout(() => {
         if (notificacion.parentElement) {
             notificacion.remove();
@@ -350,13 +298,10 @@ function mostrarNotificacion(mensaje, tipo = 'success') {
     }, 3000);
 }
 
-// Mostrar botón flotante para compartir
 function mostrarBotonCompartir(enlace) {
-    // Eliminar botón anterior si existe
     const botonAnterior = document.getElementById('boton-compartir-flotante');
     if (botonAnterior) botonAnterior.remove();
     
-    // Crear botón flotante
     const botonCompartir = document.createElement('div');
     botonCompartir.id = 'boton-compartir-flotante';
     botonCompartir.style.cssText = `
@@ -382,7 +327,6 @@ function mostrarBotonCompartir(enlace) {
     `;
     
     botonCompartir.onclick = () => {
-        // Opciones de compartir
         if (navigator.share) {
             navigator.share({
                 title: 'Anmago Store',
@@ -390,7 +334,6 @@ function mostrarBotonCompartir(enlace) {
                 url: enlace
             });
         } else {
-            // Si no soporta Web Share API, copiar al portapapeles
             navigator.clipboard.writeText(enlace);
             mostrarNotificacion('✅ Enlace listo para pegar');
         }
@@ -399,7 +342,6 @@ function mostrarBotonCompartir(enlace) {
     
     document.body.appendChild(botonCompartir);
     
-    // Auto-eliminar después de 10 segundos
     setTimeout(() => {
         if (botonCompartir.parentElement) {
             botonCompartir.remove();
@@ -408,7 +350,7 @@ function mostrarBotonCompartir(enlace) {
 }
 
 // ==============================================
-// FUNCIONES BÁSICAS
+// FUNCIONES BÁSICAS CORREGIDAS
 // ==============================================
 
 function getParametrosDesdeURL() {
@@ -422,12 +364,16 @@ function getParametrosDesdeURL() {
 }
 
 function obtenerIcono(categoria, nivel = 0) {
-    if (nivel === 2) return ''; // Sin icono para categorías
+    if (nivel === 2) return '';
     return ICONOS_CATEGORIAS[categoria] || '📦';
 }
 
-function cambiarAVista(vistaNombre) {
-    console.log('📱 Cambiando a vista:', vistaNombre);
+// 🔥 FUNCIÓN CRÍTICA CORREGIDA - SIN SCROLL AUTOMÁTICO
+function cambiarAVista(vistaNombre, hacerScroll = false) {
+    console.log('📱 Cambiando a vista:', vistaNombre, 'hacerScroll:', hacerScroll);
+    
+    // Obtener posición actual del scroll ANTES de cambiar
+    const scrollPosicion = window.scrollY;
     
     document.querySelectorAll('.vista').forEach(vista => {
         vista.classList.remove('vista-activa');
@@ -439,7 +385,14 @@ function cambiarAVista(vistaNombre) {
     }
     
     vistaActual = vistaNombre;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // 🔥 SOLO HACER SCROLL si se especifica explícitamente
+    if (hacerScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        // Mantener la posición actual del scroll
+        window.scrollTo(0, scrollPosicion);
+    }
 }
 
 async function cargarCatalogoGlobal() {
@@ -449,9 +402,7 @@ async function cargarCatalogoGlobal() {
         const res = await fetch(url);
         let productos = await res.json();
         
-        // 🔄 INVERTIR EL ORDEN: los últimos productos primero
         productos = productos.reverse();
-        
         productosGlobal = productos;
         console.log(`✅ ${productos.length} productos cargados (orden invertido)`);
         return productos;
@@ -471,11 +422,9 @@ function crearCardProductoHTML(producto) {
     let badgePromo = '';
     let mostrarPrecioAnterior = false;
     
-    // Verificar si el producto está en promoción
     const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
     
     if (estaEnPromo) {
-        // Calcular descuento del 10%
         const descuentoPorcentaje = 10;
         precioFinal = Math.round(precioOriginal * 0.9);
         
@@ -483,11 +432,9 @@ function crearCardProductoHTML(producto) {
         mostrarPrecioAnterior = true;
     }
     
-    // Verificar stock
     const badgeStock = producto.stock <= 5 ? 
         `<div class="badge-stock">Últimas ${producto.stock}</div>` : '';
     
-    // Obtener imagen correcta
     let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
     
     if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
@@ -547,7 +494,7 @@ function crearCardProductoHTML(producto) {
 }
 
 // ==============================================
-// CATEGORÍAS RÁPIDAS CON ENLACES COMPARTIBLES
+// CATEGORÍAS RÁPIDAS CORREGIDAS - SOLO FILTROS
 // ==============================================
 
 function inicializarCategoriasRapidas() {
@@ -558,7 +505,6 @@ function inicializarCategoriasRapidas() {
     mostrarCategoriasNivel0();
 }
 
-// Mostrar nivel 0: Tipos principales
 function mostrarCategoriasNivel0() {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
@@ -572,7 +518,7 @@ function mostrarCategoriasNivel0() {
         if (tipo !== 'TODOS') {
             const count = productosGlobal.filter(p => p.tipo === tipo).length;
             if (count > 0) {
-                contador = `<span class="badge-categoria-count"></span>`;
+                contador = `<span class="badge-categoria-count">${count}</span>`;
             }
             icono = obtenerIcono(tipo, 0);
         }
@@ -580,7 +526,7 @@ function mostrarCategoriasNivel0() {
         return `
             <div class="categoria-rapida-contenedor">
                 <a href="#" class="categoria-rapida" data-tipo="${tipo}" 
-                   onclick="cargarPorTipo('${tipo}'); return false;">
+                   onclick="filtrarPorTipoDesdeCategoria('${tipo}'); return false;">
                     <div>${icono}</div>
                     <div>${tipo}</div>
                     ${contador}
@@ -600,7 +546,27 @@ function mostrarCategoriasNivel0() {
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
 }
 
-// Mostrar nivel 1: Subtipos (con el nombre del tipo como primer elemento)
+// 🔥 NUEVA FUNCIÓN: Filtrar desde categorías sin cambiar vista
+function filtrarPorTipoDesdeCategoria(tipo) {
+    console.log('🎯 Filtrando por tipo desde categorías:', tipo);
+    
+    // Si ya estamos en vista "todos" o "productos", solo aplicar filtro
+    if (vistaActual === 'todos' || vistaActual === 'productos') {
+        if (tipo === 'TODOS') {
+            cargarPorTipo('TODOS');
+        } else {
+            cargarPorTipo(tipo);
+        }
+    } else {
+        cambiarAVista('productos');
+        setTimeout(() => {
+            cargarPorTipo(tipo);
+        }, 100);
+    }
+    
+    return false;
+}
+
 function mostrarCategoriasNivel1(tipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
@@ -615,18 +581,17 @@ function mostrarCategoriasNivel1(tipo) {
     if (subtiposUnicos.length === 0) {
         contenedor.innerHTML = `
             <div class="text-center text-muted py-2">
-                No hay subtipos disponibles
+                No hay subtipos disponibles para ${tipo}
             </div>
         `;
         contextoNavegacion = { nivel: 1, tipo: tipo, subtipo: null, categoria: null };
         return;
     }
 
-    // Primero el botón que muestra el tipo actual (en lugar de "TODOS")
     const htmlPrincipal = `
         <div class="categoria-rapida-contenedor">
             <a href="#" class="categoria-rapida" data-tipo="${tipo}" 
-               onclick="cargarPorTipo('${tipo}'); return false;">
+               onclick="filtrarPorTipoDesdeCategoria('${tipo}'); return false;">
                 <div>${obtenerIcono(tipo, 0)}</div>
                 <div>${tipo}</div>
             </a>
@@ -638,12 +603,11 @@ function mostrarCategoriasNivel1(tipo) {
         </div>
     `;
     
-    // Luego los subtipos
     const htmlSubtipos = subtiposUnicos.map(subtipo => {
         return `
             <div class="categoria-rapida-contenedor">
                 <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
-                   onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
+                   onclick="filtrarPorSubtipoDesdeCategoria('${tipo}', '${subtipo}'); return false;">
                     <div>${obtenerIcono(subtipo, 1)}</div>
                     <div>${subtipo}</div>
                 </a>
@@ -660,7 +624,21 @@ function mostrarCategoriasNivel1(tipo) {
     contextoNavegacion = { nivel: 1, tipo: tipo, subtipo: null, categoria: null };
 }
 
-// Mostrar nivel 2: Categorías (con el nombre del subtipo como primer elemento)
+function filtrarPorSubtipoDesdeCategoria(tipo, subtipo) {
+    console.log('🎯 Filtrando por subtipo desde categorías:', subtipo);
+    
+    if (vistaActual === 'todos' || vistaActual === 'productos') {
+        cargarPorSubtipo(tipo, subtipo);
+    } else {
+        cambiarAVista('productos');
+        setTimeout(() => {
+            cargarPorSubtipo(tipo, subtipo);
+        }, 100);
+    }
+    
+    return false;
+}
+
 function mostrarCategoriasNivel2(tipo, subtipo) {
     const contenedor = document.getElementById('categorias-rapidas');
     if (!contenedor) return;
@@ -675,18 +653,17 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
     if (categoriasUnicas.length === 0) {
         contenedor.innerHTML = `
             <div class="text-center text-muted py-2">
-                No hay categorías disponibles
+                No hay categorías disponibles para ${subtipo}
             </div>
         `;
         contextoNavegacion = { nivel: 2, tipo: tipo, subtipo: subtipo, categoria: null };
         return;
     }
 
-    // Primero el botón que muestra el subtipo actual (en lugar de "TODAS")
     const htmlPrincipal = `
         <div class="categoria-rapida-contenedor">
             <a href="#" class="categoria-rapida" data-subtipo="${subtipo}" 
-               onclick="cargarPorSubtipo('${tipo}', '${subtipo}'); return false;">
+               onclick="filtrarPorSubtipoDesdeCategoria('${tipo}', '${subtipo}'); return false;">
                 <div>${obtenerIcono(subtipo, 1)}</div>
                 <div>${subtipo}</div>
             </a>
@@ -698,18 +675,17 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
         </div>
     `;
     
-    // Luego las categorías
     const htmlCategorias = categoriasUnicas.map(categoria => {
         const count = productosGlobal.filter(p => 
             p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
         ).length;
         
-        const contador = count > 0 ? `<span class="badge-categoria-count"></span>` : '';
+        const contador = count > 0 ? `<span class="badge-categoria-count">${count}</span>` : '';
 
         return `
             <div class="categoria-rapida-contenedor">
                 <a href="#" class="categoria-rapida sin-icono" data-categoria="${categoria}" 
-                   onclick="cargarPorCategoria('${tipo}', '${subtipo}', '${categoria}'); return false;">
+                   onclick="filtrarPorCategoriaDesdeCategoria('${tipo}', '${subtipo}', '${categoria}'); return false;">
                     <div>${categoria}</div>
                     ${contador}
                 </a>
@@ -726,25 +702,38 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
     contextoNavegacion = { nivel: 2, tipo: tipo, subtipo: subtipo, categoria: null };
 }
 
+function filtrarPorCategoriaDesdeCategoria(tipo, subtipo, categoria) {
+    console.log('🎯 Filtrando por categoría desde categorías:', categoria);
+    
+    if (vistaActual === 'todos' || vistaActual === 'productos') {
+        cargarPorCategoria(tipo, subtipo, categoria);
+    } else {
+        cambiarAVista('productos');
+        setTimeout(() => {
+            cargarPorCategoria(tipo, subtipo, categoria);
+        }, 100);
+    }
+    
+    return false;
+}
+
 // ==============================================
-// FUNCIONES DE NAVEGACIÓN (ACTUALIZADAS)
+// FUNCIONES DE NAVEGACIÓN (SIN SCROLL AUTOMÁTICO)
 // ==============================================
 
 async function cargarPorTipo(tipo) {
     console.log('📁 Cargando tipo:', tipo);
     
     if (tipo === 'TODOS') {
-        cambiarAVista('todos');
+        cambiarAVista('todos', false);
         await cargarVistaTodos();
         mostrarCategoriasNivel0();
-        // Actualizar URL para "todos"
         actualizarURLNavegacion();
         return;
     }
 
-    cambiarAVista('productos');
+    cambiarAVista('productos', false);
     
-    // Actualizar breadcrumbs y título
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
     document.getElementById('breadcrumb-subtipo-link').textContent = 'Todos';
@@ -752,10 +741,8 @@ async function cargarPorTipo(tipo) {
     document.getElementById('breadcrumb-categoria').textContent = '';
     document.getElementById('titulo-productos').textContent = `Productos de ${tipo}`;
     
-    // Actualizar URL
     actualizarURLNavegacion(tipo, null, null);
     
-    // Cargar productos
     await cargarProductosPorTipo(tipo);
     mostrarCategoriasNivel1(tipo);
 }
@@ -763,7 +750,7 @@ async function cargarPorTipo(tipo) {
 async function cargarPorSubtipo(tipo, subtipo) {
     console.log('📁 Cargando subtipo:', subtipo);
     
-    cambiarAVista('productos');
+    cambiarAVista('productos', false);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
@@ -772,7 +759,6 @@ async function cargarPorSubtipo(tipo, subtipo) {
     document.getElementById('breadcrumb-categoria').textContent = '';
     document.getElementById('titulo-productos').textContent = `Productos de ${subtipo}`;
     
-    // Actualizar URL
     actualizarURLNavegacion(tipo, subtipo, null);
     
     await cargarProductosPorSubtipo(tipo, subtipo);
@@ -782,7 +768,7 @@ async function cargarPorSubtipo(tipo, subtipo) {
 async function cargarPorCategoria(tipo, subtipo, categoria) {
     console.log('📁 Cargando categoría:', categoria);
     
-    cambiarAVista('productos');
+    cambiarAVista('productos', false);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
@@ -791,7 +777,6 @@ async function cargarPorCategoria(tipo, subtipo, categoria) {
     document.getElementById('breadcrumb-categoria').textContent = categoria;
     document.getElementById('titulo-productos').textContent = categoria;
     
-    // Actualizar URL
     actualizarURLNavegacion(tipo, subtipo, categoria);
     
     await cargarProductosPorCategoria(tipo, subtipo, categoria);
@@ -805,8 +790,6 @@ async function cargarPorCategoria(tipo, subtipo, categoria) {
 async function cargarProductosPorTipo(tipo) {
     try {
         let productosFiltrados = productosGlobal.filter(p => p.tipo === tipo);
-        
-        // 🔄 Invertir orden en categorías también
         productosFiltrados = productosFiltrados.reverse();
         
         const contador = document.getElementById('contador-productos');
@@ -839,7 +822,6 @@ async function cargarProductosPorSubtipo(tipo, subtipo) {
             p.tipo === tipo && p.subtipo === subtipo
         );
         
-        // 🔄 Invertir orden en subtipos también
         productosFiltrados = productosFiltrados.reverse();
         
         const contador = document.getElementById('contador-productos');
@@ -872,7 +854,6 @@ async function cargarProductosPorCategoria(tipo, subtipo, categoria) {
             p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
         );
         
-        // 🔄 Invertir orden en categorías específicas también
         productosFiltrados = productosFiltrados.reverse();
         
         const contador = document.getElementById('contador-productos');
@@ -898,6 +879,7 @@ async function cargarProductosPorCategoria(tipo, subtipo, categoria) {
         console.error('Error cargando productos:', error);
     }
 }
+
 // ==============================================
 // VISTA "TODOS LOS PRODUCTOS" CON SCROLL INFINITO
 // ==============================================
@@ -962,8 +944,6 @@ async function cargarMasProductosScroll() {
     
     await new Promise(resolve => setTimeout(resolve, 300));
     
-    // 🔄 CARGAR DESDE EL PRINCIPIO (ya que el array está invertido)
-    // Los primeros elementos del array invertido son los últimos productos
     const inicio = productosCargados;
     const fin = Math.min(inicio + LIMITE_PRODUCTOS, productosGlobal.length);
     const productosParaMostrar = productosGlobal.slice(inicio, fin);
@@ -1025,13 +1005,11 @@ function configurarScrollInfinito() {
 
 function volverAInicio() {
     console.log('🏠 Volviendo al inicio...');
-    cambiarAVista('inicio');
+    cambiarAVista('inicio', true);
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
     mostrarCategoriasNivel0();
     
-    // Limpiar URL
     actualizarURLNavegacion();
-    
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1039,7 +1017,6 @@ function configurarInstalacionPWA() {
     const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches ||
                            window.navigator.standalone === true;
 
-    // 🔎 Detectar navegadores embebidos (Facebook, Messenger, Instagram)
     function esNavegadorEmbebido() {
         const ua = navigator.userAgent || navigator.vendor || window.opera;
         return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Instagram");
@@ -1048,28 +1025,23 @@ function configurarInstalacionPWA() {
     const contenedor = document.getElementById("instalar-container");
     const boton = document.getElementById("boton-instalar");
 
-    // 1️⃣ Si ya está instalada, ocultamos el botón
     if (esPWAInstalado) {
         contenedor?.classList.add("d-none");
         return;
     }
 
-    // 2️⃣ Si es navegador embebido, mostramos enlace "Abrir en navegador externo"
     if (esNavegadorEmbebido()) {
         contenedor?.classList.remove("d-none");
-
-        // Reemplazamos el botón por un enlace <a>
         contenedor.innerHTML = `
           <a href="${window.location.href}" 
              target="_blank" 
              rel="noopener noreferrer" 
              class="btn-instalar-app">
-             <i class="bi bi-box-arrow-up-right"></i> Para instalar la app, toca los tres puntos arriba y selecciona ‘Abrir en navegador externo’
+             <i class="bi bi-box-arrow-up-right"></i> Para instalar la app, toca los tres puntos arriba y selecciona ‘Abrir en navegador externo'
           </a>`;
-        return; // 👈 no seguimos con la lógica de instalación
+        return;
     }
 
-    // 3️⃣ Lógica normal de instalación en navegadores completos
     let deferredPrompt;
     window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
@@ -1086,18 +1058,14 @@ function configurarInstalacionPWA() {
         });
     });
 }
+
 // ==============================================
-// SISTEMA DE CARRITO COMPLETO CON CAMBIO DE CANTIDADES
+// INICIALIZACIÓN COMPATIBLE CON TU CARRITO.JS
 // ==============================================
 
-// Variable global para el intervalo del carrito
-let intervaloCarrito = null;
-
-// Función para inicializar el sistema de carrito de forma ULTRA RÁPIDA
 function inicializarCarritoUltraRapido() {
     console.log('🚀 Inicializando carrito ULTRA RÁPIDO...');
     
-    // 1. Inicializar carritoManager si está disponible (de carrito.js)
     if (typeof inicializarCarrito === 'function') {
         try {
             inicializarCarrito();
@@ -1107,69 +1075,18 @@ function inicializarCarritoUltraRapido() {
         }
     }
     
-    // 2. Configurar inmediatamente los eventos del offcanvas
-    configurarEventosOffcanvasInmediato();
-    
-    // 3. Actualizar contadores cada segundo
-    setInterval(actualizarContadoresCarrito, 1000);
-    
-    // 4. Configurar listener para cambios en localStorage
-    window.addEventListener('storage', manejarCambioStorage);
-    
-    // 5. Configurar evento para cuando se agregan productos
-    if (typeof window.agregarAlCarrito === 'function') {
-        const originalAgregarAlCarrito = window.agregarAlCarrito;
-        window.agregarAlCarrito = function(producto) {
-            const resultado = originalAgregarAlCarrito.call(this, producto);
-            // Forzar actualización inmediata después de agregar
-            setTimeout(actualizarCarritoVisible, 100);
-            return resultado;
-        };
-    }
+    setInterval(actualizarContadoresCarritoCompatible, 1000);
     
     console.log('✅ Carrito configurado para actualización ultra rápida');
 }
 
-// Configurar eventos del offcanvas INMEDIATAMENTE
-function configurarEventosOffcanvasInmediato() {
-    // Buscar el offcanvas cada 100ms hasta encontrarlo
-    const buscarOffcanvas = setInterval(() => {
-        const offcanvasElement = document.getElementById('offcanvasCarrito');
-        if (offcanvasElement) {
-            clearInterval(buscarOffcanvas);
-            
-            // Configurar evento cuando se abre el offcanvas
-            offcanvasElement.addEventListener('show.bs.offcanvas', function() {
-                console.log('🎯 Offcanvas abierto, actualizando INMEDIATAMENTE...');
-                // Actualizar 3 veces con delays pequeños para asegurar
-                setTimeout(actualizarCarritoVisible, 10);
-                setTimeout(actualizarCarritoVisible, 100);
-                setTimeout(actualizarCarritoVisible, 500);
-                
-                // Configurar actualización cada 500ms mientras esté abierto
-                if (intervaloCarrito) {
-                    clearInterval(intervaloCarrito);
-                }
-                intervaloCarrito = setInterval(actualizarCarritoVisible, 500);
-            });
-            
-            // Limpiar intervalo cuando se cierra
-            offcanvasElement.addEventListener('hidden.bs.offcanvas', function() {
-                console.log('📦 Offcanvas cerrado');
-                if (intervaloCarrito) {
-                    clearInterval(intervaloCarrito);
-                    intervaloCarrito = null;
-                }
-            });
-            
-            console.log('✅ Offcanvas configurado para actualización instantánea');
-        }
-    }, 100);
-}
-
-// Actualizar contadores del carrito
-function actualizarContadoresCarrito() {
+function actualizarContadoresCarritoCompatible() {
     try {
+        if (window.carritoManager) {
+            window.carritoManager.actualizarContadoresCarrito();
+            return;
+        }
+        
         const carritoGuardado = localStorage.getItem('carritoAnmago');
         let totalItems = 0;
         
@@ -1182,7 +1099,6 @@ function actualizarContadoresCarrito() {
             }
         }
         
-        // Actualizar TODOS los contadores encontrados
         const contadores = document.querySelectorAll('[id*="contador-carrito"]');
         contadores.forEach(elemento => {
             elemento.textContent = totalItems;
@@ -1191,225 +1107,6 @@ function actualizarContadoresCarrito() {
         
     } catch (error) {
         console.error('Error actualizando contadores:', error);
-    }
-}
-
-// Actualizar el carrito visible (contenido del offcanvas) CON CAMBIO DE CANTIDADES
-function actualizarCarritoVisible() {
-    const contenedor = document.getElementById('carrito-contenido');
-    const subtotalElement = document.getElementById('subtotal');
-    
-    if (!contenedor) {
-        console.log('⚠️ Contenedor del carrito no encontrado');
-        return;
-    }
-    
-    try {
-        const carritoGuardado = localStorage.getItem('carritoAnmago');
-        
-        if (!carritoGuardado || carritoGuardado === '[]') {
-            contenedor.innerHTML = `
-                <div class="text-center text-muted py-4">
-                    <i class="bi bi-bag-x fs-1"></i>
-                    <p class="mt-2">Tu carrito está vacío</p>
-                </div>
-            `;
-            if (subtotalElement) {
-                subtotalElement.textContent = '0';
-            }
-            return;
-        }
-        
-        const carrito = JSON.parse(carritoGuardado);
-        
-        if (!carrito || carrito.length === 0) {
-            contenedor.innerHTML = `
-                <div class="text-center text-muted py-4">
-                    <i class="bi bi-bag-x fs-1"></i>
-                    <p class="mt-2">Tu carrito está vacío</p>
-                </div>
-            `;
-            if (subtotalElement) {
-                subtotalElement.textContent = '0';
-            }
-            return;
-        }
-        
-        // Generar HTML de los productos CON CONTROLES DE CANTIDAD
-        const htmlCarrito = carrito.map(item => {
-            const precio = item.precio || 0;
-            const cantidad = item.cantidad || 1;
-            const nombre = item.nombre || 'Producto sin nombre';
-            const imagen = item.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
-            const talla = item.talla || 'Única';
-            const variante = item.variante || '';
-            const id = item.id || '';
-            
-            return `
-            <div class="card mb-2 border-0 shadow-sm carrito-item" data-id="${id}" data-talla="${talla}">
-                <div class="card-body py-2">
-                    <div class="row align-items-center">
-                        <div class="col-3">
-                            <img src="${imagen}" 
-                                 alt="${nombre}" 
-                                 class="img-fluid rounded" 
-                                 style="height: 60px; object-fit: cover; width: 100%;"
-                                 onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
-                        </div>
-                        <div class="col-6">
-                            <h6 class="card-title mb-1 small fw-bold">${nombre}</h6>
-                            <p class="card-text mb-1 small text-muted">
-                                ${variante ? variante + ' • ' : ''}Talla: ${talla}
-                            </p>
-                            <p class="card-text mb-0 fw-bold text-primary">${precio.toLocaleString('es-CO')}</p>
-                        </div>
-                        <div class="col-3">
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <!-- Botón para disminuir cantidad -->
-                                <button class="btn btn-sm btn-outline-secondary px-2" 
-                                        onclick="cambiarCantidadCarrito('${id}', '${talla}', ${cantidad - 1})"
-                                        ${cantidad <= 1 ? 'disabled' : ''}>
-                                    <i class="bi bi-dash"></i>
-                                </button>
-                                
-                                <!-- Cantidad actual -->
-                                <span class="mx-2 fw-bold">${cantidad}</span>
-                                
-                                <!-- Botón para aumentar cantidad -->
-                                <button class="btn btn-sm btn-outline-secondary px-2"
-                                        onclick="cambiarCantidadCarrito('${id}', '${talla}', ${cantidad + 1})">
-                                    <i class="bi bi-plus"></i>
-                                </button>
-                            </div>
-                            <button class="btn btn-sm btn-danger mt-1 w-100" 
-                                    onclick="eliminarDelCarritoLocal('${id}', '${talla}')">
-                                <i class="bi bi-trash"></i> 
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            `;
-        }).join('');
-        
-        contenedor.innerHTML = htmlCarrito;
-        
-        // Actualizar subtotal
-        if (subtotalElement) {
-            const subtotal = carrito.reduce((total, item) => {
-                return total + ((item.precio || 0) * (item.cantidad || 1));
-            }, 0);
-            subtotalElement.textContent = `${subtotal.toLocaleString('es-CO')}`;
-            subtotalElement.classList.add('text-success');
-        }
-        
-        console.log(`✅ Carrito actualizado: ${carrito.length} productos`);
-        
-    } catch (error) {
-        console.error('❌ Error actualizando carrito visible:', error);
-        contenedor.innerHTML = `
-            <div class="alert alert-danger">
-                <i class="bi bi-exclamation-triangle"></i>
-                <p>Error al cargar el carrito</p>
-            </div>
-        `;
-    }
-}
-
-// Función para cambiar la cantidad de un producto en el carrito
-function cambiarCantidadCarrito(id, talla, nuevaCantidad) {
-    try {
-        const carritoGuardado = localStorage.getItem('carritoAnmago');
-        if (!carritoGuardado) return;
-        
-        const carrito = JSON.parse(carritoGuardado);
-        
-        // Buscar el producto
-        const productoIndex = carrito.findIndex(item => 
-            item.id === id && item.talla === talla
-        );
-        
-        if (productoIndex === -1) {
-            console.log('⚠️ Producto no encontrado en el carrito');
-            return;
-        }
-        
-        if (nuevaCantidad <= 0) {
-            // Si la cantidad es 0 o negativa, eliminar el producto
-            carrito.splice(productoIndex, 1);
-        } else {
-            // Actualizar la cantidad
-            carrito[productoIndex].cantidad = nuevaCantidad;
-        }
-        
-        // Guardar en localStorage
-        localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
-        
-        // Disparar evento storage manualmente para sincronizar otras pestañas
-        window.dispatchEvent(new StorageEvent('storage', {
-            key: 'carritoAnmago',
-            newValue: JSON.stringify(carrito)
-        }));
-        
-        // Actualizar inmediatamente
-        actualizarCarritoVisible();
-        actualizarContadoresCarrito();
-        
-        // Notificación si se elimina
-        if (nuevaCantidad <= 0) {
-            mostrarNotificacion('🗑️ Producto eliminado del carrito');
-        } else {
-            console.log(`✅ Cantidad actualizada a: ${nuevaCantidad}`);
-        }
-        
-    } catch (error) {
-        console.error('Error cambiando cantidad del carrito:', error);
-        mostrarNotificacion('❌ Error al cambiar cantidad', 'error');
-    }
-}
-
-// Función para eliminar producto del carrito (local)
-function eliminarDelCarritoLocal(id, talla) {
-    try {
-        const carritoGuardado = localStorage.getItem('carritoAnmago');
-        if (!carritoGuardado) return;
-        
-        const carrito = JSON.parse(carritoGuardado);
-        const nuevoCarrito = carrito.filter(item => !(item.id === id && item.talla === talla));
-        
-        localStorage.setItem('carritoAnmago', JSON.stringify(nuevoCarrito));
-        
-        // Disparar evento storage manualmente para sincronizar otras pestañas
-        window.dispatchEvent(new StorageEvent('storage', {
-            key: 'carritoAnmago',
-            newValue: JSON.stringify(nuevoCarrito)
-        }));
-        
-        // Actualizar inmediatamente
-        actualizarCarritoVisible();
-        actualizarContadoresCarrito();
-        
-        // Notificación
-        mostrarNotificacion('🗑️ Producto eliminado del carrito');
-        
-    } catch (error) {
-        console.error('Error eliminando del carrito:', error);
-        mostrarNotificacion('❌ Error al eliminar producto', 'error');
-    }
-}
-
-// Manejar cambios en localStorage (para sincronización entre pestañas)
-function manejarCambioStorage(event) {
-    if (event.key === 'carritoAnmago') {
-        console.log('📡 Cambio detectado en localStorage');
-        // Actualizar contadores
-        actualizarContadoresCarrito();
-        
-        // Si el carrito está visible, actualizarlo también
-        const offcanvasAbierto = document.getElementById('offcanvasCarrito')?.classList.contains('show');
-        if (offcanvasAbierto) {
-            actualizarCarritoVisible();
-        }
     }
 }
 
@@ -1422,39 +1119,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     const { tipo, subtipo, categoria, vista } = getParametrosDesdeURL();
 
-    // 🔥 INICIALIZAR CARRITO INMEDIATAMENTE (LO PRIMERO)
     inicializarCarritoUltraRapido();
     
-    // 1. Cargar catálogo global
     await cargarCatalogoGlobal();
     
-    // 2. Inicializar categorías rápidas
     inicializarCategoriasRapidas();
     
-    // 3. Configurar PWA
     configurarInstalacionPWA();
     
-    // 4. Configurar scroll infinito
     configurarScrollInfinito();
     
-    // 5. Cargar header dinámicamente
-    const headerContainer = document.getElementById("header-container");
-    if (headerContainer && !headerContainer.querySelector(".header-sticky")) {
-        try {
-            const header = await fetch("HEADER.HTML").then(res => res.text());
-            headerContainer.insertAdjacentHTML("afterbegin", header);
-            
-            // Forzar actualización del carrito después de cargar header
-            setTimeout(() => {
-                actualizarContadoresCarrito();
-            }, 300);
-            
-        } catch (error) {
-            console.error("❌ Error cargando header:", error);
-        }
-    }
-    
-    // 6. Manejar navegación desde URL
     setTimeout(() => {
         if (tipo && subtipo && categoria) {
             cargarPorCategoria(tipo, subtipo, categoria);
@@ -1463,11 +1137,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         } else if (tipo) {
             cargarPorTipo(tipo);
         } else {
-            cargarPorTipo('TODOS');
+            volverAInicio();
         }
     }, 1000);
     
-    // Agregar CSS solo para botones de compartir (mínimo necesario)
     const style = document.createElement('style');
     style.textContent = `
         .categoria-rapida-contenedor {
@@ -1504,6 +1177,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             transform: scale(1.1);
         }
         
+        .badge-categoria-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #dc3545;
+            color: white;
+            border-radius: 50%;
+            font-size: 10px;
+            min-width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         @keyframes slideIn {
             from {
                 transform: translateX(100%);
@@ -1528,13 +1216,21 @@ document.addEventListener("DOMContentLoaded", async () => {
                 opacity: 1;
             }
         }
+        
+        .vista-system {
+            min-height: 70vh;
+        }
+        
+        #vista-productos, #vista-todos {
+            padding-top: 20px;
+        }
     `;
     document.head.appendChild(style);
     
-    // Configurar funciones globales
-    window.actualizarCarritoVisible = actualizarCarritoVisible;
-    window.eliminarDelCarritoLocal = eliminarDelCarritoLocal;
-    window.cambiarCantidadCarrito = cambiarCantidadCarrito;
+    window.volverAInicio = volverAInicio;
+    window.mostrarCatalogoCompleto = function() {
+        cargarPorTipo('TODOS');
+    };
     
     console.log('✅ Anmago Store inicializada correctamente');
 });
@@ -1577,3 +1273,8 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
+
+window.cerrarMenu = function() {
+    const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
+    if (offcanvas) offcanvas.hide();
+};
