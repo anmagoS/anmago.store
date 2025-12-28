@@ -1,6 +1,6 @@
 // ==============================================
 // ANMAGO STORE - APP.JS COMPLETO CORREGIDO
-// VERSIÓN: OCULTAR PRESENTACIÓN AL FILTRAR
+// VERSIÓN: NAVEGACIÓN CORRECTA A PRODUCTOS
 // ==============================================
 // Variables globales
 let productosGlobal = [];
@@ -25,6 +25,26 @@ const ICONOS_CATEGORIAS = {
     'DAMA': '👩', 'CABALLERO': '👨',
     'UNISEX': '👥', 'NIÑOS': '👦', 'NIÑAS': '👧',
 };
+
+// ==============================================
+// PROTECCIÓN MEJORADA - NO BLOQUEAR NAVEGACIÓN
+// ==============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🛡️ Activando protección optimizada...');
+    
+    // Permitir TODOS los clicks en productos
+    document.addEventListener('click', function(event) {
+        const target = event.target;
+        const link = target.closest('a[href*="PRODUCTO.HTML"]');
+        
+        if (link) {
+            console.log('🔗 Navegando a producto:', link.href);
+            // Permitir navegación normal - NO interferir
+            return true;
+        }
+    });
+});
 
 // ==============================================
 // FUNCIONES PARA MOSTRAR/OCULTAR ELEMENTOS
@@ -109,7 +129,7 @@ function cargarCategoriasEnMenuLateral() {
 }
 
 // ==============================================
-// FUNCIONES PARA ENLACES COMPARTIBLES (MANTENER IGUAL)
+// FUNCIONES PARA ENLACES COMPARTIBLES
 // ==============================================
 
 function crearEnlaceFiltro(tipo = null, subtipo = null, categoria = null) {
@@ -433,7 +453,7 @@ function mostrarBotonCompartir(enlace) {
 }
 
 // ==============================================
-// FUNCIONES BÁSICAS CORREGIDAS
+// FUNCIONES BÁSICAS
 // ==============================================
 
 function getParametrosDesdeURL() {
@@ -451,7 +471,6 @@ function obtenerIcono(categoria, nivel = 0) {
     return ICONOS_CATEGORIAS[categoria] || '📦';
 }
 
-// 🔥 FUNCIÓN CRÍTICA CORREGIDA - CON CONTROL DE PRESENTACIÓN
 function cambiarAVista(vistaNombre, hacerScroll = false, ocultarPresentacion = false) {
     console.log('📱 Cambiando a vista:', vistaNombre, 'hacerScroll:', hacerScroll, 'ocultarPresentacion:', ocultarPresentacion);
     
@@ -468,7 +487,7 @@ function cambiarAVista(vistaNombre, hacerScroll = false, ocultarPresentacion = f
     
     vistaActual = vistaNombre;
     
-    // 🔥 OCULTAR PRESENTACIÓN SI ES NECESARIO
+    // OCULTAR PRESENTACIÓN SI ES NECESARIO
     if (ocultarPresentacion) {
         mostrarSeccionPresentacion(false);
         esPrimeraCarga = false;
@@ -509,7 +528,7 @@ async function cargarCatalogoGlobal() {
 }
 
 // ==============================================
-// FUNCIÓN PARA CREAR CARD DE PRODUCTO - VERSIÓN SIMPLE QUE SÍ FUNCIONA
+// FUNCIÓN PARA CREAR CARD DE PRODUCTO
 // ==============================================
 
 function crearCardProductoHTML(producto) {
@@ -547,7 +566,7 @@ function crearCardProductoHTML(producto) {
         imagenMostrar = producto.imagen;
     }
     
-    // 🔥 VERSIÓN SUPER SIMPLE - SIN BOTONES INTERNOS
+    // ENLACE DIRECTO SIN EVENTOS JS
     return `
     <div class="card-producto-ml" data-id="${producto.id}">
         <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
@@ -580,7 +599,6 @@ function crearCardProductoHTML(producto) {
                         <div class="envio-gratis">Envío gratis</div>
                     </div>
                     
-                    <!-- 🔥 SIMPLIFICADO: Solo icono, NO botón -->
                     <span class="icono-ver">
                         <i class="bi bi-eye"></i>
                     </span>
@@ -591,7 +609,7 @@ function crearCardProductoHTML(producto) {
 }
 
 // ==============================================
-// CATEGORÍAS RÁPIDAS CORREGIDAS - SOLO FILTROS
+// CATEGORÍAS RÁPIDAS
 // ==============================================
 
 function inicializarCategoriasRapidas() {
@@ -643,7 +661,6 @@ function mostrarCategoriasNivel0() {
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
 }
 
-// 🔥 NUEVA FUNCIÓN: Filtrar desde categorías OCULTANDO PRESENTACIÓN
 function filtrarPorTipoDesdeCategoria(tipo) {
     console.log('🎯 Filtrando por tipo desde categorías:', tipo);
     
@@ -816,14 +833,14 @@ function filtrarPorCategoriaDesdeCategoria(tipo, subtipo, categoria) {
 }
 
 // ==============================================
-// FUNCIONES DE NAVEGACIÓN (OCULTANDO PRESENTACIÓN)
+// FUNCIONES DE NAVEGACIÓN
 // ==============================================
 
 async function cargarPorTipo(tipo) {
     console.log('📁 Cargando tipo:', tipo);
     
     if (tipo === 'TODOS') {
-        // 🔥 OCULTAR PRESENTACIÓN cuando se va a "TODOS"
+        // OCULTAR PRESENTACIÓN cuando se va a "TODOS"
         cambiarAVista('todos', false, !esPrimeraCarga);
         await cargarVistaTodos();
         mostrarCategoriasNivel0();
@@ -831,7 +848,7 @@ async function cargarPorTipo(tipo) {
         return;
     }
 
-    // 🔥 OCULTAR PRESENTACIÓN cuando se filtra por tipo
+    // OCULTAR PRESENTACIÓN cuando se filtra por tipo
     cambiarAVista('productos', false, !esPrimeraCarga);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
@@ -1105,7 +1122,7 @@ function configurarScrollInfinito() {
 
 function volverAInicio() {
     console.log('🏠 Volviendo al inicio...');
-    esPrimeraCarga = false; // Ya no es primera carga
+    esPrimeraCarga = false;
     
     // Mostrar presentación nuevamente
     mostrarSeccionPresentacion(true);
@@ -1355,7 +1372,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
     document.head.appendChild(style);
     
-    // 🔥 MODIFICAR FUNCIÓN GLOBAL "mostrarCatalogoCompleto"
+    // MODIFICAR FUNCIÓN GLOBAL "mostrarCatalogoCompleto"
     window.mostrarCatalogoCompleto = function() {
         esPrimeraCarga = false;
         cargarPorTipo('TODOS');
