@@ -1932,3 +1932,235 @@ img[width][height] {
     #productos-relacionados .precio-actual {
         font-size: 1rem;
     }
+}
+/* ============================================= */
+/* CORRECCIÓN DE COLORES INSTITUCIONALES ANMAGO */
+/* Para añadir al final de ESTILO.CSS */
+/* ============================================= */
+
+/* === CORRECCIÓN DE COLOR PRIMARIO (#1B4557) EN TODOS LOS ELEMENTOS === */
+
+/* Botones primarios */
+.btn-primary,
+.btn-gradient,
+#btn-ver-mas {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+    border-color: #1B4557 !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+.btn-gradient:hover,
+#btn-ver-mas:hover {
+    background: linear-gradient(135deg, #153a4a, #1B4557) !important;
+    border-color: #153a4a !important;
+}
+
+/* Botones outline */
+.btn-outline-primary {
+    border-color: #1B4557 !important;
+    color: #1B4557 !important;
+    background: transparent !important;
+}
+
+.btn-outline-primary:hover {
+    background: #1B4557 !important;
+    color: white !important;
+}
+
+/* Badges y etiquetas */
+.badge.bg-primary,
+#contador-todos,
+#contador-productos {
+    background-color: #1B4557 !important;
+    color: white !important;
+}
+
+/* Enlaces y texto */
+.text-primary,
+a.text-primary,
+a:hover.text-primary {
+    color: #1B4557 !important;
+}
+
+/* Header y footer */
+.header-sticky,
+.footer {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+}
+
+/* Carrito flotante */
+.btn-carrito-flotante {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+}
+
+/* === CORRECCIÓN ESPECÍFICA PARA EL HERO SECTION === */
+
+/* Título principal */
+.hero-title,
+.display-5,
+.display-6 {
+    color: #1B4557 !important;
+}
+
+/* Subtítulo con gradiente */
+.text-gradient-primary {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Badge en hero */
+.badge.bg-primary.bg-opacity-10 {
+    background-color: rgba(27, 69, 87, 0.1) !important;
+    color: #1B4557 !important;
+    border: 1px solid rgba(27, 69, 87, 0.2) !important;
+}
+
+/* === CORRECCIÓN PARA BANNERS INSTITUCIONALES === */
+
+/* Banner principal */
+.banner-institucional {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef) !important;
+    border-bottom: 1px solid rgba(27, 69, 87, 0.1) !important;
+}
+
+/* Badges en banner */
+.banner-institucional .badge {
+    background: white !important;
+    color: #1B4557 !important;
+    border: 1px solid rgba(27, 69, 87, 0.2) !important;
+}
+
+.banner-institucional .badge.border-primary {
+    border-color: #1B4557 !important;
+}
+
+/* === CORRECCIÓN PARA SECCIÓN DE REDES SOCIALES === */
+
+/* Fondo azul institucional */
+.bg-institucional {
+    background-color: #1B4557 !important;
+}
+
+/* === CORRECCIÓN PARA TARJETAS DE PRODUCTO === */
+
+/* Precios en tarjetas */
+.precio-actual,
+.text-primary.fw-bold {
+    color: #1B4557 !important;
+}
+
+/* Botón "Ver" en tarjetas */
+.btn-ver-producto {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+}
+
+/* Borde hover en tarjetas */
+.card-producto-ml:hover {
+    border-color: rgba(27, 69, 87, 0.3) !important;
+}
+
+/* === CORRECCIÓN PARA OFFCANVAS Y MODALES === */
+
+/* Header de offcanvas */
+.offcanvas-header.bg-primary {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+}
+
+/* === CORRECCIÓN PARA BARRA INFERIOR MOBILE === */
+
+/* Iconos activos en barra inferior */
+.navbar.fixed-bottom a.active {
+    color: #1B4557 !important;
+}
+
+.navbar.fixed-bottom a.active::after {
+    background: linear-gradient(90deg, #1B4557, #2A6A8F) !important;
+}
+
+/* === UTILIDADES DE COLOR RÁPIDAS === */
+
+/* Clases de utilidad para usar en HTML */
+.text-institucional { color: #1B4557 !important; }
+.bg-institucional { background-color: #1B4557 !important; }
+.border-institucional { border-color: #1B4557 !important; }
+
+/* Gradiente institucional */
+.bg-gradient-institucional {
+    background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 768px) {
+    /* Ajustes específicos para móvil */
+    .btn-primary,
+    .btn-gradient {
+        background: linear-gradient(135deg, #1B4557, #2A6A8F) !important;
+    }
+    
+    .navbar.fixed-bottom a.active {
+        color: #1B4557 !important;
+    }
+}
+
+/* === CORRECCIÓN PARA PLACEHOLDERS Y ESTADOS === */
+
+/* Placeholder con color institucional */
+::placeholder {
+    color: rgba(27, 69, 87, 0.6) !important;
+}
+
+/* Estados focus */
+.form-control:focus,
+.buscador-header:focus {
+    border-color: #1B4557 !important;
+    box-shadow: 0 0 0 0.25rem rgba(27, 69, 87, 0.25) !important;
+}
+
+/* === CORRECCIÓN PARA SPINNERS Y LOADERS === */
+
+/* Spinners con color institucional */
+.spinner-border.text-primary {
+    color: #1B4557 !important;
+}
+
+/* Skeletons con tono institucional */
+.skeleton {
+    background: linear-gradient(90deg, 
+        rgba(27, 69, 87, 0.05) 25%, 
+        rgba(27, 69, 87, 0.1) 50%, 
+        rgba(27, 69, 87, 0.05) 75%) !important;
+}
+
+/* === CORRECCIÓN FINAL - SOBREESCRIBIR COLORES POR DEFECTO === */
+
+/* Esta regla es importante para asegurar que se use tu color */
+:root {
+    --bs-primary: #1B4557 !important;
+    --bs-primary-rgb: 27, 69, 87 !important;
+}
+
+/* Forzar color en elementos de Bootstrap */
+.bg-primary {
+    background-color: #1B4557 !important;
+}
+
+.text-bg-primary {
+    background-color: #1B4557 !important;
+    color: white !important;
+}
+
+/* === AÑADIR ESTAS CLASES AL HTML SI ES NECESARIO === */
+/*
+En el Hero Section:
+- Cambiar: <span class="text-primary"> por <span class="text-institucional">
+- Cambiar: class="btn btn-primary" por class="btn btn-primary bg-gradient-institucional"
+
+En Banners:
+- Añadir: class="banner-institucional" al contenedor principal
+
+En Sección de Redes:
+- Cambiar: style="background-color: #1b4557;" por class="bg-institucional"
