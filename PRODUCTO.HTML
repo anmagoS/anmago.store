@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="ESTILO.CSS?v=20251207" />
 
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -31,24 +31,31 @@
     gtag('config', 'G-PD2Y81DPRG', { send_page_view: true });
   </script>
 
-  <!-- Evento de vista de producto -->
+  <!-- Evento de vista de producto dinámico -->
   <script>
     function getParam(name){
       return new URLSearchParams(window.location.search).get(name);
     }
     const productId = getParam('id'); // ej. EE03DCC0
 
-    if (productId) {
-      gtag('event', 'view_item', {
-        items: [{
-          item_id: productId,
-          item_name: 'Chaqueta Torera Amarilla Talla S', // opcional, o dinámico
-          item_brand: 'ANMAGO',
-          item_category: 'Chaquetas',
-          price: 81500
-        }]
-      });
-    }
+    // Capturar datos dinámicos del HTML
+    window.addEventListener('DOMContentLoaded', () => {
+      const productName = document.getElementById('product-name')?.innerText || 'Producto ANMAGO';
+      const productPrice = parseFloat(document.getElementById('product-price')?.innerText || 0);
+      const productCategory = document.getElementById('product-category')?.innerText || 'General';
+
+      if (productId) {
+        gtag('event', 'view_item', {
+          items: [{
+            item_id: productId,
+            item_name: productName,
+            item_category: productCategory,
+            price: productPrice,
+            item_brand: 'ANMAGO'
+          }]
+        });
+      }
+    });
   </script>
 
   <style>
