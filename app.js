@@ -1039,7 +1039,7 @@ function configurarInstalacionPWA() {
     const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches ||
                            window.navigator.standalone === true;
 
-    // Detectar navegadores embebidos
+    // 🔎 Detectar navegadores embebidos (Facebook, Messenger, Instagram)
     function esNavegadorEmbebido() {
         const ua = navigator.userAgent || navigator.vendor || window.opera;
         return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Instagram");
@@ -1054,14 +1054,19 @@ function configurarInstalacionPWA() {
         return;
     }
 
-    // 2️⃣ Si es navegador embebido, mostramos botón "Abrir en navegador externo"
+    // 2️⃣ Si es navegador embebido, mostramos enlace "Abrir en navegador externo"
     if (esNavegadorEmbebido()) {
         contenedor?.classList.remove("d-none");
-        boton.textContent = "Abrir en navegador externo";
-        boton.onclick = () => {
-            window.open(window.location.href, "_blank");
-        };
-        return; // no seguimos con la lógica de instalación
+
+        // Reemplazamos el botón por un enlace <a>
+        contenedor.innerHTML = `
+          <a href="${window.location.href}" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="btn-instalar-app">
+             <i class="bi bi-box-arrow-up-right"></i> Abrir en navegador externo
+          </a>`;
+        return; // 👈 no seguimos con la lógica de instalación
     }
 
     // 3️⃣ Lógica normal de instalación en navegadores completos
