@@ -4,43 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
-  <!-- Meta esenciales primero -->
   <title>Anmago Store - Ropa, Hogar, Belleza y más</title>
   <meta name="description" content="Encuentra ropa, relojería, hogar, belleza y más en Anmago Store. Los mejores precios y calidad garantizada.">
-  <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
   
-  <!-- ⚡ OPTIMIZACIONES CRÍTICAS PARA LCP -->
-  <link rel="icon" href="tina-192.png" type="image/x-icon" />
-  
-  <!-- 1. Precarga del LOGO -->
-  <link rel="preload" 
-        href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto" 
-        as="image" 
-        fetchpriority="high">
-  
-  <!-- 2. Conexiones tempranas para CDNs críticas -->
   <link rel="preconnect" href="https://ik.imagekit.io" crossorigin>
   <link rel="dns-prefetch" href="https://ik.imagekit.io">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PD2Y81DPRG', {
-      send_page_view: true
-    });
-  </script>
-  
-  <!-- Tailwind CSS (opcional - mantener para compatibilidad) -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script id="tailwind-config">
     tailwind.config = {
@@ -51,232 +24,156 @@
             "primary": "#1b4557",
             "secondary": "#0A8D8C",
             "premium-gold": "#C9A96E",
-            "background-light": "#f6f6f8",
           },
           fontFamily: {
             "display": ["Inter", "sans-serif"]
           },
-          borderRadius: {"DEFAULT": "10px", "lg": "15px", "xl": "20px", "full": "9999px"},
         },
       },
     }
   </script>
 
-  <!-- CSS CRÍTICO INLINE - MINIFICADO -->
   <style>
-    :root{--primary:#1b4557;--secondary:#0A8D8C;--gold:#C9A96E;--bg-light:#f8f9fa}
+    :root{--primary:#1b4557;--secondary:#0A8D8C;--bg-light:#f8f9fa}
     body{font-family:'Inter',sans-serif;background:var(--bg-light);margin:0;padding-top:70px}
     .header-sticky{background:linear-gradient(135deg,#1B4557,#2A6A8F);color:white;position:fixed;top:0;left:0;right:0;z-index:1030;height:70px;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
     @media (max-width:768px){body{padding-top:60px}.header-sticky{height:60px}}
+    
+    /* PROTECCIÓN EXTRA PARA NAVEGACIÓN */
+    a[href*="PRODUCTO.HTML"] {
+      cursor: pointer !important;
+      pointer-events: auto !important;
+    }
+    
+    /* Deshabilitar cualquier JS que interfiera con estos enlaces */
+    .card-producto-ml a {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+    
+    .card-producto-ml a:hover {
+      text-decoration: none !important;
+    }
   </style>
   
-  <!-- PWA y favicon -->
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-560,q-80" type="image/x-icon" />
-  
-  <!-- CSS EXTERNO CARGADO ASÍNCRONAMENTE -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-  <link rel="stylesheet" href="ESTILO.CSS?v=20251116" media="print" onload="this.media='all'">
-  
-  <!-- FALLBACK PARA NAVEGADORES SIN JS -->
-  <noscript>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="ESTILO.CSS?v=20251116">
-  </noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="ESTILO.CSS?v=20251116">
 </head>
 <body class="bg-light">
   
-  <!-- ===== HEADER OPTIMIZADO ===== -->
+  <!-- HEADER SIMPLIFICADO -->
   <header class="header-sticky d-flex justify-content-between align-items-center px-3 px-md-4 py-2">
-    <!-- LOGO -->
     <div class="logo">
       <a href="#" onclick="mostrarCatalogoCompleto(); return false;">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-80,h-80,f-auto,q-80"
              alt="Logo ANMAGO"
              width="80"
              height="80"
-             fetchpriority="high"
-             decoding="async"
              style="height: 40px; width: auto;">
       </a>
     </div>
 
-    <!-- BUSCADOR -->
     <div class="flex-grow-1 mx-3 position-relative" style="max-width: 450px;">
-      <input id="buscador" class="form-control buscador-header" 
+      <input id="buscador" class="form-control" 
              placeholder="Buscar productos..." 
-             autocomplete="off"
-             aria-label="Buscar productos">
+             autocomplete="off">
       <div id="sugerencias" class="sugerencias-container"></div>
     </div>
 
-    <!-- BOTÓN HAMBURGUESA -->
     <button class="navbar-toggler border-0 bg-transparent p-0" type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#menuLateral"
-            aria-controls="menuLateral"
-            aria-label="Abrir menú">
+            data-bs-target="#menuLateral">
       <i class="bi bi-list fs-2 text-white"></i>
     </button>
   </header>
 
-  <!-- ===== MENÚ LATERAL ===== -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+  <!-- MENÚ LATERAL -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral">
     <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title fw-bold d-flex align-items-center gap-2" id="menuLateralLabel">
+      <h5 class="offcanvas-title fw-bold">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-40,h-40,f-auto,q-80"
-             alt="Logo ANMAGO"
+             alt="Logo"
              width="40"
              height="40"
              class="rounded">
         <span>Anmago Store</span>
       </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
 
-    <div class="offcanvas-body d-flex flex-column gap-3">
-      <!-- Inicio -->
-      <a href="#" class="nav-link d-flex align-items-center py-2 px-3 rounded categoria-menu-item"
+    <div class="offcanvas-body">
+      <a href="#" class="nav-link py-2 px-3 rounded"
          onclick="mostrarCatalogoCompleto(); cerrarMenu(); return false;">
-        <i class="bi bi-house me-3"></i> 
-        <span>Inicio</span>
+        <i class="bi bi-house me-3"></i> Inicio
       </a>
      
-      <!-- CATEGORÍAS DINÁMICAS -->
       <div id="menu-categorias-dinamico" class="mt-2">
-        <p class="small text-muted mb-2 px-3"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+        <p class="small text-muted mb-2 px-3"><i class="bi bi-list-ul me-1"></i> Categorías</p>
         <div class="text-center py-4">
           <div class="spinner-border spinner-border-sm text-primary"></div>
-          <p class="mt-2 small text-muted">Cargando categorías...</p>
+          <p class="mt-2 small text-muted">Cargando...</p>
         </div>
       </div>
 
-      <!-- Enlaces adicionales -->
       <div class="mt-auto pt-3 border-top">
-        <a href="modalformulario.html" class="nav-link d-flex align-items-center py-2 px-3 rounded categoria-menu-item"
+        <a href="modalformulario.html" class="nav-link py-2 px-3 rounded"
            onclick="cerrarMenu();">
           <i class="bi bi-person me-3"></i> Mi cuenta
         </a>
         <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
            target="_blank"
-           class="nav-link d-flex align-items-center py-2 px-3 rounded categoria-menu-item"
-           onclick="cerrarMenu();">
+           class="nav-link py-2 px-3 rounded">
           <i class="bi bi-whatsapp me-3 text-success"></i> WhatsApp
         </a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
-           target="_blank"
-           class="nav-link d-flex align-items-center py-2 px-3 rounded categoria-menu-item"
-           onclick="cerrarMenu();">
-          <i class="bi bi-envelope me-3"></i> Contacto
-        </a>
       </div>
     </div>
 
-    <div class="offcanvas-footer border-top p-3 bg-light">
-      <div class="text-center small text-muted">
-        <p class="mb-1 fw-medium">anmagostore@gmail.com</p>
-        <p class="mb-0">3006498710 - 3115046741</p>
-      </div>
+    <div class="offcanvas-footer border-top p-3 bg-light text-center small text-muted">
+      <p class="mb-1">anmagostore@gmail.com</p>
+      <p class="mb-0">3006498710 - 3115046741</p>
     </div>
   </div>
 
-  <!-- ===== BANNER INSTITUCIONAL ===== -->
-  <div class="container-fluid py-2" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef);">
-    <div class="container">
-      <div class="text-center px-2">
-        <div class="d-flex flex-wrap align-items-center justify-content-center gap-2 mb-2">
-          <span class="badge bg-white text-primary border border-primary px-3 py-2 fw-medium">
-            <i class="bi bi-check-circle me-1"></i> Precios con envío incluido
-          </span>
-          <span class="badge bg-white text-primary border border-primary px-3 py-2 fw-medium">
-            <i class="bi bi-info-circle me-1"></i> Tarifa especial te informamos
-          </span>
-        </div>
-        
-        <div class="d-flex flex-wrap justify-content-center align-items-center gap-2">
-          <span class="badge bg-white text-primary border border-primary-subtle px-3 py-1 fw-medium">
-            <i class="bi bi-star me-1"></i> Los mejores precios
-          </span>
-          <span class="badge bg-white text-primary border border-primary-subtle px-3 py-1 fw-medium">
-            <i class="bi bi-award me-1"></i> Calidad garantizada
-          </span>
-          <span class="badge bg-white text-primary border border-primary-subtle px-3 py-1 fw-medium">
-            <i class="bi bi-truck me-1"></i> Envíos Nacionales
-          </span>
-          <span class="badge bg-white text-primary border border-primary-subtle px-3 py-1 fw-medium">
-            <i class="bi bi-cash-coin me-1"></i> Contraentrega
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== HERO SECTION RESPONSIVE ===== -->
+  <!-- HERO SECTION -->
   <section class="py-4 py-md-5 px-3 px-md-4">
     <div class="container">
       <div class="row align-items-center g-4 g-md-5">
-        <!-- Contenido -->
         <div class="col-lg-6 order-2 order-lg-1">
           <div class="d-flex flex-column gap-3">
-            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 align-self-start fw-medium">
-              Temporada 2026
-            </span>
-            
             <h1 class="display-5 fw-black text-dark mb-2">
               Descubre lo Mejor en<br>
               <span class="text-primary">Anmago Store</span>
             </h1>
             
             <p class="lead text-muted mb-4">
-              Encuentra ropa, relojería, hogar, belleza y más. Los mejores precios y calidad garantizada para tu estilo de vida.
+              Encuentra ropa, relojería, hogar, belleza y más.
             </p>
             
             <div class="d-flex flex-wrap gap-3 mb-4">
               <button onclick="mostrarCatalogoCompleto()"
-                      class="btn btn-primary btn-lg px-4 px-md-5 fw-bold d-flex align-items-center gap-2">
-                Ver Catálogo <i class="bi bi-arrow-right"></i>
+                      class="btn btn-primary btn-lg px-4 px-md-5 fw-bold">
+                Ver Catálogo
               </button>
-              <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" 
-                 target="_blank"
-                 class="btn btn-outline-primary btn-lg px-4 px-md-5 fw-bold">
-                Ver Canal YouTube
-              </a>
-            </div>
-            
-            <div class="d-flex flex-wrap align-items-center gap-4 text-muted">
-              <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-truck text-success fs-5"></i>
-                <span class="fw-medium">Envíos Nacionales</span>
-              </div>
-              <div class="d-flex align-items-center gap-2">
-                <i class="bi bi-shield-check text-success fs-5"></i>
-                <span class="fw-medium">Calidad Garantizada</span>
-              </div>
             </div>
           </div>
         </div>
         
-        <!-- Imagen -->
         <div class="col-lg-6 order-1 order-lg-2">
-          <div class="position-relative">
-            <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary bg-opacity-10 rounded-4 rotate-3"></div>
-            <div class="position-relative rounded-4 overflow-hidden shadow-lg" 
-                 style="background: #f8f9fa; min-height: 300px;">
-              <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-800,h-600,f-auto,q-80"
-                   alt="Anmago Store"
-                   class="img-fluid p-4 p-md-5"
-                   style="object-fit: contain;"
-                   loading="lazy">
-            </div>
+          <div class="position-relative rounded-4 overflow-hidden shadow-lg" 
+               style="background: #f8f9fa; min-height: 300px;">
+            <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-800,h-600,f-auto,q-80"
+                 alt="Anmago Store"
+                 class="img-fluid p-4 p-md-5"
+                 style="object-fit: contain;"
+                 loading="lazy">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== CATEGORÍAS RÁPIDAS ===== -->
+  <!-- CATEGORÍAS RÁPIDAS -->
   <div class="container-fluid px-3 px-md-4 mb-4">
     <div class="categorias-rapidas" id="categorias-rapidas">
       <div class="text-center py-4">
@@ -286,40 +183,21 @@
     </div>
   </div>
 
-  <!-- ===== SISTEMA DE VISTAS PRINCIPAL ===== -->
+  <!-- SISTEMA DE VISTAS -->
   <div class="vista-system">
     
-    <!-- VISTA 1: INICIO (HOME) -->
+    <!-- VISTA INICIO -->
     <div id="vista-inicio" class="vista vista-activa">
       <div class="container px-3 px-md-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h2 class="h4 fw-bold text-dark mb-0">Productos Destacados</h2>
-          <a href="#" class="text-primary fw-bold text-decoration-none d-flex align-items-center gap-1"
+          <a href="#" class="text-primary fw-bold text-decoration-none"
              onclick="mostrarCatalogoCompleto(); return false;">
-            Ver Todos <i class="bi bi-chevron-right"></i>
+            Ver Todos
           </a>
         </div>
         
-        <!-- Carrusel de productos destacados -->
-        <div id="carousel-promos-home" class="carousel slide mb-5" data-bs-ride="carousel">
-          <div class="carousel-inner" id="carousel-promos-home-contenido">
-            <!-- Contenido dinámico -->
-          </div>
-          
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-promos-home" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel-promos-home" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
-        
-        <!-- Grid de últimos productos -->
         <div id="grid-ultimos" class="grid-productos-ml">
-          <!-- Skeletons -->
-          <div class="card-producto-ml skeleton"></div>
           <div class="card-producto-ml skeleton"></div>
           <div class="card-producto-ml skeleton"></div>
           <div class="card-producto-ml skeleton"></div>
@@ -327,49 +205,9 @@
       </div>
     </div>
 
-    <!-- VISTA 2: SUBTIPOS -->
-    <div id="vista-subtipos" class="vista">
-      <div class="container mt-3 px-3 px-md-4">
-        <nav class="breadcrumb-vista mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-tipo"></li>
-          </ol>
-        </nav>
-        
-        <h1 class="h4 fw-bold mb-3" id="titulo-subtipos">Subtipos</h1>
-        <div id="grid-subtipos" class="grid-productos-ml"></div>
-      </div>
-    </div>
-
-    <!-- VISTA 3: CATEGORÍAS -->
-    <div id="vista-categorias" class="vista">
-      <div class="container mt-3 px-3 px-md-4">
-        <nav class="breadcrumb-vista mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item"><a href="#" id="breadcrumb-tipo-link"></a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-subtipo"></li>
-          </ol>
-        </nav>
-        
-        <h1 class="h4 fw-bold mb-3" id="titulo-categorias">Categorías</h1>
-        <div id="grid-categorias" class="grid-productos-ml"></div>
-      </div>
-    </div>
-
-    <!-- VISTA 4: PRODUCTOS -->
+    <!-- VISTA PRODUCTOS -->
     <div id="vista-productos" class="vista">
       <div class="container mt-3 px-3 px-md-4">
-        <nav class="breadcrumb-vista mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item"><a href="#" id="breadcrumb-tipo-link-prod"></a></li>
-            <li class="breadcrumb-item"><a href="#" id="breadcrumb-subtipo-link"></a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-categoria"></li>
-          </ol>
-        </nav>
-        
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h1 class="h4 fw-bold mb-0" id="titulo-productos">Productos</h1>
           <span class="badge bg-primary px-3 py-2" id="contador-productos">0 productos</span>
@@ -378,295 +216,79 @@
       </div>
     </div>
 
-    <!-- VISTA 5: TODOS LOS PRODUCTOS -->
+    <!-- VISTA TODOS -->
     <div id="vista-todos" class="vista">
       <div class="container mt-3 px-3 px-md-4">
-        <nav class="breadcrumb-vista mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-todos">Todos los productos</li>
-          </ol>
-        </nav>
-        
         <div class="d-flex justify-content-between align-items-center mb-4">
           <h1 class="h4 fw-bold mb-0">🛍️ Catálogo Completo</h1>
-          <div class="d-flex align-items-center gap-2">
-            <span class="badge bg-primary px-3 py-2" id="contador-todos">0 productos</span>
-          </div>
+          <span class="badge bg-primary px-3 py-2" id="contador-todos">0 productos</span>
         </div>
                  
-        <!-- Grid de productos -->
         <div id="grid-todos" class="grid-productos-ml"></div>
-        
-        <!-- Estados de carga -->
-        <div id="cargando-todos" class="text-center py-5 d-none">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Cargando más productos...</span>
-          </div>
-          <p class="text-muted mt-3">Cargando más productos...</p>
-        </div>
-        
-        <div id="sin-resultados-todos" class="text-center py-5 d-none">
-          <i class="bi bi-search fs-1 text-muted"></i>
-          <h5 class="mt-3 fw-bold">No se encontraron productos</h5>
-          <p class="text-muted">Intenta con otros filtros de búsqueda</p>
-        </div>
-        
-        <div id="btn-ver-mas-container" class="text-center mt-4 mb-5 d-none">
-          <button id="btn-ver-mas" class="btn btn-outline-primary px-4 py-2 fw-bold"
-                  onclick="cargarMasProductosScroll()">
-            <i class="bi bi-arrow-down me-2"></i> Ver más productos
-          </button>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- ===== SECCIÓN DE REDES SOCIALES ===== -->
-  <section class="py-5 px-3 px-md-4 mt-4" style="background-color: #1b4557;">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="d-inline-flex align-items-center justify-content-center bg-white bg-opacity-10 rounded-circle p-4 mb-4">
-            <i class="bi bi-envelope-fill fs-2 text-white"></i>
-          </div>
-          
-          <h2 class="h1 fw-black text-white mb-3">¡Síguenos en nuestras redes!</h2>
-          
-          <p class="lead text-white text-opacity-90 mb-5">
-            Mantente actualizado con nuestros nuevos productos y ofertas especiales.
-          </p>
-          
-          <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
-            <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" 
-               target="_blank"
-               class="btn btn-white btn-lg px-4 px-md-5 fw-bold d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-youtube text-primary"></i> YouTube
-            </a>
-            <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store"
-               target="_blank"
-               class="btn btn-success btn-lg px-4 px-md-5 fw-bold d-flex align-items-center justify-content-center gap-2">
-              <i class="bi bi-whatsapp"></i> WhatsApp
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER SIMPLE -->
   <footer class="footer mt-0" id="footer-container">
-    <div class="text-center py-5">
-      <div class="spinner-border spinner-border-sm text-primary"></div>
-      <p class="mt-3 small text-muted">Cargando información...</p>
+    <div class="container text-center py-4">
+      <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
+      <p class="small text-muted">anmagostore@gmail.com</p>
     </div>
   </footer>
 
-  <!-- ===== COMPONENTES FLOTANTES ===== -->
+  <!-- SCRIPTS - ORDEN CRÍTICO -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Botón Volver Arriba -->
-  <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;" 
-     class="btn-volver-inicio d-none d-md-flex">
-    <i class="bi bi-chevron-up fs-5"></i>
-  </a>
-
-  <!-- Botón Carrito Flotante -->
-  <a href="#" class="btn-carrito-flotante d-none d-md-flex" 
-     data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-    <i class="bi bi-bag-heart fs-4"></i>
-    <span id="contador-carrito" class="contador-carrito">0</span>
-  </a>
-
-  <!-- Carrito Offcanvas -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
-    <div class="offcanvas-header border-bottom">
-      <h4 class="offcanvas-title fw-bold">🛒 Tu Carrito</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-    </div>
-    <div class="offcanvas-body" id="carrito-contenido">
-      <div class="text-center text-muted py-5">
-        <i class="bi bi-bag-x fs-1"></i>
-        <p class="mt-3">Tu carrito está vacío</p>
-      </div>
-    </div>
-    <div class="offcanvas-footer p-4 border-top">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <span class="fw-bold fs-5">Subtotal:</span>
-        <span id="subtotal" class="fw-bold fs-4 text-primary">$0</span>
-      </div>
-      <button class="btn btn-primary btn-lg w-100 py-3 fw-bold" 
-              onclick="abrirFormularioPedido()">
-        ✨ Continuar compra ✨
-      </button>
-    </div>
-  </div>
-
-  <!-- ===== BARRA INFERIOR MOBILE ===== -->
-  <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2" style="z-index: 1030;">
-    <div class="container-fluid px-3">
-      <div class="d-flex justify-content-around w-100">
-        <a href="#" class="text-center text-decoration-none text-primary"
-           onclick="mostrarCatalogoCompleto(); return false;">
-          <i class="bi bi-house-fill fs-5"></i>
-          <div class="small mt-1 fw-medium">Inicio</div>
-        </a>
-        <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" 
-           target="_blank"
-           class="text-center text-decoration-none text-dark">
-          <i class="bi bi-youtube fs-5"></i>
-          <div class="small mt-1 fw-medium">Canal</div>
-        </a>
-        <a href="#" class="text-center text-decoration-none position-relative"
-           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-          <div class="position-relative">
-            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
-                 style="width: 38px; height: 38px; margin: 0 auto;">
-              <i class="bi bi-cart-check fs-5 text-white"></i>
-            </div>
-            <span id="contador-carrito-mobile" 
-                  class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill"
-                  style="font-size: 0.7rem; min-width: 18px; height: 18px;">
-              0
-            </span>
-          </div>
-          <div class="small mt-1 fw-medium">Carrito</div>
-        </a>
-        <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
-           target="_blank"
-           class="text-center text-decoration-none text-success">
-          <i class="bi bi-whatsapp fs-5"></i>
-          <div class="small mt-1 fw-medium">Chat</div>
-        </a>
-        <a href="modalformulario.html" 
-           class="text-center text-decoration-none text-dark">
-          <i class="bi bi-person fs-5"></i>
-          <div class="small mt-1 fw-medium">Cuenta</div>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- ===== SCRIPTS ===== -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-  
-  <!-- Script de inicialización -->
+  <!-- SCRIPT PRINCIPAL SIMPLIFICADO -->
   <script>
-    // Función para cerrar el menú
+    // Funciones mínimas necesarias
     function cerrarMenu() {
         const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
         if (offcanvas) offcanvas.hide();
     }
     
-    // Función para mostrar catálogo completo
     function mostrarCatalogoCompleto() {
-        console.log('📦 Mostrando catálogo completo...');
-        
-        // Ocultar todas las vistas
+        console.log('📦 Mostrando catálogo...');
         document.querySelectorAll('.vista').forEach(v => v.classList.remove('vista-activa'));
-        
-        // Mostrar vista de todos los productos
-        const vistaTodos = document.getElementById('vista-todos');
-        if (vistaTodos) {
-            vistaTodos.classList.add('vista-activa');
-            
-            // Scroll suave
-            setTimeout(() => {
-                vistaTodos.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 50);
-            
-            // Cargar productos si es necesario
-            if (window.mostrarTodosLosProductosCompleto) {
-                window.mostrarTodosLosProductosCompleto();
-            }
+        document.getElementById('vista-todos').classList.add('vista-activa');
+        if (window.mostrarTodosLosProductosCompleto) {
+            window.mostrarTodosLosProductosCompleto();
         }
     }
     
-    // Función para volver al inicio
     function volverAInicio() {
         document.querySelectorAll('.vista').forEach(v => v.classList.remove('vista-activa'));
         document.getElementById('vista-inicio').classList.add('vista-activa');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    // Verificador de navegación mejorado
-    document.addEventListener('click', function(e) {
-        // Solo verificar enlaces de producto
-        const productLink = e.target.closest('a[href*="PRODUCTO.HTML"]');
-        
-        if (productLink) {
-            console.log('📱 Navegando a producto desde index.html');
-            console.log('Enlace:', productLink.href);
-            
-            // Permitir navegación normal - NO interferir
-            return true;
-        }
-    }, true);
+    // Hacer globales
+    window.cerrarMenu = cerrarMenu;
+    window.mostrarCatalogoCompleto = mostrarCatalogoCompleto;
+    window.volverAInicio = volverAInicio;
     
-    // Inicializar cuando el DOM esté listo
+    // PROTECCIÓN EXTRA: Deshabilitar cualquier interferencia con PRODUCTO.HTML
     document.addEventListener('DOMContentLoaded', function() {
-        // Inicializar tooltips
-        if (typeof bootstrap !== 'undefined') {
-            var tooltipList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-                .map(function(el) {
-                    return new bootstrap.Tooltip(el);
-                });
-        }
+        // Desactivar cualquier listener problemático
+        const originalAddEventListener = EventTarget.prototype.addEventListener;
         
-        // Hacer funciones globales
-        window.cerrarMenu = cerrarMenu;
-        window.mostrarCatalogoCompleto = mostrarCatalogoCompleto;
-        window.volverAInicio = volverAInicio;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+            // Si es un listener que podría interferir con productos, ignorarlo
+            if (type === 'click' && listener && 
+                listener.toString().includes('PRODUCTO.HTML') &&
+                listener.toString().includes('preventDefault')) {
+                console.warn('⚠️ Bloqueando listener conflictivo');
+                return;
+            }
+            return originalAddEventListener.call(this, type, listener, options);
+        };
         
-        console.log('🚀 ANMAGO STORE - Optimizado y responsive');
+        console.log('✅ Navegación protegida');
     });
   </script>
   
-  <!-- Tus scripts principales -->
-  <script src="app.js?v=20251116" defer></script>
-  <script src="carrito.js?v=20251116" defer></script>
-  <script src="buscador.js?v=20251115" defer></script>
-
-  <!-- Cargar footer dinámicamente -->
-  <script>
-    async function cargarFooter() {
-      try {
-        const respuesta = await fetch('footer.html?v=' + Date.now());
-        const htmlFooter = await respuesta.text();
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) contenedor.innerHTML = htmlFooter;
-      } catch (error) {
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) {
-          contenedor.innerHTML = `
-            <div class="container text-center py-4">
-              <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
-              <p class="small text-muted">anmagostore@gmail.com</p>
-            </div>
-          `;
-        }
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', cargarFooter);
-  </script>
-
-  <!-- Script del carrusel -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(() => {
-            if (typeof cargarCarruselSincronizado === 'function') {
-                cargarCarruselSincronizado();
-            }
-        }, 800);
-    });
-    
-    // Si necesitas el carrusel, asegúrate de tener esta función
-    if (typeof cargarCarruselSincronizado === 'undefined') {
-        function cargarCarruselSincronizado() {
-            console.log('🔄 Cargando carrusel...');
-            // Tu lógica del carrusel aquí
-        }
-    }
-  </script>
+  <!-- CARGAR app.js AL FINAL -->
+  <script src="app.js?v=20251116"></script>
 </body>
 </html>
