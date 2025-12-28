@@ -462,7 +462,7 @@ async function cargarCatalogoGlobal() {
 }
 
 // ==============================================
-// FUNCIÓN PARA CREAR CARD DE PRODUCTO CON DESCUENTOS
+// FUNCIÓN PARA CREAR CARD DE PRODUCTO - VERSIÓN SIMPLE QUE SÍ FUNCIONA
 // ==============================================
 
 function crearCardProductoHTML(producto) {
@@ -471,11 +471,9 @@ function crearCardProductoHTML(producto) {
     let badgePromo = '';
     let mostrarPrecioAnterior = false;
     
-    // Verificar si el producto está en promoción
     const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
     
     if (estaEnPromo) {
-        // Calcular descuento del 10%
         const descuentoPorcentaje = 10;
         precioFinal = Math.round(precioOriginal * 0.9);
         
@@ -483,11 +481,9 @@ function crearCardProductoHTML(producto) {
         mostrarPrecioAnterior = true;
     }
     
-    // Verificar stock
     const badgeStock = producto.stock <= 5 ? 
         `<div class="badge-stock">Últimas ${producto.stock}</div>` : '';
     
-    // Obtener imagen correcta
     let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
     
     if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
@@ -504,6 +500,7 @@ function crearCardProductoHTML(producto) {
         imagenMostrar = producto.imagen;
     }
     
+    // 🔥 VERSIÓN SUPER SIMPLE - SIN BOTONES INTERNOS
     return `
     <div class="card-producto-ml" data-id="${producto.id}">
         <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
@@ -536,16 +533,15 @@ function crearCardProductoHTML(producto) {
                         <div class="envio-gratis">Envío gratis</div>
                     </div>
                     
-                    <button class="btn-ver-producto" 
-                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                    <!-- 🔥 SIMPLIFICADO: Solo icono, NO botón -->
+                    <span class="icono-ver">
                         <i class="bi bi-eye"></i>
-                    </button>
+                    </span>
                 </div>
             </div>
         </a>
     </div>`;
 }
-
 // ==============================================
 // CATEGORÍAS RÁPIDAS CON ENLACES COMPARTIBLES
 // ==============================================
