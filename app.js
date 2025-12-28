@@ -1039,45 +1039,48 @@ function configurarInstalacionPWA() {
     const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches ||
                            window.navigator.standalone === true;
 
-    if (!esPWAInstalado) {
-        const contenedor = document.getElementById("instalar-container");
-        if (contenedor) contenedor.classList.remove("d-none");
-    }
-
-    // 🔎 Detectar si estamos en navegador interno de Facebook/Instagram/Messenger
+    // Detectar navegadores embebidos
     function esNavegadorEmbebido() {
         const ua = navigator.userAgent || navigator.vendor || window.opera;
         return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Instagram");
     }
 
-    let deferredPrompt;
+    const contenedor = document.getElementById("instalar-container");
+    const boton = document.getElementById("boton-instalar");
 
+    // 1️⃣ Si ya está instalada, ocultamos el botón
+    if (esPWAInstalado) {
+        contenedor?.classList.add("d-none");
+        return;
+    }
+
+    // 2️⃣ Si es navegador embebido, mostramos botón "Abrir en navegador externo"
+    if (esNavegadorEmbebido()) {
+        contenedor?.classList.remove("d-none");
+        boton.textContent = "Abrir en navegador externo";
+        boton.onclick = () => {
+            window.open(window.location.href, "_blank");
+        };
+        return; // no seguimos con la lógica de instalación
+    }
+
+    // 3️⃣ Lógica normal de instalación en navegadores completos
+    let deferredPrompt;
     window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
         deferredPrompt = e;
+        contenedor?.classList.remove("d-none");
 
-        const boton = document.getElementById("boton-instalar");
-
-        if (esNavegadorEmbebido()) {
-            // 🚫 En navegadores embebidos no funciona la instalación
-            boton.textContent = "Abrir en navegador externo";
-            boton?.addEventListener("click", () => {
-                window.open(window.location.href, "_blank");
-            });
-        } else {
-            // ✅ Lógica normal de instalación
-            boton?.addEventListener("click", async () => {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    const resultado = await deferredPrompt.userChoice;
-                    deferredPrompt = null;
-                    document.getElementById("instalar-container")?.classList.add("d-none");
-                }
-            });
-        }
+        boton?.addEventListener("click", async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const resultado = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                contenedor?.classList.add("d-none");
+            }
+        });
     });
 }
-
 // ==============================================
 // SISTEMA DE CARRITO COMPLETO CON CAMBIO DE CANTIDADES
 // ==============================================
