@@ -1064,7 +1064,7 @@ function configurarInstalacionPWA() {
              target="_blank" 
              rel="noopener noreferrer" 
              class="btn-instalar-app">
-             <i class="bi bi-box-arrow-up-right"></i> “Para instalar la app, abre este enlace en tu navegador (Chrome/Safari). Toca los tres puntos arriba y selecciona ‘Abrir en navegador externo’.”
+             <i class="bi bi-box-arrow-up-right"></i> “Para instalar la app, Toca los tres puntos arriba y selecciona ‘Abrir en navegador externo’.”
           </a>`;
         return; // 👈 no seguimos con la lógica de instalación
     }
