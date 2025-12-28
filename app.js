@@ -1036,12 +1036,18 @@ function volverAInicio() {
 }
 
 function configurarInstalacionPWA() {
-    const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches || 
-                          window.navigator.standalone === true;
+    const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches ||
+                           window.navigator.standalone === true;
 
     if (!esPWAInstalado) {
         const contenedor = document.getElementById("instalar-container");
         if (contenedor) contenedor.classList.remove("d-none");
+    }
+
+    // 🔎 Detectar si estamos en navegador interno de Facebook/Instagram/Messenger
+    function esNavegadorEmbebido() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera;
+        return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Instagram");
     }
 
     let deferredPrompt;
@@ -1051,14 +1057,24 @@ function configurarInstalacionPWA() {
         deferredPrompt = e;
 
         const boton = document.getElementById("boton-instalar");
-        boton?.addEventListener("click", async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const resultado = await deferredPrompt.userChoice;
-                deferredPrompt = null;
-                document.getElementById("instalar-container")?.classList.add("d-none");
-            }
-        });
+
+        if (esNavegadorEmbebido()) {
+            // 🚫 En navegadores embebidos no funciona la instalación
+            boton.textContent = "Abrir en navegador externo";
+            boton?.addEventListener("click", () => {
+                window.open(window.location.href, "_blank");
+            });
+        } else {
+            // ✅ Lógica normal de instalación
+            boton?.addEventListener("click", async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const resultado = await deferredPrompt.userChoice;
+                    deferredPrompt = null;
+                    document.getElementById("instalar-container")?.classList.add("d-none");
+                }
+            });
+        }
     });
 }
 
