@@ -2165,6 +2165,32 @@ a:hover.text-primary {
     background-color: rgba(0, 123, 255, 0.1);
     transform: translateX(5px);
 }
+/* PROTECCIÓN CONTRA REDIRECCIONES */
+a[href*="PRODUCTO.HTML"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+.card-producto-ml a {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block !important;
+}
+
+.card-producto-ml a:hover {
+    text-decoration: none !important;
+    opacity: 0.9;
+}
+
+/* Deshabilitar cualquier JS interno en las cards */
+.card-producto-ml a[onclick] {
+    pointer-events: none !important;
+}
+
+/* Solo permitir el enlace principal */
+.card-producto-ml > a {
+    pointer-events: auto !important;
+}
 /* === AÑADIR ESTAS CLASES AL HTML SI ES NECESARIO === */
 /*
 En el Hero Section:
