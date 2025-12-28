@@ -2152,7 +2152,19 @@ a:hover.text-primary {
     background-color: #1B4557 !important;
     color: white !important;
 }
+.categorias-menu-lista {
+    max-height: 400px;
+    overflow-y: auto;
+}
 
+.categoria-menu-item {
+    transition: all 0.2s;
+}
+
+.categoria-menu-item:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateX(5px);
+}
 /* === AÑADIR ESTAS CLASES AL HTML SI ES NECESARIO === */
 /*
 En el Hero Section:
@@ -2164,3 +2176,4 @@ En Banners:
 
 En Sección de Redes:
 - Cambiar: style="background-color: #1b4557;" por class="bg-institucional"
+*/
