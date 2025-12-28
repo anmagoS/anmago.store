@@ -1035,58 +1035,7 @@ function volverAInicio() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function configurarInstalacionPWA() {
-    const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches ||
-                           window.navigator.standalone === true;
 
-    // 🔎 Detectar navegadores embebidos (Facebook, Messenger, Instagram)
-    function esNavegadorEmbebido() {
-        const ua = navigator.userAgent || navigator.vendor || window.opera;
-        return ua.includes("FBAN") || ua.includes("FBAV") || ua.includes("Instagram");
-    }
-
-    const contenedor = document.getElementById("instalar-container");
-    const boton = document.getElementById("boton-instalar");
-
-    // 1️⃣ Si ya está instalada, ocultamos el botón
-    if (esPWAInstalado) {
-        contenedor?.classList.add("d-none");
-        return;
-    }
-
-    // 2️⃣ Si es navegador embebido, mostramos enlace "Abrir en navegador externo"
-    if (esNavegadorEmbebido()) {
-        contenedor?.classList.remove("d-none");
-
-        // Reemplazamos el botón por un enlace <a>
-        contenedor.innerHTML = `
-          <a href="${window.location.href}" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="btn-instalar-app">
-             <i class="bi bi-box-arrow-up-right"></i>Para instalar la app, toca los tres puntos arriba y selecciona ‘Abrir en navegador externo’
-      </a>`;
-          </a>`;
-        return; // 👈 no seguimos con la lógica de instalación
-    }
-
-    // 3️⃣ Lógica normal de instalación en navegadores completos
-    let deferredPrompt;
-    window.addEventListener("beforeinstallprompt", (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        contenedor?.classList.remove("d-none");
-
-        boton?.addEventListener("click", async () => {
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                const resultado = await deferredPrompt.userChoice;
-                deferredPrompt = null;
-                contenedor?.classList.add("d-none");
-            }
-        });
-    });
-}
 // ==============================================
 // SISTEMA DE CARRITO COMPLETO CON CAMBIO DE CANTIDADES
 // ==============================================
