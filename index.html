@@ -588,6 +588,20 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
+    // Verificador de navegación mejorado
+    document.addEventListener('click', function(e) {
+        // Solo verificar enlaces de producto
+        const productLink = e.target.closest('a[href*="PRODUCTO.HTML"]');
+        
+        if (productLink) {
+            console.log('📱 Navegando a producto desde index.html');
+            console.log('Enlace:', productLink.href);
+            
+            // Permitir navegación normal - NO interferir
+            return true;
+        }
+    }, true);
+    
     // Inicializar cuando el DOM esté listo
     document.addEventListener('DOMContentLoaded', function() {
         // Inicializar tooltips
