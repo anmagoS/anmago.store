@@ -509,7 +509,7 @@ async function cargarCatalogoGlobal() {
 }
 
 // ==============================================
-// FUNCIÓN PARA CREAR CARD DE PRODUCTO CON DESCUENTOS
+// FUNCIÓN PARA CREAR CARD DE PRODUCTO - VERSIÓN SIMPLE QUE SÍ FUNCIONA
 // ==============================================
 
 function crearCardProductoHTML(producto) {
@@ -547,6 +547,7 @@ function crearCardProductoHTML(producto) {
         imagenMostrar = producto.imagen;
     }
     
+    // 🔥 VERSIÓN SUPER SIMPLE - SIN BOTONES INTERNOS
     return `
     <div class="card-producto-ml" data-id="${producto.id}">
         <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
@@ -579,10 +580,10 @@ function crearCardProductoHTML(producto) {
                         <div class="envio-gratis">Envío gratis</div>
                     </div>
                     
-                    <button class="btn-ver-producto" 
-                            onclick="event.preventDefault(); event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
+                    <!-- 🔥 SIMPLIFICADO: Solo icono, NO botón -->
+                    <span class="icono-ver">
                         <i class="bi bi-eye"></i>
-                    </button>
+                    </span>
                 </div>
             </div>
         </a>
