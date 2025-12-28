@@ -1035,7 +1035,32 @@ function volverAInicio() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function configurarInstalacionPWA() {
+    const esPWAInstalado = window.matchMedia('(display-mode: standalone)').matches || 
+                          window.navigator.standalone === true;
 
+    if (!esPWAInstalado) {
+        const contenedor = document.getElementById("instalar-container");
+        if (contenedor) contenedor.classList.remove("d-none");
+    }
+
+    let deferredPrompt;
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+
+        const boton = document.getElementById("boton-instalar");
+        boton?.addEventListener("click", async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const resultado = await deferredPrompt.userChoice;
+                deferredPrompt = null;
+                document.getElementById("instalar-container")?.classList.add("d-none");
+            }
+        });
+    });
+}
 // ==============================================
 // SISTEMA DE CARRITO COMPLETO CON CAMBIO DE CANTIDADES
 // ==============================================
