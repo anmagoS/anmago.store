@@ -92,7 +92,7 @@ function cargarCategoriasEnMenuLateral() {
                onclick="filtrarPorTipoDesdeCategoria('${tipo}'); cerrarMenu(); return false;">
                 <div class="me-3" style="font-size: 1.2rem;">${icono}</div>
                 <div class="flex-grow-1">${tipo}</div>
-                <span class="badge bg-primary rounded-pill">${count}</span>
+                <span class="badge bg-primary rounded-pill"></span>
             </a>
         `;
     }).join('');
@@ -614,7 +614,7 @@ function mostrarCategoriasNivel0() {
         if (tipo !== 'TODOS') {
             const count = productosGlobal.filter(p => p.tipo === tipo).length;
             if (count > 0) {
-                contador = `<span class="badge-categoria-count">${count}</span>`;
+                contador = `<span class="badge-categoria-count"></span>`;
             }
             icono = obtenerIcono(tipo, 0);
         }
@@ -777,7 +777,7 @@ function mostrarCategoriasNivel2(tipo, subtipo) {
             p.tipo === tipo && p.subtipo === subtipo && p.categoria === categoria
         ).length;
         
-        const contador = count > 0 ? `<span class="badge-categoria-count">${count}</span>` : '';
+        const contador = count > 0 ? `<span class="badge-categoria-count"></span>` : '';
 
         return `
             <div class="categoria-rapida-contenedor">
