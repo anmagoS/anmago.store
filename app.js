@@ -1,6 +1,6 @@
 // ==============================================
 // ANMAGO STORE - APP.JS COMPLETO CORREGIDO
-// VERSIÓN: CATEGORÍAS COMO FILTROS - SIN SCROLL AUTOMÁTICO
+// VERSIÓN: OCULTAR PRESENTACIÓN AL FILTRAR
 // ==============================================
 // Variables globales
 let productosGlobal = [];
@@ -14,6 +14,7 @@ let contextoNavegacion = {
 let productosCargados = 0;
 let cargandoScroll = false;
 const LIMITE_PRODUCTOS = 12;
+let esPrimeraCarga = true;
 
 // Iconos para categorías
 const ICONOS_CATEGORIAS = {
@@ -24,8 +25,91 @@ const ICONOS_CATEGORIAS = {
     'DAMA': '👩', 'CABALLERO': '👨',
     'UNISEX': '👥', 'NIÑOS': '👦', 'NIÑAS': '👧',
 };
+
 // ==============================================
-// FUNCIONES PARA ENLACES COMPARTIBLES
+// FUNCIONES PARA MOSTRAR/OCULTAR ELEMENTOS
+// ==============================================
+
+function mostrarSeccionPresentacion(mostrar = true) {
+    const elementosParaOcultar = [
+        'seccion-hero',
+        'hero-section',
+        'banner-institucional'
+    ];
+    
+    elementosParaOcultar.forEach(id => {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.style.display = mostrar ? 'block' : 'none';
+        }
+    });
+    
+    // También buscar por clases
+    const seccionesHero = document.querySelectorAll('.hero-section, .banner-institucional, section.py-4.py-md-5');
+    seccionesHero.forEach(elemento => {
+        if (elemento) {
+            elemento.style.display = mostrar ? 'block' : 'none';
+        }
+    });
+}
+
+function ajustarPosicionParaProductos() {
+    // Si estamos en vista de productos o todos, hacer scroll a la sección de productos
+    if (vistaActual === 'productos' || vistaActual === 'todos') {
+        const vistaProductos = document.getElementById(`vista-${vistaActual}`);
+        if (vistaProductos) {
+            setTimeout(() => {
+                vistaProductos.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start'
+                });
+            }, 50);
+        }
+    }
+}
+
+// ==============================================
+// FUNCIONES PARA CARGAR CATEGORÍAS EN MENÚ LATERAL
+// ==============================================
+
+function cargarCategoriasEnMenuLateral() {
+    const contenedor = document.getElementById('menu-categorias-dinamico');
+    if (!contenedor || !productosGlobal || productosGlobal.length === 0) {
+        console.warn('⚠️ No se puede cargar menú lateral');
+        return;
+    }
+    
+    const tiposUnicos = ['TODOS', ...new Set(productosGlobal.map(p => p.tipo).filter(Boolean))];
+    
+    const htmlCategorias = tiposUnicos.map(tipo => {
+        const icono = obtenerIcono(tipo, 0);
+        const count = tipo !== 'TODOS' ? 
+            productosGlobal.filter(p => p.tipo === tipo).length : 
+            productosGlobal.length;
+        
+        return `
+            <a href="#" class="nav-link d-flex align-items-center py-2 px-3 rounded categoria-menu-item"
+               onclick="filtrarPorTipoDesdeCategoria('${tipo}'); cerrarMenu(); return false;">
+                <div class="me-3" style="font-size: 1.2rem;">${icono}</div>
+                <div class="flex-grow-1">${tipo}</div>
+                <span class="badge bg-primary rounded-pill">${count}</span>
+            </a>
+        `;
+    }).join('');
+    
+    const htmlCompleto = `
+        <p class="small text-muted mb-2 px-3"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+        <div class="categorias-menu-lista">
+            ${htmlCategorias}
+        </div>
+    `;
+    
+    contenedor.innerHTML = htmlCompleto;
+    console.log('✅ Categorías cargadas en menú lateral:', tiposUnicos.length);
+}
+
+// ==============================================
+// FUNCIONES PARA ENLACES COMPARTIBLES (MANTENER IGUAL)
 // ==============================================
 
 function crearEnlaceFiltro(tipo = null, subtipo = null, categoria = null) {
@@ -367,11 +451,10 @@ function obtenerIcono(categoria, nivel = 0) {
     return ICONOS_CATEGORIAS[categoria] || '📦';
 }
 
-// 🔥 FUNCIÓN CRÍTICA CORREGIDA - SIN SCROLL AUTOMÁTICO
-function cambiarAVista(vistaNombre, hacerScroll = false) {
-    console.log('📱 Cambiando a vista:', vistaNombre, 'hacerScroll:', hacerScroll);
+// 🔥 FUNCIÓN CRÍTICA CORREGIDA - CON CONTROL DE PRESENTACIÓN
+function cambiarAVista(vistaNombre, hacerScroll = false, ocultarPresentacion = false) {
+    console.log('📱 Cambiando a vista:', vistaNombre, 'hacerScroll:', hacerScroll, 'ocultarPresentacion:', ocultarPresentacion);
     
-    // Obtener posición actual del scroll ANTES de cambiar
     const scrollPosicion = window.scrollY;
     
     document.querySelectorAll('.vista').forEach(vista => {
@@ -385,12 +468,21 @@ function cambiarAVista(vistaNombre, hacerScroll = false) {
     
     vistaActual = vistaNombre;
     
-    // 🔥 SOLO HACER SCROLL si se especifica explícitamente
+    // 🔥 OCULTAR PRESENTACIÓN SI ES NECESARIO
+    if (ocultarPresentacion) {
+        mostrarSeccionPresentacion(false);
+        esPrimeraCarga = false;
+    }
+    
     if (hacerScroll) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-        // Mantener la posición actual del scroll
         window.scrollTo(0, scrollPosicion);
+    }
+    
+    // Si estamos en productos o todos, ajustar posición
+    if (vistaNombre === 'productos' || vistaNombre === 'todos') {
+        ajustarPosicionParaProductos();
     }
 }
 
@@ -404,6 +496,11 @@ async function cargarCatalogoGlobal() {
         productos = productos.reverse();
         productosGlobal = productos;
         console.log(`✅ ${productos.length} productos cargados (orden invertido)`);
+        
+        setTimeout(() => {
+            cargarCategoriasEnMenuLateral();
+        }, 300);
+        
         return productos;
     } catch (err) {
         console.error("❌ Error al cargar catálogo:", err);
@@ -545,7 +642,7 @@ function mostrarCategoriasNivel0() {
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
 }
 
-// 🔥 NUEVA FUNCIÓN: Filtrar desde categorías sin cambiar vista
+// 🔥 NUEVA FUNCIÓN: Filtrar desde categorías OCULTANDO PRESENTACIÓN
 function filtrarPorTipoDesdeCategoria(tipo) {
     console.log('🎯 Filtrando por tipo desde categorías:', tipo);
     
@@ -557,7 +654,8 @@ function filtrarPorTipoDesdeCategoria(tipo) {
             cargarPorTipo(tipo);
         }
     } else {
-        cambiarAVista('productos');
+        // Si estamos en inicio, cambiar a productos y OCULTAR PRESENTACIÓN
+        cambiarAVista('productos', false, true);
         setTimeout(() => {
             cargarPorTipo(tipo);
         }, 100);
@@ -629,7 +727,7 @@ function filtrarPorSubtipoDesdeCategoria(tipo, subtipo) {
     if (vistaActual === 'todos' || vistaActual === 'productos') {
         cargarPorSubtipo(tipo, subtipo);
     } else {
-        cambiarAVista('productos');
+        cambiarAVista('productos', false, true);
         setTimeout(() => {
             cargarPorSubtipo(tipo, subtipo);
         }, 100);
@@ -707,7 +805,7 @@ function filtrarPorCategoriaDesdeCategoria(tipo, subtipo, categoria) {
     if (vistaActual === 'todos' || vistaActual === 'productos') {
         cargarPorCategoria(tipo, subtipo, categoria);
     } else {
-        cambiarAVista('productos');
+        cambiarAVista('productos', false, true);
         setTimeout(() => {
             cargarPorCategoria(tipo, subtipo, categoria);
         }, 100);
@@ -717,21 +815,23 @@ function filtrarPorCategoriaDesdeCategoria(tipo, subtipo, categoria) {
 }
 
 // ==============================================
-// FUNCIONES DE NAVEGACIÓN (SIN SCROLL AUTOMÁTICO)
+// FUNCIONES DE NAVEGACIÓN (OCULTANDO PRESENTACIÓN)
 // ==============================================
 
 async function cargarPorTipo(tipo) {
     console.log('📁 Cargando tipo:', tipo);
     
     if (tipo === 'TODOS') {
-        cambiarAVista('todos', false);
+        // 🔥 OCULTAR PRESENTACIÓN cuando se va a "TODOS"
+        cambiarAVista('todos', false, !esPrimeraCarga);
         await cargarVistaTodos();
         mostrarCategoriasNivel0();
         actualizarURLNavegacion();
         return;
     }
 
-    cambiarAVista('productos', false);
+    // 🔥 OCULTAR PRESENTACIÓN cuando se filtra por tipo
+    cambiarAVista('productos', false, !esPrimeraCarga);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
@@ -749,7 +849,7 @@ async function cargarPorTipo(tipo) {
 async function cargarPorSubtipo(tipo, subtipo) {
     console.log('📁 Cargando subtipo:', subtipo);
     
-    cambiarAVista('productos', false);
+    cambiarAVista('productos', false, true);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
@@ -767,7 +867,7 @@ async function cargarPorSubtipo(tipo, subtipo) {
 async function cargarPorCategoria(tipo, subtipo, categoria) {
     console.log('📁 Cargando categoría:', categoria);
     
-    cambiarAVista('productos', false);
+    cambiarAVista('productos', false, true);
     
     document.getElementById('breadcrumb-tipo-link-prod').textContent = tipo;
     document.getElementById('breadcrumb-tipo-link-prod').onclick = () => cargarPorTipo(tipo);
@@ -1004,6 +1104,11 @@ function configurarScrollInfinito() {
 
 function volverAInicio() {
     console.log('🏠 Volviendo al inicio...');
+    esPrimeraCarga = false; // Ya no es primera carga
+    
+    // Mostrar presentación nuevamente
+    mostrarSeccionPresentacion(true);
+    
     cambiarAVista('inicio', true);
     contextoNavegacion = { nivel: 0, tipo: null, subtipo: null, categoria: null };
     mostrarCategoriasNivel0();
@@ -1129,13 +1234,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     configurarScrollInfinito();
     
     setTimeout(() => {
+        // Si hay parámetros en la URL, ir directamente a productos (ocultando presentación)
         if (tipo && subtipo && categoria) {
+            esPrimeraCarga = false;
             cargarPorCategoria(tipo, subtipo, categoria);
         } else if (tipo && subtipo) {
+            esPrimeraCarga = false;
             cargarPorSubtipo(tipo, subtipo);
         } else if (tipo) {
+            esPrimeraCarga = false;
             cargarPorTipo(tipo);
         } else {
+            // Si no hay parámetros, mostrar inicio con presentación
             volverAInicio();
         }
     }, 1000);
@@ -1191,6 +1301,24 @@ document.addEventListener("DOMContentLoaded", async () => {
             justify-content: center;
         }
         
+        .categorias-menu-lista {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .categoria-menu-item {
+            transition: all 0.2s;
+        }
+        
+        .categoria-menu-item:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .seccion-productos-oculta {
+            display: none !important;
+        }
+        
         @keyframes slideIn {
             from {
                 transform: translateX(100%);
@@ -1226,10 +1354,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     `;
     document.head.appendChild(style);
     
-    window.volverAInicio = volverAInicio;
+    // 🔥 MODIFICAR FUNCIÓN GLOBAL "mostrarCatalogoCompleto"
     window.mostrarCatalogoCompleto = function() {
+        esPrimeraCarga = false;
         cargarPorTipo('TODOS');
     };
+    
+    // También modificar la función en tu HTML principal
+    window.volverAInicio = volverAInicio;
     
     console.log('✅ Anmago Store inicializada correctamente');
 });
@@ -1239,6 +1371,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 // ==============================================
 
 function mostrarTodosLosProductos() {
+    esPrimeraCarga = false;
     cargarPorTipo('TODOS');
 }
 
@@ -1253,6 +1386,7 @@ function filtrarPorCategoria(categoria) {
     );
     
     if (productoEjemplo) {
+        esPrimeraCarga = false;
         if (productoEjemplo.tipo === categoria) {
             cargarPorTipo(categoria);
         } else if (productoEjemplo.subtipo === categoria) {
@@ -1270,6 +1404,7 @@ function filtrarPorCategoria(categoria) {
 }
 
 function mostrarTodosLosProductosCompleto() {
+    esPrimeraCarga = false;
     cargarPorTipo('TODOS');
 }
 
