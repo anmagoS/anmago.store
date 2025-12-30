@@ -671,7 +671,7 @@ function inicializarFormulario() {
     if (btnEnviar) {
         btnEnviar.disabled = true;
         btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
-        btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Validando registro... ✨';
+        btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra... ✨';
     }
 
     // 🔧 CONFIGURAR ESTADO INICIAL
