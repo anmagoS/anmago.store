@@ -10,7 +10,8 @@
   <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
   
   <!-- ⚡ OPTIMIZACIONES CRÍTICAS PARA LCP -->
-   <link rel="icon" href="tina-192.png" type="image/x-icon" />
+  <link rel="icon" href="tina-192.png" type="image/x-icon" />
+  
   <!-- 1. Precarga del LOGO (elemento LCP más probable) -->
   <link rel="preload" 
         href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto" 
@@ -22,17 +23,18 @@
   <link rel="dns-prefetch" href="https://ik.imagekit.io">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  // Page view automático
-  gtag('config', 'G-PD2Y81DPRG', {
-    send_page_view: true
-  });
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PD2Y81DPRG', {
+      send_page_view: true
+    });
+  </script>
+  
   <!-- CSS CRÍTICO INLINE (SOLO LO NECESARIO) -->
   <style>
     /* SOLO ESTILOS PARA PRIMER RENDER - 2KB máximo */
@@ -139,794 +141,542 @@
     <link rel="stylesheet" href="ESTILO.CSS?v=20251116">
   </noscript>
 </head>
-<!-- Intro animada tipo persiana con degradado -->
-<div id="intro" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: linear-gradient(135deg, #1b4557 0%, #2a6b8a 40%, #ffffff 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: curtainUp 2.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-  overflow: hidden;
-">
-  <!-- Logo principal con efecto de aparición -->
-  <div class="logo-container" style="
-    position: relative;
-    width: 180px;
-    height: 180px;
-    margin-bottom: 30px;
-    animation: logoReveal 1.2s ease-out 0.3s both;
-  ">
-    <img src="tina-512.png" alt="ANMAGO Store" style="
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
-    ">
-    <!-- Efecto de brillo sutil -->
-    <div style="
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
-      z-index: 1;
-    "></div>
-  </div>
-  
-  <!-- Texto de carga con puntos animados -->
-  <div class="loading-text" style="
-    color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    animation: textFade 2s ease-in-out;
-  ">
-    CARGANDO<span class="dots">...</span>
-  </div>
-  
-  <!-- Barra de progreso sutil -->
-  <div class="progress-bar" style="
-    width: 200px;
-    height: 2px;
-    background: rgba(255,255,255,0.2);
-    margin-top: 20px;
-    border-radius: 10px;
+
+<body class="bg-light">
+  <!-- INTRO ANIMADA -->
+  <div id="intro" style="
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(135deg, #1b4557 0%, #2a6b8a 40%, #ffffff 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: curtainUp 3.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
     overflow: hidden;
   ">
-    <div style="
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #ffffff, #a8e6ff);
-      animation: progressFill 1.5s ease-in-out forwards;
-    "></div>
-  </div>
-  
-  <!-- Elementos decorativos sutiles -->
-  <div style="
-    position: absolute;
-    bottom: 40px;
-    color: rgba(255,255,255,0.7);
-    font-size: 14px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    animation: fadeIn 1s ease 1s both;
-  ">
-    ANMAGO Store
-  </div>
-</div>
-
-<style>
-/* Animación principal de persiana mejorada */
-@keyframes curtainUp {
-  0% { 
-    transform: translateY(0);
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.95;
-  }
-  100% { 
-    transform: translateY(-100%);
-    opacity: 0;
-    display: none;
-  }
-}
-
-/* Animación de revelación del logo */
-@keyframes logoReveal {
-  0% { 
-    transform: scale(0.8) rotate(-5deg);
-    opacity: 0;
-  }
-  100% { 
-    transform: scale(1) rotate(0);
-    opacity: 1;
-  }
-}
-
-/* Animación de puntos de carga */
-@keyframes dotsPulse {
-  0%, 20% { opacity: 0.2; }
-  50% { opacity: 1; }
-  100% { opacity: 0.2; }
-}
-
-/* Animación de la barra de progreso */
-@keyframes progressFill {
-  0% { width: 0%; }
-  80% { width: 90%; }
-  100% { width: 100%; }
-}
-
-/* Animación de texto */
-@keyframes textFade {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Animación de aparición */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 0.7; }
-}
-
-/* Estilo para los puntos animados */
-.dots::after {
-  content: '...';
-  animation: dotsPulse 1.5s infinite;
-}
-
-/* Mejorar rendimiento con transformaciones GPU */
-#intro {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  #intro .logo-container {
-    width: 140px;
-    height: 140px;
-  }
-  
-  #intro .loading-text {
-    font-size: 16px;
-  }
-}
-</style>
-
-<script>
-// Eliminar elemento del DOM después de la animación para mejor rendimiento
-document.addEventListener('DOMContentLoaded', function() {
-  const intro = document.getElementById('intro');
-  
-  // Eliminar el elemento después de que termine la animación
-  setTimeout(() => {
-    if (intro && intro.parentNode) {
-      intro.parentNode.removeChild(intro);
-    }
-  }, 2000); // 2000ms = duración de la animación + margen
-  
-  // Prevenir interacción durante la animación
-  intro.addEventListener('click', function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-  });
-});
-</script>
-  
-<body class="bg-light">
-  <!-- HEADER COMPLETO (IGUAL) -->
-  <header class="header-sticky" style="padding-bottom: 0;">
-  <!-- Menú móvil (hamburguesa) -->
-  <button class="btn-menu-mobile" onclick="toggleMenuMobile()">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-    </svg>
-  </button>
-
-  <!-- Logo -->
-  <div class="logo ms-3">
-    <a href="/" style="text-decoration: none; color: white; display: flex; align-items: center;">
-      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" alt="Anmago Store" style="height: 40px;">
-      <span class="ms-2 fw-bold d-none d-md-inline">ANMAGO STORE</span>
-    </a>
-  </div>
-
-  <!-- Buscador - Versión compatible con tu JS -->
-  <div class="search-desktop" style="flex: 1; margin: 0 20px; position: relative;">
-    <div class="search-container">
-      <input type="text" 
-             class="buscador-header" 
-             placeholder="Buscar productos..." 
-             id="buscador-header"
-             onkeyup="buscarProductos()"
-             onclick="mostrarSugerencias()">
-      
-      <div class="sugerencias-container" id="sugerencias-header"></div>
-    </div>
-  </div>
-
-  <!-- Menú principal desktop -->
-  <nav class="header-menu-desktop d-none d-md-flex">
-    <ul class="list-menu-desktop">
-      <li><a href="#" onclick="mostrarTodosLosProductos(); return false;">Todos</a></li>
-      <li class="menu-con-desplegable">
-        <a href="#">Categorías</a>
-        <div class="submenu-desktop">
-          <!-- Las categorías se cargarán dinámicamente -->
-          <div id="menu-categorias-dinamico"></div>
-        </div>
-      </li>
-      <li><a href="https://wa.me/573212345678" target="_blank">WhatsApp</a></li>
-    </ul>
-  </nav>
-
-  <!-- Carrito e iconos -->
-  <div class="header-icons">
-    <a href="#" onclick="toggleCarrito(); return false;" class="header-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" viewBox="0 0 21 19" fill="none">
-        <path d="M0.515747 1H2.47944C3.37918 1 4.16816 1.6008 4.40743 2.46814L7.0841 12.1711C7.32336 13.0384 8.11234 13.6392 9.01208 13.6392H17.2243C18.1581 13.6392 18.9677 12.993 19.1746 12.0824L20.4447 6.49408C20.7291 5.24256 19.7811 4.05084 18.4977 4.05084C13.8744 4.05084 4.49241 4.05084 4.84404 4.05084" stroke="white" stroke-width="0.75"></path>
-        <circle cx="8.85726" cy="16.9225" r="1.70248" stroke="white" stroke-width="0.75"></circle>
-        <circle cx="17.5738" cy="16.9225" r="1.70248" stroke="white" stroke-width="0.75"></circle>
-      </svg>
-      <span class="contador-carrito" id="contador-carrito-header">0</span>
-    </a>
-  </div>
-
-  <!-- Menú móvil completo (oculto por defecto) -->
-  <div class="menu-mobile-container" id="menu-mobile-container">
-    <div class="menu-mobile-header">
-      <h5>Menú</h5>
-      <button class="btn-close-menu" onclick="toggleMenuMobile()">×</button>
+    <div class="logo-container" style="
+      position: relative;
+      width: 180px;
+      height: 180px;
+      margin-bottom: 30px;
+      animation: logoReveal 1.2s ease-out 0.3s both;
+    ">
+      <img src="tina-512.png" alt="ANMAGO Store" style="
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+      ">
+      <div style="
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+        z-index: 1;
+      "></div>
     </div>
     
-    <div class="menu-mobile-content">
-      <a href="/" class="menu-mobile-item" onclick="toggleMenuMobile(); cambiarAVista('inicio');">Inicio</a>
-      <a href="#" class="menu-mobile-item" onclick="toggleMenuMobile(); mostrarTodosLosProductos();">Todos los productos</a>
-      
-      <div class="menu-mobile-categorias">
-        <h6>Categorías</h6>
-        <div id="menu-categorias-mobile"></div>
-      </div>
-      
-      <a href="https://wa.me/573212345678" target="_blank" class="menu-mobile-item" onclick="toggleMenuMobile()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#25D366" viewBox="0 0 16 16">
-          <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.964L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.774-.114.133-.229.148-.425.05-.197-.1-.836-.308-1.592-.985-.588-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-        </svg>
-        WhatsApp
-      </a>
+    <div class="loading-text" style="
+      color: white;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      animation: textFade 2s ease-in-out;
+    ">
+      CARGANDO<span class="dots">...</span>
+    </div>
+    
+    <div class="progress-bar" style="
+      width: 200px;
+      height: 2px;
+      background: rgba(255,255,255,0.2);
+      margin-top: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+    ">
+      <div style="
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(90deg, #ffffff, #a8e6ff);
+        animation: progressFill 1.5s ease-in-out forwards;
+      "></div>
+    </div>
+    
+    <div style="
+      position: absolute;
+      bottom: 40px;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      animation: fadeIn 1s ease 1s both;
+    ">
+      ANMAGO Store
     </div>
   </div>
-</header>
 
-<!-- CSS para el header -->
+  <!-- ESTILOS INTRO -->
+  <style>
+    /* Animación principal de persiana mejorada */
+    @keyframes curtainUp {
+      0% { 
+        transform: translateY(0);
+        opacity: 1;
+      }
+      70% {
+        opacity: 0.95;
+      }
+      100% { 
+        transform: translateY(-100%);
+        opacity: 0;
+        display: none;
+      }
+    }
+    
+    /* Animación de revelación del logo */
+    @keyframes logoReveal {
+      0% { 
+        transform: scale(0.8) rotate(-5deg);
+        opacity: 0;
+      }
+      100% { 
+        transform: scale(1) rotate(0);
+        opacity: 1;
+      }
+    }
+    
+    /* Animación de puntos de carga */
+    @keyframes dotsPulse {
+      0%, 20% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+    
+    /* Animación de la barra de progreso */
+    @keyframes progressFill {
+      0% { width: 0%; }
+      80% { width: 90%; }
+      100% { width: 100%; }
+    }
+    
+    /* Animación de texto */
+    @keyframes textFade {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Animación de aparición */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 0.7; }
+    }
+    
+    /* Estilo para los puntos animados */
+    .dots::after {
+      content: '...';
+      animation: dotsPulse 1.5s infinite;
+    }
+    
+    /* Mejorar rendimiento con transformaciones GPU */
+    #intro {
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Responsive para móviles */
+    @media (max-width: 768px) {
+      #intro .logo-container {
+        width: 140px;
+        height: 140px;
+      }
+      
+      #intro .loading-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <!-- HEADER SIMPLIFICADO (SIN HAMBURGUESA VISIBLE) -->
+  <header class="header-sticky d-flex justify-content-between align-items-center px-3 px-md-4 py-2">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;" class="d-flex align-items-center">
+        <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
+             alt="Logo ANMAGO" 
+             width="48" 
+             height="48" 
+             fetchpriority="high" 
+             decoding="async"
+             style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <span class="ms-2 fw-bold d-none d-md-inline" style="color: white; font-size: 1.1rem;">ANMAGO STORE</span>
+      </a>
+    </div>
+
+    <!-- Buscador principal (usa buscador.js) -->
+    <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
+      <input id="buscador" class="form-control buscador-header" 
+             placeholder="Buscar productos..." 
+             autocomplete="off">
+      <div id="sugerencias" class="sugerencias-container"></div>
+    </div>
+
+    <!-- Botón hamburguesa Bootstrap (oculto en desktop, solo para offcanvas) -->
+    <button class="navbar-toggler border-0 bg-transparent d-flex d-md-none" type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menuLateral"
+            aria-controls="menuLateral"
+            aria-label="Abrir menú">
+      <i class="bi bi-list fs-1 text-white"></i>
+    </button>
+
+    <!-- Menú desktop simplificado (sin categorías desplegables) -->
+    <nav class="header-menu-desktop d-none d-md-flex">
+      <ul class="list-menu-desktop">
+        <li><a href="#" onclick="mostrarTodosLosProductos(); return false;">Todos</a></li>
+        <li><a href="#" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">Categorías</a></li>
+        <li><a href="https://wa.me/573006498710" target="_blank">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </header>
+<!-- CSS para el header y menús -->
 <style>
 /* Header principal */
 .header-sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--primary-color);
-  color: white;
-  z-index: 1020;
-  padding: 0.5rem 1rem;
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  height: 70px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    z-index: 1030;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    height: 70px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Botón menú móvil */
-.btn-menu-mobile {
-  background: none;
-  border: none;
-  color: white;
-  padding: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Logo */
+.logo a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logo a:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.logo img {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.logo a:hover img {
+    transform: scale(1.05);
 }
 
 /* Buscador */
-.search-container {
-  position: relative;
-  width: 100%;
-}
-
 .buscador-header {
-  width: 100%;
-  height: 44px;
-  padding: 0.6rem 1.2rem;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  font-size: 0.9rem;
-  transition: var(--transition);
+    width: 100%;
+    height: 44px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 0.9rem;
+    transition: var(--transition);
 }
 
 .buscador-header::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .buscador-header:focus {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.5);
-  outline: none;
-  border-color: var(--premium-gold);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(201, 169, 110, 0.5);
+    outline: none;
+    border-color: var(--premium-gold);
 }
 
-/* Sugerencias */
-.sugerencias-container {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: white;
-  border: 1px solid var(--gray-medium);
-  border-radius: 12px;
-  box-shadow: var(--shadow-premium);
-  max-height: 400px;
-  overflow-y: auto;
-  z-index: 9999;
-  margin-top: 8px;
-  display: none;
+/* Botón hamburguesa Bootstrap */
+.navbar-toggler {
+    border: none !important;
+    background: transparent !important;
+    padding: 8px;
+    transition: all 0.3s ease;
 }
 
-.sugerencias-container.mostrar {
-  display: block;
+.navbar-toggler:hover {
+    opacity: 0.8;
+    transform: scale(1.1);
 }
 
-/* Menú desktop */
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+/* Menú desktop - ESTILOS NUEVOS PARA LOS ENLACES */
 .header-menu-desktop {
-  margin-left: auto;
-  margin-right: 20px;
+    margin-left: auto;
+    margin-right: 20px;
 }
 
 .list-menu-desktop {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 25px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 25px;
+    align-items: center;
 }
 
 .list-menu-desktop li {
-  position: relative;
+    position: relative;
 }
 
 .list-menu-desktop a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 0;
-  transition: color 0.3s;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .list-menu-desktop a:hover {
-  color: var(--premium-gold);
+    color: var(--premium-gold);
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-color: var(--premium-gold);
 }
 
-/* Submenu desktop */
-.submenu-desktop {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: white;
-  border-radius: 12px;
-  box-shadow: var(--shadow-premium);
-  min-width: 250px;
-  display: none;
-  padding: 10px 0;
-  z-index: 1000;
+/* Iconos en los enlaces del menú */
+.list-menu-desktop a i {
+    font-size: 1.1rem;
 }
 
-.menu-con-desplegable:hover .submenu-desktop {
-  display: block;
+/* WhatsApp especial */
+.list-menu-desktop a[href*="whatsapp"] {
+    background: rgba(37, 211, 102, 0.2);
+    border-color: rgba(37, 211, 102, 0.3);
 }
 
-/* Iconos del header */
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.list-menu-desktop a[href*="whatsapp"]:hover {
+    background: rgba(37, 211, 102, 0.3);
+    color: #25D366;
 }
 
-.header-icon {
-  color: white;
-  text-decoration: none;
-  position: relative;
-  display: flex;
-  align-items: center;
+/* Sugerencias del buscador */
+.sugerencias-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--gray-medium);
+    border-radius: 12px;
+    box-shadow: var(--shadow-premium);
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 9999;
+    margin-top: 8px;
+    display: none;
 }
 
-.contador-carrito {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-  color: white;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  font-weight: 700;
-  border: 2px solid white;
+.sugerencias-container.mostrar {
+    display: block;
 }
 
-/* Menú móvil completo */
-.menu-mobile-container {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 85%;
-  max-width: 350px;
-  height: 100vh;
-  background: white;
-  box-shadow: 5px 0 30px rgba(0,0,0,0.2);
-  z-index: 1050;
-  transition: left 0.3s ease;
-  overflow-y: auto;
+.sugerencia-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px;
+    border-bottom: 1px solid var(--gray-light);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.menu-mobile-container.abierto {
-  left: 0;
+.sugerencia-item:hover {
+    background-color: var(--gray-light);
+    transform: translateX(4px);
 }
 
-.menu-mobile-header {
-  background: var(--primary-color);
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.sugerencia-item img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 4px;
+    border: 1px solid var(--gray-medium);
 }
 
-.btn-close-menu {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 2rem;
-  cursor: pointer;
-  line-height: 1;
+.sugerencia-info {
+    flex: 1;
 }
 
-.menu-mobile-content {
-  padding: 1rem;
+.sugerencia-nombre {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
 }
 
-.menu-mobile-item {
-  display: block;
-  padding: 12px 15px;
-  text-decoration: none;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--gray-light);
-  font-weight: 500;
+.sugerencia-categoria {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
-.menu-mobile-item:hover {
-  background: var(--gray-light);
-  color: var(--primary-color);
+.sugerencia-precio {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
-.menu-mobile-categorias {
-  margin: 20px 0;
+.sugerencia-precio::before {
+    content: '$';
+    font-size: 0.8em;
+    margin-right: 2px;
 }
 
-.menu-mobile-categorias h6 {
-  color: var(--primary-color);
-  padding: 10px 15px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid var(--primary-color);
+/* Offcanvas (menú lateral) */
+.offcanvas-start {
+    width: 300px !important;
+    max-width: 85vw;
 }
 
-/* Categorías en menú */
-.categorias-menu-lista {
-  display: flex;
-  flex-direction: column;
+.offcanvas-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.offcanvas-title {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.offcanvas-body {
+    background: var(--gray-light);
+}
+
+/* Estilos para categorías en offcanvas */
 .categoria-menu-item {
-  padding: 10px 15px;
-  text-decoration: none;
-  color: var(--text-dark);
-  border-radius: 8px;
-  margin-bottom: 5px;
-  transition: all 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--text-dark);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--gray-medium);
 }
 
 .categoria-menu-item:hover {
-  background: var(--primary-color);
-  color: white;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateX(5px);
+    border-color: var(--primary-color);
 }
 
-/* Overlay para menú móvil */
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 1049;
-  display: none;
-}
-
-.menu-overlay.visible {
-  display: block;
+.categoria-menu-item i {
+    font-size: 1.1rem;
+    width: 24px;
+    text-align: center;
 }
 
 /* Responsive */
 @media (max-width: 767px) {
-  .header-sticky {
-    padding: 0.5rem;
-    height: 60px;
-  }
-  
-  .logo span {
-    display: none;
-  }
-  
-  .search-desktop {
-    margin: 0 10px;
-  }
-  
-  .buscador-header {
-    height: 40px;
-    font-size: 0.85rem;
-  }
-  
-  .header-menu-desktop {
-    display: none !important;
-  }
+    .header-sticky {
+        padding: 0.5rem;
+        height: 60px;
+    }
+    
+    .logo img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .logo span {
+        display: none;
+    }
+    
+    .buscador-header {
+        height: 40px;
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .header-menu-desktop {
+        display: none !important;
+    }
+    
+    .list-menu-desktop {
+        gap: 15px;
+    }
+    
+    .list-menu-desktop a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
 }
 
 @media (min-width: 768px) {
-  .btn-menu-mobile {
-    display: none;
-  }
-  
-  .menu-mobile-container {
-    display: none;
-  }
+    .navbar-toggler.d-md-none {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .list-menu-desktop {
+        gap: 15px;
+    }
+    
+    .list-menu-desktop a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
 }
 </style>
-
-<!-- JavaScript para el header -->
-<script>
-// Función para mostrar/ocultar menú móvil
-function toggleMenuMobile() {
-  const menu = document.getElementById('menu-mobile-container');
-  const overlay = document.querySelector('.menu-overlay') || crearOverlay();
-  
-  if (menu.classList.contains('abierto')) {
-    menu.classList.remove('abierto');
-    overlay.classList.remove('visible');
-  } else {
-    menu.classList.add('abierto');
-    overlay.classList.add('visible');
-  }
-}
-
-function crearOverlay() {
-  const overlay = document.createElement('div');
-  overlay.className = 'menu-overlay';
-  overlay.onclick = toggleMenuMobile;
-  document.body.appendChild(overlay);
-  return overlay;
-}
-
-// Función para buscar productos (compatible con tu JS)
-function buscarProductos() {
-  const input = document.getElementById('buscador-header');
-  const contenedor = document.getElementById('sugerencias-header');
-  
-  if (!input || !contenedor) return;
-  
-  const termino = input.value.trim().toLowerCase();
-  
-  if (termino.length < 2) {
-    contenedor.classList.remove('mostrar');
-    return;
-  }
-  
-  if (!window.productosGlobal || !Array.isArray(window.productosGlobal)) {
-    console.warn('No hay productos cargados para buscar');
-    return;
-  }
-  
-  const resultados = window.productosGlobal.filter(producto => {
-    const nombre = (producto.producto || '').toLowerCase();
-    const tipo = (producto.tipo || '').toLowerCase();
-    const subtipo = (producto.subtipo || '').toLowerCase();
-    
-    return nombre.includes(termino) || 
-           tipo.includes(termino) || 
-           subtipo.includes(termino);
-  }).slice(0, 10);
-  
-  if (resultados.length > 0) {
-    const html = resultados.map(producto => `
-      <a href="PRODUCTO.HTML?id=${producto.id}" class="sugerencia-item">
-        <img src="${producto.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'}" 
-             alt="${producto.producto}" 
-             width="48" height="48">
-        <div class="sugerencia-info">
-          <div class="sugerencia-nombre">${producto.producto}</div>
-          <div class="sugerencia-categoria">${producto.tipo} • ${producto.subtipo}</div>
-        </div>
-        <div class="sugerencia-precio">${Number(producto.precio || 0).toLocaleString('es-CO')}</div>
-      </a>
-    `).join('');
-    
-    contenedor.innerHTML = html;
-    contenedor.classList.add('mostrar');
-  } else {
-    contenedor.innerHTML = `
-      <div class="sugerencia-item text-muted">
-        <div class="sugerencia-info text-center">
-          No se encontraron productos
-        </div>
-      </div>
-    `;
-    contenedor.classList.add('mostrar');
-  }
-}
-
-function mostrarSugerencias() {
-  const input = document.getElementById('buscador-header');
-  if (input && input.value.trim().length >= 2) {
-    buscarProductos();
-  }
-}
-
-// Cerrar sugerencias al hacer clic fuera
-document.addEventListener('click', (e) => {
-  const sugerencias = document.getElementById('sugerencias-header');
-  const buscador = document.getElementById('buscador-header');
-  
-  if (sugerencias && buscador && 
-      !sugerencias.contains(e.target) && 
-      !buscador.contains(e.target)) {
-    sugerencias.classList.remove('mostrar');
-  }
-});
-
-// Cargar categorías en menú
-function cargarCategoriasEnHeader() {
-  if (!window.productosGlobal || !Array.isArray(window.productosGlobal)) {
-    setTimeout(cargarCategoriasEnHeader, 1000);
-    return;
-  }
-  
-  const tiposUnicos = ['TODOS', ...new Set(window.productosGlobal.map(p => p.tipo).filter(Boolean))];
-  
-  // Menú desktop
-  const menuDesktop = document.getElementById('menu-categorias-dinamico');
-  if (menuDesktop) {
-    const htmlDesktop = tiposUnicos.map(tipo => `
-      <a href="#" class="categoria-menu-item"
-         onclick="filtrarPorTipoDesdeCategoria('${tipo}'); return false;">
-        <span>${window.obtenerIcono ? window.obtenerIcono(tipo, 0) : '📦'}</span>
-        <span>${tipo}</span>
-      </a>
-    `).join('');
-    
-    menuDesktop.innerHTML = htmlDesktop;
-  }
-  
-  // Menú móvil
-  const menuMobile = document.getElementById('menu-categorias-mobile');
-  if (menuMobile) {
-    const htmlMobile = tiposUnicos.map(tipo => `
-      <a href="#" class="categoria-menu-item"
-         onclick="filtrarPorTipoDesdeCategoria('${tipo}'); toggleMenuMobile(); return false;">
-        <span>${window.obtenerIcono ? window.obtenerIcono(tipo, 0) : '📦'}</span>
-        <span>${tipo}</span>
-      </a>
-    `).join('');
-    
-    menuMobile.innerHTML = htmlMobile;
-  }
-}
-
-// Función para filtrar desde categorías (compatible con tu JS)
-function filtrarPorTipoDesdeCategoria(tipo) {
-  if (typeof window.cargarPorTipo === 'function') {
-    window.cargarPorTipo(tipo);
-  } else if (typeof window.mostrarTodosLosProductos === 'function') {
-    window.mostrarTodosLosProductos();
-  }
-  return false;
-}
-
-// Toggle carrito (compatible con tu JS)
-function toggleCarrito() {
-  if (typeof window.mostrarCarrito === 'function') {
-    window.mostrarCarrito();
-  } else {
-    // Intentar abrir el offcanvas de carrito si existe
-    const carritoOffcanvas = document.getElementById('carritoOffcanvas');
-    if (carritoOffcanvas) {
-      const bsOffcanvas = new bootstrap.Offcanvas(carritoOffcanvas);
-      bsOffcanvas.show();
-    }
-  }
-}
-
-// Inicializar cuando se cargue la página
-document.addEventListener('DOMContentLoaded', () => {
-  // Cargar categorías después de que se carguen los productos
-  if (window.productosGlobal && window.productosGlobal.length > 0) {
-    cargarCategoriasEnHeader();
-  } else {
-    // Intentar cada segundo hasta que se carguen los productos
-    const interval = setInterval(() => {
-      if (window.productosGlobal && window.productosGlobal.length > 0) {
-        cargarCategoriasEnHeader();
-        clearInterval(interval);
-      }
-    }, 1000);
-  }
-  
-  // Actualizar contador del carrito
-  function actualizarContadorCarrito() {
-    const contador = document.getElementById('contador-carrito-header');
-    if (!contador) return;
-    
-    try {
-      const carritoGuardado = localStorage.getItem('carritoAnmago');
-      let totalItems = 0;
-      
-      if (carritoGuardado) {
-        const carrito = JSON.parse(carritoGuardado);
-        totalItems = carrito.reduce((sum, item) => sum + (item.cantidad || 1), 0);
-      }
-      
-      contador.textContent = totalItems;
-      contador.style.display = totalItems > 0 ? 'flex' : 'none';
-    } catch (e) {
-      console.error('Error actualizando contador:', e);
-    }
-  }
-  
-  // Actualizar cada segundo
-  setInterval(actualizarContadorCarrito, 1000);
-  actualizarContadorCarrito();
-});
-
-// Hacer funciones disponibles globalmente
-window.toggleMenuMobile = toggleMenuMobile;
-window.buscarProductos = buscarProductos;
-window.mostrarSugerencias = mostrarSugerencias;
-window.toggleCarrito = toggleCarrito;
-</script>
-
-  <!-- MENÚ LATERAL COMPLETO -->
+  <!-- MENÚ LATERAL CON CATEGORÍAS (offcanvas Bootstrap) -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="menuLateralLabel">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-     alt="Logo ANMAGO"
-     width="48"
-     height="48">
+             alt="Logo ANMAGO"
+             width="48"
+             height="48"
+             style="border-radius: 6px; margin-right: 10px;">
         Anmago Store
       </h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
@@ -934,26 +684,20 @@ window.toggleCarrito = toggleCarrito;
 
     <div class="offcanvas-body d-flex flex-column gap-3">
       <!-- Inicio -->
-     <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
-    <i class="bi bi-house me-2"></i> Inicio
-</a>
-     
-      <!-- CATEGORÍAS DINÁMICAS - SIMPLIFICADO -->
+      <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
+        <i class="bi bi-house me-2"></i> Inicio
+      </a>
+      
+      <!-- CATEGORÍAS DINÁMICAS - VISIBLES -->
       <div id="menu-categorias-dinamico" class="mt-2">
-        <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+        <p class="small text-muted mb-2"><i class="bi bi-tags me-1"></i> Nuestras Categorías</p>
         
-        <!-- Se cargarán dinámicamente -->
+        <!-- Loading inicial -->
         <div class="text-center py-3">
           <div class="spinner-border spinner-border-sm text-primary"></div>
           <p class="mt-2 small text-muted">Cargando categorías...</p>
         </div>
       </div>
-
-      <!-- Contacto -->
-      <a href="modalformulario.html" 
-         class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-        <i class="bi bi-person me-2"></i> Mi cuenta
-      </a>
 
       <!-- WhatsApp -->
       <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
@@ -988,40 +732,46 @@ window.toggleCarrito = toggleCarrito;
   <div class="container-fluid mt-3">
     <div class="categorias-rapidas" id="categorias-rapidas">
       <!-- Se carga dinámicamente -->
-      <div class="text-center py-2">
+      <div class="text-center py-2 w-100">
         <div class="spinner-border spinner-border-sm text-primary"></div>
         <small class="text-muted ms-2">Cargando categorías...</small>
       </div>
     </div>
   </div>
 
-<!-- BANNER INSTITUCIONAL -->
-<div class="container-fluid banner-promocional py-2" style="background-color:#f5f5f5;">
-  <div class="container text-center" style="font-family:'Segoe UI', sans-serif; font-weight:500; font-size:14px; color:#333;">
-    <div>
-      <span style="color:#fce07b;">Nuestros precios incluyen envío a la mayoría de ciudades, No aplica en zonas especiales.</span><br>
-      <span style="color:#fce07b;"></span>
-          </div>
-    <div style="color:#fce07b;">
-      Mejores precios · Calidad · Envíos Nacionales y Contraentrega
+  <!-- BANNER INSTITUCIONAL -->
+  <div class="container-fluid banner-promocional py-2" style="background-color:#f5f5f5;">
+    <div class="container text-center" style="font-family:'Segoe UI', sans-serif; font-weight:500; font-size:14px; color:#333;">
+      <div>
+        <span style="color:#fce07b;">Nuestros precios incluyen envío a la mayoría de ciudades, No aplica en zonas especiales.</span><br>
+      </div>
+      <div style="color:#fce07b;">
+        Mejores precios · Calidad · Envíos Nacionales y Contraentrega
+      </div>
     </div>
-  </div>
-</div>
-
-
-
-  <!-- BOTÓN INSTALAR APP -->
-  <div id="instalar-container" class="instalar-container d-none">
-    <button id="boton-instalar" class="btn-instalar-app">
-      <i class="bi bi-download"></i> Instalar App
-    </button>
   </div>
 
   <!-- ✅ SISTEMA DE VISTAS DINÁMICAS -->
   <main>
-   <!-- VISTA 1: INICIO (HOME) -->
+    <!-- VISTA 1: INICIO (HOME) -->
     <div id="vista-inicio" class="vista vista-activa">
-              <div id="grid-ultimos" class="grid-productos-ml">
+      <!-- Carrusel de promociones -->
+      <div id="carousel-promos-home" class="carousel slide carousel-promos-home mt-3" data-bs-ride="carousel">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h4 fw-bold mb-0">🔥 Promociones del día</h2>
+            <small class="text-muted" id="temporizador-home">⏰ Actualizando...</small>
+          </div>
+          <div class="carousel-inner" id="carousel-promos-home-contenido">
+            <!-- Cargado dinámicamente -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Últimos productos -->
+      <div class="container mt-4">
+        <h2 class="h4 fw-bold mb-3">✨ Productos destacados</h2>
+        <div id="grid-ultimos" class="grid-productos-ml">
           <div class="card-producto-ml skeleton" style="height: 280px;"></div>
           <div class="card-producto-ml skeleton" style="height: 280px;"></div>
           <div class="card-producto-ml skeleton" style="height: 280px;"></div>
@@ -1117,11 +867,11 @@ window.toggleCarrito = toggleCarrito;
         </div>
         
         <!-- Botón para ver más -->
-<div id="btn-ver-mas-container" class="text-center mt-3 d-none">
-  <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
-    <i class="bi bi-arrow-down"></i> Ver más productos
-  </button>
-</div>
+        <div id="btn-ver-mas-container" class="text-center mt-3 d-none">
+          <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
+            <i class="bi bi-arrow-down"></i> Ver más productos
+          </button>
+        </div>
       </div>
     </div>
   </main>
@@ -1176,26 +926,20 @@ window.toggleCarrito = toggleCarrito;
           <div class="small">canal</div>
         </a>
         <a href="#" class="text-center text-decoration-none position-relative d-flex flex-column align-items-center"
-   data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-   
-   <!-- CONTENEDOR DEL ICONO CON BADGE -->
-   <div class="position-relative mb-1">
-     <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
-          style="width: 35px; height: 35px; margin-top: -8px;">
-       <i class="bi bi-cart-check fs-5 text-white"></i>
-     </div>
-     
-     <!-- BADGE DEL CONTADOR -->
-     <span id="contador-carrito-mobile" 
-           class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill border border-white"
-           style="font-size: 0.6rem; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px;">
-       0
-     </span>
-   </div>
-   
-   <!-- TEXTO "CARRITO" -->
-   <div class="small" style="font-size: 0.75rem;">Carrito</div>
-</a>
+           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
+           <div class="position-relative mb-1">
+             <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
+                  style="width: 35px; height: 35px; margin-top: -8px;">
+               <i class="bi bi-cart-check fs-5 text-white"></i>
+             </div>
+             <span id="contador-carrito-mobile" 
+                   class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill border border-white"
+                   style="font-size: 0.6rem; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px;">
+               0
+             </span>
+           </div>
+           <div class="small" style="font-size: 0.75rem;">Carrito</div>
+        </a>
         <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
            class="text-center text-decoration-none text-success"
            target="_blank">
@@ -1210,250 +954,138 @@ window.toggleCarrito = toggleCarrito;
     </div>
   </nav>
 
-  <!-- SCRIPTS EXTERNOS CON DEFER -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- ====== SCRIPTS ====== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   
-  <!-- Scripts con orden optimizado -->
-<script>
-// ==============================================
-// MENÚ HAMBURGUESA AUTÓNOMO - NO DEPENDE DE APP.JS
-// ==============================================
-
-// Variable para el catálogo del menú
-let catalogoMenuHamburguesa = [];
-
-// Función para cerrar el menú
-function cerrarMenu() {
-    const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
-    if (offcanvas) {
-        offcanvas.hide();
-    }
-}
-
-// 🎯 FUNCIÓN PRINCIPAL: Cargar categorías en el menú hamburguesa
-async function cargarCategoriasMenuHamburguesa() {
-    console.log('🍔 Cargando categorías para menú hamburguesa...');
+  <!-- Script para cargar categorías sin contadores -->
+  <script>
+  // Script para cargar categorías VISIBLES sin contadores
+  function cargarCategoriasVisibles() {
+      const contenedor = document.getElementById('menu-categorias-dinamico');
+      if (!contenedor) return;
+      
+      // Primero intentar usar productosGlobal de app.js
+      if (window.productosGlobal && Array.isArray(window.productosGlobal) && window.productosGlobal.length > 0) {
+          mostrarCategoriasSimples(window.productosGlobal);
+          return;
+      }
+      
+      // Si no, cargar directamente
+      fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json')
+          .then(res => res.json())
+          .then(productos => {
+              window.productosGlobal = productos;
+              mostrarCategoriasSimples(productos);
+          })
+          .catch(error => {
+              console.error('Error cargando categorías:', error);
+              contenedor.innerHTML = `
+                  <div class="alert alert-warning small py-2">
+                      <i class="bi bi-exclamation-triangle me-1"></i>
+                      Error cargando categorías
+                  </div>
+              `;
+          });
+  }
+  
+  function mostrarCategoriasSimples(productos) {
+      const contenedor = document.getElementById('menu-categorias-dinamico');
+      if (!contenedor) return;
+      
+      const tiposUnicos = ['TODOS', ...new Set(productos.map(p => p.tipo).filter(Boolean))];
+      
+      let html = '<div class="d-flex flex-column gap-2">';
+      
+      // Opción TODOS
+      html += `
+          <a href="#" class="nav-link categoria-menu-item d-flex align-items-center py-2 px-3 rounded"
+             onclick="irATodosLosProductos(); cerrarMenu(); return false;">
+              <i class="bi bi-grid-fill me-2"></i>
+              <span>TODOS LOS PRODUCTOS</span>
+          </a>
+      `;
+      
+      // Cada categoría
+      tiposUnicos.slice(1).forEach(tipo => {
+          html += `
+              <a href="#" class="nav-link categoria-menu-item d-flex align-items-center py-2 px-3 rounded"
+                 onclick="irACategoria('${tipo}'); cerrarMenu(); return false;">
+                  <i class="bi bi-folder me-2"></i>
+                  <span>${tipo}</span>
+              </a>
+          `;
+      });
+      
+      html += '</div>';
+      contenedor.innerHTML = html;
+  }
+  
+  function cerrarMenu() {
+      const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
+      if (offcanvas) offcanvas.hide();
+  }
+  
+  function irATodosLosProductos() {
+      if (typeof window.mostrarTodosLosProductosCompleto === 'function') {
+          window.mostrarTodosLosProductosCompleto();
+      } else {
+          window.location.href = 'index.html?tipo=TODOS';
+      }
+  }
+  
+  function irACategoria(tipo) {
+      if (typeof window.cargarPorTipo === 'function') {
+          window.cargarPorTipo(tipo);
+      } else {
+          window.location.href = `index.html?tipo=${encodeURIComponent(tipo)}`;
+      }
+  }
+  
+  // Cargar cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(cargarCategoriasVisibles, 500);
+      
+      // Configurar tooltips
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+      
+      // Eliminar intro después de 4 segundos
+      setTimeout(() => {
+          const intro = document.getElementById('intro');
+          if (intro && intro.parentNode) {
+              intro.parentNode.removeChild(intro);
+          }
+      }, 4000);
+  });
+  </script>
+  
+  <!-- Script para el intro -->
+  <script>
+  // Eliminar elemento del DOM después de la animación
+  document.addEventListener('DOMContentLoaded', function() {
+    const intro = document.getElementById('intro');
     
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (!contenedor) {
-        console.error('❌ No se encontró #menu-categorias-dinamico');
-        return;
-    }
-    
-    // Mostrar loading
-    contenedor.innerHTML = `
-        <div class="text-center py-3">
-            <div class="spinner-border spinner-border-sm text-primary"></div>
-            <p class="mt-2 small text-muted">Cargando categorías...</p>
-        </div>
-    `;
-    
-    try {
-        // 1. INTENTAR USAR productosGlobal de app.js si ya está cargado
-        if (window.productosGlobal && Array.isArray(window.productosGlobal) && window.productosGlobal.length > 0) {
-            console.log('✅ Usando productosGlobal de app.js');
-            catalogoMenuHamburguesa = window.productosGlobal;
-            mostrarCategoriasEnMenu();
-            return;
-        }
-        
-        // 2. SI NO, CARGAR EL CATÁLOGO DIRECTAMENTE
-        console.log('📦 Cargando catálogo directamente para menú...');
-        const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
-        const respuesta = await fetch(url);
-        const catalogo = await respuesta.json();
-        
-        if (!Array.isArray(catalogo) || catalogo.length === 0) {
-            throw new Error('Catálogo vacío o inválido');
-        }
-        
-        catalogoMenuHamburguesa = catalogo;
-        console.log(`✅ Catálogo cargado: ${catalogo.length} productos`);
-        
-        // Mostrar las categorías
-        mostrarCategoriasEnMenu();
-        
-    } catch (error) {
-        console.error('❌ Error cargando categorías:', error);
-        
-        const contenedor = document.getElementById('menu-categorias-dinamico');
-        if (contenedor) {
-            contenedor.innerHTML = `
-                <div class="alert alert-warning small py-2">
-                    <i class="bi bi-exclamation-triangle me-1"></i>
-                    No se pudieron cargar las categorías
-                    <button class="btn btn-sm btn-outline-primary mt-1 d-block w-100" 
-                            onclick="cargarCategoriasMenuHamburguesa()">
-                        <i class="bi bi-arrow-clockwise"></i> Reintentar
-                    </button>
-                </div>
-            `;
-        }
-    }
-}
-
-// 🎯 FUNCIÓN que muestra las categorías en el menú
-function mostrarCategoriasEnMenu() {
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (!contenedor) return;
-    
-    if (!catalogoMenuHamburguesa || catalogoMenuHamburguesa.length === 0) {
-        contenedor.innerHTML = '<p class="small text-muted">No hay productos disponibles</p>';
-        return;
-    }
-    
-    // Extraer tipos únicos del catálogo
-    const tiposUnicos = ['TODOS', ...new Set(catalogoMenuHamburguesa.map(p => p.tipo).filter(Boolean))];
-    
-    console.log(`📂 Tipos únicos encontrados: ${tiposUnicos.length - 1}`, tiposUnicos);
-    
-    if (tiposUnicos.length === 1) { // Solo "TODOS"
-        contenedor.innerHTML = '<p class="small text-muted">No se encontraron categorías</p>';
-        return;
-    }
-    
-    // Crear HTML del menú
-    let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
-    html += '<div class="d-flex flex-column gap-2">';
-    
-    // Opción "TODOS LOS PRODUCTOS"
-    const todosCount = catalogoMenuHamburguesa.length;
-    html += `
-        <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-           onclick="irATodosLosProductos(); cerrarMenu(); return false;">
-            <div class="d-flex align-items-center">
-                <i class="bi bi-grid-fill me-2"></i>
-                <span>TODOS LOS PRODUCTOS</span>
-            </div>
-            <span class="badge bg-primary rounded-pill">${todosCount}</span>
-        </a>
-    `;
-    
-    // Cada categoría/tipo
-    tiposUnicos.slice(1).forEach(tipo => {
-        const count = catalogoMenuHamburguesa.filter(p => p.tipo === tipo).length;
-        
-        html += `
-            <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-               onclick="irACategoria('${tipo}'); cerrarMenu(); return false;">
-                <div class="d-flex align-items-center">
-                    <i class="bi bi-folder me-2"></i>
-                    <span>${tipo}</span>
-                </div>
-                <span class="badge bg-primary rounded-pill">${count}</span>
-            </a>
-        `;
-    });
-    
-    html += '</div>';
-    contenedor.innerHTML = html;
-    
-    console.log(`✅ Menú hamburguesa cargado: ${tiposUnicos.length - 1} categorías`);
-}
-
-// 🎯 FUNCIONES DE NAVEGACIÓN (compatibles con app.js)
-function irATodosLosProductos() {
-    console.log('📦 Navegando a: TODOS LOS PRODUCTOS');
-    
-    // Si app.js está disponible, usar su función
-    if (typeof window.mostrarTodosLosProductosCompleto === 'function') {
-        window.mostrarTodosLosProductosCompleto();
-    } else {
-        // Fallback: redirigir a index con parámetro
-        window.location.href = 'index.html?tipo=TODOS';
-    }
-}
-
-function irACategoria(tipo) {
-    console.log('📁 Navegando a categoría:', tipo);
-    
-    // Si app.js está disponible, usar su función
-    if (typeof window.cargarPorTipo === 'function') {
-        window.cargarPorTipo(tipo);
-    } else {
-        // Fallback: redirigir a index con parámetro
-        window.location.href = `index.html?tipo=${encodeURIComponent(tipo)}`;
-    }
-}
-
-// 🎯 Función placeholder para volver a inicio
-function volverAInicio() {
-    console.log('🏠 Volviendo al inicio desde menú');
-    
-    // Si app.js está disponible, usar su función
-    if (typeof window.volverAInicio === 'function') {
-        window.volverAInicio();
-    } else {
-        // Fallback simple
-        const vistaInicio = document.getElementById('vista-inicio');
-        const otrasVistas = document.querySelectorAll('.vista:not(#vista-inicio)');
-        
-        if (vistaInicio) {
-            vistaInicio.classList.add('vista-activa');
-            otrasVistas.forEach(vista => vista.classList.remove('vista-activa'));
-        }
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-}
-
-// 🎯 INICIALIZACIÓN CUANDO EL DOM ESTÁ LISTO
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('🚀 DOM cargado, configurando menú hamburguesa...');
-    
-    // Cargar categorías después de un breve delay
+    // Eliminar el elemento después de que termine la animación
     setTimeout(() => {
-        cargarCategoriasMenuHamburguesa();
-    }, 800);
+      if (intro && intro.parentNode) {
+        intro.parentNode.removeChild(intro);
+      }
+    }, 3800);
     
-    // También cargar cuando se abra el menú (por si acaso)
-    const menuLateral = document.getElementById('menuLateral');
-    if (menuLateral) {
-        menuLateral.addEventListener('show.bs.offcanvas', function() {
-            console.log('🎯 Menú hamburguesa abierto, verificando categorías...');
-            
-            // Verificar si ya hay categorías cargadas
-            const contenedor = document.getElementById('menu-categorias-dinamico');
-            if (contenedor && !contenedor.querySelector('.categoria-menu-item')) {
-                console.log('🔄 No hay categorías, recargando...');
-                cargarCategoriasMenuHamburguesa();
-            }
-        });
+    // Prevenir interacción durante la animación
+    if (intro) {
+      intro.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+      });
     }
-});
-
-// 🎯 ESCUCHAR CUANDO APP.JS TERMINE DE CARGAR
-window.addEventListener('appJSListo', function() {
-    console.log('🎯 Evento appJSListo recibido');
-    
-    // Actualizar el catálogo con los datos de app.js
-    if (window.productosGlobal && Array.isArray(window.productosGlobal)) {
-        catalogoMenuHamburguesa = window.productosGlobal;
-        
-        // Actualizar el menú si ya está cargado
-        const contenedor = document.getElementById('menu-categorias-dinamico');
-        if (contenedor && contenedor.querySelector('.categoria-menu-item')) {
-            console.log('🔄 Actualizando menú con datos de app.js');
-            mostrarCategoriasEnMenu();
-        }
-    }
-});
-
-// 🎯 FORZAR CARGA DESPUÉS DE 3 SEGUNDOS (fallback)
-setTimeout(() => {
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (contenedor && (contenedor.innerHTML.includes('Cargando') || 
-                      contenedor.innerHTML.includes('No se pudieron'))) {
-        console.log('⚠️ Fallback después de 3s, recargando menú...');
-        cargarCategoriasMenuHamburguesa();
-    }
-}, 3000);
-</script>
+  });
+  </script>
   
   <!-- Tus scripts principales -->
-  <script src="app.js?v=20251116" defer></script>
-  <script src="carrito.js?v=20251116" defer></script>
-  <script src="buscador.js?v=20251115" defer></script>
+  <script src="app.js?v=20251116"></script>
+  <script src="carrito.js?v=20251116"></script>
+  <script src="buscador.js?v=20251115"></script>
 
   <!-- ====== CARGAR FOOTER DINÁMICAMENTE ====== -->
   <script>
@@ -1750,30 +1382,6 @@ setTimeout(() => {
 
     window.recargarCarruselSincronizado = cargarCarruselSincronizado;
   </script>
-<script>
-// Fallback si después de 3 segundos no se cargaron las categorías
-setTimeout(() => {
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (contenedor && contenedor.innerHTML.includes('Cargando')) {
-        console.log('⚠️ Fallback: cargando categorías directamente...');
-        
-        // Carga directa como último recurso
-        fetch("https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json")
-            .then(res => res.json())
-            .then(productos => {
-                window.productosGlobal = productos;
-                cargarCategoriasEnMenuDesdeAppJS();
-            })
-            .catch(error => {
-                contenedor.innerHTML = `
-                    <div class="alert alert-danger small py-2">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        Error cargando categorías
-                    </div>
-                `;
-            });
-    }
-}, 3000);
-</script>
+
 </body>
 </html>
