@@ -418,16 +418,16 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- HEADER COMPLETO CON BUSCADOR OPTIMIZADO -->
   <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
     <!-- LOGO CON PRIORIDAD ALTA -->
-   <div class="logo">
-    <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;">
+    <div class="logo">
+      <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-96,h-96,f-auto"
              alt="Logo ANMAGO"
              width="96"
              height="96"
              fetchpriority="high"
              decoding="async">
-    </a>
-</div>
+      </a>
+    </div>
 
     <!-- BUSCADOR EN HEADER - OPTIMIZADO -->
     <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
@@ -546,14 +546,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <!-- ✅ SISTEMA DE VISTAS DINÁMICAS -->
   <main>
-   <!-- VISTA 1: INICIO (HOME) -->
+    <!-- VISTA 1: INICIO (HOME) -->
     <div id="vista-inicio" class="vista vista-activa">
-              <div id="grid-ultimos" class="grid-productos-ml">
-          <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-          <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-          <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-          <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-        </div>
+      <div id="grid-ultimos" class="grid-productos-ml">
+        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
+        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
+        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
+        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
       </div>
     </div>
 
@@ -617,191 +616,197 @@ document.addEventListener('DOMContentLoaded', function() {
             <li class="breadcrumb-item active" id="breadcrumb-todos">Todos los productos</li>
           </ol>
         </nav>
-                
-    <!-- SECCIÓN PRODUCTOS DESTACADOS - CARRUSEL FLEXIBLE -->
-    <section class="productos-destacados mt-5">
-      <div class="container">
-        <!-- Título -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h2 class="h4 fw-bold mb-0">🌟 Productos Destacados</h2>
-          <small class="text-muted">Desliza para ver más</small>
-        </div>
         
-        <!-- Carrusel con 2 productos por slide -->
-        <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
-          <!-- Indicadores -->
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1"></button>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h1 class="h4 fw-bold mb-0">🛍️ Todos los productos</h1>
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge bg-primary" id="contador-todos">0 productos</span>
           </div>
-          
-          <!-- Contenido del carrusel -->
-          <div class="carousel-inner">
-            <!-- SLIDE 1: Producto EE03DCC0 -->
-            <div class="carousel-item active">
-              <div class="row g-3 justify-content-center">
-                <!-- Imagen 1 del producto 1 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 1" 
-                           loading="lazy"
-                           class="img-fluid">
-                    </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Imagen 2 del producto 1 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 1" 
-                           loading="lazy"
-                           class="img-fluid">
-                    </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Imagen 3 del producto 1 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 1" 
-                           loading="lazy"
-                           class="img-fluid">
-                    </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Imagen 4 del producto 1 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 1" 
-                           loading="lazy"
-                           class="img-fluid">
-                    </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        </div>
+               
+        <!-- SECCIÓN PRODUCTOS DESTACADOS - CARRUSEL FLEXIBLE (ARRIBA DEL GRID) -->
+        <section class="productos-destacados mt-5">
+          <div class="container">
+            <!-- Título -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h4 fw-bold mb-0">🌟 Productos Destacados</h2>
+              <small class="text-muted">Desliza para ver más</small>
             </div>
             
-            <!-- SLIDE 2: Producto 91E832A3 -->
-            <div class="carousel-item">
-              <div class="row g-3 justify-content-center">
-                <!-- Imagen 1 del producto 2 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 2" 
-                           loading="lazy"
-                           class="img-fluid">
+            <!-- Carrusel con 2 productos por slide -->
+            <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
+              <!-- Indicadores -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1"></button>
+              </div>
+              
+              <!-- Contenido del carrusel -->
+              <div class="carousel-inner">
+                <!-- SLIDE 1: Producto EE03DCC0 -->
+                <div class="carousel-item active">
+                  <div class="row g-3 justify-content-center">
+                    <!-- Imagen 1 del producto 1 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 1" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
+                    
+                    <!-- Imagen 2 del producto 1 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 1" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Imagen 3 del producto 1 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 1" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <!-- Imagen 4 del producto 1 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 1" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 
-                <!-- Imagen 2 del producto 2 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 2" 
-                           loading="lazy"
-                           class="img-fluid">
+                <!-- SLIDE 2: Producto 91E832A3 -->
+                <div class="carousel-item">
+                  <div class="row g-3 justify-content-center">
+                    <!-- Imagen 1 del producto 2 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 2" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
+                    
+                    <!-- Imagen 2 del producto 2 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 2" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                
-                <!-- Imagen 3 del producto 2 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 2" 
-                           loading="lazy"
-                           class="img-fluid">
+                    
+                    <!-- Imagen 3 del producto 2 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 2" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                
-                <!-- Imagen 4 del producto 2 -->
-                <div class="col-6 col-md-3">
-                  <div class="card-producto-destacado">
-                    <div class="card-img-container">
-                      <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" 
-                           alt="Producto destacado 2" 
-                           loading="lazy"
-                           class="img-fluid">
-                    </div>
-                    <div class="card-info">
-                      <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
-                        Ver Producto
-                      </a>
+                    
+                    <!-- Imagen 4 del producto 2 -->
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" 
+                               alt="Producto destacado 2" 
+                               loading="lazy"
+                               class="img-fluid">
+                        </div>
+                        <div class="card-info">
+                          <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">
+                            Ver Producto
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              <!-- Controles del carrusel -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
             </div>
           </div>
-          
-          <!-- Controles del carrusel -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-          </button>
-        </div>
-      </div>
-    </section>
-    
-                   
-        <!-- Grid de productos -->
+        </section>
+        
+        <!-- Grid de productos - MOSTRARÁ PRIMERO 15 PRODUCTOS -->
         <div id="grid-todos" class="grid-productos-ml"></div>
         
-        <!-- Spinner para scroll infinito -->
+        <!-- Spinner para scroll infinito (OCULTO INICIALMENTE) -->
         <div id="cargando-todos" class="text-center py-4 d-none">
           <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Cargando más productos...</span>
@@ -816,12 +821,12 @@ document.addEventListener('DOMContentLoaded', function() {
           <p class="text-muted">Intenta con otros filtros de búsqueda</p>
         </div>
         
-        <!-- Botón para ver más -->
-<div id="btn-ver-mas-container" class="text-center mt-3 d-none">
-  <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
-    <i class="bi bi-arrow-down"></i> Ver más productos
-  </button>
-</div>
+        <!-- Botón para ver más (OCULTO INICIALMENTE) -->
+        <div id="btn-ver-mas-container" class="text-center mt-3 d-none">
+          <button id="btn-ver-mas" class="btn btn-outline-primary" onclick="cargarMasProductosScroll()">
+            <i class="bi bi-arrow-down"></i> Ver más productos
+          </button>
+        </div>
       </div>
     </div>
   </main>
@@ -1641,265 +1646,432 @@ setTimeout(() => {
     function mostrarRespaldoCarrusel() {
         const contenedor = document.getElementById('carousel-promos-home-contenido');
         if (contenedor) {
-            contenedor.innerHTML = `
+                       contenedor.innerHTML = `
                 <div class="carousel-item active">
                     <div class="text-center py-4">
                         <i class="bi bi-tag text-primary"></i>
                         <p class="mt-2">Promociones especiales</p>
-                        <a href="PROMOS.HTML" class="btn btn-sm btn-primary mt-2">
-                            Ver todas las ofertas
+                        <a href="PROMOS.HTML" class="btn btn-sm btn-primary">
+                            Ver promociones
                         </a>
                     </div>
                 </div>
             `;
         }
     }
+}
 
-    window.recargarCarruselSincronizado = cargarCarruselSincronizado;
-  </script>
-<script>
-// Fallback si después de 3 segundos no se cargaron las categorías
+// Inicializar el carrusel optimizado
 setTimeout(() => {
-    const contenedor = document.getElementById('menu-categorias-dinamico');
-    if (contenedor && contenedor.innerHTML.includes('Cargando')) {
-        console.log('⚠️ Fallback: cargando categorías directamente...');
-        
-        // Carga directa como último recurso
-        fetch("https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json")
-            .then(res => res.json())
-            .then(productos => {
-                window.productosGlobal = productos;
-                cargarCategoriasEnMenuDesdeAppJS();
-            })
-            .catch(error => {
-                contenedor.innerHTML = `
-                    <div class="alert alert-danger small py-2">
-                        <i class="bi bi-exclamation-triangle"></i>
-                        Error cargando categorías
-                    </div>
-                `;
-            });
+    if (typeof cargarCarruselSincronizado === 'function') {
+        cargarCarruselSincronizado();
     }
-}, 3000);
-</script>
-<!-- ESTILOS CSS PARA LA SECCIÓN DESTACADOS -->
-<style>
-/* Color institucional */
-:root {
-  --color-institucional: #1b4557;
-  --color-institucional-hover: #153c4d;
+}, 1000);
+
+// ==============================================
+// MANEJO DE PWA INSTALACIÓN
+// ==============================================
+
+let deferredPrompt;
+const instalacionContainer = document.getElementById('instalar-container');
+const botonInstalar = document.getElementById('boton-instalar');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    
+    // Mostrar botón después de 5 segundos
+    setTimeout(() => {
+        if (instalacionContainer) {
+            instalacionContainer.classList.remove('d-none');
+        }
+    }, 5000);
+    
+    if (botonInstalar) {
+        botonInstalar.addEventListener('click', async () => {
+            if (!deferredPrompt) return;
+            
+            deferredPrompt.prompt();
+            const { outcome } = await deferredPrompt.userChoice;
+            
+            if (outcome === 'accepted') {
+                console.log('✅ PWA instalada');
+                if (instalacionContainer) {
+                    instalacionContainer.classList.add('d-none');
+                }
+            }
+            
+            deferredPrompt = null;
+        });
+    }
+});
+
+// Ocultar botón si ya está instalada
+window.addEventListener('appinstalled', () => {
+    console.log('🎯 PWA ya está instalada');
+    if (instalacionContainer) {
+        instalacionContainer.classList.add('d-none');
+    }
+    deferredPrompt = null;
+});
+
+// Verificar si ya es PWA
+if (window.matchMedia('(display-mode: standalone)').matches || 
+    window.navigator.standalone === true) {
+    if (instalacionContainer) {
+        instalacionContainer.classList.add('d-none');
+    }
 }
 
-/* Sección productos destacados */
-.productos-destacados {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #dee2e6;
-}
+// ==============================================
+// TOOLTIPS DE BOOTSTRAP
+// ==============================================
 
-/* Tarjetas de productos destacados */
-.card-producto-destacado {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-  background: white;
-  height: 220px;
-}
-
-.card-producto-destacado:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* Contenedor de imagen */
-.card-img-container {
-  height: 160px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
-}
-
-.card-img-container img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-  transition: transform 0.5s ease;
-}
-
-.card-producto-destacado:hover .card-img-container img {
-  transform: scale(1.05);
-}
-
-/* Información de la tarjeta */
-.card-info {
-  padding: 10px;
-  background: white;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 60px;
-}
-
-/* Botón Ver Producto */
-.btn-ver-producto {
-  display: inline-block;
-  background-color: var(--color-institucional);
-  color: white;
-  padding: 6px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: none;
-  transition: all 0.3s ease;
-  text-align: center;
-  width: 100%;
-  max-width: 140px;
-}
-
-.btn-ver-producto:hover {
-  background-color: var(--color-institucional-hover);
-  color: white;
-  transform: scale(1.05);
-  text-decoration: none;
-  box-shadow: 0 4px 8px rgba(27, 69, 87, 0.2);
-}
-
-/* Indicadores del carrusel personalizados */
-.carousel-indicators button {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  margin: 0 4px;
-  background-color: #dee2e6;
-  border: none;
-}
-
-.carousel-indicators button.active {
-  background-color: var(--color-institucional);
-}
-
-/* Controles del carrusel */
-.carousel-control-prev,
-.carousel-control-next {
-  width: 40px;
-  height: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.carousel-control-prev {
-  left: -20px;
-}
-
-.carousel-control-next {
-  right: -20px;
-}
-
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background: white;
-  opacity: 1;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  filter: invert(30%);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .productos-destacados {
-    padding: 1rem 0;
-  }
-  
-  .card-producto-destacado {
-    height: 200px;
-  }
-  
-  .card-img-container {
-    height: 140px;
-  }
-  
-  .card-info {
-    height: 60px;
-    padding: 8px;
-  }
-  
-  .btn-ver-producto {
-    padding: 5px 12px;
-    font-size: 0.8rem;
-    max-width: 120px;
-  }
-  
-  .carousel-control-prev {
-    left: -15px;
-  }
-  
-  .carousel-control-next {
-    right: -15px;
-  }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 576px) {
-  .card-producto-destacado {
-    height: 180px;
-  }
-  
-  .card-img-container {
-    height: 120px;
-  }
-  
-  .card-info {
-    height: 60px;
-  }
-  
-  .btn-ver-producto {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    max-width: 110px;
-  }
-}
-</style>
-
-<!-- JavaScript para inicializar el carrusel -->
-<script>
-// Inicializar el carrusel automáticamente
 document.addEventListener('DOMContentLoaded', function() {
-  const carouselDestacados = document.getElementById('carouselDestacados');
-  if (carouselDestacados) {
-    const carousel = new bootstrap.Carousel(carouselDestacados, {
-      interval: 5000,
-      wrap: true,
-      pause: 'hover'
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+
+// ==============================================
+// MEJORA DE EXPERIENCIA DE USUARIO
+// ==============================================
+
+// Suavizar scroll al hacer clic en enlaces internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Prevenir múltiples clics en botones
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+        const button = e.target.tagName === 'BUTTON' ? e.target : e.target.closest('button');
+        if (button.disabled) return;
+        
+        // Deshabilitar temporalmente
+        button.disabled = true;
+        button.style.pointerEvents = 'none';
+        
+        setTimeout(() => {
+            button.disabled = false;
+            button.style.pointerEvents = '';
+        }, 1000);
+    }
+});
+
+// Mejorar carga de imágenes fuera del viewport
+document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.add('loaded');
+                observer.unobserve(img);
+            }
+        });
     });
     
-    const images = carouselDestacados.querySelectorAll('img');
-    images.forEach(img => {
-      img.onerror = function() {
-        this.src = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-600,q-80';
-      };
-    });
-  }
+    lazyImages.forEach(img => imageObserver.observe(img));
 });
-</script>
+
+// ==============================================
+// ANALYTICS ADICIONAL
+// ==============================================
+
+// Trackear clics en productos destacados
+document.addEventListener('click', function(e) {
+    if (e.target.closest('.card-producto-destacado') || 
+        e.target.closest('.btn-ver-producto')) {
+        const card = e.target.closest('.card-producto-destacado') || 
+                     e.target.closest('.btn-ver-producto').closest('.card-producto-destacado');
+        
+        if (card) {
+            const link = card.querySelector('a');
+            if (link && link.href) {
+                const productId = link.href.split('id=')[1];
+                
+                // Enviar a Google Analytics
+                if (typeof gtag === 'function') {
+                    gtag('event', 'select_item', {
+                        items: [{
+                            item_id: productId,
+                            item_name: card.querySelector('img')?.alt || 'Producto destacado',
+                            item_category: 'Destacados'
+                        }]
+                    });
+                }
+            }
+        }
+    }
+});
+
+// ==============================================
+// NOTIFICACIONES DE NUEVOS PRODUCTOS
+// ==============================================
+
+function verificarNuevosProductos() {
+    // Solo ejecutar una vez al día
+    const lastCheck = localStorage.getItem('lastProductCheck');
+    const today = new Date().toDateString();
+    
+    if (lastCheck === today) return;
+    
+    // Simular verificación de nuevos productos
+    setTimeout(() => {
+        if (Math.random() > 0.7) { // 30% de probabilidad
+            mostrarNotificacionNuevosProductos();
+        }
+        localStorage.setItem('lastProductCheck', today);
+    }, 30000); // Esperar 30 segundos después de cargar
+}
+
+function mostrarNotificacionNuevosProductos() {
+    const notificacion = document.createElement('div');
+    notificacion.className = 'alert alert-info alert-dismissible fade show position-fixed bottom-0 end-0 m-3';
+    notificacion.style.zIndex = '9999';
+    notificacion.style.maxWidth = '350px';
+    notificacion.innerHTML = `
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        <div class="d-flex align-items-start">
+            <i class="bi bi-gift fs-4 me-3"></i>
+            <div>
+                <h6 class="mb-1">🎁 Nuevos productos disponibles</h6>
+                <p class="small mb-2">¡Recién agregados! Descubre nuestras novedades.</p>
+                <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;" 
+                   class="btn btn-sm btn-primary w-100">
+                    Ver ahora
+                </a>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(notificacion);
+    
+    // Auto-ocultar después de 15 segundos
+    setTimeout(() => {
+        if (notificacion.parentNode) {
+            const bsAlert = new bootstrap.Alert(notificacion);
+            bsAlert.close();
+        }
+    }, 15000);
+}
+
+// Verificar nuevos productos después de cargar
+setTimeout(verificarNuevosProductos, 5000);
+
+// ==============================================
+// MONITOREO DE RENDIMIENTO
+// ==============================================
+
+// Medir LCP (Largest Contentful Paint)
+let lcpValue = null;
+const lcpObserver = new PerformanceObserver((entryList) => {
+    const entries = entryList.getEntries();
+    const lastEntry = entries[entries.length - 1];
+    lcpValue = lastEntry.startTime;
+    
+    if (typeof gtag === 'function') {
+        gtag('event', 'performance', {
+            event_category: 'Web Vitals',
+            event_label: 'LCP',
+            value: Math.round(lcpValue),
+            non_interaction: true
+        });
+    }
+});
+
+lcpObserver.observe({entryTypes: ['largest-contentful-paint']});
+
+// Medir CLS (Cumulative Layout Shift)
+let clsValue = 0;
+const clsObserver = new PerformanceObserver((entryList) => {
+    for (const entry of entryList.getEntries()) {
+        if (!entry.hadRecentInput) {
+            clsValue += entry.value;
+        }
+    }
+    
+    if (typeof gtag === 'function' && clsValue > 0) {
+        gtag('event', 'performance', {
+            event_category: 'Web Vitals',
+            event_label: 'CLS',
+            value: Math.round(clsValue * 1000) / 1000,
+            non_interaction: true
+        });
+    }
+});
+
+clsObserver.observe({entryTypes: ['layout-shift']});
+
+// ==============================================
+// FIN DEL SCRIPT
+// ==============================================
+
+console.log('🚀 Scripts de optimización cargados correctamente');
+
+// Marcar que el carrusel está listo
+window.dispatchEvent(new Event('carruselListo'));
+
+  </script>
+  
+  <!-- Estilos adicionales para el carrusel -->
+  <style>
+    /* Estilos para el carrusel de productos destacados */
+    .productos-destacados {
+      margin-bottom: 3rem;
+    }
+    
+    .card-producto-destacado {
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-producto-destacado:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-color: #1B4557;
+    }
+    
+    .card-img-container {
+      height: 200px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 15px;
+    }
+    
+    .card-producto-destacado img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+    
+    .card-producto-destacado:hover img {
+      transform: scale(1.05);
+    }
+    
+    .card-info {
+      padding: 15px;
+      text-align: center;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .btn-ver-producto {
+      background: linear-gradient(135deg, #1B4557, #2A6A8F);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-block;
+      width: 100%;
+    }
+    
+    .btn-ver-producto:hover {
+      background: linear-gradient(135deg, #2A6A8F, #1B4557);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(27, 69, 87, 0.2);
+    }
+    
+    /* Estilos para el carrusel de promociones */
+    .carousel-promos-home {
+      height: 450px;
+      min-height: 450px;
+    }
+    
+    @media (max-width: 768px) {
+      .carousel-promos-home {
+        height: 400px;
+        min-height: 400px;
+      }
+      
+      .card-img-container {
+        height: 150px;
+      }
+      
+      .card-producto-destacado {
+        margin-bottom: 15px;
+      }
+    }
+    
+    /* Estilos para botón instalar */
+    .instalar-container {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 1001;
+    }
+    
+    .btn-instalar-app {
+      background: linear-gradient(135deg, #1B4557, #2A6A8F);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: 500;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .btn-instalar-app:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+    
+    /* Mejoras para el botón del carrito móvil */
+    #contador-carrito-mobile {
+      font-size: 0.6rem;
+      min-width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+    }
+    
+    /* Animación para imágenes cargadas */
+    img.loaded {
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </body>
 </html>
