@@ -494,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <!-- Botón Enviar -->
       <div class="text-center mt-4">
         <button id="btnEnviarPedido" class="btn btn-secondary px-4 py-2 rounded-pill fw-bold" disabled>
-          <i class="bi bi-send"></i>✨ Validando registro... ✨
+          <i class="bi bi-send"></i>✨ Finalizar Compra... ✨
         </button>
         <p id="estado-formulario" class="text-muted small mt-2"></p>
       </div>
@@ -735,7 +735,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btnEnviar.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
         
         if (clienteExistente) {
-          btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i>✨ Actualizar datos ✨';
+          btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i>✨ Finalizar Compra ✨';
           if (estadoFormulario) {
             estadoFormulario.textContent = '✅ Cliente encontrado. Puedes editar y actualizar tus datos';
             estadoFormulario.className = 'text-success small mt-2';
