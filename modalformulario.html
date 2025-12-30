@@ -883,7 +883,30 @@ window.volverAInicio = volverAInicio;
 
   <!-- ✅ SCRIPT PRINCIPAL DEL FORMULARIO UNIFICADO -->
   <script src="modalformulario.js?v=20251116" defer></script>
+  <script>
+    async function cargarFooter() {
+      try {
+        const respuesta = await fetch('footer.html?v=' + Date.now());
+        const htmlFooter = await respuesta.text();
+        const contenedor = document.getElementById('footer-container');
+        if (contenedor) {
+          contenedor.innerHTML = htmlFooter;
+        }
+      } catch (error) {
+        const contenedor = document.getElementById('footer-container');
+        if (contenedor) {
+          contenedor.innerHTML = `
+            <div class="container text-center py-3">
+              <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
+              <p class="small text-muted">anmagostore@gmail.com</p>
+            </div>
+          `;
+        }
+      }
+    }
 
+    document.addEventListener('DOMContentLoaded', cargarFooter);
+  </script>
    <!-- ✅ FOOTER -->
   <footer class="footer mt-0" id="footer-container">
     <div class="text-center py-4">
