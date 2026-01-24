@@ -421,6 +421,11 @@ main {
     box-shadow: 0 4px 12px rgba(27, 69, 87, 0.25);
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    min-width: 42px;
+    min-height: 42px;
 }
 
 .btn-ver-producto::before {
