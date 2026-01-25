@@ -9411,5 +9411,32 @@
     "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "El extractor nasal es un dispositivo diseñado para extraer secreciones y objetos extraños de la nariz, con una estructura que facilita su manipulación y limpieza. Cuenta con una configuración ergonómica que permite una mayor comodidad y eficacia durante su uso."
+  },
+  {
+    "id": "C01506A2",
+    "tipo": "HOGAR",
+    "subtipo": "COCINA",
+    "categoria": "GENERICO",
+    "subcategoria": "TETERAS",
+    "producto": "HERVIDORA SCARLETT DE 2 L",
+    "material": "ACERO INOXIDABLE",
+    "tallas": "N/A",
+    "precio": 61400,
+    "imagenes": [
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_C01506A2/IMGPRODUCTOS_Images_7113cb5b.URL_IMAGEN.173412.jpg?tr=w-600,q-80",
+        "tipo": "PRINCIPAL",
+        "orden": 1149
+      },
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_C01506A2/IMGPRODUCTOS_Images_9c78073f.URL_IMAGEN.173525.jpg?tr=w-600,q-80",
+        "tipo": "ADICIONAL",
+        "orden": 1150
+      }
+    ],
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_C01506A2/IMGPRODUCTOS_Images_7113cb5b.URL_IMAGEN.173412.jpg?tr=w-600,q-80",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_C01506A2/IMGPRODUCTOS_Images_7113cb5b.URL_IMAGEN.173412.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_C01506A2/IMGPRODUCTOS_Images_9c78073f.URL_IMAGEN.173525.jpg?tr=w-600,q-80",
+    "promo": true,
+    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA"
   }
 ]
