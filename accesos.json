@@ -810,5 +810,9 @@
   {
     "id_producto": "E804444B",
     "ruta": "/HOGAR/SALUD/GENERICO/."
+  },
+  {
+    "id_producto": "C01506A2",
+    "ruta": "/HOGAR/COCINA/GENERICO/TETERAS"
   }
 ]
