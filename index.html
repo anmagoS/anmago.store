@@ -34,7 +34,7 @@
   </script>
   
   <!-- CSS CRÍTICO INLINE (SOLO LO NECESARIO) -->
-  <style>
+ <style>
     /* ========== ESTILOS CRÍTICOS PARA PRIMER RENDER ========== */
     .header-sticky {
       background: linear-gradient(135deg, #1B4557, #2A6A8F);
@@ -210,43 +210,6 @@
       will-change: transform, opacity;
       backface-visibility: hidden;
       -webkit-font-smoothing: antialiased;
-    }
-    
-    /* Responsive básico */
-    @media (max-width: 768px) {
-      .header-sticky { height: 60px; }
-      body { padding-top: 60px; }
-      .carousel-promos-home {
-        height: 350px;
-        min-height: 350px;
-      }
-      .btn-volver-inicio {
-        top: 70px;
-        left: 8px;
-        width: 36px;
-        height: 36px;
-      }
-      .sugerencia-item {
-        padding: 12px;
-        gap: 12px;
-      }
-      .sugerencia-item img {
-        width: 42px;
-        height: 42px;
-      }
-      #intro .logo-container {
-        width: 140px;
-        height: 140px;
-      }
-      #intro .loading-text {
-        font-size: 16px;
-      }
-    }
-    
-    @media (min-width: 768px) {
-      .btn-volver-inicio {
-        display: flex;
-      }
     }
     
     /* ========== ANIMACIONES PARA INTRO ========== */
@@ -468,38 +431,202 @@
       display: block;
     }
     
-    /* Grid productos */
+    /* ========== GRID DE PRODUCTOS OPTIMIZADO ========== */
+    /* Grid productos - Base para móvil */
     .grid-productos-ml {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* 2 en móvil */
       gap: 1rem;
       padding: 1rem 0;
     }
     
-    @media (min-width: 768px) {
+    /* Tablet (≥ 576px) */
+    @media (min-width: 576px) {
       .grid-productos-ml {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr); /* 3 en tablet pequeña */
+        gap: 1.2rem;
       }
     }
+    
+    /* Tablet grande (≥ 768px) */
+    @media (min-width: 768px) {
+      .grid-productos-ml {
+        grid-template-columns: repeat(4, 1fr); /* 4 en tablet grande */
+        gap: 1.5rem;
+      }
+    }
+    
+    /* Escritorio (≥ 1024px) */
     @media (min-width: 1024px) {
-  .grid-productos-ml {
-    grid-template-columns: repeat(5, 1fr); /* 5 en escritorio */
-  }
-}
-    /* Card producto */
+      .grid-productos-ml {
+        grid-template-columns: repeat(5, 1fr); /* 5 en escritorio */
+        gap: 1.5rem;
+      }
+    }
+    
+    /* Pantallas grandes (≥ 1200px) */
+    @media (min-width: 1200px) {
+      .grid-productos-ml {
+        grid-template-columns: repeat(5, 1fr); /* Mantener 5 */
+        gap: 1.8rem;
+      }
+    }
+    
+    /* Pantallas muy grandes (≥ 1400px) */
+    @media (min-width: 1400px) {
+      .grid-productos-ml {
+        grid-template-columns: repeat(6, 1fr); /* 6 en pantallas muy grandes */
+        gap: 2rem;
+      }
+    }
+    
+    /* Card producto optimizada */
     .card-producto-ml {
       background: white;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     
     .card-producto-ml:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      border-color: #1B4557;
     }
-  </style>
+    
+    /* Contenedor de imagen optimizado */
+    .card-producto-ml .img-container {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 12px;
+    }
+    
+    .card-producto-ml img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+    
+    .card-producto-ml:hover img {
+      transform: scale(1.05);
+    }
+    
+    /* Información de la tarjeta optimizada */
+    .card-producto-ml .info {
+      padding: 12px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    /* ========== RESPONSIVE GENERAL ========== */
+    @media (max-width: 768px) {
+      .header-sticky { 
+        height: 60px; 
+      }
+      body { 
+        padding-top: 60px; 
+      }
+      .carousel-promos-home {
+        height: 350px;
+        min-height: 350px;
+      }
+      .btn-volver-inicio {
+        top: 70px;
+        left: 8px;
+        width: 36px;
+        height: 36px;
+      }
+      .sugerencia-item {
+        padding: 12px;
+        gap: 12px;
+      }
+      .sugerencia-item img {
+        width: 42px;
+        height: 42px;
+      }
+      #intro .logo-container {
+        width: 140px;
+        height: 140px;
+      }
+      #intro .loading-text {
+        font-size: 16px;
+      }
+      
+      /* Ajustes para móvil específicos */
+      .card-img-container {
+        height: 160px;
+        padding: 10px;
+      }
+      
+      .productos-destacados .col-6 {
+        width: 50%;
+      }
+      
+      .instalar-container {
+        bottom: 70px;
+        right: 15px;
+      }
+    }
+    
+    /* Mostrar botón volver al inicio solo en desktop */
+    @media (min-width: 768px) {
+      .btn-volver-inicio {
+        display: flex;
+      }
+    }
+    
+    /* Ajustes específicos para tablet */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .grid-productos-ml {
+        gap: 1.2rem;
+      }
+      
+      .card-producto-ml .img-container {
+        padding: 10px;
+      }
+      
+      .productos-destacados .col-md-3 {
+        width: 25%;
+      }
+    }
+    
+    /* Ajustes específicos para escritorio */
+    @media (min-width: 1024px) {
+      .container {
+        max-width: 1200px;
+      }
+      
+      .grid-productos-ml {
+        gap: 1.5rem;
+      }
+      
+      .card-producto-ml .img-container {
+        padding: 15px;
+      }
+    }
+    
+    /* Optimización para pantallas muy anchas */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1320px;
+      }
+      
+      .grid-productos-ml {
+        gap: 2rem;
+      }
+    }
+</style>
   
   <!-- PWA y favicon -->
   <link rel="manifest" href="manifest.json">
