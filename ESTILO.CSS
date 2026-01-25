@@ -449,19 +449,40 @@ main {
     left: 100%;
 }
 
-/* === GRID DE PRODUCTOS - VERSIÓN CORRECTA === */
 .grid-productos-ml {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Reducir a 220px */
+    gap: 20px;
     padding: 15px 0;
     min-height: 300px;
 }
 
-/* Desktop grande */
+/* Tablet (≥ 768px) */
+@media (min-width: 768px) {
+    .grid-productos-ml {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Escritorio (≥ 1024px) */
+@media (min-width: 1024px) {
+    .grid-productos-ml {
+        grid-template-columns: repeat(5, 1fr); /* ← ¡5 COLUMNAS FIJO! */
+        gap: 20px;
+    }
+}
+
+/* Pantallas grandes (≥ 1200px) */
 @media (min-width: 1200px) {
     .grid-productos-ml {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+    }
+}
+
+/* Pantallas muy grandes (≥ 1400px) */
+@media (min-width: 1400px) {
+    .grid-productos-ml {
         gap: 30px;
     }
 }
