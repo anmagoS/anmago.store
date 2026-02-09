@@ -9449,7 +9449,7 @@
     "producto": "CAMISETA DE LA SELECCION COLOMBIANA",
     "material": "CALIDAD: 1.1 PREMIUM – SÚPER TOP",
     "tallas": "S,M,L,XL",
-    "precio": 96600,
+    "precio": 91800,
     "imagenes": [
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80",
@@ -9474,10 +9474,22 @@
         "tipo": "ADICIONAL",
         "variacion": "ESCUDO",
         "orden": 1154
+      },
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_0e67ecec.URL_IMAGEN.152429.jpg?tr=w-600,q-80",
+        "tipo": "ADICIONAL",
+        "variacion": "LOGOS",
+        "orden": 1155
+      },
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_78c61e04.URL_IMAGEN.152755.jpg?tr=w-600,q-80",
+        "tipo": "ADICIONAL",
+        "variacion": "LOGO",
+        "orden": 1156
       }
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_209a09c3.URL_IMAGEN.151707.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_54849024.URL_IMAGEN.151835.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_6689c3c6.URL_IMAGEN.152154.jpg?tr=w-600,q-80",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_209a09c3.URL_IMAGEN.151707.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_54849024.URL_IMAGEN.151835.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_6689c3c6.URL_IMAGEN.152154.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_0e67ecec.URL_IMAGEN.152429.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_78c61e04.URL_IMAGEN.152755.jpg?tr=w-600,q-80",
     "promo": false,
     "proveedor": "XORA",
     "descripcion": "Para los que no se conforman con lo normal.\nEsta es la versión 1.1 calidad súper top, inspirada en la camiseta que usan los jugadores dentro del campo. Cada detalle está pensado al máximo nivel.\n\n✨ Calidad: 1.1 Premium – Súper Top\n✨ Detalles: Versión jugador, acabados finos y máxima precisión\n✨ Tela: Microporforada, liviana y transpirable\n✨ Disponibilidad: Dama y Caballero\n✨ Tallas: S – M – L – XL -2XL"
