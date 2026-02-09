@@ -9439,5 +9439,35 @@
     "promo": true,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "La hervidora Scarlett de 2 L está diseñada para calentar líquidos de manera eficiente y segura. Confeccionada en acero inoxidable, esta hervidora cuenta con una capacidad de 2 litros y ofrece una resistencia duradera y fácil limpieza. Su estructura permite una manipulación cómoda y segura durante su uso."
+  },
+  {
+    "id": "AA71DF41",
+    "tipo": "ROPA",
+    "subtipo": "UNISEX",
+    "categoria": "DEPORTIVA",
+    "subcategoria": "SELECCION",
+    "producto": "CAMISETA DE LA SELECCION COLOMBIANA",
+    "material": "CALIDAD: 1.1 PREMIUM – SÚPER TOP",
+    "tallas": "S,M,L,XL",
+    "precio": 96600,
+    "imagenes": [
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80",
+        "tipo": "PRINCIPAL",
+        "variacion": "DAMA",
+        "orden": 1151
+      },
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_209a09c3.URL_IMAGEN.151707.jpg?tr=w-600,q-80",
+        "tipo": "VARIANTE",
+        "variacion": "CABALLERO",
+        "orden": 1152
+      }
+    ],
+    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_2cfaabc8.URL_IMAGEN.151420.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_AA71DF41/IMGPRODUCTOS_Images_209a09c3.URL_IMAGEN.151707.jpg?tr=w-600,q-80",
+    "promo": false,
+    "proveedor": "XORA",
+    "descripcion": "Para los que no se conforman con lo normal.\nEsta es la versión 1.1 calidad súper top, inspirada en la camiseta que usan los jugadores dentro del campo. Cada detalle está pensado al máximo nivel.\n\n✨ Calidad: 1.1 Premium – Súper Top\n✨ Detalles: Versión jugador, acabados finos y máxima precisión\n✨ Tela: Microporforada, liviana y transpirable\n✨ Disponibilidad: Dama y Caballero\n✨ Tallas: S – M – L – XL -2XL"
   }
 ]
