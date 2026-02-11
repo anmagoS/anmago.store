@@ -1168,7 +1168,7 @@ img[width][height] {
 
 @media (min-width: 1024px) {
   .card-img-ml { 
-    height: 220px;
+    height: 400px;
   }
   
   .carousel-promos-home .carousel-item {
