@@ -2229,3 +2229,29 @@ En Banners:
 En Sección de Redes:
 - Cambiar: style="background-color: #1b4557;" por class="bg-institucional"
 */
+/* === CORREGIR SUPERPOSICIÓN DE CONTROLES DE CARRUSEL (BOOTSTRAP) === */
+
+/* Reducir área de clic y bajar z-index */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px !important;
+    height: 40px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(27, 69, 87, 0.6) !important;
+    border-radius: 50% !important;
+    margin: 0 10px !important;
+    z-index: 5 !important; /* Menor que el botón ver */
+}
+
+/* Asegurar que el botón ver esté por encima */
+.btn-ver-producto {
+    position: relative;
+    z-index: 20 !important;
+}
+
+/* El enlace de la tarjeta también debe estar por encima */
+.card-producto-ml .card-link {
+    position: relative;
+    z-index: 15 !important;
+}
