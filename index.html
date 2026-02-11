@@ -1316,11 +1316,7 @@
               }
           });
 
-          document.addEventListener('click', function(e) {
-              if (!buscador.contains(e.target) && !sugerencias.contains(e.target)) {
-                  ocultarSugerencias();
-              }
-          });
+         
 
           document.addEventListener('keydown', function(e) {
               if (e.key === 'Escape') {
