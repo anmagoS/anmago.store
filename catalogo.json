@@ -8392,45 +8392,6 @@
     "descripcion": "El combo Titanium X3 está compuesto por una plancha, un rizador y un peine, confeccionados en aluminio. La plancha y el rizador están diseñados para estilizar y ajustar el cabello, mientras que el peine se utiliza para peinar y ordenar mechones. El conjunto ofrece una variedad de opciones para el cuidado y estilo del cabello."
   },
   {
-    "id": "07002FD3",
-    "tipo": "NAVIDAD",
-    "subtipo": "NIÑOS",
-    "categoria": "JUGUETES",
-    "subcategoria": "PISTOLAS",
-    "producto": "PISTOLA DE HIDROGEL K47 RECARGABLE",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 81500,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1013
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_2.174207.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1014
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_3.174207.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1015
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_4.174210.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1016
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_1.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_2.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_3.174207.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_202/PRODUCTOS_Images_07002fd3.IMAGEN_4.174210.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "La pistola de hidrogel K47 recargable es un dispositivo de lanzamiento de hidrogel que utiliza un sistema de recarga para ser reutilizado. Está diseñado para lanzar pelotas de hidrogel desde su cañón. La pistola viene equipada con un depósito para recargar el hidrogel, permitiendo un uso continuo.",
-    "video_url": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000002688176/p/1/e/6/t/10301/5000225340173.mp4?from=edge&definition=h265"
-  },
-  {
     "id": "6D77B448",
     "tipo": "ROPA",
     "subtipo": "CABALLERO",
