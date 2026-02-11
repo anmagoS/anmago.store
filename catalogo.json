@@ -8392,40 +8392,6 @@
     "descripcion": "El combo Titanium X3 está compuesto por una plancha, un rizador y un peine, confeccionados en aluminio. La plancha y el rizador están diseñados para estilizar y ajustar el cabello, mientras que el peine se utiliza para peinar y ordenar mechones. El conjunto ofrece una variedad de opciones para el cuidado y estilo del cabello."
   },
   {
-    "id": "F7CC09E0",
-    "tipo": "NAVIDAD",
-    "subtipo": "NIÑOS",
-    "categoria": "JUGUETES",
-    "subcategoria": "PISTOLAS",
-    "producto": "PISTOLA DE HIDROGEL CON LUCES Y HUMO",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 96600,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1010
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_2.173307.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1011
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_3.173307.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1012
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_1.173307.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_2.173307.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_201/PRODUCTOS_Images_f7cc09e0.IMAGEN_3.173307.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "Esta pistola de hidrogel cuenta con luces y humo, y está diseñada para disparar hidrogel en forma de proyectil. La estructura de la pistola está confeccionada para proporcionar una experiencia de disparo realista y entretenida.",
-    "video_url": "https://video.aliexpress-media.com/play/u/ae_sg_item/3000000579075/p/1/e/6/t/10301/1100215047602.mp4?from=edge&definition=h265"
-  },
-  {
     "id": "07002FD3",
     "tipo": "NAVIDAD",
     "subtipo": "NIÑOS",
