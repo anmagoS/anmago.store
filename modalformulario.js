@@ -44,7 +44,7 @@ window.finalizarRegistro = function(success = true, mensaje = '') {
             } else {
                 // Redirigir al inicio
                 console.log('🏠 Redirigiendo al inicio...');
-                window.location.href = 'INICIO.HTML';
+                window.location.href = 'index.html';
             }
         }, 3000);
         
