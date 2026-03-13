@@ -1154,10 +1154,6 @@ function enviarAlertaTelegram(datosPedido) {
 🏠 *Dirección:* ${datosPedido.direccion || 'No especificada'}
 ${datosPedido.barrio ? `🗺️ *Barrio:* ${datosPedido.barrio}\n` : ''}
 ${datosPedido.observacion ? `📍 *Referencia:* ${datosPedido.observacion}\n` : ''}
-💰 *Total:* $${(datosPedido.total || 0).toLocaleString('es-CO')} COP
-
-📦 *PRODUCTOS:*
-${itemsTexto}
 
 ⏰ *Fecha:* ${fecha}
 ✅ *Registro en Sheets completado*
