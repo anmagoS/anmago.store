@@ -22,17 +22,19 @@
   <!-- CSS optimizado -->
   <link rel="stylesheet" href="ESTILO.CSS?v=20251115" />
   
-  <!-- Google tag (gtag.js) - MISMO CÓDIGO QUE EN INDEX -->
+  <!-- Google tag (gtag.js) - Analytics y Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878933588"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    
+    // Google Analytics
     gtag('config', 'G-PD2Y81DPRG');
     
-    // ⚠️ IMPORTANTE: Reemplaza 'AW-TU-ID-AQUI' con tu ID de Google Ads
-    // Ejemplo: gtag('config', 'AW-123456789');
-    gtag('config', 'AW-TU-ID-AQUI');
+    // Google Ads
+    gtag('config', 'AW-17878933588');
   </script>
   
   <!-- Estilos adicionales para el feedback -->
@@ -665,9 +667,9 @@ let datosCargados = false;
 let telefonoActual = '';
 let validacionEnProgreso = false;
 
-// ========== FUNCIONES PRINCIPALES ==========
+// ========== FUNCIÓN PRINCIPAL DE CONVERSIÓN ==========
 
-// 🎯 FUNCIÓN PRINCIPAL PARA ENVIAR PEDIDO CON SEGUIMIENTO DE CONVERSIÓN
+// 🎯 FUNCIÓN PARA ENVIAR PEDIDO CON SEGUIMIENTO DE GOOGLE ADS
 function enviarPedidoConConversion() {
   console.log('🎯 Iniciando proceso de envío con conversión...');
   
@@ -678,19 +680,19 @@ function enviarPedidoConConversion() {
   }
   
   // Obtener datos del formulario
-  const datosFormulario = obtenerDatosFormulario();
+  const datos = obtenerDatosFormulario();
+  
+  // Calcular total del carrito
+  const totalCarrito = calcularTotalCarrito();
   
   // 🔥 REGISTRAR CONVERSIÓN EN GOOGLE ADS
   if (typeof gtag === 'function') {
-    // Calcular total del carrito
-    const totalCarrito = calcularTotalCarrito();
-    
     // Generar ID de transacción único
-    const transactionId = generarIdTransaccion();
+    const transactionId = 'PED-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
     
-    // Registrar conversión con valor dinámico
+    // Registrar conversión con tu ID de Google Ads AW-17878933588
     gtag('event', 'conversion', {
-      'send_to': 'AW-TU-ID-AQUI/ETIQUETA-DE-CONVERSION', // ⚠️ REEMPLAZAR CON TU ID
+      'send_to': 'AW-17878933588/L-EBCKnp8PYbENTAq81C', // ⚠️ REEMPLAZA EL LABEL DESPUÉS DEL /
       'value': totalCarrito,
       'currency': 'COP',
       'transaction_id': transactionId,
@@ -699,25 +701,25 @@ function enviarPedidoConConversion() {
       }
     });
     
-    // También registrar en Google Analytics 4
-    gtag('event', 'purchase', {
-      'transaction_id': transactionId,
-      'value': totalCarrito,
-      'currency': 'COP',
-      'items': obtenerItemsCarrito()
-    });
-    
     console.log(`✅ Conversión registrada: $${totalCarrito} COP - ID: ${transactionId}`);
     mostrarAlertaFeedback(`✅ Compra registrada por $${totalCarrito.toLocaleString('es-CO')}`, 'success');
   } else {
     console.warn('⚠️ gtag no disponible, la conversión no se registrará');
+    mostrarAlertaFeedback('⚠️ No se pudo registrar la conversión', 'warning');
   }
   
   // Construir mensaje para WhatsApp
-  const mensajeWhatsApp = construirMensajeWhatsApp(datosFormulario);
+  const mensajeWhatsApp = construirMensajeWhatsApp(datos, totalCarrito);
   
   // Abrir WhatsApp
   abrirWhatsApp(mensajeWhatsApp);
+  
+  // Opcional: Redirigir después de unos segundos
+  setTimeout(() => {
+    if (confirm('¿Quieres volver a la tienda?')) {
+      window.location.href = 'index.html';
+    }
+  }, 3000);
 }
 
 // Función para validar campos completos
@@ -772,11 +774,6 @@ function calcularTotalCarrito() {
       return window.totalCarritoGlobal;
     }
     
-    // Intentar obtener de carrito.js
-    if (typeof calcularTotalCarrito === 'function') {
-      return calcularTotalCarrito();
-    }
-    
     // Valor por defecto si no se puede calcular
     return 50000; // ⚠️ AJUSTA SEGÚN TU PROMEDIO
   } catch (error) {
@@ -785,35 +782,8 @@ function calcularTotalCarrito() {
   }
 }
 
-// Función para generar ID de transacción
-function generarIdTransaccion() {
-  const fecha = new Date();
-  const timestamp = fecha.getTime();
-  const random = Math.floor(Math.random() * 1000);
-  return `PED-${timestamp}-${random}`;
-}
-
-// Función para obtener items del carrito
-function obtenerItemsCarrito() {
-  try {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-      const carrito = JSON.parse(carritoGuardado);
-      return carrito.map(item => ({
-        item_id: item.id || 'unknown',
-        item_name: item.nombre || item.producto || 'Producto',
-        price: item.precio || 0,
-        quantity: item.cantidad || 1
-      }));
-    }
-  } catch (error) {
-    console.error('Error obteniendo items:', error);
-  }
-  return [];
-}
-
 // Función para construir mensaje de WhatsApp
-function construirMensajeWhatsApp(datos) {
+function construirMensajeWhatsApp(datos, totalCarrito) {
   // Obtener items del carrito
   let itemsTexto = '';
   try {
@@ -840,14 +810,14 @@ function construirMensajeWhatsApp(datos) {
     `🗺️ *Barrio:* ${datos.barrio || 'No especificado'}\n` +
     `📍 *Referencia:* ${datos.observacion || 'No especificada'}\n\n` +
     `🛒 *PRODUCTOS:*\n${itemsTexto}\n\n` +
-    `💰 *TOTAL: $${calcularTotalCarrito().toLocaleString('es-CO')} COP*\n\n` +
+    `💰 *TOTAL: $${totalCarrito.toLocaleString('es-CO')} COP*\n\n` +
     `⏰ *Fecha:* ${new Date().toLocaleString('es-CO')}`
   );
 }
 
 // Función para abrir WhatsApp
 function abrirWhatsApp(mensaje) {
-  const numeroWhatsApp = '573006498710'; // ⚠️ VERIFICA QUE SEA EL CORRECTO
+  const numeroWhatsApp = '573006498710'; // Tu número de WhatsApp
   const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
   window.open(url, '_blank');
 }
