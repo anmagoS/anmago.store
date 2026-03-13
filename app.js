@@ -1577,3 +1577,82 @@ function filtrarPorCategoria(categoria) {
 function mostrarTodosLosProductosCompleto() {
     cargarPorTipo('TODOS');
 }
+// ==============================================
+// FUNCIÓN PARA ALERTAS DE TELEGRAM
+// ==============================================
+
+function enviarAlertaTelegram(datosPedido) {
+    // Configuración - REEMPLAZA CON TUS DATOS
+    const TELEGRAM_TOKEN = 'TU_TOKEN_AQUI'; // De @BotFather
+    const TELEGRAM_CHAT_ID = 'TU_CHAT_ID_AQUI'; // De @userinfobot
+    
+    // Si no hay token configurado, no hacer nada
+    if (TELEGRAM_TOKEN === 'TU_TOKEN_AQUI') {
+        console.log('⚠️ Telegram no configurado');
+        return;
+    }
+    
+    // Formatear mensaje
+    const fecha = new Date().toLocaleString('es-CO', {
+        timeZone: 'America/Bogota',
+        hour12: true
+    });
+    
+    // Obtener items del carrito si están disponibles
+    let itemsTexto = '';
+    try {
+        const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
+        if (carrito.length > 0) {
+            itemsTexto = carrito.map(item => 
+                `• ${item.nombre || item.producto || 'Producto'} - $${(item.precio || 0).toLocaleString('es-CO')} x ${item.cantidad || 1}`
+            ).join('\n');
+        } else {
+            itemsTexto = '• Ver detalles en Sheets';
+        }
+    } catch (e) {
+        itemsTexto = '• Ver detalles en Sheets';
+    }
+    
+    const mensaje = `
+🛍️ *¡NUEVO PEDIDO ANMAGO STORE!*
+━━━━━━━━━━━━━━━━━━━━━
+👤 *Cliente:* ${datosPedido.nombre || 'No especificado'}
+📱 *Teléfono:* ${datosPedido.telefono || 'No especificado'}
+📍 *Ciudad:* ${datosPedido.ciudad || 'No especificada'}
+🏠 *Dirección:* ${datosPedido.direccion || 'No especificada'}
+${datosPedido.barrio ? `🗺️ *Barrio:* ${datosPedido.barrio}\n` : ''}
+${datosPedido.observacion ? `📍 *Referencia:* ${datosPedido.observacion}\n` : ''}
+💰 *Total:* $${(datosPedido.total || 0).toLocaleString('es-CO')} COP
+
+📦 *PRODUCTOS:*
+${itemsTexto}
+
+⏰ *Fecha:* ${fecha}
+✅ *Registro en Sheets completado*
+    `;
+    
+    // Enviar a Telegram
+    fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: mensaje,
+            parse_mode: 'Markdown'
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok) {
+            console.log('✅ Alerta Telegram enviada');
+            // También mostrar notificación en pantalla
+            mostrarNotificacion('📲 Alerta enviada a Telegram', 'success');
+        } else {
+            console.error('❌ Error Telegram:', data);
+        }
+    })
+    .catch(err => {
+        console.error('❌ Error enviando a Telegram:', err);
+        mostrarNotificacion('⚠️ No se pudo enviar alerta Telegram', 'warning');
+    });
+}
