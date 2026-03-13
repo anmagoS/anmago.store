@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Datos Envio | Anmago Store</title>
   <meta name="description" content="Tus Datos de cliente para realizar pedidos en Anmago Store">
-    <!-- Preconexiones optimizadas -->
+  
+  <!-- Preconexiones optimizadas -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://ik.imagekit.io">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
@@ -20,15 +21,20 @@
 
   <!-- CSS optimizado -->
   <link rel="stylesheet" href="ESTILO.CSS?v=20251115" />
-  <!-- Google tag (gtag.js) - ¡IMPORTANTE! -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PD2Y81DPRG');
-  gtag('config', 'AW-TU-ID-AQUI'); // ← NECESITAS EL ID DE GOOGLE ADS
-</script>
+  
+  <!-- Google tag (gtag.js) - MISMO CÓDIGO QUE EN INDEX -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PD2Y81DPRG');
+    
+    // ⚠️ IMPORTANTE: Reemplaza 'AW-TU-ID-AQUI' con tu ID de Google Ads
+    // Ejemplo: gtag('config', 'AW-123456789');
+    gtag('config', 'AW-TU-ID-AQUI');
+  </script>
+  
   <!-- Estilos adicionales para el feedback -->
   <style>
     /* Estilos para el feedback de validación */
@@ -123,7 +129,8 @@
     }
   </style>
 </head>
-  <!-- Intro animada tipo persiana con degradado -->
+
+<!-- Intro animada tipo persiana con degradado -->
 <div id="intro" style="
   position: fixed;
   top: 0; left: 0;
@@ -284,26 +291,25 @@
   }
 }
 </style>
+
 <body>
 <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
   <!-- LOGO -->
- <div class="logo">
-  <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
-    <img
-      src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-      alt="ANMAGO STORE"
-      width="48"
-      height="48"
-      loading="lazy"
-      style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
-    />
-  </a>
-</div>
-<div class="container py-4">
-    <h1 class="mb-4 text-center">Finaliza tu Compra 🛒</h1></a></div>
-  
-
- 
+  <div class="logo">
+    <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
+      <img
+        src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
+        alt="ANMAGO STORE"
+        width="48"
+        height="48"
+        loading="lazy"
+        style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
+      />
+    </a>
+  </div>
+  <div class="container py-4">
+    <h1 class="mb-4 text-center">Finaliza tu Compra 🛒</h1>
+  </div>
 </header>
 
 <!-- MENÚ LATERAL -->
@@ -334,11 +340,9 @@
       <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
     </a>
 
-    <!-- CATEGORÍAS DINÁMICAS - SIMPLIFICADO -->
+    <!-- CATEGORÍAS DINÁMICAS -->
     <div id="menu-categorias-dinamico" class="mt-2">
       <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-      
-      <!-- Se cargarán dinámicamente usando TUS funciones -->
       <div class="text-center py-3">
         <div class="spinner-border spinner-border-sm text-primary"></div>
         <p class="mt-2 small text-muted">Cargando categorías...</p>
@@ -346,8 +350,7 @@
     </div>
 
     <!-- Contacto -->
-    <a href="modalformulario.html" 
-       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
+    <a href="modalformulario.html" class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
       <i class="bi bi-person me-2"></i> Mi cuenta
     </a>
 
@@ -376,33 +379,26 @@
 
 <script>
 // ==============================================
-// HEADER SIMPLIFICADO - USA TUS FUNCIONES EXISTENTES
+// FUNCIONES DEL MENÚ LATERAL
 // ==============================================
 
-// Función para cerrar el menú
 function cerrarMenu() {
   const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral'));
-  if (offcanvas) {
-    offcanvas.hide();
-  }
+  if (offcanvas) offcanvas.hide();
 }
 
-// Función que se ejecuta cuando tu app.js carga el catálogo
 function cargarMenuDesdeTuCatalogo() {
   console.log('🔄 Cargando menú desde tu catálogo...');
   
   const contenedor = document.getElementById('menu-categorias-dinamico');
   if (!contenedor) return;
   
-  // Verificar si tu catálogo está listo
   if (!window.catalogoGlobal || !Array.isArray(window.catalogoGlobal) || window.catalogoGlobal.length === 0) {
     console.log('⏳ Esperando catálogo de tu app.js...');
     return;
   }
   
   const catalogo = window.catalogoGlobal;
-  
-  // Obtener tipos únicos de TU catálogo
   const tiposUnicos = ['TODOS', ...new Set(catalogo.map(p => p.tipo).filter(Boolean))];
   
   if (tiposUnicos.length === 0) {
@@ -410,9 +406,7 @@ function cargarMenuDesdeTuCatalogo() {
     return;
   }
   
-  // Crear HTML simple usando TUS funciones
   let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
-  
   html += '<div class="d-flex flex-column gap-2">';
   
   tiposUnicos.forEach(tipo => {
@@ -433,27 +427,22 @@ function cargarMenuDesdeTuCatalogo() {
   });
   
   html += '</div>';
-  
   contenedor.innerHTML = html;
   console.log('✅ Menú cargado con', tiposUnicos.length, 'categorías');
 }
 
-// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
   console.log('🚀 Header simplificado cargado');
   
-  // Intentar cargar inmediatamente si el catálogo ya está disponible
   if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
     setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
   }
   
-  // Escuchar cuando tu app.js cargue el catálogo
   window.addEventListener('catalogoCargado', function() {
     console.log('🎯 Evento catalogoCargado recibido, cargando menú...');
     setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
   });
   
-  // También verificar periódicamente (fallback)
   const intervalo = setInterval(() => {
     if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
       cargarMenuDesdeTuCatalogo();
@@ -461,14 +450,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 1000);
   
-  // Timeout
   setTimeout(() => clearInterval(intervalo), 10000);
 });
 </script>
 
 <style>
 /* ===== ESTILOS BÁSICOS PARA EL HEADER ===== */
-
 .header-sticky {
   background: linear-gradient(135deg, #1B4557, #2A6A8F);
   color: white;
@@ -507,7 +494,6 @@ document.addEventListener('DOMContentLoaded', function() {
   transform: scale(1.1);
 }
 
-/* Offcanvas */
 #menuLateral .offcanvas-header {
   background: linear-gradient(135deg, #1B4557, #2A6A8F);
   color: white;
@@ -541,7 +527,6 @@ document.addEventListener('DOMContentLoaded', function() {
   transform: translateX(5px);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header-sticky {
     height: 60px;
@@ -560,447 +545,541 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 </style>
  
- <!-- BOTÓN VOLVER AL INICIO (ARRIBA) -->
+<!-- BOTÓN VOLVER AL INICIO -->
 <div class="container mt-3">
   <button onclick="volverAInicio()" class="btn btn-volver-inicio btn-sm px-3 py-2 rounded-pill">
     <i class="bi bi-arrow-left me-2"></i> 🏠 Volver al Inicio
   </button>
 </div>
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="container py-4">
-    <h2 class="mb-4 text-center"></h2>
-    
-    <!-- ESTADO DE VALIDACIÓN VISIBLE -->
-    <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
-      <div class="d-flex align-items-center justify-content-center">
-        <div class="spinner-border spinner-border-sm me-2" role="status">
-          <span class="visually-hidden">Cargando...</span>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="container py-4">
+  <h2 class="mb-4 text-center"></h2>
+  
+  <!-- ESTADO DE VALIDACIÓN VISIBLE -->
+  <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="spinner-border spinner-border-sm me-2" role="status">
+        <span class="visually-hidden">Cargando...</span>
+      </div>
+      <span id="mensaje-validacion">Finalizar Compra...</span>
+    </div>
+  </div>
+
+  <form id="formCliente">
+    <input type="hidden" id="clienteId" name="clienteId">
+
+    <!-- Celular principal CON FEEDBACK -->
+    <div class="mb-3 validacion-contenedor">
+      <label for="telefonoCliente" class="form-label">Celular</label>
+      <div class="position-relative">
+        <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" 
+               placeholder="Ej: 3001234567" maxlength="10" required
+               oninput="validarTelefonoEnTiempoReal()">
+        <div id="feedback-telefono" class="validacion-estado">
+          <span id="icono-telefono"></span>
         </div>
-        <span id="mensaje-validacion">Finalizar Compra...</span>
+      </div>
+      <div class="form-text">Debe comenzar por 3 y tener 10 dígitos.</div>
+      <div id="mensaje-telefono" class="form-text mt-1"></div>
+    </div>
+
+    <!-- Nombre -->
+    <div class="mb-3">
+      <label for="nombreCliente" class="form-label">Nombres y Apellidos</label>
+      <input type="text" class="form-control campo-deshabilitado" id="nombreCliente" name="nombreCliente" disabled>
+    </div>
+
+    <!-- Dirección Completa -->
+    <div class="mb-3">
+      <label for="DireccionCompleta" class="form-label">Dirección Completa</label>
+      <textarea id="DireccionCompleta" class="form-control campo-deshabilitado" name="DireccionCompleta" 
+                rows="2" maxlength="200" placeholder="Ej: calle, carrera, avenida, transversal, etc." disabled></textarea>
+      <div class="form-text">Recuerda colocar tu dirección exacta para evitar contratiempos en tu entrega.</div>
+    </div>
+
+    <!-- Tipo de Unidad y Número -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="tipoUnidad" class="form-label">Tipo de unidad</label>
+        <select id="tipoUnidad" class="form-select campo-deshabilitado" name="tipoUnidad" disabled>
+          <option value="">Selecciona</option>
+          <option value="Casa">CASA</option>
+          <option value="Apartamento">APARTAMENTO</option>
+          <option value="Piso">PISO</option>
+          <option value="Bodega">BODEGA</option>
+          <option value="Interior">INTERIOR</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="numeroApto" class="form-label">Número</label>
+        <input type="text" class="form-control campo-deshabilitado" id="numeroApto" name="numeroApto" 
+               maxlength="4" inputmode="numeric" pattern="\d{1,4}" title="Solo números entre 0 y 9999" disabled>
       </div>
     </div>
 
-    <form id="formCliente">
-      <!-- ✅ CAMPO OCULTO CON NAME PARA GOOGLE SHEETS -->
-      <input type="hidden" id="clienteId" name="clienteId">
+    <!-- Barrio -->
+    <div class="mb-3">
+      <label for="barrio" class="form-label">Barrio (opcional)</label>
+      <input type="text" class="form-control campo-deshabilitado" id="barrio" name="barrio" maxlength="50" disabled>
+    </div>
 
-      <!-- Celular principal CON FEEDBACK -->
-      <div class="mb-3 validacion-contenedor">
-        <label for="telefonoCliente" class="form-label">Celular</label>
-        <div class="position-relative">
-          <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" 
-                 placeholder="Ej: 3001234567" maxlength="10" required
-                 oninput="validarTelefonoEnTiempoReal()">
-          <div id="feedback-telefono" class="validacion-estado">
-            <span id="icono-telefono"></span>
-          </div>
-        </div>
-        <div class="form-text">Debe comenzar por 3 y tener 10 dígitos.</div>
-        <div id="mensaje-telefono" class="form-text mt-1"></div>
-      </div>
+    <!-- Observación adicional -->
+    <div class="mb-3">
+      <label for="observacionDireccion" class="form-label">Punto de referencia</label>
+      <textarea id="observacionDireccion" class="form-control campo-deshabilitado" name="observacionDireccion" 
+                rows="2" maxlength="200" placeholder="Ej: entrada por portería, conjunto.., torre, casa color..., etc." disabled></textarea>
+    </div>
 
-      <!-- Nombre -->
-      <div class="mb-3">
-        <label for="nombreCliente" class="form-label">Nombres y Apellidos</label>
-        <input type="text" class="form-control campo-deshabilitado" id="nombreCliente" name="nombreCliente" disabled>
-      </div>
+    <!-- Ciudad con autocompletado -->
+    <div class="mb-3 position-relative">
+      <label for="ciudadCliente" class="form-label">Ciudad</label>
+      <input type="text" id="ciudadCliente" class="form-control campo-deshabilitado" name="ciudadCliente" 
+             placeholder="Escribe tu ciudad" autocomplete="off" disabled>
+      <ul id="sugerenciasCiudades" class="dropdown-menu w-100 mt-0 z-3"></ul>
+    </div>
 
-      <!-- Dirección Completa -->
-      <div class="mb-3">
-        <label for="DireccionCompleta" class="form-label">Dirección Completa</label>
-        <textarea id="DireccionCompleta" class="form-control campo-deshabilitado" name="DireccionCompleta" 
-                  rows="2" maxlength="200" placeholder="Ej: calle, carrera, avenida, transversal, etc." disabled></textarea>
-        <div class="form-text">Recuerda colocar tu dirección exacta para evitar contratiempos en tu entrega.</div>
-      </div>
+    <!-- Correo electrónico -->
+    <div class="mb-3">
+      <label for="emailCliente" class="form-label">Correo electrónico</label>
+      <input type="email" class="form-control campo-deshabilitado" id="emailCliente" name="emailCliente" disabled>
+    </div>
 
-      <!-- Tipo de Unidad y Número -->
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="tipoUnidad" class="form-label">Tipo de unidad</label>
-          <select id="tipoUnidad" class="form-select campo-deshabilitado" name="tipoUnidad" disabled>
-            <option value="">Selecciona</option>
-            <option value="Casa">CASA</option>
-            <option value="Apartamento">APARTAMENTO</option>
-            <option value="Piso">PISO</option>
-            <option value="Bodega">BODEGA</option>
-            <option value="Interior">INTERIOR</option>
-          </select>
-        </div>
-        <div class="col-md-6">
-          <label for="numeroApto" class="form-label">Número</label>
-          <input type="text" class="form-control campo-deshabilitado" id="numeroApto" name="numeroApto" 
-                 maxlength="4" inputmode="numeric" pattern="\d{1,4}" title="Solo números entre 0 y 9999" disabled>
-        </div>
-      </div>
+    <!-- Botón Enviar - AHORA CON SEGUIMIENTO DE CONVERSIÓN -->
+    <div class="text-center mt-4">
+      <button id="btnEnviarPedido" class="btn btn-secondary px-4 py-2 rounded-pill fw-bold" disabled>
+        <i class="bi bi-send"></i>✨ Finalizar Compra... ✨
+      </button>
+      <p id="estado-formulario" class="text-muted small mt-2"></p>
+    </div>
+  </form>
+</main>
 
-      <!-- Barrio -->
-      <div class="mb-3">
-        <label for="barrio" class="form-label">Barrio (opcional)</label>
-        <input type="text" class="form-control campo-deshabilitado" id="barrio" name="barrio" maxlength="50" disabled>
-      </div>
+<!-- SCRIPTS EXTERNOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      <!-- Observación adicional -->
-      <div class="mb-3">
-        <label for="observacionDireccion" class="form-label">Punto de referencia</label>
-        <textarea id="observacionDireccion" class="form-control campo-deshabilitado" name="observacionDireccion" 
-                  rows="2" maxlength="200" placeholder="Ej: entrada por portería, conjunto.., torre, casa color..., etc." disabled></textarea>
-      </div>
+<!-- ✅ SCRIPT PRINCIPAL CON SEGUIMIENTO DE CONVERSIÓN PARA WHATSAPP -->
+<script>
+// ========== VARIABLES GLOBALES ==========
+let datosCargados = false;
+let telefonoActual = '';
+let validacionEnProgreso = false;
 
-      <!-- Ciudad con autocompletado -->
-      <div class="mb-3 position-relative">
-        <label for="ciudadCliente" class="form-label">Ciudad</label>
-        <input type="text" id="ciudadCliente" class="form-control campo-deshabilitado" name="ciudadCliente" 
-               placeholder="Escribe tu ciudad" autocomplete="off" disabled>
-        <ul id="sugerenciasCiudades" class="dropdown-menu w-100 mt-0 z-3"></ul>
-      </div>
+// ========== FUNCIONES PRINCIPALES ==========
 
-      <!-- Correo electrónico -->
-      <div class="mb-3">
-        <label for="emailCliente" class="form-label">Correo electrónico</label>
-        <input type="email" class="form-control campo-deshabilitado" id="emailCliente" name="emailCliente" disabled>
-      </div>
-
-      <!-- Botón Enviar -->
-      <div class="text-center mt-4">
-        <button id="btnEnviarPedido" class="btn btn-secondary px-4 py-2 rounded-pill fw-bold" disabled>
-          <i class="bi bi-send"></i>✨ Finalizar Compra... ✨
-        </button>
-        <p id="estado-formulario" class="text-muted small mt-2"></p>
-      </div>
-    </form>
-  </main>
-
-  <!-- SCRIPTS EXTERNOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- VALIDACIONES BÁSICAS CON FEEDBACK MEJORADO -->
-  <script>
-    // ========== VARIABLES GLOBALES PARA CONTROL ==========
-    let datosCargados = false; // Bandera para saber si ya se cargaron los datos
-    let telefonoActual = ''; // Guardar el teléfono actual
-    let validacionEnProgreso = false; // Evitar múltiples búsquedas simultáneas
-
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("🚀 HTML cargado - Iniciando validaciones básicas...");
-      
-      // Mostrar estado de validación inicial
-      mostrarEstadoValidacion('⬇️Escribe tu número de celular...', 'info');
-      
-      // Validación de campos numéricos
-      const camposNumericos = ["telefonoCliente", "numeroApto"];
-
-      camposNumericos.forEach(id => {
-        const campo = document.getElementById(id);
-        if (!campo) return;
-
-        campo.addEventListener("input", () => {
-          const valor = campo.value;
-          if (!/^\d*$/.test(valor)) {
-            campo.value = valor.replace(/\D/g, "");
-          }
-        });
-      });
-
-      // Validación específica de teléfono CON FEEDBACK
-      const campoTelefono = document.getElementById("telefonoCliente");
-      if (campoTelefono) {
-        campoTelefono.addEventListener("input", () => {
-          const valor = campoTelefono.value.trim();
-          const esValido = /^3\d{9}$/.test(valor);
-
-          if (!esValido && valor.length === 10) {
-            campoTelefono.classList.add("is-invalid");
-            mostrarFeedbackTelefono('❌ Teléfono inválido. Debe comenzar con 3', 'error');
-            datosCargados = false; // Resetear bandera
-          } else if (esValido) {
-            campoTelefono.classList.remove("is-invalid");
-            campoTelefono.classList.add("is-valid");
-            mostrarFeedbackTelefono('✅ Teléfono válido', 'exito');
-          } else {
-            campoTelefono.classList.remove("is-invalid", "is-valid");
-            mostrarFeedbackTelefono('', 'neutro');
-          }
-        });
-        
-        // Enfocar automáticamente el campo de teléfono
-        campoTelefono.focus();
+// 🎯 FUNCIÓN PRINCIPAL PARA ENVIAR PEDIDO CON SEGUIMIENTO DE CONVERSIÓN
+function enviarPedidoConConversion() {
+  console.log('🎯 Iniciando proceso de envío con conversión...');
+  
+  // Validar que todos los campos estén completos
+  if (!validarCamposCompletos()) {
+    mostrarAlertaFeedback('❌ Por favor completa todos los campos requeridos', 'warning');
+    return;
+  }
+  
+  // Obtener datos del formulario
+  const datosFormulario = obtenerDatosFormulario();
+  
+  // 🔥 REGISTRAR CONVERSIÓN EN GOOGLE ADS
+  if (typeof gtag === 'function') {
+    // Calcular total del carrito
+    const totalCarrito = calcularTotalCarrito();
+    
+    // Generar ID de transacción único
+    const transactionId = generarIdTransaccion();
+    
+    // Registrar conversión con valor dinámico
+    gtag('event', 'conversion', {
+      'send_to': 'AW-TU-ID-AQUI/ETIQUETA-DE-CONVERSION', // ⚠️ REEMPLAZAR CON TU ID
+      'value': totalCarrito,
+      'currency': 'COP',
+      'transaction_id': transactionId,
+      'event_callback': function() {
+        console.log('✅ Conversión registrada exitosamente en Google Ads');
       }
-
-      // Cargar header
-      fetch("HEADER.HTML")
-        .then(res => res.text())
-        .then(header => {
-          document.getElementById("header-container").innerHTML = header;
-        })
-        .catch(error => {
-          console.error("Error cargando header:", error);
-        });
     });
     
-    // FUNCIONES DE FEEDBACK MEJORADO
-    function mostrarEstadoValidacion(mensaje, tipo = 'info') {
-      const estadoDiv = document.getElementById('estado-validacion');
-      const mensajeSpan = document.getElementById('mensaje-validacion');
-      
-      if (!estadoDiv || !mensajeSpan) return;
-      
-      mensajeSpan.textContent = mensaje;
-      
-      // Cambiar color según tipo
-      estadoDiv.className = 'alert text-center mb-4';
-      switch(tipo) {
-        case 'info':
-          estadoDiv.classList.add('alert-info');
-          break;
-        case 'exito':
-          estadoDiv.classList.add('alert-success');
-          break;
-        case 'advertencia':
-          estadoDiv.classList.add('alert-warning');
-          break;
-        case 'error':
-          estadoDiv.classList.add('alert-danger');
-          break;
-      }
-      
-      estadoDiv.style.display = 'flex';
+    // También registrar en Google Analytics 4
+    gtag('event', 'purchase', {
+      'transaction_id': transactionId,
+      'value': totalCarrito,
+      'currency': 'COP',
+      'items': obtenerItemsCarrito()
+    });
+    
+    console.log(`✅ Conversión registrada: $${totalCarrito} COP - ID: ${transactionId}`);
+    mostrarAlertaFeedback(`✅ Compra registrada por $${totalCarrito.toLocaleString('es-CO')}`, 'success');
+  } else {
+    console.warn('⚠️ gtag no disponible, la conversión no se registrará');
+  }
+  
+  // Construir mensaje para WhatsApp
+  const mensajeWhatsApp = construirMensajeWhatsApp(datosFormulario);
+  
+  // Abrir WhatsApp
+  abrirWhatsApp(mensajeWhatsApp);
+}
+
+// Función para validar campos completos
+function validarCamposCompletos() {
+  const camposRequeridos = [
+    'nombreCliente',
+    'DireccionCompleta',
+    'tipoUnidad',
+    'ciudadCliente'
+  ];
+  
+  for (const campoId of camposRequeridos) {
+    const campo = document.getElementById(campoId);
+    if (!campo || !campo.value.trim()) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+// Función para obtener datos del formulario
+function obtenerDatosFormulario() {
+  return {
+    telefono: document.getElementById('telefonoCliente').value.trim(),
+    nombre: document.getElementById('nombreCliente').value.trim(),
+    direccion: document.getElementById('DireccionCompleta').value.trim(),
+    tipoUnidad: document.getElementById('tipoUnidad').value,
+    numeroApto: document.getElementById('numeroApto').value.trim(),
+    barrio: document.getElementById('barrio').value.trim(),
+    observacion: document.getElementById('observacionDireccion').value.trim(),
+    ciudad: document.getElementById('ciudadCliente').value.trim(),
+    email: document.getElementById('emailCliente').value.trim()
+  };
+}
+
+// Función para calcular total del carrito
+function calcularTotalCarrito() {
+  try {
+    // Intentar obtener de localStorage
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+      const carrito = JSON.parse(carritoGuardado);
+      const total = carrito.reduce((sum, item) => {
+        return sum + (item.precio * (item.cantidad || 1));
+      }, 0);
+      return total;
     }
     
-    function ocultarEstadoValidacion() {
-      const estadoDiv = document.getElementById('estado-validacion');
-      if (estadoDiv) estadoDiv.style.display = 'none';
+    // Intentar obtener de variable global
+    if (window.totalCarritoGlobal) {
+      return window.totalCarritoGlobal;
     }
     
-    function mostrarFeedbackTelefono(mensaje, tipo = 'neutro') {
-      const feedbackDiv = document.getElementById('feedback-telefono');
-      const iconoSpan = document.getElementById('icono-telefono');
-      const mensajeDiv = document.getElementById('mensaje-telefono');
-      
-      if (!feedbackDiv || !iconoSpan || !mensajeDiv) return;
-      
-      // Mostrar/ocultar feedback visual
-      if (tipo === 'neutro' || !mensaje) {
-        feedbackDiv.style.display = 'none';
-        mensajeDiv.textContent = '';
-        return;
-      }
-      
-      feedbackDiv.style.display = 'block';
-      mensajeDiv.textContent = mensaje;
-      
-      // Cambiar icono según tipo
-      switch(tipo) {
-        case 'cargando':
-          iconoSpan.innerHTML = '<span class="spinner-validacion"></span>';
-          mensajeDiv.className = 'form-text mt-1 text-primary';
-          break;
-        case 'exito':
-          iconoSpan.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
-          mensajeDiv.className = 'form-text mt-1 text-success';
-          break;
-        case 'error':
-          iconoSpan.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
-          mensajeDiv.className = 'form-text mt-1 text-danger';
-          break;
-      }
+    // Intentar obtener de carrito.js
+    if (typeof calcularTotalCarrito === 'function') {
+      return calcularTotalCarrito();
     }
     
-    function validarTelefonoEnTiempoReal() {
-      const telefono = document.getElementById('telefonoCliente').value.trim();
-      
-      // ⚠️ EVITAR BÚSQUEDAS MÚLTIPLES CUANDO YA SE CARGARON DATOS
-      if (datosCargados && telefono === telefonoActual) {
-        console.log('✅ Datos ya cargados, evitando búsqueda duplicada');
-        return;
-      }
-      
-      // ⚠️ EVITAR BÚSQUEDAS SIMULTÁNEAS
-      if (validacionEnProgreso) {
-        console.log('⏳ Validación ya en progreso, esperando...');
-        return;
-      }
-      
-      // Limpiar estados anteriores
-      mostrarFeedbackTelefono('', 'neutro');
-      
-      // Solo validar si tiene al menos 10 dígitos
-      if (telefono.length === 10) {
-        if (!/^3\d{9}$/.test(telefono)) {
-          mostrarFeedbackTelefono('❌ El teléfono debe comenzar con 3', 'error');
-          deshabilitarFormulario();
-          datosCargados = false;
-          telefonoActual = '';
-          return;
-        }
-        
-        // Verificar si el teléfono es diferente al anterior
-        if (telefono !== telefonoActual) {
-          telefonoActual = telefono;
-          datosCargados = false; // Resetear porque es un nuevo teléfono
-        }
-        
-        // Mostrar que se está validando
-        mostrarFeedbackTelefono('🔍 Finalizar Compra...', 'cargando');
-        mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
-        validacionEnProgreso = true;
-        
-        // Simular una pequeña pausa para que el usuario vea el feedback
-        setTimeout(() => {
-          // Esta función será llamada desde modalformulario.js
-          if (typeof validarClienteExistente === 'function') {
-            validarClienteExistente(telefono);
-          }
-          validacionEnProgreso = false;
-        }, 800);
-      } else if (telefono.length > 0 && telefono.length < 10) {
-        mostrarFeedbackTelefono('📱 Ingresa 10 dígitos', 'neutro');
-        deshabilitarFormulario();
-        datosCargados = false;
-        telefonoActual = '';
-      } else {
-        mostrarFeedbackTelefono('', 'neutro');
-        deshabilitarFormulario();
-        datosCargados = false;
-        telefonoActual = '';
-      }
+    // Valor por defecto si no se puede calcular
+    return 50000; // ⚠️ AJUSTA SEGÚN TU PROMEDIO
+  } catch (error) {
+    console.error('Error calculando total:', error);
+    return 50000; // Valor por defecto
+  }
+}
+
+// Función para generar ID de transacción
+function generarIdTransaccion() {
+  const fecha = new Date();
+  const timestamp = fecha.getTime();
+  const random = Math.floor(Math.random() * 1000);
+  return `PED-${timestamp}-${random}`;
+}
+
+// Función para obtener items del carrito
+function obtenerItemsCarrito() {
+  try {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+      const carrito = JSON.parse(carritoGuardado);
+      return carrito.map(item => ({
+        item_id: item.id || 'unknown',
+        item_name: item.nombre || item.producto || 'Producto',
+        price: item.precio || 0,
+        quantity: item.cantidad || 1
+      }));
+    }
+  } catch (error) {
+    console.error('Error obteniendo items:', error);
+  }
+  return [];
+}
+
+// Función para construir mensaje de WhatsApp
+function construirMensajeWhatsApp(datos) {
+  // Obtener items del carrito
+  let itemsTexto = '';
+  try {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+      const carrito = JSON.parse(carritoGuardado);
+      itemsTexto = carrito.map(item => 
+        `• ${item.nombre || item.producto} - $${(item.precio || 0).toLocaleString('es-CO')} x ${item.cantidad || 1}`
+      ).join('%0A');
+    }
+  } catch (error) {
+    itemsTexto = '• Error al cargar productos';
+  }
+  
+  // Construir mensaje completo
+  return encodeURIComponent(
+    `🛍️ *NUEVO PEDIDO ANMAGO STORE*\n\n` +
+    `👤 *Cliente:* ${datos.nombre}\n` +
+    `📱 *Teléfono:* ${datos.telefono}\n` +
+    `📧 *Email:* ${datos.email || 'No proporcionado'}\n` +
+    `📍 *Ciudad:* ${datos.ciudad}\n` +
+    `🏠 *Dirección:* ${datos.direccion}\n` +
+    `🏢 *Unidad:* ${datos.tipoUnidad} ${datos.numeroApto ? '- ' + datos.numeroApto : ''}\n` +
+    `🗺️ *Barrio:* ${datos.barrio || 'No especificado'}\n` +
+    `📍 *Referencia:* ${datos.observacion || 'No especificada'}\n\n` +
+    `🛒 *PRODUCTOS:*\n${itemsTexto}\n\n` +
+    `💰 *TOTAL: $${calcularTotalCarrito().toLocaleString('es-CO')} COP*\n\n` +
+    `⏰ *Fecha:* ${new Date().toLocaleString('es-CO')}`
+  );
+}
+
+// Función para abrir WhatsApp
+function abrirWhatsApp(mensaje) {
+  const numeroWhatsApp = '573006498710'; // ⚠️ VERIFICA QUE SEA EL CORRECTO
+  const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+  window.open(url, '_blank');
+}
+
+// ========== FUNCIONES DE VALIDACIÓN EXISTENTES ==========
+function mostrarEstadoValidacion(mensaje, tipo = 'info') {
+  const estadoDiv = document.getElementById('estado-validacion');
+  const mensajeSpan = document.getElementById('mensaje-validacion');
+  if (!estadoDiv || !mensajeSpan) return;
+  
+  mensajeSpan.textContent = mensaje;
+  estadoDiv.className = 'alert text-center mb-4';
+  estadoDiv.classList.add(`alert-${tipo}`);
+  estadoDiv.style.display = 'flex';
+}
+
+function ocultarEstadoValidacion() {
+  const estadoDiv = document.getElementById('estado-validacion');
+  if (estadoDiv) estadoDiv.style.display = 'none';
+}
+
+function mostrarFeedbackTelefono(mensaje, tipo = 'neutro') {
+  const feedbackDiv = document.getElementById('feedback-telefono');
+  const iconoSpan = document.getElementById('icono-telefono');
+  const mensajeDiv = document.getElementById('mensaje-telefono');
+  
+  if (!feedbackDiv || !iconoSpan || !mensajeDiv) return;
+  
+  if (tipo === 'neutro' || !mensaje) {
+    feedbackDiv.style.display = 'none';
+    mensajeDiv.textContent = '';
+    return;
+  }
+  
+  feedbackDiv.style.display = 'block';
+  mensajeDiv.textContent = mensaje;
+  
+  switch(tipo) {
+    case 'cargando':
+      iconoSpan.innerHTML = '<span class="spinner-validacion"></span>';
+      mensajeDiv.className = 'form-text mt-1 text-primary';
+      break;
+    case 'exito':
+      iconoSpan.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+      mensajeDiv.className = 'form-text mt-1 text-success';
+      break;
+    case 'error':
+      iconoSpan.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
+      mensajeDiv.className = 'form-text mt-1 text-danger';
+      break;
+  }
+}
+
+function validarTelefonoEnTiempoReal() {
+  const telefono = document.getElementById('telefonoCliente').value.trim();
+  
+  if (datosCargados && telefono === telefonoActual) {
+    console.log('✅ Datos ya cargados, evitando búsqueda duplicada');
+    return;
+  }
+  
+  if (validacionEnProgreso) {
+    console.log('⏳ Validación ya en progreso, esperando...');
+    return;
+  }
+  
+  mostrarFeedbackTelefono('', 'neutro');
+  
+  if (telefono.length === 10) {
+    if (!/^3\d{9}$/.test(telefono)) {
+      mostrarFeedbackTelefono('❌ El teléfono debe comenzar con 3', 'error');
+      deshabilitarFormulario();
+      datosCargados = false;
+      telefonoActual = '';
+      return;
     }
     
-    function deshabilitarFormulario() {
-      const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
-      const btnEnviar = document.getElementById('btnEnviarPedido');
-      const estadoFormulario = document.getElementById('estado-formulario');
-      
-      otrosCampos.forEach(campo => {
-        campo.disabled = true;
-        campo.classList.add('campo-deshabilitado');
-      });
-      
-      if (btnEnviar) {
-        btnEnviar.disabled = true;
-        btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
-        btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+    if (telefono !== telefonoActual) {
+      telefonoActual = telefono;
+      datosCargados = false;
+    }
+    
+    mostrarFeedbackTelefono('🔍 Finalizar Compra...', 'cargando');
+    mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
+    validacionEnProgreso = true;
+    
+    setTimeout(() => {
+      if (typeof validarClienteExistente === 'function') {
+        validarClienteExistente(telefono);
       }
-      
+      validacionEnProgreso = false;
+    }, 800);
+  } else if (telefono.length > 0 && telefono.length < 10) {
+    mostrarFeedbackTelefono('📱 Ingresa 10 dígitos', 'neutro');
+    deshabilitarFormulario();
+    datosCargados = false;
+    telefonoActual = '';
+  } else {
+    mostrarFeedbackTelefono('', 'neutro');
+    deshabilitarFormulario();
+    datosCargados = false;
+    telefonoActual = '';
+  }
+}
+
+function deshabilitarFormulario() {
+  const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+  const btnEnviar = document.getElementById('btnEnviarPedido');
+  const estadoFormulario = document.getElementById('estado-formulario');
+  
+  otrosCampos.forEach(campo => {
+    campo.disabled = true;
+    campo.classList.add('campo-deshabilitado');
+  });
+  
+  if (btnEnviar) {
+    btnEnviar.disabled = true;
+    btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
+    btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+    
+    // Remover evento anterior y agregar nuevo
+    btnEnviar.removeEventListener('click', enviarPedidoConConversion);
+  }
+  
+  if (estadoFormulario) {
+    estadoFormulario.textContent = '⏳ Completa el número de celular para continuar';
+    estadoFormulario.className = 'text-muted small mt-2';
+  }
+  
+  ocultarEstadoValidacion();
+}
+
+function habilitarFormularioParaEdicion(clienteExistente = false, datosCliente = null) {
+  const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+  const btnEnviar = document.getElementById('btnEnviarPedido');
+  const estadoFormulario = document.getElementById('estado-formulario');
+  
+  otrosCampos.forEach(campo => {
+    campo.disabled = false;
+    campo.classList.remove('campo-deshabilitado');
+  });
+  
+  if (btnEnviar) {
+    btnEnviar.disabled = false;
+    btnEnviar.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
+    
+    // 🎯 AGREGAR EVENTO DE CONVERSIÓN AL BOTÓN
+    btnEnviar.removeEventListener('click', enviarPedidoConConversion);
+    btnEnviar.addEventListener('click', function(e) {
+      e.preventDefault();
+      enviarPedidoConConversion();
+    });
+    
+    if (clienteExistente) {
+      btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i>✨ Finalizar Compra ✨';
       if (estadoFormulario) {
-        estadoFormulario.textContent = '⏳ Completa el número de celular para continuar';
-        estadoFormulario.className = 'text-muted small mt-2';
+        estadoFormulario.textContent = '✅ Cliente encontrado. Puedes finalizar tu compra';
+        estadoFormulario.className = 'text-success small mt-2';
       }
+      mostrarEstadoValidacion('✅ Cliente encontrado. Actualiza tus datos si es necesario', 'exito');
       
-      ocultarEstadoValidacion();
-    }
-    
-    function habilitarFormularioParaEdicion(clienteExistente = false, datosCliente = null) {
-      const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
-      const btnEnviar = document.getElementById('btnEnviarPedido');
-      const estadoFormulario = document.getElementById('estado-formulario');
+      datosCargados = true;
       
-      otrosCampos.forEach(campo => {
-        campo.disabled = false;
-        campo.classList.remove('campo-deshabilitado');
-      });
-      
-      if (btnEnviar) {
-        btnEnviar.disabled = false;
-        btnEnviar.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
-        
-        if (clienteExistente) {
-          btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i>✨ Finalizar Compra ✨';
-          if (estadoFormulario) {
-            estadoFormulario.textContent = '✅ Cliente encontrado. Puedes finalizar tu compra';
-            estadoFormulario.className = 'text-success small mt-2';
-          }
-          mostrarEstadoValidacion('✅ Cliente encontrado. Actualiza tus datos si es necesario', 'exito');
-          
-          // ✅ MARCAR QUE LOS DATOS YA SE CARGARON
-          datosCargados = true;
-          
-          // Prevenir que se vuelva a buscar si se modifica el teléfono
-          const campoTelefono = document.getElementById('telefonoCliente');
-          if (campoTelefono) {
-            campoTelefono.removeEventListener('input', validarTelefonoEnTiempoReal);
-            campoTelefono.addEventListener('input', validarTelefonoSiCambia);
-          }
-          
-        } else {
-          btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
-          if (estadoFormulario) {
-            estadoFormulario.textContent = '📝 Nuevo cliente. Completa todos los datos para Finalizar';
-            estadoFormulario.className = 'text-info small mt-2';
-          }
-          mostrarEstadoValidacion('📝 Nuevo cliente. Completa tus datos para registrarte', 'info');
-          
-          // ✅ MARCAR QUE LOS DATOS YA SE CARGARON (como nuevo cliente)
-          datosCargados = true;
-        }
+      const campoTelefono = document.getElementById('telefonoCliente');
+      if (campoTelefono) {
+        campoTelefono.removeEventListener('input', validarTelefonoEnTiempoReal);
+        campoTelefono.addEventListener('input', validarTelefonoSiCambia);
       }
-      
-      // Ocultar estado después de 3 segundos
-      setTimeout(ocultarEstadoValidacion, 3000);
-    }
-    
-    // ⚠️ FUNCIÓN ADICIONAL: Solo validar si el teléfono cambia completamente
-    function validarTelefonoSiCambia() {
-      const telefono = document.getElementById('telefonoCliente').value.trim();
-      
-      // Si el teléfono cambia completamente (menos de 10 dígitos o diferente)
-      if (telefono.length !== 10 || telefono !== telefonoActual) {
-        // Resetear todo y permitir nueva búsqueda
-        datosCargados = false;
-        deshabilitarFormulario();
-        
-        // Restaurar el evento original
-        const campoTelefono = document.getElementById('telefonoCliente');
-        campoTelefono.removeEventListener('input', validarTelefonoSiCambia);
-        campoTelefono.addEventListener('input', validarTelefonoEnTiempoReal);
-        
-        // Llamar a la validación normal
-        validarTelefonoEnTiempoReal();
+    } else {
+      btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+      if (estadoFormulario) {
+        estadoFormulario.textContent = '📝 Nuevo cliente. Completa todos los datos para Finalizar';
+        estadoFormulario.className = 'text-info small mt-2';
       }
+      mostrarEstadoValidacion('📝 Nuevo cliente. Completa tus datos para registrarte', 'info');
+      datosCargados = true;
     }
-    
-    function mostrarAlertaFeedback(mensaje, tipo = 'info', duracion = 4000) {
-      // Eliminar alertas anteriores
-      const alertaExistente = document.querySelector('.alert-feedback');
-      if (alertaExistente) alertaExistente.remove();
-      
-      const alerta = document.createElement('div');
-      alerta.className = `alert alert-${tipo} alert-dismissible fade show alert-feedback`;
-      alerta.innerHTML = `
-        <div class="d-flex align-items-center">
-          <i class="bi ${getIconoTipo(tipo)} me-2 fs-5"></i>
-          <div class="flex-grow-1">${mensaje}</div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-        </div>
-      `;
-      
-      document.body.appendChild(alerta);
-      
-      // Auto-eliminar después del tiempo especificado
-      setTimeout(() => {
-        if (alerta.parentNode) {
-          alerta.remove();
-        }
-      }, duracion);
-    }
-    
-    function getIconoTipo(tipo) {
-      switch(tipo) {
-        case 'success': return 'bi-check-circle';
-        case 'danger': return 'bi-exclamation-triangle';
-        case 'warning': return 'bi-info-circle';
-        default: return 'bi-info-circle';
-      }
-    }
-    // Agrega esta función al script existente (después de las otras funciones)
-function finalizarRegistro(success = true, mensaje = '') {
-  if (success) {
-    // Mostrar mensaje de éxito
-    mostrarAlertaFeedback(mensaje || '✅ Registro completado exitosamente', 'success', 3000);
-    
-    // Deshabilitar el formulario
+  }
+  
+  setTimeout(ocultarEstadoValidacion, 3000);
+}
+
+function validarTelefonoSiCambia() {
+  const telefono = document.getElementById('telefonoCliente').value.trim();
+  
+  if (telefono.length !== 10 || telefono !== telefonoActual) {
+    datosCargados = false;
     deshabilitarFormulario();
     
-    // Cambiar mensaje del botón
+    const campoTelefono = document.getElementById('telefonoCliente');
+    campoTelefono.removeEventListener('input', validarTelefonoSiCambia);
+    campoTelefono.addEventListener('input', validarTelefonoEnTiempoReal);
+    
+    validarTelefonoEnTiempoReal();
+  }
+}
+
+function mostrarAlertaFeedback(mensaje, tipo = 'info', duracion = 4000) {
+  const alertaExistente = document.querySelector('.alert-feedback');
+  if (alertaExistente) alertaExistente.remove();
+  
+  const alerta = document.createElement('div');
+  alerta.className = `alert alert-${tipo} alert-dismissible fade show alert-feedback`;
+  alerta.innerHTML = `
+    <div class="d-flex align-items-center">
+      <i class="bi ${getIconoTipo(tipo)} me-2 fs-5"></i>
+      <div class="flex-grow-1">${mensaje}</div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+  `;
+  
+  document.body.appendChild(alerta);
+  
+  setTimeout(() => {
+    if (alerta.parentNode) alerta.remove();
+  }, duracion);
+}
+
+function getIconoTipo(tipo) {
+  switch(tipo) {
+    case 'success': return 'bi-check-circle';
+    case 'danger': return 'bi-exclamation-triangle';
+    case 'warning': return 'bi-info-circle';
+    default: return 'bi-info-circle';
+  }
+}
+
+function finalizarRegistro(success = true, mensaje = '') {
+  if (success) {
+    mostrarAlertaFeedback(mensaje || '✅ Registro completado exitosamente', 'success', 3000);
+    deshabilitarFormulario();
+    
     const btnEnviar = document.getElementById('btnEnviarPedido');
     if (btnEnviar) {
       btnEnviar.disabled = true;
@@ -1008,79 +1087,122 @@ function finalizarRegistro(success = true, mensaje = '') {
       btnEnviar.className = 'btn btn-success px-4 py-2 rounded-pill fw-bold';
     }
     
-    // Mostrar estado
     mostrarEstadoValidacion('✅ Registro exitoso. Redirigiendo...', 'success');
     
-    // Redirigir después de 3 segundos
     setTimeout(() => {
-      // Opción 1: Volver al inicio
       window.location.href = 'index.html';
-      
-      // Opción 2: Cerrar pestaña si se abrió desde otra
-      // window.close();
-      
-      // Opción 3: Ir a página de confirmación
-      // window.location.href = 'registro-exitoso.html';
     }, 3000);
-    
   } else {
-    // Mostrar error
     mostrarAlertaFeedback(mensaje || '❌ Error en el registro', 'danger', 5000);
   }
 }
 
-// Función para volver al inicio
 function volverAInicio() {
   if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
     window.location.href = 'index.html';
   }
 }
 
-// Hacerla disponible globalmente
+// ========== INICIALIZACIÓN ==========
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🚀 HTML cargado - Iniciando validaciones básicas...");
+  
+  mostrarEstadoValidacion('⬇️ Escribe tu número de celular...', 'info');
+  
+  const camposNumericos = ["telefonoCliente", "numeroApto"];
+  camposNumericos.forEach(id => {
+    const campo = document.getElementById(id);
+    if (!campo) return;
+    
+    campo.addEventListener("input", () => {
+      const valor = campo.value;
+      if (!/^\d*$/.test(valor)) {
+        campo.value = valor.replace(/\D/g, "");
+      }
+    });
+  });
+  
+  const campoTelefono = document.getElementById("telefonoCliente");
+  if (campoTelefono) {
+    campoTelefono.addEventListener("input", () => {
+      const valor = campoTelefono.value.trim();
+      const esValido = /^3\d{9}$/.test(valor);
+
+      if (!esValido && valor.length === 10) {
+        campoTelefono.classList.add("is-invalid");
+        mostrarFeedbackTelefono('❌ Teléfono inválido. Debe comenzar con 3', 'error');
+        datosCargados = false;
+      } else if (esValido) {
+        campoTelefono.classList.remove("is-invalid");
+        campoTelefono.classList.add("is-valid");
+        mostrarFeedbackTelefono('✅ Teléfono válido', 'exito');
+      } else {
+        campoTelefono.classList.remove("is-invalid", "is-valid");
+        mostrarFeedbackTelefono('', 'neutro');
+      }
+    });
+    
+    campoTelefono.focus();
+  }
+  
+  fetch("HEADER.HTML")
+    .then(res => res.text())
+    .then(header => {
+      document.getElementById("header-container").innerHTML = header;
+    })
+    .catch(error => {
+      console.error("Error cargando header:", error);
+    });
+});
+
+// Exponer funciones globalmente
+window.mostrarEstadoValidacion = mostrarEstadoValidacion;
+window.ocultarEstadoValidacion = ocultarEstadoValidacion;
+window.mostrarFeedbackTelefono = mostrarFeedbackTelefono;
+window.deshabilitarFormulario = deshabilitarFormulario;
+window.habilitarFormularioParaEdicion = habilitarFormularioParaEdicion;
+window.mostrarAlertaFeedback = mostrarAlertaFeedback;
+window.validarTelefonoEnTiempoReal = validarTelefonoEnTiempoReal;
 window.finalizarRegistro = finalizarRegistro;
 window.volverAInicio = volverAInicio;
-    
-    // Hacer funciones disponibles globalmente
-    window.mostrarEstadoValidacion = mostrarEstadoValidacion;
-    window.ocultarEstadoValidacion = ocultarEstadoValidacion;
-    window.mostrarFeedbackTelefono = mostrarFeedbackTelefono;
-    window.deshabilitarFormulario = deshabilitarFormulario;
-    window.habilitarFormularioParaEdicion = habilitarFormularioParaEdicion;
-    window.mostrarAlertaFeedback = mostrarAlertaFeedback;
-    window.validarTelefonoEnTiempoReal = validarTelefonoEnTiempoReal;
-  </script>
+window.enviarPedidoConConversion = enviarPedidoConConversion;
+</script>
 
-  <!-- ✅ SCRIPT PRINCIPAL DEL FORMULARIO UNIFICADO -->
-  <script src="modalformulario.js?v=20251116" defer></script>
-  <script>
-    async function cargarFooter() {
-      try {
-        const respuesta = await fetch('footer.html?v=' + Date.now());
-        const htmlFooter = await respuesta.text();
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) {
-          contenedor.innerHTML = htmlFooter;
-        }
-      } catch (error) {
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) {
-          contenedor.innerHTML = `
-            <div class="container text-center py-3">
-              <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
-              <p class="small text-muted">anmagostore@gmail.com</p>
-            </div>
-          `;
-        }
-      }
+<!-- ✅ SCRIPT PRINCIPAL DEL FORMULARIO UNIFICADO -->
+<script src="modalformulario.js?v=20251116" defer></script>
+
+<!-- Cargar Footer -->
+<script>
+async function cargarFooter() {
+  try {
+    const respuesta = await fetch('footer.html?v=' + Date.now());
+    const htmlFooter = await respuesta.text();
+    const contenedor = document.getElementById('footer-container');
+    if (contenedor) {
+      contenedor.innerHTML = htmlFooter;
     }
+  } catch (error) {
+    const contenedor = document.getElementById('footer-container');
+    if (contenedor) {
+      contenedor.innerHTML = `
+        <div class="container text-center py-3">
+          <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
+          <p class="small text-muted">anmagostore@gmail.com</p>
+        </div>
+      `;
+    }
+  }
+}
 
-    document.addEventListener('DOMContentLoaded', cargarFooter);
-  </script>
-   <!-- ✅ FOOTER -->
-  <footer class="footer mt-0" id="footer-container">
-    <div class="text-center py-4">
-      <div class="spinner-border spinner-border-sm text-primary"></div>
-      <p class="mt-1 small text-muted">Cargando información...</p>
-    </div>
-  </footer>
-</body></html>
+document.addEventListener('DOMContentLoaded', cargarFooter);
+</script>
+
+<!-- ✅ FOOTER -->
+<footer class="footer mt-0" id="footer-container">
+  <div class="text-center py-4">
+    <div class="spinner-border spinner-border-sm text-primary"></div>
+    <p class="mt-1 small text-muted">Cargando información...</p>
+  </div>
+</footer>
+</body>
+</html>
