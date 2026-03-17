@@ -956,6 +956,7 @@ function fallbackImageRequest(url) {
 }
 
 // 🔥 NUEVA FUNCIÓN: Procesar después de confirmación modal
+// 🔥 NUEVA FUNCIÓN: Procesar después de confirmación modal (CORREGIDA CON TELEGRAM)
 function procesarDespuesDeConfirmacion() {
     console.log('✅ Cliente confirmó el pedido en modal');
     
@@ -983,6 +984,19 @@ function procesarDespuesDeConfirmacion() {
             console.log('👤 ENVIANDO/ACTUALIZANDO CLIENTE Y PEDIDO...');
             const resultadoEnvio = await enviarDatosGoogleSheets();
             console.log('✅ PROCESADO EN SHEETS:', resultadoEnvio);
+            
+            // 📲 ENVIAR ALERTA A TELEGRAM
+            const datosTelegram = {
+                nombre: document.getElementById('nombreCliente').value.trim(),
+                telefono: document.getElementById('telefonoCliente').value.trim(),
+                ciudad: document.getElementById('ciudadCliente').value.trim(),
+                direccion: direccionFinal,
+                barrio: document.getElementById('barrio').value.trim(),
+                observacion: document.getElementById('observacionDireccion').value.trim()
+            };
+            
+            console.log('📲 ENVIANDO ALERTA A TELEGRAM...');
+            enviarAlertaTelegram(datosTelegram);
 
             console.log('📱 ENVIANDO WHATSAPP...');
             enviarPedidoWhatsApp();
