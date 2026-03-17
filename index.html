@@ -5,16 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
   <!-- Meta esenciales primero -->
-  <title>Anmago Store - Ropa, Hogar, Belleza y más</title>
-  <meta name="description" content="Encuentra ropa, relojería, hogar, belleza y más en Anmago Store. Los mejores precios y calidad garantizada.">
+  <title>Anmago Store - Ropa, Hogar, Belleza y más | Tienda Online Colombia</title>
+  <meta name="description" content="Encuentra ropa, relojería, hogar, belleza y más en Anmago Store. Los mejores precios, calidad garantizada y envíos a toda Colombia.">
+  <meta name="keywords" content="ropa online Colombia, camisetas selección Colombia, moda colombiana, comprar ropa por internet, envíos gratis Colombia">
+  <meta name="author" content="ANMAGO STORE">
+  <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anmagos.github.io/anmago.store/">
+  <meta property="og:title" content="Anmago Store - Ropa, Hogar, Belleza y más">
+  <meta property="og:description" content="Encuentra ropa, relojería, hogar, belleza y más. Los mejores precios y calidad garantizada.">
+  <meta property="og:image" content="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-1200,h-630">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anmago Store - Ropa, Hogar, Belleza y más">
+  <meta name="twitter:description" content="Tienda online con los mejores precios y calidad garantizada. Envíos a toda Colombia.">
+  <meta name="twitter:image" content="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-1200,h-630">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://anmagos.github.io/anmago.store/">
   
   <!-- ⚡ OPTIMIZACIONES CRÍTICAS PARA LCP -->
   <link rel="icon" href="tina-192.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="tina-192.png">
   
   <!-- 1. Precarga del LOGO (elemento LCP más probable) -->
   <link rel="preload" 
-        href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48,f-auto" 
+        href="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-96,h-96,f-auto" 
         as="image" 
         fetchpriority="high">
   
@@ -33,11 +53,19 @@
     gtag('config', 'G-PD2Y81DPRG', { send_page_view: true });
   </script>
   
-  <!-- CSS CRÍTICO INLINE (SOLO LO NECESARIO) -->
+  <!-- CSS CRÍTICO INLINE (OPTIMIZADO) -->
  <style>
     /* ========== ESTILOS CRÍTICOS PARA PRIMER RENDER ========== */
+    :root {
+      --primary-color: #1B4557;
+      --primary-dark: #12303d;
+      --secondary-color: #2A6A8F;
+      --text-color: #2C3E50;
+      --text-muted: #7F8C8D;
+    }
+    
     .header-sticky {
-      background: linear-gradient(135deg, #1B4557, #2A6A8F);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: white;
       position: fixed;
       top: 0;
@@ -46,23 +74,28 @@
       z-index: 1030;
       height: 70px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
     }
     
     body { 
       padding-top: 70px; 
       background-color: #f8f9fa; 
-      margin: 0; 
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: var(--text-color);
     }
     
+    /* Optimización de skeleton loaders */
     .skeleton {
-      background: #f0f0f0;
+      background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+      background-size: 200% 100%;
       border-radius: 8px;
       animation: pulse 1.5s infinite;
     }
     
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
     
     /* Carrusel con altura fija para evitar CLS */
@@ -98,7 +131,7 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: #0b7021;
+      color: #1B4557;
       transition: all 0.3s ease;
       display: none;
     }
@@ -192,7 +225,7 @@
       font-size: 0.9rem;
     }
     
-    /* Intro animada */
+    /* Intro animada - optimizada para rendimiento */
     #intro {
       position: fixed;
       top: 0; 
@@ -210,6 +243,7 @@
       will-change: transform, opacity;
       backface-visibility: hidden;
       -webkit-font-smoothing: antialiased;
+      pointer-events: none; /* Mejora rendimiento */
     }
     
     /* ========== ANIMACIONES PARA INTRO ========== */
@@ -255,10 +289,10 @@
     /* Banner institucional */
     .banner-promocional {
       background-color: #f5f5f5;
-      font-family: 'Segoe UI', sans-serif;
       font-weight: 500;
       font-size: 14px;
       color: #333;
+      line-height: 1.5;
     }
     
     /* Botón instalar app */
@@ -281,6 +315,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      cursor: pointer;
     }
     
     .btn-instalar-app:hover {
@@ -417,11 +452,6 @@
       animation: fadeIn 0.5s ease;
     }
     
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
     /* Sistema de vistas */
     .vista {
       display: none;
@@ -432,52 +462,31 @@
     }
     
     /* ========== GRID DE PRODUCTOS OPTIMIZADO ========== */
-    /* Grid productos - Base para móvil */
     .grid-productos-ml {
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 en móvil */
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       padding: 1rem 0;
     }
     
-    /* Tablet (≥ 576px) */
     @media (min-width: 576px) {
-      .grid-productos-ml {
-        grid-template-columns: repeat(3, 1fr); /* 3 en tablet pequeña */
-        gap: 1.2rem;
-      }
+      .grid-productos-ml { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
     }
     
-    /* Tablet grande (≥ 768px) */
     @media (min-width: 768px) {
-      .grid-productos-ml {
-        grid-template-columns: repeat(4, 1fr); /* 4 en tablet grande */
-        gap: 1.5rem;
-      }
+      .grid-productos-ml { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     }
     
-    /* Escritorio (≥ 1024px) */
     @media (min-width: 1024px) {
-      .grid-productos-ml {
-        grid-template-columns: repeat(5, 1fr); /* 5 en escritorio */
-        gap: 1.5rem;
-      }
+      .grid-productos-ml { grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
     }
     
-    /* Pantallas grandes (≥ 1200px) */
     @media (min-width: 1200px) {
-      .grid-productos-ml {
-        grid-template-columns: repeat(5, 1fr); /* Mantener 5 */
-        gap: 1.8rem;
-      }
+      .grid-productos-ml { grid-template-columns: repeat(5, 1fr); gap: 1.8rem; }
     }
     
-    /* Pantallas muy grandes (≥ 1400px) */
     @media (min-width: 1400px) {
-      .grid-productos-ml {
-        grid-template-columns: repeat(6, 1fr); /* 6 en pantallas muy grandes */
-        gap: 2rem;
-      }
+      .grid-productos-ml { grid-template-columns: repeat(6, 1fr); gap: 2rem; }
     }
     
     /* Card producto optimizada */
@@ -531,101 +540,42 @@
     
     /* ========== RESPONSIVE GENERAL ========== */
     @media (max-width: 768px) {
-      .header-sticky { 
-        height: 60px; 
-      }
-      body { 
-        padding-top: 60px; 
-      }
-      .carousel-promos-home {
-        height: 350px;
-        min-height: 350px;
-      }
-      .btn-volver-inicio {
-        top: 70px;
-        left: 8px;
-        width: 36px;
-        height: 36px;
-      }
-      .sugerencia-item {
-        padding: 12px;
-        gap: 12px;
-      }
-      .sugerencia-item img {
-        width: 42px;
-        height: 42px;
-      }
-      #intro .logo-container {
-        width: 140px;
-        height: 140px;
-      }
-      #intro .loading-text {
-        font-size: 16px;
-      }
-      
-      /* Ajustes para móvil específicos */
-      .card-img-container {
-        height: 160px;
-        padding: 10px;
-      }
-      
-      .productos-destacados .col-6 {
-        width: 50%;
-      }
-      
-      .instalar-container {
-        bottom: 70px;
-        right: 15px;
-      }
+      .header-sticky { height: 60px; }
+      body { padding-top: 60px; }
+      .carousel-promos-home { height: 350px; min-height: 350px; }
+      .btn-volver-inicio { top: 70px; left: 8px; width: 36px; height: 36px; }
+      .sugerencia-item { padding: 12px; gap: 12px; }
+      .sugerencia-item img { width: 42px; height: 42px; }
+      #intro .logo-container { width: 140px; height: 140px; }
+      #intro .loading-text { font-size: 16px; }
+      .card-img-container { height: 160px; padding: 10px; }
+      .instalar-container { bottom: 70px; right: 15px; }
     }
     
-    /* Mostrar botón volver al inicio solo en desktop */
     @media (min-width: 768px) {
-      .btn-volver-inicio {
-        display: flex;
-      }
+      .btn-volver-inicio { display: flex; }
     }
     
-    /* Ajustes específicos para tablet */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .grid-productos-ml {
-        gap: 1.2rem;
-      }
-      
-      .card-producto-ml .img-container {
-        padding: 10px;
-      }
-      
-      .productos-destacados .col-md-3 {
-        width: 25%;
-      }
+    /* ========== MEJORAS DE ACCESIBILIDAD ========== */
+    :focus-visible {
+      outline: 3px solid #1B4557;
+      outline-offset: 2px;
     }
     
-    /* Ajustes específicos para escritorio */
-    @media (min-width: 1024px) {
-      .container {
-        max-width: 1200px;
-      }
-      
-      .grid-productos-ml {
-        gap: 1.5rem;
-      }
-      
-      .card-producto-ml .img-container {
-        padding: 15px;
-      }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
     }
     
-    /* Optimización para pantallas muy anchas */
-    @media (min-width: 1400px) {
-      .container {
-        max-width: 1320px;
-      }
-      
-      .grid-productos-ml {
-        gap: 2rem;
-      }
-    }
+    /* ========== UTILIDADES ADICIONALES ========== */
+    .text-premium { color: var(--primary-color); }
+    .bg-premium-light { background-color: rgba(27, 69, 87, 0.05); }
 </style>
   
   <!-- PWA y favicon -->
@@ -642,12 +592,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="ESTILO.CSS?v=20251116">
+    <div class="alert alert-warning text-center mt-3">JavaScript está desactivado. Algunas funciones pueden no estar disponibles.</div>
   </noscript>
 </head>
 
 <body class="bg-light">
   <!-- Intro animada tipo persiana -->
-  <div id="intro">
+  <div id="intro" aria-hidden="true">
     <div class="logo-container" style="
       position: relative;
       width: 180px;
@@ -672,7 +623,6 @@
     
     <div class="loading-text" style="
       color: white;
-      font-family: 'Segoe UI', Arial, sans-serif;
       font-size: 18px;
       font-weight: 300;
       letter-spacing: 1px;
@@ -703,7 +653,6 @@
       bottom: 40px;
       color: rgba(255,255,255,0.7);
       font-size: 14px;
-      font-family: 'Segoe UI', Arial, sans-serif;
       animation: fadeIn 1s ease 1s both;
     ">
       ANMAGO Store
@@ -714,9 +663,9 @@
   <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
     <!-- LOGO CON PRIORIDAD ALTA -->
     <div class="logo">
-      <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;">
+      <a href="#" onclick="mostrarTodosLosProductosCompleto(); return false;" aria-label="Ir al inicio">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-96,h-96,f-auto"
-             alt="Logo ANMAGO"
+             alt="Logo ANMAGO - Tienda online Colombia"
              width="96"
              height="96"
              fetchpriority="high"
@@ -726,10 +675,13 @@
 
     <!-- BUSCADOR EN HEADER - OPTIMIZADO -->
     <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
+      <label for="buscador" class="sr-only">Buscar productos</label>
       <input id="buscador" class="form-control buscador-header" 
              placeholder="Buscar productos..." 
-             autocomplete="off">
-      <div id="sugerencias" class="sugerencias-container"></div>
+             autocomplete="off"
+             aria-label="Buscar productos"
+             aria-describedby="sugerencias">
+      <div id="sugerencias" class="sugerencias-container" role="listbox" aria-label="Resultados de búsqueda"></div>
     </div>
 
     <!-- BOTÓN HAMBURGUESA -->
@@ -737,7 +689,7 @@
             data-bs-toggle="offcanvas"
             data-bs-target="#menuLateral"
             aria-controls="menuLateral"
-            aria-label="Abrir menú">
+            aria-label="Abrir menú de categorías">
       <i class="bi bi-list fs-1 text-white"></i>
     </button>
   </header>
@@ -747,12 +699,13 @@
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="menuLateralLabel">
         <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-             alt="Logo ANMAGO"
+             alt=""
              width="48"
-             height="48">
+             height="48"
+             aria-hidden="true">
         Anmago Store
       </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar menú"></button>
     </div>
 
     <div class="offcanvas-body d-flex flex-column gap-3">
@@ -764,8 +717,10 @@
       <!-- CATEGORÍAS DINÁMICAS -->
       <div id="menu-categorias-dinamico" class="mt-2">
         <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-        <div class="text-center py-3">
-          <div class="spinner-border spinner-border-sm text-primary"></div>
+        <div class="text-center py-3" aria-label="Cargando categorías">
+          <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
           <p class="mt-2 small text-muted">Cargando categorías...</p>
         </div>
       </div>
@@ -779,6 +734,7 @@
       <!-- WhatsApp -->
       <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
          target="_blank"
+         rel="noopener noreferrer"
          class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
         <i class="bi bi-whatsapp me-2"></i> WhatsApp
       </a>
@@ -786,6 +742,7 @@
       <!-- Contacto formulario -->
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
          target="_blank"
+         rel="noopener noreferrer"
          class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
         <i class="bi bi-envelope me-2"></i> Contacto
       </a>
@@ -801,7 +758,10 @@
 
   <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
   <a href="https://anmagos.github.io/anmago.store/" class="btn-volver-inicio"
-     data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
+     data-bs-toggle="tooltip" 
+     data-bs-placement="right" 
+     data-bs-title="Volver al inicio"
+     aria-label="Volver al inicio">
     <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
   </a>
 
@@ -809,7 +769,9 @@
   <div class="container-fluid mt-3">
     <div class="categorias-rapidas" id="categorias-rapidas">
       <div class="text-center py-2">
-        <div class="spinner-border spinner-border-sm text-primary"></div>
+        <div class="spinner-border spinner-border-sm text-primary" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
         <small class="text-muted ms-2">Cargando categorías...</small>
       </div>
     </div>
@@ -828,14 +790,14 @@
   </div>
 
   <!-- BOTÓN INSTALAR APP -->
-  <div id="instalar-container" class="instalar-container d-none">
+  <div id="instalar-container" class="instalar-container d-none" aria-live="polite">
     <button id="boton-instalar" class="btn-instalar-app">
       <i class="bi bi-download"></i> Instalar App
     </button>
   </div>
 
   <!-- ✅ SISTEMA DE VISTAS DINÁMICAS -->
-  <main>
+  <main id="main-content">
     <!-- VISTA 1: INICIO (HOME) -->
     <div id="vista-inicio" class="vista vista-activa">
       <div id="grid-ultimos" class="grid-productos-ml">
@@ -849,10 +811,10 @@
     <!-- VISTA 2: SUBTIPOS -->
     <div id="vista-subtipos" class="vista">
       <div class="container mt-3">
-        <nav class="breadcrumb-vista">
+        <nav class="breadcrumb-vista" aria-label="Navegación de categorías">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-tipo"></li>
+            <li class="breadcrumb-item active" id="breadcrumb-tipo" aria-current="page"></li>
           </ol>
         </nav>
         
@@ -864,11 +826,11 @@
     <!-- VISTA 3: CATEGORÍAS -->
     <div id="vista-categorias" class="vista">
       <div class="container mt-3">
-        <nav class="breadcrumb-vista">
+        <nav class="breadcrumb-vista" aria-label="Navegación de categorías">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
             <li class="breadcrumb-item"><a href="#" id="breadcrumb-tipo-link"></a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-subtipo"></li>
+            <li class="breadcrumb-item active" id="breadcrumb-subtipo" aria-current="page"></li>
           </ol>
         </nav>
         
@@ -880,12 +842,12 @@
     <!-- VISTA 4: PRODUCTOS -->
     <div id="vista-productos" class="vista">
       <div class="container mt-3">
-        <nav class="breadcrumb-vista">
+        <nav class="breadcrumb-vista" aria-label="Navegación de categorías">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
             <li class="breadcrumb-item"><a href="#" id="breadcrumb-tipo-link-prod"></a></li>
             <li class="breadcrumb-item"><a href="#" id="breadcrumb-subtipo-link"></a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-categoria"></li>
+            <li class="breadcrumb-item active" id="breadcrumb-categoria" aria-current="page"></li>
           </ol>
         </nav>
         
@@ -900,25 +862,25 @@
     <!-- VISTA 5: TODOS LOS PRODUCTOS -->
     <div id="vista-todos" class="vista">
       <div class="container mt-3">
-        <nav class="breadcrumb-vista">
+        <nav class="breadcrumb-vista" aria-label="Navegación">
           <ol class="breadcrumb mb-0">
             <li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li>
-            <li class="breadcrumb-item active" id="breadcrumb-todos">Todos los productos</li>
+            <li class="breadcrumb-item active" id="breadcrumb-todos" aria-current="page">Todos los productos</li>
           </ol>
         </nav>
                
         <!-- SECCIÓN PRODUCTOS DESTACADOS -->
-        <section class="productos-destacados mt-5">
+        <section class="productos-destacados mt-5" aria-labelledby="productos-destacados-titulo">
           <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-3">
-              <h2 class="h4 fw-bold mb-0">🌟 Productos Destacados</h2>
+              <h2 id="productos-destacados-titulo" class="h4 fw-bold mb-0">🌟 Productos Destacados</h2>
               <small class="text-muted">Desliza para ver más</small>
             </div>
             
             <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1" aria-label="Slide 2"></button>
               </div>
               
               <div class="carousel-inner">
@@ -928,7 +890,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 1" 
+                               alt="Producto destacado chaqueta torera" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -944,7 +906,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 1" 
+                               alt="Producto destacado chaqueta torera" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -960,7 +922,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 1" 
+                               alt="Producto destacado chaqueta torera" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -976,7 +938,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 1" 
+                               alt="Producto destacado chaqueta torera" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -996,7 +958,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 2" 
+                               alt="Producto destacado camiseta selección Colombia" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -1012,7 +974,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 2" 
+                               alt="Producto destacado camiseta selección Colombia" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -1028,7 +990,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 2" 
+                               alt="Producto destacado camiseta selección Colombia" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -1044,7 +1006,7 @@
                       <div class="card-producto-destacado">
                         <div class="card-img-container">
                           <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" 
-                               alt="Producto destacado 2" 
+                               alt="Producto destacado camiseta selección Colombia" 
                                loading="lazy"
                                class="img-fluid">
                         </div>
@@ -1103,10 +1065,10 @@
   </main>
 
   <!-- CARRITO OFFCANVAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito" aria-labelledby="offcanvasCarritoLabel">
     <div class="offcanvas-header border-bottom">
-      <h4 class="offcanvas-title fw-bold">🛒 Tu Carrito</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+      <h4 class="offcanvas-title fw-bold" id="offcanvasCarritoLabel">🛒 Tu Carrito</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
     </div>
     <div class="offcanvas-body" id="carrito-contenido">
       <div class="text-center text-muted py-4">
@@ -1126,7 +1088,7 @@
   </div>
 
   <!-- BOTÓN CARRITO FLOTANTE -->
-  <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
+  <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-label="Ver carrito de compras">
     <i class="bi bi-bag-heart fs-4"></i>
     <span id="contador-carrito" class="contador-carrito">0</span>
   </a>
@@ -1140,19 +1102,19 @@
   </footer>
 
   <!-- ✅ BARRA INFERIOR MOBILE FIJADA -->
-  <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2" style="z-index: 1030;">
+  <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2" style="z-index: 1030;" aria-label="Navegación móvil">
     <div class="container-fluid">
       <div class="d-flex justify-content-around w-100">
-        <a href="#" class="text-center text-decoration-none text-primary" onclick="mostrarTodosLosProductosCompleto(); return false;">
+        <a href="#" class="text-center text-decoration-none text-primary" onclick="mostrarTodosLosProductosCompleto(); return false;" aria-label="Inicio">
           <i class="bi bi-house-fill fs-5"></i>
           <div class="small">Inicio</div>
         </a>
-        <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" class="text-center text-decoration-none text-dark">
+        <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" class="text-center text-decoration-none text-dark" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube">
           <i class="bi bi-youtube fs-5"></i>
           <div class="small">canal</div>
         </a>
         <a href="#" class="text-center text-decoration-none position-relative d-flex flex-column align-items-center"
-           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
+           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito" aria-label="Ver carrito">
           <div class="position-relative mb-1">
             <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
                  style="width: 35px; height: 35px; margin-top: -8px;">
@@ -1168,11 +1130,13 @@
         </a>
         <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
            class="text-center text-decoration-none text-success"
-           target="_blank">
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Contactar por WhatsApp">
           <i class="bi bi-whatsapp fs-5"></i>
           <div class="small">Chat</div>
         </a>
-        <a href="modalformulario.html" class="text-center text-decoration-none text-dark">
+        <a href="modalformulario.html" class="text-center text-decoration-none text-dark" aria-label="Mi cuenta">
           <i class="bi bi-person fs-5"></i>
           <div class="small">Cuenta</div>
         </a>
@@ -1263,6 +1227,7 @@
               item.innerHTML = `
                   <img src="${producto.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'}" 
                        alt="${producto.producto}"
+                       loading="lazy"
                        onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
                   <div class="sugerencia-info">
                       <div class="sugerencia-nombre">${producto.producto}</div>
@@ -1315,8 +1280,6 @@
                   }
               }
           });
-
-         
 
           document.addEventListener('keydown', function(e) {
               if (e.key === 'Escape') {
@@ -1529,8 +1492,8 @@
         if (contenedor) {
           contenedor.innerHTML = `
             <div class="container text-center py-3">
-              <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
-              <p class="small text-muted">anmagostore@gmail.com</p>
+              <p class="text-muted mb-1">&copy; 2025 Anmago Store. Todos los derechos reservados.</p>
+              <p class="small text-muted">anmagostore@gmail.com | 3006498710</p>
             </div>
           `;
         }
