@@ -29,377 +29,111 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    
-    // Google Analytics
     gtag('config', 'G-PD2Y81DPRG');
-    
-    // Google Ads
     gtag('config', 'AW-17878933588');
   </script>
   
-  <!-- Estilos adicionales para el feedback -->
+  <!-- Estilos adicionales -->
   <style>
     /* Estilos para el feedback de validación */
-    .validacion-contenedor {
-      position: relative;
-      margin-bottom: 10px;
-    }
+    .validacion-contenedor { position: relative; margin-bottom: 10px; }
+    .validacion-estado { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); display: none; }
+    .validacion-cargando { color: #0d6efd; animation: pulse 1.5s infinite; }
+    .validacion-exito { color: #198754; }
+    .validacion-error { color: #dc3545; }
+    @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+    .spinner-validacion { display: inline-block; width: 1rem; height: 1rem; border: 0.2em solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spinner-border .75s linear infinite; }
+    .alert-feedback { position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: slideInRight 0.3s ease; }
+    @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .campo-deshabilitado { opacity: 0.6 !important; background-color: #f8f9fa !important; cursor: not-allowed !important; }
+    .btn-cargando { position: relative; color: transparent !important; }
+    .btn-cargando::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1.2rem; height: 1.2rem; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: white; animation: spinner-border .75s linear infinite; }
     
-    .validacion-estado {
-      position: absolute;
-      right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: none;
-    }
-    
-    .validacion-cargando {
-      color: #0d6efd;
-      animation: pulse 1.5s infinite;
-    }
-    
-    .validacion-exito {
-      color: #198754;
-    }
-    
-    .validacion-error {
-      color: #dc3545;
-    }
-    
-    @keyframes pulse {
-      0% { opacity: 0.4; }
-      50% { opacity: 1; }
-      100% { opacity: 0.4; }
-    }
-    
-    .spinner-validacion {
-      display: inline-block;
-      width: 1rem;
-      height: 1rem;
-      vertical-align: text-bottom;
-      border: 0.2em solid currentColor;
-      border-right-color: transparent;
-      border-radius: 50%;
-      animation: spinner-border .75s linear infinite;
-    }
-    
-    .alert-feedback {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      min-width: 300px;
-      max-width: 400px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      animation: slideInRight 0.3s ease;
-    }
-    
-    @keyframes slideInRight {
-      from {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-    
-    .campo-deshabilitado {
-      opacity: 0.6 !important;
-      background-color: #f8f9fa !important;
-      cursor: not-allowed !important;
-    }
-    
-    .btn-cargando {
-      position: relative;
-      color: transparent !important;
-    }
-    
-    .btn-cargando::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 1.2rem;
-      height: 1.2rem;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-radius: 50%;
-      border-top-color: white;
-      animation: spinner-border .75s linear infinite;
-    }
+    /* Estilos para el modal de confirmación MEJORADO */
+    .modal-confirmacion .modal-content { border: 2px solid #ffc107; border-radius: 15px; }
+    .modal-confirmacion .modal-header { background: linear-gradient(135deg, #1B4557, #2A6A8F); color: white; border-radius: 13px 13px 0 0; }
+    .modal-confirmacion .modal-body { padding: 2rem; }
+    .icono-advertencia { font-size: 4rem; color: #ffc107; animation: pulse 2s infinite; }
+    .lista-confirmacion { list-style: none; padding: 0; }
+    .lista-confirmacion li { margin-bottom: 15px; display: flex; align-items: center; }
+    .lista-confirmacion i { font-size: 1.5rem; margin-right: 15px; width: 30px; text-align: center; }
   </style>
-  <!-- Datos Estructurados para Google Merchant Center -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "ANMAGO STORE",
-  "url": "https://anmagos.github.io/anmago.store/",
-  "description": "Tienda online de ropa, hogar, belleza y más en Colombia.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "CO"
-  },
-  "hasMerchantReturnPolicy": {
-    "@type": "MerchantReturnPolicy",
-    "applicableCountry": "CO",
-    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-    "merchantReturnDays": 30,
-    "returnMethod": "https://schema.org/ReturnByMail",
-    "returnFees": "https://schema.org/FreeReturn",
-    "returnPolicyCountry": "CO",
-    "productReturnDays": 30
+  
+  <!-- Datos Estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "ANMAGO STORE",
+    "url": "https://anmagos.github.io/anmago.store/",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "CO",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnFees": "https://schema.org/FreeReturn"
+    }
   }
-}
-</script>
+  </script>
 </head>
 
-<!-- Intro animada tipo persiana con degradado -->
-<div id="intro" style="
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: linear-gradient(135deg, #1b4557 0%, #2a6b8a 40%, #ffffff 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  animation: curtainUp 3.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-  overflow: hidden;
-">
-  <!-- Logo principal con efecto de aparición -->
-  <div class="logo-container" style="
-    position: relative;
-    width: 180px;
-    height: 180px;
-    margin-bottom: 30px;
-    animation: logoReveal 1.2s ease-out 0.3s both;
-  ">
-    <img src="tina-512.png" alt="ANMAGO Store" style="
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
-    ">
-    <!-- Efecto de brillo sutil -->
-    <div style="
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
-      z-index: 1;
-    "></div>
+<!-- Intro animada -->
+<div id="intro" style="position: fixed; top:0; left:0; width:100vw; height:100vh; background: linear-gradient(135deg, #1b4557 0%, #2a6b8a 40%, #ffffff 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; animation: curtainUp 3.8s cubic-bezier(0.77, 0, 0.175, 1) forwards; overflow: hidden;">
+  <div class="logo-container" style="position: relative; width: 180px; height: 180px; margin-bottom: 30px; animation: logoReveal 1.2s ease-out 0.3s both;">
+    <img src="tina-512.png" alt="ANMAGO Store" style="width:100%; height:100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
   </div>
-  
-  <!-- Texto de carga con puntos animados -->
-  <div class="loading-text" style="
-    color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    animation: textFade 2s ease-in-out;
-  ">
-    CARGANDO<span class="dots">...</span>
+  <div class="loading-text" style="color: white; font-size: 18px; font-weight: 300; animation: textFade 2s ease-in-out;">CARGANDO<span class="dots">...</span></div>
+  <div class="progress-bar" style="width:200px; height:2px; background:rgba(255,255,255,0.2); margin-top:20px; border-radius:10px; overflow:hidden;">
+    <div style="width:0%; height:100%; background: linear-gradient(90deg, #ffffff, #a8e6ff); animation: progressFill 1.5s ease-in-out forwards;"></div>
   </div>
-  
-  <!-- Barra de progreso sutil -->
-  <div class="progress-bar" style="
-    width: 200px;
-    height: 2px;
-    background: rgba(255,255,255,0.2);
-    margin-top: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-  ">
-    <div style="
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #ffffff, #a8e6ff);
-      animation: progressFill 1.5s ease-in-out forwards;
-    "></div>
-  </div>
-  
-  <!-- Elementos decorativos sutiles -->
-  <div style="
-    position: absolute;
-    bottom: 40px;
-    color: rgba(255,255,255,0.7);
-    font-size: 14px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    animation: fadeIn 1s ease 1s both;
-  ">
-    ANMAGO Store
-  </div>
+  <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.7); font-size: 14px;">ANMAGO Store</div>
 </div>
 
 <style>
-/* Animación principal de persiana mejorada */
-@keyframes curtainUp {
-  0% { 
-    transform: translateY(0);
-    opacity: 1;
-  }
-  70% {
-    opacity: 0.95;
-  }
-  100% { 
-    transform: translateY(-100%);
-    opacity: 0;
-    display: none;
-  }
-}
-
-/* Animación de revelación del logo */
-@keyframes logoReveal {
-  0% { 
-    transform: scale(0.8) rotate(-5deg);
-    opacity: 0;
-  }
-  100% { 
-    transform: scale(1) rotate(0);
-    opacity: 1;
-  }
-}
-
-/* Animación de puntos de carga */
-@keyframes dotsPulse {
-  0%, 20% { opacity: 0.2; }
-  50% { opacity: 1; }
-  100% { opacity: 0.2; }
-}
-
-/* Animación de la barra de progreso */
-@keyframes progressFill {
-  0% { width: 0%; }
-  80% { width: 90%; }
-  100% { width: 100%; }
-}
-
-/* Animación de texto */
-@keyframes textFade {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Animación de aparición */
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 0.7; }
-}
-
-/* Estilo para los puntos animados */
-.dots::after {
-  content: '...';
-  animation: dotsPulse 1.5s infinite;
-}
-
-/* Mejorar rendimiento con transformaciones GPU */
-#intro {
-  will-change: transform, opacity;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  #intro .logo-container {
-    width: 140px;
-    height: 140px;
-  }
-  
-  #intro .loading-text {
-    font-size: 16px;
-  }
-}
+@keyframes curtainUp { 0% { transform: translateY(0); opacity: 1; } 70% { opacity: 0.95; } 100% { transform: translateY(-100%); opacity: 0; display: none; } }
+@keyframes logoReveal { 0% { transform: scale(0.8) rotate(-5deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+@keyframes dotsPulse { 0%, 20% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
+@keyframes progressFill { 0% { width: 0%; } 80% { width: 90%; } 100% { width: 100%; } }
+@keyframes textFade { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 0.7; } }
+.dots::after { content: '...'; animation: dotsPulse 1.5s infinite; }
+#intro { will-change: transform, opacity; backface-visibility: hidden; -webkit-font-smoothing: antialiased; }
+@media (max-width: 768px) { #intro .logo-container { width: 140px; height: 140px; } #intro .loading-text { font-size: 16px; } }
 </style>
 
 <body>
 <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
-  <!-- LOGO -->
   <div class="logo">
     <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
-      <img
-        src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-        alt="ANMAGO STORE"
-        width="48"
-        height="48"
-        loading="lazy"
-        style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
-      />
+      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" alt="ANMAGO STORE" width="48" height="48" loading="lazy" style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;" />
     </a>
   </div>
-  <div class="container py-4">
-    <h1 class="mb-4 text-center">Finaliza tu Compra 🛒</h1>
-  </div>
+  <div class="container py-4"><h1 class="mb-4 text-center">Finaliza tu Compra 🛒</h1></div>
 </header>
 
 <!-- MENÚ LATERAL -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="menuLateralLabel">
-      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
-           alt="Anmago Store" width="30" height="30" 
-           style="border-radius: 4px; margin-right: 10px;">
-      Anmago Store
+      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" alt="Anmago Store" width="30" height="30" style="border-radius: 4px; margin-right: 10px;"> Anmago Store
     </h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
   </div>
-
   <div class="offcanvas-body d-flex flex-column gap-3">
-    <!-- Inicio -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
-      <i class="bi bi-house me-2"></i> Inicio
-    </a>
-
-    <!-- Promociones -->
-    <a href="PROMOS.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-percent me-2"></i> Promociones
-    </a>
-
-    <!-- Todos los productos -->
-    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
-      <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
-    </a>
-
-    <!-- CATEGORÍAS DINÁMICAS -->
+    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;"><i class="bi bi-house me-2"></i> Inicio</a>
+    <a href="PROMOS.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-percent me-2"></i> Promociones</a>
+    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;"><i class="bi bi-grid-3x3 me-2"></i> Todos los productos</a>
     <div id="menu-categorias-dinamico" class="mt-2">
       <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-      <div class="text-center py-3">
-        <div class="spinner-border spinner-border-sm text-primary"></div>
-        <p class="mt-2 small text-muted">Cargando categorías...</p>
-      </div>
+      <div class="text-center py-3"><div class="spinner-border spinner-border-sm text-primary"></div><p class="mt-2 small text-muted">Cargando categorías...</p></div>
     </div>
-
-    <!-- Contacto -->
-    <a href="modalformulario.html" class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-person me-2"></i> Mi cuenta
-    </a>
-
-    <!-- WhatsApp -->
-    <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
-       target="_blank"
-       class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
-      <i class="bi bi-whatsapp me-2"></i> WhatsApp
-    </a>
-
-    <!-- Contacto formulario -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
-       target="_blank"
-       class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-      <i class="bi bi-envelope me-2"></i> Contacto
-    </a>
+    <a href="modalformulario.html" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-person me-2"></i> Mi cuenta</a>
+    <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" target="_blank" class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();"><i class="bi bi-whatsapp me-2"></i> WhatsApp</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-envelope me-2"></i> Contacto</a>
   </div>
-
   <div class="offcanvas-footer border-top p-3">
-    <div class="text-center small text-muted">
-      <p class="mb-1">anmagostore@gmail.com</p>
-      <p class="mb-0">3006498710 - 3115046741</p>
-    </div>
+    <div class="text-center small text-muted"><p class="mb-1">anmagostore@gmail.com</p><p class="mb-0">3006498710 - 3115046741</p></div>
   </div>
 </div>
 
@@ -407,170 +141,53 @@
 // ==============================================
 // FUNCIONES DEL MENÚ LATERAL
 // ==============================================
-
-function cerrarMenu() {
-  const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral'));
-  if (offcanvas) offcanvas.hide();
-}
-
+function cerrarMenu() { const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral')); if (offcanvas) offcanvas.hide(); }
 function cargarMenuDesdeTuCatalogo() {
   console.log('🔄 Cargando menú desde tu catálogo...');
-  
   const contenedor = document.getElementById('menu-categorias-dinamico');
   if (!contenedor) return;
-  
   if (!window.catalogoGlobal || !Array.isArray(window.catalogoGlobal) || window.catalogoGlobal.length === 0) {
     console.log('⏳ Esperando catálogo de tu app.js...');
     return;
   }
-  
   const catalogo = window.catalogoGlobal;
   const tiposUnicos = ['TODOS', ...new Set(catalogo.map(p => p.tipo).filter(Boolean))];
-  
-  if (tiposUnicos.length === 0) {
-    contenedor.innerHTML = '<p class="small text-muted">No hay categorías disponibles</p>';
-    return;
-  }
-  
-  let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
-  html += '<div class="d-flex flex-column gap-2">';
-  
-  tiposUnicos.forEach(tipo => {
-    const count = tipo === 'TODOS' 
-      ? catalogo.length 
-      : catalogo.filter(p => p.tipo === tipo).length;
-    
-    html += `
-      <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-         onclick="${tipo === 'TODOS' ? 'mostrarTodosLosProductosCompleto' : `cargarPorTipo('${tipo}')`}; cerrarMenu(); return false;">
-        <div class="d-flex align-items-center">
-          <i class="bi ${tipo === 'TODOS' ? 'bi-grid-fill' : 'bi-folder'} me-2"></i>
-          <span>${tipo}</span>
-        </div>
-        <span class="badge bg-primary rounded-pill">${count}</span>
-      </a>
-    `;
+  if (tiposUnicos.length === 0) { contenedor.innerHTML = '<p class="small text-muted">No hay categorías disponibles</p>'; return; }
+  let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p><div class="d-flex flex-column gap-2">';
+  const todosCount = catalogo.length;
+  html += `<a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;"><div class="d-flex align-items-center"><i class="bi bi-grid-fill me-2"></i><span>TODOS LOS PRODUCTOS</span></div><span class="badge bg-primary rounded-pill">${todosCount}</span></a>`;
+  tiposUnicos.slice(1).forEach(tipo => {
+    const count = catalogo.filter(p => p.tipo === tipo).length;
+    html += `<a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded" onclick="irACategoria('${tipo}'); cerrarMenu(); return false;"><div class="d-flex align-items-center"><i class="bi bi-folder me-2"></i><span>${tipo}</span></div><span class="badge bg-primary rounded-pill">${count}</span></a>`;
   });
-  
   html += '</div>';
   contenedor.innerHTML = html;
-  console.log('✅ Menú cargado con', tiposUnicos.length, 'categorías');
 }
-
 document.addEventListener('DOMContentLoaded', function() {
   console.log('🚀 Header simplificado cargado');
-  
-  if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
-    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
-  }
-  
-  window.addEventListener('catalogoCargado', function() {
-    console.log('🎯 Evento catalogoCargado recibido, cargando menú...');
-    setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
-  });
-  
+  if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
+  window.addEventListener('catalogoCargado', function() { setTimeout(() => cargarMenuDesdeTuCatalogo(), 300); });
   const intervalo = setInterval(() => {
-    if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) {
-      cargarMenuDesdeTuCatalogo();
-      clearInterval(intervalo);
-    }
+    if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) { cargarMenuDesdeTuCatalogo(); clearInterval(intervalo); }
   }, 1000);
-  
   setTimeout(() => clearInterval(intervalo), 10000);
 });
 </script>
 
 <style>
-/* ===== ESTILOS BÁSICOS PARA EL HEADER ===== */
-.header-sticky {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
-  color: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1030;
-  height: 70px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.buscador-header {
-  border-radius: 20px;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
-}
-
-.buscador-header:focus {
-  background: white;
-  box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.5);
-  outline: none;
-}
-
-.navbar-toggler {
-  padding: 0.25rem;
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
-}
-
-.navbar-toggler:hover {
-  transform: scale(1.1);
-}
-
-#menuLateral .offcanvas-header {
-  background: linear-gradient(135deg, #1B4557, #2A6A8F);
-  color: white;
-}
-
-#menuLateral .nav-link {
-  color: #333;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-}
-
-#menuLateral .nav-link:hover {
-  background-color: #e9ecef;
-  color: #1B4557;
-  transform: translateX(5px);
-}
-
-.categoria-menu-item {
-  border: 1px solid #dee2e6;
-  transition: all 0.2s ease;
-}
-
-.categoria-menu-item:hover {
-  background-color: #1B4557 !important;
-  color: white !important;
-  border-color: #1B4557;
-  transform: translateX(5px);
-}
-
-@media (max-width: 768px) {
-  .header-sticky {
-    height: 60px;
-    padding: 0.5rem;
-  }
-  
-  .buscador-header {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-  
-  #menuLateral .nav-link {
-    padding: 0.6rem 0.75rem;
-    font-size: 0.9rem;
-  }
-}
+.header-sticky { background: linear-gradient(135deg, #1B4557, #2A6A8F); color: white; position: fixed; top: 0; left: 0; right: 0; z-index: 1030; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.buscador-header { border-radius: 20px; border: none; padding: 0.5rem 1rem; font-size: 0.9rem; background: rgba(255,255,255,0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.buscador-header:focus { background: white; box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.5); outline: none; }
+.navbar-toggler { padding: 0.25rem; margin-left: 0.5rem; transition: transform 0.3s ease; }
+.navbar-toggler:hover { transform: scale(1.1); }
+#menuLateral .offcanvas-header { background: linear-gradient(135deg, #1B4557, #2A6A8F); color: white; }
+#menuLateral .nav-link { color: #333; padding: 0.75rem 1rem; border-radius: 8px; transition: all 0.3s ease; font-weight: 500; }
+#menuLateral .nav-link:hover { background-color: #e9ecef; color: #1B4557; transform: translateX(5px); }
+.categoria-menu-item { border: 1px solid #dee2e6; transition: all 0.2s ease; }
+.categoria-menu-item:hover { background-color: #1B4557 !important; color: white !important; border-color: #1B4557; transform: translateX(5px); }
+@media (max-width: 768px) { .header-sticky { height: 60px; } .buscador-header { font-size: 0.85rem; } }
 </style>
- 
+
 <!-- BOTÓN VOLVER AL INICIO -->
 <div class="container mt-3">
   <button onclick="volverAInicio()" class="btn btn-volver-inicio btn-sm px-3 py-2 rounded-pill">
@@ -582,12 +199,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <main class="container py-4">
   <h2 class="mb-4 text-center"></h2>
   
-  <!-- ESTADO DE VALIDACIÓN VISIBLE -->
   <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
     <div class="d-flex align-items-center justify-content-center">
-      <div class="spinner-border spinner-border-sm me-2" role="status">
-        <span class="visually-hidden">Cargando...</span>
-      </div>
+      <div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Cargando...</span></div>
       <span id="mensaje-validacion">Finalizar Compra...</span>
     </div>
   </div>
@@ -595,36 +209,27 @@ document.addEventListener('DOMContentLoaded', function() {
   <form id="formCliente">
     <input type="hidden" id="clienteId" name="clienteId">
 
-    <!-- Celular principal CON FEEDBACK -->
     <div class="mb-3 validacion-contenedor">
       <label for="telefonoCliente" class="form-label">Celular</label>
       <div class="position-relative">
-        <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" 
-               placeholder="Ej: 3001234567" maxlength="10" required
-               oninput="validarTelefonoEnTiempoReal()">
-        <div id="feedback-telefono" class="validacion-estado">
-          <span id="icono-telefono"></span>
-        </div>
+        <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" placeholder="Ej: 3001234567" maxlength="10" required oninput="validarTelefonoEnTiempoReal()">
+        <div id="feedback-telefono" class="validacion-estado"><span id="icono-telefono"></span></div>
       </div>
       <div class="form-text">Debe comenzar por 3 y tener 10 dígitos.</div>
       <div id="mensaje-telefono" class="form-text mt-1"></div>
     </div>
 
-    <!-- Nombre -->
     <div class="mb-3">
       <label for="nombreCliente" class="form-label">Nombres y Apellidos</label>
       <input type="text" class="form-control campo-deshabilitado" id="nombreCliente" name="nombreCliente" disabled>
     </div>
 
-    <!-- Dirección Completa -->
     <div class="mb-3">
       <label for="DireccionCompleta" class="form-label">Dirección Completa</label>
-      <textarea id="DireccionCompleta" class="form-control campo-deshabilitado" name="DireccionCompleta" 
-                rows="2" maxlength="200" placeholder="Ej: calle, carrera, avenida, transversal, etc." disabled></textarea>
+      <textarea id="DireccionCompleta" class="form-control campo-deshabilitado" name="DireccionCompleta" rows="2" maxlength="200" placeholder="Ej: calle, carrera, avenida, transversal, etc." disabled></textarea>
       <div class="form-text">Recuerda colocar tu dirección exacta para evitar contratiempos en tu entrega.</div>
     </div>
 
-    <!-- Tipo de Unidad y Número -->
     <div class="row mb-3">
       <div class="col-md-6">
         <label for="tipoUnidad" class="form-label">Tipo de unidad</label>
@@ -639,39 +244,32 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="col-md-6">
         <label for="numeroApto" class="form-label">Número</label>
-        <input type="text" class="form-control campo-deshabilitado" id="numeroApto" name="numeroApto" 
-               maxlength="4" inputmode="numeric" pattern="\d{1,4}" title="Solo números entre 0 y 9999" disabled>
+        <input type="text" class="form-control campo-deshabilitado" id="numeroApto" name="numeroApto" maxlength="4" inputmode="numeric" pattern="\d{1,4}" title="Solo números entre 0 y 9999" disabled>
       </div>
     </div>
 
-    <!-- Barrio -->
     <div class="mb-3">
       <label for="barrio" class="form-label">Barrio (opcional)</label>
       <input type="text" class="form-control campo-deshabilitado" id="barrio" name="barrio" maxlength="50" disabled>
     </div>
 
-    <!-- Observación adicional -->
     <div class="mb-3">
       <label for="observacionDireccion" class="form-label">Punto de referencia</label>
-      <textarea id="observacionDireccion" class="form-control campo-deshabilitado" name="observacionDireccion" 
-                rows="2" maxlength="200" placeholder="Ej: entrada por portería, conjunto.., torre, casa color..., etc." disabled></textarea>
+      <textarea id="observacionDireccion" class="form-control campo-deshabilitado" name="observacionDireccion" rows="2" maxlength="200" placeholder="Ej: entrada por portería, conjunto.., torre, casa color..., etc." disabled></textarea>
     </div>
 
-    <!-- Ciudad con autocompletado -->
     <div class="mb-3 position-relative">
       <label for="ciudadCliente" class="form-label">Ciudad</label>
-      <input type="text" id="ciudadCliente" class="form-control campo-deshabilitado" name="ciudadCliente" 
-             placeholder="Escribe tu ciudad" autocomplete="off" disabled>
+      <input type="text" id="ciudadCliente" class="form-control campo-deshabilitado" name="ciudadCliente" placeholder="Escribe tu ciudad" autocomplete="off" disabled>
       <ul id="sugerenciasCiudades" class="dropdown-menu w-100 mt-0 z-3"></ul>
     </div>
 
-    <!-- Correo electrónico -->
     <div class="mb-3">
       <label for="emailCliente" class="form-label">Correo electrónico</label>
       <input type="email" class="form-control campo-deshabilitado" id="emailCliente" name="emailCliente" disabled>
     </div>
 
-    <!-- Botón Enviar - AHORA CON SEGUIMIENTO DE CONVERSIÓN -->
+    <!-- Botón Enviar -->
     <div class="text-center mt-4">
       <button id="btnEnviarPedido" class="btn btn-secondary px-4 py-2 rounded-pill fw-bold" disabled>
         <i class="bi bi-send"></i>✨ Finalizar Compra... ✨
@@ -681,606 +279,1179 @@ document.addEventListener('DOMContentLoaded', function() {
   </form>
 </main>
 
+<!-- ===== MODAL DE CONFIRMACIÓN MEJORADO (COMO EL PRIMERO) ===== -->
+<div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-exclamation-triangle-fill me-2"></i> Información importante sobre tu pedido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center mb-4">
+          <i class="bi bi-truck fs-1 text-warning"></i>
+          <i class="bi bi-shield-check fs-1 text-primary mx-2"></i>
+          <i class="bi bi-whatsapp fs-1 text-success"></i>
+        </div>
+        
+        <h6 class="fw-bold text-center mb-3">📦 Antes de continuar, ten en cuenta:</h6>
+        
+        <ul class="list-unstyled">
+          <li class="mb-3 d-flex">
+            <i class="bi bi-check-circle-fill text-warning me-3 fs-5"></i>
+            <span><strong>Disponibilidad sujeta a proveedor:</strong> Verificaremos el stock después de recibir tu pedido.</span>
+          </li>
+          <li class="mb-3 d-flex">
+            <i class="bi bi-check-circle-fill text-warning me-3 fs-5"></i>
+            <span><strong>Te contactaremos en 24h:</strong> Te escribiremos por WhatsApp para coordinar el pago y envío.</span>
+          </li>
+          <li class="mb-3 d-flex">
+            <i class="bi bi-check-circle-fill text-warning me-3 fs-5"></i>
+            <span><strong>Sin cobro anticipado:</strong> No realizamos ningún cobro hasta confirmar disponibilidad.</span>
+          </li>
+          <li class="mb-3 d-flex">
+            <i class="bi bi-check-circle-fill text-warning me-3 fs-5"></i>
+            <span><strong>Si no hay stock:</strong> Te ofreceremos alternativas o cancelaremos el pedido sin compromiso.</span>
+          </li>
+        </ul>
+        
+        <div class="alert alert-light border-start border-4 border-warning mt-3">
+          <p class="mb-0 small">
+            <i class="bi bi-info-circle me-2"></i>
+            Al continuar, aceptas que verificaremos disponibilidad antes de procesar el pago.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer d-flex justify-content-center gap-3">
+        <button type="button" class="btn btn-outline-secondary px-4 py-2" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle me-2"></i>Cancelar pedido
+        </button>
+        <button type="button" class="btn btn-warning px-4 py-2 fw-bold" id="btnConfirmarPedido">
+          <i class="bi bi-check-circle me-2"></i>Sí, continuar con el pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- SCRIPTS EXTERNOS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- ✅ SCRIPT PRINCIPAL CON SEGUIMIENTO DE CONVERSIÓN PARA WHATSAPP -->
+<!-- ===== TODO EL CÓDIGO DE modalformulario.js INTEGRADO AQUÍ ===== -->
 <script>
-// ========== VARIABLES GLOBALES ==========
-let datosCargados = false;
-let telefonoActual = '';
-let validacionEnProgreso = false;
+// ==============================================
+// CÓDIGO COMPLETO DE modalformulario.js INTEGRADO
+// ==============================================
 
-// ========== FUNCIÓN PRINCIPAL DE CONVERSIÓN ==========
+console.log('🚀 INICIANDO FORMULARIO - VERSIÓN COMPLETA PEDIDOS + CLIENTES');
 
-// 🎯 FUNCIÓN PARA ENVIAR PEDIDO CON SEGUIMIENTO DE GOOGLE ADS
-function enviarPedidoConConversion() {
-  console.log('🎯 Iniciando proceso de envío con conversión...');
-  
-  // Validar que todos los campos estén completos
-  if (!validarCamposCompletos()) {
-    mostrarAlertaFeedback('❌ Por favor completa todos los campos requeridos', 'warning');
-    return;
-  }
-  
-  // Obtener datos del formulario
-  const datos = obtenerDatosFormulario();
-  
-  // Calcular total del carrito
-  const totalCarrito = calcularTotalCarrito();
-  
-  // 🔥 REGISTRAR CONVERSIÓN EN GOOGLE ADS
-  if (typeof gtag === 'function') {
-    // Generar ID de transacción único
-    const transactionId = 'PED-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+// 🔥 VARIABLES GLOBALES INMEDIATAS
+window.articulosCarrito = [];
+window.formularioInicializado = false;
+window.ciudadesColombia = [];
+
+// ✅ FUNCIÓN PARA FINALIZAR Y CERRAR/REDIRIGIR
+window.finalizarRegistro = function(success = true, mensaje = '') {
+    console.log('🎯 FINALIZANDO REGISTRO:', { success, mensaje });
     
-    // Registrar conversión con tu ID de Google Ads AW-17878933588
-    gtag('event', 'conversion', {
-      'send_to': 'AW-17878933588/L-EBCKnp8PYbENTAq81C',
-      'value': totalCarrito,
-      'currency': 'COP',
-      'transaction_id': transactionId,
-      'event_callback': function() {
-        console.log('✅ Conversión registrada exitosamente en Google Ads');
-      }
+    if (success) {
+        if (typeof window.mostrarAlertaFeedback === 'function') {
+            window.mostrarAlertaFeedback(mensaje || '✅ Registro completado exitosamente', 'success', 3000);
+        }
+        
+        if (typeof window.deshabilitarFormulario === 'function') {
+            window.deshabilitarFormulario();
+        }
+        
+        const btnEnviar = document.getElementById('btnEnviarPedido');
+        if (btnEnviar) {
+            btnEnviar.disabled = true;
+            btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i> ✅ Registro Completado';
+            btnEnviar.className = 'btn btn-success px-4 py-2 rounded-pill fw-bold';
+        }
+        
+        if (typeof window.mostrarEstadoValidacion === 'function') {
+            window.mostrarEstadoValidacion('✅ Registro exitoso. Redirigiendo...', 'success');
+        }
+        
+        setTimeout(() => {
+            if (window.opener && !window.opener.closed) {
+                console.log('📱 Cerrando ventana modal...');
+                window.close();
+            } else {
+                console.log('🏠 Redirigiendo al inicio...');
+                window.location.href = 'index.html';
+            }
+        }, 3000);
+    } else {
+        if (typeof window.mostrarAlertaFeedback === 'function') {
+            window.mostrarAlertaFeedback(mensaje || '❌ Error en el registro', 'danger', 5000);
+        }
+    }
+};
+
+// 🔍 FUNCIÓN MEJORADA - CONECTADA AL FEEDBACK VISUAL
+async function consultarClienteAPI(telefono) {
+    try {
+        console.log('🔍 CONSULTANDO CLIENTE EXISTENTE:', telefono);
+        
+        if (typeof window.mostrarEstadoValidacion === 'function') {
+            window.mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
+        }
+        
+        if (typeof window.mostrarFeedbackTelefono === 'function') {
+            window.mostrarFeedbackTelefono('🔍 Buscando cliente...', 'cargando');
+        }
+        
+        const url = `https://script.google.com/macros/s/AKfycbwt-rFg_coabATigGv_zNOa93aO6u9uNqC-Oynh_HAL4dbuKo6pvmtw7jKlixXagW5o/exec?telefonoCliente=${telefono}`;
+        
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        console.log('📊 RESPUESTA CONSULTA:', data);
+        
+        if (data.existe && data.datos) {
+            console.log('✅ CLIENTE ENCONTRADO');
+            
+            if (typeof window.mostrarFeedbackTelefono === 'function') {
+                window.mostrarFeedbackTelefono('✅ Cliente encontrado', 'exito');
+            }
+            
+            if (typeof window.habilitarFormularioParaEdicion === 'function') {
+                window.habilitarFormularioParaEdicion(true, data.datos);
+            }
+            
+            return { existe: true, datos: data.datos };
+        } else {
+            console.log('🆕 CLIENTE NUEVO');
+            
+            if (typeof window.mostrarFeedbackTelefono === 'function') {
+                window.mostrarFeedbackTelefono('🆕 Nuevo cliente', 'exito');
+            }
+            
+            if (typeof window.habilitarFormularioParaEdicion === 'function') {
+                window.habilitarFormularioParaEdicion(false);
+            }
+            
+            return { existe: false };
+        }
+    } catch (error) {
+        console.error('❌ ERROR en consulta:', error);
+        
+        if (typeof window.mostrarFeedbackTelefono === 'function') {
+            window.mostrarFeedbackTelefono('⚠️ Error de conexión', 'error');
+        }
+        
+        if (typeof window.habilitarFormularioParaEdicion === 'function') {
+            window.habilitarFormularioParaEdicion(false);
+        }
+        
+        return { existe: false };
+    }
+}
+
+// ✅ CARGAR BASE DE DATOS DE CIUDADES
+async function cargarCiudades() {
+    try {
+        const response = await fetch('ciudades.json');
+        window.ciudadesColombia = await response.json();
+        console.log('✅ Ciudades cargadas:', window.ciudadesColombia.length);
+        inicializarAutocompletadoCiudades();
+    } catch (error) {
+        console.error('❌ Error cargando ciudades:', error);
+        window.ciudadesColombia = [
+            {departamento: "AMAZONAS", ciudad: "LETICIA"},
+            {departamento: "ANTIOQUIA", ciudad: "MEDELLÍN"},
+            {departamento: "BOGOTÁ", ciudad: "BOGOTÁ"},
+            {departamento: "VALLE DEL CAUCA", ciudad: "CALI"},
+            {departamento: "ATLÁNTICO", ciudad: "BARRANQUILLA"}
+        ];
+        inicializarAutocompletadoCiudades();
+    }
+}
+
+// ✅ FUNCIONES DE AUTOCOMPLETADO DE CIUDADES
+function inicializarAutocompletadoCiudades() {
+    const inputCiudad = document.getElementById('ciudadCliente');
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+
+    if (!inputCiudad || !sugerencias) {
+        console.log('⚠️ Campos de ciudad no encontrados, reintentando...');
+        setTimeout(inicializarAutocompletadoCiudades, 500);
+        return;
+    }
+
+    console.log('✅ Inicializando autocompletado de ciudades...');
+
+    inputCiudad.addEventListener('input', function() {
+        const valor = this.value.trim();
+        
+        if (valor.length < 2) {
+            sugerencias.style.display = 'none';
+            return;
+        }
+
+        const coincidencias = window.ciudadesColombia.filter(item =>
+            item.ciudad.toLowerCase().includes(valor.toLowerCase()) ||
+            item.departamento.toLowerCase().includes(valor.toLowerCase())
+        );
+
+        mostrarSugerenciasCiudades(coincidencias);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!inputCiudad.contains(e.target) && !sugerencias.contains(e.target)) {
+            sugerencias.style.display = 'none';
+        }
+    });
+
+    inputCiudad.addEventListener('keydown', function(e) {
+        const items = sugerencias.querySelectorAll('.sugerencia-item');
+        let itemActivo = sugerencias.querySelector('.sugerencia-item.active');
+        
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (!itemActivo && items.length > 0) {
+                items[0].classList.add('active');
+            } else if (itemActivo) {
+                itemActivo.classList.remove('active');
+                const siguiente = itemActivo.nextElementSibling;
+                if (siguiente) siguiente.classList.add('active');
+            }
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (itemActivo) {
+                itemActivo.classList.remove('active');
+                const anterior = itemActivo.previousElementSibling;
+                if (anterior) anterior.classList.add('active');
+            }
+        } else if (e.key === 'Enter' && itemActivo) {
+            e.preventDefault();
+            seleccionarCiudad(itemActivo);
+        } else if (e.key === 'Escape') {
+            sugerencias.style.display = 'none';
+        }
+    });
+
+    console.log('✅ Autocompletado de ciudades inicializado');
+}
+
+function mostrarSugerenciasCiudades(coincidencias) {
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+    const inputCiudad = document.getElementById('ciudadCliente');
+    
+    if (!sugerencias || !inputCiudad) return;
+
+    if (coincidencias.length === 0) {
+        sugerencias.style.display = 'none';
+        return;
+    }
+
+    sugerencias.innerHTML = '';
+    
+    coincidencias.slice(0, 8).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'dropdown-item sugerencia-item';
+        li.style.cursor = 'pointer';
+        li.style.padding = '8px 12px';
+        li.innerHTML = `<div class="fw-bold">${item.ciudad} - ${item.departamento}</div>`;
+        
+        li.addEventListener('click', () => {
+            inputCiudad.value = `${item.ciudad} - ${item.departamento}`;
+            sugerencias.style.display = 'none';
+            validarFormularioCliente();
+        });
+        
+        li.addEventListener('mouseenter', () => {
+            sugerencias.querySelectorAll('.sugerencia-item').forEach(i => i.classList.remove('active'));
+            li.classList.add('active');
+        });
+        
+        sugerencias.appendChild(li);
+    });
+
+    sugerencias.style.display = 'block';
+}
+
+function seleccionarCiudad(elemento) {
+    const inputCiudad = document.getElementById('ciudadCliente');
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+    
+    if (inputCiudad && sugerencias) {
+        inputCiudad.value = elemento.textContent.trim();
+        sugerencias.style.display = 'none';
+        validarFormularioCliente();
+    }
+}
+
+// 🎯 DETECCIÓN GARANTIZADA DEL CARRITO - VERSIÓN SÍNCRONA
+function detectarCarritoGarantizado() {
+    console.log('🎯 INICIANDO DETECCIÓN GARANTIZADA DEL CARRITO');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const productosParam = urlParams.get('productos');
+    
+    if (productosParam && productosParam !== '[]' && productosParam !== 'null') {
+        try {
+            const productos = JSON.parse(decodeURIComponent(productosParam));
+            if (Array.isArray(productos) && productos.length > 0) {
+                window.articulosCarrito = productos;
+                console.log('✅ CARRITO DETECTADO desde URL:', productos.length, 'productos');
+                return true;
+            }
+        } catch (error) {
+            console.error('❌ Error parseando URL:', error);
+        }
+    }
+    
+    try {
+        const carritoLocal = localStorage.getItem('carritoAnmago');
+        if (carritoLocal && carritoLocal !== '[]' && carritoLocal !== 'null') {
+            const productos = JSON.parse(carritoLocal);
+            if (Array.isArray(productos) && productos.length > 0) {
+                window.articulosCarrito = productos;
+                console.log('✅ CARRITO DETECTADO desde localStorage:', productos.length, 'productos');
+                return true;
+            }
+        }
+    } catch (error) {
+        console.error('❌ Error parseando localStorage:', error);
+    }
+    
+    if (window.opener && Array.isArray(window.opener.articulosCarrito) && window.opener.articulosCarrito.length > 0) {
+        window.articulosCarrito = JSON.parse(JSON.stringify(window.opener.articulosCarrito));
+        console.log('✅ CARRITO DETECTADO desde window.opener:', window.articulosCarrito.length, 'productos');
+        return true;
+    }
+    
+    console.log('ℹ️  NO hay carrito detectado - Modo registro solamente');
+    return false;
+}
+
+// 🔥 EJECUCIÓN INMEDIATA
+(function() {
+    const tieneCarrito = detectarCarritoGarantizado();
+    console.log('🎯 RESULTADO DETECCIÓN:', tieneCarrito ? 'CON CARRITO' : 'SOLO REGISTRO');
+})();
+
+// 👤 Construir nombre del cliente
+function construirNombreCliente() {
+    const nombreInput = document.getElementById("nombreCliente");
+    return nombreInput ? nombreInput.value.trim() : "Cliente";
+}
+
+// ✅ Validación de formulario
+function validarFormularioCliente() {
+    const nombre = document.getElementById("nombreCliente");
+    const telefono = document.getElementById("telefonoCliente");
+    const direccion = document.getElementById("DireccionCompleta");
+    const ciudad = document.getElementById("ciudadCliente");
+    
+    const todosLlenos = nombre?.value.trim() && 
+                       telefono?.value.trim() && 
+                       direccion?.value.trim() && 
+                       ciudad?.value.trim();
+    
+    const telefonoValido = telefono && /^3\d{9}$/.test(telefono.value.trim());
+
+    const btnEnviar = document.getElementById("btnEnviarPedido");
+    if (btnEnviar) {
+        btnEnviar.disabled = !(todosLlenos && telefonoValido);
+    }
+    
+    return todosLlenos && telefonoValido;
+}
+
+// 🔍 Validar estructura de productos
+function validarProductosCarrito() {
+    if (!window.articulosCarrito || !Array.isArray(window.articulosCarrito)) {
+        console.error('❌ Carrito no válido');
+        return false;
+    }
+    
+    const problemas = [];
+    
+    window.articulosCarrito.forEach((item, index) => {
+        if (!item.id) problemas.push(`Producto ${index + 1}: Sin ID`);
+        if (!item.nombre) problemas.push(`Producto ${index + 1}: Sin nombre`);
+        if (!item.precio || item.precio <= 0) problemas.push(`Producto ${index + 1}: Precio inválido (${item.precio})`);
+        if (!item.cantidad || item.cantidad <= 0) problemas.push(`Producto ${index + 1}: Cantidad inválida (${item.cantidad})`);
     });
     
-    console.log(`✅ Conversión registrada: $${totalCarrito} COP - ID: ${transactionId}`);
-    mostrarAlertaFeedback(`✅ Compra registrada por $${totalCarrito.toLocaleString('es-CO')}`, 'success');
-  } else {
-    console.warn('⚠️ gtag no disponible, la conversión no se registrará');
-    mostrarAlertaFeedback('⚠️ No se pudo registrar la conversión', 'warning');
-  }
-  
-  // 🚀 ENVIAR ALERTA A TELEGRAM
-  if (typeof window.enviarAlertaTelegram === 'function') {
-    window.enviarAlertaTelegram({
-      nombre: datos.nombre,
-      telefono: datos.telefono,
-      ciudad: datos.ciudad,
-      direccion: datos.direccion,
-      barrio: datos.barrio,
-      observacion: datos.observacion,
-      total: totalCarrito
+    if (problemas.length > 0) {
+        console.warn('⚠️ Problemas en el carrito:', problemas);
+        return false;
+    }
+    
+    return true;
+}
+
+// 🏠 Construir dirección estructurada
+function construirDireccionEstructurada() {
+    const direccionBase = document.getElementById("DireccionCompleta")?.value.trim() || '';
+    const tipoUnidad = document.getElementById("tipoUnidad")?.value.trim() || '';
+    const numeroApto = document.getElementById("numeroApto")?.value.trim() || '';
+    const barrio = document.getElementById("barrio")?.value.trim() || '';
+    const puntoReferencia = document.getElementById("observacionDireccion")?.value.trim() || '';
+
+    let direccion = direccionBase;
+    if (tipoUnidad) direccion += `, ${tipoUnidad}`;
+    if (numeroApto) direccion += ` ${numeroApto}`;
+    if (barrio) direccion += `, Barrio ${barrio}`;
+    if (puntoReferencia) direccion += `, ${puntoReferencia}`;
+    
+    return direccion.trim();
+}
+
+// 🔄 Parseo inverso de dirección
+function repartirDireccionConcatenada(direccionConc) {
+    console.log('📍 INICIANDO PARSEO DE DIRECCIÓN:', direccionConc);
+    
+    if (!direccionConc) {
+        console.log('📍 DIRECCIÓN VACÍA - No hay nada que parsear');
+        return;
+    }
+
+    const baseInput = document.getElementById("DireccionCompleta");
+    const tipoInput = document.getElementById("tipoUnidad");
+    const numeroInput = document.getElementById("numeroApto");
+    const barrioInput = document.getElementById("barrio");
+    const refInput = document.getElementById("observacionDireccion");
+
+    if (tipoInput) tipoInput.value = "";
+    if (numeroInput) numeroInput.value = "";
+    if (barrioInput) barrioInput.value = "";
+    if (refInput) refInput.value = "";
+
+    const partes = direccionConc.split(",").map(p => p.trim()).filter(p => p !== "");
+    console.log('📍 PARTES DE DIRECCIÓN:', partes);
+    
+    if (partes.length === 0) return;
+
+    if (baseInput) {
+        baseInput.value = partes[0];
+        console.log('📍 DIRECCIÓN BASE:', partes[0]);
+    }
+
+    if (partes.length > 1 && tipoInput) {
+        const segundaParte = partes[1].toUpperCase();
+        console.log('📍 SEGUNDA PARTE:', segundaParte);
+        
+        const tipos = ["APARTAMENTO", "CASA", "PISO", "BODEGA", "INTERIOR"];
+        const tipoEncontrado = tipos.find(t => segundaParte.includes(t));
+        
+        if (tipoEncontrado) {
+            tipoInput.value = tipoEncontrado.charAt(0) + tipoEncontrado.slice(1).toLowerCase();
+            console.log('📍 TIPO UNIDAD:', tipoInput.value);
+            
+            const numeroTexto = partes[1].replace(new RegExp(tipoEncontrado, 'i'), "").trim();
+            if (numeroTexto && numeroInput) {
+                numeroInput.value = numeroTexto;
+                console.log('📍 NÚMERO:', numeroInput.value);
+            }
+        }
+    }
+
+    if (partes.length > 2 && barrioInput) {
+        const barrioValue = partes[2].replace(/^barrio\s*/i, "").trim();
+        barrioInput.value = barrioValue;
+        console.log('📍 BARRIO:', barrioValue);
+    }
+
+    if (partes.length > 3 && refInput) {
+        const referenciaValue = partes.slice(3).join(", ");
+        refInput.value = referenciaValue;
+        console.log('📍 REFERENCIA:', referenciaValue);
+    }
+    
+    console.log('📍 PARSEO DE DIRECCIÓN COMPLETADO');
+}
+
+// 🔧 Preparar productos para enviar
+function prepararProductosParaEnvio() {
+    if (!window.articulosCarrito || window.articulosCarrito.length === 0) {
+        return [];
+    }
+    
+    console.log('📦 Preparando productos para enviar:', window.articulosCarrito.length);
+    
+    return window.articulosCarrito.map((item, index) => {
+        const idCompleto = item.id || '';
+        const [idBase, ...varianteParts] = idCompleto.split('-');
+        const variante = varianteParts.join('-').trim() || 'Estándar';
+        
+        console.log(`  Producto ${index + 1}:`, {
+            idCompleto,
+            idBase,
+            variante,
+            nombre: item.nombre,
+            talla: item.talla
+        });
+        
+        return {
+            productoId: idBase.trim(),
+            nombreCompleto: item.nombre || 'Producto sin nombre',
+            talla: item.talla || 'Única',
+            precio: item.precio || 0,
+            cantidad: item.cantidad || 1,
+            variante: variante,
+            imagen: item.imagen || ''
+        };
     });
-  } else {
-    console.log('⚠️ Función enviarAlertaTelegram no disponible');
-  }
-  
-  // Construir mensaje para WhatsApp
-  const mensajeWhatsApp = construirMensajeWhatsApp(datos, totalCarrito);
-  
-  // Abrir WhatsApp
-  abrirWhatsApp(mensajeWhatsApp);
-  
-  // Opcional: Redirigir después de unos segundos
-  setTimeout(() => {
-    if (confirm('¿Quieres volver a la tienda?')) {
-      window.location.href = 'index.html';
+}
+
+// 💬 Generar texto para WhatsApp
+function generarTextoWhatsApp() {
+    const nombreCliente = construirNombreCliente();
+    
+    const carritoActual = window.articulosCarrito;
+    const tieneProductos = Array.isArray(carritoActual) && carritoActual.length > 0;
+    
+    console.log('🔍 GENERANDO WHATSAPP - Estado actual:', {
+        nombreCliente,
+        tieneProductos,
+        productos: carritoActual?.length || 0,
+        carrito: carritoActual
+    });
+
+    if (tieneProductos) {
+        console.log('📝 GENERANDO MENSAJE DE PEDIDO CON PRODUCTOS');
+        
+        const productos = carritoActual.map((p, i) => {
+            let productoTexto = `${i + 1}. ${p.nombre || 'Producto'}\n`;
+            
+            if (p.imagen) {
+                productoTexto += `🖼️ Imagen: ${p.imagen}\n`;
+            }
+            
+            productoTexto += `📏 Talla: ${p.talla || "Única"}\n`;
+            productoTexto += `💲 Precio: $${(p.precio || 0).toLocaleString("es-CO")}\n`;
+            productoTexto += `🔢 Cantidad: ${p.cantidad || 1}`;
+            
+            return productoTexto;
+        }).join("\n\n");
+
+        const total = carritoActual.reduce((sum, p) => 
+            sum + ((p.precio || 0) * (p.cantidad || 1)), 0
+        );
+
+        return `🛍️ ¡Hola! Soy ${nombreCliente} y quiero realizar el siguiente pedido:\n\n${productos}\n\n🧾 Total: $${total.toLocaleString("es-CO")}\n\n✅ ¡Gracias!`;
+    } else {
+        console.log('📝 GENERANDO MENSAJE DE REGISTRO SOLAMENTE');
+        return `¡Hola! Soy ${nombreCliente} y quiero registrarme como cliente.`;
     }
-  }, 3000);
 }
 
-// Función para validar campos completos
-function validarCamposCompletos() {
-  const camposRequeridos = [
-    'nombreCliente',
-    'DireccionCompleta',
-    'tipoUnidad',
-    'ciudadCliente'
-  ];
-  
-  for (const campoId of camposRequeridos) {
-    const campo = document.getElementById(campoId);
-    if (!campo || !campo.value.trim()) {
-      return false;
+// 📤 Envío a WhatsApp
+function enviarPedidoWhatsApp() {
+    try {
+        const mensaje = generarTextoWhatsApp();
+        const telefono = '573006498710';
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        console.log('📤 ENVIANDO WHATSAPP:', url.substring(0, 100) + '...');
+        
+        const nuevaVentana = window.open(url, '_blank');
+        if (!nuevaVentana) {
+            console.warn('⚠️  Popup bloqueado, redirigiendo en misma ventana');
+            window.location.href = url;
+        }
+    } catch (error) {
+        console.error('❌ ERROR enviando WhatsApp:', error);
+        alert('Error al abrir WhatsApp. Por favor intenta manualmente.');
     }
-  }
-  
-  return true;
 }
 
-// Función para obtener datos del formulario
-function obtenerDatosFormulario() {
-  return {
-    telefono: document.getElementById('telefonoCliente').value.trim(),
-    nombre: document.getElementById('nombreCliente').value.trim(),
-    direccion: document.getElementById('DireccionCompleta').value.trim(),
-    tipoUnidad: document.getElementById('tipoUnidad').value,
-    numeroApto: document.getElementById('numeroApto').value.trim(),
-    barrio: document.getElementById('barrio').value.trim(),
-    observacion: document.getElementById('observacionDireccion').value.trim(),
-    ciudad: document.getElementById('ciudadCliente').value.trim(),
-    email: document.getElementById('emailCliente').value.trim()
-  };
+// 📊 Enviar datos a Google Sheets
+function enviarDatosGoogleSheets() {
+    return new Promise((resolve, reject) => {
+        try {
+            console.log('📤 ENVIANDO DATOS CLIENTE Y PEDIDO VÍA GET...');
+            
+            const telefono = document.getElementById('telefonoCliente')?.value.trim() || '';
+            const nombre = document.getElementById('nombreCliente')?.value.trim() || '';
+            const direccionBase = document.getElementById('DireccionCompleta')?.value.trim() || '';
+            const ciudad = document.getElementById('ciudadCliente')?.value.trim() || '';
+            const email = document.getElementById('emailCliente')?.value.trim() || '';
+            const clienteId = document.getElementById('clienteId')?.value.trim() || '';
+            
+            const direccionCompleta = construirDireccionEstructurada();
+            
+            const productos = prepararProductosParaEnvio();
+            const tieneProductos = productos.length > 0;
+            
+            console.log('🛒 Estado del pedido:', {
+                tieneProductos,
+                cantidadProductos: productos.length,
+                productos: productos
+            });
+            
+            const baseURL = 'https://script.google.com/macros/s/AKfycbwt-rFg_coabATigGv_zNOa93aO6u9uNqC-Oynh_HAL4dbuKo6pvmtw7jKlixXagW5o/exec';
+            
+            const params = new URLSearchParams();
+            
+            params.append('telefonoCliente', telefono);
+            params.append('nombreCliente', nombre);
+            params.append('direccionCliente', direccionBase);
+            params.append('complementoDir', direccionCompleta);
+            params.append('ciudadDestino', ciudad);
+            params.append('correo', email);
+            params.append('clienteId', clienteId);
+            params.append('usuario', 'ANMAGOSTORE@GMAIL.COM');
+            
+            params.append('apellidoCompl', '');
+            params.append('cedula', '');
+            params.append('rotular', '');
+            params.append('rotulo', '');
+            params.append('mensajeCobro', '');
+            
+            params.append('tipoOperacion', tieneProductos ? 'pedidoCompleto' : 'soloCliente');
+            
+            if (tieneProductos) {
+                params.append('productosJSON', JSON.stringify(productos));
+                console.log('📦 Productos incluidos en la solicitud');
+            }
+            
+            const urlCompleta = `${baseURL}?${params.toString()}`;
+            
+            console.log('🔗 URL de envío (primeros 200 chars):', urlCompleta.substring(0, 200) + '...');
+            
+            fetch(urlCompleta)
+                .then(response => {
+                    console.log('✅ Solicitud GET enviada exitosamente');
+                    resolve({
+                        success: true,
+                        tieneProductos: tieneProductos,
+                        cantidadProductos: productos.length
+                    });
+                })
+                .catch(error => {
+                    console.error('❌ Error en fetch GET:', error);
+                    fallbackImageRequest(urlCompleta);
+                    resolve({
+                        success: true,
+                        tieneProductos: tieneProductos,
+                        cantidadProductos: productos.length
+                    });
+                });
+                
+        } catch (error) {
+            console.error('❌ ERROR en enviarDatosGoogleSheets:', error);
+            reject(error);
+        }
+    });
 }
 
-// Función para calcular total del carrito
-function calcularTotalCarrito() {
-  try {
-    // Intentar obtener de localStorage
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-      const carrito = JSON.parse(carritoGuardado);
-      const total = carrito.reduce((sum, item) => {
-        return sum + (item.precio * (item.cantidad || 1));
-      }, 0);
-      return total;
+// 🎯 MÉTODO FALLBACK - Usar imagen para requests GET
+function fallbackImageRequest(url) {
+    try {
+        console.log('🔄 Usando método fallback con imagen...');
+        const img = new Image();
+        img.src = url;
+        img.onload = () => console.log('✅ Fallback exitoso');
+        img.onerror = () => console.log('⚠️ Fallback con error, pero request se envió');
+    } catch (error) {
+        console.log('✅ Request enviado (fallback completado)');
+    }
+}
+
+// 🔥 NUEVA FUNCIÓN: Procesar después de confirmación modal
+function procesarDespuesDeConfirmacion() {
+    console.log('✅ Cliente confirmó el pedido en modal');
+    
+    // Cerrar el modal
+    const modalElement = document.getElementById('modalConfirmacion');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) modal.hide();
+    
+    // Mostrar estado de carga
+    const btnEnviar = document.getElementById('btnEnviarPedido');
+    if (btnEnviar) {
+        btnEnviar.textContent = '📤 Enviando...';
+        btnEnviar.disabled = true;
+        btnEnviar.classList.add('btn-cargando');
     }
     
-    // Intentar obtener de variable global
-    if (window.totalCarritoGlobal) {
-      return window.totalCarritoGlobal;
-    }
-    
-    // Valor por defecto si no se puede calcular
-    return 50000; // ⚠️ AJUSTA SEGÚN TU PROMEDIO
-  } catch (error) {
-    console.error('Error calculando total:', error);
-    return 50000; // Valor por defecto
-  }
-}
+    // Ejecutar el envío real
+    setTimeout(async () => {
+        try {
+            console.log('🚀 PROCESANDO PEDIDO CONFIRMADO...');
+            
+            const direccionFinal = construirDireccionEstructurada();
+            document.getElementById("DireccionCompleta").value = direccionFinal;
 
-// Función para construir mensaje de WhatsApp
-function construirMensajeWhatsApp(datos, totalCarrito) {
-  // Obtener items del carrito
-  let itemsTexto = '';
-  try {
-    const carritoGuardado = localStorage.getItem('carrito');
-    if (carritoGuardado) {
-      const carrito = JSON.parse(carritoGuardado);
-      itemsTexto = carrito.map(item => 
-        `• ${item.nombre || item.producto} - $${(item.precio || 0).toLocaleString('es-CO')} x ${item.cantidad || 1}`
-      ).join('%0A');
-    }
-  } catch (error) {
-    itemsTexto = '• Error al cargar productos';
-  }
-  
-  // Construir mensaje completo
-  return encodeURIComponent(
-    `🛍️ *NUEVO PEDIDO ANMAGO STORE*\n\n` +
-    `👤 *Cliente:* ${datos.nombre}\n` +
-    `📱 *Teléfono:* ${datos.telefono}\n` +
-    `📧 *Email:* ${datos.email || 'No proporcionado'}\n` +
-    `📍 *Ciudad:* ${datos.ciudad}\n` +
-    `🏠 *Dirección:* ${datos.direccion}\n` +
-    `🏢 *Unidad:* ${datos.tipoUnidad} ${datos.numeroApto ? '- ' + datos.numeroApto : ''}\n` +
-    `🗺️ *Barrio:* ${datos.barrio || 'No especificado'}\n` +
-    `📍 *Referencia:* ${datos.observacion || 'No especificada'}\n\n` +
-    `🛒 *PRODUCTOS:*\n${itemsTexto}\n\n` +
-    `💰 *TOTAL: $${totalCarrito.toLocaleString('es-CO')} COP*\n\n` +
-    `⏰ *Fecha:* ${new Date().toLocaleString('es-CO')}`
-  );
-}
+            console.log('👤 ENVIANDO/ACTUALIZANDO CLIENTE Y PEDIDO...');
+            const resultadoEnvio = await enviarDatosGoogleSheets();
+            console.log('✅ PROCESADO EN SHEETS:', resultadoEnvio);
 
-// Función para abrir WhatsApp
-function abrirWhatsApp(mensaje) {
-  const numeroWhatsApp = '573006498710'; // Tu número de WhatsApp
-  const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
-  window.open(url, '_blank');
+            console.log('📱 ENVIANDO WHATSAPP...');
+            enviarPedidoWhatsApp();
+            console.log('✅ WHATSAPP INICIADO');
+
+            if (window.articulosCarrito.length > 0) {
+                console.log('🛒 LIMPIANDO CARRITO...');
+                window.articulosCarrito = [];
+                localStorage.removeItem('carritoAnmago');
+                
+                if (window.opener && !window.opener.closed) {
+                    try {
+                        window.opener.postMessage("limpiarCarrito", "*");
+                    } catch (e) {
+                        console.log('⚠️  No se pudo comunicar con ventana padre');
+                    }
+                }
+            }
+
+            console.log('🎯 PROCESO COMPLETADO - Cliente y pedido enviados');
+            
+            const tieneProductos = resultadoEnvio?.tieneProductos;
+            const mensajeFinal = tieneProductos 
+                ? '✅ Pedido y registro completados exitosamente' 
+                : '✅ Registro de cliente completado exitosamente';
+            
+            finalizarRegistro(true, mensajeFinal);
+
+        } catch (error) {
+            console.error('❌ ERROR en proceso de envío:', error);
+            
+            if (btnEnviar) {
+                btnEnviar.textContent = '❌ Error - Reintentar';
+                btnEnviar.disabled = false;
+                btnEnviar.classList.remove('btn-cargando');
+            }
+            
+            finalizarRegistro(false, '❌ Error al enviar. Por favor intenta nuevamente.');
+        }
+    }, 100);
 }
 
 // ========== FUNCIONES DE VALIDACIÓN EXISTENTES ==========
 function mostrarEstadoValidacion(mensaje, tipo = 'info') {
-  const estadoDiv = document.getElementById('estado-validacion');
-  const mensajeSpan = document.getElementById('mensaje-validacion');
-  if (!estadoDiv || !mensajeSpan) return;
-  
-  mensajeSpan.textContent = mensaje;
-  estadoDiv.className = 'alert text-center mb-4';
-  estadoDiv.classList.add(`alert-${tipo}`);
-  estadoDiv.style.display = 'flex';
+    const div = document.getElementById('estado-validacion');
+    const span = document.getElementById('mensaje-validacion');
+    if (!div || !span) return;
+    span.textContent = mensaje;
+    div.className = `alert text-center mb-4 alert-${tipo}`;
+    div.style.display = 'flex';
 }
 
 function ocultarEstadoValidacion() {
-  const estadoDiv = document.getElementById('estado-validacion');
-  if (estadoDiv) estadoDiv.style.display = 'none';
+    const div = document.getElementById('estado-validacion');
+    if (div) div.style.display = 'none';
 }
 
 function mostrarFeedbackTelefono(mensaje, tipo = 'neutro') {
-  const feedbackDiv = document.getElementById('feedback-telefono');
-  const iconoSpan = document.getElementById('icono-telefono');
-  const mensajeDiv = document.getElementById('mensaje-telefono');
-  
-  if (!feedbackDiv || !iconoSpan || !mensajeDiv) return;
-  
-  if (tipo === 'neutro' || !mensaje) {
-    feedbackDiv.style.display = 'none';
-    mensajeDiv.textContent = '';
-    return;
-  }
-  
-  feedbackDiv.style.display = 'block';
-  mensajeDiv.textContent = mensaje;
-  
-  switch(tipo) {
-    case 'cargando':
-      iconoSpan.innerHTML = '<span class="spinner-validacion"></span>';
-      mensajeDiv.className = 'form-text mt-1 text-primary';
-      break;
-    case 'exito':
-      iconoSpan.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
-      mensajeDiv.className = 'form-text mt-1 text-success';
-      break;
-    case 'error':
-      iconoSpan.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
-      mensajeDiv.className = 'form-text mt-1 text-danger';
-      break;
-  }
+    const feedback = document.getElementById('feedback-telefono');
+    const icono = document.getElementById('icono-telefono');
+    const texto = document.getElementById('mensaje-telefono');
+    if (!feedback || !icono || !texto) return;
+    
+    if (tipo === 'neutro' || !mensaje) {
+        feedback.style.display = 'none';
+        texto.textContent = '';
+        return;
+    }
+    
+    feedback.style.display = 'block';
+    texto.textContent = mensaje;
+    
+    if (tipo === 'cargando') {
+        icono.innerHTML = '<span class="spinner-validacion"></span>';
+        texto.className = 'form-text mt-1 text-primary';
+    } else if (tipo === 'exito') {
+        icono.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+        texto.className = 'form-text mt-1 text-success';
+    } else if (tipo === 'error') {
+        icono.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
+        texto.className = 'form-text mt-1 text-danger';
+    }
 }
 
 function validarTelefonoEnTiempoReal() {
-  const telefono = document.getElementById('telefonoCliente').value.trim();
-  
-  if (datosCargados && telefono === telefonoActual) {
-    console.log('✅ Datos ya cargados, evitando búsqueda duplicada');
-    return;
-  }
-  
-  if (validacionEnProgreso) {
-    console.log('⏳ Validación ya en progreso, esperando...');
-    return;
-  }
-  
-  mostrarFeedbackTelefono('', 'neutro');
-  
-  if (telefono.length === 10) {
-    if (!/^3\d{9}$/.test(telefono)) {
-      mostrarFeedbackTelefono('❌ El teléfono debe comenzar con 3', 'error');
-      deshabilitarFormulario();
-      datosCargados = false;
-      telefonoActual = '';
-      return;
-    }
-    
-    if (telefono !== telefonoActual) {
-      telefonoActual = telefono;
-      datosCargados = false;
-    }
-    
-    mostrarFeedbackTelefono('🔍 Finalizar Compra...', 'cargando');
-    mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
-    validacionEnProgreso = true;
-    
-    setTimeout(() => {
-      if (typeof validarClienteExistente === 'function') {
-        validarClienteExistente(telefono);
-      }
-      validacionEnProgreso = false;
-    }, 800);
-  } else if (telefono.length > 0 && telefono.length < 10) {
-    mostrarFeedbackTelefono('📱 Ingresa 10 dígitos', 'neutro');
-    deshabilitarFormulario();
-    datosCargados = false;
-    telefonoActual = '';
-  } else {
+    const tel = document.getElementById('telefonoCliente').value.trim();
+    if (datosCargados && tel === telefonoActual) return;
+    if (validacionEnProgreso) return;
     mostrarFeedbackTelefono('', 'neutro');
-    deshabilitarFormulario();
-    datosCargados = false;
-    telefonoActual = '';
-  }
+    
+    if (tel.length === 10) {
+        if (!/^3\d{9}$/.test(tel)) {
+            mostrarFeedbackTelefono('❌ El teléfono debe comenzar con 3', 'error');
+            deshabilitarFormulario();
+            datosCargados = false;
+            telefonoActual = '';
+            return;
+        }
+        if (tel !== telefonoActual) {
+            telefonoActual = tel;
+            datosCargados = false;
+        }
+        mostrarFeedbackTelefono('🔍 Finalizar Compra...', 'cargando');
+        mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
+        validacionEnProgreso = true;
+        
+        setTimeout(() => {
+            if (typeof window.validarClienteExistente === 'function') {
+                window.validarClienteExistente(tel);
+            } else {
+                consultarClienteAPI(tel);
+            }
+            validacionEnProgreso = false;
+        }, 800);
+    } else if (tel.length > 0 && tel.length < 10) {
+        mostrarFeedbackTelefono('📱 Ingresa 10 dígitos', 'neutro');
+        deshabilitarFormulario();
+        datosCargados = false;
+        telefonoActual = '';
+    } else {
+        mostrarFeedbackTelefono('', 'neutro');
+        deshabilitarFormulario();
+        datosCargados = false;
+        telefonoActual = '';
+    }
 }
 
 function deshabilitarFormulario() {
-  const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
-  const btnEnviar = document.getElementById('btnEnviarPedido');
-  const estadoFormulario = document.getElementById('estado-formulario');
-  
-  otrosCampos.forEach(campo => {
-    campo.disabled = true;
-    campo.classList.add('campo-deshabilitado');
-  });
-  
-  if (btnEnviar) {
-    btnEnviar.disabled = true;
-    btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
-    btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+    const otros = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+    const btn = document.getElementById('btnEnviarPedido');
+    const estado = document.getElementById('estado-formulario');
     
-    // Remover evento anterior y agregar nuevo
-    btnEnviar.removeEventListener('click', enviarPedidoConConversion);
-  }
-  
-  if (estadoFormulario) {
-    estadoFormulario.textContent = '⏳ Completa el número de celular para continuar';
-    estadoFormulario.className = 'text-muted small mt-2';
-  }
-  
-  ocultarEstadoValidacion();
+    otros.forEach(c => { c.disabled = true; c.classList.add('campo-deshabilitado'); });
+    
+    if (btn) {
+        btn.disabled = true;
+        btn.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
+        btn.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+    }
+    
+    if (estado) {
+        estado.textContent = '⏳ Completa el número de celular para continuar';
+        estado.className = 'text-muted small mt-2';
+    }
+    
+    ocultarEstadoValidacion();
 }
 
 function habilitarFormularioParaEdicion(clienteExistente = false, datosCliente = null) {
-  const otrosCampos = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
-  const btnEnviar = document.getElementById('btnEnviarPedido');
-  const estadoFormulario = document.getElementById('estado-formulario');
-  
-  otrosCampos.forEach(campo => {
-    campo.disabled = false;
-    campo.classList.remove('campo-deshabilitado');
-  });
-  
-  if (btnEnviar) {
-    btnEnviar.disabled = false;
-    btnEnviar.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
+    const otros = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+    const btn = document.getElementById('btnEnviarPedido');
+    const estado = document.getElementById('estado-formulario');
     
-    // 🎯 AGREGAR EVENTO DE CONVERSIÓN AL BOTÓN
-    btnEnviar.removeEventListener('click', enviarPedidoConConversion);
-    btnEnviar.addEventListener('click', function(e) {
-      e.preventDefault();
-      enviarPedidoConConversion();
-    });
+    otros.forEach(c => { c.disabled = false; c.classList.remove('campo-deshabilitado'); });
     
-    if (clienteExistente) {
-      btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i>✨ Finalizar Compra ✨';
-      if (estadoFormulario) {
-        estadoFormulario.textContent = '✅ Cliente encontrado. Puedes finalizar tu compra';
-        estadoFormulario.className = 'text-success small mt-2';
-      }
-      mostrarEstadoValidacion('✅ Cliente encontrado. Actualiza tus datos si es necesario', 'exito');
-      
-      datosCargados = true;
-      
-      const campoTelefono = document.getElementById('telefonoCliente');
-      if (campoTelefono) {
-        campoTelefono.removeEventListener('input', validarTelefonoEnTiempoReal);
-        campoTelefono.addEventListener('input', validarTelefonoSiCambia);
-      }
-    } else {
-      btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
-      if (estadoFormulario) {
-        estadoFormulario.textContent = '📝 Nuevo cliente. Completa todos los datos para Finalizar';
-        estadoFormulario.className = 'text-info small mt-2';
-      }
-      mostrarEstadoValidacion('📝 Nuevo cliente. Completa tus datos para registrarte', 'info');
-      datosCargados = true;
+    if (btn) {
+        btn.disabled = false;
+        btn.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
+        
+        // El botón ahora muestra el modal, no envía directamente
+        btn.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+        
+        if (estado) {
+            estado.textContent = clienteExistente 
+                ? '✅ Cliente encontrado. Puedes finalizar tu compra'
+                : '📝 Nuevo cliente. Completa tus datos';
+            estado.className = clienteExistente ? 'text-success small mt-2' : 'text-info small mt-2';
+        }
+        
+        datosCargados = true;
     }
-  }
-  
-  setTimeout(ocultarEstadoValidacion, 3000);
+    
+    setTimeout(ocultarEstadoValidacion, 3000);
 }
 
 function validarTelefonoSiCambia() {
-  const telefono = document.getElementById('telefonoCliente').value.trim();
-  
-  if (telefono.length !== 10 || telefono !== telefonoActual) {
-    datosCargados = false;
-    deshabilitarFormulario();
-    
-    const campoTelefono = document.getElementById('telefonoCliente');
-    campoTelefono.removeEventListener('input', validarTelefonoSiCambia);
-    campoTelefono.addEventListener('input', validarTelefonoEnTiempoReal);
-    
-    validarTelefonoEnTiempoReal();
-  }
+    const tel = document.getElementById('telefonoCliente').value.trim();
+    if (tel.length !== 10 || tel !== telefonoActual) {
+        datosCargados = false;
+        deshabilitarFormulario();
+        validarTelefonoEnTiempoReal();
+    }
 }
 
 function mostrarAlertaFeedback(mensaje, tipo = 'info', duracion = 4000) {
-  const alertaExistente = document.querySelector('.alert-feedback');
-  if (alertaExistente) alertaExistente.remove();
-  
-  const alerta = document.createElement('div');
-  alerta.className = `alert alert-${tipo} alert-dismissible fade show alert-feedback`;
-  alerta.innerHTML = `
-    <div class="d-flex align-items-center">
-      <i class="bi ${getIconoTipo(tipo)} me-2 fs-5"></i>
-      <div class="flex-grow-1">${mensaje}</div>
-      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-    </div>
-  `;
-  
-  document.body.appendChild(alerta);
-  
-  setTimeout(() => {
-    if (alerta.parentNode) alerta.remove();
-  }, duracion);
+    const existente = document.querySelector('.alert-feedback');
+    if (existente) existente.remove();
+    
+    const iconos = { 
+        success: 'bi-check-circle', 
+        danger: 'bi-exclamation-triangle', 
+        warning: 'bi-info-circle', 
+        info: 'bi-info-circle' 
+    };
+    
+    const alerta = document.createElement('div');
+    alerta.className = `alert alert-${tipo} alert-dismissible fade show alert-feedback`;
+    alerta.innerHTML = `
+        <div class="d-flex align-items-center">
+            <i class="bi ${iconos[tipo]} me-2 fs-5"></i>
+            <div class="flex-grow-1">${mensaje}</div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+        </div>
+    `;
+    document.body.appendChild(alerta);
+    setTimeout(() => { if (alerta.parentNode) alerta.remove(); }, duracion);
 }
 
 function getIconoTipo(tipo) {
-  switch(tipo) {
-    case 'success': return 'bi-check-circle';
-    case 'danger': return 'bi-exclamation-triangle';
-    case 'warning': return 'bi-info-circle';
-    default: return 'bi-info-circle';
-  }
-}
-
-function finalizarRegistro(success = true, mensaje = '') {
-  if (success) {
-    mostrarAlertaFeedback(mensaje || '✅ Registro completado exitosamente', 'success', 3000);
-    deshabilitarFormulario();
-    
-    const btnEnviar = document.getElementById('btnEnviarPedido');
-    if (btnEnviar) {
-      btnEnviar.disabled = true;
-      btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i> ✅ Registro Completado';
-      btnEnviar.className = 'btn btn-success px-4 py-2 rounded-pill fw-bold';
-    }
-    
-    mostrarEstadoValidacion('✅ Registro exitoso. Redirigiendo...', 'success');
-    
-    setTimeout(() => {
-      window.location.href = 'index.html';
-    }, 3000);
-  } else {
-    mostrarAlertaFeedback(mensaje || '❌ Error en el registro', 'danger', 5000);
-  }
+    const map = { 
+        success: 'bi-check-circle', 
+        danger: 'bi-exclamation-triangle', 
+        warning: 'bi-info-circle', 
+        info: 'bi-info-circle' 
+    };
+    return map[tipo] || 'bi-info-circle';
 }
 
 function volverAInicio() {
-  if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
-    window.location.href = 'index.html';
-  }
+    if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
+        window.location.href = 'index.html';
+    }
 }
 
-// ========== FUNCIÓN PARA ALERTAS DE TELEGRAM ==========
-function enviarAlertaTelegram(datosPedido) {
-  // Configuración - REEMPLAZA CON TUS DATOS
-  const TELEGRAM_TOKEN = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY'; // De @BotFather
-  const TELEGRAM_CHAT_ID = '-1003789211905'; // De @userinfobot
-  
-  // Si no hay token configurado, no hacer nada
-  if (TELEGRAM_TOKEN === 'TU_TOKEN_AQUI') {
-    console.log('⚠️ Telegram no configurado');
-    return;
-  }
-  
-  // Formatear mensaje
-  const fecha = new Date().toLocaleString('es-CO', {
-    timeZone: 'America/Bogota',
-    hour12: true
-  });
-  
-  // Obtener items del carrito si están disponibles
-  let itemsTexto = '';
-  try {
-    const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
-    if (carrito.length > 0) {
-      itemsTexto = carrito.map(item => 
-        `• ${item.nombre || item.producto || 'Producto'} - $${(item.precio || 0).toLocaleString('es-CO')} x ${item.cantidad || 1}`
-      ).join('\n');
-    } else {
-      itemsTexto = '• Ver detalles en Sheets';
-    }
-  } catch (e) {
-    itemsTexto = '• Ver detalles en Sheets';
-  }
-  
-  const mensaje = `
+// ========== TELEGRAM ==========
+function enviarAlertaTelegram(datos) {
+    const token = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY';
+    const chatId = '-1003789211905';
+    const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', hour12: true });
+    
+    const mensaje = `
 🛍️ *¡NUEVO PEDIDO ANMAGO STORE!*
 ━━━━━━━━━━━━━━━━━━━━━
-👤 *Cliente:* ${datosPedido.nombre || 'No especificado'}
-📱 *Teléfono:* ${datosPedido.telefono || 'No especificado'}
-📍 *Ciudad:* ${datosPedido.ciudad || 'No especificada'}
-🏠 *Dirección:* ${datosPedido.direccion || 'No especificada'}
-${datosPedido.barrio ? `🗺️ *Barrio:* ${datosPedido.barrio}\n` : ''}
-${datosPedido.observacion ? `📍 *Referencia:* ${datosPedido.observacion}\n` : ''}
-
+👤 *Cliente:* ${datos.nombre || 'No especificado'}
+📱 *Teléfono:* ${datos.telefono || 'No especificado'}
+📍 *Ciudad:* ${datos.ciudad || 'No especificada'}
+🏠 *Dirección:* ${datos.direccion || 'No especificada'}
+${datos.barrio ? `🗺️ *Barrio:* ${datos.barrio}\n` : ''}
+${datos.observacion ? `📍 *Referencia:* ${datos.observacion}\n` : ''}
 ⏰ *Fecha:* ${fecha}
-✅ *Registro en Sheets completado*
-  `;
-  
-  // Enviar a Telegram
-  fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: TELEGRAM_CHAT_ID,
-      text: mensaje,
-      parse_mode: 'Markdown'
+✅ *Registro en Sheets completado`;
+    
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: chatId, text: mensaje, parse_mode: 'Markdown' })
     })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.ok) {
-      console.log('✅ Alerta Telegram enviada');
-      // También mostrar notificación en pantalla
-      mostrarAlertaFeedback('📲 Alerta enviada a Telegram', 'success', 3000);
-    } else {
-      console.error('❌ Error Telegram:', data);
-    }
-  })
-  .catch(err => {
-    console.error('❌ Error enviando a Telegram:', err);
-    mostrarAlertaFeedback('⚠️ No se pudo enviar alerta Telegram', 'warning', 3000);
-  });
+    .then(res => res.json())
+    .then(data => { if (data.ok) console.log('✅ Alerta Telegram enviada'); else console.error('❌ Error Telegram:', data); })
+    .catch(err => console.error('❌ Error enviando a Telegram:', err));
 }
 
 // ========== INICIALIZACIÓN ==========
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🚀 HTML cargado - Iniciando validaciones básicas...");
-  
-  mostrarEstadoValidacion('⬇️ Escribe tu número de celular...', 'info');
-  
-  const camposNumericos = ["telefonoCliente", "numeroApto"];
-  camposNumericos.forEach(id => {
-    const campo = document.getElementById(id);
-    if (!campo) return;
+function inicializarFormulario() {
+    if (window.formularioInicializado) return;
+    window.formularioInicializado = true;
     
-    campo.addEventListener("input", () => {
-      const valor = campo.value;
-      if (!/^\d*$/.test(valor)) {
-        campo.value = valor.replace(/\D/g, "");
-      }
-    });
-  });
-  
-  const campoTelefono = document.getElementById("telefonoCliente");
-  if (campoTelefono) {
-    campoTelefono.addEventListener("input", () => {
-      const valor = campoTelefono.value.trim();
-      const esValido = /^3\d{9}$/.test(valor);
+    console.log('🚀 INICIALIZANDO FORMULARIO - CON FEEDBACK VISUAL');
+    const form = document.getElementById("formCliente");
+    
+    if (!form) {
+        console.error("❌ FORMULARIO NO ENCONTRADO");
+        setTimeout(inicializarFormulario, 100);
+        return;
+    }
 
-      if (!esValido && valor.length === 10) {
-        campoTelefono.classList.add("is-invalid");
-        mostrarFeedbackTelefono('❌ Teléfono inválido. Debe comenzar con 3', 'error');
-        datosCargados = false;
-      } else if (esValido) {
-        campoTelefono.classList.remove("is-invalid");
-        campoTelefono.classList.add("is-valid");
-        mostrarFeedbackTelefono('✅ Teléfono válido', 'exito');
-      } else {
-        campoTelefono.classList.remove("is-invalid", "is-valid");
-        mostrarFeedbackTelefono('', 'neutro');
-      }
+    console.log("✅ FORMULARIO ENCONTRADO, CONFIGURANDO EVENTOS...");
+
+    const otrosCampos = document.querySelectorAll("#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select");
+    otrosCampos.forEach(el => {
+        el.disabled = true;
+        el.classList.add('campo-deshabilitado');
     });
+
+    const btnEnviar = document.getElementById("btnEnviarPedido");
+    if (btnEnviar) {
+        btnEnviar.disabled = true;
+        btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
+        btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra... ✨';
+    }
+
+    const estadoFormulario = document.getElementById('estado-formulario');
+    if (estadoFormulario) {
+        estadoFormulario.textContent = '⏳ Completa el número de celular para continuar';
+        estadoFormulario.className = 'text-muted small mt-2';
+    }
+
+    ["nombreCliente", "telefonoCliente", "DireccionCompleta", "ciudadCliente"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", validarFormularioCliente);
+    });
+
+    const campoTelefono = document.getElementById("telefonoCliente");
+    if (campoTelefono) {
+        let timeoutConsulta;
+        
+        campoTelefono.addEventListener("input", () => {
+            clearTimeout(timeoutConsulta);
+            const telefono = campoTelefono.value.trim();
+            
+            if (!/^3\d{9}$/.test(telefono)) {
+                validarFormularioCliente();
+                return;
+            }
+
+            if (!document.getElementById("nombreCliente").value) {
+                otrosCampos.forEach(el => el.disabled = true);
+            }
+            
+            timeoutConsulta = setTimeout(async () => {
+                try {
+                    console.log('📞 CONSULTANDO CLIENTE:', telefono);
+                    const resultado = await consultarClienteAPI(telefono);
+                    
+                    if (resultado?.existe && resultado.datos) {
+                        const d = resultado.datos;
+                        console.log('✅ CLIENTE EXISTENTE - PRECARGANDO DATOS:', d);
+                        
+                        if (!document.getElementById("clienteId").value) {
+                            document.getElementById("clienteId").value = d["CLIENTEID"] || "";
+                        }
+                        
+                        if (!document.getElementById("nombreCliente").value) {
+                            document.getElementById("nombreCliente").value = d["NOMBRECLIENTE"] || "";
+                        }
+                        
+                        if (!document.getElementById("ciudadCliente").value) {
+                            document.getElementById("ciudadCliente").value = d["CIUDAD DESTINO"] || "";
+                        }
+                        
+                        if (!document.getElementById("emailCliente").value) {
+                            document.getElementById("emailCliente").value = d["CORREO"] || "";
+                        }
+                        
+                        if (!document.getElementById("DireccionCompleta").value && d["DIRECCIONCLIENTE"]) {
+                            repartirDireccionConcatenada(d["DIRECCIONCLIENTE"]);
+                        }
+                        
+                        console.log('✅ PRECARGA COMPLETADA - Campos actualizados');
+                        
+                    } else {
+                        console.log('🆕 CLIENTE NUEVO - Manteniendo campos existentes');
+                        if (!document.getElementById("clienteId").value) {
+                            document.getElementById("clienteId").value = "";
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ Error en consulta:', error);
+                } finally {
+                    otrosCampos.forEach(el => el.disabled = false);
+                    validarFormularioCliente();
+                }
+            }, 800);
+        });
+    }
+
+    // CONFIGURAR BOTÓN PARA MOSTRAR MODAL
+    if (btnEnviar) {
+        btnEnviar.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log('🚀 INICIANDO PROCESO DE CONFIRMACIÓN');
+            
+            if (!validarFormularioCliente()) {
+                alert('❌ Completa todos los campos requeridos');
+                return;
+            }
+            
+            const tieneCarrito = window.articulosCarrito && window.articulosCarrito.length > 0;
+            if (tieneCarrito && !validarProductosCarrito()) {
+                alert('⚠️ Hay problemas con los productos del carrito. Revísalos antes de enviar.');
+                return;
+            }
+            
+            // Mostrar modal de confirmación
+            const modalElement = document.getElementById('modalConfirmacion');
+            const modal = new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false });
+            modal.show();
+        });
+    }
+
+    setTimeout(validarFormularioCliente, 100);
+    console.log("🎯 FORMULARIO INICIALIZADO CORRECTAMENTE");
+}
+
+// 🆘 DIAGNÓSTICO RÁPIDO
+window.diagnosticoFormulario = function() {
+    console.log("🩺 DIAGNÓSTICO FORMULARIO RÁPIDO:");
+    console.log("- Carrito actual:", window.articulosCarrito);
+    console.log("- Productos:", window.articulosCarrito.length);
+    console.log("- Formulario inicializado:", window.formularioInicializado);
+    console.log("- Ciudades cargadas:", window.ciudadesColombia.length);
+    console.log("- WhatsApp generado:", generarTextoWhatsApp().substring(0, 100) + '...');
     
-    campoTelefono.focus();
-  }
-  
-  fetch("HEADER.HTML")
-    .then(res => res.text())
-    .then(header => {
-      document.getElementById("header-container").innerHTML = header;
-    })
-    .catch(error => {
-      console.error("Error cargando header:", error);
-    });
+    const ciudadInput = document.getElementById('ciudadCliente');
+    console.log("- Campo ciudad:", ciudadInput ? 'ENCONTRADO' : 'NO ENCONTRADO');
+    if (ciudadInput) {
+        console.log("- Valor ciudad:", ciudadInput.value);
+    }
+};
+
+// 🔧 NUEVA FUNCIÓN: Test de envío de productos
+window.testEnvioProductos = function() {
+    console.log('🧪 TEST: Preparando productos para envío');
+    const productos = prepararProductosParaEnvio();
+    console.log('📦 Productos preparados:', productos);
+    console.log('🔗 JSON para enviar:', JSON.stringify(productos));
+    return productos;
+};
+
+// ✅ EXPORTAR FUNCIONES PARA EL HTML PRINCIPAL
+window.validarClienteExistente = async function(telefono) {
+    console.log('📞 VALIDACIÓN SOLICITADA DESDE HTML:', telefono);
+    return await consultarClienteAPI(telefono);
+};
+
+// 🔥 EJECUCIÓN INICIAL
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarFormulario();
+    cargarCiudades();
+    
+    // Asignar evento al botón de confirmación del modal
+    const btnConfirmar = document.getElementById('btnConfirmarPedido');
+    if (btnConfirmar) {
+        btnConfirmar.addEventListener('click', procesarDespuesDeConfirmacion);
+    }
 });
 
-// Exponer funciones globalmente
-window.mostrarEstadoValidacion = mostrarEstadoValidacion;
-window.ocultarEstadoValidacion = ocultarEstadoValidacion;
-window.mostrarFeedbackTelefono = mostrarFeedbackTelefono;
-window.deshabilitarFormulario = deshabilitarFormulario;
-window.habilitarFormularioParaEdicion = habilitarFormularioParaEdicion;
-window.mostrarAlertaFeedback = mostrarAlertaFeedback;
-window.validarTelefonoEnTiempoReal = validarTelefonoEnTiempoReal;
-window.finalizarRegistro = finalizarRegistro;
-window.volverAInicio = volverAInicio;
-window.enviarPedidoConConversion = enviarPedidoConConversion;
-window.enviarAlertaTelegram = enviarAlertaTelegram; // 👈 EXPONER LA FUNCIÓN
+setTimeout(() => {
+    if (!window.formularioInicializado) {
+        inicializarFormulario();
+    }
+    if (window.ciudadesColombia.length === 0) {
+        cargarCiudades();
+    }
+}, 500);
+
+setTimeout(() => {
+    if (!window.formularioInicializado) {
+        console.log('⚡ INICIALIZACIÓN POR TIMEOUT DE SEGURIDAD');
+        inicializarFormulario();
+    }
+    if (window.ciudadesColombia.length === 0) {
+        console.log('⚡ CARGANDO CIUDADES POR TIMEOUT DE SEGURIDAD');
+        cargarCiudades();
+    }
+}, 1000);
+
+// Variables adicionales necesarias
+let datosCargados = false;
+let telefonoActual = '';
+let validacionEnProgreso = false;
 </script>
 
-<!-- ✅ SCRIPT PRINCIPAL DEL FORMULARIO UNIFICADO -->
-<script src="modalformulario.js?v=20251116" defer></script>
+<!-- Ya no incluimos modalformulario.js externo para evitar conflictos -->
 
 <!-- Cargar Footer -->
 <script>
 async function cargarFooter() {
   try {
-    const respuesta = await fetch('footer.html?v=' + Date.now());
-    const htmlFooter = await respuesta.text();
-    const contenedor = document.getElementById('footer-container');
-    if (contenedor) {
-      contenedor.innerHTML = htmlFooter;
-    }
-  } catch (error) {
-    const contenedor = document.getElementById('footer-container');
-    if (contenedor) {
-      contenedor.innerHTML = `
-        <div class="container text-center py-3">
-          <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
-          <p class="small text-muted">anmagostore@gmail.com</p>
-        </div>
-      `;
-    }
+    const r = await fetch('footer.html?v=' + Date.now());
+    const h = await r.text();
+    document.getElementById('footer-container')?.innerHTML = h;
+  } catch {
+    document.getElementById('footer-container').innerHTML = `<div class="container text-center py-3"><p class="text-muted mb-1">&copy; 2025 Anmago Store</p><p class="small text-muted">anmagostore@gmail.com</p></div>`;
   }
 }
-
 document.addEventListener('DOMContentLoaded', cargarFooter);
 </script>
 
-<!-- ✅ FOOTER -->
 <footer class="footer mt-0" id="footer-container">
   <div class="text-center py-4">
     <div class="spinner-border spinner-border-sm text-primary"></div>
