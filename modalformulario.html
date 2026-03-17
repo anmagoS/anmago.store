@@ -1213,7 +1213,7 @@ function volverAInicio() {
     }
 }
 
-// ========== TELEGRAM CORREGIDO CON MÁS LOGS ==========
+// ========== TELEGRAM CORREGIDO (usando HTML en lugar de Markdown) ==========
 function enviarAlertaTelegram(datos) {
     console.log('📤 Intentando enviar a Telegram con datos:', datos);
     
@@ -1230,19 +1230,19 @@ function enviarAlertaTelegram(datos) {
         hour12: true 
     });
     
-    const mensaje = `
-🛍️ *¡NUEVO PEDIDO ANMAGO STORE!*
-━━━━━━━━━━━━━━━━━━━━━
-👤 *Cliente:* ${datos.nombre || 'No especificado'}
-📱 *Teléfono:* ${datos.telefono || 'No especificado'}
-📍 *Ciudad:* ${datos.ciudad || 'No especificada'}
-🏠 *Dirección:* ${datos.direccion || 'No especificada'}
-${datos.barrio ? `🗺️ *Barrio:* ${datos.barrio}\n` : ''}
-${datos.observacion ? `📍 *Referencia:* ${datos.observacion}\n` : ''}
-⏰ *Fecha:* ${fecha}
-✅ *Registro en Sheets completado`;
+    // Usar HTML en lugar de Markdown para evitar errores de formato
+    const mensaje = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n` +
+                    `━━━━━━━━━━━━━━━━━━━━━\n` +
+                    `👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n` +
+                    `📱 <b>Teléfono:</b> ${datos.telefono || 'No especificado'}\n` +
+                    `📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n` +
+                    `🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}\n` +
+                    (datos.barrio ? `🗺️ <b>Barrio:</b> ${datos.barrio}\n` : '') +
+                    (datos.observacion ? `📍 <b>Referencia:</b> ${datos.observacion}\n` : '') +
+                    `⏰ <b>Fecha:</b> ${fecha}\n` +
+                    `✅ <b>Registro en Sheets completado</b>`;
     
-    console.log('📤 Enviando mensaje a Telegram:', mensaje);
+    console.log('📤 Enviando mensaje a Telegram (HTML):', mensaje);
     
     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST', 
@@ -1250,7 +1250,7 @@ ${datos.observacion ? `📍 *Referencia:* ${datos.observacion}\n` : ''}
         body: JSON.stringify({ 
             chat_id: chatId, 
             text: mensaje, 
-            parse_mode: 'Markdown' 
+            parse_mode: 'HTML'  // Cambiamos a HTML
         })
     })
     .then(res => {
@@ -1265,15 +1265,53 @@ ${datos.observacion ? `📍 *Referencia:* ${datos.observacion}\n` : ''}
             }
         } else {
             console.error('❌ Error de Telegram:', data);
-            if (typeof window.mostrarAlertaFeedback === 'function') {
-                window.mostrarAlertaFeedback('⚠️ Error al enviar a Telegram', 'warning', 3000);
-            }
+            // Intentar enviar sin formato si falla
+            enviarTelegramSinFormato(datos, fecha);
         }
     })
     .catch(err => {
         console.error('❌ Error en fetch de Telegram:', err);
         console.error('Detalles del error:', err.message);
+        // Intentar enviar sin formato si falla
+        enviarTelegramSinFormato(datos, fecha);
     });
+}
+
+// Función de respaldo sin formato
+function enviarTelegramSinFormato(datos, fecha) {
+    console.log('🔄 Intentando enviar sin formato Markdown/HTML');
+    
+    const token = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY';
+    const chatId = '-1003789211905';
+    
+    const mensajeSimple = `🛍️ NUEVO PEDIDO ANMAGO STORE!
+━━━━━━━━━━━━━━━━━━━━━
+👤 Cliente: ${datos.nombre || 'No especificado'}
+📱 Teléfono: ${datos.telefono || 'No especificado'}
+📍 Ciudad: ${datos.ciudad || 'No especificada'}
+🏠 Dirección: ${datos.direccion || 'No especificada'}
+${datos.barrio ? `🗺️ Barrio: ${datos.barrio}\n` : ''}${datos.observacion ? `📍 Referencia: ${datos.observacion}\n` : ''}
+⏰ Fecha: ${fecha}
+✅ Registro en Sheets completado`;
+    
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            chat_id: chatId, 
+            text: mensajeSimple
+            // Sin parse_mode
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok) {
+            console.log('✅ Alerta Telegram enviada (sin formato)');
+        } else {
+            console.error('❌ Error también sin formato:', data);
+        }
+    })
+    .catch(err => console.error('❌ Error final:', err));
 }
 
 // 🧪 FUNCIÓN DE PRUEBA PARA TELEGRAM
