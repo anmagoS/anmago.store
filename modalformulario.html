@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </form>
 </main>
 
-<!-- ===== MODAL DE CONFIRMACIÓN MEJORADO (COMO EL PRIMERO) ===== -->
+<!-- ===== MODAL DE CONFIRMACIÓN MEJORADO ===== -->
 <div class="modal fade" id="modalConfirmacion" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
@@ -337,18 +337,21 @@ document.addEventListener('DOMContentLoaded', function() {
 <!-- SCRIPTS EXTERNOS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- ===== TODO EL CÓDIGO DE modalformulario.js INTEGRADO AQUÍ ===== -->
+<!-- ===== TODO EL CÓDIGO INTEGRADO Y CORREGIDO ===== -->
 <script>
 // ==============================================
-// CÓDIGO COMPLETO DE modalformulario.js INTEGRADO
+// CÓDIGO COMPLETO Y CORREGIDO
 // ==============================================
 
-console.log('🚀 INICIANDO FORMULARIO - VERSIÓN COMPLETA PEDIDOS + CLIENTES');
+console.log('🚀 INICIANDO FORMULARIO - VERSIÓN COMPLETA CORREGIDA');
 
 // 🔥 VARIABLES GLOBALES INMEDIATAS
 window.articulosCarrito = [];
 window.formularioInicializado = false;
 window.ciudadesColombia = [];
+let datosCargados = false;
+let telefonoActual = '';
+let validacionEnProgreso = false;
 
 // ✅ FUNCIÓN PARA FINALIZAR Y CERRAR/REDIRIGIR
 window.finalizarRegistro = function(success = true, mensaje = '') {
@@ -584,7 +587,7 @@ function seleccionarCiudad(elemento) {
     }
 }
 
-// 🎯 DETECCIÓN GARANTIZADA DEL CARRITO - VERSIÓN SÍNCRONA
+// 🎯 DETECCIÓN GARANTIZADA DEL CARRITO
 function detectarCarritoGarantizado() {
     console.log('🎯 INICIANDO DETECCIÓN GARANTIZADA DEL CARRITO');
     
@@ -624,7 +627,7 @@ function detectarCarritoGarantizado() {
         return true;
     }
     
-    console.log('ℹ️  NO hay carrito detectado - Modo registro solamente');
+    console.log('ℹ️ NO hay carrito detectado - Modo registro solamente');
     return false;
 }
 
@@ -853,7 +856,7 @@ function enviarPedidoWhatsApp() {
         
         const nuevaVentana = window.open(url, '_blank');
         if (!nuevaVentana) {
-            console.warn('⚠️  Popup bloqueado, redirigiendo en misma ventana');
+            console.warn('⚠️ Popup bloqueado, redirigiendo en misma ventana');
             window.location.href = url;
         }
     } catch (error) {
@@ -955,8 +958,7 @@ function fallbackImageRequest(url) {
     }
 }
 
-// 🔥 NUEVA FUNCIÓN: Procesar después de confirmación modal
-// 🔥 NUEVA FUNCIÓN: Procesar después de confirmación modal (CORREGIDA CON TELEGRAM)
+// 🔥 FUNCIÓN PRINCIPAL: Procesar después de confirmación modal (CORREGIDA CON TELEGRAM)
 function procesarDespuesDeConfirmacion() {
     console.log('✅ Cliente confirmó el pedido en modal');
     
@@ -987,16 +989,16 @@ function procesarDespuesDeConfirmacion() {
             
             // 📲 ENVIAR ALERTA A TELEGRAM
             const datosTelegram = {
-                nombre: document.getElementById('nombreCliente').value.trim(),
-                telefono: document.getElementById('telefonoCliente').value.trim(),
-                ciudad: document.getElementById('ciudadCliente').value.trim(),
-                direccion: direccionFinal,
-                barrio: document.getElementById('barrio').value.trim(),
-                observacion: document.getElementById('observacionDireccion').value.trim()
+                nombre: document.getElementById('nombreCliente')?.value.trim() || 'No especificado',
+                telefono: document.getElementById('telefonoCliente')?.value.trim() || 'No especificado',
+                ciudad: document.getElementById('ciudadCliente')?.value.trim() || 'No especificada',
+                direccion: direccionFinal || 'No especificada',
+                barrio: document.getElementById('barrio')?.value.trim() || '',
+                observacion: document.getElementById('observacionDireccion')?.value.trim() || ''
             };
             
-            console.log('📲 ENVIANDO ALERTA A TELEGRAM...');
-            enviarAlertaTelegram(datosTelegram);
+            console.log('📲 ENVIANDO ALERTA A TELEGRAM...', datosTelegram);
+            await enviarAlertaTelegram(datosTelegram);
 
             console.log('📱 ENVIANDO WHATSAPP...');
             enviarPedidoWhatsApp();
@@ -1011,7 +1013,7 @@ function procesarDespuesDeConfirmacion() {
                     try {
                         window.opener.postMessage("limpiarCarrito", "*");
                     } catch (e) {
-                        console.log('⚠️  No se pudo comunicar con ventana padre');
+                        console.log('⚠️ No se pudo comunicar con ventana padre');
                     }
                 }
             }
@@ -1039,7 +1041,7 @@ function procesarDespuesDeConfirmacion() {
     }, 100);
 }
 
-// ========== FUNCIONES DE VALIDACIÓN EXISTENTES ==========
+// ========== FUNCIONES DE VALIDACIÓN ==========
 function mostrarEstadoValidacion(mensaje, tipo = 'info') {
     const div = document.getElementById('estado-validacion');
     const span = document.getElementById('mensaje-validacion');
@@ -1205,27 +1207,28 @@ function mostrarAlertaFeedback(mensaje, tipo = 'info', duracion = 4000) {
     setTimeout(() => { if (alerta.parentNode) alerta.remove(); }, duracion);
 }
 
-function getIconoTipo(tipo) {
-    const map = { 
-        success: 'bi-check-circle', 
-        danger: 'bi-exclamation-triangle', 
-        warning: 'bi-info-circle', 
-        info: 'bi-info-circle' 
-    };
-    return map[tipo] || 'bi-info-circle';
-}
-
 function volverAInicio() {
     if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
         window.location.href = 'index.html';
     }
 }
 
-// ========== TELEGRAM ==========
+// ========== TELEGRAM CORREGIDO CON MÁS LOGS ==========
 function enviarAlertaTelegram(datos) {
+    console.log('📤 Intentando enviar a Telegram con datos:', datos);
+    
     const token = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY';
     const chatId = '-1003789211905';
-    const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', hour12: true });
+    
+    if (!token || !chatId) {
+        console.error('❌ Token o Chat ID de Telegram no configurados');
+        return;
+    }
+    
+    const fecha = new Date().toLocaleString('es-CO', { 
+        timeZone: 'America/Bogota', 
+        hour12: true 
+    });
     
     const mensaje = `
 🛍️ *¡NUEVO PEDIDO ANMAGO STORE!*
@@ -1239,15 +1242,57 @@ ${datos.observacion ? `📍 *Referencia:* ${datos.observacion}\n` : ''}
 ⏰ *Fecha:* ${fecha}
 ✅ *Registro en Sheets completado`;
     
+    console.log('📤 Enviando mensaje a Telegram:', mensaje);
+    
     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST', 
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: mensaje, parse_mode: 'Markdown' })
+        body: JSON.stringify({ 
+            chat_id: chatId, 
+            text: mensaje, 
+            parse_mode: 'Markdown' 
+        })
     })
-    .then(res => res.json())
-    .then(data => { if (data.ok) console.log('✅ Alerta Telegram enviada'); else console.error('❌ Error Telegram:', data); })
-    .catch(err => console.error('❌ Error enviando a Telegram:', err));
+    .then(res => {
+        console.log('📥 Respuesta de Telegram status:', res.status);
+        return res.json();
+    })
+    .then(data => { 
+        if (data.ok) {
+            console.log('✅ Alerta Telegram enviada exitosamente');
+            if (typeof window.mostrarAlertaFeedback === 'function') {
+                window.mostrarAlertaFeedback('📲 Alerta enviada a Telegram', 'success', 3000);
+            }
+        } else {
+            console.error('❌ Error de Telegram:', data);
+            if (typeof window.mostrarAlertaFeedback === 'function') {
+                window.mostrarAlertaFeedback('⚠️ Error al enviar a Telegram', 'warning', 3000);
+            }
+        }
+    })
+    .catch(err => {
+        console.error('❌ Error en fetch de Telegram:', err);
+        console.error('Detalles del error:', err.message);
+    });
 }
+
+// 🧪 FUNCIÓN DE PRUEBA PARA TELEGRAM
+window.probarTelegram = function() {
+    console.log('🧪 Probando envío a Telegram manualmente');
+    
+    const datosPrueba = {
+        nombre: 'Cliente de Prueba',
+        telefono: '3001234567',
+        ciudad: 'BOGOTÁ',
+        direccion: 'Calle 123 #45-67',
+        barrio: 'Centro',
+        observacion: 'Referencia de prueba'
+    };
+    
+    enviarAlertaTelegram(datosPrueba);
+    
+    return '✅ Prueba iniciada, revisa la consola';
+};
 
 // ========== INICIALIZACIÓN ==========
 function inicializarFormulario() {
@@ -1381,31 +1426,6 @@ function inicializarFormulario() {
     console.log("🎯 FORMULARIO INICIALIZADO CORRECTAMENTE");
 }
 
-// 🆘 DIAGNÓSTICO RÁPIDO
-window.diagnosticoFormulario = function() {
-    console.log("🩺 DIAGNÓSTICO FORMULARIO RÁPIDO:");
-    console.log("- Carrito actual:", window.articulosCarrito);
-    console.log("- Productos:", window.articulosCarrito.length);
-    console.log("- Formulario inicializado:", window.formularioInicializado);
-    console.log("- Ciudades cargadas:", window.ciudadesColombia.length);
-    console.log("- WhatsApp generado:", generarTextoWhatsApp().substring(0, 100) + '...');
-    
-    const ciudadInput = document.getElementById('ciudadCliente');
-    console.log("- Campo ciudad:", ciudadInput ? 'ENCONTRADO' : 'NO ENCONTRADO');
-    if (ciudadInput) {
-        console.log("- Valor ciudad:", ciudadInput.value);
-    }
-};
-
-// 🔧 NUEVA FUNCIÓN: Test de envío de productos
-window.testEnvioProductos = function() {
-    console.log('🧪 TEST: Preparando productos para envío');
-    const productos = prepararProductosParaEnvio();
-    console.log('📦 Productos preparados:', productos);
-    console.log('🔗 JSON para enviar:', JSON.stringify(productos));
-    return productos;
-};
-
 // ✅ EXPORTAR FUNCIONES PARA EL HTML PRINCIPAL
 window.validarClienteExistente = async function(telefono) {
     console.log('📞 VALIDACIÓN SOLICITADA DESDE HTML:', telefono);
@@ -1443,14 +1463,7 @@ setTimeout(() => {
         cargarCiudades();
     }
 }, 1000);
-
-// Variables adicionales necesarias
-let datosCargados = false;
-let telefonoActual = '';
-let validacionEnProgreso = false;
 </script>
-
-<!-- Ya no incluimos modalformulario.js externo para evitar conflictos -->
 
 <!-- Cargar Footer -->
 <script>
