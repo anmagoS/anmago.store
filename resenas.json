@@ -14,5 +14,587 @@
       "comentario": "Mi pareja quedo feliz con su regalo, excelente producto...",
       "fecha": "2026-03-18"
     }
+  ],
+  {
+  "EE03DCC0": [
+    {
+      "nombre": "Carlos Rodríguez",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-15"
+    },
+    {
+      "nombre": "María González",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-10"
+    },
+    {
+      "nombre": "Juan Pérez",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-03-12"
+    }
+  ],
+  "8F9CAE6D": [
+    {
+      "nombre": "Ana Martínez",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-08"
+    },
+    {
+      "nombre": "Luis Sánchez",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-14"
+    },
+    {
+      "nombre": "Laura Díaz",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-03-09"
+    }
+  ],
+  "6A779E79": [
+    {
+      "nombre": "Pedro Gómez",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-11"
+    },
+    {
+      "nombre": "Sofía López",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-07"
+    },
+    {
+      "nombre": "Diego Fernández",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-03-13"
+    }
+  ],
+  "5CD57D5F": [
+    {
+      "nombre": "Valentina Torres",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-06"
+    },
+    {
+      "nombre": "Andrés Ramírez",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-16"
+    },
+    {
+      "nombre": "Carolina Herrera",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-03-05"
+    }
+  ],
+  "C9E8EEF3": [
+    {
+      "nombre": "Felipe Castro",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-17"
+    },
+    {
+      "nombre": "Daniela Ruiz",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-04"
+    },
+    {
+      "nombre": "Javier Moreno",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-03-03"
+    }
+  ],
+  "03B56FA8": [
+    {
+      "nombre": "Camila Silva",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-03-02"
+    },
+    {
+      "nombre": "Ricardo Vargas",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-03-01"
+    },
+    {
+      "nombre": "Paula Rojas",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-28"
+    }
+  ],
+  "2C26E2E2": [
+    {
+      "nombre": "Gabriel Mendoza",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-27"
+    },
+    {
+      "nombre": "Andrea Peña",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-26"
+    },
+    {
+      "nombre": "Sebastián Navarro",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-25"
+    }
+  ],
+  "2656291B": [
+    {
+      "nombre": "Natalia Jiménez",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-24"
+    },
+    {
+      "nombre": "Oscar Guerrero",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-23"
+    },
+    {
+      "nombre": "Marcela Ortiz",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-22"
+    }
+  ],
+  "B914451E": [
+    {
+      "nombre": "Héctor Medina",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-21"
+    },
+    {
+      "nombre": "Tatiana Fuentes",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-20"
+    },
+    {
+      "nombre": "Cristian Paredes",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-19"
+    }
+  ],
+  "174600CB": [
+    {
+      "nombre": "Patricia Acosta",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-18"
+    },
+    {
+      "nombre": "Mauricio Delgado",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-17"
+    },
+    {
+      "nombre": "Adriana Montoya",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-16"
+    }
+  ],
+  "E8949BF3": [
+    {
+      "nombre": "Alberto Ríos",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-15"
+    },
+    {
+      "nombre": "Diana Cárdenas",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-14"
+    },
+    {
+      "nombre": "Fernando Aguilar",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-13"
+    }
+  ],
+  "5E67F25C": [
+    {
+      "nombre": "Isabel Vega",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-12"
+    },
+    {
+      "nombre": "Roberto Campos",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-11"
+    },
+    {
+      "nombre": "Silvia Mora",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-10"
+    }
+  ],
+  "D82C91B9": [
+    {
+      "nombre": "Gustavo León",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-09"
+    },
+    {
+      "nombre": "Lorena Salazar",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-08"
+    },
+    {
+      "nombre": "Mario Chacón",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-07"
+    }
+  ],
+  "5D75C4E6": [
+    {
+      "nombre": "Claudia Espinoza",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-06"
+    },
+    {
+      "nombre": "Jorge Valdez",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-05"
+    },
+    {
+      "nombre": "Monica Quintero",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-04"
+    }
+  ],
+  "24E3B3A5": [
+    {
+      "nombre": "Raúl Pacheco",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-02-03"
+    },
+    {
+      "nombre": "Rosa Benítez",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-02-02"
+    },
+    {
+      "nombre": "Eduardo Solís",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-02-01"
+    }
+  ],
+  "ED44AF83": [
+    {
+      "nombre": "Liliana Duarte",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-31"
+    },
+    {
+      "nombre": "Sergio Coronado",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-30"
+    },
+    {
+      "nombre": "Patricia Luna",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-29"
+    }
+  ],
+  "DACA5CB6": [
+    {
+      "nombre": "César Mejía",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-28"
+    },
+    {
+      "nombre": "Luisa Parra",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-27"
+    },
+    {
+      "nombre": "Julián Mora",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-26"
+    }
+  ],
+  "342568EB": [
+    {
+      "nombre": "Carmen Rosa",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-25"
+    },
+    {
+      "nombre": "Antonio José",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-24"
+    },
+    {
+      "nombre": "Teresa Ayala",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-23"
+    }
+  ],
+  "5CBAF940": [
+    {
+      "nombre": "Ramiro Cuesta",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-22"
+    },
+    {
+      "nombre": "Elsa Pardo",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-21"
+    },
+    {
+      "nombre": "Vicente Flores",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-20"
+    }
+  ],
+  "D821A3F1": [
+    {
+      "nombre": "Blanca Nieves",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-19"
+    },
+    {
+      "nombre": "Rogelio Díaz",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-18"
+    },
+    {
+      "nombre": "Esperanza Gil",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-17"
+    }
+  ],
+  "93E5344B": [
+    {
+      "nombre": "Nelson Sosa",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-16"
+    },
+    {
+      "nombre": "Yolanda Rey",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-15"
+    },
+    {
+      "nombre": "Hernán Rivas",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-14"
+    }
+  ],
+  "85B16A0B": [
+    {
+      "nombre": "Ruth Martínez",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-13"
+    },
+    {
+      "nombre": "Iván Duque",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-12"
+    },
+    {
+      "nombre": "Olga Lucía",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-11"
+    }
+  ],
+  "DB723212": [
+    {
+      "nombre": "Alfonso López",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-10"
+    },
+    {
+      "nombre": "Dora García",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-09"
+    },
+    {
+      "nombre": "Gilberto Pérez",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-08"
+    }
+  ],
+  "9EB99BAF": [
+    {
+      "nombre": "Martha Cifuentes",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-07"
+    },
+    {
+      "nombre": "Jairo Muñoz",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-06"
+    },
+    {
+      "nombre": "Ligia Cortés",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-05"
+    }
+  ],
+  "C48DF983": [
+    {
+      "nombre": "Fabio Orozco",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-04"
+    },
+    {
+      "nombre": "Gloria Estrada",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-03"
+    },
+    {
+      "nombre": "Wilson Arias",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2026-01-02"
+    }
+  ],
+  "0EB21E71": [
+    {
+      "nombre": "Rocío Méndez",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-01"
+    },
+    {
+      "nombre": "Alirio Rangel",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2025-12-31"
+    },
+    {
+      "nombre": "Nubia Suárez",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2025-12-30"
+    }
+  ],
+  "2B2B4BD1": [
+    {
+      "nombre": "Bernardo Mora",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2025-12-29"
+    },
+    {
+      "nombre": "Aura Cristina",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2025-12-28"
+    },
+    {
+      "nombre": "Edgar Palacios",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2025-12-27"
+    }
+  ],
+  "C3B8E4BC": [
+    {
+      "nombre": "Stella Maris",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2025-12-26"
+    },
+    {
+      "nombre": "Humberto Gaitán",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2025-12-25"
+    },
+    {
+      "nombre": "Pilar Vélez",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2025-12-24"
+    }
+  ],
+  "8C73E98E": [
+    {
+      "nombre": "Darío Lozano",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2025-12-23"
+    },
+    {
+      "nombre": "Miriam Cardona",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2025-12-22"
+    },
+    {
+      "nombre": "Efrén Beltrán",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2025-12-21"
+    }
   ]
+}
 }
