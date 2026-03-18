@@ -1,2100 +1,2001 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Detalle Producto | Anmago Store</title>
-  <meta name="description" content="Descubre este producto exclusivo en Anmago Store. Calidad garantizada y los mejores precios.">
-
+  <title>Finalizar Compra | Anmago Store</title>
+  <meta name="description" content="Completa tus datos para recibir tu pedido de Anmago Store. Proceso seguro y sin costo hasta confirmar disponibilidad.">
+  
   <!-- Preconexiones optimizadas -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
-  <link rel=" preconnect" href="https://ik.imagekit.io">
+  <link rel="preconnect" href="https://ik.imagekit.io">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   <!-- PWA y favicon -->
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="tina-192.png" type="image/x-icon" />
+  <link rel="icon" href="logo.jpg" type="image/x-icon" />
 
   <!-- Bootstrap e iconos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
 
   <!-- CSS optimizado -->
-  <link rel="stylesheet" href="ESTILO.CSS?v=20251207" />
-
-  <!-- Google tag (gtag.js) -->
+  <link rel="stylesheet" href="ESTILO.CSS?v=20251115" />
+  
+  <!-- Google tag (gtag.js) - Analytics y Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PD2Y81DPRG"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878933588"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-PD2Y81DPRG', { send_page_view: true });
+    gtag('config', 'G-PD2Y81DPRG');
+    gtag('config', 'AW-17878933588');
   </script>
-
-  <!-- Evento de vista de producto dinámico -->
-  <script>
-    function getParam(name){
-      return new URLSearchParams(window.location.search).get(name);
-    }
-    const productId = getParam('id');
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const productName = document.getElementById('product-name')?.innerText || 'Producto ANMAGO';
-      const productPrice = parseFloat(document.getElementById('product-price')?.innerText || 0);
-      const productCategory = document.getElementById('product-category')?.innerText || 'General';
-
-      if (productId) {
-        gtag('event', 'view_item', {
-          items: [{
-            item_id: productId,
-            item_name: productName,
-            item_category: productCategory,
-            price: productPrice,
-            item_brand: 'ANMAGO'
-          }]
-        });
-      }
-    });
-  </script>
-
+  
+  <!-- Estilos MEJORADOS para máxima conversión -->
   <style>
-    /* Estilos para el menú hamburguesa en producto.html */
-    .categoria-menu-item {
-        border: 1px solid #dee2e6;
-        background: white;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: #333;
+    /* Variables de color consistentes */
+    :root {
+      --primary: #1B4557;
+      --primary-dark: #12303d;
+      --primary-light: #2a6a8f;
+      --accent: #C9A96E;
+      --success: #198754;
+      --warning: #ffc107;
+      --danger: #dc3545;
+      --text-dark: #2C3E50;
+      --text-muted: #7F8C8D;
+      --bg-light: #f8f9fa;
+      --border-light: #dee2e6;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+      --transition: all 0.3s ease;
     }
-    .categoria-menu-item:hover {
-        background: #1B4557 !important;
-        color: white !important;
-        border-color: #1B4557;
-        transform: translateX(5px);
+
+    /* Estilos base mejorados */
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #f1f4f8 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      padding-bottom: 80px;
     }
-    .categoria-menu-item .badge {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.5rem;
-        background: #0d6efd !important;
+
+    /* Header más profesional */
+    .header-sticky {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      box-shadow: 0 4px 12px rgba(27,69,87,0.15);
+      height: 70px;
+      position: sticky;
+      top: 0;
+      z-index: 1030;
     }
-    
-    /* Estilos para sellos de confianza */
-    .sello-confianza {
-        background: #f8f9fa;
-        border: 1px solid #e9ecef;
-        border-radius: 10px;
-        padding: 15px;
-        margin: 20px 0;
+
+    .logo img {
+      transition: var(--transition);
     }
-    .sello-item {
-        text-align: center;
-        padding: 10px;
+
+    .logo img:hover {
+      transform: scale(1.05);
     }
-    .sello-item i {
-        font-size: 2rem;
-        color: #1B4557;
-        margin-bottom: 8px;
+
+    /* Badge de proceso en tiempo real */
+    .proceso-badge {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
     }
-    .sello-item span {
-        display: block;
-        font-size: 0.9rem;
-        color: #2c3e50;
-        font-weight: 500;
+
+    /* Barra de progreso visual */
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
     }
-    .metodo-pago-icono {
-        height: 30px;
-        width: auto;
-        object-fit: contain;
-        margin: 0 5px;
+
+    .progress-steps::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--border-light);
+      z-index: 1;
     }
-    .garantia-box {
-        background: #e8f4fd;
-        border-left: 4px solid #1B4557;
-        padding: 15px;
-        border-radius: 8px;
-        margin: 20px 0;
+
+    .step {
+      position: relative;
+      z-index: 2;
+      background: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 2px solid var(--border-light);
+      background: white;
+      color: var(--text-muted);
     }
-    
-    /* Estilos para botón de consulta WhatsApp */
-    .btn-consulta-wa {
-        background: linear-gradient(135deg, #25D366, #128C7E);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        padding: 12px 20px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        width: 100%;
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+
+    .step.active {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: white;
     }
-    .btn-consulta-wa:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-        color: white;
+
+    .step.completed {
+      border-color: var(--success);
+      background: var(--success);
+      color: white;
     }
-    
-    /* Estilos para reseñas */
-    .resenas-container {
-        background: white;
-        border-radius: 16px;
-        padding: 1.5rem;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        margin: 2rem 0;
+
+    .step-label {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
-    .resena-item {
-        border-bottom: 1px solid #e9ecef;
-        padding: 1rem 0;
+
+    /* Alerta de proceso MEJORADA (la clave de conversión) */
+    .alerta-proceso {
+      background: white;
+      border-left: 6px solid var(--primary);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
     }
-    .resena-item:last-child {
-        border-bottom: none;
+
+    .alerta-proceso::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 150px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(27,69,87,0.02));
+      pointer-events: none;
     }
-    .resena-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 8px;
+
+    .alerta-titulo {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
     }
-    .resena-avatar {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(135deg, #1B4557, #2A6A8F);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: bold;
+
+    .alerta-titulo i {
+      font-size: 1.4rem;
+      margin-right: 10px;
     }
-    .resena-nombre {
-        font-weight: 600;
-        color: #1B4557;
+
+    .pasos-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1rem 0 0.5rem;
     }
-    .resena-fecha {
-        font-size: 0.8rem;
-        color: #7F8C8D;
+
+    .paso-item {
+      flex: 1 1 200px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
-    .resena-estrellas {
-        color: #ffc107;
-        font-size: 0.9rem;
+
+    .paso-numero {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 8px rgba(27,69,87,0.2);
+      flex-shrink: 0;
     }
-    .resena-comentario {
-        color: #2C3E50;
-        margin-bottom: 5px;
+
+    .paso-texto {
+      font-size: 0.9rem;
+      line-height: 1.3;
     }
-    .resena-compra-verificada {
-        font-size: 0.75rem;
-        color: #28a745;
-        display: flex;
-        align-items: center;
-        gap: 4px;
+
+    .paso-texto strong {
+      color: var(--primary);
+      display: block;
+      font-size: 0.95rem;
     }
-    .btn-ver-mas-resenas {
-        border: 1px solid #1B4557;
-        color: #1B4557;
-        border-radius: 50px;
-        padding: 0.5rem 1.5rem;
-        transition: all 0.3s ease;
+
+    .garantia-badge {
+      background: linear-gradient(135deg, rgba(25,135,84,0.1), rgba(25,135,84,0.05));
+      border: 1px solid rgba(25,135,84,0.2);
+      color: var(--success);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    .btn-ver-mas-resenas:hover {
-        background: #1B4557;
-        color: white;
+
+    /* Campos del formulario mejorados */
+    .form-control, .form-select {
+      border: 2px solid var(--border-light);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      background: white;
     }
+
+    .form-control:focus, .form-select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(27,69,87,0.1);
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .validacion-contenedor {
+      position: relative;
+    }
+
+    .validacion-estado {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--success);
+      font-size: 1.2rem;
+    }
+
+    /* Botón principal ULTRA MEJORADO */
+    .btn-finalizar {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border: none;
+      border-radius: 50px;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: white;
+      width: 100%;
+      transition: var(--transition);
+      box-shadow: 0 8px 20px rgba(27,69,87,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-finalizar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .btn-finalizar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(27,69,87,0.4);
+    }
+
+    .btn-finalizar:hover::before {
+      left: 100%;
+    }
+
+    .btn-finalizar:disabled {
+      opacity: 0.6;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* Modal ULTRA PROFESIONAL */
+    .modal-conversion .modal-content {
+      border: none;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal-conversion .modal-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: white;
+      border-bottom: none;
+      padding: 1.5rem;
+    }
+
+    .modal-conversion .modal-body {
+      padding: 2rem;
+    }
+
+    .modal-conversion .modal-footer {
+      border-top: 1px solid var(--border-light);
+      padding: 1.5rem;
+    }
+
+    .paso-card {
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .paso-card:hover {
+      border-color: var(--primary);
+      transform: translateX(5px);
+    }
+
+    .paso-icon {
+      width: 50px;
+      height: 50px;
+      background: white;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-outline-secondary-custom {
+      border: 2px solid var(--border-light);
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .btn-outline-secondary-custom:hover {
+      background: var(--bg-light);
+      border-color: var(--text-muted);
+    }
+
+    .btn-warning-custom {
+      background: linear-gradient(135deg, #ffc107, #ffb300);
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(255,193,7,0.3);
+    }
+
+    .btn-warning-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255,193,7,0.4);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-sticky { height: 60px; }
+      .pasos-lista { flex-direction: column; gap: 1rem; }
+      .paso-item { flex: 1 1 100%; }
+      .btn-finalizar { font-size: 1rem; padding: 0.9rem; }
+    }
+
+    /* Estilos originales que no se deben perder */
+    .validacion-contenedor { margin-bottom: 10px; }
+    .validacion-estado { display: none; }
+    .validacion-cargando { color: #0d6efd; animation: pulse 1.5s infinite; }
+    .validacion-exito { color: #198754; }
+    .validacion-error { color: #dc3545; }
+    @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+    .spinner-validacion { display: inline-block; width: 1rem; height: 1rem; border: 0.2em solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spinner-border .75s linear infinite; }
+    .alert-feedback { position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: slideInRight 0.3s ease; }
+    @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    .campo-deshabilitado { opacity: 0.6 !important; background-color: #f8f9fa !important; cursor: not-allowed !important; }
+    .btn-cargando { position: relative; color: transparent !important; }
+    .btn-cargando::after { content: ''; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 1.2rem; height: 1.2rem; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; border-top-color: white; animation: spinner-border .75s linear infinite; }
   </style>
-</head>
-<body class="bg-light">
-  <!-- Scripts optimizados (cargados al inicio para mejor performance) -->
-  <script src="carrito.js?v=20251207"></script>
-  <script src="app.js?v=20251207"></script>
-
-  <header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="https://anmagos.github.io/anmago.store/">
-        <img
-          src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48"
-          alt="ANMAGO STORE"
-          width="48"
-          height="48"
-          loading="lazy"
-          style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;"
-        />
-      </a>
-    </div>
-
-    <!-- BUSCADOR EN HEADER -->
-    <div class="flex-grow-1 mx-3 position-relative" style="max-width: 500px;">
-      <input id="buscador" class="form-control buscador-header" 
-             placeholder="Buscar productos..." 
-             autocomplete="off">
-      <div id="sugerencias" class="sugerencias-container"></div>
-    </div>
-
-    <!-- BOTÓN HAMBURGUESA -->
-    <button class="navbar-toggler border-0 bg-transparent" type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#menuLateral"
-            aria-controls="menuLateral"
-            aria-label="Abrir menú">
-      <i class="bi bi-list fs-1 text-white"></i>
-    </button>
-  </header>
-
-  <!-- MENÚ LATERAL -->
-  <div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="menuLateralLabel">
-        <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" 
-             alt="Anmago Store" width="30" height="30" 
-             style="border-radius: 4px; margin-right: 10px;">
-        Anmago Store
-      </h5>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-    </div>
-
-    <div class="offcanvas-body d-flex flex-column gap-3">
-      <!-- Inicio -->
-      <a href="https://anmagos.github.io/anmago.store/index.html" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;">
-        <i class="bi bi-house me-2"></i> Inicio
-      </a>
-
-      <!-- Todos los productos -->
-      <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;">
-        <i class="bi bi-grid-3x3 me-2"></i> Todos los productos
-      </a>
-
-      <!-- CATEGORÍAS DINÁMICAS -->
-      <div id="menu-categorias-dinamico" class="mt-2">
-        <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
-        <div class="text-center py-3">
-          <div class="spinner-border spinner-border-sm text-primary"></div>
-          <p class="mt-2 small text-muted">Cargando categorías...</p>
-        </div>
-      </div>
-
-      <!-- Contacto -->
-      <a href="modalformulario.html" 
-         class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-        <i class="bi bi-person me-2"></i> Mi cuenta
-      </a>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
-         target="_blank"
-         class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();">
-        <i class="bi bi-whatsapp me-2"></i> WhatsApp
-      </a>
-
-      <!-- Contacto formulario -->
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header"
-         target="_blank"
-         class="nav-link d-flex align-items-center" onclick="cerrarMenu();">
-        <i class="bi bi-envelope me-2"></i> Contacto
-      </a>
-    </div>
-
-    <div class="offcanvas-footer border-top p-3">
-      <div class="text-center small text-muted">
-        <p class="mb-1">anmagostore@gmail.com</p>
-        <p class="mb-0">3006498710 - 3115046741</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- BANNER PROMOCIONAL -->
-  <div class="container-fluid banner-promocional py-2">
-    <div class="container text-center">
-      <small class="fw-bold">⭐ Los mejores precios ⭐ Calidad garantizada</small>
-    </div>
-  </div>
-
-  <!-- BOTÓN INSTALAR APP -->
-  <div id="instalar-container" class="instalar-container d-none">
-    <button id="boton-instalar" class="btn-instalar-app">
-      <i class="bi bi-download"></i> Instalar App
-    </button>
-  </div>
-
-  <!-- BOTONES EN LA MISMA LÍNEA - COMPACTO -->
-  <div class="container mt-3">
-    <div class="row align-items-center">
-      <!-- BOTÓN VOLVER AL INICIO (Solo desktop) -->
-      <a href="index.html" class="btn-volver-inicio d-none d-md-flex position-fixed align-items-center justify-content-center text-decoration-none"
-         style="top: 150px; left: 8px; z-index: 1000; width: 40px; height: 40px; background: white; border: 1px solid #d1d9e6; border-radius: 50%; box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08); color: #0b702144; transition: all 0.3s ease;"
-         data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio">
-        <i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i>
-      </a>
-    </div>
-  </div>
-
-  <!-- CONTENIDO PRINCIPAL - DETALLE PRODUCTO -->
-  <main class="container mt-4">
-    
-    <!-- TÍTULO Y PRECIO PARA MÓVIL (ARRIBA DE TODO) -->
-    <div class="d-block d-md-none mb-4">
-      <!-- Categorías -->
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb" id="breadcrumb-producto-mobile">
-          <li class="breadcrumb-item"><a href="index.html"></a></li>
-        </ol>
-      </nav>
-
-      <!-- Nombre y precio -->
-      <h1 id="nombre-producto-mobile" class="h1 fw-bold mb-1"></h1>
-      <div class="d-flex align-items-center gap-3 mb-3">
-        <span id="precio-actual-mobile" class="h4 fw-bold text-primary mb-0"></span>
-        <span id="precio-original-mobile" class="text-muted h5 mb-0 text-decoration-line-through"></span>
-        <span id="descuento-mobile" class="badge badge-oferta fs-6"></span>
-      </div>
-    </div>
-
-    <div class="row">
-      <!-- GALERÍA DE IMÁGENES CON ZOOM -->
-      <div class="col-md-6 mb-4">
-        <div class="sticky-top" style="top: 100px;">
-          <!-- IMAGEN PRINCIPAL CON ZOOM MEJORADA -->
-          <div class="position-relative mb-3">
-            <img id="imagen-principal" src="" alt="Producto" 
-                 class="card-img-ml shadow img-fluid"
-                 style="cursor: zoom-in; max-height: 575px; width: 100%; object-fit: contain; transition: all 0.3s ease; border-radius: 12px;"
-                 onmouseover="this.style.transform='scale(1.02)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.15)'"
-                 onmouseout="this.style.transform='scale(1)'; this.style.boxShadow=''"
-                 data-bs-toggle="modal" data-bs-target="#modalZoom">
-            
-            <!-- Indicador de zoom -->
-            <div class="position-absolute top-0 end-0 m-3">
-              <div class="bg-dark bg-opacity-75 rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-                <i class="bi bi-zoom-in text-white fs-6"></i>
-              </div>
-            </div>
-            
-            <!-- Texto ayuda -->
-            <div class="position-absolute bottom-0 start-0 end-0 text-center mb-2">
-              <small class="badge bg-dark bg-opacity-75 text-white px-3 py-2">
-                <i class="bi bi-mouse"></i> Clic para ampliar • 
-                <i class="bi bi-arrows-fullscreen"></i> Doble clic para zoom máximo
-              </small>
-            </div>
-          </div>
-          
-          <!-- GALERÍA DE TODAS LAS IMÁGENES -->
-          <div class="galeria-miniaturas" id="galeria-miniaturas">
-          </div>
-
-          <!-- Badges de estado -->
-          <div class="mt-3" id="badges-producto">
-          </div>
-
-          <!-- VIDEO DEL PRODUCTO EN DESKTOP -->
-          <div id="video-producto-desktop" class="d-none d-md-block mt-4"></div>
-        </div>
-      </div>
-
-      <!-- INFORMACIÓN DEL PRODUCTO -->
-      <div class="col-md-6">
-        <div class="ps-md-4">
-          <!-- TÍTULO Y PRECIO PARA DESKTOP -->
-          <div class="d-none d-md-block">
-            <!-- Categorías -->
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb" id="breadcrumb-producto-desktop">
-                <li class="breadcrumb-item"><a href="index.html"></a></li>
-              </ol>
-            </nav>
-
-            <!-- Nombre y precio -->
-            <h1 id="nombre-producto-desktop" class="h3 fw-bold mb-2"></h1>
-            <div class="d-flex align-items-center gap-3 mb-3">
-              <span id="precio-actual-desktop" class="h4 fw-bold text-primary mb-0"></span>
-              <span id="precio-original-desktop" class="text-muted h5 mb-0 text-decoration-line-through"></span>
-              <span id="descuento-desktop" class="badge badge-oferta fs-6"></span>
-            </div>
-          </div>
-
-          <!-- ENVÍO GRATIS PARA DESKTOP -->
-          <div class="d-none d-md-block mb-4">
-            <div class="alert alert-success border-success border-opacity-25 bg-success bg-opacity-10 mb-0">
-              <div class="d-flex align-items-center gap-3">
-                <div class="bg-success bg-opacity-25 p-2 rounded-circle">
-                  <i class="bi bi-truck text-success fs-4"></i>
-                </div>
-                <div class="flex-grow-1">
-                  <h6 class="mb-1 fw-bold text-success">🚚 ENVÍO GRATIS INCLUIDO</h6>
-                  <p class="mb-0 small">El costo de envío está cubierto en el precio del producto. 
-                  Entregamos en toda Colombia con transportadoras de convenio.</p>
-                </div>
-                <span class="badge bg-success px-3 py-2">
-                  <i class="bi bi-check-circle me-1"></i> Incluido
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ENVÍO GRATIS PARA MÓVIL -->
-          <div class="d-block d-md-none mb-4">
-            <div class="card border-success border-opacity-25 bg-success bg-opacity-10 mb-3">
-              <div class="card-body py-2">
-                <div class="d-flex align-items-center gap-2">
-                  <i class="bi bi-truck text-success fs-4"></i>
-                  <div>
-                    <h6 class="mb-1 fw-bold text-success">🚚 ENVÍO GRATIS</h6>
-                    <p class="mb-0 small text-muted">Incluido en el precio - Entregamos en toda Colombia</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- VIDEO DEL PRODUCTO EN MÓVIL -->
-          <div id="video-producto-mobile" class="d-block d-md-none mb-4"></div>
-
-          <!-- VARIANTE ACTUAL -->
-          <div class="mb-3" id="variante-actual-container" style="display: none;">
-            <h5 class="fw-bold mb-2">🎨 COLOR SELECCIONADO</h5>
-            <div class="alert alert-info py-2">
-              <span id="variante-actual-texto"></span>
-            </div>
-          </div>
-               
-          <!-- SELECTOR DE VARIABLES (COLORES/MATERIALES) -->
-          <div class="mb-4" id="seccion-variables">
-          </div>
-
-          <!-- SELECTOR DE TALLAS -->
-          <div class="mb-4" id="seccion-tallas">
-          </div>
-
-          <!-- Cantidad -->
-          <div class="mb-4">
-            <h5 class="fw-bold mb-3">🔢 Cantidad</h5>
-            <div class="d-flex align-items-center gap-3">
-              <button class="btn btn-outline-secondary" onclick="cambiarCantidad(-1)">-</button>
-              <input type="number" id="input-cantidad" class="form-control text-center" value="1" min="1" max="10" style="width: 80px;">
-              <button class="btn btn-outline-secondary" onclick="cambiarCantidad(1)">+</button>
-            </div>
-          </div>
-
-          <!-- Botones de acción -->
-          <div class="d-grid gap-2 d-md-flex mb-4">
-            <button id="btn-agregar-carrito" class="btn btn-agregar-carrito btn-lg flex-fw-bold" onclick="agregarAlCarrito()" disabled>
-              <i class="bi bi-cart-plus"></i> Agregar al carrito
-            </button>
-            <button class="btn btn-gradient btn-lg" onclick="comprarAhora()" disabled>
-              <i class="bi bi-lightning"></i> Comprar ahora
-            </button>
-          </div>
-
-          <!-- NUEVO: BOTÓN DE CONSULTA RÁPIDA POR WHATSAPP -->
-          <div class="mb-4">
-            <button id="btn-consulta-producto" class="btn-consulta-wa" onclick="consultarProductoWhatsApp()">
-              <i class="bi bi-whatsapp fs-5"></i> ¿Dudas sobre este producto? ¡Pregúntame!
-            </button>
-            <p class="small text-muted mt-2 text-center">
-              <i class="bi bi-clock-history"></i> Respuesta en menos de 1 hora
-            </p>
-          </div>
-
-          <!-- ===== NUEVOS ELEMENTOS DE CONFIANZA ===== -->
-          
-          <!-- MÉTODOS DE PAGO (ICONOS) -->
-          <div class="mb-4">
-            <div class="card border-0 bg-light">
-              <div class="card-body py-3">
-                <h6 class="fw-bold mb-2">💳 Aceptamos:</h6>
-                <div class="d-flex flex-wrap align-items-center gap-3">
-                  <img src="https://cdn.worldvectorlogo.com/logos/nequi-2.svg" alt="Nequi" style="height: 25px;" class="metodo-pago-icono">
-                  <img src="https://cdn.worldvectorlogo.com/logos/daviplata.svg" alt="Daviplata" style="height: 25px;" class="metodo-pago-icono">
-                  
-                  <img src="https://cdn.worldvectorlogo.com/logos/visa-9.svg" alt="Visa" style="height: 25px;" class="metodo-pago-icono">
-                  <img src="https://cdn.worldvectorlogo.com/logos/mastercard-6.svg" alt="Mastercard" style="height: 25px;" class="metodo-pago-icono">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- GARANTÍA Y DEVOLUCIONES (BLOQUE DESTACADO) - ACTUALIZADO A 1 HORA -->
-          <div class="garantia-box mb-4">
-            <div class="d-flex align-items-start gap-3">
-              <i class="bi bi-shield-check text-primary fs-1"></i>
-              <div>
-                <h6 class="fw-bold mb-2">✅ Compra con confianza</h6>
-                <ul class="list-unstyled small mb-0">
-                  <li><i class="bi bi-check-circle-fill text-success me-2"></i> Devoluciones gratis en 30 días</li>
-                  <li><i class="bi bi-check-circle-fill text-success me-2"></i> Garantía de 3 meses en todos los productos</li>
-                  <li><i class="bi bi-check-circle-fill text-success me-2"></i> Tus datos personales están protegidos</li>
-                  <li><i class="bi bi-check-circle-fill text-success me-2"></i> Respuesta a consultas en menos de 1 hora</li>
-                </ul>
-                <div class="mt-2">
-                  <a href="https://anmagos.github.io/anmago.store/POLITICAS_GARANTIAS_Y_DEVOLUCIONES.HTML" class="small text-primary" target="_blank">Ver políticas completas →</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- SELLOS DE CONFIANZA -->
-          <div class="sello-confianza mb-4">
-            <div class="row g-3">
-              <div class="col-4 sello-item">
-                <i class="bi bi-truck"></i>
-                <span>Envíos a toda Colombia</span>
-              </div>
-              <div class="col-4 sello-item">
-                <i class="bi bi-shield-lock"></i>
-                <span>Pago seguro</span>
-              </div>
-              <div class="col-4 sello-item">
-                <i class="bi bi-arrow-repeat"></i>
-                <span>Devoluciones gratis</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- DESCRIPCIÓN DEL PRODUCTO -->
-          <div class="mb-4">
-            <h5 class="fw-bold mb-2">📋 Descripción</h5>
-            <p id="descripcion-producto" class="text-muted"></p>
-          </div>
-
-          <!-- SERVICIOS (CALIDAD, GARANTÍA, PROMOS) -->
-          <div class="card border-0 bg-light">
-            <div class="card-body">
-              <div class="row text-center">
-                <div class="col-4">
-                  <i class="bi bi-shield-check text-primary fs-4"></i>
-                  <div class="small mt-1">Calidad</div>
-                </div>
-                <div class="col-4">
-                  <i class="bi bi-star text-primary fs-4"></i>
-                  <div class="small mt-1">Garantía</div>
-                </div>
-                <div class="col-4">
-                  <i class="bi bi-percent text-primary fs-4"></i>
-                  <div class="small mt-1">PROMOS</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES -->
-    <section class="resenas-container mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-warning text-dark fs-6">0.0</span>
-          <span class="text-muted small">(0 reseñas)</span>
-        </div>
-      </div>
-      <!-- CONTENEDOR DE RESEÑAS (VACÍO) -->
-  <div id="lista-resenas">
-    <div class="text-center text-muted py-5">
-      <i class="bi bi-star fs-1"></i>
-      <p class="mt-2">Aún no hay reseñas para este producto.</p>
-      <p class="small">Sé el primero en opinar después de tu compra.</p>
-    </div>
-  </div>
-      
-      
-      <!-- Botón para dejar reseña (simulado por ahora) -->
-      <div class="text-center mt-3 pt-2 border-top">
-        <p class="small text-muted">¿Ya compraste este producto?</p>
-        <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
-          <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
-        </button>
-        <p class="small text-muted mt-2">
-          <i class="bi bi-info-circle"></i> Las reseñas aparecerán después de tu compra
-        </p>
-      </div>
-    </section>
-
-    <!-- PRODUCTOS RELACIONADOS -->
-    <section class="mt-5 pt-4 border-top">
-      <h3 class="h4 fw-bold mb-4">🛍️ Productos relacionados</h3>
-      <div id="productos-relacionados" class="grid-productos-ml">
-        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-        <div class="card-producto-ml skeleton" style="height: 280px;"></div>
-      </div>
-    </section>
-  </main>
-
-  <!-- CARRITO OFFCANVAS -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
-    <div class="offcanvas-header border-bottom">
-      <h4 class="offcanvas-title fw-bold">🛒 Tu Carrito</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-    </div>
-    <div class="offcanvas-body" id="carrito-contenido">
-      <div class="text-center text-muted py-4">
-        <i class="bi bi-bag-x fs-1"></i>
-        <p class="mt-2">Tu carrito está vacío</p>
-      </div>
-    </div>
-    <div class="offcanvas-footer p-3 border-top">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <span class="fw-bold">Subtotal:</span>
-        <span id="subtotal" class="fw-bold fs-5 text-primary">$0</span>
-      </div>
-      <button class="btn btn-gradient px-4 py-2 rounded-pill fw-bold" onclick="abrirFormularioPedido()">
-        ✨Continuar compra✨
-      </button>
-    </div>
-  </div>
-
-  <!-- MODAL DE ZOOM MEJORADO -->
-  <div class="modal fade" id="modalZoom" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content">
-        <div class="modal-header border-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body p-0">
-          <div class="row g-0">
-            <div class="col-md-9">
-              <div class="position-relative" style="min-height: 500px;">
-                <img id="modal-zoom-imagen" src="" alt="" class="img-fluid w-100 h-100" style="object-fit: contain;">
-                <div class="position-absolute top-50 start-0 translate-middle-y">
-                  <button class="btn btn-dark rounded-circle p-2 ms-2" onclick="navegarImagenModal(-1)" id="btn-prev">
-                    <i class="bi bi-chevron-left"></i>
-                  </button>
-                </div>
-                <div class="position-absolute top-50 end-0 translate-middle-y">
-                  <button class="btn btn-dark rounded-circle p-2 me-2" onclick="navegarImagenModal(1)" id="btn-next">
-                    <i class="bi bi-chevron-right"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 bg-light p-3">
-              <div class="mb-3">
-                <h6 class="fw-bold">Miniaturas</h6>
-                <div class="d-flex flex-wrap gap-2" id="modal-miniaturas"></div>
-              </div>
-              <div class="mb-3">
-                <h6 class="fw-bold">Información</h6>
-                <p id="modal-variante-info" class="small mb-0"></p>
-              </div>
-              <button class="btn btn-primary w-100" onclick="seleccionarDesdeModal()">
-                <i class="bi bi-check-circle"></i> Seleccionar este color
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== FOOTER (TAL CUAL LO ENTREGAMOS) ===== -->
-  <footer class="footer mt-0" id="footer-container">
-    <div class="footer-container">
-      <!-- Primera fila: enlaces, redes y contacto -->
-      <div class="footer-main">
-        <!-- Enlaces institucionales -->
-        <div class="footer-section">
-          <h6>Anmago Store</h6>
-         <div class="footer-links">
-    <a href="index.html">Inicio</a>
-    <a href="https://sites.google.com/view/anmagostore/quienes-somos">Nosotros</a>
-    <a href="https://sites.google.com/view/anmagostore/politica-de-privacidad">Política de Privacidad</a>
-    <a href="https://sites.google.com/view/anmagostore/politicas-de-envios">Políticas de Envíos</a>
-    <a href="https://anmagos.github.io/anmago.store/POLITICAS_GARANTIAS_Y_DEVOLUCIONES.HTML">Garantías y Devoluciones</a>
-    <a href="modalformulario.html" target="_blank">Contacto</a>
-  </div>
-
-        </div>
-        <!-- Contacto compacto -->
-        <div class="footer-section">
-          <h5>Contacto</h5>
-          <div class="contacto-compacto">
-            <p><strong>Email:</strong> anmagostore@gmail.com</p>
-            <p><strong>Celulares:</strong> 3006498710 – 3115046741</p>
-          </div>
-        </div>
-        
-        <!-- Redes sociales compactas -->
-        <div class="footer-section">
-          <h4>Síguenos</h4>
-          <div class="redes-sociales-compactas">
-            <a href="https://www.facebook.com/profile.php?id=100092463703154&mibextid=ZbWKwL" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/4896d785.IMAGEN.155541.jpg?updatedAt=1761587966118" alt="Facebook" loading="lazy">
-            </a>
-            <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/2a9cda61.IMAGEN.155515.jpg?updatedAt=1761587966369" alt="YouTube" loading="lazy">
-            </a>
-            <a href="https://www.tiktok.com/@anmagostore?_t=8g37PtO0Los&_r=1" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/1d8aa1ac.IMAGEN.155420.jpg?updatedAt=1761587966443" alt="TikTok" loading="lazy">
-            </a>
-            <a href="https://instagram.com/anmagostore?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/cf840649.IMAGEN.155447.jpg?updatedAt=1761587966410" alt="Instagram" loading="lazy">
-            </a>
-            <a href="https://wa.me/573006498710" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/9018ebd1.IMAGEN.155401.jpg?updatedAt=1761587966435" alt="WhatsApp" loading="lazy">
-            </a>
-            <a href="https://www.google.com/search?q=anmago+store" target="_blank">
-              <img src="https://ik.imagekit.io/mbsk9dati/iconos%20redes/ea6b8532.IMAGEN.155430.jpg?updatedAt=1761587966451" alt="Google" loading="lazy">
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Segunda fila: medios de pago y copyright -->
-      <div class="footer-secondary">
-        <!-- Medios de pago compactos -->
-        <div class="medios-pago-compactos">
-          <h4>Medios de pago</h4>
-          <div class="logos-pago-compactos">
-            <img src="https://cdn.worldvectorlogo.com/logos/nequi-2.svg" alt="Nequi">
-            <img src="https://cdn.worldvectorlogo.com/logos/daviplata.svg" alt="Daviplata">
-            <img src="https://epayco.com/wp-content/uploads/2023/01/epayco_pago_seguro.jpg" alt="ePayco">
-          </div>
-          
-          <!-- SECCIÓN TRANSPORTADORAS OPTIMIZADA -->
-          <div class="transportadoras-convenio">
-            <h5 class="fw-bold mb-2">🚚 Transportadoras convenio</h5>
-            <div class="logos-transportadoras">
-              <a href="https://www.interrapidisimo.com/" target="_blank" class="transportadora-link">
-                <div class="transportadora-item">
-                  <img src="https://images.seeklogo.com/logo-png/40/1/inter-rapidisimo-logo-png_seeklogo-400713.png" 
-                       alt="Interrapidísimo">
-                </div>
-              </a>
-              <a href="https://www.coordinadora.com/" target="_blank" class="transportadora-link">
-                <div class="transportadora-item">
-                  <img src="https://images.seeklogo.com/logo-png/3/1/coordinadora-logo-png_seeklogo-35207.png" 
-                       alt="Coordinadora">
-                </div>
-              </a>
-              <a href="https://www.servientrega.com/" target="_blank" class="transportadora-link">
-                <div class="transportadora-item">
-                  <img src="https://images.seeklogo.com/logo-png/17/1/servientrega-logo-png_seeklogo-176994.png" 
-                       alt="Servientrega">
-                </div>
-              </a>
-              <a href="https://www.envia.co/" target="_blank" class="transportadora-link">
-                <div class="transportadora-item">
-                  <img src="https://images.seeklogo.com/logo-png/31/1/envia-mensajeria-logo-png_seeklogo-311137.png" 
-                       alt="Envía">
-                </div>
-              </a>
-            </div>
-            <p class="text-center mt-2 small">
-              <i class="bi bi-truck"></i> Contrarreembolso disponible
-            </p>
-          </div>
-        </div>
-        
-        <!-- Copyright -->
-        <div class="copyright">
-          &copy; 2025 Anmago Store. Todos los derechos reservados.
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- BOTÓN CARRITO FLOTANTE -->
-  <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-    <i class="bi bi-bag-heart fs-5"></i>
-    <span id="contador-carrito" class="contador-carrito">0</span>
-  </a>
-
-  <!-- BARRA INFERIOR MOBILE -->
-  <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2">
-    <div class="container-fluid">
-      <div class="d-flex justify-content-around w-100">
-        <a href="index.html" class="text-center text-decoration-none text-primary">
-          <i class="bi bi-house-fill fs-5"></i>
-          <div class="small">Inicio</div>
-        </a>
-        <a href="https://www.youtube.com/channel/UCTrvoIT0-3ZbRuE7inPPxDg" class="text-center text-decoration-none text-dark">
-          <i class="bi bi-youtube fs-5"></i>
-          <div class="small">canal</div>
-        </a>
-        <a href="#" class="text-center text-decoration-none position-relative d-flex flex-column align-items-center"
-           data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-          <!-- CONTENEDOR DEL ICONO CON BADGE -->
-          <div class="position-relative mb-1">
-            <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
-                 style="width: 35px; height: 35px; margin-top: -8px;">
-              <i class="bi bi-cart-check fs-5 text-white"></i>
-            </div>
-            <!-- BADGE DEL CONTADOR -->
-            <span id="contador-carrito-mobile" 
-                  class="position-absolute top-0 start-100 translate-middle badge bg-danger rounded-pill border border-white"
-                  style="font-size: 0.6rem; min-width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; padding: 0 4px;">
-              0
-            </span>
-          </div>
-          <!-- TEXTO "CARRITO" -->
-          <div class="small" style="font-size: 0.75rem;">Carrito</div>
-        </a>
-        <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" 
-           class="text-center text-decoration-none text-success"
-           target="_blank">
-          <i class="bi bi-whatsapp fs-5"></i>
-          <div class="small">Chat</div>
-        </a>
-        <a href="modalformulario.html" class="text-center text-decoration-none text-dark">
-          <i class="bi bi-person fs-5"></i>
-          <div class="small">Cuenta</div>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- SCRIPT DEL MENÚ HAMBURGUESA (COMPLETO) -->
-  <script>
-    // ==============================================
-    // MENÚ HAMBURGUESA AUTÓNOMO - PARA PRODUCTO.HTML
-    // ==============================================
-
-    // Variable para el catálogo del menú
-    let catalogoMenuHamburguesa = [];
-
-    // Función para cerrar el menú
-    function cerrarMenu() {
-        const offcanvas = bootstrap?.Offcanvas?.getInstance(document.getElementById('menuLateral'));
-        if (offcanvas) {
-            offcanvas.hide();
-        }
+  
+  <!-- Datos Estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "ANMAGO STORE",
+    "url": "https://anmagos.github.io/anmago.store/",
+    "address": { "@type": "PostalAddress", "addressCountry": "CO" },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "CO",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnFees": "https://schema.org/FreeReturn"
     }
-
-    // 🎯 FUNCIÓN PRINCIPAL: Cargar categorías en el menú hamburguesa
-    async function cargarCategoriasMenuHamburguesa() {
-        console.log('🍔 [PRODUCTO] Cargando categorías para menú hamburguesa...');
-        
-        const contenedor = document.getElementById('menu-categorias-dinamico');
-        if (!contenedor) {
-            console.error('❌ [PRODUCTO] No se encontró #menu-categorias-dinamico');
-            return;
-        }
-        
-        try {
-            // 1. INTENTAR USAR productosGlobal si ya está cargado
-            if (window.productosGlobal && Array.isArray(window.productosGlobal) && window.productosGlobal.length > 0) {
-                console.log('✅ [PRODUCTO] Usando productosGlobal existente');
-                catalogoMenuHamburguesa = window.productosGlobal;
-                mostrarCategoriasEnMenu();
-                return;
-            }
-            
-            // 2. SI NO, CARGAR EL CATÁLOGO DIRECTAMENTE
-            console.log('📦 [PRODUCTO] Cargando catálogo directamente para menú...');
-            const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
-            const respuesta = await fetch(url);
-            const catalogo = await respuesta.json();
-            
-            if (!Array.isArray(catalogo) || catalogo.length === 0) {
-                throw new Error('Catálogo vacío o inválido');
-            }
-            
-            catalogoMenuHamburguesa = catalogo;
-            window.productosGlobal = catalogo; // Hacerlo disponible globalmente
-            console.log(`✅ [PRODUCTO] Catálogo cargado: ${catalogo.length} productos`);
-            
-            // Mostrar las categorías
-            mostrarCategoriasEnMenu();
-            
-        } catch (error) {
-            console.error('❌ [PRODUCTO] Error cargando categorías:', error);
-            
-            const contenedor = document.getElementById('menu-categorias-dinamico');
-            if (contenedor) {
-                contenedor.innerHTML = `
-                    <div class="alert alert-warning small py-2">
-                        <i class="bi bi-exclamation-triangle me-1"></i>
-                        No se pudieron cargar las categorías
-                        <button class="btn btn-sm btn-outline-primary mt-1 d-block w-100" 
-                                onclick="cargarCategoriasMenuHamburguesa()">
-                            <i class="bi bi-arrow-clockwise"></i> Reintentar
-                        </button>
-                    </div>
-                `;
-            }
-        }
-    }
-
-    // 🎯 FUNCIÓN que muestra las categorías en el menú
-    function mostrarCategoriasEnMenu() {
-        const contenedor = document.getElementById('menu-categorias-dinamico');
-        if (!contenedor) return;
-        
-        if (!catalogoMenuHamburguesa || catalogoMenuHamburguesa.length === 0) {
-            contenedor.innerHTML = '<p class="small text-muted">No hay productos disponibles</p>';
-            return;
-        }
-        
-        // Extraer tipos únicos del catálogo
-        const tiposUnicos = ['TODOS', ...new Set(catalogoMenuHamburguesa.map(p => p.tipo).filter(Boolean))];
-        
-        console.log(`📂 [PRODUCTO] Tipos únicos encontrados: ${tiposUnicos.length - 1}`);
-        
-        if (tiposUnicos.length === 1) { // Solo "TODOS"
-            contenedor.innerHTML = '<p class="small text-muted">No se encontraron categorías</p>';
-            return;
-        }
-        
-        // Crear HTML del menú
-        let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>';
-        html += '<div class="d-flex flex-column gap-2">';
-        
-        // Opción "TODOS LOS PRODUCTOS"
-        const todosCount = catalogoMenuHamburguesa.length;
-        html += `
-            <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-               onclick="irATodosLosProductos(); cerrarMenu(); return false;">
-                <div class="d-flex align-items-center">
-                    <i class="bi bi-grid-fill me-2"></i>
-                    <span>TODOS LOS PRODUCTOS</span>
-                </div>
-                <span class="badge bg-primary rounded-pill">${todosCount}</span>
-            </a>
-        `;
-        
-        // Cada categoría/tipo
-        tiposUnicos.slice(1).forEach(tipo => {
-            const count = catalogoMenuHamburguesa.filter(p => p.tipo === tipo).length;
-            
-            html += `
-                <a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded"
-                   onclick="irACategoria('${tipo}'); cerrarMenu(); return false;">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-folder me-2"></i>
-                        <span>${tipo}</span>
-                    </div>
-                    <span class="badge bg-primary rounded-pill">${count}</span>
-                </a>
-            `;
-        });
-        
-        html += '</div>';
-        contenedor.innerHTML = html;
-        
-        console.log(`✅ [PRODUCTO] Menú hamburguesa cargado: ${tiposUnicos.length - 1} categorías`);
-    }
-
-    // 🎯 FUNCIONES DE NAVEGACIÓN
-    function irATodosLosProductos() {
-        console.log('📦 [PRODUCTO] Navegando a: TODOS LOS PRODUCTOS');
-        window.location.href = 'index.html';
-    }
-
-    function irACategoria(tipo) {
-        console.log('📁 [PRODUCTO] Navegando a categoría:', tipo);
-        window.location.href = `index.html?tipo=${encodeURIComponent(tipo)}`;
-    }
-
-    function volverAInicio() {
-        console.log('🏠 [PRODUCTO] Volviendo al inicio');
-        window.location.href = 'index.html';
-    }
-
-    function mostrarTodosLosProductosCompleto() {
-        console.log('📦 [PRODUCTO] Mostrando todos los productos');
-        window.location.href = 'index.html';
-    }
-
-    // 🎯 INICIALIZACIÓN CUANDO EL DOM ESTÁ LISTO
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 [PRODUCTO] DOM cargado, configurando menú hamburguesa...');
-        
-        // Cargar categorías después de un breve delay
-        setTimeout(() => {
-            cargarCategoriasMenuHamburguesa();
-        }, 800);
-        
-        // También cargar cuando se abra el menú (por si acaso)
-        const menuLateral = document.getElementById('menuLateral');
-        if (menuLateral) {
-            menuLateral.addEventListener('show.bs.offcanvas', function() {
-                console.log('🎯 [PRODUCTO] Menú hamburguesa abierto, verificando categorías...');
-                
-                // Verificar si ya hay categorías cargadas
-                const contenedor = document.getElementById('menu-categorias-dinamico');
-                if (contenedor && !contenedor.querySelector('.categoria-menu-item')) {
-                    console.log('🔄 [PRODUCTO] No hay categorías, recargando...');
-                    cargarCategoriasMenuHamburguesa();
-                }
-            });
-        }
-    });
-
-    // 🎯 FUNCIONES QUE DEBEN ESTAR DISPONIBLES GLOBALMENTE
-    window.cerrarMenu = cerrarMenu;
-    window.volverAInicio = volverAInicio;
-    window.mostrarTodosLosProductosCompleto = mostrarTodosLosProductosCompleto;
-    window.irATodosLosProductos = irATodosLosProductos;
-    window.irACategoria = irACategoria;
+  }
   </script>
+</head>
 
-  <!-- SISTEMA DE DETALLE PRODUCTO OPTIMIZADO (COMPLETO) -->
-  <script>
-    // ========== VARIABLES GLOBALES ==========
-    let productoActual = null;
-    let varianteSeleccionada = '';
-    let variableSeleccionada = '';
-    let tallaSeleccionada = '';
-    let imagenSeleccionada = '';
-    let cantidad = 1;
-    let imagenesProducto = [];
-    let zoomIndex = 0;
+<!-- Intro animada -->
+<div id="intro" style="position: fixed; top:0; left:0; width:100vw; height:100vh; background: linear-gradient(135deg, #1b4557 0%, #2a6b8a 40%, #ffffff 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; animation: curtainUp 3.8s cubic-bezier(0.77, 0, 0.175, 1) forwards; overflow: hidden;">
+  <div class="logo-container" style="position: relative; width: 180px; height: 180px; margin-bottom: 30px; animation: logoReveal 1.2s ease-out 0.3s both;">
+    <img src="tina-512.png" alt="ANMAGO Store" style="width:100%; height:100%; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));">
+  </div>
+  <div class="loading-text" style="color: white; font-size: 18px; font-weight: 300; animation: textFade 2s ease-in-out;">CARGANDO<span class="dots">...</span></div>
+  <div class="progress-bar" style="width:200px; height:2px; background:rgba(255,255,255,0.2); margin-top:20px; border-radius:10px; overflow:hidden;">
+    <div style="width:0%; height:100%; background: linear-gradient(90deg, #ffffff, #a8e6ff); animation: progressFill 1.5s ease-in-out forwards;"></div>
+  </div>
+  <div style="position: absolute; bottom: 40px; color: rgba(255,255,255,0.7); font-size: 14px;">ANMAGO Store</div>
+</div>
 
-    // ========== FUNCIONES AUXILIARES ==========
-    function obtenerImagenesPorTipo(tipo) {
-        if (!imagenesProducto || !Array.isArray(imagenesProducto)) return [];
-        return imagenesProducto.filter(img => 
-            img.tipo && img.tipo.toUpperCase() === tipo.toUpperCase()
-        );
-    }
+<style>
+@keyframes curtainUp { 0% { transform: translateY(0); opacity: 1; } 70% { opacity: 0.95; } 100% { transform: translateY(-100%); opacity: 0; display: none; } }
+@keyframes logoReveal { 0% { transform: scale(0.8) rotate(-5deg); opacity: 0; } 100% { transform: scale(1) rotate(0); opacity: 1; } }
+@keyframes dotsPulse { 0%, 20% { opacity: 0.2; } 50% { opacity: 1; } 100% { opacity: 0.2; } }
+@keyframes progressFill { 0% { width: 0%; } 80% { width: 90%; } 100% { width: 100%; } }
+@keyframes textFade { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 0.7; } }
+.dots::after { content: '...'; animation: dotsPulse 1.5s infinite; }
+#intro { will-change: transform, opacity; backface-visibility: hidden; -webkit-font-smoothing: antialiased; }
+@media (max-width: 768px) { #intro .logo-container { width: 140px; height: 140px; } #intro .loading-text { font-size: 16px; } }
+</style>
 
-    // ========== SISTEMA SIMPLIFICADO PROMO: TRUE/FALSE ==========
-    function calcularPrecioConDescuento(producto) {
-        if (!producto || !producto.precio) return 0;
-        
-        const precioBase = Number(producto.precio);
-        
-        // SOLO VERIFICAR SI EL PRODUCTO TIENE PROMO: TRUE
-        const tienePromo = producto.promo === true || 
-                          producto.promo === "true" || 
-                          producto.promo === "sí" || 
-                          producto.promo === "si" || 
-                          producto.promo === "activo";
-        
-        if (tienePromo) {
-            const precioConDescuento = Math.round(precioBase * 0.9);
-            console.log(`🔥 Aplicando 10% por PROMO:TRUE: $${precioBase} -> $${precioConDescuento}`);
-            return precioConDescuento;
-        }
-        
-        console.log(`ℹ️ Precio normal: $${precioBase}`);
-        return precioBase;
-    }
+<body>
+<header class="header-sticky d-flex justify-content-between align-items-center px-3 py-2">
+  <div class="logo">
+    <a href="#" onclick="volverAInicio(); event.preventDefault(); event.stopPropagation(); return false;">
+      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" alt="ANMAGO STORE" width="48" height="48" loading="lazy" style="display: block; object-fit: contain; border-radius: 6px; cursor: pointer;" />
+    </a>
+  </div>
+  <div class="d-flex align-items-center gap-2">
+    <span class="proceso-badge">
+      <i class="bi bi-shield-check me-1"></i> Proceso Seguro
+    </span>
+  </div>
+</header>
 
-    // ========== SISTEMA DE NAVEGACIÓN ==========
-    function volverAtras() {
-        const estadoGuardado = localStorage.getItem('navegacionAnmago');
-        
-        if (estadoGuardado) {
-            try {
-                const estado = JSON.parse(estadoGuardado);
-                const ahora = Date.now();
-                const tiempoTranscurrido = ahora - estado.timestamp;
-                
-                if (tiempoTranscurrido < 30 * 60 * 1000) {
-                    let urlRetorno = 'index.html';
-                    
-                    switch (estado.vistaAnterior) {
-                        case 'productos':
-                            if (estado.tipo && estado.subtipo && estado.categoria) {
-                                urlRetorno = `index.html?vista=productos&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}&categoria=${encodeURIComponent(estado.categoria)}`;
-                            }
-                            break;
-                        case 'categorias':
-                            if (estado.tipo && estado.subtipo) {
-                                urlRetorno = `index.html?vista=categorias&tipo=${encodeURIComponent(estado.tipo)}&subtipo=${encodeURIComponent(estado.subtipo)}`;
-                            }
-                            break;
-                        case 'subtipos':
-                            if (estado.tipo) {
-                                urlRetorno = `index.html?vista=subtipos&tipo=${encodeURIComponent(estado.tipo)}`;
-                            }
-                            break;
-                    }
-                    
-                    window.location.href = urlRetorno;
-                    return;
-                } else {
-                    localStorage.removeItem('navegacionAnmago');
-                }
-            } catch (error) {
-                localStorage.removeItem('navegacionAnmago');
-            }
-        }
-        
-        window.location.href = 'index.html';
-    }
+<!-- MENÚ LATERAL -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="menuLateralLabel">
+      <img src="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-48,h-48" alt="Anmago Store" width="30" height="30" style="border-radius: 4px; margin-right: 10px;"> Anmago Store
+    </h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column gap-3">
+    <a href="#" class="nav-link d-flex align-items-center" onclick="volverAInicio(); cerrarMenu(); return false;"><i class="bi bi-house me-2"></i> Inicio</a>
+    <a href="PROMOS.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-percent me-2"></i> Promociones</a>
+    <a href="#" class="nav-link d-flex align-items-center" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;"><i class="bi bi-grid-3x3 me-2"></i> Todos los productos</a>
+    <div id="menu-categorias-dinamico" class="mt-2">
+      <p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p>
+      <div class="text-center py-3"><div class="spinner-border spinner-border-sm text-primary"></div><p class="mt-2 small text-muted">Cargando categorías...</p></div>
+    </div>
+    <a href="modalformulario.html" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-person me-2"></i> Mi cuenta</a>
+    <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" target="_blank" class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();"><i class="bi bi-whatsapp me-2"></i> WhatsApp</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-envelope me-2"></i> Contacto</a>
+  </div>
+  <div class="offcanvas-footer border-top p-3">
+    <div class="text-center small text-muted"><p class="mb-1">anmagostore@gmail.com</p><p class="mb-0">3006498710 - 3115046741</p></div>
+  </div>
+</div>
 
-    function guardarEstadoNavegacion() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const origen = urlParams.get('origen');
-        const tipo = urlParams.get('tipo');
-        const subtipo = urlParams.get('subtipo');
-        const categoria = urlParams.get('categoria');
-        
-        if (origen === 'tienda' && tipo && subtipo && categoria) {
-            const estadoNavegacion = {
-                vistaAnterior: 'productos',
-                tipo: tipo,
-                subtipo: subtipo,
-                categoria: categoria,
-                timestamp: Date.now(),
-                url: document.referrer
-            };
-            localStorage.setItem('navegacionAnmago', JSON.stringify(estadoNavegacion));
-        }
-    }
+<script>
+// ==============================================
+// FUNCIONES DEL MENÚ LATERAL (IGUAL)
+// ==============================================
+function cerrarMenu() { const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('menuLateral')); if (offcanvas) offcanvas.hide(); }
+function cargarMenuDesdeTuCatalogo() {
+  console.log('🔄 Cargando menú desde tu catálogo...');
+  const contenedor = document.getElementById('menu-categorias-dinamico');
+  if (!contenedor) return;
+  if (!window.catalogoGlobal || !Array.isArray(window.catalogoGlobal) || window.catalogoGlobal.length === 0) {
+    console.log('⏳ Esperando catálogo de tu app.js...');
+    return;
+  }
+  const catalogo = window.catalogoGlobal;
+  const tiposUnicos = ['TODOS', ...new Set(catalogo.map(p => p.tipo).filter(Boolean))];
+  if (tiposUnicos.length === 0) { contenedor.innerHTML = '<p class="small text-muted">No hay categorías disponibles</p>'; return; }
+  let html = '<p class="small text-muted mb-2"><i class="bi bi-list-ul me-1"></i> Categorías principales</p><div class="d-flex flex-column gap-2">';
+  const todosCount = catalogo.length;
+  html += `<a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded" onclick="mostrarTodosLosProductosCompleto(); cerrarMenu(); return false;"><div class="d-flex align-items-center"><i class="bi bi-grid-fill me-2"></i><span>TODOS LOS PRODUCTOS</span></div><span class="badge bg-primary rounded-pill">${todosCount}</span></a>`;
+  tiposUnicos.slice(1).forEach(tipo => {
+    const count = catalogo.filter(p => p.tipo === tipo).length;
+    html += `<a href="#" class="nav-link categoria-menu-item d-flex justify-content-between align-items-center py-2 px-3 rounded" onclick="irACategoria('${tipo}'); cerrarMenu(); return false;"><div class="d-flex align-items-center"><i class="bi bi-folder me-2"></i><span>${tipo}</span></div><span class="badge bg-primary rounded-pill">${count}</span></a>`;
+  });
+  html += '</div>';
+  contenedor.innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('🚀 Header simplificado cargado');
+  if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) setTimeout(() => cargarMenuDesdeTuCatalogo(), 300);
+  window.addEventListener('catalogoCargado', function() { setTimeout(() => cargarMenuDesdeTuCatalogo(), 300); });
+  const intervalo = setInterval(() => {
+    if (window.catalogoGlobal && Array.isArray(window.catalogoGlobal) && window.catalogoGlobal.length > 0) { cargarMenuDesdeTuCatalogo(); clearInterval(intervalo); }
+  }, 1000);
+  setTimeout(() => clearInterval(intervalo), 10000);
+});
+</script>
 
-    // ========== FUNCIONES PARA GALERÍA ==========
-    function renderizarGaleriaCompleta(producto) {
-        const imagenPrincipal = document.getElementById('imagen-principal');
-        const galeria = document.getElementById('galeria-miniaturas');
-        
-        if (imagenesProducto.length === 0) {
-            imagenPrincipal.src = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
-            imagenPrincipal.alt = producto.producto;
-            return;
-        }
+<style>
+.header-sticky { background: linear-gradient(135deg, #1B4557, #2A6A8F); color: white; position: fixed; top: 0; left: 0; right: 0; z-index: 1030; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.buscador-header { border-radius: 20px; border: none; padding: 0.5rem 1rem; font-size: 0.9rem; background: rgba(255,255,255,0.95); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.buscador-header:focus { background: white; box-shadow: 0 0 0 2px rgba(52, 131, 250, 0.5); outline: none; }
+.navbar-toggler { padding: 0.25rem; margin-left: 0.5rem; transition: transform 0.3s ease; }
+.navbar-toggler:hover { transform: scale(1.1); }
+#menuLateral .offcanvas-header { background: linear-gradient(135deg, #1B4557, #2A6A8F); color: white; }
+#menuLateral .nav-link { color: #333; padding: 0.75rem 1rem; border-radius: 8px; transition: all 0.3s ease; font-weight: 500; }
+#menuLateral .nav-link:hover { background-color: #e9ecef; color: #1B4557; transform: translateX(5px); }
+.categoria-menu-item { border: 1px solid #dee2e6; transition: all 0.2s ease; }
+.categoria-menu-item:hover { background-color: #1B4557 !important; color: white !important; border-color: #1B4557; transform: translateX(5px); }
+@media (max-width: 768px) { .header-sticky { height: 60px; } .buscador-header { font-size: 0.85rem; } }
+</style>
 
-        // OBTENER IMAGEN PRINCIPAL
-        let imagenPrincipalObj = obtenerImagenesPorTipo('PRINCIPAL')[0];
-        if (!imagenPrincipalObj) {
-            imagenPrincipalObj = obtenerImagenesPorTipo('VARIANTE')[0] || imagenesProducto[0];
-        }
+<!-- BOTÓN VOLVER AL INICIO -->
+<div class="container mt-3">
+  <button onclick="volverAInicio()" class="btn btn-volver-inicio btn-sm px-3 py-2 rounded-pill">
+    <i class="bi bi-arrow-left me-2"></i> 🏠 Volver al Inicio
+  </button>
+</div>
 
-        // SETEAR IMAGEN PRINCIPAL
-        imagenPrincipal.src = imagenPrincipalObj.url;
-        imagenPrincipal.alt = `${producto.producto} - ${imagenPrincipalObj.variacion || 'Imagen principal'}`;
-        
-        // ACTUALIZAR VARIABLES GLOBALES
-        varianteSeleccionada = imagenPrincipalObj.variacion || 'Principal';
-        imagenSeleccionada = imagenPrincipalObj.url;
-        zoomIndex = imagenesProducto.findIndex(img => img.url === imagenPrincipalObj.url);
-        
-        // RENDERIZAR GALERÍA CON TODAS LAS IMÁGENES
-        if (imagenesProducto.length > 1) {
-            galeria.innerHTML = imagenesProducto.map((img, index) => {
-                const esSeleccionada = img.url === imagenPrincipalObj.url;
-                const tipoBadge = getTipoBadge(img.tipo);
-                const descripcion = img.variacion || 
-                    (img.tipo === 'PRINCIPAL' ? 'Principal' : 
-                     img.tipo === 'VARIANTE' ? `Variante ${index}` : 
-                     `Referencia ${index}`);
-                
-                return `
-                    <div class="position-relative d-inline-block">
-                        <img src="${img.url}" 
-                             alt="${producto.producto} - ${descripcion}" 
-                             class="miniatura ${esSeleccionada ? 'active' : ''}"
-                             onclick="seleccionarImagenPrincipal('${img.url}', '${img.variacion || descripcion}', this, ${index})"
-                             style="width: 80px; height: 80px; object-fit: cover; border: 2px solid ${esSeleccionada ? '#007bff' : '#ddd'}; border-radius: 8px; cursor: pointer; margin: 5px; transition: all 0.3s ease;"
-                             onmouseover="this.style.borderColor='#007bff'"
-                             onmouseout="if(!this.classList.contains('active')) this.style.borderColor='#ddd'"
-                             title="${descripcion} - ${tipoBadge.texto}">
-                        <span class="position-absolute top-0 start-0 badge ${tipoBadge.clase}" style="font-size: 0.6rem; padding: 2px 4px;">
-                            ${tipoBadge.texto}
-                        </span>
-                    </div>
-                `;
-            }).join('');
-        } else {
-            galeria.innerHTML = '';
-        }
-
-        // MOSTRAR VARIANTE SI ES VARIANTE
-        if (imagenPrincipalObj.tipo === 'VARIANTE') {
-            mostrarVarianteActual(imagenPrincipalObj.variacion);
-        }
-    }
-
-    function getTipoBadge(tipo) {
-        switch(tipo?.toUpperCase()) {
-            case 'PRINCIPAL': return { clase: 'bg-primary', texto: 'PRIN' };
-            case 'VARIANTE': return { clase: 'bg-success', texto: 'COLOR' };
-            case 'ADICIONAL': return { clase: 'bg-secondary', texto: 'REF' };
-            default: return { clase: 'bg-info', texto: 'IMG' };
-        }
-    }
-
-    function seleccionarImagenPrincipal(imagenSrc, descripcion, elemento, index) {
-        const imagenPrincipal = document.getElementById('imagen-principal');
-        imagenPrincipal.src = imagenSrc;
-        imagenPrincipal.alt = `${productoActual.producto} - ${descripcion}`;
-        
-        // ACTUALIZAR VARIABLES GLOBALES
-        imagenSeleccionada = imagenSrc;
-        zoomIndex = index;
-        
-        // SI ES VARIANTE, ACTUALIZAR VARIANTE
-        const imgSeleccionada = imagenesProducto[index];
-        if (imgSeleccionada.tipo === 'VARIANTE') {
-            varianteSeleccionada = imgSeleccionada.variacion || descripcion;
-            mostrarVarianteActual(varianteSeleccionada);
-        }
-        
-        // ACTUALIZAR MINIATURAS ACTIVAS
-        document.querySelectorAll('.miniatura').forEach(img => {
-            img.classList.remove('active');
-            img.style.borderColor = '#ddd';
-        });
-        elemento.classList.add('active');
-        elemento.style.borderColor = '#007bff';
-        
-        // VERIFICAR ESTADO DEL BOTÓN
-        verificarEstadoBotonAgregar();
-    }
-
-    function mostrarVarianteActual(nombreVariante) {
-        const container = document.getElementById('variante-actual-container');
-        const texto = document.getElementById('variante-actual-texto');
-        texto.textContent = nombreVariante;
-        container.style.display = 'block';
-    }
-
-    // ========== INICIALIZACIÓN ==========
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('🚀 PRODUCTO.HTML inicializado');
-        
-        // 1. Guardar estado de navegación
-        guardarEstadoNavegacion();
-        
-        // 2. Cargar el producto
-        setTimeout(() => {
-            cargarProducto();
-        }, 300);
-        
-        // 3. Configurar modal zoom
-        const modalZoom = document.getElementById('modalZoom');
-        if (modalZoom) {
-            modalZoom.addEventListener('show.bs.modal', function() {
-                inicializarModalZoom();
-            });
-        }
-        
-        // 4. Actualizar contadores carrito
-        if (typeof actualizarContadoresCarrito === 'function') {
-            actualizarContadoresCarrito();
-        }
-    });
-
-    // ========== FUNCIONES PARA MODAL DE ZOOM ==========
-    function inicializarModalZoom() {
-        const modalImagen = document.getElementById('modal-zoom-imagen');
-        const miniaturasContainer = document.getElementById('modal-miniaturas');
-        
-        if (!modalImagen || !miniaturasContainer) return;
-        
-        modalImagen.src = imagenesProducto[zoomIndex]?.url || '';
-        const imgActual = imagenesProducto[zoomIndex];
-        document.getElementById('modal-variante-info').textContent = 
-            imgActual?.variacion || (imgActual?.tipo === 'VARIANTE' ? 'Variante seleccionada' : 'Imagen del producto');
-        
-        // MINIATURAS EN EL MODAL
-        miniaturasContainer.innerHTML = imagenesProducto.map((img, index) => {
-            const tipoBadge = getTipoBadge(img.tipo);
-            const descripcion = img.variacion || `Imagen ${index + 1}`;
-            
-            return `
-                <div class="position-relative" style="width: 80px;">
-                    <img src="${img.url}" 
-                         alt="${descripcion}"
-                         class="img-thumbnail ${index === zoomIndex ? 'border-primary' : 'border-secondary'}"
-                         style="width: 80px; height: 80px; object-fit: cover; cursor: pointer;"
-                         onclick="seleccionarImagenModal(${index})"
-                         title="${descripcion} - ${tipoBadge.texto}">
-                    <span class="position-absolute top-0 start-0 badge ${tipoBadge.clase}" style="font-size: 0.6rem; padding: 2px 4px;">
-                        ${tipoBadge.texto}
-                    </span>
-                </div>
-            `;
-        }).join('');
-        
-        actualizarBotonesNavegacionModal();
-    }
-
-    function navegarImagenModal(direccion) {
-        const nuevoIndex = zoomIndex + direccion;
-        if (nuevoIndex >= 0 && nuevoIndex < imagenesProducto.length) {
-            zoomIndex = nuevoIndex;
-            actualizarModalZoom();
-        }
-    }
-
-    function seleccionarImagenModal(index) {
-        zoomIndex = index;
-        actualizarModalZoom();
-    }
-
-    function seleccionarDesdeModal() {
-        const imgSeleccionada = imagenesProducto[zoomIndex];
-        
-        // SOLO PERMITIR VARIANTES PARA SELECCIÓN DE COLOR
-        if (imgSeleccionada.tipo !== "VARIANTE") {
-            mostrarAlertaTemporal('⚠️ Solo puedes seleccionar imágenes de color (variantes)', 'warning');
-            return;
-        }
-        
-        // ACTUALIZAR IMAGEN PRINCIPAL
-        document.getElementById('imagen-principal').src = imgSeleccionada.url;
-        
-        // ACTUALIZAR VARIABLES GLOBALES
-        varianteSeleccionada = imgSeleccionada.variacion;
-        imagenSeleccionada = imgSeleccionada.url;
-        
-        // ACTUALIZAR GALERÍA PRINCIPAL
-        const miniaturas = document.querySelectorAll('.miniatura');
-        miniaturas.forEach((miniatura, index) => {
-            const esSeleccionada = index === zoomIndex;
-            miniatura.classList.toggle('active', esSeleccionada);
-            miniatura.style.borderColor = esSeleccionada ? '#007bff' : '#ddd';
-        });
-        
-        // MOSTRAR VARIANTE
-        mostrarVarianteActual(varianteSeleccionada);
-        verificarEstadoBotonAgregar();
-        
-        // CERRAR MODAL
-        const modal = bootstrap.Modal.getInstance(document.getElementById('modalZoom'));
-        if (modal) modal.hide();
-        
-        mostrarAlertaTemporal(`✅ Color seleccionado: "${varianteSeleccionada}"`, 'success');
-    }
-
-    function actualizarModalZoom() {
-        const modalImagen = document.getElementById('modal-zoom-imagen');
-        const miniaturasContainer = document.getElementById('modal-miniaturas');
-        
-        if (!modalImagen) return;
-        
-        const imgActual = imagenesProducto[zoomIndex];
-        modalImagen.style.opacity = '0.5';
-        
-        setTimeout(() => {
-            modalImagen.src = imgActual.url;
-            modalImagen.alt = `${productoActual.producto} - ${imgActual.variacion || 'Imagen'}`;
-            modalImagen.style.opacity = '1';
-            
-            document.getElementById('modal-variante-info').textContent = 
-                imgActual.variacion || (imgActual.tipo === 'VARIANTE' ? 'Variante seleccionada' : 'Imagen del producto');
-            
-            if (miniaturasContainer) {
-                miniaturasContainer.querySelectorAll('.img-thumbnail').forEach((img, index) => {
-                    img.classList.toggle('border-primary', index === zoomIndex);
-                    img.classList.toggle('border-secondary', index !== zoomIndex);
-                });
-            }
-            
-            actualizarBotonesNavegacionModal();
-        }, 200);
-    }
-
-    function actualizarBotonesNavegacionModal() {
-        const btnPrev = document.getElementById('btn-prev');
-        const btnNext = document.getElementById('btn-next');
-        
-        if (btnPrev) btnPrev.disabled = zoomIndex === 0;
-        if (btnNext) btnNext.disabled = zoomIndex === imagenesProducto.length - 1;
-    }
-
-    // ========== FUNCIONES PRINCIPALES ==========
-    function obtenerIdProducto() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('id');
-    }
-
-    async function cargarProducto() {
-        const productoId = obtenerIdProducto();
-        
-        if (!productoId) {
-            mostrarError('No se especificó ningún producto');
-            return;
-        }
-
-        try {
-            const url = "https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json?t=" + Date.now();
-            const respuesta = await fetch(url);
-            const productos = await respuesta.json();
-            
-            productoActual = productos.find(p => p.id === productoId);
-            
-            if (!productoActual) {
-                mostrarError('Producto no encontrado en el catálogo');
-                return;
-            }
-
-            // INICIALIZAR IMÁGENES
-            imagenesProducto = [];
-            
-            if (productoActual.imagenes && Array.isArray(productoActual.imagenes)) {
-                imagenesProducto = productoActual.imagenes;
-            } else if (productoActual.url && productoActual.url.includes("[]")) {
-                const urls = productoActual.url.split("[]").map(u => u.trim()).filter(Boolean);
-                imagenesProducto = urls.map((url, index) => ({
-                    url: url,
-                    tipo: "VARIANTE",
-                    variacion: `Variante ${index + 1}`,
-                    orden: index + 1
-                }));
-            } else if (productoActual.imagen) {
-                imagenesProducto = [{
-                    url: productoActual.imagen,
-                    tipo: "VARIANTE",
-                    variacion: "Principal",
-                    orden: 1
-                }];
-            }
-
-            // INICIALIZAR VARIABLES
-            cantidad = 1;
-            zoomIndex = 0;
-            const primeraVariante = obtenerImagenesPorTipo('VARIANTE')[0];
-            if (primeraVariante) {
-                varianteSeleccionada = primeraVariante.variacion || 'Variante 1';
-                imagenSeleccionada = primeraVariante.url;
-            } else if (imagenesProducto.length > 0) {
-                varianteSeleccionada = 'Principal';
-                imagenSeleccionada = imagenesProducto[0].url;
-            }
-
-            // RENDERIZAR PRODUCTO
-            renderizarProducto(productoActual);
-            cargarProductosRelacionados(productos, productoActual);
-
-        } catch (error) {
-            console.error('Error cargando producto:', error);
-            mostrarError('Error al cargar el producto');
-        }
-    }
-
-    function renderizarProducto(producto) {
-        // INFORMACIÓN BÁSICA
-        document.getElementById('nombre-producto-mobile').textContent = producto.producto;
-        document.getElementById('nombre-producto-desktop').textContent = producto.producto;
-        document.getElementById('descripcion-producto').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
-        
-        // PRECIOS CON DESCUENTO SI TIENE PROMO: TRUE
-        const precioBase = Number(producto.precio) || 0;
-        const precioActual = calcularPrecioConDescuento(producto);
-        const tienePromo = precioActual < precioBase;
-        
-        // PRECIO ACTUAL (con o sin descuento)
-        document.getElementById('precio-actual-mobile').textContent = `$${precioActual.toLocaleString('es-CO')}`;
-        document.getElementById('precio-actual-desktop').textContent = `$${precioActual.toLocaleString('es-CO')}`;
-        
-        // SI TIENE PROMO, MOSTRAR PRECIO ORIGINAL TACHADO Y % DESCUENTO
-        if (tienePromo && precioBase > 0) {
-            const descuentoPorcentaje = Math.round((1 - precioActual / precioBase) * 100);
-            
-            document.getElementById('precio-original-mobile').textContent = `$${precioBase.toLocaleString('es-CO')}`;
-            document.getElementById('descuento-mobile').textContent = `-${descuentoPorcentaje}%`;
-            document.getElementById('precio-original-mobile').style.display = 'inline';
-            document.getElementById('descuento-mobile').style.display = 'inline';
-            
-            document.getElementById('precio-original-desktop').textContent = `$${precioBase.toLocaleString('es-CO')}`;
-            document.getElementById('descuento-desktop').textContent = `-${descuentoPorcentaje}%`;
-            document.getElementById('precio-original-desktop').style.display = 'inline';
-            document.getElementById('descuento-desktop').style.display = 'inline';
-        } else {
-            document.getElementById('precio-original-mobile').style.display = 'none';
-            document.getElementById('descuento-mobile').style.display = 'none';
-            document.getElementById('precio-original-desktop').style.display = 'none';
-            document.getElementById('descuento-desktop').style.display = 'none';
-        }
-
-        // GALERÍA COMPLETA
-        renderizarGaleriaCompleta(producto);
-
-        // BREADCRUMB
-        renderizarBreadcrumb(producto);
-
-        // VARIABLES Y TALLAS
-        renderizarVariables(producto);
-        renderizarTallas(producto);
-
-        // BADGES
-        renderizarBadges(producto);
-
-        // VIDEO
-        renderizarVideo(producto);
-        
-        // VERIFICAR BOTÓN
-        verificarEstadoBotonAgregar();
-    }
-
-    function renderizarBreadcrumb(producto) {
-        const breadcrumbMobile = document.getElementById('breadcrumb-producto-mobile');
-        const breadcrumbDesktop = document.getElementById('breadcrumb-producto-desktop');
-        
-        const html = `
-            <li class="breadcrumb-item">
-                <a href="#" onclick="volverAtras(); return false;" class="text-primary">
-                    <i class="bi bi-arrow-left me-1"></i> Volver
-                </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">${producto.producto}</li>
-        `;
-        
-        if (breadcrumbMobile) breadcrumbMobile.innerHTML = html;
-        if (breadcrumbDesktop) breadcrumbDesktop.innerHTML = html;
-    }
+<!-- CONTENIDO PRINCIPAL OPTIMIZADO PARA CONVERSIÓN -->
+<main class="container py-4" style="max-width: 800px;">
+  
+  <!-- ALERTA DE PROCESO SIEMPRE VISIBLE (CLAVE PARA CONVERSIÓN) -->
+  <div class="alerta-proceso">
+    <div class="alerta-titulo">
+      <i class="bi bi-clock-history"></i> Así funciona tu compra
+    </div>
     
-    function renderizarVariables(producto) {
-        const contenedor = document.getElementById('seccion-variables');
-        
-        const tieneVariables = producto.variables && 
-                              producto.variables.trim() !== "" && 
-                              producto.variables !== "N/A" &&
-                              !["única", "unica"].includes(producto.variables.toLowerCase());
-        
-        if (tieneVariables) {
-            const variables = producto.variables.split(",").map(v => v.trim()).filter(v => v);
-            
-            contenedor.innerHTML = `
-                <h5 class="fw-bold mb-3">🎨 Selecciona color/material</h5>
-                <select class="form-select selector-variable" onchange="seleccionarVariable(this.value)" style="max-width: 250px; font-size: 1rem; padding: 10px;">
-                    <option value="">-- Elige una opción --</option>
-                    ${variables.map(variable => `<option value="${variable}">${variable}</option>`).join('')}
-                </select>
-                <div class="form-text mt-2">💡 Selecciona tu color o material preferido</div>
-            `;
-        } else {
-            contenedor.innerHTML = '';
-            verificarEstadoBotonAgregar();
-        }
-    }
-
-    function renderizarTallas(producto) {
-        const contenedor = document.getElementById('seccion-tallas');
-        
-        const necesitaTallas = producto.tallas && 
-                             producto.tallas.trim() !== "" && 
-                             producto.tallas !== "N/A" && 
-                             !["única", "unica"].includes(producto.tallas.toLowerCase());
-
-        if (necesitaTallas) {
-            const tallas = producto.tallas.split(",").map(t => t.trim()).filter(t => t);
-            
-            contenedor.innerHTML = `
-                <h5 class="fw-bold mb-3">📏 Selecciona tu talla</h5>
-                <select class="form-select selector-talla" onchange="seleccionarTalla(this.value)" style="max-width: 250px; font-size: 1rem; padding: 10px;">
-                    <option value="">-- Elige una talla --</option>
-                    ${tallas.map(talla => `<option value="${talla}">${talla}</option>`).join('')}
-                </select>
-                <div class="form-text mt-2">💡 Asegúrate de seleccionar tu talla correcta</div>
-            `;
-        } else {
-            contenedor.innerHTML = '';
-            verificarEstadoBotonAgregar();
-        }
-    }
-
-    function seleccionarVariable(variable) {
-        variableSeleccionada = variable;
-        verificarEstadoBotonAgregar();
-    }
-
-    function seleccionarTalla(talla) {
-        tallaSeleccionada = talla;
-        verificarEstadoBotonAgregar();
-    }
-
-    function verificarEstadoBotonAgregar() {
-        const btnAgregar = document.getElementById('btn-agregar-carrito');
-        const btnComprar = document.querySelector('.btn-gradient');
-        
-        const necesitaVariables = productoActual?.variables && 
-                                productoActual.variables.trim() !== "" && 
-                                productoActual.variables !== "N/A" &&
-                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
-        
-        const necesitaTallas = productoActual?.tallas && 
-                             productoActual.tallas.trim() !== "" && 
-                             productoActual.tallas !== "N/A" && 
-                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
-        
-        let puedeAgregar = varianteSeleccionada;
-        
-        if (necesitaVariables) {
-            puedeAgregar = puedeAgregar && variableSeleccionada;
-        }
-        
-        if (necesitaTallas) {
-            puedeAgregar = puedeAgregar && tallaSeleccionada;
-        }
-        
-        if (btnAgregar) {
-            btnAgregar.disabled = !puedeAgregar;
-            if (!varianteSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-image"></i> Selecciona un color';
-            } else if (necesitaVariables && !variableSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-palette"></i> Selecciona color/material';
-            } else if (necesitaTallas && !tallaSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-rulers"></i> Selecciona talla';
-            } else {
-                btnAgregar.innerHTML = '<i class="bi bi-cart-plus"></i> Agregar al carrito';
-            }
-        }
-        
-        if (btnComprar) btnComprar.disabled = !puedeAgregar;
-    }
-
-    function cambiarCantidad(delta) {
-        cantidad = parseInt(document.getElementById('input-cantidad').value) + delta;
-        cantidad = Math.max(1, Math.min(10, cantidad));
-        document.getElementById('input-cantidad').value = cantidad;
-    }
-
-    function agregarAlCarrito() {
-        if (!productoActual) {
-            mostrarAlertaTemporal('❌ Error: El producto no se cargó correctamente', 'danger');
-            return false;
-        }
-        
-        if (!varianteSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona un color', 'warning');
-            document.getElementById('galeria-miniaturas').scrollIntoView({ behavior: 'smooth' });
-            return false;
-        }
-
-        const necesitaVariables = productoActual?.variables && 
-                                productoActual.variables.trim() !== "" && 
-                                productoActual.variables !== "N/A" &&
-                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
-        
-        const necesitaTallas = productoActual?.tallas && 
-                             productoActual.tallas.trim() !== "" && 
-                             productoActual.tallas !== "N/A" && 
-                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
-        
-        if (necesitaVariables && !variableSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona un color/material', 'warning');
-            document.getElementById('seccion-variables').scrollIntoView({ behavior: 'smooth' });
-            return false;
-        }
-
-        if (necesitaTallas && !tallaSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona una talla', 'warning');
-            document.getElementById('seccion-tallas').scrollIntoView({ behavior: 'smooth' });
-            return false;
-        }
-
-        const precioBase = Number(productoActual.precio) || 0;
-        const precioFinal = calcularPrecioConDescuento(productoActual);
-        const tienePromo = precioFinal < precioBase;
-        
-        const productoCarrito = {
-            id: productoActual.id + 
-                '-' + varianteSeleccionada + 
-                (variableSeleccionada ? '-' + variableSeleccionada.replace(/\s+/g, '_') : '') +
-                (tallaSeleccionada ? '-' + tallaSeleccionada : ''),
-            nombre: `${productoActual.producto} - ${varianteSeleccionada}` +
-                    (variableSeleccionada ? ` - ${variableSeleccionada}` : '') +
-                    (tallaSeleccionada ? ` - Talla ${tallaSeleccionada}` : ''),
-            precio: precioFinal,
-            imagen: imagenSeleccionada,
-            variante: varianteSeleccionada,
-            variable: variableSeleccionada || 'Única',
-            talla: tallaSeleccionada || 'Única',
-            cantidad: cantidad,
-            enPromocion: tienePromo,
-            precioOriginal: precioBase,
-            tieneDescuento: tienePromo,
-            descuentoPorcentaje: tienePromo ? Math.round((1 - precioFinal / precioBase) * 100) : 0
-        };
-
-        try {
-            const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
-            const existeIndex = carrito.findIndex(item => item.id === productoCarrito.id);
-            
-            if (existeIndex > -1) {
-                carrito[existeIndex].cantidad += productoCarrito.cantidad;
-            } else {
-                carrito.push(productoCarrito);
-            }
-            
-            localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
-            
-            // Actualizar contadores usando el sistema del carrito si está disponible
-            if (typeof window.carritoManager !== 'undefined' && window.carritoManager.actualizarContadoresCarrito) {
-                window.carritoManager.actualizarContadoresCarrito();
-            } else if (typeof actualizarContadoresCarrito === 'function') {
-                actualizarContadoresCarrito();
-            }
-            
-            mostrarConfirmacionAgregado();
-            return true;
-            
-        } catch (error) {
-            mostrarAlertaTemporal('❌ Error al agregar al carrito', 'danger');
-            return false;
-        }
-    }
-
-    function comprarAhora() {
-        if (!varianteSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona un color', 'warning');
-            return;
-        }
-
-        const necesitaVariables = productoActual?.variables && 
-                                productoActual.variables.trim() !== "" && 
-                                productoActual.variables !== "N/A" &&
-                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
-        
-        const necesitaTallas = productoActual?.tallas && 
-                             productoActual.tallas.trim() !== "" && 
-                             productoActual.tallas !== "N/A" && 
-                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
-        
-        if (necesitaVariables && !variableSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona un color/material', 'warning');
-            return;
-        }
-
-        if (necesitaTallas && !tallaSeleccionada) {
-            mostrarAlertaTemporal('⚠️ Por favor selecciona una talla', 'warning');
-            return;
-        }
-
-        if (agregarAlCarrito()) {
-            setTimeout(() => {
-                abrirFormularioPedido();
-            }, 500);
-        }
-    }
-
-    function mostrarConfirmacionAgregado() {
-        const btn = document.getElementById('btn-agregar-carrito');
-        const originalText = btn.innerHTML;
-        
-        btn.innerHTML = '<i class="bi bi-check2"></i> ¡Agregado!';
-        btn.classList.remove('btn-agregar-carrito');
-        btn.classList.add('btn-success');
-        
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-agregar-carrito');
-        }, 2000);
-    }
-
-    function mostrarAlertaTemporal(mensaje, tipo = 'warning') {
-        const alertaExistente = document.querySelector('.alerta-temporal');
-        if (alertaExistente) alertaExistente.remove();
-        
-        const alerta = document.createElement('div');
-        alerta.className = `alert alert-${tipo} alert-dismissible fade show alerta-temporal position-fixed`;
-        alerta.style.cssText = `
-            top: 20px; 
-            right: 20px; 
-            z-index: 9999; 
-            min-width: 300px; 
-            max-width: 400px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            animation: slideIn 0.3s ease;
-        `;
-        
-        alerta.innerHTML = `
-            <div class="d-flex align-items-center">
-                <i class="bi ${tipo === 'success' ? 'bi-check-circle' : tipo === 'danger' ? 'bi-exclamation-triangle' : 'bi-info-circle'} me-2 fs-5"></i>
-                <div class="flex-grow-1">${mensaje}</div>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-            </div>
-        `;
-        
-        document.body.appendChild(alerta);
-        
-        setTimeout(() => {
-            if (alerta.parentNode) alerta.remove();
-        }, 4000);
-    }
-
-    function renderizarBadges(producto) {
-        const contenedor = document.getElementById('badges-producto');
-        const badges = [];
-
-        // VERIFICAR SI TIENE PROMO: TRUE
-        const tienePromo = producto.promo === true || 
-                          producto.promo === "true" || 
-                          producto.promo === "sí" || 
-                          producto.promo === "si" || 
-                          producto.promo === "activo";
-        
-        // VERIFICAR SI TIENE DESCUENTO REAL
-        const precioBase = Number(producto.precio) || 0;
-        const precioConDescuento = calcularPrecioConDescuento(producto);
-        const tieneDescuentoReal = precioConDescuento < precioBase;
-
-        if (tienePromo && tieneDescuentoReal) {
-            const descuentoPorcentaje = Math.round((1 - precioConDescuento / precioBase) * 100);
-            badges.push(`<span class="badge bg-danger me-2">🔥 OFERTA -${descuentoPorcentaje}%</span>`);
-        }
-        
-        if (producto.nuevo) {
-            badges.push('<span class="badge bg-success me-2">🆕 Nuevo</span>');
-        }
-        
-        if (producto.stock <= 5 && producto.stock > 0) {
-            badges.push('<span class="badge bg-warning me-2">⚠️ Últimas unidades</span>');
-        }
-
-        contenedor.innerHTML = badges.join('');
-    }
-
-    function renderizarVideo(producto) {
-        const contenedorDesktop = document.getElementById('video-producto-desktop');
-        const contenedorMobile = document.getElementById('video-producto-mobile');
-        
-        if (!producto.video_url) {
-            contenedorDesktop.style.display = 'none';
-            contenedorMobile.style.display = 'none';
-            return;
-        }
-
-        function convertirUrlYouTube(url) {
-            if (url.includes('youtube.com/embed')) return url;
-            
-            if (url.includes('youtube.com') || url.includes('youtu.be')) {
-                let videoId = '';
-                
-                if (url.includes('youtube.com/watch?v=')) {
-                    videoId = url.split('v=')[1]?.split('&')[0];
-                } else if (url.includes('youtu.be/')) {
-                    videoId = url.split('youtu.be/')[1]?.split('?')[0];
-                } else if (url.includes('youtube.com/shorts/')) {
-                    videoId = url.split('shorts/')[1]?.split('?')[0];
-                }
-                
-                if (videoId) return `https://www.youtube.com/embed/${videoId}`;
-            }
-            
-            return url;
-        }
-
-        const videoUrlEmbed = convertirUrlYouTube(producto.video_url);
-        const videoHTML = `
-            <div class="mb-4">
-                <h5 class="fw-bold mb-3">🎥 Video del producto</h5>
-                <div class="ratio ratio-16x9">
-                    <iframe 
-                        src="${videoUrlEmbed}" 
-                        title="Video del producto: ${producto.producto}"
-                        class="rounded shadow"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="text-center mt-2">
-                    <small class="text-muted">
-                        <i class="bi bi-play-circle"></i> Haz clic para ver el video del producto
-                    </small>
-                </div>
-            </div>
-        `;
-
-        contenedorDesktop.innerHTML = videoHTML;
-        contenedorMobile.innerHTML = videoHTML;
-        contenedorDesktop.style.display = '';
-        contenedorMobile.style.display = '';
-    }
-
-    function cargarProductosRelacionados(productos, productoActual) {
-    const relacionados = productos
-        .filter(p => p.id !== productoActual.id && 
-            (p.tipo === productoActual.tipo || 
-             p.categoria === productoActual.categoria))
-        .slice(0, 4);
-
-    const contenedor = document.getElementById('productos-relacionados');
+    <div class="pasos-lista">
+      <div class="paso-item">
+        <div class="paso-numero">1</div>
+        <div class="paso-texto">
+          <strong>Recibimos tu pedido</strong>
+          <small class="text-muted d-block">Te llega factura automática</small>
+        </div>
+      </div>
+      
+      <div class="paso-item">
+        <div class="paso-numero">2</div>
+        <div class="paso-texto">
+          <strong>Verificamos stock</strong>
+          <small class="text-muted d-block">Máx. 24h con proveedor</small>
+        </div>
+      </div>
+      
+      <div class="paso-item">
+        <div class="paso-numero">3</div>
+        <div class="paso-texto">
+          <strong>Te contactamos</strong>
+          <small class="text-muted d-block">WhatsApp para coordinar</small>
+        </div>
+      </div>
+      
+      <div class="paso-item">
+        <div class="paso-numero">4</div>
+        <div class="paso-texto">
+          <strong>Despachamos</strong>
+          <small class="text-muted d-block">Confirmado el pago</small>
+        </div>
+      </div>
+    </div>
     
-    if (relacionados.length === 0) {
-        contenedor.innerHTML = '<p class="text-muted text-center py-4">No hay productos relacionados</p>';
+    <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
+      <div class="garantia-badge">
+        <i class="bi bi-shield-check"></i> Sin cobro hasta confirmar stock
+      </div>
+      <small class="text-muted">
+        <i class="bi bi-whatsapp me-1 text-success"></i> Atención 24h
+      </small>
+    </div>
+  </div>
+  
+  <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
+    <div class="d-flex align-items-center justify-content-center">
+      <div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Cargando...</span></div>
+      <span id="mensaje-validacion">Finalizar Compra...</span>
+    </div>
+  </div>
+
+  <form id="formCliente">
+    <input type="hidden" id="clienteId" name="clienteId">
+
+    <div class="mb-3 validacion-contenedor">
+      <label for="telefonoCliente" class="form-label">
+        <i class="bi bi-phone me-1 text-primary"></i> Celular
+      </label>
+      <div class="position-relative">
+        <input type="tel" class="form-control" id="telefonoCliente" name="telefonoCliente" placeholder="Ej: 3001234567" maxlength="10" required oninput="validarTelefonoEnTiempoReal()">
+        <div id="feedback-telefono" class="validacion-estado"><span id="icono-telefono"></span></div>
+      </div>
+      <div class="form-text">Debe comenzar por 3 y tener 10 dígitos.</div>
+      <div id="mensaje-telefono" class="form-text mt-1"></div>
+    </div>
+
+    <div class="mb-3">
+      <label for="nombreCliente" class="form-label">
+        <i class="bi bi-person me-1 text-primary"></i> Nombres y Apellidos
+      </label>
+      <input type="text" class="form-control campo-deshabilitado" id="nombreCliente" name="nombreCliente" disabled>
+    </div>
+
+    <div class="mb-3">
+      <label for="DireccionCompleta" class="form-label">
+        <i class="bi bi-geo-alt me-1 text-primary"></i> Dirección Completa
+      </label>
+      <textarea id="DireccionCompleta" class="form-control campo-deshabilitado" name="DireccionCompleta" rows="2" maxlength="200" placeholder="Ej: calle, carrera, avenida, transversal, etc." disabled></textarea>
+      <div class="form-text">Recuerda colocar tu dirección exacta para evitar contratiempos en tu entrega.</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="tipoUnidad" class="form-label">Tipo de unidad</label>
+        <select id="tipoUnidad" class="form-select campo-deshabilitado" name="tipoUnidad" disabled>
+          <option value="">Selecciona</option>
+          <option value="Casa">CASA</option>
+          <option value="Apartamento">APARTAMENTO</option>
+          <option value="Piso">PISO</option>
+          <option value="Bodega">BODEGA</option>
+          <option value="Interior">INTERIOR</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="numeroApto" class="form-label">Número</label>
+        <input type="text" class="form-control campo-deshabilitado" id="numeroApto" name="numeroApto" maxlength="4" inputmode="numeric" pattern="\d{1,4}" title="Solo números entre 0 y 9999" disabled>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="barrio" class="form-label">Barrio (opcional)</label>
+      <input type="text" class="form-control campo-deshabilitado" id="barrio" name="barrio" maxlength="50" disabled>
+    </div>
+
+    <div class="mb-3">
+      <label for="observacionDireccion" class="form-label">Punto de referencia</label>
+      <textarea id="observacionDireccion" class="form-control campo-deshabilitado" name="observacionDireccion" rows="2" maxlength="200" placeholder="Ej: entrada por portería, conjunto.., torre, casa color..., etc." disabled></textarea>
+    </div>
+
+    <div class="mb-3 position-relative">
+      <label for="ciudadCliente" class="form-label">
+        <i class="bi bi-building me-1 text-primary"></i> Ciudad
+      </label>
+      <input type="text" id="ciudadCliente" class="form-control campo-deshabilitado" name="ciudadCliente" placeholder="Escribe tu ciudad" autocomplete="off" disabled>
+      <ul id="sugerenciasCiudades" class="dropdown-menu w-100 mt-0 z-3"></ul>
+    </div>
+
+    <div class="mb-3">
+      <label for="emailCliente" class="form-label">
+        <i class="bi bi-envelope me-1 text-primary"></i> Correo electrónico
+      </label>
+      <input type="email" class="form-control campo-deshabilitado" id="emailCliente" name="emailCliente" disabled>
+    </div>
+
+    <!-- Botón Enviar MEJORADO -->
+    <div class="text-center mt-5">
+      <button id="btnEnviarPedido" class="btn-finalizar" disabled>
+        <i class="bi bi-send me-2"></i> Finalizar Compra
+      </button>
+      <p id="estado-formulario" class="text-muted small mt-3"></p>
+      
+      <!-- Sellos de confianza adicionales -->
+      <div class="d-flex justify-content-center gap-4 mt-4">
+        <div class="text-center">
+          <i class="bi bi-shield-check text-success fs-4"></i>
+          <div class="small">Datos seguros</div>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-whatsapp text-success fs-4"></i>
+          <div class="small">Atención 24h</div>
+        </div>
+        <div class="text-center">
+          <i class="bi bi-arrow-repeat text-success fs-4"></i>
+          <div class="small">Devoluciones gratis</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</main>
+
+<!-- ===== MODAL DE CONFIRMACIÓN MEJORADO (MÁS CLARO Y CONVINCENTE) ===== -->
+<div class="modal fade modal-conversion" id="modalConfirmacion" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-check-circle me-2"></i> Confirma tu pedido</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="text-center mb-4">
+          <i class="bi bi-truck fs-1 text-warning"></i>
+          <i class="bi bi-shield-check fs-1 text-primary mx-2"></i>
+          <i class="bi bi-whatsapp fs-1 text-success"></i>
+        </div>
+        
+        <h6 class="fw-bold text-center mb-4">📋 Antes de continuar, confirma que entendiste:</h6>
+        
+        <!-- Paso 1 -->
+        <div class="paso-card">
+          <div class="paso-icon">
+            <span class="badge bg-warning text-dark rounded-pill me-1">1</span>
+          </div>
+          <div class="flex-grow-1">
+            <strong>Disponibilidad sujeta a proveedor</strong>
+            <p class="mb-0 small text-muted">Verificaremos el stock después de recibir tu pedido.</p>
+          </div>
+          <i class="bi bi-check-circle-fill text-warning fs-4"></i>
+        </div>
+        
+        <!-- Paso 2 -->
+        <div class="paso-card">
+          <div class="paso-icon">
+            <span class="badge bg-primary text-white rounded-pill me-1">2</span>
+          </div>
+          <div class="flex-grow-1">
+            <strong>Te contactaremos en 24h</strong>
+            <p class="mb-0 small text-muted">Te escribiremos por WhatsApp para coordinar el pago y envío.</p>
+          </div>
+          <i class="bi bi-check-circle-fill text-primary fs-4"></i>
+        </div>
+        
+        <!-- Paso 3 -->
+        <div class="paso-card">
+          <div class="paso-icon">
+            <span class="badge bg-success text-white rounded-pill me-1">3</span>
+          </div>
+          <div class="flex-grow-1">
+            <strong>Sin cobro anticipado</strong>
+            <p class="mb-0 small text-muted">No realizamos ningún cobro hasta confirmar disponibilidad.</p>
+          </div>
+          <i class="bi bi-check-circle-fill text-success fs-4"></i>
+        </div>
+        
+        <!-- Paso 4 -->
+        <div class="paso-card">
+          <div class="paso-icon">
+            <span class="badge bg-info text-white rounded-pill me-1">4</span>
+          </div>
+          <div class="flex-grow-1">
+            <strong>Si no hay stock</strong>
+            <p class="mb-0 small text-muted">Te ofreceremos alternativas o cancelaremos el pedido sin compromiso.</p>
+          </div>
+          <i class="bi bi-check-circle-fill text-info fs-4"></i>
+        </div>
+        
+        <div class="alert alert-warning bg-warning bg-opacity-10 border-warning mt-4">
+          <div class="d-flex">
+            <i class="bi bi-info-circle-fill text-warning me-3 fs-4"></i>
+            <div>
+              <p class="mb-0 small">
+                <strong>Importante:</strong> Al continuar, aceptas que verificaremos disponibilidad antes de procesar el pago. Si todo está bien, recibirás tu pedido sin problemas.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="modal-footer d-flex justify-content-center gap-3">
+        <button type="button" class="btn btn-outline-secondary-custom" data-bs-dismiss="modal">
+          <i class="bi bi-x-circle me-2"></i> Cancelar pedido
+        </button>
+        <button type="button" class="btn btn-warning-custom" id="btnConfirmarPedido">
+          <i class="bi bi-check-circle me-2"></i> Sí, continuar con el pedido
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS EXTERNOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ===== TODO EL CÓDIGO JS (IDÉNTICO AL ORIGINAL, SIN CAMBIOS) ===== -->
+<script>
+// ==============================================
+// CÓDIGO COMPLETO Y CORREGIDO (EXACTAMENTE IGUAL AL ORIGINAL)
+// ==============================================
+
+console.log('🚀 INICIANDO FORMULARIO - VERSIÓN COMPLETA CORREGIDA');
+
+// 🔥 VARIABLES GLOBALES INMEDIATAS
+window.articulosCarrito = [];
+window.formularioInicializado = false;
+window.ciudadesColombia = [];
+let datosCargados = false;
+let telefonoActual = '';
+let validacionEnProgreso = false;
+
+// ✅ FUNCIÓN PARA FINALIZAR Y CERRAR/REDIRIGIR
+window.finalizarRegistro = function(success = true, mensaje = '') {
+    console.log('🎯 FINALIZANDO REGISTRO:', { success, mensaje });
+    
+    if (success) {
+        if (typeof window.mostrarAlertaFeedback === 'function') {
+            window.mostrarAlertaFeedback(mensaje || '✅ Registro completado exitosamente', 'success', 3000);
+        }
+        
+        if (typeof window.deshabilitarFormulario === 'function') {
+            window.deshabilitarFormulario();
+        }
+        
+        const btnEnviar = document.getElementById('btnEnviarPedido');
+        if (btnEnviar) {
+            btnEnviar.disabled = true;
+            btnEnviar.innerHTML = '<i class="bi bi-check-circle"></i> ✅ Registro Completado';
+            btnEnviar.className = 'btn btn-success px-4 py-2 rounded-pill fw-bold';
+        }
+        
+        if (typeof window.mostrarEstadoValidacion === 'function') {
+            window.mostrarEstadoValidacion('✅ Registro exitoso. Redirigiendo...', 'success');
+        }
+        
+        setTimeout(() => {
+            if (window.opener && !window.opener.closed) {
+                console.log('📱 Cerrando ventana modal...');
+                window.close();
+            } else {
+                console.log('🏠 Redirigiendo al inicio...');
+                window.location.href = 'index.html';
+            }
+        }, 3000);
+    } else {
+        if (typeof window.mostrarAlertaFeedback === 'function') {
+            window.mostrarAlertaFeedback(mensaje || '❌ Error en el registro', 'danger', 5000);
+        }
+    }
+};
+
+// 🔍 FUNCIÓN MEJORADA - CONECTADA AL FEEDBACK VISUAL
+async function consultarClienteAPI(telefono) {
+    try {
+        console.log('🔍 CONSULTANDO CLIENTE EXISTENTE:', telefono);
+        
+        if (typeof window.mostrarEstadoValidacion === 'function') {
+            window.mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
+        }
+        
+        if (typeof window.mostrarFeedbackTelefono === 'function') {
+            window.mostrarFeedbackTelefono('🔍 Buscando cliente...', 'cargando');
+        }
+        
+        const url = `https://script.google.com/macros/s/AKfycbwt-rFg_coabATigGv_zNOa93aO6u9uNqC-Oynh_HAL4dbuKo6pvmtw7jKlixXagW5o/exec?telefonoCliente=${telefono}`;
+        
+        const response = await fetch(url);
+        const data = await response.json();
+        
+        console.log('📊 RESPUESTA CONSULTA:', data);
+        
+        if (data.existe && data.datos) {
+            console.log('✅ CLIENTE ENCONTRADO');
+            
+            if (typeof window.mostrarFeedbackTelefono === 'function') {
+                window.mostrarFeedbackTelefono('✅ Cliente encontrado', 'exito');
+            }
+            
+            if (typeof window.habilitarFormularioParaEdicion === 'function') {
+                window.habilitarFormularioParaEdicion(true, data.datos);
+            }
+            
+            return { existe: true, datos: data.datos };
+        } else {
+            console.log('🆕 CLIENTE NUEVO');
+            
+            if (typeof window.mostrarFeedbackTelefono === 'function') {
+                window.mostrarFeedbackTelefono('🆕 Nuevo cliente', 'exito');
+            }
+            
+            if (typeof window.habilitarFormularioParaEdicion === 'function') {
+                window.habilitarFormularioParaEdicion(false);
+            }
+            
+            return { existe: false };
+        }
+    } catch (error) {
+        console.error('❌ ERROR en consulta:', error);
+        
+        if (typeof window.mostrarFeedbackTelefono === 'function') {
+            window.mostrarFeedbackTelefono('⚠️ Error de conexión', 'error');
+        }
+        
+        if (typeof window.habilitarFormularioParaEdicion === 'function') {
+            window.habilitarFormularioParaEdicion(false);
+        }
+        
+        return { existe: false };
+    }
+}
+
+// ✅ CARGAR BASE DE DATOS DE CIUDADES
+async function cargarCiudades() {
+    try {
+        const response = await fetch('ciudades.json');
+        window.ciudadesColombia = await response.json();
+        console.log('✅ Ciudades cargadas:', window.ciudadesColombia.length);
+        inicializarAutocompletadoCiudades();
+    } catch (error) {
+        console.error('❌ Error cargando ciudades:', error);
+        window.ciudadesColombia = [
+            {departamento: "AMAZONAS", ciudad: "LETICIA"},
+            {departamento: "ANTIOQUIA", ciudad: "MEDELLÍN"},
+            {departamento: "BOGOTÁ", ciudad: "BOGOTÁ"},
+            {departamento: "VALLE DEL CAUCA", ciudad: "CALI"},
+            {departamento: "ATLÁNTICO", ciudad: "BARRANQUILLA"}
+        ];
+        inicializarAutocompletadoCiudades();
+    }
+}
+
+// ✅ FUNCIONES DE AUTOCOMPLETADO DE CIUDADES
+function inicializarAutocompletadoCiudades() {
+    const inputCiudad = document.getElementById('ciudadCliente');
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+
+    if (!inputCiudad || !sugerencias) {
+        console.log('⚠️ Campos de ciudad no encontrados, reintentando...');
+        setTimeout(inicializarAutocompletadoCiudades, 500);
         return;
     }
 
-    contenedor.innerHTML = relacionados.map(producto => {
-        const precioOriginal = Number(producto.precio) || 0;
-        let precioFinal = precioOriginal;
-        let badgePromo = '';
-        let mostrarPrecioAnterior = false;
+    console.log('✅ Inicializando autocompletado de ciudades...');
+
+    inputCiudad.addEventListener('input', function() {
+        const valor = this.value.trim();
         
-        // Verificar si el producto está en promoción
-        const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
-        
-        if (estaEnPromo) {
-            const descuentoPorcentaje = 10;
-            precioFinal = Math.round(precioOriginal * 0.9);
-            
-            badgePromo = `<div class="badge-promo">-${descuentoPorcentaje}%</div>`;
-            mostrarPrecioAnterior = true;
+        if (valor.length < 2) {
+            sugerencias.style.display = 'none';
+            return;
         }
+
+        const coincidencias = window.ciudadesColombia.filter(item =>
+            item.ciudad.toLowerCase().includes(valor.toLowerCase()) ||
+            item.departamento.toLowerCase().includes(valor.toLowerCase())
+        );
+
+        mostrarSugerenciasCiudades(coincidencias);
+    });
+
+    document.addEventListener('click', function(e) {
+        if (!inputCiudad.contains(e.target) && !sugerencias.contains(e.target)) {
+            sugerencias.style.display = 'none';
+        }
+    });
+
+    inputCiudad.addEventListener('keydown', function(e) {
+        const items = sugerencias.querySelectorAll('.sugerencia-item');
+        let itemActivo = sugerencias.querySelector('.sugerencia-item.active');
         
-        // Verificar stock
-        const badgeStock = producto.stock <= 5 ? 
-            `<div class="badge-stock">Últimas ${producto.stock}</div>` : '';
-        
-        // Obtener imagen correcta
-        let imagenMostrar = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
-        
-        if (producto.imagenes && Array.isArray(producto.imagenes) && producto.imagenes.length > 0) {
-            const imagenPrincipal = producto.imagenes.find(img => 
-                img.tipo && img.tipo.toUpperCase() === "PRINCIPAL"
-            );
-            
-            if (imagenPrincipal && imagenPrincipal.url) {
-                imagenMostrar = imagenPrincipal.url;
-            } else if (producto.imagenes[0] && producto.imagenes[0].url) {
-                imagenMostrar = producto.imagenes[0].url;
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (!itemActivo && items.length > 0) {
+                items[0].classList.add('active');
+            } else if (itemActivo) {
+                itemActivo.classList.remove('active');
+                const siguiente = itemActivo.nextElementSibling;
+                if (siguiente) siguiente.classList.add('active');
             }
-        } else if (producto.imagen) {
-            imagenMostrar = producto.imagen;
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (itemActivo) {
+                itemActivo.classList.remove('active');
+                const anterior = itemActivo.previousElementSibling;
+                if (anterior) anterior.classList.add('active');
+            }
+        } else if (e.key === 'Enter' && itemActivo) {
+            e.preventDefault();
+            seleccionarCiudad(itemActivo);
+        } else if (e.key === 'Escape') {
+            sugerencias.style.display = 'none';
         }
-        
-        return `
-        <div class="card-producto-ml" data-id="${producto.id}">
-            <a href="PRODUCTO.HTML?id=${producto.id}" class="card-link">
-                <div class="card-image-container">
-                    <img src="${imagenMostrar}" 
-                         alt="${producto.producto || 'Producto'}" 
-                         class="card-img-ml"
-                         width="300"
-                         height="200"
-                         loading="lazy"
-                         onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg?tr=w-300,h-200'">
-                    ${badgePromo}
-                    ${badgeStock}
-                </div>
-                
-                <div class="card-content">
-                    <div class="categorias">
-                        ${producto.tipo ? `<span class="categoria-tipo">${producto.tipo}</span>` : ''}
-                        ${producto.subtipo ? `<span class="categoria-subtipo">${producto.subtipo}</span>` : ''}
-                    </div>
-                    
-                    <h3 class="producto-nombre">${producto.producto || 'Producto sin nombre'}</h3>
-                    
-                    <div class="card-footer">
-                        <div class="precios">
-                            <div class="precio-actual">${precioFinal.toLocaleString('es-CO')}</div>
-                            ${mostrarPrecioAnterior ? `
-                                <div class="precio-anterior">${precioOriginal.toLocaleString('es-CO')}</div>
-                            ` : ''}
-                            <div class="envio-gratis">Envío gratis</div>
-                        </div>
-                        
-                        <button class="btn-ver-producto" 
-                                onclick="event.preventDefault(); event.stopPropagation(); window.location.href='PRODUCTO.HTML?id=${producto.id}'">
-                            <i class="bi bi-eye"></i>
-                        </button>
-                    </div>
-                </div>
-            </a>
-        </div>`;
-    }).join('');
+    });
+
+    console.log('✅ Autocompletado de ciudades inicializado');
 }
-    function mostrarError(mensaje) {
-        const main = document.querySelector('main');
-        main.innerHTML = `
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <i class="bi bi-emoji-frown fs-1 text-muted mb-4"></i>
-                        <h3 class="h4 text-muted mb-3">${mensaje}</h3>
-                        <p class="text-muted mb-4">Estamos teniendo problemas técnicos. Por favor intenta:</p>
-                        
-                        <div class="d-grid gap-2 d-md-flex justify-content-center">
-                            <button class="btn btn-primary" onclick="location.reload()">
-                                <i class="bi bi-arrow-clockwise"></i> Reintentar
-                            </button>
-                            <a href="index.html" class="btn btn-outline-primary">
-                                <i class="bi bi-house"></i> Volver al inicio
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
+
+function mostrarSugerenciasCiudades(coincidencias) {
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+    const inputCiudad = document.getElementById('ciudadCliente');
+    
+    if (!sugerencias || !inputCiudad) return;
+
+    if (coincidencias.length === 0) {
+        sugerencias.style.display = 'none';
+        return;
     }
 
-    function actualizarContadoresCarrito() {
-        const carrito = JSON.parse(localStorage.getItem('carritoAnmago') || '[]');
-        const totalItems = carrito.reduce((total, item) => total + (item.cantidad || 1), 0);
+    sugerencias.innerHTML = '';
+    
+    coincidencias.slice(0, 8).forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'dropdown-item sugerencia-item';
+        li.style.cursor = 'pointer';
+        li.style.padding = '8px 12px';
+        li.innerHTML = `<div class="fw-bold">${item.ciudad} - ${item.departamento}</div>`;
         
-        ['contador-carrito', 'contador-carrito-mobile'].forEach(id => {
-            const elemento = document.getElementById(id);
-            if (elemento) {
-                elemento.textContent = totalItems;
-                elemento.style.display = totalItems > 0 ? 'block' : 'none';
+        li.addEventListener('click', () => {
+            inputCiudad.value = `${item.ciudad} - ${item.departamento}`;
+            sugerencias.style.display = 'none';
+            validarFormularioCliente();
+        });
+        
+        li.addEventListener('mouseenter', () => {
+            sugerencias.querySelectorAll('.sugerencia-item').forEach(i => i.classList.remove('active'));
+            li.classList.add('active');
+        });
+        
+        sugerencias.appendChild(li);
+    });
+
+    sugerencias.style.display = 'block';
+}
+
+function seleccionarCiudad(elemento) {
+    const inputCiudad = document.getElementById('ciudadCliente');
+    const sugerencias = document.getElementById('sugerenciasCiudades');
+    
+    if (inputCiudad && sugerencias) {
+        inputCiudad.value = elemento.textContent.trim();
+        sugerencias.style.display = 'none';
+        validarFormularioCliente();
+    }
+}
+
+// 🎯 DETECCIÓN GARANTIZADA DEL CARRITO
+function detectarCarritoGarantizado() {
+    console.log('🎯 INICIANDO DETECCIÓN GARANTIZADA DEL CARRITO');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const productosParam = urlParams.get('productos');
+    
+    if (productosParam && productosParam !== '[]' && productosParam !== 'null') {
+        try {
+            const productos = JSON.parse(decodeURIComponent(productosParam));
+            if (Array.isArray(productos) && productos.length > 0) {
+                window.articulosCarrito = productos;
+                console.log('✅ CARRITO DETECTADO desde URL:', productos.length, 'productos');
+                return true;
             }
+        } catch (error) {
+            console.error('❌ Error parseando URL:', error);
+        }
+    }
+    
+    try {
+        const carritoLocal = localStorage.getItem('carritoAnmago');
+        if (carritoLocal && carritoLocal !== '[]' && carritoLocal !== 'null') {
+            const productos = JSON.parse(carritoLocal);
+            if (Array.isArray(productos) && productos.length > 0) {
+                window.articulosCarrito = productos;
+                console.log('✅ CARRITO DETECTADO desde localStorage:', productos.length, 'productos');
+                return true;
+            }
+        }
+    } catch (error) {
+        console.error('❌ Error parseando localStorage:', error);
+    }
+    
+    if (window.opener && Array.isArray(window.opener.articulosCarrito) && window.opener.articulosCarrito.length > 0) {
+        window.articulosCarrito = JSON.parse(JSON.stringify(window.opener.articulosCarrito));
+        console.log('✅ CARRITO DETECTADO desde window.opener:', window.articulosCarrito.length, 'productos');
+        return true;
+    }
+    
+    console.log('ℹ️ NO hay carrito detectado - Modo registro solamente');
+    return false;
+}
+
+// 🔥 EJECUCIÓN INMEDIATA
+(function() {
+    const tieneCarrito = detectarCarritoGarantizado();
+    console.log('🎯 RESULTADO DETECCIÓN:', tieneCarrito ? 'CON CARRITO' : 'SOLO REGISTRO');
+})();
+
+// 👤 Construir nombre del cliente
+function construirNombreCliente() {
+    const nombreInput = document.getElementById("nombreCliente");
+    return nombreInput ? nombreInput.value.trim() : "Cliente";
+}
+
+// ✅ Validación de formulario
+function validarFormularioCliente() {
+    const nombre = document.getElementById("nombreCliente");
+    const telefono = document.getElementById("telefonoCliente");
+    const direccion = document.getElementById("DireccionCompleta");
+    const ciudad = document.getElementById("ciudadCliente");
+    
+    const todosLlenos = nombre?.value.trim() && 
+                       telefono?.value.trim() && 
+                       direccion?.value.trim() && 
+                       ciudad?.value.trim();
+    
+    const telefonoValido = telefono && /^3\d{9}$/.test(telefono.value.trim());
+
+    const btnEnviar = document.getElementById("btnEnviarPedido");
+    if (btnEnviar) {
+        btnEnviar.disabled = !(todosLlenos && telefonoValido);
+    }
+    
+    return todosLlenos && telefonoValido;
+}
+
+// 🔍 Validar estructura de productos
+function validarProductosCarrito() {
+    if (!window.articulosCarrito || !Array.isArray(window.articulosCarrito)) {
+        console.error('❌ Carrito no válido');
+        return false;
+    }
+    
+    const problemas = [];
+    
+    window.articulosCarrito.forEach((item, index) => {
+        if (!item.id) problemas.push(`Producto ${index + 1}: Sin ID`);
+        if (!item.nombre) problemas.push(`Producto ${index + 1}: Sin nombre`);
+        if (!item.precio || item.precio <= 0) problemas.push(`Producto ${index + 1}: Precio inválido (${item.precio})`);
+        if (!item.cantidad || item.cantidad <= 0) problemas.push(`Producto ${index + 1}: Cantidad inválida (${item.cantidad})`);
+    });
+    
+    if (problemas.length > 0) {
+        console.warn('⚠️ Problemas en el carrito:', problemas);
+        return false;
+    }
+    
+    return true;
+}
+
+// 🏠 Construir dirección estructurada
+function construirDireccionEstructurada() {
+    const direccionBase = document.getElementById("DireccionCompleta")?.value.trim() || '';
+    const tipoUnidad = document.getElementById("tipoUnidad")?.value.trim() || '';
+    const numeroApto = document.getElementById("numeroApto")?.value.trim() || '';
+    const barrio = document.getElementById("barrio")?.value.trim() || '';
+    const puntoReferencia = document.getElementById("observacionDireccion")?.value.trim() || '';
+
+    let direccion = direccionBase;
+    if (tipoUnidad) direccion += `, ${tipoUnidad}`;
+    if (numeroApto) direccion += ` ${numeroApto}`;
+    if (barrio) direccion += `, Barrio ${barrio}`;
+    if (puntoReferencia) direccion += `, ${puntoReferencia}`;
+    
+    return direccion.trim();
+}
+
+// 🔄 Parseo inverso de dirección
+function repartirDireccionConcatenada(direccionConc) {
+    console.log('📍 INICIANDO PARSEO DE DIRECCIÓN:', direccionConc);
+    
+    if (!direccionConc) {
+        console.log('📍 DIRECCIÓN VACÍA - No hay nada que parsear');
+        return;
+    }
+
+    const baseInput = document.getElementById("DireccionCompleta");
+    const tipoInput = document.getElementById("tipoUnidad");
+    const numeroInput = document.getElementById("numeroApto");
+    const barrioInput = document.getElementById("barrio");
+    const refInput = document.getElementById("observacionDireccion");
+
+    if (tipoInput) tipoInput.value = "";
+    if (numeroInput) numeroInput.value = "";
+    if (barrioInput) barrioInput.value = "";
+    if (refInput) refInput.value = "";
+
+    const partes = direccionConc.split(",").map(p => p.trim()).filter(p => p !== "");
+    console.log('📍 PARTES DE DIRECCIÓN:', partes);
+    
+    if (partes.length === 0) return;
+
+    if (baseInput) {
+        baseInput.value = partes[0];
+        console.log('📍 DIRECCIÓN BASE:', partes[0]);
+    }
+
+    if (partes.length > 1 && tipoInput) {
+        const segundaParte = partes[1].toUpperCase();
+        console.log('📍 SEGUNDA PARTE:', segundaParte);
+        
+        const tipos = ["APARTAMENTO", "CASA", "PISO", "BODEGA", "INTERIOR"];
+        const tipoEncontrado = tipos.find(t => segundaParte.includes(t));
+        
+        if (tipoEncontrado) {
+            tipoInput.value = tipoEncontrado.charAt(0) + tipoEncontrado.slice(1).toLowerCase();
+            console.log('📍 TIPO UNIDAD:', tipoInput.value);
+            
+            const numeroTexto = partes[1].replace(new RegExp(tipoEncontrado, 'i'), "").trim();
+            if (numeroTexto && numeroInput) {
+                numeroInput.value = numeroTexto;
+                console.log('📍 NÚMERO:', numeroInput.value);
+            }
+        }
+    }
+
+    if (partes.length > 2 && barrioInput) {
+        const barrioValue = partes[2].replace(/^barrio\s*/i, "").trim();
+        barrioInput.value = barrioValue;
+        console.log('📍 BARRIO:', barrioValue);
+    }
+
+    if (partes.length > 3 && refInput) {
+        const referenciaValue = partes.slice(3).join(", ");
+        refInput.value = referenciaValue;
+        console.log('📍 REFERENCIA:', referenciaValue);
+    }
+    
+    console.log('📍 PARSEO DE DIRECCIÓN COMPLETADO');
+}
+
+// 🔧 Preparar productos para enviar
+function prepararProductosParaEnvio() {
+    if (!window.articulosCarrito || window.articulosCarrito.length === 0) {
+        return [];
+    }
+    
+    console.log('📦 Preparando productos para enviar:', window.articulosCarrito.length);
+    
+    return window.articulosCarrito.map((item, index) => {
+        const idCompleto = item.id || '';
+        const [idBase, ...varianteParts] = idCompleto.split('-');
+        const variante = varianteParts.join('-').trim() || 'Estándar';
+        
+        console.log(`  Producto ${index + 1}:`, {
+            idCompleto,
+            idBase,
+            variante,
+            nombre: item.nombre,
+            talla: item.talla
+        });
+        
+        return {
+            productoId: idBase.trim(),
+            nombreCompleto: item.nombre || 'Producto sin nombre',
+            talla: item.talla || 'Única',
+            precio: item.precio || 0,
+            cantidad: item.cantidad || 1,
+            variante: variante,
+            imagen: item.imagen || ''
+        };
+    });
+}
+
+// 💬 Generar texto para WhatsApp
+function generarTextoWhatsApp() {
+    const nombreCliente = construirNombreCliente();
+    
+    const carritoActual = window.articulosCarrito;
+    const tieneProductos = Array.isArray(carritoActual) && carritoActual.length > 0;
+    
+    console.log('🔍 GENERANDO WHATSAPP - Estado actual:', {
+        nombreCliente,
+        tieneProductos,
+        productos: carritoActual?.length || 0,
+        carrito: carritoActual
+    });
+
+    if (tieneProductos) {
+        console.log('📝 GENERANDO MENSAJE DE PEDIDO CON PRODUCTOS');
+        
+        const productos = carritoActual.map((p, i) => {
+            let productoTexto = `${i + 1}. ${p.nombre || 'Producto'}\n`;
+            
+            if (p.imagen) {
+                productoTexto += `🖼️ Imagen: ${p.imagen}\n`;
+            }
+            
+            productoTexto += `📏 Talla: ${p.talla || "Única"}\n`;
+            productoTexto += `💲 Precio: $${(p.precio || 0).toLocaleString("es-CO")}\n`;
+            productoTexto += `🔢 Cantidad: ${p.cantidad || 1}`;
+            
+            return productoTexto;
+        }).join("\n\n");
+
+        const total = carritoActual.reduce((sum, p) => 
+            sum + ((p.precio || 0) * (p.cantidad || 1)), 0
+        );
+
+        return `🛍️ ¡Hola! Soy ${nombreCliente} y quiero realizar el siguiente pedido:\n\n${productos}\n\n🧾 Total: $${total.toLocaleString("es-CO")}\n\n✅ ¡Gracias!`;
+    } else {
+        console.log('📝 GENERANDO MENSAJE DE REGISTRO SOLAMENTE');
+        return `¡Hola! Soy ${nombreCliente} y quiero registrarme como cliente.`;
+    }
+}
+
+// 📤 Envío a WhatsApp
+function enviarPedidoWhatsApp() {
+    try {
+        const mensaje = generarTextoWhatsApp();
+        const telefono = '573006498710';
+        const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
+        console.log('📤 ENVIANDO WHATSAPP:', url.substring(0, 100) + '...');
+        
+        const nuevaVentana = window.open(url, '_blank');
+        if (!nuevaVentana) {
+            console.warn('⚠️ Popup bloqueado, redirigiendo en misma ventana');
+            window.location.href = url;
+        }
+    } catch (error) {
+        console.error('❌ ERROR enviando WhatsApp:', error);
+        alert('Error al abrir WhatsApp. Por favor intenta manualmente.');
+    }
+}
+
+// 📊 Enviar datos a Google Sheets
+function enviarDatosGoogleSheets() {
+    return new Promise((resolve, reject) => {
+        try {
+            console.log('📤 ENVIANDO DATOS CLIENTE Y PEDIDO VÍA GET...');
+            
+            const telefono = document.getElementById('telefonoCliente')?.value.trim() || '';
+            const nombre = document.getElementById('nombreCliente')?.value.trim() || '';
+            const direccionBase = document.getElementById('DireccionCompleta')?.value.trim() || '';
+            const ciudad = document.getElementById('ciudadCliente')?.value.trim() || '';
+            const email = document.getElementById('emailCliente')?.value.trim() || '';
+            const clienteId = document.getElementById('clienteId')?.value.trim() || '';
+            
+            const direccionCompleta = construirDireccionEstructurada();
+            
+            const productos = prepararProductosParaEnvio();
+            const tieneProductos = productos.length > 0;
+            
+            console.log('🛒 Estado del pedido:', {
+                tieneProductos,
+                cantidadProductos: productos.length,
+                productos: productos
+            });
+            
+            const baseURL = 'https://script.google.com/macros/s/AKfycbwt-rFg_coabATigGv_zNOa93aO6u9uNqC-Oynh_HAL4dbuKo6pvmtw7jKlixXagW5o/exec';
+            
+            const params = new URLSearchParams();
+            
+            params.append('telefonoCliente', telefono);
+            params.append('nombreCliente', nombre);
+            params.append('direccionCliente', direccionBase);
+            params.append('complementoDir', direccionCompleta);
+            params.append('ciudadDestino', ciudad);
+            params.append('correo', email);
+            params.append('clienteId', clienteId);
+            params.append('usuario', 'ANMAGOSTORE@GMAIL.COM');
+            
+            params.append('apellidoCompl', '');
+            params.append('cedula', '');
+            params.append('rotular', '');
+            params.append('rotulo', '');
+            params.append('mensajeCobro', '');
+            
+            params.append('tipoOperacion', tieneProductos ? 'pedidoCompleto' : 'soloCliente');
+            
+            if (tieneProductos) {
+                params.append('productosJSON', JSON.stringify(productos));
+                console.log('📦 Productos incluidos en la solicitud');
+            }
+            
+            const urlCompleta = `${baseURL}?${params.toString()}`;
+            
+            console.log('🔗 URL de envío (primeros 200 chars):', urlCompleta.substring(0, 200) + '...');
+            
+            fetch(urlCompleta)
+                .then(response => {
+                    console.log('✅ Solicitud GET enviada exitosamente');
+                    resolve({
+                        success: true,
+                        tieneProductos: tieneProductos,
+                        cantidadProductos: productos.length
+                    });
+                })
+                .catch(error => {
+                    console.error('❌ Error en fetch GET:', error);
+                    fallbackImageRequest(urlCompleta);
+                    resolve({
+                        success: true,
+                        tieneProductos: tieneProductos,
+                        cantidadProductos: productos.length
+                    });
+                });
+                
+        } catch (error) {
+            console.error('❌ ERROR en enviarDatosGoogleSheets:', error);
+            reject(error);
+        }
+    });
+}
+
+// 🎯 MÉTODO FALLBACK - Usar imagen para requests GET
+function fallbackImageRequest(url) {
+    try {
+        console.log('🔄 Usando método fallback con imagen...');
+        const img = new Image();
+        img.src = url;
+        img.onload = () => console.log('✅ Fallback exitoso');
+        img.onerror = () => console.log('⚠️ Fallback con error, pero request se envió');
+    } catch (error) {
+        console.log('✅ Request enviado (fallback completado)');
+    }
+}
+
+// 🔥 FUNCIÓN PRINCIPAL: Procesar después de confirmación modal (CORREGIDA CON TELEGRAM)
+function procesarDespuesDeConfirmacion() {
+    console.log('✅ Cliente confirmó el pedido en modal');
+    
+    // Cerrar el modal
+    const modalElement = document.getElementById('modalConfirmacion');
+    const modal = bootstrap.Modal.getInstance(modalElement);
+    if (modal) modal.hide();
+    
+    // Mostrar estado de carga
+    const btnEnviar = document.getElementById('btnEnviarPedido');
+    if (btnEnviar) {
+        btnEnviar.textContent = '📤 Enviando...';
+        btnEnviar.disabled = true;
+        btnEnviar.classList.add('btn-cargando');
+    }
+    
+    // Ejecutar el envío real
+    setTimeout(async () => {
+        try {
+            console.log('🚀 PROCESANDO PEDIDO CONFIRMADO...');
+            
+            const direccionFinal = construirDireccionEstructurada();
+            document.getElementById("DireccionCompleta").value = direccionFinal;
+
+            console.log('👤 ENVIANDO/ACTUALIZANDO CLIENTE Y PEDIDO...');
+            const resultadoEnvio = await enviarDatosGoogleSheets();
+            console.log('✅ PROCESADO EN SHEETS:', resultadoEnvio);
+            
+            // 📲 ENVIAR ALERTA A TELEGRAM
+            const datosTelegram = {
+                nombre: document.getElementById('nombreCliente')?.value.trim() || 'No especificado',
+                telefono: document.getElementById('telefonoCliente')?.value.trim() || 'No especificado',
+                ciudad: document.getElementById('ciudadCliente')?.value.trim() || 'No especificada',
+                direccion: direccionFinal || 'No especificada',
+                barrio: document.getElementById('barrio')?.value.trim() || '',
+                observacion: document.getElementById('observacionDireccion')?.value.trim() || ''
+            };
+            
+            console.log('📲 ENVIANDO ALERTA A TELEGRAM...', datosTelegram);
+            await enviarAlertaTelegram(datosTelegram);
+
+            console.log('📱 ENVIANDO WHATSAPP...');
+            enviarPedidoWhatsApp();
+            console.log('✅ WHATSAPP INICIADO');
+
+            if (window.articulosCarrito.length > 0) {
+                console.log('🛒 LIMPIANDO CARRITO...');
+                window.articulosCarrito = [];
+                localStorage.removeItem('carritoAnmago');
+                
+                if (window.opener && !window.opener.closed) {
+                    try {
+                        window.opener.postMessage("limpiarCarrito", "*");
+                    } catch (e) {
+                        console.log('⚠️ No se pudo comunicar con ventana padre');
+                    }
+                }
+            }
+
+            console.log('🎯 PROCESO COMPLETADO - Cliente y pedido enviados');
+            
+            const tieneProductos = resultadoEnvio?.tieneProductos;
+            const mensajeFinal = tieneProductos 
+                ? '✅ Pedido y registro completados exitosamente' 
+                : '✅ Registro de cliente completado exitosamente';
+            
+            finalizarRegistro(true, mensajeFinal);
+
+        } catch (error) {
+            console.error('❌ ERROR en proceso de envío:', error);
+            
+            if (btnEnviar) {
+                btnEnviar.textContent = '❌ Error - Reintentar';
+                btnEnviar.disabled = false;
+                btnEnviar.classList.remove('btn-cargando');
+            }
+            
+            finalizarRegistro(false, '❌ Error al enviar. Por favor intenta nuevamente.');
+        }
+    }, 100);
+}
+
+// ========== FUNCIONES DE VALIDACIÓN ==========
+function mostrarEstadoValidacion(mensaje, tipo = 'info') {
+    const div = document.getElementById('estado-validacion');
+    const span = document.getElementById('mensaje-validacion');
+    if (!div || !span) return;
+    span.textContent = mensaje;
+    div.className = `alert text-center mb-4 alert-${tipo}`;
+    div.style.display = 'flex';
+}
+
+function ocultarEstadoValidacion() {
+    const div = document.getElementById('estado-validacion');
+    if (div) div.style.display = 'none';
+}
+
+function mostrarFeedbackTelefono(mensaje, tipo = 'neutro') {
+    const feedback = document.getElementById('feedback-telefono');
+    const icono = document.getElementById('icono-telefono');
+    const texto = document.getElementById('mensaje-telefono');
+    if (!feedback || !icono || !texto) return;
+    
+    if (tipo === 'neutro' || !mensaje) {
+        feedback.style.display = 'none';
+        texto.textContent = '';
+        return;
+    }
+    
+    feedback.style.display = 'block';
+    texto.textContent = mensaje;
+    
+    if (tipo === 'cargando') {
+        icono.innerHTML = '<span class="spinner-validacion"></span>';
+        texto.className = 'form-text mt-1 text-primary';
+    } else if (tipo === 'exito') {
+        icono.innerHTML = '<i class="bi bi-check-circle-fill"></i>';
+        texto.className = 'form-text mt-1 text-success';
+    } else if (tipo === 'error') {
+        icono.innerHTML = '<i class="bi bi-exclamation-circle-fill"></i>';
+        texto.className = 'form-text mt-1 text-danger';
+    }
+}
+
+function validarTelefonoEnTiempoReal() {
+    const tel = document.getElementById('telefonoCliente').value.trim();
+    if (datosCargados && tel === telefonoActual) return;
+    if (validacionEnProgreso) return;
+    mostrarFeedbackTelefono('', 'neutro');
+    
+    if (tel.length === 10) {
+        if (!/^3\d{9}$/.test(tel)) {
+            mostrarFeedbackTelefono('❌ El teléfono debe comenzar con 3', 'error');
+            deshabilitarFormulario();
+            datosCargados = false;
+            telefonoActual = '';
+            return;
+        }
+        if (tel !== telefonoActual) {
+            telefonoActual = tel;
+            datosCargados = false;
+        }
+        mostrarFeedbackTelefono('🔍 Finalizar Compra...', 'cargando');
+        mostrarEstadoValidacion('🔍 Buscando cliente en el sistema...', 'info');
+        validacionEnProgreso = true;
+        
+        setTimeout(() => {
+            if (typeof window.validarClienteExistente === 'function') {
+                window.validarClienteExistente(tel);
+            } else {
+                consultarClienteAPI(tel);
+            }
+            validacionEnProgreso = false;
+        }, 800);
+    } else if (tel.length > 0 && tel.length < 10) {
+        mostrarFeedbackTelefono('📱 Ingresa 10 dígitos', 'neutro');
+        deshabilitarFormulario();
+        datosCargados = false;
+        telefonoActual = '';
+    } else {
+        mostrarFeedbackTelefono('', 'neutro');
+        deshabilitarFormulario();
+        datosCargados = false;
+        telefonoActual = '';
+    }
+}
+
+function deshabilitarFormulario() {
+    const otros = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+    const btn = document.getElementById('btnEnviarPedido');
+    const estado = document.getElementById('estado-formulario');
+    
+    otros.forEach(c => { c.disabled = true; c.classList.add('campo-deshabilitado'); });
+    
+    if (btn) {
+        btn.disabled = true;
+        btn.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
+        btn.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+    }
+    
+    if (estado) {
+        estado.textContent = '⏳ Completa el número de celular para continuar';
+        estado.className = 'text-muted small mt-2';
+    }
+    
+    ocultarEstadoValidacion();
+}
+
+function habilitarFormularioParaEdicion(clienteExistente = false, datosCliente = null) {
+    const otros = document.querySelectorAll('#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select');
+    const btn = document.getElementById('btnEnviarPedido');
+    const estado = document.getElementById('estado-formulario');
+    
+    otros.forEach(c => { c.disabled = false; c.classList.remove('campo-deshabilitado'); });
+    
+    if (btn) {
+        btn.disabled = false;
+        btn.className = 'btn btn-gradient px-4 py-2 rounded-pill fw-bold';
+        
+        // El botón ahora muestra el modal, no envía directamente
+        btn.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra ✨';
+        
+        if (estado) {
+            estado.textContent = clienteExistente 
+                ? '✅ Cliente encontrado. Puedes finalizar tu compra'
+                : '📝 Nuevo cliente. Completa tus datos';
+            estado.className = clienteExistente ? 'text-success small mt-2' : 'text-info small mt-2';
+        }
+        
+        datosCargados = true;
+    }
+    
+    setTimeout(ocultarEstadoValidacion, 3000);
+}
+
+function validarTelefonoSiCambia() {
+    const tel = document.getElementById('telefonoCliente').value.trim();
+    if (tel.length !== 10 || tel !== telefonoActual) {
+        datosCargados = false;
+        deshabilitarFormulario();
+        validarTelefonoEnTiempoReal();
+    }
+}
+
+function mostrarAlertaFeedback(mensaje, tipo = 'info', duracion = 4000) {
+    const existente = document.querySelector('.alert-feedback');
+    if (existente) existente.remove();
+    
+    const iconos = { 
+        success: 'bi-check-circle', 
+        danger: 'bi-exclamation-triangle', 
+        warning: 'bi-info-circle', 
+        info: 'bi-info-circle' 
+    };
+    
+    const alerta = document.createElement('div');
+    alerta.className = `alert alert-${tipo} alert-dismissible fade show alert-feedback`;
+    alerta.innerHTML = `
+        <div class="d-flex align-items-center">
+            <i class="bi ${iconos[tipo]} me-2 fs-5"></i>
+            <div class="flex-grow-1">${mensaje}</div>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+        </div>
+    `;
+    document.body.appendChild(alerta);
+    setTimeout(() => { if (alerta.parentNode) alerta.remove(); }, duracion);
+}
+
+function volverAInicio() {
+    if (confirm('¿Estás seguro de que quieres salir? Los datos no guardados se perderán.')) {
+        window.location.href = 'index.html';
+    }
+}
+
+// ========== TELEGRAM CORREGIDO (usando HTML en lugar de Markdown) ==========
+function enviarAlertaTelegram(datos) {
+    console.log('📤 Intentando enviar a Telegram con datos:', datos);
+    
+    const token = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY';
+    const chatId = '-1003789211905';
+    
+    if (!token || !chatId) {
+        console.error('❌ Token o Chat ID de Telegram no configurados');
+        return;
+    }
+    
+    const fecha = new Date().toLocaleString('es-CO', { 
+        timeZone: 'America/Bogota', 
+        hour12: true 
+    });
+    
+    // Usar HTML en lugar de Markdown para evitar errores de formato
+    const mensaje = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n` +
+                    `━━━━━━━━━━━━━━━━━━━━━\n` +
+                    `👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n` +
+                    `📱 <b>Teléfono:</b> ${datos.telefono || 'No especificado'}\n` +
+                    `📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n` +
+                    `🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}\n` +
+                    (datos.barrio ? `🗺️ <b>Barrio:</b> ${datos.barrio}\n` : '') +
+                    (datos.observacion ? `📍 <b>Referencia:</b> ${datos.observacion}\n` : '') +
+                    `⏰ <b>Fecha:</b> ${fecha}\n` +
+                    `✅ <b>Registro en Sheets completado</b>`;
+    
+    console.log('📤 Enviando mensaje a Telegram (HTML):', mensaje);
+    
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            chat_id: chatId, 
+            text: mensaje, 
+            parse_mode: 'HTML'  // Cambiamos a HTML
+        })
+    })
+    .then(res => {
+        console.log('📥 Respuesta de Telegram status:', res.status);
+        return res.json();
+    })
+    .then(data => { 
+        if (data.ok) {
+            console.log('✅ Alerta Telegram enviada exitosamente');
+            if (typeof window.mostrarAlertaFeedback === 'function') {
+                window.mostrarAlertaFeedback('📲 Alerta enviada a Telegram', 'success', 3000);
+            }
+        } else {
+            console.error('❌ Error de Telegram:', data);
+            // Intentar enviar sin formato si falla
+            enviarTelegramSinFormato(datos, fecha);
+        }
+    })
+    .catch(err => {
+        console.error('❌ Error en fetch de Telegram:', err);
+        console.error('Detalles del error:', err.message);
+        // Intentar enviar sin formato si falla
+        enviarTelegramSinFormato(datos, fecha);
+    });
+}
+
+// Función de respaldo sin formato
+function enviarTelegramSinFormato(datos, fecha) {
+    console.log('🔄 Intentando enviar sin formato Markdown/HTML');
+    
+    const token = '8320682242:AAG4h89_8WVmljeEvYHjzRxmnJDt-HoxcAY';
+    const chatId = '-1003789211905';
+    
+    const mensajeSimple = `🛍️ NUEVO PEDIDO ANMAGO STORE!
+━━━━━━━━━━━━━━━━━━━━━
+👤 Cliente: ${datos.nombre || 'No especificado'}
+📱 Teléfono: ${datos.telefono || 'No especificado'}
+📍 Ciudad: ${datos.ciudad || 'No especificada'}
+🏠 Dirección: ${datos.direccion || 'No especificada'}
+${datos.barrio ? `🗺️ Barrio: ${datos.barrio}\n` : ''}${datos.observacion ? `📍 Referencia: ${datos.observacion}\n` : ''}
+⏰ Fecha: ${fecha}
+✅ Registro en Sheets completado`;
+    
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+            chat_id: chatId, 
+            text: mensajeSimple
+            // Sin parse_mode
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.ok) {
+            console.log('✅ Alerta Telegram enviada (sin formato)');
+        } else {
+            console.error('❌ Error también sin formato:', data);
+        }
+    })
+    .catch(err => console.error('❌ Error final:', err));
+}
+
+// 🧪 FUNCIÓN DE PRUEBA PARA TELEGRAM
+window.probarTelegram = function() {
+    console.log('🧪 Probando envío a Telegram manualmente');
+    
+    const datosPrueba = {
+        nombre: 'Cliente de Prueba',
+        telefono: '3001234567',
+        ciudad: 'BOGOTÁ',
+        direccion: 'Calle 123 #45-67',
+        barrio: 'Centro',
+        observacion: 'Referencia de prueba'
+    };
+    
+    enviarAlertaTelegram(datosPrueba);
+    
+    return '✅ Prueba iniciada, revisa la consola';
+};
+
+// ========== INICIALIZACIÓN ==========
+function inicializarFormulario() {
+    if (window.formularioInicializado) return;
+    window.formularioInicializado = true;
+    
+    console.log('🚀 INICIALIZANDO FORMULARIO - CON FEEDBACK VISUAL');
+    const form = document.getElementById("formCliente");
+    
+    if (!form) {
+        console.error("❌ FORMULARIO NO ENCONTRADO");
+        setTimeout(inicializarFormulario, 100);
+        return;
+    }
+
+    console.log("✅ FORMULARIO ENCONTRADO, CONFIGURANDO EVENTOS...");
+
+    const otrosCampos = document.querySelectorAll("#formCliente input:not(#telefonoCliente), #formCliente textarea, #formCliente select");
+    otrosCampos.forEach(el => {
+        el.disabled = true;
+        el.classList.add('campo-deshabilitado');
+    });
+
+    const btnEnviar = document.getElementById("btnEnviarPedido");
+    if (btnEnviar) {
+        btnEnviar.disabled = true;
+        btnEnviar.className = 'btn btn-secondary px-4 py-2 rounded-pill fw-bold';
+        btnEnviar.innerHTML = '<i class="bi bi-send"></i>✨ Finalizar Compra... ✨';
+    }
+
+    const estadoFormulario = document.getElementById('estado-formulario');
+    if (estadoFormulario) {
+        estadoFormulario.textContent = '⏳ Completa el número de celular para continuar';
+        estadoFormulario.className = 'text-muted small mt-2';
+    }
+
+    ["nombreCliente", "telefonoCliente", "DireccionCompleta", "ciudadCliente"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener("input", validarFormularioCliente);
+    });
+
+    const campoTelefono = document.getElementById("telefonoCliente");
+    if (campoTelefono) {
+        let timeoutConsulta;
+        
+        campoTelefono.addEventListener("input", () => {
+            clearTimeout(timeoutConsulta);
+            const telefono = campoTelefono.value.trim();
+            
+            if (!/^3\d{9}$/.test(telefono)) {
+                validarFormularioCliente();
+                return;
+            }
+
+            if (!document.getElementById("nombreCliente").value) {
+                otrosCampos.forEach(el => el.disabled = true);
+            }
+            
+            timeoutConsulta = setTimeout(async () => {
+                try {
+                    console.log('📞 CONSULTANDO CLIENTE:', telefono);
+                    const resultado = await consultarClienteAPI(telefono);
+                    
+                    if (resultado?.existe && resultado.datos) {
+                        const d = resultado.datos;
+                        console.log('✅ CLIENTE EXISTENTE - PRECARGANDO DATOS:', d);
+                        
+                        if (!document.getElementById("clienteId").value) {
+                            document.getElementById("clienteId").value = d["CLIENTEID"] || "";
+                        }
+                        
+                        if (!document.getElementById("nombreCliente").value) {
+                            document.getElementById("nombreCliente").value = d["NOMBRECLIENTE"] || "";
+                        }
+                        
+                        if (!document.getElementById("ciudadCliente").value) {
+                            document.getElementById("ciudadCliente").value = d["CIUDAD DESTINO"] || "";
+                        }
+                        
+                        if (!document.getElementById("emailCliente").value) {
+                            document.getElementById("emailCliente").value = d["CORREO"] || "";
+                        }
+                        
+                        if (!document.getElementById("DireccionCompleta").value && d["DIRECCIONCLIENTE"]) {
+                            repartirDireccionConcatenada(d["DIRECCIONCLIENTE"]);
+                        }
+                        
+                        console.log('✅ PRECARGA COMPLETADA - Campos actualizados');
+                        
+                    } else {
+                        console.log('🆕 CLIENTE NUEVO - Manteniendo campos existentes');
+                        if (!document.getElementById("clienteId").value) {
+                            document.getElementById("clienteId").value = "";
+                        }
+                    }
+                } catch (error) {
+                    console.error('❌ Error en consulta:', error);
+                } finally {
+                    otrosCampos.forEach(el => el.disabled = false);
+                    validarFormularioCliente();
+                }
+            }, 800);
         });
     }
 
-    function abrirFormularioPedido() {
-        window.location.href = 'modalformulario.html';
+    // CONFIGURAR BOTÓN PARA MOSTRAR MODAL
+    if (btnEnviar) {
+        btnEnviar.addEventListener("click", (e) => {
+            e.preventDefault();
+            console.log('🚀 INICIANDO PROCESO DE CONFIRMACIÓN');
+            
+            if (!validarFormularioCliente()) {
+                alert('❌ Completa todos los campos requeridos');
+                return;
+            }
+            
+            const tieneCarrito = window.articulosCarrito && window.articulosCarrito.length > 0;
+            if (tieneCarrito && !validarProductosCarrito()) {
+                alert('⚠️ Hay problemas con los productos del carrito. Revísalos antes de enviar.');
+                return;
+            }
+            
+            // Mostrar modal de confirmación
+            const modalElement = document.getElementById('modalConfirmacion');
+            const modal = new bootstrap.Modal(modalElement, { backdrop: 'static', keyboard: false });
+            modal.show();
+        });
     }
 
-    // ========== FUNCIONES GLOBALES ==========
-    window.volverAtras = volverAtras;
-    window.seleccionarImagenPrincipal = seleccionarImagenPrincipal;
-    window.seleccionarVariable = seleccionarVariable;
-    window.seleccionarTalla = seleccionarTalla;
-    window.cambiarCantidad = cambiarCantidad;
-    window.agregarAlCarrito = agregarAlCarrito;
-    window.comprarAhora = comprarAhora;
-    window.seleccionarImagenModal = seleccionarImagenModal;
-    window.navegarImagenModal = navegarImagenModal;
-    window.seleccionarDesdeModal = seleccionarDesdeModal;
-    window.abrirFormularioPedido = abrirFormularioPedido;
-    
-    // ========== NUEVA FUNCIÓN PARA CONSULTA POR WHATSAPP ==========
-    window.consultarProductoWhatsApp = function() {
-        if (!productoActual) {
-            alert('Producto no disponible');
-            return;
-        }
-        
-        const productoNombre = productoActual.producto || 'este producto';
-        const productoId = productoActual.id || '';
-        const precio = productoActual.precio || 0;
-        
-        const mensaje = `¡Hola! Me interesa el producto: *${productoNombre}* (ID: ${productoId}) con precio $${precio.toLocaleString('es-CO')}. ¿Podrían darme más información?`;
-        
-        const url = `https://wa.me/573006498710?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
-    };
-    
-    // ========== FUNCIONES PARA RESEÑAS ==========
-    window.verTodasLasResenas = function() {
-        alert('Próximamente podrás ver todas las reseñas. Por ahora, estas son las primeras opiniones de clientes.');
-    };
-    
-    window.dejarResena = function() {
-        alert('Las reseñas estarán disponibles después de tu compra. ¡Gracias por tu interés!');
-    };
-  </script>
+    setTimeout(validarFormularioCliente, 100);
+    console.log("🎯 FORMULARIO INICIALIZADO CORRECTAMENTE");
+}
 
-  <!-- SCRIPTS EXTERNOS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="buscador.js?v=20251115"></script>
-  
-  <!-- CARGAR FOOTER DINÁMICAMENTE (YA INCLUIDO EN EL FOOTER) -->
-  <script>
-    async function cargarFooter() {
-      try {
-        const respuesta = await fetch('footer.html?v=' + Date.now());
-        const htmlFooter = await respuesta.text();
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) {
-          contenedor.innerHTML = htmlFooter;
-        }
-      } catch (error) {
-        const contenedor = document.getElementById('footer-container');
-        if (contenedor) {
-          contenedor.innerHTML = `
-            <div class="container text-center py-3">
-              <p class="text-muted mb-1">&copy; 2025 Anmago Store</p>
-              <p class="small text-muted">anmagostore@gmail.com</p>
-            </div>
-          `;
-        }
-      }
-    }
+// ✅ EXPORTAR FUNCIONES PARA EL HTML PRINCIPAL
+window.validarClienteExistente = async function(telefono) {
+    console.log('📞 VALIDACIÓN SOLICITADA DESDE HTML:', telefono);
+    return await consultarClienteAPI(telefono);
+};
+
+// 🔥 EJECUCIÓN INICIAL
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarFormulario();
+    cargarCiudades();
     
-    document.addEventListener('DOMContentLoaded', cargarFooter);
-  </script>
+    // Asignar evento al botón de confirmación del modal
+    const btnConfirmar = document.getElementById('btnConfirmarPedido');
+    if (btnConfirmar) {
+        btnConfirmar.addEventListener('click', procesarDespuesDeConfirmacion);
+    }
+});
+
+setTimeout(() => {
+    if (!window.formularioInicializado) {
+        inicializarFormulario();
+    }
+    if (window.ciudadesColombia.length === 0) {
+        cargarCiudades();
+    }
+}, 500);
+
+setTimeout(() => {
+    if (!window.formularioInicializado) {
+        console.log('⚡ INICIALIZACIÓN POR TIMEOUT DE SEGURIDAD');
+        inicializarFormulario();
+    }
+    if (window.ciudadesColombia.length === 0) {
+        console.log('⚡ CARGANDO CIUDADES POR TIMEOUT DE SEGURIDAD');
+        cargarCiudades();
+    }
+}, 1000);
+</script>
+
+<!-- Cargar Footer -->
+<script>
+async function cargarFooter() {
+  try {
+    const r = await fetch('footer.html?v=' + Date.now());
+    const h = await r.text();
+    document.getElementById('footer-container')?.innerHTML = h;
+  } catch {
+    document.getElementById('footer-container').innerHTML = `<div class="container text-center py-3"><p class="text-muted mb-1">&copy; 2025 Anmago Store</p><p class="small text-muted">anmagostore@gmail.com</p></div>`;
+  }
+}
+document.addEventListener('DOMContentLoaded', cargarFooter);
+</script>
+
+
 </body>
 </html>
