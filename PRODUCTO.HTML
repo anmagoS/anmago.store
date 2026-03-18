@@ -2095,6 +2095,69 @@
     }
     
     document.addEventListener('DOMContentLoaded', cargarFooter);
+// ========== CARGAR RESEÑAS DEL PRODUCTO ==========
+async function cargarResenasProducto(productoId) {
+  try {
+    const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/resenas.json');
+    const todasResenas = await response.json();
+    
+    const resenasProducto = todasResenas[productoId] || [];
+    
+    if (resenasProducto.length > 0) {
+      // Calcular promedio
+      const promedio = (resenasProducto.reduce((sum, r) => sum + r.calificacion, 0) / resenasProducto.length).toFixed(1);
+      
+      // Actualizar header
+      document.querySelector('#promedio-resenas').textContent = promedio;
+      document.querySelector('#contador-resenas').textContent = `(${resenasProducto.length} reseñas)`;
+      
+      // Generar HTML de reseñas
+      let htmlResenas = '';
+      resenasProducto.forEach(r => {
+        htmlResenas += `
+          <div class="resena-item">
+            <div class="resena-header">
+              <div class="resena-avatar">${r.nombre.charAt(0)}</div>
+              <div>
+                <div class="resena-nombre">${r.nombre}</div>
+                <div class="resena-fecha">${new Date(r.fecha).toLocaleDateString('es-CO')}</div>
+              </div>
+              <div class="ms-auto">
+                <span class="resena-estrellas">${'★'.repeat(r.calificacion)}${'☆'.repeat(5 - r.calificacion)}</span>
+              </div>
+            </div>
+            <div class="resena-comentario">"${r.comentario}"</div>
+            <div class="resena-compra-verificada">
+              <i class="bi bi-check-circle-fill"></i> Compra verificada
+            </div>
+          </div>
+        `;
+      });
+      
+      document.getElementById('lista-resenas').innerHTML = htmlResenas;
+    } else {
+      // No hay reseñas
+      document.getElementById('lista-resenas').innerHTML = `
+        <div class="text-center text-muted py-5">
+          <i class="bi bi-star fs-1"></i>
+          <p class="mt-2">Aún no hay reseñas para este producto.</p>
+          <p class="small">Sé el primero en opinar después de tu compra.</p>
+        </div>
+      `;
+    }
+  } catch (error) {
+    console.error('Error cargando reseñas:', error);
+    document.getElementById('lista-resenas').innerHTML = `
+      <div class="text-center text-muted py-5">
+        <p>Error al cargar reseñas</p>
+      </div>
+    `;
+  }
+}
+
+// Llama a esta función después de cargar el producto
+// Agrega esta línea al final de cargarProducto():
+await cargarResenasProducto(productoActual.id);
   </script>
 </body>
 </html>
