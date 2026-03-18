@@ -581,36 +581,46 @@
       </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES -->
-    <section class="resenas-container mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-warning text-dark fs-6">0.0</span>
-          <span class="text-muted small">(0 reseñas)</span>
-        </div>
-      </div>
-      <!-- CONTENEDOR DE RESEÑAS (VACÍO) -->
-  <div id="lista-resenas">
-    <div class="text-center text-muted py-5">
-      <i class="bi bi-star fs-1"></i>
-      <p class="mt-2">Aún no hay reseñas para este producto.</p>
-      <p class="small">Sé el primero en opinar después de tu compra.</p>
+   <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES -->
+<section class="resenas-container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
+    <div class="d-flex align-items-center gap-2">
+      <span class="badge bg-warning text-dark fs-6">5.0</span>
+      <span class="text-muted small">(1 reseña)</span>
     </div>
   </div>
-      
-      
-      <!-- Botón para dejar reseña (simulado por ahora) -->
-      <div class="text-center mt-3 pt-2 border-top">
-        <p class="small text-muted">¿Ya compraste este producto?</p>
-        <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
-          <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
-        </button>
-        <p class="small text-muted mt-2">
-          <i class="bi bi-info-circle"></i> Las reseñas aparecerán después de tu compra
-        </p>
+  
+  <!-- CONTENEDOR DE RESEÑAS -->
+  <div id="lista-resenas">
+    <div class="resena-item">
+      <div class="resena-header">
+        <div class="resena-avatar">C</div>
+        <div>
+          <div class="resena-nombre">Catalina Cifuentes</div>
+          <div class="resena-fecha">18/03/2026</div>
+        </div>
+        <div class="ms-auto">
+          <span class="resena-estrellas">★★★★★</span>
+        </div>
       </div>
-    </section>
+      <div class="resena-comentario">
+        "me gusto mucho gracias podre disfrutar de los golazos de la sele...."
+      </div>
+      <div class="resena-compra-verificada">
+        <i class="bi bi-check-circle-fill"></i> Compra verificada
+      </div>
+    </div>
+  </div>
+  
+  <!-- Botón para dejar reseña -->
+  <div class="text-center mt-3 pt-2 border-top">
+    <p class="small text-muted">¿Ya compraste este producto?</p>
+    <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
+      <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
+    </button>
+  </div>
+</section>
 
     <!-- PRODUCTOS RELACIONADOS -->
     <section class="mt-5 pt-4 border-top">
