@@ -586,8 +586,8 @@
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
     <div class="d-flex align-items-center gap-2">
-      <span class="badge bg-secondary text-white fs-6">0.0</span>
-      <span class="text-muted small">(0 reseñas)</span>
+      <span id="promedio-resenas" class="badge bg-secondary text-white fs-6">0.0</span>
+      <span id="contador-resenas" class="text-muted small">(0 reseñas)</span>
     </div>
   </div>
   
@@ -1450,6 +1450,7 @@
             // RENDERIZAR PRODUCTO
             renderizarProducto(productoActual);
             cargarProductosRelacionados(productos, productoActual);
+            cargarResenasProducto(productoActual.id);
 
         } catch (error) {
             console.error('Error cargando producto:', error);
@@ -2154,7 +2155,7 @@ async function cargarResenasProducto(productoId) {
 
 // Llama a esta función después de cargar el producto
 // Agrega esta línea al final de cargarProducto():
-await cargarResenasProducto(productoActual.id);
+
   </script>
 </body>
 </html>
