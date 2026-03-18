@@ -1,10 +1,4 @@
-{
-  "AA71DF41": [ ... ],  // ✅ Primer bloque bien
-  "EE03DCC0": [ ... ],  // ✅ Segundo bloque bien
-  {  // ❌ ERROR: Abres otro objeto { cuando debería continuar el mismo
-  "EE03DCC0": [ ... ]   // ❌ ERROR: Repites el ID "EE03DCC0"
-JSON Correcto (debe ser UN SOLO OBJETO):
-json
+
 {
   "AA71DF41": [
     {
