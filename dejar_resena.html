@@ -2,21 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dejar Reseña | Anmago Store</title>
-  <!-- Mismos estilos que tu tienda -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    body { background: #f8f9fa; font-family: 'Inter', sans-serif; }
+    .rating-stars { font-size: 2.5rem; cursor: pointer; }
+    .rating-stars i { margin: 0 5px; transition: all 0.2s; }
+    .rating-stars i:hover { transform: scale(1.2); }
+    .container { max-width: 600px; margin-top: 50px; }
+  </style>
 </head>
 <body>
-  <div class="container py-5" style="max-width: 600px;">
-    <h2 class="text-center mb-4">⭐ Deja tu opinión sobre el producto</h2>
-    
-    <div class="card p-4">
-      <!-- Los datos del producto se pasan por URL -->
-      <div id="info-producto" class="mb-3">
-        <!-- Se llena con JavaScript -->
+  <div class="container">
+    <div class="card shadow p-4">
+      <h2 class="text-center mb-4">⭐ Deja tu opinión</h2>
+      
+      <!-- Aquí se mostrará el producto automáticamente -->
+      <div id="info-producto" class="alert alert-info text-center mb-4">
+        Cargando producto...
       </div>
       
-      <form id="form-resena">
-        <input type="hidden" id="producto-id" name="producto-id">
+      <form id="form-resena" onsubmit="enviarResena(event)">
+        <input type="hidden" id="producto-id">
         
         <div class="mb-3">
           <label class="form-label">Tu nombre</label>
@@ -25,7 +34,7 @@
         
         <div class="mb-3">
           <label class="form-label">Calificación</label>
-          <div class="rating-stars fs-1">
+          <div class="rating-stars text-center" id="estrellas">
             <i class="bi bi-star" data-value="1"></i>
             <i class="bi bi-star" data-value="2"></i>
             <i class="bi bi-star" data-value="3"></i>
@@ -40,48 +49,137 @@
           <textarea class="form-control" id="comentario" rows="4" required></textarea>
         </div>
         
-        <button type="submit" class="btn btn-primary w-100">Enviar Reseña</button>
+        <button type="submit" class="btn btn-primary w-100 py-3">
+          <i class="bi bi-send me-2"></i>Enviar Reseña
+        </button>
       </form>
     </div>
   </div>
-  
+
   <script>
-    // Tomar datos de la URL
+    // ========== CONFIGURACIÓN ==========
+    const REPO_OWNER = 'anmagoS';
+    const REPO_NAME = 'anmago.store';
+    const GITHUB_TOKEN = 'TU_TOKEN_AQUI'; // ⚠️ Necesitas un token de GitHub
+    
+    // ========== TOMAR ID DE LA URL ==========
     const urlParams = new URLSearchParams(window.location.search);
     const productoId = urlParams.get('id');
-    const productoNombre = urlParams.get('nombre');
     
-    document.getElementById('info-producto').innerHTML = `
-      <h5>Producto: ${productoNombre || 'Producto'}</h5>
-      <p class="text-muted">ID: ${productoId || ''}</p>
-    `;
+    if (!productoId) {
+      document.getElementById('info-producto').innerHTML = `
+        <div class="alert alert-danger">Error: ID de producto no especificado</div>
+      `;
+      throw new Error('ID no especificado');
+    }
+    
     document.getElementById('producto-id').value = productoId;
     
-    // Sistema de estrellas
-    document.querySelectorAll('.rating-stars i').forEach(star => {
-      star.addEventListener('click', function() {
-        const value = this.dataset.value;
-        document.getElementById('calificacion').value = value;
+    // ========== BUSCAR NOMBRE DEL PRODUCTO ==========
+    async function buscarNombreProducto() {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json');
+        const catalogo = await response.json();
+        const producto = catalogo.find(p => p.id === productoId);
         
-        // Marcar estrellas
-        document.querySelectorAll('.rating-stars i').forEach((s, index) => {
-          if (index < value) {
-            s.className = 'bi bi-star-fill text-warning';
+        if (producto) {
+          document.getElementById('info-producto').innerHTML = `
+            <strong>Producto:</strong> ${producto.producto || 'Producto'}<br>
+            <small class="text-muted">ID: ${productoId}</small>
+          `;
+        } else {
+          document.getElementById('info-producto').innerHTML = `
+            <strong>Producto ID:</strong> ${productoId}<br>
+            <small class="text-warning">Nombre no encontrado en catálogo</small>
+          `;
+        }
+      } catch (error) {
+        document.getElementById('info-producto').innerHTML = `
+          <strong>Producto ID:</strong> ${productoId}
+        `;
+      }
+    }
+    
+    // ========== SISTEMA DE ESTRELLAS ==========
+    const estrellas = document.querySelectorAll('#estrellas i');
+    const calificacionInput = document.getElementById('calificacion');
+    
+    estrellas.forEach(estrella => {
+      estrella.addEventListener('click', function() {
+        const valor = parseInt(this.dataset.value);
+        calificacionInput.value = valor;
+        
+        estrellas.forEach((e, index) => {
+          if (index < valor) {
+            e.className = 'bi bi-star-fill text-warning';
           } else {
-            s.className = 'bi bi-star';
+            e.className = 'bi bi-star';
           }
         });
       });
     });
     
-    // Enviar reseña (por ahora, solo guarda localmente)
-    document.getElementById('form-resena').addEventListener('submit', function(e) {
-      e.preventDefault();
+    // ========== ENVIAR RESEÑA ==========
+    async function enviarResena(event) {
+      event.preventDefault();
       
-      // Aquí podrías enviar por Telegram o guardar en Sheets
-      alert('¡Gracias por tu reseña! Será publicada después de verificar la compra.');
-      window.close();
-    });
+      const nombre = document.getElementById('nombre-cliente').value;
+      const calificacion = parseInt(document.getElementById('calificacion').value);
+      const comentario = document.getElementById('comentario').value;
+      
+      if (!nombre || !calificacion || !comentario) {
+        alert('Completa todos los campos');
+        return;
+      }
+      
+      // Mostrar estado de carga
+      const btn = event.target.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
+      
+      try {
+        // 1. Obtener reseñas actuales
+        const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/resenas.json');
+        let todasResenas = await response.json();
+        
+        // 2. Crear nueva reseña
+        const nuevaResena = {
+          nombre: nombre,
+          calificacion: calificacion,
+          comentario: comentario,
+          fecha: new Date().toISOString().split('T')[0],
+          verificada: true
+        };
+        
+        // 3. Agregar al array del producto
+        if (!todasResenas[productoId]) {
+          todasResenas[productoId] = [];
+        }
+        todasResenas[productoId].push(nuevaResena);
+        
+        // 4. Guardar en GitHub (simulado - muestra instrucciones)
+        console.log('Reseña lista para guardar:', JSON.stringify(todasResenas, null, 2));
+        
+        // Por ahora, mostrar mensaje y guardar localmente
+        alert('✅ ¡Gracias por tu reseña! Será publicada pronto.');
+        
+        // Opcional: guardar en localStorage para pruebas
+        localStorage.setItem('resena_' + productoId + '_' + Date.now(), JSON.stringify(nuevaResena));
+        
+        // Redirigir a la página del producto
+        window.location.href = `PRODUCTO.HTML?id=${productoId}`;
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un error. Por favor intenta de nuevo.');
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-send me-2"></i>Enviar Reseña';
+      }
+    }
+    
+    // Inicializar
+    buscarNombreProducto();
   </script>
 </body>
 </html>
