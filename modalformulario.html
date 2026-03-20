@@ -89,13 +89,13 @@
       font-weight: 500;
     }
 
-    /* RECUADRO INFORMATIVO - REEMPLAZA AL MODAL */
+    /* RECUADRO INFORMATIVO REDUCIDO - COLAPSADO */
     .recuadro-informativo {
       background: white;
-      border-radius: 20px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow-md);
+      border-radius: 16px;
+      padding: 0.75rem 1rem;
+      margin-top: 1.5rem;
+      box-shadow: var(--shadow-sm);
       border: 1px solid var(--border-light);
       position: relative;
       overflow: hidden;
@@ -106,50 +106,45 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 6px;
+      width: 4px;
       height: 100%;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
     }
     
     .recuadro-titulo {
-      font-size: 1.2rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--primary);
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
     }
     
     .recuadro-titulo i {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     
     .recuadro-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
     }
     
     .recuadro-paso {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 0.75rem;
+      gap: 6px;
+      padding: 0.25rem 0.5rem;
       background: var(--bg-light);
-      border-radius: 12px;
-      transition: var(--transition);
-    }
-    
-    .recuadro-paso:hover {
-      transform: translateX(5px);
-      background: #e9ecef;
+      border-radius: 20px;
+      font-size: 0.7rem;
     }
     
     .recuadro-numero {
-      width: 36px;
-      height: 36px;
+      width: 20px;
+      height: 20px;
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       color: white;
       border-radius: 50%;
@@ -157,61 +152,65 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.7rem;
       flex-shrink: 0;
     }
     
     .recuadro-texto strong {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--text-dark);
+      display: inline;
+      font-size: 0.7rem;
     }
     
     .recuadro-texto small {
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
     }
     
-    /* ALERTA IMPORTANTE - SIN COBRO ANTICIPADO */
+    /* ALERTAS REDUCIDAS */
     .alerta-sin-cobro {
-      background: linear-gradient(135deg, rgba(25,135,84,0.1), rgba(25,135,84,0.05));
-      border: 1px solid rgba(25,135,84,0.3);
+      background: linear-gradient(135deg, rgba(25,135,84,0.08), rgba(25,135,84,0.03));
+      border: 1px solid rgba(25,135,84,0.2);
       border-radius: 12px;
-      padding: 1rem;
-      margin: 1rem 0;
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
     }
     
     .alerta-sin-cobro i {
-      font-size: 1.8rem;
+      font-size: 1.2rem;
       color: var(--success);
-    }
-    
-    .alerta-sin-cobro .texto {
-      flex: 1;
     }
     
     .alerta-sin-cobro .texto strong {
-      color: var(--success);
+      font-size: 0.75rem;
       display: block;
-      font-size: 0.95rem;
     }
     
     .alerta-sin-cobro .texto p {
+      font-size: 0.65rem;
       margin: 0;
-      font-size: 0.85rem;
-      color: var(--text-muted);
     }
     
     .badge-destacado {
       background: var(--warning);
       color: #000;
-      padding: 0.25rem 0.75rem;
+      padding: 0.15rem 0.5rem;
       border-radius: 50px;
-      font-size: 0.7rem;
+      font-size: 0.6rem;
       font-weight: 600;
+      white-space: nowrap;
+    }
+    
+    .info-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.65rem;
     }
     
     /* Campos del formulario */
@@ -329,7 +328,6 @@
     @media (max-width: 768px) {
       .header-sticky { height: 60px; }
       .btn-finalizar { font-size: 1rem; padding: 0.9rem; }
-      .recuadro-grid { grid-template-columns: 1fr; }
     }
 
     .validacion-estado { display: none; }
@@ -338,7 +336,7 @@
     .validacion-error { color: #dc3545; }
     @keyframes pulse { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
     .spinner-validacion { display: inline-block; width: 1rem; height: 1rem; border: 0.2em solid currentColor; border-right-color: transparent; border-radius: 50%; animation: spinner-border .75s linear infinite; }
-    .alert-feedback { position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 300px; max-width: 400px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: slideInRight 0.3s ease; }
+    .alert-feedback { position: fixed; top: 20px; right: 20px; z-index: 9999; min-width: 280px; max-width: 380px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); animation: slideInRight 0.3s ease; }
     @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
     .campo-deshabilitado { opacity: 0.6 !important; background-color: #f8f9fa !important; cursor: not-allowed !important; }
     .btn-cargando { position: relative; color: transparent !important; }
@@ -467,80 +465,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- CONTENIDO PRINCIPAL -->
-<main class="container py-4" style="max-width: 800px;">
+<main class="container py-3" style="max-width: 800px;">
   
-  <!-- RECUADRO INFORMATIVO COMPLETO (REEMPLAZA AL MODAL) -->
-  <div class="recuadro-informativo">
-    <div class="recuadro-titulo">
-      <i class="bi bi-info-circle-fill"></i>
-      Cómo funciona tu compra
-    </div>
-    
-    <div class="recuadro-grid">
-      <div class="recuadro-paso">
-        <div class="recuadro-numero">1</div>
-        <div class="recuadro-texto">
-          <strong>📋 Recibimos tu pedido</strong>
-          <small>Confirmación automática</small>
-        </div>
-      </div>
-      
-      <div class="recuadro-paso">
-        <div class="recuadro-numero">2</div>
-        <div class="recuadro-texto">
-          <strong>✅ Verificamos stock</strong>
-          <small>Revisamos disponibilidad en bodega</small>
-        </div>
-      </div>
-      
-      <div class="recuadro-paso">
-        <div class="recuadro-numero">3</div>
-        <div class="recuadro-texto">
-          <strong>📱 Te contactamos</strong>
-          <small>WhatsApp en menos de 30 minutos</small>
-        </div>
-      </div>
-      
-      <div class="recuadro-paso">
-        <div class="recuadro-numero">4</div>
-        <div class="recuadro-texto">
-          <strong>💰 Coordinamos pago</strong>
-          <small>Después de confirmar disponibilidad</small>
-        </div>
-      </div>
-    </div>
-    
-    <!-- ALERTA IMPORTANTE: SIN COBRO ANTICIPADO -->
-    <div class="alerta-sin-cobro">
-      <i class="bi bi-shield-check"></i>
-      <div class="texto">
-        <strong>🔒 Sin cobro anticipado</strong>
-        <p>No realizamos ningún cobro hasta confirmar que tu producto está disponible en bodega. Primero verificamos stock, luego te contactamos para coordinar el pago.</p>
-      </div>
-      <span class="badge-destacado">¡Sin riesgo!</span>
-    </div>
-    
-    <div class="alerta-sin-cobro" style="background: linear-gradient(135deg, rgba(255,193,7,0.1), rgba(255,193,7,0.05)); border-color: rgba(255,193,7,0.3);">
-      <i class="bi bi-box-seam" style="color: var(--warning);"></i>
-      <div class="texto">
-        <strong>📦 ¿Qué pasa si no hay stock?</strong>
-        <p>Si el producto no está disponible, te contactaremos para ofrecerte alternativas similares o cancelaremos tu pedido sin ningún compromiso.</p>
-      </div>
-      <span class="badge-destacado" style="background: var(--warning);">Sin compromiso</span>
-    </div>
-    
-    <div class="d-flex justify-content-between align-items-center mt-3 pt-2 border-top">
-      <div class="d-flex gap-3">
-        <span><i class="bi bi-whatsapp text-success me-1"></i> Atención <strong>30 min</strong></span>
-        <span><i class="bi bi-arrow-repeat text-success me-1"></i> Devoluciones gratis</span>
-      </div>
-      <small class="text-muted">
-        <i class="bi bi-clock-history me-1"></i> Proceso express
-      </small>
-    </div>
-  </div>
-  
-  <div id="estado-validacion" class="alert alert-info text-center mb-4" style="display: none;">
+  <div id="estado-validacion" class="alert alert-info text-center mb-3" style="display: none;">
     <div class="d-flex align-items-center justify-content-center">
       <div class="spinner-border spinner-border-sm me-2" role="status"><span class="visually-hidden">Cargando...</span></div>
       <span id="mensaje-validacion">Finalizar Compra...</span>
@@ -638,22 +565,82 @@ document.addEventListener('DOMContentLoaded', function() {
       </button>
       <p id="estado-formulario" class="text-muted small mt-3"></p>
       
-      <div class="d-flex justify-content-center gap-4 mt-4">
+      <div class="d-flex justify-content-center gap-4 mt-3">
         <div class="text-center">
-          <i class="bi bi-shield-check text-success fs-4"></i>
+          <i class="bi bi-shield-check text-success fs-5"></i>
           <div class="small">Datos seguros</div>
         </div>
         <div class="text-center">
-          <i class="bi bi-whatsapp text-success fs-4"></i>
+          <i class="bi bi-whatsapp text-success fs-5"></i>
           <div class="small">Atención 30 min</div>
         </div>
         <div class="text-center">
-          <i class="bi bi-arrow-repeat text-success fs-4"></i>
+          <i class="bi bi-arrow-repeat text-success fs-5"></i>
           <div class="small">Devoluciones gratis</div>
         </div>
       </div>
     </div>
   </form>
+
+  <!-- RECUADRO INFORMATIVO REDUCIDO - COLOCADO DEBAJO DE LOS CAMPOS -->
+  <div class="recuadro-informativo">
+    <div class="recuadro-titulo">
+      <i class="bi bi-info-circle-fill"></i>
+      Cómo funciona
+    </div>
+    
+    <div class="recuadro-grid">
+      <div class="recuadro-paso">
+        <div class="recuadro-numero">1</div>
+        <div class="recuadro-texto">
+          <strong>Recibimos pedido</strong>
+        </div>
+      </div>
+      <div class="recuadro-paso">
+        <div class="recuadro-numero">2</div>
+        <div class="recuadro-texto">
+          <strong>Verificamos stock</strong>
+        </div>
+      </div>
+      <div class="recuadro-paso">
+        <div class="recuadro-numero">3</div>
+        <div class="recuadro-texto">
+          <strong>Contacto WhatsApp</strong>
+          <small>30 min</small>
+        </div>
+      </div>
+      <div class="recuadro-paso">
+        <div class="recuadro-numero">4</div>
+        <div class="recuadro-texto">
+          <strong>Coordinamos pago</strong>
+        </div>
+      </div>
+    </div>
+    
+    <div class="alerta-sin-cobro">
+      <i class="bi bi-shield-check"></i>
+      <div class="texto">
+        <strong>Sin cobro anticipado</strong>
+        <p>Primero verificamos stock, luego te contactamos</p>
+      </div>
+      <span class="badge-destacado">Sin riesgo</span>
+    </div>
+    
+    <div class="alerta-sin-cobro" style="background: linear-gradient(135deg, rgba(255,193,7,0.08), rgba(255,193,7,0.03)); border-color: rgba(255,193,7,0.2);">
+      <i class="bi bi-box-seam" style="color: var(--warning);"></i>
+      <div class="texto">
+        <strong>¿Sin stock?</strong>
+        <p>Te ofrecemos alternativas sin compromiso</p>
+      </div>
+      <span class="badge-destacado" style="background: var(--warning);">Sin compromiso</span>
+    </div>
+    
+    <div class="info-footer">
+      <span><i class="bi bi-whatsapp text-success me-1"></i> Atención <strong>30 min</strong></span>
+      <span><i class="bi bi-arrow-repeat me-1"></i> Devoluciones gratis</span>
+      <span><i class="bi bi-clock-history me-1"></i> Proceso express</span>
+    </div>
+  </div>
 </main>
 
 <!-- SCRIPTS EXTERNOS -->
@@ -964,6 +951,10 @@ function enviarAlertaTelegram(datos) {
     const chatId = '-1003789211905';
     const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', hour12: true });
     
+    // Crear link de WhatsApp para el teléfono del cliente
+    const telefonoCliente = datos.telefono || 'No especificado';
+    const whatsappLink = `https://wa.me/${telefonoCliente.replace(/\D/g, '')}`;
+    
     let productosTexto = '';
     if (datos.productos && datos.productos.length > 0) {
         productosTexto = '\n\n🛒 <b>PRODUCTOS:</b>\n';
@@ -975,12 +966,12 @@ function enviarAlertaTelegram(datos) {
         productosTexto += `\n💰 <b>TOTAL: $${total.toLocaleString('es-CO')}</b>`;
     }
     
-    const mensaje = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n━━━━━━━━━━━━━━━━━━━━━\n👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n📱 <b>Teléfono:</b> ${datos.telefono || 'No especificado'}\n📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}${productosTexto}\n⏰ <b>Fecha:</b> ${fecha}\n✅ <b>Pendiente verificar stock</b>`;
+    const mensaje = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n━━━━━━━━━━━━━━━━━━━━━\n👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n📱 <b>Teléfono:</b> <a href="${whatsappLink}">${telefonoCliente}</a> (clic para chatear)\n📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}${productosTexto}\n⏰ <b>Fecha:</b> ${fecha}\n✅ <b>Pendiente verificar stock</b>`;
     
     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: mensaje, parse_mode: 'HTML' })
+        body: JSON.stringify({ chat_id: chatId, text: mensaje, parse_mode: 'HTML', disable_web_page_preview: false })
     }).catch(err => console.error('Error Telegram:', err));
 }
 
@@ -1030,7 +1021,7 @@ function mostrarEstadoValidacion(mensaje, tipo = 'info') {
     const span = document.getElementById('mensaje-validacion');
     if (!div || !span) return;
     span.textContent = mensaje;
-    div.className = `alert text-center mb-4 alert-${tipo}`;
+    div.className = `alert text-center mb-3 alert-${tipo}`;
     div.style.display = 'flex';
 }
 
