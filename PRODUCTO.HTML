@@ -203,6 +203,24 @@
         background: #1B4557;
         color: white;
     }
+    /* Estilos para el selector de colores mejorado */
+.selector-colores-container {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+.selector-colores-container .img-thumbnail {
+    transition: all 0.2s ease;
+}
+.selector-colores-container .img-thumbnail:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.selector-colores-container small {
+    font-size: 0.7rem;
+    transition: all 0.2s ease;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -581,17 +599,16 @@
       </div>
     </div>
 
- <!-- SECCIÓN DE RESEÑAS Y CALIFICACIONES (VACÍA) -->
-<section class="resenas-container mt-5">
-  <div class="d-flex justify-content-between align-items-center mb-4">
-    <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
-    <div class="d-flex align-items-center gap-2">
-      <span id="promedio-resenas" class="badge bg-secondary text-white fs-6">0.0</span>
-      <span id="contador-resenas" class="text-muted small">(0 reseñas)</span>
-    </div>
-  </div>
-  
-  <!-- CONTENEDOR DE RESEÑAS (VACÍO) -->
+    <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES -->
+    <section class="resenas-container mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-warning text-dark fs-6">0.0</span>
+          <span class="text-muted small">(0 reseñas)</span>
+        </div>
+      </div>
+      <!-- CONTENEDOR DE RESEÑAS (VACÍO) -->
   <div id="lista-resenas">
     <div class="text-center text-muted py-5">
       <i class="bi bi-star fs-1"></i>
@@ -599,15 +616,19 @@
       <p class="small">Sé el primero en opinar después de tu compra.</p>
     </div>
   </div>
-  
-  <!-- Botón para dejar reseña -->
-  <div class="text-center mt-3 pt-2 border-top">
-    <p class="small text-muted">¿Ya compraste este producto?</p>
-    <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
-      <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
-    </button>
-  </div>
-</section>
+      
+      
+      <!-- Botón para dejar reseña (simulado por ahora) -->
+      <div class="text-center mt-3 pt-2 border-top">
+        <p class="small text-muted">¿Ya compraste este producto?</p>
+        <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
+          <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
+        </button>
+        <p class="small text-muted mt-2">
+          <i class="bi bi-info-circle"></i> Las reseñas aparecerán después de tu compra
+        </p>
+      </div>
+    </section>
 
     <!-- PRODUCTOS RELACIONADOS -->
     <section class="mt-5 pt-4 border-top">
@@ -1138,65 +1159,109 @@
 
     // ========== FUNCIONES PARA GALERÍA ==========
     function renderizarGaleriaCompleta(producto) {
-        const imagenPrincipal = document.getElementById('imagen-principal');
-        const galeria = document.getElementById('galeria-miniaturas');
-        
-        if (imagenesProducto.length === 0) {
-            imagenPrincipal.src = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
-            imagenPrincipal.alt = producto.producto;
-            return;
-        }
+    const imagenPrincipal = document.getElementById('imagen-principal');
+    const galeria = document.getElementById('galeria-miniaturas');
+    
+    if (imagenesProducto.length === 0) {
+        imagenPrincipal.src = 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+        imagenPrincipal.alt = producto.producto;
+        return;
+    }
 
-        // OBTENER IMAGEN PRINCIPAL
-        let imagenPrincipalObj = obtenerImagenesPorTipo('PRINCIPAL')[0];
-        if (!imagenPrincipalObj) {
-            imagenPrincipalObj = obtenerImagenesPorTipo('VARIANTE')[0] || imagenesProducto[0];
-        }
+    // OBTENER IMAGEN PRINCIPAL (priorizar VARIANTE o PRINCIPAL)
+    let imagenPrincipalObj = obtenerImagenesPorTipo('VARIANTE')[0];
+    if (!imagenPrincipalObj) {
+        imagenPrincipalObj = obtenerImagenesPorTipo('PRINCIPAL')[0];
+    }
+    if (!imagenPrincipalObj) {
+        imagenPrincipalObj = imagenesProducto[0];
+    }
 
-        // SETEAR IMAGEN PRINCIPAL
-        imagenPrincipal.src = imagenPrincipalObj.url;
-        imagenPrincipal.alt = `${producto.producto} - ${imagenPrincipalObj.variacion || 'Imagen principal'}`;
-        
-        // ACTUALIZAR VARIABLES GLOBALES
+    // SETEAR IMAGEN PRINCIPAL
+    imagenPrincipal.src = imagenPrincipalObj.url;
+    imagenPrincipal.alt = `${producto.producto} - ${imagenPrincipalObj.variacion || 'Imagen principal'}`;
+    
+    // ACTUALIZAR VARIABLES GLOBALES - SELECCIONAR LA PRIMERA VARIANTE AUTOMÁTICAMENTE
+    if (imagenPrincipalObj.tipo === 'VARIANTE') {
         varianteSeleccionada = imagenPrincipalObj.variacion || 'Principal';
-        imagenSeleccionada = imagenPrincipalObj.url;
-        zoomIndex = imagenesProducto.findIndex(img => img.url === imagenPrincipalObj.url);
-        
-        // RENDERIZAR GALERÍA CON TODAS LAS IMÁGENES
-        if (imagenesProducto.length > 1) {
-            galeria.innerHTML = imagenesProducto.map((img, index) => {
-                const esSeleccionada = img.url === imagenPrincipalObj.url;
-                const tipoBadge = getTipoBadge(img.tipo);
-                const descripcion = img.variacion || 
-                    (img.tipo === 'PRINCIPAL' ? 'Principal' : 
-                     img.tipo === 'VARIANTE' ? `Variante ${index}` : 
-                     `Referencia ${index}`);
-                
-                return `
-                    <div class="position-relative d-inline-block">
-                        <img src="${img.url}" 
-                             alt="${producto.producto} - ${descripcion}" 
-                             class="miniatura ${esSeleccionada ? 'active' : ''}"
-                             onclick="seleccionarImagenPrincipal('${img.url}', '${img.variacion || descripcion}', this, ${index})"
-                             style="width: 80px; height: 80px; object-fit: cover; border: 2px solid ${esSeleccionada ? '#007bff' : '#ddd'}; border-radius: 8px; cursor: pointer; margin: 5px; transition: all 0.3s ease;"
-                             onmouseover="this.style.borderColor='#007bff'"
-                             onmouseout="if(!this.classList.contains('active')) this.style.borderColor='#ddd'"
-                             title="${descripcion} - ${tipoBadge.texto}">
-                        <span class="position-absolute top-0 start-0 badge ${tipoBadge.clase}" style="font-size: 0.6rem; padding: 2px 4px;">
-                            ${tipoBadge.texto}
-                        </span>
-                    </div>
-                `;
-            }).join('');
+    } else {
+        // Buscar la primera imagen de tipo VARIANTE para seleccionarla
+        const primeraVariante = obtenerImagenesPorTipo('VARIANTE')[0];
+        if (primeraVariante) {
+            varianteSeleccionada = primeraVariante.variacion || 'Principal';
+            imagenSeleccionada = primeraVariante.url;
         } else {
-            galeria.innerHTML = '';
-        }
-
-        // MOSTRAR VARIANTE SI ES VARIANTE
-        if (imagenPrincipalObj.tipo === 'VARIANTE') {
-            mostrarVarianteActual(imagenPrincipalObj.variacion);
+            varianteSeleccionada = 'Principal';
+            imagenSeleccionada = imagenPrincipalObj.url;
         }
     }
+    
+    imagenSeleccionada = imagenPrincipalObj.url;
+    zoomIndex = imagenesProducto.findIndex(img => img.url === imagenPrincipalObj.url);
+    
+    // RENDERIZAR GALERÍA CON TEXTO INDICADOR
+    if (imagenesProducto.length > 1) {
+        // Separar imágenes por tipo
+        const variantes = imagenesProducto.filter(img => img.tipo?.toUpperCase() === 'VARIANTE');
+        const otrasImagenes = imagenesProducto.filter(img => img.tipo?.toUpperCase() !== 'VARIANTE');
+        
+        let html = '';
+        
+        // Si hay variantes, mostrar una sección de colores
+        if (variantes.length > 0) {
+            html += `
+                <div class="selector-colores-container mb-3">
+                    <p class="fw-bold mb-2">🎨 Selecciona un color:</p>
+                    <div class="d-flex flex-wrap gap-2">
+            `;
+            
+            variantes.forEach((img, idx) => {
+                const esSeleccionada = img.url === imagenPrincipalObj.url;
+                const nombreColor = img.variacion || `Color ${idx + 1}`;
+                html += `
+                    <div class="text-center" style="width: 85px;" onclick="seleccionarImagenPrincipal('${img.url}', '${nombreColor}', this, ${imagenesProducto.findIndex(i => i.url === img.url)})">
+                        <img src="${img.url}" 
+                             alt="${nombreColor}" 
+                             class="img-thumbnail ${esSeleccionada ? 'border-primary border-2' : 'border-secondary'}"
+                             style="width: 75px; height: 75px; object-fit: cover; cursor: pointer; border-radius: 8px;">
+                        <small class="d-block mt-1 ${esSeleccionada ? 'text-primary fw-bold' : 'text-muted'}" style="font-size: 0.7rem;">${nombreColor}</small>
+                    </div>
+                `;
+            });
+            
+            html += `</div></div>`;
+        }
+        
+        // Mostrar el resto de imágenes (adicionales, etc.)
+        if (otrasImagenes.length > 0) {
+            html += `<p class="small text-muted mb-2">📸 Más imágenes del producto:</p><div class="d-flex flex-wrap gap-2">`;
+            otrasImagenes.forEach((img, idx) => {
+                const descripcion = img.variacion || `Imagen ${idx + 1}`;
+                html += `
+                    <img src="${img.url}" 
+                         alt="${descripcion}" 
+                         class="img-thumbnail"
+                         style="width: 60px; height: 60px; object-fit: cover; cursor: pointer;"
+                         onclick="seleccionarImagenPrincipal('${img.url}', '${descripcion}', this, ${imagenesProducto.findIndex(i => i.url === img.url)})"
+                         title="${descripcion}">
+                `;
+            });
+            html += `</div>`;
+        }
+        
+        galeria.innerHTML = html;
+    } else {
+        galeria.innerHTML = '';
+    }
+
+    // MOSTRAR VARIANTE SELECCIONADA
+    if (varianteSeleccionada && varianteSeleccionada !== 'Principal') {
+        mostrarVarianteActual(varianteSeleccionada);
+    }
+    
+    // VERIFICAR BOTÓN (AHORA DEBERÍA ESTAR HABILITADO)
+    verificarEstadoBotonAgregar();
+}
 
     function getTipoBadge(tipo) {
         switch(tipo?.toUpperCase()) {
@@ -1208,32 +1273,57 @@
     }
 
     function seleccionarImagenPrincipal(imagenSrc, descripcion, elemento, index) {
-        const imagenPrincipal = document.getElementById('imagen-principal');
-        imagenPrincipal.src = imagenSrc;
-        imagenPrincipal.alt = `${productoActual.producto} - ${descripcion}`;
-        
-        // ACTUALIZAR VARIABLES GLOBALES
-        imagenSeleccionada = imagenSrc;
-        zoomIndex = index;
-        
-        // SI ES VARIANTE, ACTUALIZAR VARIANTE
-        const imgSeleccionada = imagenesProducto[index];
-        if (imgSeleccionada.tipo === 'VARIANTE') {
-            varianteSeleccionada = imgSeleccionada.variacion || descripcion;
-            mostrarVarianteActual(varianteSeleccionada);
-        }
-        
-        // ACTUALIZAR MINIATURAS ACTIVAS
-        document.querySelectorAll('.miniatura').forEach(img => {
-            img.classList.remove('active');
-            img.style.borderColor = '#ddd';
-        });
-        elemento.classList.add('active');
-        elemento.style.borderColor = '#007bff';
-        
-        // VERIFICAR ESTADO DEL BOTÓN
-        verificarEstadoBotonAgregar();
+    const imagenPrincipal = document.getElementById('imagen-principal');
+    imagenPrincipal.src = imagenSrc;
+    imagenPrincipal.alt = `${productoActual.producto} - ${descripcion}`;
+    
+    // ACTUALIZAR VARIABLES GLOBALES
+    imagenSeleccionada = imagenSrc;
+    zoomIndex = index;
+    
+    // SI ES VARIANTE, ACTUALIZAR VARIANTE
+    const imgSeleccionada = imagenesProducto[index];
+    if (imgSeleccionada.tipo === 'VARIANTE' || imgSeleccionada.tipo?.toUpperCase() === 'VARIANTE') {
+        varianteSeleccionada = imgSeleccionada.variacion || descripcion;
+        mostrarVarianteActual(varianteSeleccionada);
     }
+    
+    // ACTUALIZAR MINIATURAS ACTIVAS (con mejor feedback visual)
+    document.querySelectorAll('.selector-colores-container img, .galeria-miniaturas img').forEach(img => {
+        img.classList.remove('border-primary', 'border-2');
+        img.classList.add('border-secondary');
+        const parentDiv = img.closest('.text-center');
+        if (parentDiv) {
+            const small = parentDiv.querySelector('small');
+            if (small) {
+                small.classList.remove('text-primary', 'fw-bold');
+                small.classList.add('text-muted');
+            }
+        }
+    });
+    
+    if (elemento.tagName === 'IMG') {
+        elemento.classList.remove('border-secondary');
+        elemento.classList.add('border-primary', 'border-2');
+        const parentDiv = elemento.closest('.text-center');
+        if (parentDiv) {
+            const small = parentDiv.querySelector('small');
+            if (small) {
+                small.classList.remove('text-muted');
+                small.classList.add('text-primary', 'fw-bold');
+            }
+        }
+    } else if (elemento.classList && elemento.classList.contains('img-thumbnail')) {
+        elemento.classList.remove('border-secondary');
+        elemento.classList.add('border-primary', 'border-2');
+    }
+    
+    // Mostrar feedback temporal
+    mostrarAlertaTemporal(`✅ Color seleccionado: "${varianteSeleccionada || descripcion}"`, 'success');
+    
+    // VERIFICAR ESTADO DEL BOTÓN
+    verificarEstadoBotonAgregar();
+}
 
     function mostrarVarianteActual(nombreVariante) {
         const container = document.getElementById('variante-actual-container');
@@ -1450,7 +1540,6 @@
             // RENDERIZAR PRODUCTO
             renderizarProducto(productoActual);
             cargarProductosRelacionados(productos, productoActual);
-            cargarResenasProducto(productoActual.id);
 
         } catch (error) {
             console.error('Error cargando producto:', error);
@@ -1590,46 +1679,46 @@
         verificarEstadoBotonAgregar();
     }
 
-    function verificarEstadoBotonAgregar() {
-        const btnAgregar = document.getElementById('btn-agregar-carrito');
-        const btnComprar = document.querySelector('.btn-gradient');
-        
-        const necesitaVariables = productoActual?.variables && 
-                                productoActual.variables.trim() !== "" && 
-                                productoActual.variables !== "N/A" &&
-                                !["única", "unica"].includes(productoActual.variables.toLowerCase());
-        
-        const necesitaTallas = productoActual?.tallas && 
-                             productoActual.tallas.trim() !== "" && 
-                             productoActual.tallas !== "N/A" && 
-                             !["única", "unica"].includes(productoActual.tallas.toLowerCase());
-        
-        let puedeAgregar = varianteSeleccionada;
-        
-        if (necesitaVariables) {
-            puedeAgregar = puedeAgregar && variableSeleccionada;
-        }
-        
-        if (necesitaTallas) {
-            puedeAgregar = puedeAgregar && tallaSeleccionada;
-        }
-        
-        if (btnAgregar) {
-            btnAgregar.disabled = !puedeAgregar;
-            if (!varianteSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-image"></i> Selecciona un color';
-            } else if (necesitaVariables && !variableSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-palette"></i> Selecciona color/material';
-            } else if (necesitaTallas && !tallaSeleccionada) {
-                btnAgregar.innerHTML = '<i class="bi bi-rulers"></i> Selecciona talla';
-            } else {
-                btnAgregar.innerHTML = '<i class="bi bi-cart-plus"></i> Agregar al carrito';
-            }
-        }
-        
-        if (btnComprar) btnComprar.disabled = !puedeAgregar;
+  function verificarEstadoBotonAgregar() {
+    const btnAgregar = document.getElementById('btn-agregar-carrito');
+    const btnComprar = document.querySelector('.btn-gradient');
+    
+    const necesitaVariables = productoActual?.variables && 
+                            productoActual.variables.trim() !== "" && 
+                            productoActual.variables !== "N/A" &&
+                            !["única", "unica"].includes(productoActual.variables.toLowerCase());
+    
+    const necesitaTallas = productoActual?.tallas && 
+                         productoActual.tallas.trim() !== "" && 
+                         productoActual.tallas !== "N/A" && 
+                         !["única", "unica"].includes(productoActual.tallas.toLowerCase());
+    
+    let puedeAgregar = varianteSeleccionada && varianteSeleccionada !== '';
+    
+    if (necesitaVariables) {
+        puedeAgregar = puedeAgregar && variableSeleccionada;
     }
-
+    
+    if (necesitaTallas) {
+        puedeAgregar = puedeAgregar && tallaSeleccionada;
+    }
+    
+    if (btnAgregar) {
+        btnAgregar.disabled = !puedeAgregar;
+        
+        if (!varianteSeleccionada || varianteSeleccionada === '') {
+            btnAgregar.innerHTML = '<i class="bi bi-palette"></i> Haz clic en un color arriba';
+        } else if (necesitaVariables && !variableSeleccionada) {
+            btnAgregar.innerHTML = '<i class="bi bi-palette"></i> Selecciona color/material';
+        } else if (necesitaTallas && !tallaSeleccionada) {
+            btnAgregar.innerHTML = '<i class="bi bi-rulers"></i> Selecciona talla';
+        } else {
+            btnAgregar.innerHTML = '<i class="bi bi-cart-plus"></i> Agregar al carrito';
+        }
+    }
+    
+    if (btnComprar) btnComprar.disabled = !puedeAgregar;
+}
     function cambiarCantidad(delta) {
         cantidad = parseInt(document.getElementById('input-cantidad').value) + delta;
         cantidad = Math.max(1, Math.min(10, cantidad));
@@ -2093,65 +2182,6 @@
     }
     
     document.addEventListener('DOMContentLoaded', cargarFooter);
-// ========== CARGAR RESEÑAS DEL PRODUCTO ==========
-async function cargarResenasProducto(productoId) {
-  try {
-    const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/resenas.json');
-    const todasResenas = await response.json();
-    
-    const resenasProducto = todasResenas[productoId] || [];
-    
-    if (resenasProducto.length > 0) {
-      // Calcular promedio
-      const promedio = (resenasProducto.reduce((sum, r) => sum + r.calificacion, 0) / resenasProducto.length).toFixed(1);
-      
-      // Actualizar header
-      document.querySelector('#promedio-resenas').textContent = promedio;
-      document.querySelector('#contador-resenas').textContent = `(${resenasProducto.length} reseñas)`;
-      
-      // Generar HTML de reseñas
-      let htmlResenas = '';
-      resenasProducto.forEach(r => {
-        htmlResenas += `
-          <div class="resena-item">
-            <div class="resena-header">
-              <div class="resena-avatar">${r.nombre.charAt(0)}</div>
-              <div>
-                <div class="resena-nombre">${r.nombre}</div>
-                <div class="resena-fecha">${new Date(r.fecha).toLocaleDateString('es-CO')}</div>
-              </div>
-              <div class="ms-auto">
-                <span class="resena-estrellas">${'★'.repeat(r.calificacion)}${'☆'.repeat(5 - r.calificacion)}</span>
-              </div>
-            </div>
-            <div class="resena-comentario">"${r.comentario}"</div>
-            <div class="resena-compra-verificada">
-              <i class="bi bi-check-circle-fill"></i> Compra verificada
-            </div>
-          </div>
-        `;
-      });
-      
-      document.getElementById('lista-resenas').innerHTML = htmlResenas;
-    } else {
-      // No hay reseñas
-      document.getElementById('lista-resenas').innerHTML = `
-        <div class="text-center text-muted py-5">
-          <i class="bi bi-star fs-1"></i>
-          <p class="mt-2">Aún no hay reseñas para este producto.</p>
-          <p class="small">Sé el primero en opinar después de tu compra.</p>
-        </div>
-      `;
-    }
-  } catch (error) {
-    console.error('Error cargando reseñas:', error);
-    document.getElementById('lista-resenas').innerHTML = `
-      <div class="text-center text-muted py-5">
-        <p>Error al cargar reseñas</p>
-      </div>
-    `;
-  }
-}
   </script>
 </body>
 </html>
