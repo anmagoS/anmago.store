@@ -951,11 +951,17 @@ function enviarAlertaTelegram(datos) {
     const chatId = '-1003789211905';
     const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', hour12: true });
     
-    // Crear link de WhatsApp para el teléfono del cliente
+    // Crear link de WhatsApp con mensaje preformado profesional
     const telefonoCliente = datos.telefono || 'No especificado';
-    const whatsappLink = `https://wa.me/${telefonoCliente.replace(/\D/g, '')}`;
+    const telefonoLimpio = telefonoCliente.replace(/\D/g, '');
+    
+    // Mensaje profesional preformado para el cliente
+    const mensajePreformado = `Hola, somos Anmago Store. Hemos recibido tu solicitud de pedido y estamos verificando disponibilidad de stock. En breve nos comunicaremos contigo para confirmar y coordinar el pago. ¡Gracias por confiar en nosotros!`;
+    const mensajeCodificado = encodeURIComponent(mensajePreformado);
+    const whatsappLinkConMensaje = `https://wa.me/${telefonoLimpio}?text=${mensajeCodificado}`;
     
     let productosTexto = '';
+    let resumenProductos = '';
     if (datos.productos && datos.productos.length > 0) {
         productosTexto = '\n\n🛒 <b>PRODUCTOS:</b>\n';
         datos.productos.forEach((p, i) => {
@@ -964,14 +970,19 @@ function enviarAlertaTelegram(datos) {
         });
         const total = datos.productos.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
         productosTexto += `\n💰 <b>TOTAL: $${total.toLocaleString('es-CO')}</b>`;
+        
+        // Resumen para el mensaje de WhatsApp (opcional, si quieres incluirlo)
+        resumenProductos = datos.productos.map(p => `- ${p.nombreCompleto} (${p.talla}) x${p.cantidad}`).join('\n');
     }
     
-    const mensaje = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n━━━━━━━━━━━━━━━━━━━━━\n👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n📱 <b>Teléfono:</b> <a href="${whatsappLink}">${telefonoCliente}</a> (clic para chatear)\n📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}${productosTexto}\n⏰ <b>Fecha:</b> ${fecha}\n✅ <b>Pendiente verificar stock</b>`;
+    const mensajeTelegram = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n━━━━━━━━━━━━━━━━━━━━━\n👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n📱 <b>Teléfono:</b> <a href="${whatsappLinkConMensaje}">${telefonoCliente}</a> (clic para chatear con mensaje preformado)\n📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}${productosTexto}\n⏰ <b>Fecha:</b> ${fecha}\n✅ <b>Pendiente verificar stock</b>`;
+    
+    console.log('📤 Enviando mensaje a Telegram con link de WhatsApp preformado...');
     
     fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: chatId, text: mensaje, parse_mode: 'HTML', disable_web_page_preview: false })
+        body: JSON.stringify({ chat_id: chatId, text: mensajeTelegram, parse_mode: 'HTML', disable_web_page_preview: false })
     }).catch(err => console.error('Error Telegram:', err));
 }
 
