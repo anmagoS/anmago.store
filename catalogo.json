@@ -3607,84 +3607,6 @@
     "descripcion": "El reloj Metro Xmetro presenta punteros metálicos y una caja también de material metálico. Su estructura está diseñada para ser instalada en la pared."
   },
   {
-    "id": "BBBEBB44",
-    "tipo": "ROPA",
-    "subtipo": "CABALLERO",
-    "categoria": "PANTALONETAS",
-    "subcategoria": "MOTIVOS",
-    "producto": "PANTALONETA MALIBU",
-    "material": "ALGODUN BURDA",
-    "tallas": "S,M,L,XL",
-    "precio": 68200,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 470
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_2.190027.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 471
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_3.190027.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 472
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_4.190030.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 473
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_5.190030.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 474
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_6.190030.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 475
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_7.190032.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 476
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_8.190033.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 477
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_9.190033.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 478
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_10.190035.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 479
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_11.190035.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 480
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_12.190035.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 481
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_1.190027.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_2.190027.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_3.190027.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_4.190030.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_5.190030.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_6.190030.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_7.190032.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_8.190033.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_9.190033.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_10.190035.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_11.190035.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_79/PRODUCTOS_Images_bbbebb44.IMAGEN_12.190035.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "MALIBU",
-    "descripcion": "La pantaloneta Malibu está confeccionada con algodón burda y se ofrece en cuatro tallas diferentes: S, M, L y XL."
-  },
-  {
     "id": "041F88D2",
     "tipo": "HOGAR",
     "subtipo": "ILUMINACION",
@@ -4373,74 +4295,6 @@
     "promo": false,
     "proveedor": "ESTAMPADOS JYM CARLOS TORRES",
     "descripcion": "El Conjunto Jogger Camiseta está compuesto por una camiseta y un jogger, confeccionados en una combinación de materiales que incluye algodón. Este conjunto está disponible en una variedad de tallas, que abarcan desde 2-4 hasta 14-16, para adaptarse a diferentes edades y estilos. La estructura del conjunto se enfoca en la comodidad y la flexibilidad, permitiendo un rango de movimiento amplio."
-  },
-  {
-    "id": "78B323AF",
-    "tipo": "ROPA",
-    "subtipo": "UNISEX",
-    "categoria": "BUSOS",
-    "subcategoria": "PAREJAS",
-    "producto": "BUSOS PAREJAS",
-    "material": "BURDA",
-    "tallas": "S,M,L,XL",
-    "precio": 147600,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 546
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_2.001710.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 547
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_3.001710.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 548
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_4.001712.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 549
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_5.001713.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 550
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_6.001713.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 551
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_7.001714.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 552
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_8.001715.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 553
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_9.001715.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 554
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_10.001716.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 555
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_1.001710.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_2.001710.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_3.001710.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_4.001712.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_5.001713.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_6.001713.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_7.001714.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_8.001715.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_9.001715.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_101/PRODUCTOS_Images_78b323af.IMAGEN_10.001716.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "ISABELLA FASHION",
-    "descripcion": "Este par de busos está confeccionado en burda y se ofrece en cuatro tallas: S, M, L y XL. La estructura de los busos está diseñada para proporcionar comodidad y ajuste óptimo al usuario. Su diseño permite un movimiento libre y cómodo en diversas situaciones."
   },
   {
     "id": "5F28828E",
@@ -6475,49 +6329,6 @@
     "descripcion": "Este pijama caballero está confeccionado en piel de durazno y se ofrece en tallas S, M, L y XL, proporcionando comodidad y ajuste adecuado."
   },
   {
-    "id": "F9AEAFB6",
-    "tipo": "ROPA",
-    "subtipo": "DAMA",
-    "categoria": "CONJUNTOS",
-    "subcategoria": "HILO LICRADO",
-    "producto": "CONJUNTO BROOKLYN",
-    "material": "HILO LICRADO",
-    "tallas": "UNICA",
-    "precio": 132300,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 775
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_2.215757.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 776
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_3.215757.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 777
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_4.215800.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 778
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_5.215800.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 779
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_1.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_2.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_3.215757.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_4.215800.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_153/PRODUCTOS_Images_f9aeafb6.IMAGEN_5.215800.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "AZALEA BODEGA MAYORISTA",
-    "descripcion": "Confeccionado en hilo licrado, el Conjunto Brooklyn se caracteriza por su estructura única, presentada en una sola talla."
-  },
-  {
     "id": "1B761E02",
     "tipo": "ROPA",
     "subtipo": "NIÑOS",
@@ -6743,39 +6554,6 @@
     "promo": false,
     "proveedor": "DEUS COMPANY",
     "descripcion": "Este crop top está confeccionado en algodón licrado y se presenta en una talla única, siendo una opción cómoda y versátil para diversas ocasiones."
-  },
-  {
-    "id": "A90F33FB",
-    "tipo": "ESCOLAR",
-    "subtipo": "HOGAR",
-    "categoria": "ESCOLAR",
-    "subcategoria": "ESFEROS",
-    "producto": "ESFERO GRAVITACIONAL",
-    "material": "BASE MAGNÉTICA",
-    "tallas": "N/A",
-    "precio": 23050,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_1.144645.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 817
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_2.144645.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 818
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_3.144645.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 819
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_1.144645.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_1.144645.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_2.144645.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_158/PRODUCTOS_Images_a90f33fb.IMAGEN_3.144645.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "NECOG",
-    "descripcion": "Este esfero gravitacional cuenta con una base magnética que permite interactuar con superficies ferromagnéticas, demostrando la fuerza de gravedad y los conceptos de atracción y repulsión. Su diseño permite ilustrar de manera práctica y visual los fenómenos físicos, facilitando la comprensión de los estudiantes."
   },
   {
     "id": "8BF9D236",
@@ -7859,35 +7637,6 @@
     "promo": false,
     "proveedor": "MANDRA",
     "descripcion": "La camisa caballero está confeccionada en popelina spandex, ofreciendo una estructura liviana y flexible. La prenda se encuentra disponible en cuatro tallas: S, M, L y XL, para adaptarse a diferentes cuerpos y preferencias. Presenta un diseño clásico y sobrio, adecuado para ocasiones formales y diarias."
-  },
-  {
-    "id": "4471BA20",
-    "tipo": "HOGAR",
-    "subtipo": "HABITACION",
-    "categoria": "SONIDO Y TELEVISION",
-    "subcategoria": "PROYECTORES",
-    "producto": "PROYECTOR HY300 PRO",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 204000,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 961
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_2.205605.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 962
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_1.205605.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_184/PRODUCTOS_Images_4471ba20.IMAGEN_2.205605.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "El PROYECTOR HY300 PRO es un equipo de proyección de alta calidad, diseñado para ofrecer una experiencia de visualización óptima. Cuenta con una estructura resistente y compacta, lo que permite una fácil instalación y movilidad.",
-    "video_url": "https://gv-vod-cdn.aliexpress-media.com/ae_sg_gmc/vt/gv9a-4ddc296c-a1c180dc-99e6e1fa-2641/trans/aidc/hwxhky-h265-hd.mp4?auth_key=1763845073-0-0-b68427b618c364624710f32ac153ce20"
   },
   {
     "id": "80202FF4",
