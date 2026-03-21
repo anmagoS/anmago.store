@@ -2129,36 +2129,43 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_10.155324.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "LILA TORRE EIFFEL",
         "orden": 263
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_11.155325.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "MEGRO MINIE",
         "orden": 264
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_12.155325.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "PALO DE ROSA",
         "orden": 265
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_13.155327.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 266
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_14.155328.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "CAFE",
         "orden": 267
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_15.155329.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "MORADO LOVE",
         "orden": 268
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_45/PRODUCTOS_Images_0386adb6.IMAGEN_16.155330.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NARANJA LOVE",
         "orden": 269
       }
     ],
@@ -2182,11 +2189,13 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_1.201542.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 270
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_46/PRODUCTOS_Images_c3d9360d.IMAGEN_2.201542.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "CAFE",
         "orden": 271
       },
       {
