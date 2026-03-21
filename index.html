@@ -248,39 +248,48 @@
       box-shadow: var(--shadow-lg);
     }
     
-    /* CATEGORÍAS RÁPIDAS MEJORADAS */
-    .categoria-rapida-card {
-      background: white;
-      border-radius: 20px;
-      padding: 1rem 0.75rem;
-      text-align: center;
-      transition: var(--transition);
-      cursor: pointer;
-      border: 1px solid var(--border-light);
-      box-shadow: var(--shadow-sm);
-    }
-    .categoria-rapida-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary-light);
-    }
-    .categoria-rapida-card i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      display: inline-block;
-      transition: var(--transition);
-    }
-    .categoria-rapida-card:hover i {
-      transform: scale(1.1);
-      color: var(--primary-light);
-    }
-    .categoria-rapida-card span {
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--text-dark);
-      display: block;
-    }
+   /* CATEGORÍAS RÁPIDAS - VERSIÓN COMPACTA */
+.categoria-rapida-card {
+  background: white;
+  border-radius: 30px;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  min-width: 70px;
+  white-space: nowrap;
+}
+
+.categoria-rapida-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+  background: linear-gradient(135deg, white, var(--bg-light));
+}
+
+.categoria-rapida-card i {
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-right: 0.4rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.categoria-rapida-card span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.categoria-rapida-card:hover i,
+.categoria-rapida-card:hover span {
+  color: var(--primary-light);
+}
     
     /* PRODUCTOS DESTACADOS MEJORADOS */
     .productos-destacados { margin-bottom: 3rem; }
@@ -487,13 +496,13 @@
     /* Accesibilidad */
     :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
- /* ========== CARRUSEL DE CATEGORÍAS RÁPIDAS ========== */
+/* Carrusel general más compacto */
 .categorias-carrusel {
   position: relative;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .categorias-carrusel-container {
@@ -502,7 +511,7 @@
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   flex: 1;
-  padding: 8px 0;
+  padding: 4px 0;
 }
 
 .categorias-carrusel-container::-webkit-scrollbar {
@@ -525,8 +534,8 @@
 
 .categorias-scroll-wrapper {
   display: flex;
-  gap: 0.75rem;
-  padding: 0.25rem 0;
+  gap: 0.5rem;
+  padding: 0;
   min-width: min-content;
 }
 
@@ -571,13 +580,13 @@
   color: var(--primary-light);
 }
 
-/* Flechas de navegación */
+/* Flechas de navegación más pequeñas */
 .btn-carrusel-categoria {
   background: white;
   border: 1px solid var(--border-light);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -596,7 +605,7 @@
 }
 
 .btn-carrusel-categoria i {
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 /* Indicador visual de que hay más contenido */
