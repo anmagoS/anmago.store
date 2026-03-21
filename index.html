@@ -487,7 +487,160 @@
     /* Accesibilidad */
     :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-  </style>
+ /* ========== CARRUSEL DE CATEGORÍAS RÁPIDAS ========== */
+.categorias-carrusel {
+  position: relative;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.categorias-carrusel-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.categorias-carrusel-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.categorias-carrusel-container::-webkit-scrollbar-track {
+  background: var(--border-light);
+  border-radius: 10px;
+}
+
+.categorias-carrusel-container::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+
+.categorias-carrusel-container::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+.categorias-scroll-wrapper {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.25rem 0;
+  min-width: min-content;
+}
+
+.categoria-rapida-card {
+  background: white;
+  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  text-align: center;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  min-width: 85px;
+}
+
+.categoria-rapida-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+  background: linear-gradient(135deg, white, var(--bg-light));
+}
+
+.categoria-rapida-card i {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.categoria-rapida-card span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.categoria-rapida-card:hover i,
+.categoria-rapida-card:hover span {
+  color: var(--primary-light);
+}
+
+/* Flechas de navegación */
+.btn-carrusel-categoria {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.btn-carrusel-categoria:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-carrusel-categoria i {
+  font-size: 1rem;
+}
+
+/* Indicador visual de que hay más contenido */
+.categorias-carrusel-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9));
+  display: none;
+}
+
+.categorias-carrusel-container.has-overflow::after {
+  display: block;
+}
+
+/* Texto indicador para móvil */
+.categorias-indicador {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .categorias-indicador {
+    display: block;
+  }
+  .categoria-rapida-card {
+    padding: 0.5rem 1rem;
+    min-width: 75px;
+  }
+  .categoria-rapida-card i {
+    font-size: 1rem;
+  }
+  .categoria-rapida-card span {
+    font-size: 0.75rem;
+  }
+}
+ </style>
   
   <!-- CSS EXTERNO CARGADO ASÍNCRONAMENTE -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
@@ -559,12 +712,32 @@
   <!-- BOTÓN VOLVER AL INICIO -->
   <a href="https://anmagos.github.io/anmago.store/" class="btn-volver-inicio" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio" aria-label="Volver al inicio"><i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i></a>
 
-  <!-- CATEGORÍAS RÁPIDAS -->
-  <div class="container-fluid mt-3">
-    <div class="categorias-rapidas" id="categorias-rapidas">
-      <div class="text-center py-2"><div class="spinner-border spinner-border-sm text-primary" role="status"><span class="visually-hidden">Cargando...</span></div><small class="text-muted ms-2">Cargando categorías...</small></div>
+<!-- CATEGORÍAS RÁPIDAS - CARRUSEL HORIZONTAL -->
+<div class="container-fluid mt-3 px-2">
+  <div class="categorias-carrusel" id="categorias-carrusel-wrapper">
+    <button class="btn-carrusel-categoria" id="btn-carrusel-prev" aria-label="Categorías anteriores" style="display: none;">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    
+    <div class="categorias-carrusel-container" id="categorias-carrusel-container">
+      <div class="categorias-scroll-wrapper" id="categorias-rapidas">
+        <div class="text-center py-2 w-100">
+          <div class="spinner-border spinner-border-sm text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          <small class="text-muted ms-2">Cargando categorías...</small>
+        </div>
+      </div>
     </div>
+    
+    <button class="btn-carrusel-categoria" id="btn-carrusel-next" aria-label="Más categorías" style="display: none;">
+      <i class="bi bi-chevron-right"></i>
+    </button>
   </div>
+  <div class="categorias-indicador">
+    <i class="bi bi-arrow-left-right"></i> Desliza para ver más categorías
+  </div>
+</div>
 
   <!-- BANNER INSTITUCIONAL MEJORADO -->
   <div class="container-fluid banner-promocional py-2">
@@ -814,5 +987,74 @@
     let clsValue = 0; const clsObserver = new PerformanceObserver((entryList) => { for (const entry of entryList.getEntries()) if (!entry.hadRecentInput) clsValue += entry.value; if (typeof gtag === 'function' && clsValue > 0) gtag('event', 'performance', { event_category: 'Web Vitals', event_label: 'CLS', value: Math.round(clsValue * 1000) / 1000, non_interaction: true }); }); clsObserver.observe({entryTypes: ['layout-shift']});
     window.dispatchEvent(new Event('carruselListo'));
   </script>
+  <script>
+// ==============================================
+// CARRUSEL DE CATEGORÍAS RÁPIDAS
+// ==============================================
+
+function inicializarCarruselCategorias() {
+  const container = document.getElementById('categorias-carrusel-container');
+  const btnPrev = document.getElementById('btn-carrusel-prev');
+  const btnNext = document.getElementById('btn-carrusel-next');
+  const wrapper = document.getElementById('categorias-rapidas');
+  
+  if (!container) return;
+  
+  // Función para verificar si hay overflow y mostrar/ocultar flechas
+  function verificarOverflow() {
+    if (!container) return;
+    const hasOverflow = container.scrollWidth > container.clientWidth;
+    if (btnPrev && btnNext) {
+      btnPrev.style.display = hasOverflow ? 'flex' : 'none';
+      btnNext.style.display = hasOverflow ? 'flex' : 'none';
+    }
+    
+    if (hasOverflow) {
+      container.classList.add('has-overflow');
+    } else {
+      container.classList.remove('has-overflow');
+    }
+  }
+  
+  // Scroll izquierda
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      container.scrollBy({ left: -280, behavior: 'smooth' });
+    });
+  }
+  
+  // Scroll derecha
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      container.scrollBy({ left: 280, behavior: 'smooth' });
+    });
+  }
+  
+  // Observar cambios en el wrapper para detectar cuando se cargan las categorías
+  const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if (mutation.type === 'childList' && wrapper.children.length > 1) {
+        setTimeout(verificarOverflow, 100);
+      }
+    });
+  });
+  
+  observer.observe(wrapper, { childList: true, subtree: true });
+  
+  // Verificar overflow al cargar y al redimensionar
+  setTimeout(verificarOverflow, 500);
+  window.addEventListener('resize', verificarOverflow);
+}
+
+// Esperar a que el DOM esté listo y luego inicializar
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(inicializarCarruselCategorias, 1500);
+});
+
+// También cuando app.js termine de cargar las categorías
+window.addEventListener('catalogoCargado', function() {
+  setTimeout(inicializarCarruselCategorias, 500);
+});
+</script>
 </body>
 </html>
