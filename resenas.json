@@ -9,8 +9,20 @@
     {
       "nombre": "Juan Pérez",
       "calificacion": 3,
-      "comentario": "",
+      "comentario": "llego perfecta me quedo apenas, super rapido me llego el mismo dia q la pedi",
       "fecha": "2026-03-12"
+    },
+    {
+      "nombre": "Alexander Caicedo",
+      "calificacion": 5,
+      "comentario": "Buenos acabados compre dos y mi novia quedo feliz",
+      "fecha": "2026-03-19"
+    },
+    {
+      "nombre": "Roberto Rodriguez",
+      "calificacion": 4,
+      "comentario": "buena atencion y el producto me gusto,me toco cambiar la talla pero me respondieron rapido y me hicieron el cambio sin probelma.",
+      "fecha": "2026-03-25"
     }
   ],
   "EE03DCC0": [
