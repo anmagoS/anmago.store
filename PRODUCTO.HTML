@@ -599,36 +599,38 @@
       </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES -->
-    <section class="resenas-container mt-5">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-warning text-dark fs-6">0.0</span>
-          <span class="text-muted small">(0 reseñas)</span>
-        </div>
+    <!-- NUEVA SECCIÓN: RESEÑAS Y CALIFICACIONES DINÁMICAS -->
+<section class="resenas-container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="h4 fw-bold mb-0">⭐ Opiniones de clientes</h3>
+    <div id="resumen-calificaciones" class="d-flex align-items-center gap-2">
+      <div class="spinner-border spinner-border-sm text-primary" role="status">
+        <span class="visually-hidden">Cargando...</span>
       </div>
-      <!-- CONTENEDOR DE RESEÑAS (VACÍO) -->
-  <div id="lista-resenas">
-    <div class="text-center text-muted py-5">
-      <i class="bi bi-star fs-1"></i>
-      <p class="mt-2">Aún no hay reseñas para este producto.</p>
-      <p class="small">Sé el primero en opinar después de tu compra.</p>
     </div>
   </div>
-      
-      
-      <!-- Botón para dejar reseña (simulado por ahora) -->
-      <div class="text-center mt-3 pt-2 border-top">
-        <p class="small text-muted">¿Ya compraste este producto?</p>
-        <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
-          <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
-        </button>
-        <p class="small text-muted mt-2">
-          <i class="bi bi-info-circle"></i> Las reseñas aparecerán después de tu compra
-        </p>
+  
+  <!-- CONTENEDOR DE RESEÑAS (SE LLENARÁ DINÁMICAMENTE) -->
+  <div id="lista-resenas">
+    <div class="text-center py-3">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando reseñas...</span>
       </div>
-    </section>
+      <p class="mt-2 text-muted">Cargando opiniones de clientes...</p>
+    </div>
+  </div>
+  
+  <!-- Botón para dejar reseña -->
+  <div class="text-center mt-3 pt-2 border-top">
+    <p class="small text-muted">¿Ya compraste este producto?</p>
+    <button class="btn btn-outline-primary btn-sm" onclick="dejarResena()">
+      <i class="bi bi-pencil-square me-1"></i> Dejar mi opinión
+    </button>
+    <p class="small text-muted mt-2">
+      <i class="bi bi-info-circle"></i> Las reseñas aparecerán después de tu compra verificada
+    </p>
+  </div>
+</section>
 
     <!-- PRODUCTOS RELACIONADOS -->
     <section class="mt-5 pt-4 border-top">
@@ -1540,6 +1542,9 @@
             // RENDERIZAR PRODUCTO
             renderizarProducto(productoActual);
             cargarProductosRelacionados(productos, productoActual);
+            
+            // ========== CARGAR RESEÑAS DEL PRODUCTO ==========
+            await cargarResenasProducto(productoActual.id);
 
         } catch (error) {
             console.error('Error cargando producto:', error);
@@ -2144,16 +2149,128 @@
         window.open(url, '_blank');
     };
     
-    // ========== FUNCIONES PARA RESEÑAS ==========
+    // ========== FUNCIÓN PARA CARGAR RESEÑAS DESDE JSON ==========
+    async function cargarResenasProducto(productId) {
+        try {
+            console.log('📝 Cargando reseñas para producto:', productId);
+            
+            // 1. Cargar el archivo JSON de reseñas
+            const respuesta = await fetch('resenas.json?v=' + Date.now());
+            
+            if (!respuesta.ok) {
+                console.error('No se pudo cargar el archivo de reseñas');
+                return;
+            }
+            
+            const todasLasResenas = await respuesta.json();
+            console.log('✅ Reseñas cargadas correctamente');
+            
+            // 2. Buscar reseñas de este producto específico
+            const reseñasProducto = todasLasResenas[productId];
+            
+            const contenedor = document.getElementById('lista-resenas');
+            const badgePromedio = document.querySelector('.resenas-container .badge');
+            const textResenas = document.querySelector('.resenas-container .text-muted.small');
+            
+            // 3. Si no hay reseñas, mostrar mensaje
+            if (!reseñasProducto || reseñasProducto.length === 0) {
+                if (contenedor) {
+                    contenedor.innerHTML = `
+                        <div class="text-center text-muted py-5">
+                            <i class="bi bi-star fs-1"></i>
+                            <p class="mt-2">Aún no hay reseñas para este producto.</p>
+                            <p class="small">Sé el primero en opinar después de tu compra.</p>
+                        </div>
+                    `;
+                }
+                if (badgePromedio) badgePromedio.textContent = '0.0';
+                if (textResenas) textResenas.innerHTML = '(0 reseñas)';
+                return;
+            }
+            
+            // 4. Calcular promedio
+            let totalCalificaciones = 0;
+            reseñasProducto.forEach(r => totalCalificaciones += r.calificacion);
+            const promedio = (totalCalificaciones / reseñasProducto.length).toFixed(1);
+            
+            // 5. Actualizar el header de reseñas
+            if (badgePromedio) badgePromedio.textContent = promedio;
+            if (textResenas) textResenas.innerHTML = `(${reseñasProducto.length} ${reseñasProducto.length === 1 ? 'reseña' : 'reseñas'})`;
+            
+            // 6. Generar HTML de las reseñas
+            let htmlResenas = '';
+            
+            reseñasProducto.forEach(resena => {
+                // Crear estrellas
+                let estrellasHtml = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= resena.calificacion) {
+                        estrellasHtml += '<i class="bi bi-star-fill text-warning"></i>';
+                    } else {
+                        estrellasHtml += '<i class="bi bi-star text-secondary"></i>';
+                    }
+                }
+                
+                // Formatear fecha
+                const fecha = new Date(resena.fecha);
+                const fechaFormateada = fecha.toLocaleDateString('es-CO', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                htmlResenas += `
+                    <div class="resena-item">
+                        <div class="resena-header">
+                            <div class="resena-avatar">
+                                ${resena.nombre.charAt(0).toUpperCase()}
+                            </div>
+                            <div>
+                                <div class="resena-nombre">${resena.nombre}</div>
+                                <div class="resena-fecha">${fechaFormateada}</div>
+                            </div>
+                        </div>
+                        <div class="resena-estrellas">
+                            ${estrellasHtml}
+                        </div>
+                        ${resena.comentario ? `<p class="resena-comentario mt-2">"${resena.comentario}"</p>` : ''}
+                        <div class="resena-compra-verificada">
+                            <i class="bi bi-check-circle-fill"></i> Compra verificada
+                        </div>
+                    </div>
+                `;
+            });
+            
+            if (contenedor) {
+                contenedor.innerHTML = htmlResenas;
+                console.log(`✅ Mostradas ${reseñasProducto.length} reseñas para el producto ${productId}`);
+            }
+            
+        } catch (error) {
+            console.error('Error cargando reseñas:', error);
+        }
+    }
+    
+    // ========== FUNCIONES PARA RESEÑAS (ACTUALIZADAS) ==========
     window.verTodasLasResenas = function() {
+        const reseñasContainer = document.getElementById('lista-resenas');
+        if (reseñasContainer && reseñasContainer.innerHTML.includes('resena-item')) {
+            // Ya hay reseñas mostradas, no hacer nada
+            return;
+        }
+        // Si no hay reseñas, mostrar mensaje
         alert('Próximamente podrás ver todas las reseñas. Por ahora, estas son las primeras opiniones de clientes.');
     };
     
     window.dejarResena = function() {
-        alert('Las reseñas estarán disponibles después de tu compra. ¡Gracias por tu interés!');
+        const productoId = obtenerIdProducto();
+        if (productoId) {
+            window.location.href = `resena-formulario.html?id=${productoId}`;
+        } else {
+            alert('No se pudo identificar el producto');
+        }
     };
   </script>
-
   <!-- SCRIPTS EXTERNOS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="buscador.js?v=20251115"></script>
