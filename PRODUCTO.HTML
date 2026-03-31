@@ -403,6 +403,11 @@
       <!-- COLUMNA IZQUIERDA: GALERÍA -->
       <div class="col-md-6 mb-4">
         <div class="sticky-top" style="top: 100px;">
+
+<!-- FONDO DETRÁS DE TODO (agregar AQUÍ) -->
+        <div id="fondo-campana" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; border-radius: 20px; overflow: hidden; z-index: -1; pointer-events: none;">
+            <img src="istockphoto-1137362595-170667a.jpg" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.3;">
+        </div>
           <!-- IMAGEN PRINCIPAL -->
           <div class="position-relative mb-3">
             <img id="imagen-principal" src="" alt="Producto" 
@@ -1144,7 +1149,7 @@
       } catch (error) { mostrarError('Error al cargar el producto'); }
     }
 
-    function renderizarProducto(producto) {
+   function renderizarProducto(producto) {
       document.getElementById('nombre-producto-mobile').textContent = producto.producto;
       document.getElementById('nombre-producto-desktop').textContent = producto.producto;
       document.getElementById('descripcion-producto-pc').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
@@ -1177,6 +1182,12 @@
       renderizarBadges(producto);
       renderizarVideo(producto);
       verificarEstadoBotonAgregar();
+      
+      // 👇 AGREGAR AQUÍ EL FONDO ESPECIAL 👇
+      if (producto.id === 'EE03DCC0') {  // Cambia por el ID de tu producto
+          const fondo = document.getElementById('fondo-campana');
+          if (fondo) fondo.style.display = 'block';
+      }
     }
 
     function renderizarBreadcrumb(producto) {
