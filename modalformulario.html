@@ -680,6 +680,9 @@ window.finalizarRegistro = function(success = true, mensaje = '') {
     console.log('🎯 FINALIZANDO REGISTRO:', { success, mensaje });
     
     if (success) {
+        // 🔥 CONVERSIÓN DE GOOGLE ADS
+        gtag('event', 'conversion', {'send_to': 'AW-17878933588/L-EBCKnp8PYbENTAq81C'});
+        
         mostrarAlertaFeedback('✅ ¡Pedido recibido! En menos de 30 minutos te contactaremos por WhatsApp para verificar disponibilidad y coordinar tu pedido.', 'success', 5000);
         
         if (window.articulosCarrito && window.articulosCarrito.length > 0) {
@@ -929,7 +932,7 @@ function enviarDatosGoogleSheets() {
             params.append('telefonoCliente', telefono);
             params.append('nombreCliente', nombre);
             params.append('direccionCliente', direccionBase);
-            params.append('complementoDir', "");
+            params.append('complementoDir', direccionCompleta);
             params.append('ciudadDestino', ciudad);
             params.append('correo', email);
             params.append('clienteId', clienteId);
