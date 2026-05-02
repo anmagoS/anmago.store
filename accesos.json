@@ -260,30 +260,6 @@
     "ruta": "/HOGAR/COCINA/COCINA/,"
   },
   {
-    "id_producto": "216A9768",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/GEL"
-  },
-  {
-    "id_producto": "E8C85FB5",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/PROTECTORES SOLARES"
-  },
-  {
-    "id_producto": "A3039F08",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "04647DFC",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
-  },
-  {
-    "id_producto": "718DAEE8",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
-  },
-  {
-    "id_producto": "5146C5FD",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
-  },
-  {
     "id_producto": "18F86512",
     "ruta": "/ROPA/DAMA/BLUSAS/CROP TOP"
   },
@@ -298,14 +274,6 @@
   {
     "id_producto": "ED5F855B",
     "ruta": "/ROPA/DAMA/BODYS/MANGA LARGA"
-  },
-  {
-    "id_producto": "26B05170",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMA"
-  },
-  {
-    "id_producto": "42C1A7BE",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/CREMAS"
   },
   {
     "id_producto": "83181ABB",
@@ -334,10 +302,6 @@
   {
     "id_producto": "94696F77",
     "ruta": "/RELOJERIA/DAMA/QYQ/ANALOGO"
-  },
-  {
-    "id_producto": "86FE1FF4",
-    "ruta": "/BELLEZA/DAMA/BIOAQUA/COMBOS"
   },
   {
     "id_producto": "9918E93A",
@@ -374,66 +338,6 @@
   {
     "id_producto": "8B45C615",
     "ruta": "/ROPA/DAMA/VESTIDOS/FALDA CORTA"
-  },
-  {
-    "id_producto": "A228F8EE",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "B222B716",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "8338CCC8",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "E769D779",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "F52092B6",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/SOMBRAS"
-  },
-  {
-    "id_producto": "5310849B",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/POLVO DE HADA"
-  },
-  {
-    "id_producto": "799906B7",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS SOMBRAS/POLVO DE HADA"
-  },
-  {
-    "id_producto": "7FA6DDAF",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS BASES/BASES"
-  },
-  {
-    "id_producto": "2AF2A1C6",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS BASES/BASES"
-  },
-  {
-    "id_producto": "9850AE8D",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS BASES/BASES"
-  },
-  {
-    "id_producto": "4F8E3BDD",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS ILUMINADORES/ILUMINADORES"
-  },
-  {
-    "id_producto": "4D0CF37C",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS ILUMINADORES/ILUMINADORES"
-  },
-  {
-    "id_producto": "49DD8A15",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS RUBORES/RUBORES"
-  },
-  {
-    "id_producto": "A5271A75",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS RUBORES/RUBORES"
-  },
-  {
-    "id_producto": "41EA5BE5",
-    "ruta": "/BELLEZA/DAMA/COSMETICOS RUBORES/RUBORES"
   },
   {
     "id_producto": "DF4EC51F",
@@ -636,20 +540,12 @@
     "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO Y OTROS"
   },
   {
-    "id_producto": "FB9792EF",
-    "ruta": "/BELLEZA/DAMA/CABELLO/."
-  },
-  {
     "id_producto": "CA98671B",
     "ruta": "/HOGAR/COCINA/COCINA/JUGOS"
   },
   {
     "id_producto": "203B9170",
     "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO"
-  },
-  {
-    "id_producto": "97ECDC4F",
-    "ruta": "/BELLEZA/DAMA/CABELLO/PLANCHAS"
   },
   {
     "id_producto": "BB921C4B",
@@ -668,16 +564,8 @@
     "ruta": "/HOGAR/BAÑO/ORGANIZADORES/."
   },
   {
-    "id_producto": "8F1FE173",
-    "ruta": "/BELLEZA/DAMA/CABELLO/."
-  },
-  {
     "id_producto": "0F404108",
     "ruta": "/HOGAR/VEHICULOS/GENERICO/CARROS"
-  },
-  {
-    "id_producto": "2D32BA04",
-    "ruta": "/BELLEZA/DAMA/CABELLO/COMBO"
   },
   {
     "id_producto": "6D77B448",
