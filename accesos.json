@@ -236,30 +236,6 @@
     "ruta": "/RELOJERIA/HOGAR/RELOJES DE PARED/PARED"
   },
   {
-    "id_producto": "261377F5",
-    "ruta": "/HOGAR/RELOJES DE PARED/PARED"
-  },
-  {
-    "id_producto": "041F88D2",
-    "ruta": "/HOGAR/ILUMINACION/LAMPARAS/PARLANTE RECARGABLE BLUETOTH"
-  },
-  {
-    "id_producto": "24DBE567",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
-    "id_producto": "CC2EFAB1",
-    "ruta": "/HOGAR/COCINA/COCINA/JARRAS"
-  },
-  {
-    "id_producto": "0C55C555",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
-    "id_producto": "629FA20D",
-    "ruta": "/HOGAR/COCINA/COCINA/,"
-  },
-  {
     "id_producto": "18F86512",
     "ruta": "/ROPA/DAMA/BLUSAS/CROP TOP"
   },
@@ -338,10 +314,6 @@
   {
     "id_producto": "8B45C615",
     "ruta": "/ROPA/DAMA/VESTIDOS/FALDA CORTA"
-  },
-  {
-    "id_producto": "DF4EC51F",
-    "ruta": "/HOGAR/HABITACION/KAWAII/COBIJAS"
   },
   {
     "id_producto": "A0CF36F3",
@@ -520,80 +492,12 @@
     "ruta": "/ROPA/CABALLERO/CAMISAS/CAMISA CABALLERO"
   },
   {
-    "id_producto": "80202FF4",
-    "ruta": "/HOGAR/COCINA/COCINA/MAQUINAS"
-  },
-  {
-    "id_producto": "390C49F7",
-    "ruta": "/HOGAR/COCINA/COCINA/MAQUINAS"
-  },
-  {
-    "id_producto": "EC381FD3",
-    "ruta": "/HOGAR/COCINA/COCINA/ORGANIZADORES"
-  },
-  {
-    "id_producto": "EEBF9E4F",
-    "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO"
-  },
-  {
-    "id_producto": "1643F081",
-    "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO Y OTROS"
-  },
-  {
-    "id_producto": "CA98671B",
-    "ruta": "/HOGAR/COCINA/COCINA/JUGOS"
-  },
-  {
-    "id_producto": "203B9170",
-    "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO"
-  },
-  {
-    "id_producto": "BB921C4B",
-    "ruta": "/HOGAR/HABITACION/ORGANIZADORES/CALZADO"
-  },
-  {
-    "id_producto": "B0175D01",
-    "ruta": "/HOGAR/COCINA/COCINA/CUBIERTOS"
-  },
-  {
-    "id_producto": "54EF50A8",
-    "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "6E7F6BAB",
-    "ruta": "/HOGAR/BAÑO/ORGANIZADORES/."
-  },
-  {
-    "id_producto": "0F404108",
-    "ruta": "/HOGAR/VEHICULOS/GENERICO/CARROS"
-  },
-  {
     "id_producto": "6D77B448",
     "ruta": "/ROPA/CABALLERO/CAMISAS/CAMISAS CABALLERO"
   },
   {
     "id_producto": "B364A1CD",
     "ruta": "/ROPA/CABALLERO/CAMISAS/CAMISAS CABALLERO"
-  },
-  {
-    "id_producto": "63E984D3",
-    "ruta": "/HOGAR/MASCOTAS/GENERICO/MALETA"
-  },
-  {
-    "id_producto": "9A512F91",
-    "ruta": "/HOGAR/MASCOTAS/GENERICO/MALETA"
-  },
-  {
-    "id_producto": "8B80535D",
-    "ruta": "/HOGAR/MASCOTAS/GENERICO/PEINE"
-  },
-  {
-    "id_producto": "21FE4D56",
-    "ruta": "/HOGAR/MASCOTAS/GENERICO/CORREA"
-  },
-  {
-    "id_producto": "CBD23E93",
-    "ruta": "/HOGAR/MASCOTAS/GENERICO/CORRAL"
   },
   {
     "id_producto": "53DF353G",
@@ -618,34 +522,6 @@
   {
     "id_producto": "C351E232",
     "ruta": "/ROPA/UNISEX/PIJAMAS/NAVIDEÑAS"
-  },
-  {
-    "id_producto": "D3A5EE71",
-    "ruta": "/HOGAR/HOGAR/SONIDO Y TELEVISION/CAMARAS"
-  },
-  {
-    "id_producto": "D3A5EE71",
-    "ruta": "/HOGAR/SONIDO Y TELEVISION/CAMARAS"
-  },
-  {
-    "id_producto": "875F9476",
-    "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "EB4531DC",
-    "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "5C7682A7",
-    "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "E804444B",
-    "ruta": "/HOGAR/SALUD/GENERICO/."
-  },
-  {
-    "id_producto": "C01506A2",
-    "ruta": "/HOGAR/COCINA/GENERICO/TETERAS"
   },
   {
     "id_producto": "AA71DF41",
