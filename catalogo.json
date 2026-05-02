@@ -5310,29 +5310,6 @@
     "descripcion": "Este polvo de hada es un producto cosmético que se presenta en una variedad de 12 tonos diferentes. Su composición es de polvo de hada, diseñado para proporcionar una amplia gama de opciones para diferentes necesidades y preferencias de maquillaje."
   },
   {
-    "id": "D0B5FEF4",
-    "tipo": "BELLEZA",
-    "subtipo": "DAMA",
-    "categoria": "COSMETICOS SOMBRAS",
-    "subcategoria": "POLVO DE HADA",
-    "producto": "PINK X25 REF: PINK003",
-    "material": "POLVO DE HADA",
-    "tallas": "N/A",
-    "precio": 29500,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 683
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_123/PRODUCTOS_Images_d0b5fef4.IMAGEN_1.195718.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "GUADALUPE MAKE UP",
-    "descripcion": "El PINK X25 REF: PINK003 es un polvo de hada de color rosa compacto, destinado al uso en cosmética. Presenta una текстура fina y liviana, adecuada para aplicación en la piel."
-  },
-  {
     "id": "7FA6DDAF",
     "tipo": "BELLEZA",
     "subtipo": "DAMA",
@@ -7005,54 +6982,6 @@
     "descripcion": "Conjunto otoño confeccionado en crepe plisado, compuesto por un pantalón. Disponible en talla única."
   },
   {
-    "id": "0940D1F9",
-    "tipo": "NAVIDAD",
-    "subtipo": "UNISEX",
-    "categoria": "JUGUETES",
-    "subcategoria": "BASTA",
-    "producto": "JUEGO DE MESA BASTA",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 75500,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_169/PRODUCTOS_Images_0940d1f9.IMAGEN_1.161052.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 882
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_169/PRODUCTOS_Images_0940d1f9.IMAGEN_1.161052.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_169/PRODUCTOS_Images_0940d1f9.IMAGEN_1.161052.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "XORA",
-    "descripcion": "Este juego de mesa cuenta con una estructura diseñada para la interacción y el entretenimiento, presentando una superficie de juego plana y estabilizada, lista para ser utilizada por los jugadores.",
-    "video_url": "https://youtube.com/shorts/rfxiYkCyes4?feature=share"
-  },
-  {
-    "id": "EFC1A9C2",
-    "tipo": "ESCOLAR",
-    "subtipo": "NIÑOS",
-    "categoria": "ESCOLAR",
-    "subcategoria": "ESTUCHE",
-    "producto": "SET DE ARTE METÁLICO – EDICIÓN PREMIUM",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 81000,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_171/PRODUCTOS_Images_efc1a9c2.IMAGEN_1.164557.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 884
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_171/PRODUCTOS_Images_efc1a9c2.IMAGEN_1.164557.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_171/PRODUCTOS_Images_efc1a9c2.IMAGEN_1.164557.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "XORA",
-    "descripcion": "Este set de arte metálico está diseñado para uso escolar y consta de herramientas y materiales para el desarrollo de actividades creativas y educativas. La estructura del estuche permite una organización y almacenamiento prácticos de los elementos incluidos.",
-    "video_url": "https://youtube.com/shorts/TFBRy4TGiGw?feature=share"
-  },
-  {
     "id": "60ECDDC8",
     "tipo": "ROPA",
     "subtipo": "DAMA",
@@ -8542,95 +8471,6 @@
     "promo": false,
     "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
     "descripcion": "Corral para mascotas de razas pequeñas, estructura diseñada para proporcionar un espacio seguro y adecuado para el cuidado de mascotas de tamaño reducido."
-  },
-  {
-    "id": "0881882A",
-    "tipo": "NAVIDAD",
-    "subtipo": "SONIDO Y TELEVISION",
-    "categoria": "RELOJES",
-    "subcategoria": "COMBO",
-    "producto": "COMBO MK 9.99 4 EN 1",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 123400,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1072
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_2.171815.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1073
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_3.171815.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1074
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_1.171815.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_2.171815.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_211/PRODUCTOS_Images_0881882a.IMAGEN_3.171815.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "El reloj combo MK 9.99 4 en 1 es un modelo que integra cuatro funciones en una sola unidad, incluyendo cronógrafo, calendario, termómetro y luz.رانهge cuenta con una estructura compacta y fácil de manejar."
-  },
-  {
-    "id": "E0DE928C",
-    "tipo": "NAVIDAD",
-    "subtipo": "TECNOLOGIA",
-    "categoria": "DRONES",
-    "subcategoria": ".",
-    "producto": "MEGADRONE CON DOBLE BATERÍA",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 128500,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1075
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_2.190226.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1076
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_3.190226.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1077
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_1.190226.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_2.190226.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_212/PRODUCTOS_Images_e0de928c.IMAGEN_3.190226.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "El Megadrone con doble batería es un dron diseñado para ofrecer una mayor autonomía de vuelo gracias a su sistema de doble batería. Esta característica permite prolongar el tiempo de vuelo, aumentando la capacidad de captura de imágenes o la experiencia de vuelo."
-  },
-  {
-    "id": "0A916EC8",
-    "tipo": "NAVIDAD",
-    "subtipo": "NIÑOS",
-    "categoria": "JUGUETES",
-    "subcategoria": "BALON",
-    "producto": "BALON DE FÚTBOL #5 ATLÉTICO NACIONAL",
-    "material": ".",
-    "tallas": "N/A",
-    "precio": 47900,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 1078
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_213/PRODUCTOS_Images_0a916ec8.IMAGEN_1.191052.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "EL PAISA MAYOR HOGAR Y TEGNOLOGIA",
-    "descripcion": "Este balón de fútbol cuenta con la marca Atlético Nacional y cumple con las dimensiones estándar de un balón #5, apto para uso en partidos y entrenamientos."
   },
   {
     "id": "53DF353G",
