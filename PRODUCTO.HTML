@@ -1287,6 +1287,17 @@
         else carrito.push(productoCarrito);
         localStorage.setItem('carritoAnmago', JSON.stringify(carrito));
         if (typeof actualizarContadoresCarrito === 'function') actualizarContadoresCarrito();
+// ✅ AGREGA EL EVENTO AQUÍ (antes de mostrarConfirmacionAgregado)
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'AddToCart', {
+        content_ids: [productoActual.id],
+        content_name: productoActual.producto,
+        content_type: 'product',
+        value: precioFinal,
+        currency: 'COP'
+      });
+      console.log('✅ AddToCart enviado a Meta');
+    }
         mostrarConfirmacionAgregado();
         return true;
       } catch (error) { mostrarAlertaTemporal('❌ Error al agregar al carrito', 'danger'); return false; }
