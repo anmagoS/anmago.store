@@ -1021,7 +1021,16 @@ function procesarPedido() {
             
             const resultadoEnvio = await enviarDatosGoogleSheets();
             const productos = prepararProductosParaEnvio();
-            
+            // ✅ AGREGAR AQUÍ EL EVENTO DE META PIXEL
+            if (typeof fbq !== 'undefined') {
+                const total = productos.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
+                fbq('track', 'InitiateCheckout', {
+                    value: total,
+                    currency: 'COP',
+                    num_items: productos.length
+                });
+                console.log('✅ InitiateCheckout enviado a Meta');
+            }
             const datosTelegram = {
                 nombre: document.getElementById('nombreCliente')?.value.trim() || 'No especificado',
                 telefono: document.getElementById('telefonoCliente')?.value.trim() || 'No especificado',
