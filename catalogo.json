@@ -4756,10 +4756,16 @@
         "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
         "orden": 709
+      },
+      {
+        "url": "https://ik.imagekit.io/mbsk9dati/producto_A0CF36F3/IMGPRODUCTOS_Images_6defdddb.URL_IMAGEN.160111.jpg?tr=w-600,q-80",
+        "tipo": "VARIANTE",
+        "variacion": "MIEL",
+        "orden": 1157
       }
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_2.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_3.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg?tr=w-600,q-80",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_1.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_2.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_3.181623.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_134/PRODUCTOS_Images_A0CF36F3.IMAGEN_4.181626.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_A0CF36F3/IMGPRODUCTOS_Images_6defdddb.URL_IMAGEN.160111.jpg?tr=w-600,q-80",
     "promo": false,
     "proveedor": "DIAGLER DIANA GONZALEZ",
     "descripcion": "Chaqueta con estructura de peluche confeccionada en Cuerotex. Disponible en tallas S, M, L y XL."
