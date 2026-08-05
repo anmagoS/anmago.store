@@ -6624,31 +6624,37 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_1.174305.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "VERDE",
         "orden": 1017
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_2.174305.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "VERDE CLARO",
         "orden": 1018
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_3.174305.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "AZUL REY",
         "orden": 1019
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_4.174307.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "AZUL",
         "orden": 1020
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_5.174307.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "BLANCO",
         "orden": 1021
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_6.174308.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO",
         "orden": 1022
       },
       {
@@ -6704,6 +6710,7 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_203/PRODUCTOS_Images_6d77b448.IMAGEN_17.174320.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO",
         "orden": 1033
       },
       {
