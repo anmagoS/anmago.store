@@ -968,9 +968,8 @@ function enviarDatosGoogleSheets() {
         }
     });
 }
-
 // ============================================================
-// ✅ FUNCIÓN SEGURA PARA ENVIAR A TELEGRAM (USANDO WORKER)
+// ✅ FUNCIÓN SEGURA PARA ENVIAR A TELEGRAM (CON IMAGEN)
 // ============================================================
 function enviarAlertaTelegram(datos) {
     // 📌 El token NO está aquí. Está en Cloudflare.
@@ -987,7 +986,9 @@ function enviarAlertaTelegram(datos) {
     if (datos.productos && datos.productos.length > 0) {
         productosTexto = '\n\n🛒 <b>PRODUCTOS:</b>\n';
         datos.productos.forEach((p, i) => {
-            productosTexto += `${i+1}. ${p.nombreCompleto}\n   📏 Talla: ${p.talla}\n   🔢 Cantidad: ${p.cantidad}\n   💲 Precio: $${p.precio.toLocaleString('es-CO')}\n`;
+            // 🔥 INCLUIR LA IMAGEN DEL PRODUCTO
+            const imagenUrl = p.imagenUrl || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+            productosTexto += `${i+1}. ${p.nombreCompleto}\n   📏 Talla: ${p.talla}\n   🔢 Cantidad: ${p.cantidad}\n   💲 Precio: $${p.precio.toLocaleString('es-CO')}\n   🖼️ <a href="${imagenUrl}">Ver imagen</a>\n`;
         });
         const total = datos.productos.reduce((sum, p) => sum + (p.precio * p.cantidad), 0);
         productosTexto += `\n💰 <b>TOTAL: $${total.toLocaleString('es-CO')}</b>`;
@@ -1015,6 +1016,7 @@ function enviarAlertaTelegram(datos) {
     })
     .catch(err => console.error('❌ Error en el envío:', err));
 }
+
 function procesarPedido() {
     const btnEnviar = document.getElementById('btnEnviarPedido');
     if (btnEnviar) {
