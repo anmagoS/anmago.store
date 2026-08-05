@@ -970,13 +970,12 @@ function enviarDatosGoogleSheets() {
 }
 
 // ============================================================
-// ✅ FUNCIÓN SEGURA PARA ENVIAR A TELEGRAM (SIN TOKEN)
+// ✅ FUNCIÓN SEGURA PARA ENVIAR A TELEGRAM (USANDO WORKER)
 // ============================================================
 function enviarAlertaTelegram(datos) {
     // 📌 El token NO está aquí. Está en Cloudflare.
     const workerUrl = 'https://bot-telegram.anmagostore.workers.dev/notificar-pedido';
     
-    // Crear el mensaje con la misma estructura que antes
     const fecha = new Date().toLocaleString('es-CO', { timeZone: 'America/Bogota', hour12: true });
     const telefonoCliente = datos.telefono || 'No especificado';
     const telefonoLimpio = telefonoCliente.replace(/\D/g, '');
@@ -996,7 +995,7 @@ function enviarAlertaTelegram(datos) {
 
     const mensajeTelegram = `🛍️ <b>¡NUEVO PEDIDO ANMAGO STORE!</b>\n━━━━━━━━━━━━━━━━━━━━━\n👤 <b>Cliente:</b> ${datos.nombre || 'No especificado'}\n📱 <b>Teléfono:</b> <a href="${whatsappLinkConMensaje}">${telefonoCliente}</a>\n📍 <b>Ciudad:</b> ${datos.ciudad || 'No especificada'}\n🏠 <b>Dirección:</b> ${datos.direccion || 'No especificada'}${productosTexto}\n⏰ <b>Fecha:</b> ${fecha}\n✅ <b>Pendiente verificar stock</b>`;
 
-    // Enviar el mensaje a tu Worker de Cloudflare (NO a Telegram directamente)
+    // Enviar el mensaje al Worker de Cloudflare
     fetch(workerUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1016,7 +1015,6 @@ function enviarAlertaTelegram(datos) {
     })
     .catch(err => console.error('❌ Error en el envío:', err));
 }
-
 function procesarPedido() {
     const btnEnviar = document.getElementById('btnEnviarPedido');
     if (btnEnviar) {
