@@ -1,7 +1,7 @@
 {
   "80783575": [
     {
-      "nombre": "HÃÂÃÂ©ctor Andrade",
+      "nombre": "Hector Andrade",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-12"
@@ -17,12 +17,6 @@
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-04-10"
-    },
-    {
-      "nombre": "Pruebas",
-      "calificacion": 5,
-      "comentario": "Prueba de reseñas alimentando json",
-      "fecha": "2026-08-12"
     }
   ],
   "EE03DCC0": [
@@ -39,19 +33,19 @@
       "fecha": "2026-03-18"
     },
     {
-      "nombre": "Carlos RodrÃÂÃÂ­guez",
+      "nombre": "Carlos Rodriguez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-15"
     },
     {
-      "nombre": "MarÃÂÃÂ­a GonzÃÂÃÂ¡lez",
+      "nombre": "Maria Gonzalez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-10"
     },
     {
-      "nombre": "Juan PÃÂÃÂ©rez",
+      "nombre": "Juan Perez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-12"
@@ -59,19 +53,19 @@
   ],
   "8F9CAE6D": [
     {
-      "nombre": "Ana MartÃÂÃÂ­nez",
+      "nombre": "Ana Martinez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-08"
     },
     {
-      "nombre": "Luis SÃÂÃÂ¡nchez",
+      "nombre": "Luis Sanchez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-14"
     },
     {
-      "nombre": "Laura DÃÂÃÂ­az",
+      "nombre": "Laura Diaz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-09"
@@ -79,19 +73,19 @@
   ],
   "6A779E79": [
     {
-      "nombre": "Pedro GÃÂÃÂ³mez",
+      "nombre": "Pedro Gomez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-11"
     },
     {
-      "nombre": "SofÃÂÃÂ­a LÃÂÃÂ³pez",
+      "nombre": "Sofia Lopez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-07"
     },
     {
-      "nombre": "Diego FernÃÂÃÂ¡ndez",
+      "nombre": "Diego Fernandez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-13"
@@ -105,7 +99,7 @@
       "fecha": "2026-03-06"
     },
     {
-      "nombre": "AndrÃÂÃÂ©s RamÃÂÃÂ­rez",
+      "nombre": "Andres Ramirez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-16"
@@ -165,13 +159,13 @@
       "fecha": "2026-02-27"
     },
     {
-      "nombre": "Andrea PeÃÂÃÂ±a",
+      "nombre": "Andrea Pena",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-26"
     },
     {
-      "nombre": "SebastiÃÂÃÂ¡n Navarro",
+      "nombre": "Sebastian Navarro",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-25"
