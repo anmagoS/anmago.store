@@ -121,7 +121,7 @@
     </div>
   </div>
 
-  <script>
+   <script>
     // ==============================================
     // CONFIGURACIÓN DE TELEGRAM
     // ==============================================
@@ -154,7 +154,6 @@
         const response = await fetch('https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json');
         const catalogo = await response.json();
         
-        // Buscar el producto por ID (puede ser parcial)
         const producto = catalogo.find(p => p.id === productoId || p.id.startsWith(productoId));
         
         if (producto) {
@@ -200,18 +199,16 @@
     });
     
     // ==============================================
-    // ENVIAR RESEÑA A TELEGRAM
+    // ENVIAR RESEÑA A TELEGRAM CON BOTÓN
     // ==============================================
     async function enviarResena(event) {
       event.preventDefault();
       
-      // Obtener datos
       const nombre = document.getElementById('nombre-cliente').value.trim();
       const calificacion = parseInt(document.getElementById('calificacion').value);
       const comentario = document.getElementById('comentario').value.trim();
       const productoNombre = document.getElementById('producto-nombre').value || 'Producto';
       
-      // Validaciones
       if (!nombre) {
         alert('Por favor ingresa tu nombre');
         return;
@@ -227,14 +224,12 @@
         return;
       }
       
-      // Mostrar estado de carga
       const btn = document.querySelector('button[type="submit"]');
       const textoOriginal = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Enviando...';
       
       try {
-        // Crear mensaje para Telegram
         const estrellasTexto = '★'.repeat(calificacion) + '☆'.repeat(5 - calificacion);
         const fecha = new Date().toLocaleString('es-CO', {
           timeZone: 'America/Bogota',
@@ -252,31 +247,36 @@
 ${comentario}
 
 ⏰ *Fecha:* ${fecha}
-✅ *Pendiente de revisión*
         `;
         
-        // Enviar a Telegram
+        // 🔥 ENVIAR CON BOTONES 🔥
         const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             chat_id: TELEGRAM_CHAT_ID,
             text: mensaje,
-            parse_mode: 'Markdown'
+            parse_mode: 'Markdown',
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  { text: '✅ Subir a JSON', callback_data: `aprobar_${productoId}` }
+                ]
+              ]
+            }
           })
         });
         
         const data = await response.json();
         
         if (data.ok) {
-          // Mostrar mensaje de éxito
           document.getElementById('form-resena').innerHTML = `
             <div class="text-center py-5">
               <div class="mb-4">
                 <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
               </div>
               <h3 class="h4 fw-bold mb-3">¡Gracias por tu reseña!</h3>
-              <p class="text-muted mb-4">Hemos recibido tu opinión y la revisaremos para publicarla.</p>
+              <p class="text-muted mb-4">Hemos recibido tu opinión. El equipo de Anmago Store la revisará y la publicará pronto.</p>
               <a href="https://anmagos.github.io/anmago.store/PRODUCTO.HTML?id=${productoId}" 
                  class="btn btn-outline-primary">
                 <i class="bi bi-arrow-left me-2"></i>Volver al producto
