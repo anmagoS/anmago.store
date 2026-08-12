@@ -548,37 +548,6 @@
       margin-top: 3rem;
       padding: 2rem 0 1rem;
     }
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    .footer-links a {
-      color: rgba(255,255,255,0.8);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: var(--transition);
-    }
-    .footer-links a:hover {
-      color: white;
-      text-decoration: underline;
-    }
-    .footer-pagos {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin: 0.5rem 0 1rem;
-      flex-wrap: wrap;
-    }
-    .footer-pagos img {
-      height: 30px;
-      object-fit: contain;
-      filter: brightness(0) invert(1);
-      opacity: 0.7;
-    }
-    .footer-pagos img:hover { opacity: 1; }
     
     /* Responsive */
     @media (max-width: 768px) {
@@ -593,7 +562,6 @@
       #intro .logo-container { width: 140px; height: 140px; }
       #intro .loading-text { font-size: 16px; }
       .beneficios-key { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
-      .footer-links { gap: 0.8rem; }
     }
     
     @media (max-width: 480px) {
@@ -1094,27 +1062,8 @@
   <!-- BOTÓN CARRITO FLOTANTE -->
   <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"><i class="bi bi-bag-heart fs-4"></i><span id="contador-carrito" class="contador-carrito">0</span></a>
 
-  <!-- FOOTER MEJORADO -->
-  <footer class="footer mt-0" id="footer-container">
-    <div class="container">
-      <div class="footer-links">
-        <a href="POLITICAS_GARANTIAS_Y_DEVOLUCIONES.HTML">Políticas de garantía y devoluciones</a>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Política de privacidad</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank">Contáctanos</a>
-      </div>
-      <div class="footer-pagos">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" width="50" height="30">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" width="50" height="30">
-        <img src="https://addi.com.co/_next/image?url=%2Ficons%2Faddi-logo.svg&w=96&q=75" alt="Addi" width="50" height="30" style="filter: brightness(0) invert(1);">
-        <span style="color:white; font-size:0.8rem; display:flex; align-items:center;">🚚 Contraentrega</span>
-      </div>
-      <div class="text-center">
-        <p class="text-muted mb-1" style="color: rgba(255,255,255,0.6) !important;">&copy; 2025 Anmago Store. Todos los derechos reservados.</p>
-        <p class="small" style="color: rgba(255,255,255,0.4) !important;">anmagostore@gmail.com | 3006498710 - 3115046741</p>
-      </div>
-    </div>
-  </footer>
+  <!-- FOOTER (RESTAURADO CON CARGA DINÁMICA DESDE footer.html) -->
+  <footer class="footer mt-0" id="footer-container"><div class="text-center py-4"><div class="spinner-border spinner-border-sm text-light"></div><p class="mt-1 small">Cargando información...</p></div></footer>
 
   <!-- BARRA INFERIOR MOBILE -->
   <nav class="navbar fixed-bottom bg-white border-top d-md-none py-2" style="z-index: 1030;">
@@ -1211,6 +1160,12 @@
   
   <script src="app.js?v=20251116" defer></script>
   <script src="carrito.js?v=20251116" defer></script>
+
+  <!-- CARGAR FOOTER (RESTAURADO) -->
+  <script>
+    async function cargarFooter() { try { const respuesta = await fetch('footer.html?v=' + Date.now()); const htmlFooter = await respuesta.text(); const contenedor = document.getElementById('footer-container'); if (contenedor) contenedor.innerHTML = htmlFooter; } catch (error) { const contenedor = document.getElementById('footer-container'); if (contenedor) contenedor.innerHTML = `<div class="container text-center py-3"><p class="text-muted mb-1">&copy; 2025 Anmago Store. Todos los derechos reservados.</p><p class="small text-muted">anmagostore@gmail.com | 3006498710</p></div>`; } }
+    document.addEventListener('DOMContentLoaded', cargarFooter);
+  </script>
 
   <!-- SCRIPT DEL CARRUSEL Y FUNCIONES ADICIONALES -->
   <script>
