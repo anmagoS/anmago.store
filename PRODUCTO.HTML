@@ -5,7 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Detalle Producto | Anmago Store</title>
   <meta name="description" content="Descubre este producto exclusivo en Anmago Store. Calidad garantizada y los mejores precios.">
-
+<script type="application/ld+json" id="schema-producto">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "",
+  "image": "",
+  "description": "",
+  "sku": "",
+  "brand": {
+    "@type": "Brand",
+    "name": "ANMAGO Store"
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "",
+    "priceCurrency": "COP",
+    "price": "",
+    "availability": "https://schema.org/InStock",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "COP"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": "1",
+          "maxValue": "3",
+          "unitCode": "DAY"
+        }
+      }
+    }
+  }
+}
+</script>
   <!-- Preconexiones optimizadas -->
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://ik.imagekit.io">
@@ -1164,7 +1201,57 @@
         
       } catch (error) { mostrarError('Error al cargar el producto'); }
     }
-
+// Actualizar Schema.org con los datos del producto
+function actualizarSchema(producto) {
+  const schemaScript = document.getElementById('schema-producto');
+  if (!schemaScript) return;
+  
+  const precioFinal = calcularPrecioConDescuento(producto);
+  const urlPagina = window.location.href;
+  const imagenPrincipal = document.getElementById('imagen-principal')?.src || producto.imagen || 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+  
+  const schemaData = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": producto.producto,
+    "image": imagenPrincipal,
+    "description": producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.',
+    "sku": producto.id,
+    "brand": {
+      "@type": "Brand",
+      "name": "ANMAGO Store"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": urlPagina,
+      "priceCurrency": "COP",
+      "price": precioFinal.toString(),
+      "availability": (producto.stock === undefined || producto.stock > 0) ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "COP"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": "1",
+            "maxValue": "3",
+            "unitCode": "DAY"
+          }
+        }
+      }
+    }
+  };
+  
+  // Si tiene reseñas, añadirlas (opcional)
+  // Puedes cargar las reseñas desde el JSON y añadirlas aquí
+  
+  schemaScript.textContent = JSON.stringify(schemaData);
+}
    function renderizarProducto(producto) {
       document.getElementById('nombre-producto-mobile').textContent = producto.producto;
       document.getElementById('nombre-producto-desktop').textContent = producto.producto;
@@ -1198,6 +1285,8 @@
       renderizarBadges(producto);
       renderizarVideo(producto);
       verificarEstadoBotonAgregar();
+// Llama a la actualización del Schema
+actualizarSchema(producto);
       
       // 👇 AGREGAR AQUÍ EL FONDO ESPECIAL 👇
       if (producto.id === 'AA71DF41') {  // Cambia por el ID de tu producto
