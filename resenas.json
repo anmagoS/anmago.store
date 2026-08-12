@@ -1,4 +1,24 @@
 {
+  "80783575": [
+    {
+      "nombre": "HÃ©ctor Andrade",
+      "calificacion": 4,
+      "comentario": "",
+      "fecha": "2026-01-12"
+    },
+    {
+      "nombre": "Marcela Jara",
+      "calificacion": 5,
+      "comentario": "",
+      "fecha": "2026-01-03"
+    },
+    {
+      "nombre": "Sergio Lagos",
+      "calificacion": 3,
+      "comentario": "",
+      "fecha": "2025-04-10"
+    }
+  ],
   "AA71DF41": [
     {
       "nombre": "Catalina Cifuentes",
@@ -7,7 +27,7 @@
       "fecha": "2026-03-18"
     },
     {
-      "nombre": "Juan Pérez",
+      "nombre": "Juan PÃ©rez",
       "calificacion": 3,
       "comentario": "llego perfecta me quedo apenas, super rapido me llego el mismo dia q la pedi",
       "fecha": "2026-03-12"
@@ -23,6 +43,12 @@
       "calificacion": 4,
       "comentario": "buena atencion y el producto me gusto,me toco cambiar la talla pero me respondieron rapido y me hicieron el cambio sin probelma.",
       "fecha": "2026-03-25"
+    },
+    {
+      "nombre": "Anónimo",
+      "calificacion": 1,
+      "comentario": "",
+      "fecha": "2026-08-12T16:22:19.740Z"
     }
   ],
   "EE03DCC0": [
@@ -39,19 +65,19 @@
       "fecha": "2026-03-18"
     },
     {
-      "nombre": "Carlos Rodríguez",
+      "nombre": "Carlos RodrÃ­guez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-15"
     },
     {
-      "nombre": "María González",
+      "nombre": "MarÃ­a GonzÃ¡lez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-10"
     },
     {
-      "nombre": "Juan Pérez",
+      "nombre": "Juan PÃ©rez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-12"
@@ -59,19 +85,19 @@
   ],
   "8F9CAE6D": [
     {
-      "nombre": "Ana Martínez",
+      "nombre": "Ana MartÃ­nez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-08"
     },
     {
-      "nombre": "Luis Sánchez",
+      "nombre": "Luis SÃ¡nchez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-14"
     },
     {
-      "nombre": "Laura Díaz",
+      "nombre": "Laura DÃ­az",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-09"
@@ -79,19 +105,19 @@
   ],
   "6A779E79": [
     {
-      "nombre": "Pedro Gómez",
+      "nombre": "Pedro GÃ³mez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-11"
     },
     {
-      "nombre": "Sofía López",
+      "nombre": "SofÃ­a LÃ³pez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-07"
     },
     {
-      "nombre": "Diego Fernández",
+      "nombre": "Diego FernÃ¡ndez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-13"
@@ -105,7 +131,7 @@
       "fecha": "2026-03-06"
     },
     {
-      "nombre": "Andrés Ramírez",
+      "nombre": "AndrÃ©s RamÃ­rez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-16"
@@ -165,13 +191,13 @@
       "fecha": "2026-02-27"
     },
     {
-      "nombre": "Andrea Peña",
+      "nombre": "Andrea PeÃ±a",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-26"
     },
     {
-      "nombre": "Sebastián Navarro",
+      "nombre": "SebastiÃ¡n Navarro",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-25"
@@ -179,7 +205,7 @@
   ],
   "2656291B": [
     {
-      "nombre": "Natalia Jiménez",
+      "nombre": "Natalia JimÃ©nez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-24"
@@ -199,7 +225,7 @@
   ],
   "B914451E": [
     {
-      "nombre": "Héctor Medina",
+      "nombre": "HÃ©ctor Medina",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-21"
@@ -239,13 +265,13 @@
   ],
   "E8949BF3": [
     {
-      "nombre": "Alberto Ríos",
+      "nombre": "Alberto RÃ­os",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-15"
     },
     {
-      "nombre": "Diana Cárdenas",
+      "nombre": "Diana CÃ¡rdenas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-14"
@@ -279,7 +305,7 @@
   ],
   "D82C91B9": [
     {
-      "nombre": "Gustavo León",
+      "nombre": "Gustavo LeÃ³n",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-09"
@@ -291,7 +317,7 @@
       "fecha": "2026-02-08"
     },
     {
-      "nombre": "Mario Chacón",
+      "nombre": "Mario ChacÃ³n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-07"
@@ -319,19 +345,19 @@
   ],
   "24E3B3A5": [
     {
-      "nombre": "Raúl Pacheco",
+      "nombre": "RaÃºl Pacheco",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-03"
     },
     {
-      "nombre": "Rosa Benítez",
+      "nombre": "Rosa BenÃ­tez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-02"
     },
     {
-      "nombre": "Eduardo Solís",
+      "nombre": "Eduardo SolÃ­s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-01"
@@ -359,7 +385,7 @@
   ],
   "DACA5CB6": [
     {
-      "nombre": "César Mejía",
+      "nombre": "CÃ©sar MejÃ­a",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-28"
@@ -371,7 +397,7 @@
       "fecha": "2026-01-27"
     },
     {
-      "nombre": "Julián Mora",
+      "nombre": "JuliÃ¡n Mora",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-26"
@@ -385,7 +411,7 @@
       "fecha": "2026-01-25"
     },
     {
-      "nombre": "Antonio José",
+      "nombre": "Antonio JosÃ©",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-24"
@@ -425,7 +451,7 @@
       "fecha": "2026-01-19"
     },
     {
-      "nombre": "Rogelio Díaz",
+      "nombre": "Rogelio DÃ­az",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-18"
@@ -451,7 +477,7 @@
       "fecha": "2026-01-15"
     },
     {
-      "nombre": "Hernán Rivas",
+      "nombre": "HernÃ¡n Rivas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-14"
@@ -459,19 +485,19 @@
   ],
   "85B16A0B": [
     {
-      "nombre": "Ruth Martínez",
+      "nombre": "Ruth MartÃ­nez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-13"
     },
     {
-      "nombre": "Iván Duque",
+      "nombre": "IvÃ¡n Duque",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-12"
     },
     {
-      "nombre": "Olga Lucía",
+      "nombre": "Olga LucÃ­a",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-11"
@@ -479,19 +505,19 @@
   ],
   "DB723212": [
     {
-      "nombre": "Alfonso López",
+      "nombre": "Alfonso LÃ³pez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-10"
     },
     {
-      "nombre": "Dora García",
+      "nombre": "Dora GarcÃ­a",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-09"
     },
     {
-      "nombre": "Gilberto Pérez",
+      "nombre": "Gilberto PÃ©rez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-08"
@@ -505,13 +531,13 @@
       "fecha": "2026-01-07"
     },
     {
-      "nombre": "Jairo Muñoz",
+      "nombre": "Jairo MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-06"
     },
     {
-      "nombre": "Ligia Cortés",
+      "nombre": "Ligia CortÃ©s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-05"
@@ -539,7 +565,7 @@
   ],
   "0EB21E71": [
     {
-      "nombre": "Rocío Méndez",
+      "nombre": "RocÃ­o MÃ©ndez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-01"
@@ -551,7 +577,7 @@
       "fecha": "2025-12-31"
     },
     {
-      "nombre": "Nubia Suárez",
+      "nombre": "Nubia SuÃ¡rez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-30"
@@ -585,13 +611,13 @@
       "fecha": "2025-12-26"
     },
     {
-      "nombre": "Humberto Gaitán",
+      "nombre": "Humberto GaitÃ¡n",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-25"
     },
     {
-      "nombre": "Pilar Vélez",
+      "nombre": "Pilar VÃ©lez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-24"
@@ -599,7 +625,7 @@
   ],
   "8C73E98E": [
     {
-      "nombre": "Darío Lozano",
+      "nombre": "DarÃ­o Lozano",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-23"
@@ -611,7 +637,7 @@
       "fecha": "2025-12-22"
     },
     {
-      "nombre": "Efrén Beltrán",
+      "nombre": "EfrÃ©n BeltrÃ¡n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-21"
@@ -625,13 +651,13 @@
       "fecha": "2026-02-16"
     },
     {
-      "nombre": "Alberto Ríos",
+      "nombre": "Alberto RÃ­os",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-15"
     },
     {
-      "nombre": "Diana Cárdenas",
+      "nombre": "Diana CÃ¡rdenas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-14"
@@ -665,7 +691,7 @@
       "fecha": "2026-02-10"
     },
     {
-      "nombre": "Gustavo León",
+      "nombre": "Gustavo LeÃ³n",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-09"
@@ -679,7 +705,7 @@
   ],
   "F5E6B846": [
     {
-      "nombre": "Mario Chacón",
+      "nombre": "Mario ChacÃ³n",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-07"
@@ -705,13 +731,13 @@
       "fecha": "2026-02-04"
     },
     {
-      "nombre": "Raúl Pacheco",
+      "nombre": "RaÃºl Pacheco",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-03"
     },
     {
-      "nombre": "Rosa Benítez",
+      "nombre": "Rosa BenÃ­tez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-02"
@@ -719,7 +745,7 @@
   ],
   "5BE97B82": [
     {
-      "nombre": "Eduardo Solís",
+      "nombre": "Eduardo SolÃ­s",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-01"
@@ -745,7 +771,7 @@
       "fecha": "2026-01-29"
     },
     {
-      "nombre": "César Mejía",
+      "nombre": "CÃ©sar MejÃ­a",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-28"
@@ -759,7 +785,7 @@
   ],
   "0386ADB6": [
     {
-      "nombre": "Julián Mora",
+      "nombre": "JuliÃ¡n Mora",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-26"
@@ -771,7 +797,7 @@
       "fecha": "2026-01-25"
     },
     {
-      "nombre": "Antonio José",
+      "nombre": "Antonio JosÃ©",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-24"
@@ -811,7 +837,7 @@
       "fecha": "2026-01-19"
     },
     {
-      "nombre": "Rogelio Díaz",
+      "nombre": "Rogelio DÃ­az",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-18"
@@ -839,19 +865,19 @@
   ],
   "DCECAB13": [
     {
-      "nombre": "Hernán Rivas",
+      "nombre": "HernÃ¡n Rivas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-14"
     },
     {
-      "nombre": "Ruth Martínez",
+      "nombre": "Ruth MartÃ­nez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-13"
     },
     {
-      "nombre": "Iván Duque",
+      "nombre": "IvÃ¡n Duque",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-12"
@@ -859,19 +885,19 @@
   ],
   "67278AA1": [
     {
-      "nombre": "Olga Lucía",
+      "nombre": "Olga LucÃ­a",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-11"
     },
     {
-      "nombre": "Alfonso López",
+      "nombre": "Alfonso LÃ³pez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-10"
     },
     {
-      "nombre": "Dora García",
+      "nombre": "Dora GarcÃ­a",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-09"
@@ -879,7 +905,7 @@
   ],
   "9405735F": [
     {
-      "nombre": "Gilberto Pérez",
+      "nombre": "Gilberto PÃ©rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-08"
@@ -891,7 +917,7 @@
       "fecha": "2026-01-07"
     },
     {
-      "nombre": "Jairo Muñoz",
+      "nombre": "Jairo MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-06"
@@ -899,7 +925,7 @@
   ],
   "D9594FB8": [
     {
-      "nombre": "Ligia Cortés",
+      "nombre": "Ligia CortÃ©s",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-05"
@@ -925,7 +951,7 @@
       "fecha": "2026-01-02"
     },
     {
-      "nombre": "Rocío Méndez",
+      "nombre": "RocÃ­o MÃ©ndez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-01"
@@ -939,7 +965,7 @@
   ],
   "9359368Q": [
     {
-      "nombre": "Nubia Suárez",
+      "nombre": "Nubia SuÃ¡rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-30"
@@ -971,15 +997,15 @@
       "fecha": "2025-12-26"
     },
     {
-      "nombre": "Humberto Gaitán",
+      "nombre": "Humberto GaitÃ¡n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-25"
     }
   ],
-    "9BA4568F": [
+  "9BA4568F": [
     {
-      "nombre": "Lucía Mendoza",
+      "nombre": "LucÃ­a Mendoza",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-14"
@@ -991,7 +1017,7 @@
       "fecha": "2026-03-10"
     },
     {
-      "nombre": "Elena Ríos",
+      "nombre": "Elena RÃ­os",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-07"
@@ -1011,7 +1037,7 @@
       "fecha": "2026-03-12"
     },
     {
-      "nombre": "Héctor Luna",
+      "nombre": "HÃ©ctor Luna",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-08"
@@ -1031,7 +1057,7 @@
       "fecha": "2026-03-11"
     },
     {
-      "nombre": "Gabriela Solís",
+      "nombre": "Gabriela SolÃ­s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-03-05"
@@ -1045,7 +1071,7 @@
       "fecha": "2026-03-17"
     },
     {
-      "nombre": "Verónica Paredes",
+      "nombre": "VerÃ³nica Paredes",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-09"
@@ -1059,13 +1085,13 @@
   ],
   "C0B75B22": [
     {
-      "nombre": "Adrián Cuesta",
+      "nombre": "AdriÃ¡n Cuesta",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-13"
     },
     {
-      "nombre": "Lorena Ibáñez",
+      "nombre": "Lorena IbÃ¡Ã±ez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-06"
@@ -1085,13 +1111,13 @@
       "fecha": "2026-03-18"
     },
     {
-      "nombre": "César Aguirre",
+      "nombre": "CÃ©sar Aguirre",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-04"
     },
     {
-      "nombre": "Mónica Brito",
+      "nombre": "MÃ³nica Brito",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-28"
@@ -1111,7 +1137,7 @@
       "fecha": "2026-03-08"
     },
     {
-      "nombre": "Fabián Roca",
+      "nombre": "FabiÃ¡n Roca",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-25"
@@ -1139,7 +1165,7 @@
   ],
   "F838CF66": [
     {
-      "nombre": "Óscar Montes",
+      "nombre": "Ãscar Montes",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-12"
@@ -1151,7 +1177,7 @@
       "fecha": "2026-03-05"
     },
     {
-      "nombre": "Gonzalo Farías",
+      "nombre": "Gonzalo FarÃ­as",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-18"
@@ -1159,19 +1185,19 @@
   ],
   "5773C142": [
     {
-      "nombre": "Natalia Sepúlveda",
+      "nombre": "Natalia SepÃºlveda",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-16"
     },
     {
-      "nombre": "Iván Cordero",
+      "nombre": "IvÃ¡n Cordero",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-09"
     },
     {
-      "nombre": "Ángela Figueroa",
+      "nombre": "Ãngela Figueroa",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-14"
@@ -1211,7 +1237,7 @@
       "fecha": "2026-03-06"
     },
     {
-      "nombre": "Rosa Guzmán",
+      "nombre": "Rosa GuzmÃ¡n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-02-06"
@@ -1231,7 +1257,7 @@
       "fecha": "2026-03-01"
     },
     {
-      "nombre": "Joaquín Cerda",
+      "nombre": "JoaquÃ­n Cerda",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-30"
@@ -1259,7 +1285,7 @@
   ],
   "041F88D2": [
     {
-      "nombre": "Consuelo Farías",
+      "nombre": "Consuelo FarÃ­as",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-09"
@@ -1285,7 +1311,7 @@
       "fecha": "2026-03-08"
     },
     {
-      "nombre": "Macarena Cáceres",
+      "nombre": "Macarena CÃ¡ceres",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-27"
@@ -1331,7 +1357,7 @@
       "fecha": "2026-02-25"
     },
     {
-      "nombre": "Víctor Gutiérrez",
+      "nombre": "VÃ­ctor GutiÃ©rrez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2026-01-05"
@@ -1379,13 +1405,13 @@
   ],
   "E8C85FB5": [
     {
-      "nombre": "Mónica Riffo",
+      "nombre": "MÃ³nica Riffo",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-03-03"
     },
     {
-      "nombre": "Cristóbal Arias",
+      "nombre": "CristÃ³bal Arias",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-22"
@@ -1399,7 +1425,7 @@
   ],
   "A3039F08": [
     {
-      "nombre": "Felipe Cortés",
+      "nombre": "Felipe CortÃ©s",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-03-02"
@@ -1411,7 +1437,7 @@
       "fecha": "2026-02-21"
     },
     {
-      "nombre": "Tomás Muñoz",
+      "nombre": "TomÃ¡s MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-15"
@@ -1425,7 +1451,7 @@
       "fecha": "2026-03-01"
     },
     {
-      "nombre": "Álvaro Toledo",
+      "nombre": "Ãlvaro Toledo",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-20"
@@ -1439,7 +1465,7 @@
   ],
   "718DAEE8": [
     {
-      "nombre": "Sebastián Pereira",
+      "nombre": "SebastiÃ¡n Pereira",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-28"
@@ -1451,7 +1477,7 @@
       "fecha": "2026-02-19"
     },
     {
-      "nombre": "Cristián Arriagada",
+      "nombre": "CristiÃ¡n Arriagada",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-12-05"
@@ -1485,7 +1511,7 @@
       "fecha": "2026-02-26"
     },
     {
-      "nombre": "Carolina Gálvez",
+      "nombre": "Carolina GÃ¡lvez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-17"
@@ -1505,7 +1531,7 @@
       "fecha": "2026-02-25"
     },
     {
-      "nombre": "Matías Gatica",
+      "nombre": "MatÃ­as Gatica",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-16"
@@ -1519,7 +1545,7 @@
   ],
   "AAC9B7DF": [
     {
-      "nombre": "Javier Olguín",
+      "nombre": "Javier OlguÃ­n",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-24"
@@ -1539,7 +1565,7 @@
   ],
   "ED5F855B": [
     {
-      "nombre": "Nicolás Valdivia",
+      "nombre": "NicolÃ¡s Valdivia",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-23"
@@ -1551,7 +1577,7 @@
       "fecha": "2026-02-14"
     },
     {
-      "nombre": "Fabián Rojas",
+      "nombre": "FabiÃ¡n Rojas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-11-10"
@@ -1579,7 +1605,7 @@
   ],
   "42C1A7BE": [
     {
-      "nombre": "Hernán Cuevas",
+      "nombre": "HernÃ¡n Cuevas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-21"
@@ -1591,7 +1617,7 @@
       "fecha": "2026-02-12"
     },
     {
-      "nombre": "Óscar Jofré",
+      "nombre": "Ãscar JofrÃ©",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-10-31"
@@ -1605,7 +1631,7 @@
       "fecha": "2026-02-20"
     },
     {
-      "nombre": "María Elena Sepúlveda",
+      "nombre": "MarÃ­a Elena SepÃºlveda",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-11"
@@ -1619,19 +1645,19 @@
   ],
   "67AE6DB4": [
     {
-      "nombre": "Leticia Hormazábal",
+      "nombre": "Leticia HormazÃ¡bal",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-19"
     },
     {
-      "nombre": "René Bustamante",
+      "nombre": "RenÃ© Bustamante",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-10"
     },
     {
-      "nombre": "Angélica Reyes",
+      "nombre": "AngÃ©lica Reyes",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-10-20"
@@ -1645,7 +1671,7 @@
       "fecha": "2026-02-18"
     },
     {
-      "nombre": "Katherine López",
+      "nombre": "Katherine LÃ³pez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-09"
@@ -1665,7 +1691,7 @@
       "fecha": "2026-02-17"
     },
     {
-      "nombre": "Luis Hernán Campos",
+      "nombre": "Luis HernÃ¡n Campos",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-08"
@@ -1679,13 +1705,13 @@
   ],
   "5F28828E": [
     {
-      "nombre": "Ingrid Zúñiga",
+      "nombre": "Ingrid ZÃºÃ±iga",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-16"
     },
     {
-      "nombre": "César Godoy",
+      "nombre": "CÃ©sar Godoy",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-07"
@@ -1699,7 +1725,7 @@
   ],
   "C1FBB280": [
     {
-      "nombre": "Camilo Núñez",
+      "nombre": "Camilo NÃºÃ±ez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-15"
@@ -1725,13 +1751,13 @@
       "fecha": "2026-02-14"
     },
     {
-      "nombre": "Iván Parraguez",
+      "nombre": "IvÃ¡n Parraguez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-05"
     },
     {
-      "nombre": "Johanna Martínez",
+      "nombre": "Johanna MartÃ­nez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-09-25"
@@ -1765,13 +1791,13 @@
       "fecha": "2026-02-12"
     },
     {
-      "nombre": "Jonathan Pérez",
+      "nombre": "Jonathan PÃ©rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-03"
     },
     {
-      "nombre": "Carolina Méndez",
+      "nombre": "Carolina MÃ©ndez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-09-15"
@@ -1779,7 +1805,7 @@
   ],
   "9918E93A": [
     {
-      "nombre": "José Miguel Rojas",
+      "nombre": "JosÃ© Miguel Rojas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-11"
@@ -1791,7 +1817,7 @@
       "fecha": "2026-02-02"
     },
     {
-      "nombre": "Felipe González",
+      "nombre": "Felipe GonzÃ¡lez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-09-10"
@@ -1825,7 +1851,7 @@
       "fecha": "2026-02-09"
     },
     {
-      "nombre": "Rodrigo González",
+      "nombre": "Rodrigo GonzÃ¡lez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-31"
@@ -1851,7 +1877,7 @@
       "fecha": "2026-01-30"
     },
     {
-      "nombre": "Andrés Palma",
+      "nombre": "AndrÃ©s Palma",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-08-25"
@@ -1859,7 +1885,7 @@
   ],
   "D0DD9D98": [
     {
-      "nombre": "Natalia Sánchez",
+      "nombre": "Natalia SÃ¡nchez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-07"
@@ -1879,7 +1905,7 @@
   ],
   "E2A3D8F0": [
     {
-      "nombre": "Alexis Cortés",
+      "nombre": "Alexis CortÃ©s",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-06"
@@ -1891,7 +1917,7 @@
       "fecha": "2026-01-28"
     },
     {
-      "nombre": "Sergio Cárdenas",
+      "nombre": "Sergio CÃ¡rdenas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-08-15"
@@ -1905,7 +1931,7 @@
       "fecha": "2026-02-05"
     },
     {
-      "nombre": "Jorge Rodríguez",
+      "nombre": "Jorge RodrÃ­guez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-27"
@@ -1919,7 +1945,7 @@
   ],
   "FA575975": [
     {
-      "nombre": "Mario Ríos",
+      "nombre": "Mario RÃ­os",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-04"
@@ -1945,7 +1971,7 @@
       "fecha": "2026-02-03"
     },
     {
-      "nombre": "Héctor Paredes",
+      "nombre": "HÃ©ctor Paredes",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-25"
@@ -1959,13 +1985,13 @@
   ],
   "A228F8EE": [
     {
-      "nombre": "Cristián Rojas",
+      "nombre": "CristiÃ¡n Rojas",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-02-02"
     },
     {
-      "nombre": "Francisca Díaz",
+      "nombre": "Francisca DÃ­az",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-24"
@@ -1979,7 +2005,7 @@
   ],
   "B222B716": [
     {
-      "nombre": "Verónica Maldonado",
+      "nombre": "VerÃ³nica Maldonado",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-02-01"
@@ -1999,13 +2025,13 @@
   ],
   "8338CCC8": [
     {
-      "nombre": "José Luis Vera",
+      "nombre": "JosÃ© Luis Vera",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-31"
     },
     {
-      "nombre": "María Angélica Ramírez",
+      "nombre": "MarÃ­a AngÃ©lica RamÃ­rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-22"
@@ -2025,7 +2051,7 @@
       "fecha": "2026-01-30"
     },
     {
-      "nombre": "Francisco Durán",
+      "nombre": "Francisco DurÃ¡n",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-21"
@@ -2051,7 +2077,7 @@
       "fecha": "2026-01-20"
     },
     {
-      "nombre": "Ricardo Manríquez",
+      "nombre": "Ricardo ManrÃ­quez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-07-05"
@@ -2065,7 +2091,7 @@
       "fecha": "2026-01-28"
     },
     {
-      "nombre": "Juan Muñoz",
+      "nombre": "Juan MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-19"
@@ -2079,7 +2105,7 @@
   ],
   "799906B7": [
     {
-      "nombre": "Miguel Ángel Pizarro",
+      "nombre": "Miguel Ãngel Pizarro",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-27"
@@ -2091,7 +2117,7 @@
       "fecha": "2026-01-18"
     },
     {
-      "nombre": "Gonzalo Yáñez",
+      "nombre": "Gonzalo YÃ¡Ã±ez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-06-25"
@@ -2099,7 +2125,7 @@
   ],
   "D0B5FEF4": [
     {
-      "nombre": "Bernardita Pérez",
+      "nombre": "Bernardita PÃ©rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-26"
@@ -2119,13 +2145,13 @@
   ],
   "7FA6DDAF": [
     {
-      "nombre": "Ximena Valdés",
+      "nombre": "Ximena ValdÃ©s",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-25"
     },
     {
-      "nombre": "Juan Carlos Muñoz",
+      "nombre": "Juan Carlos MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-16"
@@ -2145,13 +2171,13 @@
       "fecha": "2026-01-24"
     },
     {
-      "nombre": "Mónica Tapia",
+      "nombre": "MÃ³nica Tapia",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-15"
     },
     {
-      "nombre": "Carlos Sepúlveda",
+      "nombre": "Carlos SepÃºlveda",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-06-10"
@@ -2191,7 +2217,7 @@
       "fecha": "2026-01-13"
     },
     {
-      "nombre": "Oscar Meléndez",
+      "nombre": "Oscar MelÃ©ndez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-05-31"
@@ -2205,13 +2231,13 @@
       "fecha": "2026-01-21"
     },
     {
-      "nombre": "Raúl Cisternas",
+      "nombre": "RaÃºl Cisternas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-12"
     },
     {
-      "nombre": "Andrea Muñoz",
+      "nombre": "Andrea MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-05-25"
@@ -2239,13 +2265,13 @@
   ],
   "A5271A75": [
     {
-      "nombre": "María Paz Riquelme",
+      "nombre": "MarÃ­a Paz Riquelme",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-19"
     },
     {
-      "nombre": "Víctor Guzmán",
+      "nombre": "VÃ­ctor GuzmÃ¡n",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-10"
@@ -2285,7 +2311,7 @@
       "fecha": "2026-01-17"
     },
     {
-      "nombre": "Mario González",
+      "nombre": "Mario GonzÃ¡lez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-08"
@@ -2325,7 +2351,7 @@
       "fecha": "2026-01-15"
     },
     {
-      "nombre": "Fabián Ríos",
+      "nombre": "FabiÃ¡n RÃ­os",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-06"
@@ -2339,7 +2365,7 @@
   ],
   "9686E2CB": [
     {
-      "nombre": "Cristóbal Vásquez",
+      "nombre": "CristÃ³bal VÃ¡squez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-14"
@@ -2351,7 +2377,7 @@
       "fecha": "2026-01-05"
     },
     {
-      "nombre": "Esteban Muñoz",
+      "nombre": "Esteban MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-04-20"
@@ -2371,30 +2397,10 @@
       "fecha": "2026-01-04"
     },
     {
-      "nombre": "Camila Cortés",
+      "nombre": "Camila CortÃ©s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-04-15"
-    }
-  ],
-  "80783575": [
-    {
-      "nombre": "Héctor Andrade",
-      "calificacion": 4,
-      "comentario": "",
-      "fecha": "2026-01-12"
-    },
-    {
-      "nombre": "Marcela Jara",
-      "calificacion": 5,
-      "comentario": "",
-      "fecha": "2026-01-03"
-    },
-    {
-      "nombre": "Sergio Lagos",
-      "calificacion": 3,
-      "comentario": "",
-      "fecha": "2025-04-10"
     }
   ],
   "5828B632": [
@@ -2411,7 +2417,7 @@
       "fecha": "2026-01-02"
     },
     {
-      "nombre": "Patricio Jofré",
+      "nombre": "Patricio JofrÃ©",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-04-05"
@@ -2419,7 +2425,7 @@
   ],
   "2755F4FF": [
     {
-      "nombre": "José Tomás Vergara",
+      "nombre": "JosÃ© TomÃ¡s Vergara",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-10"
@@ -2431,7 +2437,7 @@
       "fecha": "2026-01-01"
     },
     {
-      "nombre": "Nicolás Alarcón",
+      "nombre": "NicolÃ¡s AlarcÃ³n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-03-31"
@@ -2439,7 +2445,7 @@
   ],
   "BA344895": [
     {
-      "nombre": "María José Castillo",
+      "nombre": "MarÃ­a JosÃ© Castillo",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-09"
@@ -2459,7 +2465,7 @@
   ],
   "BA344896": [
     {
-      "nombre": "Cristián Valdés",
+      "nombre": "CristiÃ¡n ValdÃ©s",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-08"
@@ -2485,7 +2491,7 @@
       "fecha": "2026-01-07"
     },
     {
-      "nombre": "Álvaro Soto",
+      "nombre": "Ãlvaro Soto",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-29"
@@ -2499,7 +2505,7 @@
   ],
   "BA344898": [
     {
-      "nombre": "Iván Muñoz",
+      "nombre": "IvÃ¡n MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2026-01-06"
@@ -2511,7 +2517,7 @@
       "fecha": "2025-12-28"
     },
     {
-      "nombre": "Hernán Cáceres",
+      "nombre": "HernÃ¡n CÃ¡ceres",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-03-10"
@@ -2519,19 +2525,19 @@
   ],
   "BA344899": [
     {
-      "nombre": "Jessica González",
+      "nombre": "Jessica GonzÃ¡lez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2026-01-05"
     },
     {
-      "nombre": "Víctor Méndez",
+      "nombre": "VÃ­ctor MÃ©ndez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-27"
     },
     {
-      "nombre": "Carolina Alarcón",
+      "nombre": "Carolina AlarcÃ³n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-03-05"
@@ -2551,7 +2557,7 @@
       "fecha": "2025-12-26"
     },
     {
-      "nombre": "Cristóbal Leiva",
+      "nombre": "CristÃ³bal Leiva",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-02-28"
@@ -2611,7 +2617,7 @@
       "fecha": "2025-12-23"
     },
     {
-      "nombre": "Mónica Henríquez",
+      "nombre": "MÃ³nica HenrÃ­quez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-02-10"
@@ -2639,13 +2645,13 @@
   ],
   "9D514FA2": [
     {
-      "nombre": "María Elena Pérez",
+      "nombre": "MarÃ­a Elena PÃ©rez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-30"
     },
     {
-      "nombre": "José Luis Díaz",
+      "nombre": "JosÃ© Luis DÃ­az",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-21"
@@ -2659,19 +2665,19 @@
   ],
   "290F65AC": [
     {
-      "nombre": "César López",
+      "nombre": "CÃ©sar LÃ³pez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-29"
     },
     {
-      "nombre": "Marcela Rodríguez",
+      "nombre": "Marcela RodrÃ­guez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-20"
     },
     {
-      "nombre": "Francisco García",
+      "nombre": "Francisco GarcÃ­a",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-01-25"
@@ -2691,7 +2697,7 @@
       "fecha": "2025-12-19"
     },
     {
-      "nombre": "Carolina González",
+      "nombre": "Carolina GonzÃ¡lez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-01-20"
@@ -2705,13 +2711,13 @@
       "fecha": "2025-12-27"
     },
     {
-      "nombre": "María Jesús Pavez",
+      "nombre": "MarÃ­a JesÃºs Pavez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-18"
     },
     {
-      "nombre": "Cristián Guzmán",
+      "nombre": "CristiÃ¡n GuzmÃ¡n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-01-15"
@@ -2719,7 +2725,7 @@
   ],
   "F9AEAFB6": [
     {
-      "nombre": "Patricio Vásquez",
+      "nombre": "Patricio VÃ¡squez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-26"
@@ -2731,7 +2737,7 @@
       "fecha": "2025-12-17"
     },
     {
-      "nombre": "Héctor Pereira",
+      "nombre": "HÃ©ctor Pereira",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2025-01-10"
@@ -2745,7 +2751,7 @@
       "fecha": "2025-12-25"
     },
     {
-      "nombre": "Teresa Cárdenas",
+      "nombre": "Teresa CÃ¡rdenas",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-16"
@@ -2771,7 +2777,7 @@
       "fecha": "2025-12-15"
     },
     {
-      "nombre": "Mónica Muñoz",
+      "nombre": "MÃ³nica MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-12-31"
@@ -2799,7 +2805,7 @@
   ],
   "95BF5E7B": [
     {
-      "nombre": "Carolina Muñoz",
+      "nombre": "Carolina MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-22"
@@ -2825,13 +2831,13 @@
       "fecha": "2025-12-21"
     },
     {
-      "nombre": "María José Lagos",
+      "nombre": "MarÃ­a JosÃ© Lagos",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-12"
     },
     {
-      "nombre": "Iván Valenzuela",
+      "nombre": "IvÃ¡n Valenzuela",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-12-15"
@@ -2845,7 +2851,7 @@
       "fecha": "2025-12-20"
     },
     {
-      "nombre": "Fabián Pino",
+      "nombre": "FabiÃ¡n Pino",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-11"
@@ -2905,13 +2911,13 @@
       "fecha": "2025-12-17"
     },
     {
-      "nombre": "José Miguel Díaz",
+      "nombre": "JosÃ© Miguel DÃ­az",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-08"
     },
     {
-      "nombre": "Francisca Muñoz",
+      "nombre": "Francisca MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-11-25"
@@ -2919,7 +2925,7 @@
   ],
   "1335A8DF": [
     {
-      "nombre": "Rodrigo Gutiérrez",
+      "nombre": "Rodrigo GutiÃ©rrez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-16"
@@ -2931,7 +2937,7 @@
       "fecha": "2025-12-07"
     },
     {
-      "nombre": "Hernán Silva",
+      "nombre": "HernÃ¡n Silva",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-11-20"
@@ -2939,7 +2945,7 @@
   ],
   "D4D44A7A": [
     {
-      "nombre": "Lilian Cortés",
+      "nombre": "Lilian CortÃ©s",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-15"
@@ -3019,7 +3025,7 @@
   ],
   "EFC1A9C2": [
     {
-      "nombre": "Catalina Cárdenas",
+      "nombre": "Catalina CÃ¡rdenas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-11"
@@ -3039,7 +3045,7 @@
   ],
   "60ECDDC8": [
     {
-      "nombre": "Cristóbal Ortiz",
+      "nombre": "CristÃ³bal Ortiz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-10"
@@ -3051,7 +3057,7 @@
       "fecha": "2025-12-01"
     },
     {
-      "nombre": "Sebastián Pizarro",
+      "nombre": "SebastiÃ¡n Pizarro",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-10-20"
@@ -3059,7 +3065,7 @@
   ],
   "C4F63474": [
     {
-      "nombre": "Marisol Valdés",
+      "nombre": "Marisol ValdÃ©s",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-09"
@@ -3071,7 +3077,7 @@
       "fecha": "2025-11-30"
     },
     {
-      "nombre": "Alejandra Ríos",
+      "nombre": "Alejandra RÃ­os",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-10-15"
@@ -3079,7 +3085,7 @@
   ],
   "54A5ABB2": [
     {
-      "nombre": "Nelson Sepúlveda",
+      "nombre": "Nelson SepÃºlveda",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-08"
@@ -3099,19 +3105,19 @@
   ],
   "ABC07A0D": [
     {
-      "nombre": "Álvaro Palma",
+      "nombre": "Ãlvaro Palma",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-07"
     },
     {
-      "nombre": "Paulina Méndez",
+      "nombre": "Paulina MÃ©ndez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-28"
     },
     {
-      "nombre": "Ricardo Acuña",
+      "nombre": "Ricardo AcuÃ±a",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-10-05"
@@ -3119,13 +3125,13 @@
   ],
   "2FF9929E": [
     {
-      "nombre": "Mónica Pereira",
+      "nombre": "MÃ³nica Pereira",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-12-06"
     },
     {
-      "nombre": "Hugo Cáceres",
+      "nombre": "Hugo CÃ¡ceres",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-27"
@@ -3139,7 +3145,7 @@
   ],
   "8609BC6B": [
     {
-      "nombre": "José Antonio Figueroa",
+      "nombre": "JosÃ© Antonio Figueroa",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-05"
@@ -3171,7 +3177,7 @@
       "fecha": "2025-11-25"
     },
     {
-      "nombre": "Cristián Rivas",
+      "nombre": "CristiÃ¡n Rivas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-09-20"
@@ -3179,13 +3185,13 @@
   ],
   "5C1BDC01": [
     {
-      "nombre": "María Angélica Palma",
+      "nombre": "MarÃ­a AngÃ©lica Palma",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-03"
     },
     {
-      "nombre": "Patricio González",
+      "nombre": "Patricio GonzÃ¡lez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-24"
@@ -3219,13 +3225,13 @@
   ],
   "EAF57483": [
     {
-      "nombre": "Luis Antonio Díaz",
+      "nombre": "Luis Antonio DÃ­az",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-12-01"
     },
     {
-      "nombre": "Francisca Pérez",
+      "nombre": "Francisca PÃ©rez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-22"
@@ -3259,19 +3265,19 @@
   ],
   "4471BA20": [
     {
-      "nombre": "Patricia Muñoz",
+      "nombre": "Patricia MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-29"
     },
     {
-      "nombre": "César Jara",
+      "nombre": "CÃ©sar Jara",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-20"
     },
     {
-      "nombre": "Verónica Castro",
+      "nombre": "VerÃ³nica Castro",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-08-25"
@@ -3279,7 +3285,7 @@
   ],
   "80202FF4": [
     {
-      "nombre": "Héctor Gaete",
+      "nombre": "HÃ©ctor Gaete",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-28"
@@ -3305,7 +3311,7 @@
       "fecha": "2025-11-27"
     },
     {
-      "nombre": "Fabián Soto",
+      "nombre": "FabiÃ¡n Soto",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-18"
@@ -3319,19 +3325,19 @@
   ],
   "EC381FD3": [
     {
-      "nombre": "José Rojas",
+      "nombre": "JosÃ© Rojas",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-26"
     },
     {
-      "nombre": "Paula Guzmán",
+      "nombre": "Paula GuzmÃ¡n",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-17"
     },
     {
-      "nombre": "Cristián Pérez",
+      "nombre": "CristiÃ¡n PÃ©rez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-08-10"
@@ -3339,13 +3345,13 @@
   ],
   "EEBF9E4F": [
     {
-      "nombre": "María José Muñoz",
+      "nombre": "MarÃ­a JosÃ© MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-25"
     },
     {
-      "nombre": "Rodrigo Méndez",
+      "nombre": "Rodrigo MÃ©ndez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-16"
@@ -3371,7 +3377,7 @@
       "fecha": "2025-11-15"
     },
     {
-      "nombre": "Patricio Alarcón",
+      "nombre": "Patricio AlarcÃ³n",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-07-31"
@@ -3385,13 +3391,13 @@
       "fecha": "2025-11-23"
     },
     {
-      "nombre": "Pablo Hernández",
+      "nombre": "Pablo HernÃ¡ndez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-14"
     },
     {
-      "nombre": "Claudio Díaz",
+      "nombre": "Claudio DÃ­az",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-07-25"
@@ -3399,7 +3405,7 @@
   ],
   "CA98671B": [
     {
-      "nombre": "María Jesús Pino",
+      "nombre": "MarÃ­a JesÃºs Pino",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-22"
@@ -3419,7 +3425,7 @@
   ],
   "203B9170": [
     {
-      "nombre": "Ricardo Cárdenas",
+      "nombre": "Ricardo CÃ¡rdenas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-21"
@@ -3459,7 +3465,7 @@
   ],
   "BB921C4B": [
     {
-      "nombre": "Francisca López",
+      "nombre": "Francisca LÃ³pez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-19"
@@ -3479,19 +3485,19 @@
   ],
   "B0175D01": [
     {
-      "nombre": "Cristián Norambuena",
+      "nombre": "CristiÃ¡n Norambuena",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-18"
     },
     {
-      "nombre": "Paola Cáceres",
+      "nombre": "Paola CÃ¡ceres",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-09"
     },
     {
-      "nombre": "Héctor Sandoval",
+      "nombre": "HÃ©ctor Sandoval",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-06-30"
@@ -3499,13 +3505,13 @@
   ],
   "54EF50A8": [
     {
-      "nombre": "María Pía Miranda",
+      "nombre": "MarÃ­a PÃ­a Miranda",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-17"
     },
     {
-      "nombre": "Álvaro Riquelme",
+      "nombre": "Ãlvaro Riquelme",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-08"
@@ -3519,7 +3525,7 @@
   ],
   "6E7F6BAB": [
     {
-      "nombre": "José Manuel Castro",
+      "nombre": "JosÃ© Manuel Castro",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-16"
@@ -3539,13 +3545,13 @@
   ],
   "8F1FE173": [
     {
-      "nombre": "Marcela Pérez",
+      "nombre": "Marcela PÃ©rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-15"
     },
     {
-      "nombre": "Cristián Muñoz",
+      "nombre": "CristiÃ¡n MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-06"
@@ -3559,13 +3565,13 @@
   ],
   "0F404108": [
     {
-      "nombre": "Juan Díaz",
+      "nombre": "Juan DÃ­az",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-14"
     },
     {
-      "nombre": "Carolina Muñoz",
+      "nombre": "Carolina MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-05"
@@ -3591,7 +3597,7 @@
       "fecha": "2025-11-04"
     },
     {
-      "nombre": "Loreto Valdés",
+      "nombre": "Loreto ValdÃ©s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-06-05"
@@ -3611,7 +3617,7 @@
       "fecha": "2025-11-03"
     },
     {
-      "nombre": "César Lagos",
+      "nombre": "CÃ©sar Lagos",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-05-31"
@@ -3619,7 +3625,7 @@
   ],
   "B364A1CD": [
     {
-      "nombre": "María Isabel Soto",
+      "nombre": "MarÃ­a Isabel Soto",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-11"
@@ -3631,7 +3637,7 @@
       "fecha": "2025-11-02"
     },
     {
-      "nombre": "Javiera Muñoz",
+      "nombre": "Javiera MuÃ±oz",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-05-25"
@@ -3639,13 +3645,13 @@
   ],
   "63E984D3": [
     {
-      "nombre": "Cristóbal Pavez",
+      "nombre": "CristÃ³bal Pavez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-10"
     },
     {
-      "nombre": "Paulina Acuña",
+      "nombre": "Paulina AcuÃ±a",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-01"
@@ -3679,13 +3685,13 @@
   ],
   "8B80535D": [
     {
-      "nombre": "Pablo Muñoz",
+      "nombre": "Pablo MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-11-08"
     },
     {
-      "nombre": "Claudia Méndez",
+      "nombre": "Claudia MÃ©ndez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-30"
@@ -3705,13 +3711,13 @@
       "fecha": "2025-11-07"
     },
     {
-      "nombre": "Cristián Abarca",
+      "nombre": "CristiÃ¡n Abarca",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-10-29"
     },
     {
-      "nombre": "María Luisa Díaz",
+      "nombre": "MarÃ­a Luisa DÃ­az",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-05-05"
@@ -3725,7 +3731,7 @@
       "fecha": "2025-11-06"
     },
     {
-      "nombre": "José Tomás Rojas",
+      "nombre": "JosÃ© TomÃ¡s Rojas",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-28"
@@ -3791,7 +3797,7 @@
       "fecha": "2025-10-25"
     },
     {
-      "nombre": "Andrés Riquelme",
+      "nombre": "AndrÃ©s Riquelme",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-04-15"
@@ -3805,13 +3811,13 @@
       "fecha": "2025-11-02"
     },
     {
-      "nombre": "Cristian Muñoz",
+      "nombre": "Cristian MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-24"
     },
     {
-      "nombre": "Paola Cárdenas",
+      "nombre": "Paola CÃ¡rdenas",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-04-10"
@@ -3819,19 +3825,19 @@
   ],
   "53DF353G": [
     {
-      "nombre": "Francisco Pérez",
+      "nombre": "Francisco PÃ©rez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-11-01"
     },
     {
-      "nombre": "María Jesús Soto",
+      "nombre": "MarÃ­a JesÃºs Soto",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-10-23"
     },
     {
-      "nombre": "Javier González",
+      "nombre": "Javier GonzÃ¡lez",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-04-05"
@@ -3845,7 +3851,7 @@
       "fecha": "2025-10-31"
     },
     {
-      "nombre": "Patricio Méndez",
+      "nombre": "Patricio MÃ©ndez",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-22"
@@ -3859,7 +3865,7 @@
   ],
   "259D941B": [
     {
-      "nombre": "Cristián Ponce",
+      "nombre": "CristiÃ¡n Ponce",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-30"
@@ -3911,7 +3917,7 @@
       "fecha": "2025-10-19"
     },
     {
-      "nombre": "César Valdés",
+      "nombre": "CÃ©sar ValdÃ©s",
       "calificacion": 3,
       "comentario": "",
       "fecha": "2024-03-15"
@@ -3959,13 +3965,13 @@
   ],
   "875F9476": [
     {
-      "nombre": "María Angélica Rojas",
+      "nombre": "MarÃ­a AngÃ©lica Rojas",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-10-25"
     },
     {
-      "nombre": "Patricio Díaz",
+      "nombre": "Patricio DÃ­az",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-16"
@@ -3979,13 +3985,13 @@
   ],
   "EB4531DC": [
     {
-      "nombre": "Alejandro Muñoz",
+      "nombre": "Alejandro MuÃ±oz",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-24"
     },
     {
-      "nombre": "Daniela Pérez",
+      "nombre": "Daniela PÃ©rez",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-10-15"
@@ -4005,7 +4011,7 @@
       "fecha": "2025-10-23"
     },
     {
-      "nombre": "Rodrigo Cáceres",
+      "nombre": "Rodrigo CÃ¡ceres",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-14"
@@ -4019,7 +4025,7 @@
   ],
   "E804444B": [
     {
-      "nombre": "Cristián Escobar",
+      "nombre": "CristiÃ¡n Escobar",
       "calificacion": 4,
       "comentario": "",
       "fecha": "2025-10-22"
@@ -4039,7 +4045,7 @@
   ],
   "C01506A2": [
     {
-      "nombre": "Verónica Muñoz",
+      "nombre": "VerÃ³nica MuÃ±oz",
       "calificacion": 5,
       "comentario": "",
       "fecha": "2025-10-21"
@@ -4078,4 +4084,3 @@
     }
   ]
 }
-
