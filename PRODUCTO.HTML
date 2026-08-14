@@ -1824,19 +1824,20 @@ actualizarSchema(producto);
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, 50%) scale(0.9);
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(12px);
     color: white;
-    padding: 20px 30px;
+    padding: 22px 30px;
     border-radius: 20px;
     z-index: 99999;
     display: none;
     align-items: center;
     gap: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
     animation: feedbackPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-    max-width: 90%;
+    max-width: 92%;
     pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .feedback-color.mostrar {
@@ -1844,19 +1845,21 @@ actualizarSchema(producto);
 }
 
 .feedback-color img {
-    width: 80px;
-    height: 80px;
+    width: 75px;
+    height: 75px;
     object-fit: contain;
     border-radius: 12px;
     background: white;
     padding: 5px;
     border: 2px solid #C9A96E;
+    flex-shrink: 0;
 }
 
 .feedback-color .info {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    text-align: left;
 }
 
 .feedback-color .info .titulo {
@@ -1866,13 +1869,22 @@ actualizarSchema(producto);
 }
 
 .feedback-color .info .nombre {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
+    color: #ffffff;
 }
 
 .feedback-color .info .check {
-    color: #28a745;
-    font-size: 0.85rem;
+    color: #f1c40f;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.feedback-color .info .check i {
+    font-size: 0.9rem;
 }
 
 @keyframes feedbackPop {
@@ -1891,19 +1903,23 @@ actualizarSchema(producto);
 
 @media (max-width: 480px) {
     .feedback-color {
-        padding: 15px 20px;
-        gap: 12px;
+        padding: 15px 18px;
+        gap: 14px;
         bottom: 40%;
+        border-radius: 16px;
     }
     .feedback-color img {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     .feedback-color .info .titulo {
         font-size: 0.85rem;
     }
     .feedback-color .info .nombre {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+    .feedback-color .info .check {
+        font-size: 0.7rem;
     }
 }
 </style>
@@ -1914,7 +1930,10 @@ actualizarSchema(producto);
     <div class="info">
         <span class="titulo">✅ Color seleccionado</span>
         <span class="nombre" id="feedbackColorNombre">Negro</span>
-        <span class="check">✔️ Haz clic en "Comprar ahora" para continuar</span>
+        <span class="check">
+            <i class="bi bi-check-circle-fill"></i>
+            No olvides seleccionar la talla y cantidad, luego haz clic en "Comprar ahora"
+        </span>
     </div>
 </div>
 
@@ -1934,6 +1953,12 @@ actualizarSchema(producto);
         const img = document.getElementById('feedbackColorImg');
         const nombre = document.getElementById('feedbackColorNombre');
         let timeoutFeedback = null;
+        
+        // Asegurar que el icono de Bootstrap esté disponible
+        const checkIcon = document.querySelector('.feedback-color .check i');
+        if (checkIcon) {
+            // Ya tiene el icono
+        }
         
         // Sobrescribir la función seleccionarImagenPrincipal para agregar feedback
         const originalSeleccionar = window.seleccionarImagenPrincipal;
@@ -1961,7 +1986,7 @@ actualizarSchema(producto);
                 // Limpiar timeout anterior
                 if (timeoutFeedback) clearTimeout(timeoutFeedback);
                 
-                // Ocultar después de 2 segundos
+                // Ocultar después de 2.5 segundos
                 timeoutFeedback = setTimeout(function() {
                     feedback.classList.remove('mostrar');
                     feedback.classList.add('ocultar');
@@ -1969,7 +1994,7 @@ actualizarSchema(producto);
                         feedback.style.display = 'none';
                         feedback.classList.remove('ocultar');
                     }, 300);
-                }, 2000);
+                }, 2500);
             }
         };
         
@@ -1979,8 +2004,180 @@ actualizarSchema(producto);
 </script>
 <!-- ===== FIN MEJORA 1 ===== -->
 <!-- ========================================== -->
-<!-- MEJORA: BOTÓN DE RESEÑA CON MENSAJE        -->
+<!-- MEJORA: BOTÓN DE RESEÑA CON MODAL CENTRADO -->
 <!-- ========================================== -->
+
+<style>
+/* Modal overlay - fondo oscuro */
+.modal-resena-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: overlayFadeIn 0.3s ease;
+}
+
+.modal-resena-overlay.mostrar {
+    display: flex;
+}
+
+@keyframes overlayFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Modal centrado */
+.modal-resena-contenido {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 35px;
+    max-width: 440px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+    animation: modalPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    position: relative;
+    margin: 20px;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.modal-resena-contenido .icono {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.modal-resena-contenido h5 {
+    font-weight: 700;
+    color: #1B4557;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.modal-resena-contenido p {
+    color: #2C3E50;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.modal-resena-contenido .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 28px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.modal-resena-contenido .btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.modal-resena-contenido .btn-cerrar-modal {
+    background: #f1f4f8;
+    color: #2C3E50;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.modal-resena-contenido .btn-cerrar-modal:hover {
+    background: #e2e6ea;
+}
+
+.modal-resena-contenido .btn-close-top {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #7F8C8D;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+}
+
+.modal-resena-contenido .btn-close-top:hover {
+    color: #1B4557;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+    .modal-resena-contenido {
+        padding: 30px 20px;
+    }
+    .modal-resena-contenido .icono {
+        font-size: 3rem;
+    }
+    .modal-resena-contenido h5 {
+        font-size: 1rem;
+    }
+    .modal-resena-contenido p {
+        font-size: 0.85rem;
+    }
+    .modal-resena-contenido .btn-whatsapp {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    .modal-resena-contenido .btn-cerrar-modal {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+}
+</style>
+
+<!-- Elemento del modal (oculto por defecto) -->
+<div id="modalResenaOverlay" class="modal-resena-overlay">
+    <div class="modal-resena-contenido">
+        <button class="btn-close-top" onclick="cerrarModalResena()" aria-label="Cerrar">✕</button>
+        
+        <span class="icono">📝</span>
+        
+        <h5>¡Gracias por tu interés!</h5>
+        
+        <p>
+            Para dejar tu opinión, por favor solicita el <strong>link de reseña</strong> 
+            al asesor que te atendió.
+        </p>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+            <a href="https://wa.me/573006498710?text=Hola%2C%20quiero%20dejar%20una%20rese%C3%B1a%20de%20un%20producto%20de%20Anmago%20Store" 
+               target="_blank" 
+               class="btn-whatsapp">
+               <i class="bi bi-whatsapp"></i> Contactar asesor
+            </a>
+            <button class="btn-cerrar-modal" onclick="cerrarModalResena()">
+                Entendido
+            </button>
+        </div>
+    </div>
+</div>
 
 <script>
 (function() {
@@ -2003,82 +2200,52 @@ actualizarSchema(producto);
             return;
         }
         
-        // Guardar la función original
-        const originalClick = btnResena.getAttribute('onclick');
-        
         // Reemplazar el onclick
-        btnResena.setAttribute('onclick', 'mostrarMensajeResena(event)');
+        btnResena.setAttribute('onclick', 'abrirModalResena(event)');
         
-        console.log('✅ Botón de reseña modificado');
+        console.log('✅ Botón de reseña modificado - modal centrado');
     }
     
-    // Función global para mostrar el mensaje
-    window.mostrarMensajeResena = function(event) {
+    // Función global para abrir el modal
+    window.abrirModalResena = function(event) {
         if (event) event.preventDefault();
         
-        // Crear alerta personalizada
-        const alerta = document.createElement('div');
-        alerta.className = 'alert alert-info alert-dismissible fade show position-fixed';
-        alerta.style.cssText = `
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 99999;
-            min-width: 300px;
-            max-width: 500px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            border-radius: 16px;
-            padding: 25px 30px;
-            text-align: center;
-            background: white;
-            border-left: 4px solid #1B4557;
-            animation: feedbackPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        `;
-        
-        alerta.innerHTML = `
-            <div style="margin-bottom: 15px;">
-                <span style="font-size: 3rem;">📝</span>
-            </div>
-            <h5 style="font-weight: 700; color: #1B4557; margin-bottom: 10px;">
-                ¡Gracias por tu interés!
-            </h5>
-            <p style="color: #2C3E50; margin-bottom: 15px; font-size: 0.95rem;">
-                Para dejar tu opinión, por favor solicita el <strong>link de reseña</strong> 
-                al asesor que te atendió.
-            </p>
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                <button onclick="this.closest('.alert').remove()" 
-                        class="btn btn-primary btn-sm" 
-                        style="border-radius: 50px; padding: 8px 24px; background: #1B4557; border: none;">
-                    Entendido
-                </button>
-                <a href="https://wa.me/573006498710?text=Hola%2C%20quiero%20dejar%20una%20rese%C3%B1a%20de%20un%20producto%20de%20Anmago%20Store" 
-                   target="_blank" 
-                   class="btn btn-success btn-sm" 
-                   style="border-radius: 50px; padding: 8px 24px; background: #25D366; border: none;">
-                   <i class="bi bi-whatsapp"></i> Contactar asesor
-                </a>
-            </div>
-            <button type="button" class="btn-close" 
-                    style="position: absolute; top: 10px; right: 10px;" 
-                    onclick="this.closest('.alert').remove()">
-            </button>
-        `;
-        
-        document.body.appendChild(alerta);
-        
-        // Auto-cerrar después de 8 segundos
-        setTimeout(function() {
-            if (alerta.parentNode) {
-                alerta.style.animation = 'feedbackHide 0.3s ease forwards';
-                setTimeout(function() {
-                    if (alerta.parentNode) alerta.remove();
-                }, 300);
-            }
-        }, 8000);
+        const overlay = document.getElementById('modalResenaOverlay');
+        if (overlay) {
+            overlay.classList.add('mostrar');
+            // Bloquear scroll del body
+            document.body.style.overflow = 'hidden';
+        }
     };
     
-    console.log('✅ Mejora de botón "Dejar mi opinión" activada');
+    // Función global para cerrar el modal
+    window.cerrarModalResena = function() {
+        const overlay = document.getElementById('modalResenaOverlay');
+        if (overlay) {
+            overlay.classList.remove('mostrar');
+            // Restaurar scroll del body
+            document.body.style.overflow = '';
+        }
+    };
+    
+    // Cerrar al hacer clic fuera del contenido (en el overlay)
+    document.addEventListener('click', function(e) {
+        const overlay = document.getElementById('modalResenaOverlay');
+        if (overlay && overlay.classList.contains('mostrar')) {
+            if (e.target === overlay) {
+                cerrarModalResena();
+            }
+        }
+    });
+    
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            cerrarModalResena();
+        }
+    });
+    
+    console.log('✅ Mejora de botón "Dejar mi opinión" con modal centrado activada');
 })();
 </script>
 <!-- ===== FIN MEJORA 2 ===== -->
