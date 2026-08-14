@@ -3838,21 +3838,25 @@
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_12.000425.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO LILA",
         "orden": 530
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_13.000425.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "ROJO NEGRO",
         "orden": 531
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_14.000426.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "AZUL NEGRO",
         "orden": 532
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_98/PRODUCTOS_Images_83181ABB.IMAGEN_15.000427.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
+        "variacion": "NEGRO ROJO",
         "orden": 533
       }
     ],
