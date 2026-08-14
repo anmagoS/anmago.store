@@ -1813,5 +1813,274 @@ actualizarSchema(producto);
 })();
 </script>
 <!-- ===== FIN MEJORAS ===== -->
+<!-- ========================================== -->
+<!-- MEJORA: SELECCIÓN DE COLOR CON FEEDBACK   -->
+<!-- ========================================== -->
+
+<style>
+/* Feedback de selección de color */
+.feedback-color {
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0.9);
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 20px;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: feedbackPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    max-width: 90%;
+    pointer-events: none;
+}
+
+.feedback-color.mostrar {
+    display: flex;
+}
+
+.feedback-color img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: white;
+    padding: 5px;
+    border: 2px solid #C9A96E;
+}
+
+.feedback-color .info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feedback-color .info .titulo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #C9A96E;
+}
+
+.feedback-color .info .nombre {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.feedback-color .info .check {
+    color: #28a745;
+    font-size: 0.85rem;
+}
+
+@keyframes feedbackPop {
+    0% { transform: translate(-50%, 50%) scale(0.7); opacity: 0; }
+    100% { transform: translate(-50%, 50%) scale(1); opacity: 1; }
+}
+
+.feedback-color.ocultar {
+    animation: feedbackHide 0.3s ease forwards;
+}
+
+@keyframes feedbackHide {
+    0% { transform: translate(-50%, 50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, 50%) scale(0.7); opacity: 0; }
+}
+
+@media (max-width: 480px) {
+    .feedback-color {
+        padding: 15px 20px;
+        gap: 12px;
+        bottom: 40%;
+    }
+    .feedback-color img {
+        width: 60px;
+        height: 60px;
+    }
+    .feedback-color .info .titulo {
+        font-size: 0.85rem;
+    }
+    .feedback-color .info .nombre {
+        font-size: 0.75rem;
+    }
+}
+</style>
+
+<!-- Elemento de feedback -->
+<div id="feedbackColor" class="feedback-color">
+    <img id="feedbackColorImg" src="" alt="Color seleccionado">
+    <div class="info">
+        <span class="titulo">✅ Color seleccionado</span>
+        <span class="nombre" id="feedbackColorNombre">Negro</span>
+        <span class="check">✔️ Haz clic en "Comprar ahora" para continuar</span>
+    </div>
+</div>
+
+<script>
+(function() {
+    'use strict';
+    
+    // Esperar a que el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', inicializarFeedback);
+    } else {
+        inicializarFeedback();
+    }
+    
+    function inicializarFeedback() {
+        const feedback = document.getElementById('feedbackColor');
+        const img = document.getElementById('feedbackColorImg');
+        const nombre = document.getElementById('feedbackColorNombre');
+        let timeoutFeedback = null;
+        
+        // Sobrescribir la función seleccionarImagenPrincipal para agregar feedback
+        const originalSeleccionar = window.seleccionarImagenPrincipal;
+        
+        window.seleccionarImagenPrincipal = function(imagenSrc, descripcion, elemento, index) {
+            // Llamar a la función original
+            if (typeof originalSeleccionar === 'function') {
+                originalSeleccionar(imagenSrc, descripcion, elemento, index);
+            }
+            
+            // Mostrar feedback
+            if (feedback && img && nombre) {
+                img.src = imagenSrc;
+                nombre.textContent = descripcion || 'Variante seleccionada';
+                
+                // Resetear animación
+                feedback.classList.remove('ocultar', 'mostrar');
+                
+                // Forzar reflow
+                void feedback.offsetWidth;
+                
+                feedback.classList.add('mostrar');
+                feedback.style.display = 'flex';
+                
+                // Limpiar timeout anterior
+                if (timeoutFeedback) clearTimeout(timeoutFeedback);
+                
+                // Ocultar después de 2 segundos
+                timeoutFeedback = setTimeout(function() {
+                    feedback.classList.remove('mostrar');
+                    feedback.classList.add('ocultar');
+                    setTimeout(function() {
+                        feedback.style.display = 'none';
+                        feedback.classList.remove('ocultar');
+                    }, 300);
+                }, 2000);
+            }
+        };
+        
+        console.log('✅ Feedback de selección de color activado');
+    }
+})();
+</script>
+<!-- ===== FIN MEJORA 1 ===== -->
+<!-- ========================================== -->
+<!-- MEJORA: BOTÓN DE RESEÑA CON MENSAJE        -->
+<!-- ========================================== -->
+
+<script>
+(function() {
+    'use strict';
+    
+    // Esperar a que el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', modificarBotonResena);
+    } else {
+        modificarBotonResena();
+    }
+    
+    function modificarBotonResena() {
+        // Buscar el botón "Dejar mi opinión"
+        const btnResena = document.querySelector('.btn-outline-primary.btn-sm[onclick*="dejarResena"]');
+        
+        if (!btnResena) {
+            // Si no se encuentra, esperar un poco y reintentar
+            setTimeout(modificarBotonResena, 1000);
+            return;
+        }
+        
+        // Guardar la función original
+        const originalClick = btnResena.getAttribute('onclick');
+        
+        // Reemplazar el onclick
+        btnResena.setAttribute('onclick', 'mostrarMensajeResena(event)');
+        
+        console.log('✅ Botón de reseña modificado');
+    }
+    
+    // Función global para mostrar el mensaje
+    window.mostrarMensajeResena = function(event) {
+        if (event) event.preventDefault();
+        
+        // Crear alerta personalizada
+        const alerta = document.createElement('div');
+        alerta.className = 'alert alert-info alert-dismissible fade show position-fixed';
+        alerta.style.cssText = `
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 99999;
+            min-width: 300px;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 16px;
+            padding: 25px 30px;
+            text-align: center;
+            background: white;
+            border-left: 4px solid #1B4557;
+            animation: feedbackPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        `;
+        
+        alerta.innerHTML = `
+            <div style="margin-bottom: 15px;">
+                <span style="font-size: 3rem;">📝</span>
+            </div>
+            <h5 style="font-weight: 700; color: #1B4557; margin-bottom: 10px;">
+                ¡Gracias por tu interés!
+            </h5>
+            <p style="color: #2C3E50; margin-bottom: 15px; font-size: 0.95rem;">
+                Para dejar tu opinión, por favor solicita el <strong>link de reseña</strong> 
+                al asesor que te atendió.
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="this.closest('.alert').remove()" 
+                        class="btn btn-primary btn-sm" 
+                        style="border-radius: 50px; padding: 8px 24px; background: #1B4557; border: none;">
+                    Entendido
+                </button>
+                <a href="https://wa.me/573006498710?text=Hola%2C%20quiero%20dejar%20una%20rese%C3%B1a%20de%20un%20producto%20de%20Anmago%20Store" 
+                   target="_blank" 
+                   class="btn btn-success btn-sm" 
+                   style="border-radius: 50px; padding: 8px 24px; background: #25D366; border: none;">
+                   <i class="bi bi-whatsapp"></i> Contactar asesor
+                </a>
+            </div>
+            <button type="button" class="btn-close" 
+                    style="position: absolute; top: 10px; right: 10px;" 
+                    onclick="this.closest('.alert').remove()">
+            </button>
+        `;
+        
+        document.body.appendChild(alerta);
+        
+        // Auto-cerrar después de 8 segundos
+        setTimeout(function() {
+            if (alerta.parentNode) {
+                alerta.style.animation = 'feedbackHide 0.3s ease forwards';
+                setTimeout(function() {
+                    if (alerta.parentNode) alerta.remove();
+                }, 300);
+            }
+        }, 8000);
+    };
+    
+    console.log('✅ Mejora de botón "Dejar mi opinión" activada');
+})();
+</script>
+<!-- ===== FIN MEJORA 2 ===== -->
 </body>
 </html>
