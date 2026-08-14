@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   
   <!-- Meta esenciales primero -->
-  <title>Anmago Store - Ropa, Hogar, Belleza y más | Tienda Online Colombia</title>
-  <meta name="description" content="Encuentra ropa, relojería, hogar, belleza y más en Anmago Store. Los mejores precios, calidad garantizada y envíos a toda Colombia.">
-  <meta name="keywords" content="ropa online Colombia, camisetas selección Colombia, moda colombiana, comprar ropa por internet, envíos gratis Colombia">
+  <title>Anmago Store - Tienda Virtual de Ropa y Moda en Colombia | Envíos Nacionales</title>
+  <meta name="description" content="Descubre las últimas tendencias en ropa, calzado y accesorios para dama, caballero y niños en Anmago Store. Calidad, estilo y envíos a toda Colombia.">
+  <meta name="keywords" content="ropa online Colombia, moda colombiana, ropa para dama, ropa para caballero, ropa para niños, tienda virtual de moda, comprar ropa por internet, envíos a toda Colombia, Addi, contraentrega">
   <meta name="author" content="ANMAGO STORE">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="ea0VJL7XRbgbPwBex-V1Z2JeuebSdELH2lSUw2BkAxw" />
@@ -15,14 +15,14 @@
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anmagos.github.io/anmago.store/">
-  <meta property="og:title" content="Anmago Store - Ropa, Hogar, Belleza y más">
-  <meta property="og:description" content="Encuentra ropa, relojería, hogar, belleza y más. Los mejores precios y calidad garantizada.">
+  <meta property="og:title" content="Anmago Store - Tienda Virtual de Ropa y Moda en Colombia">
+  <meta property="og:description" content="Encuentra ropa, calzado y accesorios para toda la familia. Envíos a todo Colombia. Paga contraentrega, con tarjeta o Addi.">
   <meta property="og:image" content="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-1200,h-630">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Anmago Store - Ropa, Hogar, Belleza y más">
-  <meta name="twitter:description" content="Tienda online con los mejores precios y calidad garantizada. Envíos a toda Colombia.">
+  <meta name="twitter:title" content="Anmago Store - Tienda Virtual de Ropa y Moda en Colombia">
+  <meta name="twitter:description" content="Tienda online de moda con los mejores precios. Envíos a toda Colombia.">
   <meta name="twitter:image" content="https://ik.imagekit.io/mbsk9dati/logo.jpg?tr=w-1200,h-630">
   
   <!-- Canonical URL -->
@@ -265,48 +265,88 @@
       box-shadow: var(--shadow-lg);
     }
     
-   /* CATEGORÍAS RÁPIDAS - VERSIÓN COMPACTA */
-.categoria-rapida-card {
-  background: white;
-  border-radius: 30px;
-  padding: 0.4rem 1rem;
-  text-align: center;
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-  min-width: 70px;
-  white-space: nowrap;
-}
-
-.categoria-rapida-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-light);
-  background: linear-gradient(135deg, white, var(--bg-light));
-}
-
-.categoria-rapida-card i {
-  font-size: 0.9rem;
-  color: var(--primary);
-  margin-right: 0.4rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.categoria-rapida-card span {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.categoria-rapida-card:hover i,
-.categoria-rapida-card:hover span {
-  color: var(--primary-light);
-}
+    /* ===== NUEVA SECCIÓN: BENEFICIOS CLAVE ===== */
+    .beneficios-key {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      padding: 1rem 0.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .beneficio-item {
+      text-align: center;
+      padding: 0.8rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+    }
+    .beneficio-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .beneficio-item i {
+      font-size: 1.8rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .beneficio-item span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: block;
+    }
+    .beneficio-item small {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    
+    /* CATEGORÍAS RÁPIDAS - VERSIÓN COMPACTA */
+    .categoria-rapida-card {
+      background: white;
+      border-radius: 30px;
+      padding: 0.4rem 1rem;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      min-width: 70px;
+      white-space: nowrap;
+    }
+    
+    .categoria-rapida-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+      background: linear-gradient(135deg, white, var(--bg-light));
+    }
+    
+    .categoria-rapida-card i {
+      font-size: 0.9rem;
+      color: var(--primary);
+      margin-right: 0.4rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .categoria-rapida-card span {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .categoria-rapida-card:hover i,
+    .categoria-rapida-card:hover span {
+      color: var(--primary-light);
+    }
     
     /* PRODUCTOS DESTACADOS MEJORADOS */
     .productos-destacados { margin-bottom: 3rem; }
@@ -332,6 +372,7 @@
       align-items: center;
       justify-content: center;
       padding: 1rem;
+      position: relative;
     }
     .card-img-container img {
       max-height: 100%;
@@ -340,7 +381,21 @@
       transition: var(--transition);
     }
     .card-producto-destacado:hover img { transform: scale(1.05); }
-    .card-info { padding: 1rem; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
+    .card-info { 
+      padding: 1rem; 
+      text-align: center; 
+      flex-grow: 1; 
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      gap: 0.5rem;
+    }
+    .card-info .precio-destacado {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .card-info .precio-destacado::before { content: '$'; font-size: 0.85rem; margin-right: 2px; }
     .btn-ver-producto {
       background: linear-gradient(135deg, var(--primary), var(--primary-light));
       border: none;
@@ -466,17 +521,17 @@
       gap: 0.5rem;
     }
     .card-producto-ml .producto-nombre {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;  /* Propiedad estándar para futura compatibilidad */
-  -webkit-box-orient: vertical;
-  box-orient: vertical;  /* Propiedad estándar */
-  overflow: hidden;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  line-height: 1.3;
-}
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
+      overflow: hidden;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.3;
+    }
     .card-producto-ml .precio-actual {
       font-size: 1.1rem;
       font-weight: 700;
@@ -506,6 +561,15 @@
       .sugerencia-item img { width: 42px; height: 42px; }
       #intro .logo-container { width: 140px; height: 140px; }
       #intro .loading-text { font-size: 16px; }
+      .beneficios-key { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+    }
+    
+    @media (max-width: 480px) {
+      .beneficios-key { grid-template-columns: repeat(2, 1fr); }
+      .beneficio-item { padding: 0.5rem; }
+      .beneficio-item i { font-size: 1.4rem; }
+      .beneficio-item span { font-size: 0.7rem; }
+      .beneficio-item small { font-size: 0.6rem; }
     }
     
     @media (min-width: 768px) { .btn-volver-inicio { display: flex; } }
@@ -513,160 +577,161 @@
     /* Accesibilidad */
     :focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-/* Carrusel general más compacto */
-.categorias-carrusel {
-  position: relative;
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.categorias-carrusel-container {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  flex: 1;
-  padding: 4px 0;
-}
-
-.categorias-carrusel-container::-webkit-scrollbar {
-  height: 4px;
-}
-
-.categorias-carrusel-container::-webkit-scrollbar-track {
-  background: var(--border-light);
-  border-radius: 10px;
-}
-
-.categorias-carrusel-container::-webkit-scrollbar-thumb {
-  background: var(--primary-light);
-  border-radius: 10px;
-}
-
-.categorias-carrusel-container::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
-.categorias-scroll-wrapper {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0;
-  min-width: min-content;
-}
-
-.categoria-rapida-card {
-  background: white;
-  border-radius: 40px;
-  padding: 0.6rem 1.2rem;
-  text-align: center;
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-  min-width: 85px;
-}
-
-.categoria-rapida-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary-light);
-  background: linear-gradient(135deg, white, var(--bg-light));
-}
-
-.categoria-rapida-card i {
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-right: 0.5rem;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.categoria-rapida-card span {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.categoria-rapida-card:hover i,
-.categoria-rapida-card:hover span {
-  color: var(--primary-light);
-}
-
-/* Flechas de navegación más pequeñas */
-.btn-carrusel-categoria {
-  background: white;
-  border: 1px solid var(--border-light);
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-  box-shadow: var(--shadow-sm);
-  flex-shrink: 0;
-  z-index: 10;
-}
-
-.btn-carrusel-categoria:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: white;
-  transform: scale(1.05);
-}
-
-.btn-carrusel-categoria i {
-  font-size: 0.8rem;
-}
-
-/* Indicador visual de que hay más contenido */
-.categorias-carrusel-container::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 40px;
-  pointer-events: none;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9));
-  display: none;
-}
-
-.categorias-carrusel-container.has-overflow::after {
-  display: block;
-}
-
-/* Texto indicador para móvil */
-.categorias-indicador {
-  text-align: center;
-  font-size: 0.7rem;
-  color: var(--text-muted);
-  margin-top: 0.5rem;
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .categorias-indicador {
-    display: block;
-  }
-  .categoria-rapida-card {
-    padding: 0.5rem 1rem;
-    min-width: 75px;
-  }
-  .categoria-rapida-card i {
-    font-size: 1rem;
-  }
-  .categoria-rapida-card span {
-    font-size: 0.75rem;
-  }
-}
- </style>
+    
+    /* Carrusel general más compacto */
+    .categorias-carrusel {
+      position: relative;
+      margin: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .categorias-carrusel-container {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      flex: 1;
+      padding: 4px 0;
+    }
+    
+    .categorias-carrusel-container::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    .categorias-carrusel-container::-webkit-scrollbar-track {
+      background: var(--border-light);
+      border-radius: 10px;
+    }
+    
+    .categorias-carrusel-container::-webkit-scrollbar-thumb {
+      background: var(--primary-light);
+      border-radius: 10px;
+    }
+    
+    .categorias-carrusel-container::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
+    
+    .categorias-scroll-wrapper {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0;
+      min-width: min-content;
+    }
+    
+    .categoria-rapida-card {
+      background: white;
+      border-radius: 40px;
+      padding: 0.6rem 1.2rem;
+      text-align: center;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      min-width: 85px;
+    }
+    
+    .categoria-rapida-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-light);
+      background: linear-gradient(135deg, white, var(--bg-light));
+    }
+    
+    .categoria-rapida-card i {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin-right: 0.5rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .categoria-rapida-card span {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .categoria-rapida-card:hover i,
+    .categoria-rapida-card:hover span {
+      color: var(--primary-light);
+    }
+    
+    /* Flechas de navegación más pequeñas */
+    .btn-carrusel-categoria {
+      background: white;
+      border: 1px solid var(--border-light);
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+      z-index: 10;
+    }
+    
+    .btn-carrusel-categoria:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      transform: scale(1.05);
+    }
+    
+    .btn-carrusel-categoria i {
+      font-size: 0.8rem;
+    }
+    
+    /* Indicador visual de que hay más contenido */
+    .categorias-carrusel-container::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9));
+      display: none;
+    }
+    
+    .categorias-carrusel-container.has-overflow::after {
+      display: block;
+    }
+    
+    /* Texto indicador para móvil */
+    .categorias-indicador {
+      text-align: center;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      display: none;
+    }
+    
+    @media (max-width: 768px) {
+      .categorias-indicador {
+        display: block;
+      }
+      .categoria-rapida-card {
+        padding: 0.5rem 1rem;
+        min-width: 75px;
+      }
+      .categoria-rapida-card i {
+        font-size: 1rem;
+      }
+      .categoria-rapida-card span {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
   
   <!-- CSS EXTERNO CARGADO ASÍNCRONAMENTE -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" media="print" onload="this.media='all'">
@@ -729,6 +794,9 @@
       <a href="modalformulario.html" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-person me-2"></i> Mi cuenta</a>
       <a href="https://wa.me/573006498710?text=¡Hola!%20Me%20interesan%20sus%20productos%20de%20Anmago%20Store" target="_blank" class="nav-link d-flex align-items-center text-success" onclick="cerrarMenu();"><i class="bi bi-whatsapp me-2"></i> WhatsApp</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSevvlCBgz7L6l2-DecKQLazoswqzf7DRYWOaCq4FtMGOR6D2Q/viewform?usp=header" target="_blank" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-envelope me-2"></i> Contacto</a>
+      <!-- NUEVO: Enlace a Políticas en el menú lateral -->
+      <hr class="my-2">
+      <a href="POLITICAS_GARANTIAS_Y_DEVOLUCIONES.HTML" class="nav-link d-flex align-items-center" onclick="cerrarMenu();"><i class="bi bi-shield-check me-2"></i> Políticas de garantía</a>
     </div>
     <div class="offcanvas-footer border-top p-3">
       <div class="text-center small text-muted"><p class="mb-1">anmagostore@gmail.com</p><p class="mb-0">3006498710 - 3115046741</p></div>
@@ -738,50 +806,77 @@
   <!-- BOTÓN VOLVER AL INICIO -->
   <a href="https://anmagos.github.io/anmago.store/" class="btn-volver-inicio" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Volver al inicio" aria-label="Volver al inicio"><i class="bi bi-house-door-fill" style="font-size: 1.3rem;"></i></a>
 
-<!-- CATEGORÍAS RÁPIDAS - CARRUSEL HORIZONTAL -->
-<div class="container-fluid mt-3 px-2">
-  <div class="categorias-carrusel" id="categorias-carrusel-wrapper">
-    <button class="btn-carrusel-categoria" id="btn-carrusel-prev" aria-label="Categorías anteriores" style="display: none;">
-      <i class="bi bi-chevron-left"></i>
-    </button>
-    
-    <div class="categorias-carrusel-container" id="categorias-carrusel-container">
-      <div class="categorias-scroll-wrapper" id="categorias-rapidas">
-        <div class="text-center py-2 w-100">
-          <div class="spinner-border spinner-border-sm text-primary" role="status">
-            <span class="visually-hidden">Cargando...</span>
-          </div>
-          <small class="text-muted ms-2">Cargando categorías...</small>
-        </div>
+  <!-- ===== NUEVA SECCIÓN: BENEFICIOS CLAVE ===== -->
+  <div class="container-fluid px-3 mt-2">
+    <div class="beneficios-key">
+      <div class="beneficio-item">
+        <i class="bi bi-shield-check"></i>
+        <span>Compras 100% Seguras</span>
+        <small>Tu información protegida</small>
+      </div>
+      <div class="beneficio-item">
+        <i class="bi bi-truck"></i>
+        <span>Envíos a todo Colombia</span>
+        <small>Entregas a nivel nacional</small>
+      </div>
+      <div class="beneficio-item">
+        <i class="bi bi-credit-card"></i>
+        <span>Múltiples medios de pago</span>
+        <small>Contraentrega, tarjeta, Addi</small>
+      </div>
+      <div class="beneficio-item">
+        <i class="bi bi-arrow-repeat"></i>
+        <span>Cambios y devoluciones</span>
+        <small><a href="POLITICAS_GARANTIAS_Y_DEVOLUCIONES.HTML" style="color: var(--primary); text-decoration: none;">Conoce nuestras políticas</a></small>
       </div>
     </div>
-    
-    <button class="btn-carrusel-categoria" id="btn-carrusel-next" aria-label="Más categorías" style="display: none;">
-      <i class="bi bi-chevron-right"></i>
-    </button>
   </div>
-  <div class="categorias-indicador">
-    <i class="bi bi-arrow-left-right"></i> Desliza para ver más categorías
-  </div>
-</div>
 
-<!-- BANNER INSTITUCIONAL MEJORADO CON INVITACIÓN A TELEGRAM -->
-<div class="container-fluid banner-promocional py-2">
-  <div class="container text-center">
-    <span style="color:#fce07b;">✨ Nuestros precios incluyen envío a la mayoría de ciudades ✨</span><br>
-    <span style="color:#fce07b;">Mejores precios · Calidad garantizada · Envíos Nacionales y Contraentrega</span>
-    <br>
-    <span style="color:#fce07b;">
-      📲 ¡Síguenos en 
-      <a href="https://t.me/Anmagostore" 
-         target="_blank" 
-         style="color:#ffffff; font-weight:bold; text-decoration:underline; background-color:#0088cc; padding:2px 8px; border-radius:4px;">
-         @Anmagostore
-      </a> 
-      y entérate primero de las novedades!
-    </span>
+  <!-- CATEGORÍAS RÁPIDAS - CARRUSEL HORIZONTAL -->
+  <div class="container-fluid mt-1 px-2">
+    <div class="categorias-carrusel" id="categorias-carrusel-wrapper">
+      <button class="btn-carrusel-categoria" id="btn-carrusel-prev" aria-label="Categorías anteriores" style="display: none;">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      
+      <div class="categorias-carrusel-container" id="categorias-carrusel-container">
+        <div class="categorias-scroll-wrapper" id="categorias-rapidas">
+          <div class="text-center py-2 w-100">
+            <div class="spinner-border spinner-border-sm text-primary" role="status">
+              <span class="visually-hidden">Cargando...</span>
+            </div>
+            <small class="text-muted ms-2">Cargando categorías...</small>
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn-carrusel-categoria" id="btn-carrusel-next" aria-label="Más categorías" style="display: none;">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+    <div class="categorias-indicador">
+      <i class="bi bi-arrow-left-right"></i> Desliza para ver más categorías
+    </div>
   </div>
-</div>
+
+  <!-- BANNER INSTITUCIONAL MEJORADO -->
+  <div class="container-fluid banner-promocional py-2">
+    <div class="container text-center">
+      <span style="color:#fce07b;">✨ ANMAGO Store - Tu tienda virtual de moda en Colombia ✨</span><br>
+      <span style="color:#fce07b;">👗 Ropa, calzado y accesorios para dama, caballero y niños</span><br>
+      <span style="color:#fce07b;">🚚 Envíos nacionales · Paga contraentrega, con tarjeta o Addi · Ventas al por mayor</span>
+      <br>
+      <span style="color:#fce07b;">
+        📲 ¡Síguenos en 
+        <a href="https://t.me/Anmagostore" 
+           target="_blank" 
+           style="color:#ffffff; font-weight:bold; text-decoration:underline; background-color:#0088cc; padding:2px 8px; border-radius:4px;">
+           @Anmagostore
+        </a> 
+        y entérate primero de las novedades!
+      </span>
+    </div>
+  </div>
 
   <!-- BOTÓN INSTALAR APP -->
   <div id="instalar-container" class="instalar-container d-none" aria-live="polite">
@@ -847,18 +942,98 @@
               <div class="carousel-inner">
                 <div class="carousel-item active">
                   <div class="row g-3 justify-content-center">
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" alt="Chaqueta torera negra" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera roja" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera miel" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera amarilla" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver producto</a></div></div></div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" alt="Chaqueta torera negra" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">84.500</span>
+                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera roja" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">84.500</span>
+                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera miel" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">destacado</span>
+                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera amarilla" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">$149.900</span>
+                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="carousel-item">
                   <div class="row g-3 justify-content-center">
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver producto</a></div></div></div>
-                    <div class="col-6 col-md-3"><div class="card-producto-destacado"><div class="card-img-container"><img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy"></div><div class="card-info"><a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver producto</a></div></div></div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">$79.900</span>
+                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">$79.900</span>
+                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">$79.900</span>
+                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="card-producto-destacado">
+                        <div class="card-img-container">
+                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
+                        </div>
+                        <div class="card-info">
+                          <span class="precio-destacado">$79.900</span>
+                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -887,7 +1062,7 @@
   <!-- BOTÓN CARRITO FLOTANTE -->
   <a href="#" class="btn-carrito-flotante d-none d-md-flex" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito"><i class="bi bi-bag-heart fs-4"></i><span id="contador-carrito" class="contador-carrito">0</span></a>
 
-  <!-- FOOTER -->
+  <!-- FOOTER (RESTAURADO CON CARGA DINÁMICA DESDE footer.html) -->
   <footer class="footer mt-0" id="footer-container"><div class="text-center py-4"><div class="spinner-border spinner-border-sm text-light"></div><p class="mt-1 small">Cargando información...</p></div></footer>
 
   <!-- BARRA INFERIOR MOBILE -->
@@ -986,7 +1161,7 @@
   <script src="app.js?v=20251116" defer></script>
   <script src="carrito.js?v=20251116" defer></script>
 
-  <!-- CARGAR FOOTER -->
+  <!-- CARGAR FOOTER (RESTAURADO) -->
   <script>
     async function cargarFooter() { try { const respuesta = await fetch('footer.html?v=' + Date.now()); const htmlFooter = await respuesta.text(); const contenedor = document.getElementById('footer-container'); if (contenedor) contenedor.innerHTML = htmlFooter; } catch (error) { const contenedor = document.getElementById('footer-container'); if (contenedor) contenedor.innerHTML = `<div class="container text-center py-3"><p class="text-muted mb-1">&copy; 2025 Anmago Store. Todos los derechos reservados.</p><p class="small text-muted">anmagostore@gmail.com | 3006498710</p></div>`; } }
     document.addEventListener('DOMContentLoaded', cargarFooter);
@@ -1024,73 +1199,73 @@
     window.dispatchEvent(new Event('carruselListo'));
   </script>
   <script>
-// ==============================================
-// CARRUSEL DE CATEGORÍAS RÁPIDAS
-// ==============================================
+  // ==============================================
+  // CARRUSEL DE CATEGORÍAS RÁPIDAS
+  // ==============================================
 
-function inicializarCarruselCategorias() {
-  const container = document.getElementById('categorias-carrusel-container');
-  const btnPrev = document.getElementById('btn-carrusel-prev');
-  const btnNext = document.getElementById('btn-carrusel-next');
-  const wrapper = document.getElementById('categorias-rapidas');
-  
-  if (!container) return;
-  
-  // Función para verificar si hay overflow y mostrar/ocultar flechas
-  function verificarOverflow() {
+  function inicializarCarruselCategorias() {
+    const container = document.getElementById('categorias-carrusel-container');
+    const btnPrev = document.getElementById('btn-carrusel-prev');
+    const btnNext = document.getElementById('btn-carrusel-next');
+    const wrapper = document.getElementById('categorias-rapidas');
+    
     if (!container) return;
-    const hasOverflow = container.scrollWidth > container.clientWidth;
-    if (btnPrev && btnNext) {
-      btnPrev.style.display = hasOverflow ? 'flex' : 'none';
-      btnNext.style.display = hasOverflow ? 'flex' : 'none';
+    
+    // Función para verificar si hay overflow y mostrar/ocultar flechas
+    function verificarOverflow() {
+      if (!container) return;
+      const hasOverflow = container.scrollWidth > container.clientWidth;
+      if (btnPrev && btnNext) {
+        btnPrev.style.display = hasOverflow ? 'flex' : 'none';
+        btnNext.style.display = hasOverflow ? 'flex' : 'none';
+      }
+      
+      if (hasOverflow) {
+        container.classList.add('has-overflow');
+      } else {
+        container.classList.remove('has-overflow');
+      }
     }
     
-    if (hasOverflow) {
-      container.classList.add('has-overflow');
-    } else {
-      container.classList.remove('has-overflow');
+    // Scroll izquierda
+    if (btnPrev) {
+      btnPrev.addEventListener('click', () => {
+        container.scrollBy({ left: -280, behavior: 'smooth' });
+      });
     }
-  }
-  
-  // Scroll izquierda
-  if (btnPrev) {
-    btnPrev.addEventListener('click', () => {
-      container.scrollBy({ left: -280, behavior: 'smooth' });
+    
+    // Scroll derecha
+    if (btnNext) {
+      btnNext.addEventListener('click', () => {
+        container.scrollBy({ left: 280, behavior: 'smooth' });
+      });
+    }
+    
+    // Observar cambios en el wrapper para detectar cuando se cargan las categorías
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList' && wrapper.children.length > 1) {
+          setTimeout(verificarOverflow, 100);
+        }
+      });
     });
+    
+    observer.observe(wrapper, { childList: true, subtree: true });
+    
+    // Verificar overflow al cargar y al redimensionar
+    setTimeout(verificarOverflow, 500);
+    window.addEventListener('resize', verificarOverflow);
   }
-  
-  // Scroll derecha
-  if (btnNext) {
-    btnNext.addEventListener('click', () => {
-      container.scrollBy({ left: 280, behavior: 'smooth' });
-    });
-  }
-  
-  // Observar cambios en el wrapper para detectar cuando se cargan las categorías
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList' && wrapper.children.length > 1) {
-        setTimeout(verificarOverflow, 100);
-      }
-    });
+
+  // Esperar a que el DOM esté listo y luego inicializar
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(inicializarCarruselCategorias, 1500);
   });
-  
-  observer.observe(wrapper, { childList: true, subtree: true });
-  
-  // Verificar overflow al cargar y al redimensionar
-  setTimeout(verificarOverflow, 500);
-  window.addEventListener('resize', verificarOverflow);
-}
 
-// Esperar a que el DOM esté listo y luego inicializar
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(inicializarCarruselCategorias, 1500);
-});
-
-// También cuando app.js termine de cargar las categorías
-window.addEventListener('catalogoCargado', function() {
-  setTimeout(inicializarCarruselCategorias, 500);
-});
-</script>
+  // También cuando app.js termine de cargar las categorías
+  window.addEventListener('catalogoCargado', function() {
+    setTimeout(inicializarCarruselCategorias, 500);
+  });
+  </script>
 </body>
-</html>
+</html> 
