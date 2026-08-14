@@ -1560,5 +1560,258 @@ actualizarSchema(producto);
     }
     document.addEventListener('DOMContentLoaded', cargarFooter);
   </script>
+<!-- ========================================== -->
+<!-- MEJORAS DE CONVERSIÓN - SIN ROMPER NADA    -->
+<!-- ========================================== -->
+
+<style>
+/* ===== MEJORAS VISUALES ===== */
+
+/* Badge de envío gratis flotante */
+.badge-envio-gratis {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    z-index: 999;
+    background: linear-gradient(135deg, #198754, #157347);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+    animation: pulse-envio 2s infinite;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+}
+
+.badge-envio-gratis i {
+    font-size: 1.2rem;
+}
+
+@keyframes pulse-envio {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+}
+
+/* Contador de personas viendo */
+.contador-vivos {
+    background: linear-gradient(135deg, #e8f4fd, #d4e8f5);
+    border-left: 4px solid #1B4557;
+    border-radius: 12px;
+    padding: 10px 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+.contador-vivos i {
+    color: #1B4557;
+    font-size: 1.3rem;
+    animation: parpadeo 1.5s infinite;
+}
+
+.contador-vivos .numero {
+    font-weight: 700;
+    color: #1B4557;
+    font-size: 1.1rem;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Badge de pago seguro flotante */
+.badge-pago-seguro {
+    position: fixed;
+    bottom: 160px;
+    left: 20px;
+    z-index: 999;
+    background: white;
+    color: #1B4557;
+    padding: 8px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-pago-seguro i {
+    color: #198754;
+}
+
+/* Temporizador de oferta */
+.temporizador-oferta {
+    background: linear-gradient(135deg, #dc3545, #b02a37);
+    color: white;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.temporizador-oferta .tiempo {
+    background: rgba(255,255,255,0.2);
+    padding: 4px 12px;
+    border-radius: 30px;
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .badge-envio-gratis {
+        bottom: 80px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.7rem;
+    }
+    .badge-pago-seguro {
+        bottom: 130px;
+        left: 10px;
+        padding: 6px 10px;
+        font-size: 0.65rem;
+    }
+    .contador-vivos {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+</style>
+
+<!-- ===== MEJORAS VISUALES (se insertan con JS) ===== -->
+<script>
+(function() {
+    'use strict';
+    
+    // Esperar a que el DOM esté listo
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', agregarMejoras);
+    } else {
+        agregarMejoras();
+    }
+    
+    function agregarMejoras() {
+        // ---- 1. BADGE DE ENVÍO GRATIS (flotante) ----
+        const badgeEnvio = document.createElement('div');
+        badgeEnvio.className = 'badge-envio-gratis';
+        badgeEnvio.innerHTML = '<i class="bi bi-truck"></i> Envío gratis incluido';
+        document.body.appendChild(badgeEnvio);
+        
+        // ---- 2. BADGE DE PAGO SEGURO (flotante) ----
+        const badgePago = document.createElement('div');
+        badgePago.className = 'badge-pago-seguro';
+        badgePago.innerHTML = '<i class="bi bi-shield-check"></i> Pago 100% seguro';
+        document.body.appendChild(badgePago);
+        
+        // ---- 3. CONTADOR DE "PERSONAS VIENDO" (dentro del producto) ----
+        // Buscar donde insertarlo (después del precio)
+        const precioContainer = document.querySelector('.d-flex.align-items-center.gap-3.mb-3');
+        if (precioContainer) {
+            const contadorVivos = document.createElement('div');
+            contadorVivos.className = 'contador-vivos';
+            
+            // Número aleatorio entre 8 y 25
+            const numViendo = Math.floor(Math.random() * 18) + 8;
+            
+            contadorVivos.innerHTML = `
+                <i class="bi bi-eye-fill"></i>
+                <span><span class="numero" id="contador-personas">${numViendo}</span> personas están viendo este producto ahora mismo</span>
+            `;
+            
+            // Insertar después del contenedor de precio
+            precioContainer.parentNode.insertBefore(contadorVivos, precioContainer.nextSibling);
+            
+            // Actualizar cada 30 segundos (simulación)
+            setInterval(function() {
+                const el = document.getElementById('contador-personas');
+                if (el) {
+                    const actual = parseInt(el.textContent);
+                    const cambio = Math.floor(Math.random() * 5) - 2; // -2 a +2
+                    const nuevo = Math.max(5, actual + cambio);
+                    el.textContent = nuevo;
+                }
+            }, 30000);
+        }
+        
+        // ---- 4. TEMPORIZADOR DE OFERTA (solo si tiene promo) ----
+        // Esperar a que el producto se cargue
+        const checkProducto = setInterval(function() {
+            const badges = document.querySelector('#badges-producto');
+            if (badges && badges.innerHTML.includes('OFERTA')) {
+                clearInterval(checkProducto);
+                
+                // Buscar donde insertar el temporizador
+                const target = document.querySelector('#badges-producto');
+                if (target) {
+                    const timer = document.createElement('div');
+                    timer.className = 'temporizador-oferta mt-2';
+                    timer.innerHTML = `
+                        <span><i class="bi bi-clock-history me-1"></i> Oferta por tiempo limitado</span>
+                        <span class="tiempo" id="contador-oferta">23:45</span>
+                    `;
+                    
+                    target.parentNode.insertBefore(timer, target.nextSibling);
+                    
+                    // Contador regresivo (2 horas)
+                    let minutos = 23;
+                    let segundos = 45;
+                    
+                    setInterval(function() {
+                        segundos--;
+                        if (segundos < 0) {
+                            segundos = 59;
+                            minutos--;
+                            if (minutos < 0) {
+                                minutos = 59;
+                            }
+                        }
+                        const timerEl = document.getElementById('contador-oferta');
+                        if (timerEl) {
+                            timerEl.textContent = 
+                                String(minutos).padStart(2, '0') + ':' + 
+                                String(segundos).padStart(2, '0');
+                        }
+                    }, 1000);
+                }
+            }
+        }, 1000);
+        
+        // Limpiar intervalo después de 10 segundos si no hay promo
+        setTimeout(function() {
+            clearInterval(checkProducto);
+        }, 10000);
+        
+        // ---- 5. LOGOS DE PAGO MÁS GRANDES (sin tocar los existentes) ----
+        // Buscar el contenedor de métodos de pago y agregar un badge adicional
+        const pagoContainer = document.querySelector('.card.border-0.bg-light .d-flex.flex-wrap');
+        if (pagoContainer) {
+            // Agregar un badge "Paga en cuotas" después de los logos
+            const badgeCuotas = document.createElement('span');
+            badgeCuotas.className = 'badge bg-primary ms-2';
+            badgeCuotas.style.fontSize = '0.7rem';
+            badgeCuotas.style.padding = '6px 12px';
+            badgeCuotas.innerHTML = '<i class="bi bi-credit-card me-1"></i> 3 cuotas sin interés';
+            pagoContainer.appendChild(badgeCuotas);
+        }
+        
+        console.log('✅ Mejoras de conversión agregadas (sin modificar código existente)');
+    }
+})();
+</script>
+<!-- ===== FIN MEJORAS ===== -->
 </body>
 </html>
