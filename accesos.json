@@ -24,14 +24,6 @@
     "ruta": "/ROPA/DAMA/VESTIDOS/FALDA LARGA"
   },
   {
-    "id_producto": "2C26E2E2",
-    "ruta": "/ROPA/CABALLERO/SPORT/HOMBRES"
-  },
-  {
-    "id_producto": "2656291B",
-    "ruta": "/ROPA/CABALLERO/SPORT/HOMBRES"
-  },
-  {
     "id_producto": "B914451E",
     "ruta": "/ROPA/DAMA/ENTERIZOS/ENTERIZO"
   },
@@ -106,10 +98,6 @@
   {
     "id_producto": "2B2B4BD1",
     "ruta": "/ROPA/DAMA/BLUSAS/CROP TOP"
-  },
-  {
-    "id_producto": "C3B8E4BC",
-    "ruta": "/ROPA/DAMA/JEANS/BOTA RECTA"
   },
   {
     "id_producto": "8C73E98E",
@@ -210,10 +198,6 @@
   {
     "id_producto": "13125EC2",
     "ruta": "/ROPA/CABALLERO/CAMISETAS/MANGA CORTA"
-  },
-  {
-    "id_producto": "797B12AF",
-    "ruta": "/ROPA/CABALLERO/BUSOS/CUELLO HENLEY"
   },
   {
     "id_producto": "F838CF66",
@@ -328,14 +312,6 @@
     "ruta": "/ROPA/DAMA/PANTALONES/CARGO"
   },
   {
-    "id_producto": "80783575",
-    "ruta": "/ROPA/DAMA/SPORT/BUSOS"
-  },
-  {
-    "id_producto": "5828B632",
-    "ruta": "/ROPA/DAMA/SPORT/ESQUELETOS"
-  },
-  {
     "id_producto": "2755F4FF",
     "ruta": "/ROPA/DAMA/SPORT/TEXTURIZADA"
   },
@@ -382,10 +358,6 @@
   {
     "id_producto": "9D514FA2",
     "ruta": "/ROPA/CABALLERO/PANTALONES/JEANS"
-  },
-  {
-    "id_producto": "290F65AC",
-    "ruta": "/ROPA/DAMA/JEANS/LEVIS"
   },
   {
     "id_producto": "1B761E02",
