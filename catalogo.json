@@ -3021,59 +3021,6 @@
     "descripcion": "La camiseta polo está confeccionada en seda fría y se ofrece en seis tallas diferentes: 6, 8, 10, 12, 14 y 16. Cuenta con cuello polo y manga corta, característicos de este tipo de prenda.CodeAtion"
   },
   {
-    "id": "0DD4CACA",
-    "tipo": "ROPA",
-    "subtipo": "CABALLERO",
-    "categoria": "CAMISAS",
-    "subcategoria": "MANGA CORTA",
-    "producto": "CAMISA MANGA CORTA",
-    "material": "POPELINA LICRADA",
-    "tallas": "M,L,XL",
-    "precio": 84500,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 446
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_2.171855.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 447
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_3.171855.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 448
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_4.171858.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 449
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_5.171858.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 450
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_6.171858.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 451
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_7.171900.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 452
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_1.171855.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_2.171855.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_3.171855.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_4.171858.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_5.171858.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_6.171858.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_76/PRODUCTOS_Images_0dd4caca.IMAGEN_7.171900.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "HOPEC",
-    "descripcion": "La camisa manga corta está confeccionada en popelina licrada y se ofrece en tres tallas: M, L y XL. Cuenta con mangas cortas y presenta una estructura ligera y fresca."
-  },
-  {
     "id": "058384B0",
     "tipo": "RELOJERIA",
     "subtipo": "CABALLERO",
