@@ -500,51 +500,6 @@
     "descripcion": "Este hermoso enterizo versaíl se caracteriza por su estructura única y versátil, confeccionada en material energética. Está disponible en una sola talla, diseñada para adaptarse a diferentes necesidades. Su diseño integral y funcionalidad versátil lo convierten en un elemento polivalente."
   },
   {
-    "id": "D82C91B9",
-    "tipo": "ROPA",
-    "subtipo": "DAMA",
-    "categoria": "CONJUNTOS",
-    "subcategoria": "DOS PIEZAS",
-    "producto": "PRINT RIB",
-    "material": "TELA RIB",
-    "tallas": "UNICA",
-    "precio": 90200,
-    "imagenes": [
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "variacion": "RASGADO",
-        "orden": 73
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_2.164610.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "variacion": "BLANCO Y NEGRO",
-        "orden": 74
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_3.164610.jpg?tr=w-600,q-80",
-        "tipo": "ADICIONAL",
-        "orden": 75
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_4.164612.jpg?tr=w-600,q-80",
-        "tipo": "ADICIONAL",
-        "orden": 76
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_5.164613.jpg?tr=w-600,q-80",
-        "tipo": "ADICIONAL",
-        "orden": 77
-      }
-    ],
-    "imagen": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_1.164610.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_2.164610.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_3.164610.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_4.164612.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_114/PRODUCTOS_Images_d82c91b9.IMAGEN_5.164613.jpg?tr=w-600,q-80",
-    "promo": false,
-    "proveedor": "LA PINTACO",
-    "descripcion": "Conjunto de dos piezas confeccionado en tela rib, disponible en talla única. La estructura de esta prenda se caracteriza por su diseño básico y funcional. Se trata de un conjunto práctico y versátil para diversas ocasiones."
-  },
-  {
     "id": "5D75C4E6",
     "tipo": "ROPA",
     "subtipo": "DAMA",
