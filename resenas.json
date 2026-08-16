@@ -1,25 +1,5 @@
 {
-  "80783575": [
-    {
-      "nombre": "Hector Andrade",
-      "calificacion": 4,
-      "comentario": "",
-      "fecha": "2026-01-12"
-    },
-    {
-      "nombre": "Marcela Jara",
-      "calificacion": 5,
-      "comentario": "",
-      "fecha": "2026-01-03"
-    },
-    {
-      "nombre": "Sergio Lagos",
-      "calificacion": 3,
-      "comentario": "",
-      "fecha": "2025-04-10"
-    }
-  ],
-  "EE03DCC0": [
+    "EE03DCC0": [
     {
       "nombre": "ANGELA",
       "calificacion": 5,
