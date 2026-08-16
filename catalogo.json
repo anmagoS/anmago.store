@@ -2305,19 +2305,9 @@
         "orden": 285
       },
       {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_10.153641.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 288
-      },
-      {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
         "orden": 289
-      },
-      {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_12.153642.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 290
       },
       {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg?tr=w-600,q-80",
@@ -2330,18 +2320,13 @@
         "orden": 292
       },
       {
-        "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_15.153643.jpg?tr=w-600,q-80",
-        "tipo": "VARIANTE",
-        "orden": 293
-      },
-      {
         "url": "https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg?tr=w-600,q-80",
         "tipo": "VARIANTE",
         "orden": 294
       }
     ],
     "imagen": "https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543481.URL_IMAGEN.151536.jpg?tr=w-600,q-80",
-    "url": "https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543481.URL_IMAGEN.151536.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543482.URL_IMAGEN.151545.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543483.URL_IMAGEN.151558.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543484.URL_IMAGEN.151606.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543485.URL_IMAGEN.151615.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543486.URL_IMAGEN.151625.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543487.URL_IMAGEN.151635.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_10.153641.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_12.153642.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_14.153643.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_15.153643.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg?tr=w-600,q-80",
+    "url": "https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543481.URL_IMAGEN.151536.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543482.URL_IMAGEN.151545.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543483.URL_IMAGEN.151558.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543484.URL_IMAGEN.151606.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543485.URL_IMAGEN.151615.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543486.URL_IMAGEN.151625.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_1D454348/IMGPRODUCTOS_Images_1D4543487.URL_IMAGEN.151635.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_11.153641.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_13.153643.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_14.153643.jpg?tr=w-600,q-80[]https://ik.imagekit.io/mbsk9dati/producto_49/PRODUCTOS_Images_1D454348.IMAGEN_16.153645.jpg?tr=w-600,q-80",
     "promo": false,
     "proveedor": "ALDAMI",
     "descripcion": "Este jean bota campana presenta una confección en licrado y se ofrece en tallas que van desde la 6 hasta la 14, lo que permite una amplia variedad de opciones para adaptarse a diferentes medidas y estilos."
