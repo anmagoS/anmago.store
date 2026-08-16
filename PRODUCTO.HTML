@@ -1255,8 +1255,8 @@ function actualizarSchema(producto) {
    function renderizarProducto(producto) {
       document.getElementById('nombre-producto-mobile').textContent = producto.producto;
       document.getElementById('nombre-producto-desktop').textContent = producto.producto;
-      document.getElementById('descripcion-producto-pc').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
-      document.getElementById('descripcion-producto-mobile').textContent = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
+      document.getElementById('descripcion-producto-pc').innerHTM = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
+      document.getElementById('descripcion-producto-mobile').innerHTM = producto.descripcion || 'Producto de alta calidad disponible en Anmago Store.';
       
       const precioBase = Number(producto.precio) || 0;
       const precioActual = calcularPrecioConDescuento(producto);
