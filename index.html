@@ -1073,9 +1073,10 @@
     document.addEventListener('DOMContentLoaded', cargarFooter);
   </script>
 
-    <!-- ============================================== -->
-  <!-- CARRUSEL DE PRODUCTOS DESTACADOS - DINÁMICO CON DESCUENTOS -->
-  <!-- Cambia cada 48 horas basado en catalogo.json -->
+      <!-- ============================================== -->
+  <!-- CARRUSEL DE PRODUCTOS DESTACADOS - DINÁMICO -->
+  <!-- Selecciona 8 productos aleatorios cada 48 horas -->
+  <!-- Aplica descuento del 10% solo si promo: true -->
   <!-- ============================================== -->
   <script>
     (function() {
@@ -1087,7 +1088,7 @@
       const HORAS_PARA_CAMBIO = 48;
       const URL_CATALOGO = 'https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json';
 
-      // --- 1. OBTENER LA SEMILLA PARA LA ROTACIÓN ---
+      // --- 1. OBTENER LA SEMILLA PARA LA ROTACIÓN (CAMBIA CADA 48 HORAS) ---
       function getRotationSeed() {
         const now = new Date();
         const referenceDate = new Date(2024, 0, 1);
@@ -1097,22 +1098,30 @@
         return seed;
       }
 
-      // --- 2. SELECCIONAR 8 PRODUCTOS DE FORMA ROTATIVA ---
+      // --- 2. SELECCIONAR 8 PRODUCTOS DE FORMA ROTATIVA (USANDO LA SEMILLA) ---
       function seleccionarProductosRotativos(productos, seed) {
         const totalProductos = productos.length;
+        
+        if (totalProductos === 0) return [];
+        
+        // Si hay menos de 8 productos, mostrar todos los que haya
         if (totalProductos <= TOTAL_PRODUCTOS_A_MOSTRAR) {
           return productos;
         }
+        
+        // Usar la semilla para obtener un índice de inicio diferente cada 48h
         const startIndex = (seed * 7) % totalProductos;
+        
         const productosSeleccionados = [];
         for (let i = 0; i < TOTAL_PRODUCTOS_A_MOSTRAR; i++) {
           const index = (startIndex + i) % totalProductos;
           productosSeleccionados.push(productos[index]);
         }
+        
         return productosSeleccionados;
       }
 
-      // --- 3. OBTENER LA PRIMERA IMAGEN ---
+      // --- 3. OBTENER LA PRIMERA IMAGEN DEL PRODUCTO ---
       function obtenerPrimeraImagen(producto) {
         if (producto.imagenes && producto.imagenes.length > 0) {
           return producto.imagenes[0].url;
@@ -1123,18 +1132,20 @@
         return 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
       }
 
-      // --- 4. GENERAR TARJETA DE PRODUCTO CON DESCUENTO ---
+      // --- 4. GENERAR TARJETA DE PRODUCTO CON DESCUENTO SI APLICA ---
       function generarTarjetaProducto(producto) {
         const imagen = obtenerPrimeraImagen(producto);
         const precioOriginal = Number(producto.precio) || 0;
         const id = producto.id || '';
         const nombre = producto.producto || 'Producto';
         
+        // Verificar si está en promoción
         const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
         let precioFinal = precioOriginal;
         let badgePromo = '';
         let mostrarPrecioAnterior = false;
         
+        // Si está en promo, aplicar 10% de descuento
         if (estaEnPromo) {
           const descuentoPorcentaje = 10;
           precioFinal = Math.round(precioOriginal * 0.9);
@@ -1170,7 +1181,7 @@
             <div class="carousel-item active">
               <div class="text-center py-5">
                 <i class="bi bi-exclamation-triangle fs-1 text-muted"></i>
-                <p class="mt-2">No hay productos destacados disponibles</p>
+                <p class="mt-2">No hay productos disponibles</p>
               </div>
             </div>
           `;
@@ -1197,7 +1208,7 @@
         return html;
       }
 
-      // --- 6. GENERAR INDICADORES ---
+      // --- 6. GENERAR INDICADORES DEL CARRUSEL ---
       function generarIndicadoresHTML(cantidadSlides) {
         let html = '';
         for (let i = 0; i < cantidadSlides; i++) {
@@ -1212,22 +1223,20 @@
         const carouselElement = document.getElementById('carouselDestacados');
         if (!carouselElement) return;
         
-        // Destruir instancia anterior si existe
         if (typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
-          const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
-          if (existingCarousel) {
-            existingCarousel.dispose();
+          try {
+            const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
+            if (existingCarousel) {
+              existingCarousel.dispose();
+            }
+            new bootstrap.Carousel(carouselElement, {
+              interval: 5000,
+              wrap: true,
+              ride: 'carousel'
+            });
+          } catch (e) {
+            console.warn('Error al iniciar carrusel:', e);
           }
-          
-          // Crear nueva instancia
-          new bootstrap.Carousel(carouselElement, {
-            interval: 5000,
-            wrap: true,
-            ride: 'carousel'
-          });
-          console.log('✅ Carrusel Bootstrap reiniciado');
-        } else {
-          console.warn('⚠️ Bootstrap no disponible');
         }
       }
 
@@ -1238,11 +1247,10 @@
         const temporizador = document.getElementById('destacados-temporizador');
 
         if (!contenedorContenido || !contenedorIndicadores) {
-          console.warn('No se encontraron los contenedores del carrusel destacados');
           return;
         }
 
-        // Mostrar estado de carga
+        // Mostrar skeleton de carga
         contenedorContenido.innerHTML = `
           <div class="carousel-item active">
             <div class="row g-3 justify-content-center">
@@ -1266,41 +1274,26 @@
               throw new Error('Catálogo vacío');
             }
 
+            // Guardar en window.productosGlobal si no existe
             if (!window.productosGlobal) {
               window.productosGlobal = catalogo;
             }
 
-            // Obtener productos destacados o usar todo el catálogo
-            let productosDestacados = catalogo.filter(p => p.promo === true || p.promo === 'sí' || p.promo === 'true');
-            
-            if (productosDestacados.length === 0) {
-              productosDestacados = catalogo;
-            }
-
-            if (productosDestacados.length === 0) {
-              contenedorContenido.innerHTML = `
-                <div class="carousel-item active">
-                  <div class="text-center py-5">
-                    <i class="bi bi-exclamation-triangle fs-1 text-muted"></i>
-                    <p class="mt-2">No hay productos disponibles</p>
-                  </div>
-                </div>
-              `;
-              contenedorIndicadores.innerHTML = '';
-              return;
-            }
-
+            // Obtener la semilla para rotación
             const seed = getRotationSeed();
-            const productosSeleccionados = seleccionarProductosRotativos(productosDestacados, seed);
             
-            console.log(`🔄 Mostrando ${productosSeleccionados.length} productos en el carrusel`);
+            // Seleccionar 8 productos rotativos (de TODO el catálogo)
+            const productosSeleccionados = seleccionarProductosRotativos(catalogo, seed);
             
+            // Generar HTML del carrusel
             const carruselHTML = generarCarruselHTML(productosSeleccionados);
             contenedorContenido.innerHTML = carruselHTML;
 
+            // Generar indicadores
             const cantidadSlides = Math.ceil(productosSeleccionados.length / PRODUCTOS_POR_SLIDE);
             contenedorIndicadores.innerHTML = generarIndicadoresHTML(cantidadSlides);
 
+            // Actualizar temporizador
             if (temporizador) {
               const ahora = new Date();
               const horasRestantes = HORAS_PARA_CAMBIO - (ahora.getHours() % HORAS_PARA_CAMBIO);
@@ -1308,19 +1301,17 @@
               temporizador.textContent = `⏰ Cambia en ${horasRestantes}h ${minutosRestantes}m`;
             }
 
-            // ✅ INICIALIZAR EL CARRUSEL DESPUÉS DE INSERTAR LOS PRODUCTOS
+            // Inicializar el carrusel
             setTimeout(iniciarCarruselBootstrap, 300);
-
-            window.dispatchEvent(new Event('carruselDestacadosListo'));
 
           })
           .catch(error => {
-            console.error('Error al cargar productos destacados:', error);
+            console.error('Error al cargar productos:', error);
             contenedorContenido.innerHTML = `
               <div class="carousel-item active">
                 <div class="text-center py-5">
                   <i class="bi bi-exclamation-triangle fs-1 text-danger"></i>
-                  <p class="mt-2">Error al cargar productos destacados</p>
+                  <p class="mt-2">Error al cargar productos</p>
                   <button class="btn btn-sm btn-outline-primary mt-2" onclick="recargarCarruselDestacados()">
                     <i class="bi bi-arrow-clockwise"></i> Reintentar
                   </button>
@@ -1331,6 +1322,7 @@
           });
       }
 
+      // Función para recargar manualmente
       window.recargarCarruselDestacados = function() {
         actualizarCarruselDestacados();
       };
@@ -1340,12 +1332,14 @@
         setTimeout(actualizarCarruselDestacados, 500);
       }
 
+      // Ejecutar cuando el DOM esté listo
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', inicializarCarruselDestacados);
       } else {
         inicializarCarruselDestacados();
       }
 
+      // También ejecutar cuando app.js haya cargado el catálogo
       window.addEventListener('appJSListo', function() {
         setTimeout(actualizarCarruselDestacados, 300);
       });
