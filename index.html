@@ -927,118 +927,25 @@
       <div class="container mt-3">
         <nav class="breadcrumb-vista"><ol class="breadcrumb mb-0"><li class="breadcrumb-item"><a href="#" onclick="volverAInicio(); return false;">INICIO</a></li><li class="breadcrumb-item active" id="breadcrumb-todos">Todos los productos</li></ol></nav>
         
-        <!-- SECCIÓN PRODUCTOS DESTACADOS -->
+        <!-- SECCIÓN PRODUCTOS DESTACADOS (AHORA DINÁMICA) -->
         <section class="productos-destacados mt-5" aria-labelledby="productos-destacados-titulo">
           <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-3">
               <h2 id="productos-destacados-titulo" class="h4 fw-bold mb-0"><i class="bi bi-star-fill text-warning me-2"></i>Productos Destacados</h2>
-              <small class="text-muted">Desliza para ver más</small>
+              <small class="text-muted" id="destacados-temporizador">⏰ Cambia cada 48h</small>
             </div>
+            <!-- Contenedor del carrusel dinámico -->
             <div id="carouselDestacados" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="1"></button>
+              <div class="carousel-indicators" id="destacados-indicadores"></div>
+              <div class="carousel-inner" id="destacados-contenido">
+                <!-- Aquí se insertarán dinámicamente los productos -->
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="row g-3 justify-content-center">
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_6.160634.jpg?tr=w-600,q-80" alt="Chaqueta torera negra" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_3.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera roja" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_2.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera miel" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_2/PRODUCTOS_Images_EE03DCC0.IMAGEN_1.160631.jpg?tr=w-600,q-80" alt="Chaqueta torera amarilla" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=EE03DCC0" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="row g-3 justify-content-center">
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_20.191300.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_6.191248.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_10.191252.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-6 col-md-3">
-                      <div class="card-producto-destacado">
-                        <div class="card-img-container">
-                          <img src="https://ik.imagekit.io/mbsk9dati/producto_47/PRODUCTOS_Images_91e832a3.IMAGEN_19.191259.jpg?tr=w-600,q-80" alt="Camiseta Colombia" loading="lazy">
-                        </div>
-                        <div class="card-info">
-                          <span class="precio-destacado">DESTACADO</span>
-                          <a href="PRODUCTO.HTML?id=91E832A3" class="btn-ver-producto">Ver más</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestacados" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselDestacados" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
             </div>
           </div>
         </section>
@@ -1167,7 +1074,283 @@
     document.addEventListener('DOMContentLoaded', cargarFooter);
   </script>
 
-  <!-- SCRIPT DEL CARRUSEL Y FUNCIONES ADICIONALES -->
+  <!-- ============================================== -->
+  <!-- CARRUSEL DE PRODUCTOS DESTACADOS - DINÁMICO -->
+  <!-- Cambia cada 48 horas basado en catalogo.json -->
+  <!-- ============================================== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // --- CONFIGURACIÓN ---
+      const TOTAL_PRODUCTOS_A_MOSTRAR = 8;
+      const PRODUCTOS_POR_SLIDE = 4;
+      const HORAS_PARA_CAMBIO = 48;
+      const URL_CATALOGO = 'https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json';
+
+      // --- 1. OBTENER LA SEMILLA PARA LA ROTACIÓN (CAMBIA CADA 48 HORAS) ---
+      function getRotationSeed() {
+        const now = new Date();
+        const referenceDate = new Date(2024, 0, 1);
+        const diffMs = now.getTime() - referenceDate.getTime();
+        const diffHours = diffMs / (1000 * 60 * 60);
+        const seed = Math.floor(diffHours / HORAS_PARA_CAMBIO);
+        return seed;
+      }
+
+      // --- 2. SELECCIONAR 8 PRODUCTOS DE FORMA ROTATIVA ---
+      function seleccionarProductosRotativos(productos, seed) {
+        const totalProductos = productos.length;
+        if (totalProductos <= TOTAL_PRODUCTOS_A_MOSTRAR) {
+          return productos;
+        }
+        // Usamos la semilla para obtener un índice de inicio diferente cada 48h
+        const startIndex = (seed * 7) % totalProductos;
+        const productosSeleccionados = [];
+        for (let i = 0; i < TOTAL_PRODUCTOS_A_MOSTRAR; i++) {
+          const index = (startIndex + i) % totalProductos;
+          productosSeleccionados.push(productos[index]);
+        }
+        return productosSeleccionados;
+      }
+
+      // --- 3. OBTENER LA PRIMERA IMAGEN DEL PRODUCTO ---
+      function obtenerPrimeraImagen(producto) {
+        if (producto.imagenes && producto.imagenes.length > 0) {
+          return producto.imagenes[0].url;
+        }
+        if (producto.imagen) {
+          return producto.imagen;
+        }
+        return 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
+      }
+
+      // --- 4. GENERAR HTML DE UNA TARJETA DE PRODUCTO ---
+      function generarTarjetaProducto(producto) {
+        const imagen = obtenerPrimeraImagen(producto);
+        const precio = Number(producto.precio) || 0;
+        const nombre = producto.producto || 'Producto';
+        const id = producto.id || '';
+
+        return `
+          <div class="col-6 col-md-3">
+            <div class="card-producto-destacado">
+              <div class="card-img-container">
+                <img src="${imagen}" alt="${nombre}" loading="lazy" onerror="this.src='https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg'">
+                ${producto.promo ? '<span class="badge bg-danger position-absolute top-0 start-0 m-2" style="z-index:2;">PROMO</span>' : ''}
+              </div>
+              <div class="card-info">
+                <span class="precio-destacado">$${precio.toLocaleString('es-CO')}</span>
+                <a href="PRODUCTO.HTML?id=${id}" class="btn-ver-producto">Ver más</a>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // --- 5. GENERAR EL HTML COMPLETO DEL CARRUSEL ---
+      function generarCarruselHTML(productos) {
+        if (!productos || productos.length === 0) {
+          return `
+            <div class="carousel-item active">
+              <div class="text-center py-5">
+                <i class="bi bi-exclamation-triangle fs-1 text-muted"></i>
+                <p class="mt-2">No hay productos destacados disponibles</p>
+              </div>
+            </div>
+          `;
+        }
+
+        // Dividir en grupos de 4
+        const grupos = [];
+        for (let i = 0; i < productos.length; i += PRODUCTOS_POR_SLIDE) {
+          grupos.push(productos.slice(i, i + PRODUCTOS_POR_SLIDE));
+        }
+
+        let html = '';
+        grupos.forEach((grupo, index) => {
+          const isActive = index === 0 ? 'active' : '';
+          html += `
+            <div class="carousel-item ${isActive}">
+              <div class="row g-3 justify-content-center">
+                ${grupo.map(p => generarTarjetaProducto(p)).join('')}
+              </div>
+            </div>
+          `;
+        });
+
+        return html;
+      }
+
+      // --- 6. GENERAR INDICADORES DEL CARRUSEL ---
+      function generarIndicadoresHTML(cantidadSlides) {
+        let html = '';
+        for (let i = 0; i < cantidadSlides; i++) {
+          const isActive = i === 0 ? 'active' : '';
+          html += `<button type="button" data-bs-target="#carouselDestacados" data-bs-slide-to="${i}" class="${isActive}"></button>`;
+        }
+        return html;
+      }
+
+      // --- 7. ACTUALIZAR EL CARRUSEL ---
+      function actualizarCarruselDestacados() {
+        const contenedorContenido = document.getElementById('destacados-contenido');
+        const contenedorIndicadores = document.getElementById('destacados-indicadores');
+        const temporizador = document.getElementById('destacados-temporizador');
+
+        if (!contenedorContenido || !contenedorIndicadores) {
+          console.warn('No se encontraron los contenedores del carrusel destacados');
+          return;
+        }
+
+        // Mostrar estado de carga
+        contenedorContenido.innerHTML = `
+          <div class="carousel-item active">
+            <div class="row g-3 justify-content-center">
+              ${Array(4).fill(0).map(() => `
+                <div class="col-6 col-md-3">
+                  <div class="card-producto-destacado skeleton" style="height:280px;"></div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+
+        // Cargar el catálogo
+        fetch(URL_CATALOGO + '?t=' + Date.now())
+          .then(response => {
+            if (!response.ok) throw new Error('Error al cargar el catálogo');
+            return response.json();
+          })
+          .then(catalogo => {
+            if (!Array.isArray(catalogo) || catalogo.length === 0) {
+              throw new Error('Catálogo vacío');
+            }
+
+            // Guardar en window.productosGlobal si no existe
+            if (!window.productosGlobal) {
+              window.productosGlobal = catalogo;
+            }
+
+            // Obtener productos destacados (promo: true) o usar todo el catálogo
+            let productosDestacados = catalogo.filter(p => p.promo === true || p.promo === 'sí' || p.promo === 'true');
+            
+            // Si no hay destacados, usar todos los productos
+            if (productosDestacados.length === 0) {
+              productosDestacados = catalogo;
+            }
+
+            // Si aún no hay productos, mostrar error
+            if (productosDestacados.length === 0) {
+              contenedorContenido.innerHTML = `
+                <div class="carousel-item active">
+                  <div class="text-center py-5">
+                    <i class="bi bi-exclamation-triangle fs-1 text-muted"></i>
+                    <p class="mt-2">No hay productos disponibles</p>
+                  </div>
+                </div>
+              `;
+              contenedorIndicadores.innerHTML = '';
+              return;
+            }
+
+            // Obtener semilla para rotación
+            const seed = getRotationSeed();
+
+            // Seleccionar 8 productos rotativos
+            const productosSeleccionados = seleccionarProductosRotativos(productosDestacados, seed);
+
+            // Generar HTML del carrusel
+            const carruselHTML = generarCarruselHTML(productosSeleccionados);
+            contenedorContenido.innerHTML = carruselHTML;
+
+            // Generar indicadores
+            const cantidadSlides = Math.ceil(productosSeleccionados.length / PRODUCTOS_POR_SLIDE);
+            contenedorIndicadores.innerHTML = generarIndicadoresHTML(cantidadSlides);
+
+            // Actualizar temporizador
+            if (temporizador) {
+              const ahora = new Date();
+              const horasRestantes = HORAS_PARA_CAMBIO - (ahora.getHours() % HORAS_PARA_CAMBIO);
+              const minutosRestantes = 59 - ahora.getMinutes();
+              temporizador.textContent = `⏰ Cambia en ${horasRestantes}h ${minutosRestantes}m`;
+            }
+
+            // Reiniciar el carrusel de Bootstrap
+            const carouselElement = document.getElementById('carouselDestacados');
+            if (carouselElement && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
+              // Destruir carrusel anterior si existe
+              const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
+              if (existingCarousel) {
+                existingCarousel.dispose();
+              }
+              // Crear nuevo carrusel
+              new bootstrap.Carousel(carouselElement, {
+                interval: 5000,
+                wrap: true,
+                ride: 'carousel'
+              });
+            }
+
+            // Disparar evento para que otros scripts sepan que el carrusel está listo
+            window.dispatchEvent(new Event('carruselDestacadosListo'));
+
+          })
+          .catch(error => {
+            console.error('Error al cargar productos destacados:', error);
+            contenedorContenido.innerHTML = `
+              <div class="carousel-item active">
+                <div class="text-center py-5">
+                  <i class="bi bi-exclamation-triangle fs-1 text-danger"></i>
+                  <p class="mt-2">Error al cargar productos destacados</p>
+                  <button class="btn btn-sm btn-outline-primary mt-2" onclick="recargarCarruselDestacados()">
+                    <i class="bi bi-arrow-clockwise"></i> Reintentar
+                  </button>
+                </div>
+              </div>
+            `;
+            contenedorIndicadores.innerHTML = '';
+          });
+      }
+
+      // Función para recargar manualmente (expuesta globalmente)
+      window.recargarCarruselDestacados = function() {
+        actualizarCarruselDestacados();
+      };
+
+      // --- 8. INICIALIZAR ---
+      function inicializarCarruselDestacados() {
+        // Esperar un poco para asegurar que el DOM esté listo
+        setTimeout(actualizarCarruselDestacados, 500);
+      }
+
+      // Ejecutar cuando el DOM esté listo
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', inicializarCarruselDestacados);
+      } else {
+        inicializarCarruselDestacados();
+      }
+
+      // También ejecutar cuando app.js haya cargado el catálogo
+      window.addEventListener('appJSListo', function() {
+        setTimeout(actualizarCarruselDestacados, 300);
+      });
+
+      // Ejecutar cada 60 minutos para actualizar el temporizador
+      setInterval(function() {
+        const temporizador = document.getElementById('destacados-temporizador');
+        if (temporizador) {
+          const ahora = new Date();
+          const horasRestantes = HORAS_PARA_CAMBIO - (ahora.getHours() % HORAS_PARA_CAMBIO);
+          const minutosRestantes = 59 - ahora.getMinutes();
+          temporizador.textContent = `⏰ Cambia en ${horasRestantes}h ${minutosRestantes}m`;
+        }
+      }, 60000);
+
+    })();
+  </script>
+
+  <!-- SCRIPT DEL CARRUSEL DE CATEGORÍAS Y FUNCIONES ADICIONALES -->
   <script>
     document.addEventListener('DOMContentLoaded', function() { const intro = document.getElementById('intro'); if (intro) setTimeout(() => { if (intro.parentNode) intro.remove(); }, 2000); intro?.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); }); });
     const INDEX_PROMOS_CONFIG = { productosPorBloque: 8, horasPorBloque: 6, indiceBloqueActual: 0 };
@@ -1268,4 +1451,4 @@
   });
   </script>
 </body>
-</html> 
+</html>
