@@ -731,6 +731,84 @@
         font-size: 0.75rem;
       }
     }
+    /* ===== MEJORAS PARA NAVEGACIÓN DE CATEGORÍAS ===== */
+
+/* Indicador de nivel más visible */
+.categorias-indicador {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  display: block;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.categorias-indicador strong {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.categorias-indicador .btn-volver-nivel {
+  display: inline-flex !important;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.1rem 0.6rem;
+  font-size: 0.6rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.2rem;
+  transition: var(--transition);
+  margin-left: 0.3rem;
+}
+
+.categorias-indicador .btn-volver-nivel:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+/* Categorías más legibles en móvil */
+@media (max-width: 768px) {
+  .categoria-rapida-card {
+    padding: 0.4rem 0.8rem;
+    min-width: 65px;
+    font-size: 0.7rem;
+  }
+  .categoria-rapida-card i {
+    font-size: 0.8rem;
+    margin-right: 0.3rem;
+  }
+  .categorias-indicador {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.5rem;
+  }
+  .categorias-indicador .btn-volver-nivel {
+    font-size: 0.5rem;
+    padding: 0.05rem 0.4rem;
+  }
+}
+
+/* Categoría activa */
+.categoria-rapida-card.activa {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.categoria-rapida-card.activa i,
+.categoria-rapida-card.activa span {
+  color: white;
+}
+
+/* Animación suave para el indicador */
+.categorias-indicador {
+  transition: all 0.3s ease;
+}
   </style>
   
   <!-- CSS EXTERNO CARGADO ASÍNCRONAMENTE -->
@@ -1388,134 +1466,204 @@
     let clsValue = 0; const clsObserver = new PerformanceObserver((entryList) => { for (const entry of entryList.getEntries()) if (!entry.hadRecentInput) clsValue += entry.value; if (typeof gtag === 'function' && clsValue > 0) gtag('event', 'performance', { event_category: 'Web Vitals', event_label: 'CLS', value: Math.round(clsValue * 1000) / 1000, non_interaction: true }); }); clsObserver.observe({entryTypes: ['layout-shift']});
     window.dispatchEvent(new Event('carruselListo'));
   </script>
+   <!-- ============================================== -->
+  <!-- CARRUSEL DE CATEGORÍAS RÁPIDAS - VERSIÓN MEJORADA -->
+  <!-- ============================================== -->
   <script>
     // ==============================================
-  // CARRUSEL DE CATEGORÍAS RÁPIDAS - VERSIÓN MEJORADA
-  // ==============================================
+    // CARRUSEL DE CATEGORÍAS RÁPIDAS - VERSIÓN MEJORADA
+    // ==============================================
 
-  function inicializarCarruselCategorias() {
-    const container = document.getElementById('categorias-carrusel-container');
-    const btnPrev = document.getElementById('btn-carrusel-prev');
-    const btnNext = document.getElementById('btn-carrusel-next');
-    const wrapper = document.getElementById('categorias-rapidas');
-    const indicador = document.querySelector('.categorias-indicador');
-    
-    if (!container) return;
-    
-    // --- 1. INDICADOR DE NIVEL ACTUAL ---
-    function actualizarIndicadorNivel(nivel, nombre) {
-      if (!indicador) return;
-      const niveles = ['📁 Tipos', '📂 Subtipos', '📋 Categorías'];
-      const textoNivel = niveles[nivel] || '📁 Tipos';
-      if (nombre) {
-        indicador.innerHTML = `<i class="bi bi-arrow-left-right"></i> ${textoNivel} de <strong>${nombre}</strong> · Desliza para ver más`;
-      } else {
-        indicador.innerHTML = `<i class="bi bi-arrow-left-right"></i> ${textoNivel} · Desliza para ver más`;
-      }
-      indicador.style.display = 'block';
-    }
-    
-    // --- 2. FUNCIÓN PARA VERIFICAR OVERFLOW ---
-    function verificarOverflow() {
+    function inicializarCarruselCategorias() {
+      const container = document.getElementById('categorias-carrusel-container');
+      const btnPrev = document.getElementById('btn-carrusel-prev');
+      const btnNext = document.getElementById('btn-carrusel-next');
+      const wrapper = document.getElementById('categorias-rapidas');
+      const indicador = document.querySelector('.categorias-indicador');
+      
       if (!container) return;
-      const hasOverflow = container.scrollWidth > container.clientWidth;
-      if (btnPrev && btnNext) {
-        btnPrev.style.display = hasOverflow ? 'flex' : 'none';
-        btnNext.style.display = hasOverflow ? 'flex' : 'none';
+      
+      // --- 1. INDICADOR DE NIVEL ACTUAL ---
+      function actualizarIndicadorNivel(nivel, nombre) {
+        if (!indicador) return;
+        const niveles = ['📁 Tipos principales', '📂 Subtipos', '📋 Categorías'];
+        const iconos = ['📁', '📂', '📋'];
+        const textoNivel = niveles[nivel] || '📁 Tipos principales';
+        
+        let html = `<i class="bi bi-arrow-left-right"></i> `;
+        
+        // Mostrar breadcrumb simple
+        const contexto = window.contextoNavegacion || { nivel: 0, tipo: null, subtipo: null };
+        
+        if (nivel === 0) {
+          html += `<span>${iconos[0]} Tipos principales</span>`;
+        } else if (nivel === 1 && contexto.tipo) {
+          html += `<span>${iconos[1]} Subtipos de <strong>${contexto.tipo}</strong></span>`;
+        } else if (nivel === 2 && contexto.subtipo) {
+          html += `<span>${iconos[2]} Categorías de <strong>${contexto.subtipo}</strong></span>`;
+        } else if (nombre) {
+          html += `<span>${textoNivel} de <strong>${nombre}</strong></span>`;
+        } else {
+          html += `<span>${textoNivel}</span>`;
+        }
+        
+        html += ` · <span class="text-muted" style="font-size:0.65rem;">Desliza para ver más</span>`;
+        
+        // Agregar botón "Volver" si estamos en un nivel profundo
+        if (nivel > 0) {
+          html += ` <button class="btn-volver-nivel" onclick="volverNivelCategoria()" style="display:inline-flex; background:var(--primary); color:white; border:none; border-radius:20px; padding:0.1rem 0.6rem; font-size:0.6rem; cursor:pointer; align-items:center; gap:0.2rem;">
+            <i class="bi bi-arrow-left"></i> Volver
+          </button>`;
+        }
+        
+        indicador.innerHTML = html;
+        indicador.style.display = 'block';
       }
       
-      if (hasOverflow) {
-        container.classList.add('has-overflow');
-      } else {
-        container.classList.remove('has-overflow');
+      // --- 2. FUNCIÓN PARA VOLVER AL NIVEL ANTERIOR ---
+      window.volverNivelCategoria = function() {
+        const contexto = window.contextoNavegacion || { nivel: 0, tipo: null, subtipo: null };
+        if (contexto.nivel === 2 && contexto.tipo) {
+          // Volver a subtipos
+          if (typeof window.cargarPorTipo === 'function') {
+            window.cargarPorTipo(contexto.tipo);
+          }
+        } else if (contexto.nivel === 1) {
+          // Volver a tipos
+          if (typeof window.cargarPorTipo === 'function') {
+            window.cargarPorTipo('TODOS');
+          }
+        } else {
+          // Ya estamos en el nivel más alto
+          if (typeof window.volverAInicio === 'function') {
+            window.volverAInicio();
+          }
+        }
+      };
+      
+      // --- 3. FUNCIÓN PARA VERIFICAR OVERFLOW ---
+      function verificarOverflow() {
+        if (!container) return;
+        const hasOverflow = container.scrollWidth > container.clientWidth;
+        if (btnPrev && btnNext) {
+          btnPrev.style.display = hasOverflow ? 'flex' : 'none';
+          btnNext.style.display = hasOverflow ? 'flex' : 'none';
+        }
+        
+        if (hasOverflow) {
+          container.classList.add('has-overflow');
+        } else {
+          container.classList.remove('has-overflow');
+        }
       }
-    }
-    
-    // --- 3. NAVEGACIÓN CON FLECHAS ---
-    if (btnPrev) {
-      btnPrev.addEventListener('click', () => {
-        container.scrollBy({ left: -280, behavior: 'smooth' });
+      
+      // --- 4. NAVEGACIÓN CON FLECHAS ---
+      if (btnPrev) {
+        btnPrev.addEventListener('click', () => {
+          container.scrollBy({ left: -280, behavior: 'smooth' });
+        });
+      }
+      
+      if (btnNext) {
+        btnNext.addEventListener('click', () => {
+          container.scrollBy({ left: 280, behavior: 'smooth' });
+        });
+      }
+      
+      // --- 5. OBSERVAR CAMBIOS EN EL WRAPPER ---
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'childList' && wrapper.children.length > 1) {
+            setTimeout(verificarOverflow, 100);
+            
+            // Actualizar indicador de nivel según el contexto actual
+            const contexto = window.contextoNavegacion || { nivel: 0, tipo: null, subtipo: null };
+            const nivel = contexto.nivel || 0;
+            let nombre = '';
+            if (nivel === 1 && contexto.tipo) nombre = contexto.tipo;
+            else if (nivel === 2 && contexto.subtipo) nombre = contexto.subtipo;
+            actualizarIndicadorNivel(nivel, nombre);
+          }
+        });
       });
-    }
-    
-    if (btnNext) {
-      btnNext.addEventListener('click', () => {
-        container.scrollBy({ left: 280, behavior: 'smooth' });
-      });
-    }
-    
-    // --- 4. OBSERVAR CAMBIOS EN EL WRAPPER ---
-    const observer = new MutationObserver(function(mutations) {
-      mutations.forEach(function(mutation) {
-        if (mutation.type === 'childList' && wrapper.children.length > 1) {
-          setTimeout(verificarOverflow, 100);
-          
-          // Actualizar indicador de nivel según el contexto actual
+      
+      observer.observe(wrapper, { childList: true, subtree: true });
+      
+      // --- 6. INICIALIZAR ---
+      setTimeout(verificarOverflow, 500);
+      window.addEventListener('resize', verificarOverflow);
+      
+      // Actualizar indicador cuando cambie la vista (sobrescribir funciones de navegación)
+      const originalCargarPorTipo = window.cargarPorTipo;
+      if (originalCargarPorTipo) {
+        window.cargarPorTipo = function(tipo) {
+          originalCargarPorTipo(tipo);
+          setTimeout(() => {
+            if (tipo === 'TODOS') {
+              actualizarIndicadorNivel(0, null);
+            } else {
+              actualizarIndicadorNivel(1, tipo);
+            }
+          }, 200);
+        };
+      }
+      
+      const originalCargarPorSubtipo = window.cargarPorSubtipo;
+      if (originalCargarPorSubtipo) {
+        window.cargarPorSubtipo = function(tipo, subtipo) {
+          originalCargarPorSubtipo(tipo, subtipo);
+          setTimeout(() => {
+            actualizarIndicadorNivel(2, subtipo);
+          }, 200);
+        };
+      }
+      
+      const originalCargarPorCategoria = window.cargarPorCategoria;
+      if (originalCargarPorCategoria) {
+        window.cargarPorCategoria = function(tipo, subtipo, categoria) {
+          originalCargarPorCategoria(tipo, subtipo, categoria);
+          setTimeout(() => {
+            actualizarIndicadorNivel(2, subtipo);
+          }, 200);
+        };
+      }
+      
+      const originalVolverAInicio = window.volverAInicio;
+      if (originalVolverAInicio) {
+        window.volverAInicio = function() {
+          originalVolverAInicio();
+          setTimeout(() => {
+            actualizarIndicadorNivel(0, null);
+          }, 200);
+        };
+      }
+      
+      // Actualizar también cuando se carga app.js
+      window.addEventListener('appJSListo', function() {
+        setTimeout(() => {
           const contexto = window.contextoNavegacion || { nivel: 0, tipo: null, subtipo: null };
           const nivel = contexto.nivel || 0;
           let nombre = '';
           if (nivel === 1 && contexto.tipo) nombre = contexto.tipo;
           else if (nivel === 2 && contexto.subtipo) nombre = contexto.subtipo;
           actualizarIndicadorNivel(nivel, nombre);
-        }
+        }, 400);
       });
+    }
+
+    // --- INICIALIZAR ---
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(inicializarCarruselCategorias, 1500);
+    });
+
+    window.addEventListener('catalogoCargado', function() {
+      setTimeout(inicializarCarruselCategorias, 500);
     });
     
-    observer.observe(wrapper, { childList: true, subtree: true });
-    
-    // --- 5. INICIALIZAR ---
-    setTimeout(verificarOverflow, 500);
-    window.addEventListener('resize', verificarOverflow);
-    
-    // Actualizar indicador cuando cambie la vista
-    const originalCargarPorTipo = window.cargarPorTipo;
-    if (originalCargarPorTipo) {
-      window.cargarPorTipo = function(tipo) {
-        originalCargarPorTipo(tipo);
-        setTimeout(() => {
-          if (tipo === 'TODOS') {
-            actualizarIndicadorNivel(0, null);
-          } else {
-            actualizarIndicadorNivel(1, tipo);
-          }
-        }, 200);
-      };
-    }
-    
-    const originalCargarPorSubtipo = window.cargarPorSubtipo;
-    if (originalCargarPorSubtipo) {
-      window.cargarPorSubtipo = function(tipo, subtipo) {
-        originalCargarPorSubtipo(tipo, subtipo);
-        setTimeout(() => {
-          actualizarIndicadorNivel(2, subtipo);
-        }, 200);
-      };
-    }
-    
-    const originalVolverAInicio = window.volverAInicio;
-    if (originalVolverAInicio) {
-      window.volverAInicio = function() {
-        originalVolverAInicio();
-        setTimeout(() => {
-          actualizarIndicadorNivel(0, null);
-        }, 200);
-      };
-    }
-  }
-
-  // --- INICIALIZAR ---
-  document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(inicializarCarruselCategorias, 1500);
-  });
-
-  window.addEventListener('catalogoCargado', function() {
-    setTimeout(inicializarCarruselCategorias, 500);
-  });
-  
-  // También cuando se carga app.js
-  window.addEventListener('appJSListo', function() {
-    setTimeout(inicializarCarruselCategorias, 300);
-  });
-    </script>
+    // También cuando se carga app.js
+    window.addEventListener('appJSListo', function() {
+      setTimeout(inicializarCarruselCategorias, 300);
+    });
+  </script>
 </body>
 </html>
