@@ -1073,7 +1073,7 @@
     document.addEventListener('DOMContentLoaded', cargarFooter);
   </script>
 
-  <!-- ============================================== -->
+    <!-- ============================================== -->
   <!-- CARRUSEL DE PRODUCTOS DESTACADOS - DINÁMICO CON DESCUENTOS -->
   <!-- Cambia cada 48 horas basado en catalogo.json -->
   <!-- ============================================== -->
@@ -1087,7 +1087,7 @@
       const HORAS_PARA_CAMBIO = 48;
       const URL_CATALOGO = 'https://raw.githubusercontent.com/anmagoS/anmago.store/main/catalogo.json';
 
-      // --- 1. OBTENER LA SEMILLA PARA LA ROTACIÓN (CAMBIA CADA 48 HORAS) ---
+      // --- 1. OBTENER LA SEMILLA PARA LA ROTACIÓN ---
       function getRotationSeed() {
         const now = new Date();
         const referenceDate = new Date(2024, 0, 1);
@@ -1112,7 +1112,7 @@
         return productosSeleccionados;
       }
 
-      // --- 3. OBTENER LA PRIMERA IMAGEN DEL PRODUCTO ---
+      // --- 3. OBTENER LA PRIMERA IMAGEN ---
       function obtenerPrimeraImagen(producto) {
         if (producto.imagenes && producto.imagenes.length > 0) {
           return producto.imagenes[0].url;
@@ -1123,14 +1123,13 @@
         return 'https://ik.imagekit.io/mbsk9dati/placeholder-producto.jpg';
       }
 
-      // --- 4. GENERAR HTML DE UNA TARJETA DE PRODUCTO CON DESCUENTO ---
+      // --- 4. GENERAR TARJETA DE PRODUCTO CON DESCUENTO ---
       function generarTarjetaProducto(producto) {
         const imagen = obtenerPrimeraImagen(producto);
         const precioOriginal = Number(producto.precio) || 0;
         const id = producto.id || '';
         const nombre = producto.producto || 'Producto';
         
-        // ✅ APLICAR DESCUENTO DEL 10% SI EL PRODUCTO ESTÁ EN PROMOCIÓN
         const estaEnPromo = producto.promo === true || producto.promo === "true" || producto.promo === "sí";
         let precioFinal = precioOriginal;
         let badgePromo = '';
@@ -1177,6 +1176,7 @@
           `;
         }
 
+        // Dividir en grupos de 4
         const grupos = [];
         for (let i = 0; i < productos.length; i += PRODUCTOS_POR_SLIDE) {
           grupos.push(productos.slice(i, i + PRODUCTOS_POR_SLIDE));
@@ -1197,7 +1197,7 @@
         return html;
       }
 
-      // --- 6. GENERAR INDICADORES DEL CARRUSEL ---
+      // --- 6. GENERAR INDICADORES ---
       function generarIndicadoresHTML(cantidadSlides) {
         let html = '';
         for (let i = 0; i < cantidadSlides; i++) {
@@ -1207,7 +1207,31 @@
         return html;
       }
 
-      // --- 7. ACTUALIZAR EL CARRUSEL ---
+      // --- 7. INICIALIZAR CARRUSEL DE BOOTSTRAP ---
+      function iniciarCarruselBootstrap() {
+        const carouselElement = document.getElementById('carouselDestacados');
+        if (!carouselElement) return;
+        
+        // Destruir instancia anterior si existe
+        if (typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
+          const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
+          if (existingCarousel) {
+            existingCarousel.dispose();
+          }
+          
+          // Crear nueva instancia
+          new bootstrap.Carousel(carouselElement, {
+            interval: 5000,
+            wrap: true,
+            ride: 'carousel'
+          });
+          console.log('✅ Carrusel Bootstrap reiniciado');
+        } else {
+          console.warn('⚠️ Bootstrap no disponible');
+        }
+      }
+
+      // --- 8. ACTUALIZAR EL CARRUSEL ---
       function actualizarCarruselDestacados() {
         const contenedorContenido = document.getElementById('destacados-contenido');
         const contenedorIndicadores = document.getElementById('destacados-indicadores');
@@ -1246,7 +1270,7 @@
               window.productosGlobal = catalogo;
             }
 
-            // Obtener productos destacados (promo: true) o usar todo el catálogo
+            // Obtener productos destacados o usar todo el catálogo
             let productosDestacados = catalogo.filter(p => p.promo === true || p.promo === 'sí' || p.promo === 'true');
             
             if (productosDestacados.length === 0) {
@@ -1268,6 +1292,9 @@
 
             const seed = getRotationSeed();
             const productosSeleccionados = seleccionarProductosRotativos(productosDestacados, seed);
+            
+            console.log(`🔄 Mostrando ${productosSeleccionados.length} productos en el carrusel`);
+            
             const carruselHTML = generarCarruselHTML(productosSeleccionados);
             contenedorContenido.innerHTML = carruselHTML;
 
@@ -1281,18 +1308,8 @@
               temporizador.textContent = `⏰ Cambia en ${horasRestantes}h ${minutosRestantes}m`;
             }
 
-            const carouselElement = document.getElementById('carouselDestacados');
-            if (carouselElement && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
-              const existingCarousel = bootstrap.Carousel.getInstance(carouselElement);
-              if (existingCarousel) {
-                existingCarousel.dispose();
-              }
-              new bootstrap.Carousel(carouselElement, {
-                interval: 5000,
-                wrap: true,
-                ride: 'carousel'
-              });
-            }
+            // ✅ INICIALIZAR EL CARRUSEL DESPUÉS DE INSERTAR LOS PRODUCTOS
+            setTimeout(iniciarCarruselBootstrap, 300);
 
             window.dispatchEvent(new Event('carruselDestacadosListo'));
 
@@ -1318,6 +1335,7 @@
         actualizarCarruselDestacados();
       };
 
+      // --- 9. INICIALIZAR ---
       function inicializarCarruselDestacados() {
         setTimeout(actualizarCarruselDestacados, 500);
       }
@@ -1332,6 +1350,7 @@
         setTimeout(actualizarCarruselDestacados, 300);
       });
 
+      // Actualizar temporizador cada minuto
       setInterval(function() {
         const temporizador = document.getElementById('destacados-temporizador');
         if (temporizador) {
@@ -1344,7 +1363,6 @@
 
     })();
   </script>
-
   <!-- SCRIPT DEL CARRUSEL DE CATEGORÍAS Y FUNCIONES ADICIONALES -->
   <script>
     document.addEventListener('DOMContentLoaded', function() { const intro = document.getElementById('intro'); if (intro) setTimeout(() => { if (intro.parentNode) intro.remove(); }, 2000); intro?.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); }); });
